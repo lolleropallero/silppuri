@@ -1,0 +1,858 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Asuntokuntien tulot ja tulojen rakenne muuttujina Tiedot, Vuosi ja Tulokymmenys",
+  "source": "Tilastokeskus, tulonjakotilasto",
+  "updated": "2025-12-16T06:00:00Z",
+  "note": [
+    "<A HREF='https://stat.fi/tilasto/dokumentaatio/tjt' TARGET=_blank>Tilaston dokumentaatio</A>",
+    ". tieto on puuttuva",
+    "Euromääräiset tiedot on esitetty viimeisimmän tilastovuoden rahassa.\r\nTilastoyksikkö: asuntokunta. \r\nTulokäsite: Käytettävissä olevat rahatulot (ml. myyntivoitot), kulutusyksikköä ja asuntokuntaa kohden, tulojen pääerät asuntokuntaa kohden. \r\nKulutusyksikköasteikko: Eurostat-asteikko (1.0 - 0.5 - 0.3).\r\nTulonimikkeistöön tehtyjen muutosten vuoksi vuosien 1995-2009 ja 2010- tiedot eivät ole keskenään täysin vertailukelpoisia."
+  ],
+  "role": {
+    "time": [
+      "timeperiod_y"
+    ],
+    "metric": [
+      "contentscode"
+    ]
+  },
+  "id": [
+    "contentscode",
+    "timeperiod_y",
+    "desiilit_2_20120101"
+  ],
+  "size": [
+    39,
+    1,
+    11
+  ],
+  "dimension": {
+    "contentscode": {
+      "label": "Tiedot",
+      "category": {
+        "index": {
+          "asuntok": 0,
+          "tjt-henkiloita": 1,
+          "kokonum_mean": 2,
+          "modoecd_mean": 3,
+          "tjt-palk": 4,
+          "luon_toptio": 5,
+          "tjt-yrtu": 6,
+          "tjt-matu": 7,
+          "tjt-metu": 8,
+          "muuyrtu": 9,
+          "tjt-mytu": 10,
+          "tjt-omtu": 11,
+          "tjt-ostu": 12,
+          "tjt-vutu": 13,
+          "tjt-myvo": 14,
+          "tjt-muuomtu": 15,
+          "tuotektu": 16,
+          "saatusi": 17,
+          "tjt-saira": 18,
+          "tjt-vamtyoky": 19,
+          "tjt-vanel": 20,
+          "tjt-pelake": 21,
+          "tjt-perav": 22,
+          "tjt-tyoel": 23,
+          "tjt-asutu": 24,
+          "tjt-optuki": 25,
+          "tjt-muutuki": 26,
+          "bruttotu": 27,
+          "makstu": 28,
+          "tjt-ltva": 29,
+          "tjt-ltvp": 30,
+          "tjt-lkuve": 31,
+          "muumts": 32,
+          "kturaha": 33,
+          "tjt-kturaha_med": 34,
+          "tjt-ekvikturaha_mean": 35,
+          "tjt-ekvikturaha_med": 36,
+          "askorot": 37,
+          "korotyht": 38
+        },
+        "label": {
+          "asuntok": "Asuntokuntien lukumäärä",
+          "tjt-henkiloita": "Asuntoväestö, henkilöä",
+          "kokonum_mean": "Asuntokunnan keskikoko, henkilöä",
+          "modoecd_mean": "Kulutusyksiköitä keskimäärin",
+          "tjt-palk": "1. PALKKATULOT, keskiarvo",
+          "luon_toptio": "1.1 joista: luontoisedut ja työsuhdeoptiot, keskiarvo",
+          "tjt-yrtu": "2. YRITTÄJÄTULOT YHTEENSÄ, keskiarvo",
+          "tjt-matu": "2.1. Yrittäjätulot maataloudesta, keskiarvo",
+          "tjt-metu": "2.2. Yrittäjätulot metsätaloudesta, keskiarvo",
+          "muuyrtu": "2.3. Yrittäjätulot elinkeinotoiminnasta, keskiarvo",
+          "tjt-mytu": "2.4. Yrittäjätulot muusta yrittäjätoiminnasta, keskiarvo",
+          "tjt-omtu": "3. OMAISUUSTULOT YHTEENSÄ,  keskiarvo",
+          "tjt-ostu": "3.1. Osinkotulot, keskiarvo",
+          "tjt-vutu": "3.2. Vuokratulot, keskiarvo",
+          "tjt-myvo": "3.3. Myyntivoitot, keskiarvo",
+          "tjt-muuomtu": "3.4. Muut omaisuustulot, keskiarvo",
+          "tuotektu": "4. TUOTANNONTEKIJÄTULOT, keskiarvo",
+          "saatusi": "5. SAADUT TULONSIIRROT YHTEENSÄ, keskiarvo",
+          "tjt-saira": "5.1. Sairausajan toimeentuloturva, keskiarvo",
+          "tjt-vamtyoky": "5.2. Toimintarajoitteisuuteen liittyvät tuet, keskiarvo",
+          "tjt-vanel": "5.3. Vanhuuden turva, keskiarvo",
+          "tjt-pelake": "5.4. Lesken ja muiden omaisten tuet, keskiarvo",
+          "tjt-perav": "5.5. Lapsiperheiden etuudet, keskiarvo",
+          "tjt-tyoel": "5.6. Työttömyysturva, keskiarvo",
+          "tjt-asutu": "5.7. Asumisen tuet, keskiarvo",
+          "tjt-optuki": "5.8. Opintoetuudet, keskiarvo",
+          "tjt-muutuki": "5.9. Muu toimeentuloturva, keskiarvo",
+          "bruttotu": "6. BRUTTOTULOT, keskiarvo",
+          "makstu": "7. MAKSETUT TULONSIIRROT YHTEENSÄ, keskiarvo",
+          "tjt-ltva": "7.1.  Verot ansiotuloista keskiarvo",
+          "tjt-ltvp": "7.2.  Verot pääomatuloista, keskiarvo",
+          "tjt-lkuve": "7.3.  Kunnallisverot, keskiarvo",
+          "muumts": "7.4. Muut maksetut tulonsiirrot, keskiarvo",
+          "kturaha": "8. KÄYTETTÄVISSÄ OLEVA RAHATULO, keskiarvo",
+          "tjt-kturaha_med": "Käytettävissä oleva rahatulo, mediaani",
+          "tjt-ekvikturaha_mean": "Käytettävissä oleva rahatulo kulutusyksikköä kohden, keskiarvo",
+          "tjt-ekvikturaha_med": "Käytettävissä oleva rahatulo kulutusyksikköä kohden, mediaani",
+          "askorot": "Korkomenot asuntolainoista, keskiarvo",
+          "korotyht": "Korkomenot yhteensä, keskiarvo"
+        },
+        "note": {
+          "tjt-henkiloita": [
+            "Asuntoväestö, henkilöä. Asuntoväestöön kuuluvat  vuoden lopussa varsinaisissa asunnoissa vakinaisesti asuvat henkilöt. Laitoksissa vakinaisesti kirjoilla olevat, asuntoloissa ja ulkomailla asuvat sekä asunnottomat henkilöt eivät kuulu asuntoväestöön."
+          ],
+          "modoecd_mean": [
+            "Eurostat-asteikko (OECD:n muunnettu asteikko), jossa kotitalouden ensimmäinen aikuinen saa painon 1, muut yli 13-vuotiaat saavat painon 0,5 ja lapset saavat painon 0,3 (0-13-vuotiaat)."
+          ],
+          "tjt-ostu": [
+            "Osinkotulot kattavat osingot julkisesti ja ei-julkisesti noteeratuista yhtiöistä,  osinkotulot yhtymistä, osinkotulot ulkomailta, osuuskuntien ylijäämät sekä sijoitusrahastojen voitto-osuudet.\r\nOsinkotulot sisältävät verovapaan osuuden osinkotuloista."
+          ],
+          "tjt-myvo": [
+            "Myyntivoitot = realisoidut luovutusvoitot - luovutustappiot (negatiiviset arvot on nollattu). Sisältää veronalaiset luovutusvoitot sekä verovapaan luovutusvoiton, kun  luovutushinnat olivat alle 1000 euroa."
+          ],
+          "saatusi": [
+            "Saadut tulonsiirrot (alaerät ESSPROS-luokituksen mukaisesti)"
+          ],
+          "tjt-saira": [
+            "Sairausajan toimeentuloturva sisältää mm. sairaus-, tartunta- ja tapaturmapäivärahat."
+          ],
+          "tjt-vamtyoky": [
+            "Toimintarajoitteisuuteen liittyvät tuet sisältävät mm. työkyvyttömyyseläkkeet, kuntoutusrahan, vammaistuen sekä sotilasvammakorvaukset."
+          ],
+          "tjt-vanel": [
+            "Vanhuuden turva sisältää kansaneläkkeet,  työeläkkeet ja takuueläkkeet vanhuuseläkkeenä."
+          ],
+          "tjt-perav": [
+            "Lapsiperheiden etuudet sisältävät mm. lapsilisät, vanhempainpäivärahat, kotihoidon tuen sekä vuodesta 2010 alkaen elatustuen."
+          ],
+          "tjt-tyoel": [
+            "Työttömyysturva sisältää peruspäivärahan, työmarkkinatuen, ansiosidonnaiset työttömyyspäivärahat,  eläketuen, starttirahan, koulutustuen, aikuiskoulutustuen ja vuorottelukorvaukset."
+          ],
+          "tjt-asutu": [
+            "Asumisen tuet sisältävät yleisen asumistuen, eläkkeensaajien asumistuen ja opintorahan asumislisän."
+          ],
+          "tjt-optuki": [
+            "Opintoetuudet sisältävät veronalaiset opintorahat, ammattitutkintostipendit sekä apurahat ja opiskeluavustukset. Myös asevelvollisten päivärahat on sisällytetty opintoetuuksiin. Nostetut opintolainat eivät sisälly opintoetuuksiin."
+          ],
+          "tjt-muutuki": [
+            "Muu toimeentuloturva sisältää toimeentulotuen, sotilasavustuksen, opintolainojen korkoavustuksen, veronalaisen lakkoavustuksen, rekisteripohjaisesti imputoidun saadun elatusavun ja 2024 alkaen vastaanottorahan."
+          ],
+          "tjt-ekvikturaha_mean": [
+            "Asuntokunnan käytettävissä olevat rahatulot jaettuna kulutusyksiköillä (Eurostat-asteikko). Jokainen asuntokunnan jäsen saa tämän saman tulon (ns. ekvivalentin tulon)."
+          ],
+          "tjt-ekvikturaha_med": [
+            "Ekvivalentti tulo eli asuntokunnan (tai kotitalouden) käytettävissä olevat rahatulot jaettuna kulutusyksiköillä (Eurostat-asteikko)  Jokainen asuntokunnan jäsen saa tämän saman tulon (ns. ekvivalentin tulon). Kun tilastoyksikkö on henkilö, ekvivalentti tulo kuvaa henkilön taloudellisen toimeentulon tasoa laajemmin kuin henkilökohtaiset tulot."
+          ],
+          "korotyht": [
+            "Asuntokunnan korkomenot yhteensä. Muiden kuin asuntolainojen tietosisältö on muuttunut vuonna 2012, ks. Tilastokeskuksen velkaantumistilaston käsitteet ja määritelmät."
+          ]
+        },
+        "unit": {
+          "asuntok": {
+            "base": "lukumäärä",
+            "decimals": 0
+          },
+          "tjt-henkiloita": {
+            "base": "lukumäärä",
+            "decimals": 0
+          },
+          "kokonum_mean": {
+            "base": "ei määritelty",
+            "decimals": 2
+          },
+          "modoecd_mean": {
+            "base": "ei määritelty",
+            "decimals": 2
+          },
+          "tjt-palk": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "luon_toptio": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-yrtu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-matu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-metu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "muuyrtu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-mytu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-omtu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-ostu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-vutu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-myvo": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-muuomtu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tuotektu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "saatusi": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-saira": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-vamtyoky": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-vanel": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-pelake": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-perav": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-tyoel": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-asutu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-optuki": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-muutuki": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "bruttotu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "makstu": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-ltva": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-ltvp": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-lkuve": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "muumts": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "kturaha": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-kturaha_med": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-ekvikturaha_mean": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "tjt-ekvikturaha_med": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "askorot": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "korotyht": {
+            "base": "euroa",
+            "decimals": 0
+          }
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    },
+    "timeperiod_y": {
+      "label": "Vuosi",
+      "category": {
+        "index": {
+          "2024": 0
+        },
+        "label": {
+          "2024": "2024"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "timeperiod_y": "SCALE-TYPE=None"
+            }
+          }
+        ]
+      }
+    },
+    "desiilit_2_20120101": {
+      "label": "Tulokymmenys",
+      "category": {
+        "index": {
+          "SS": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5,
+          "6": 6,
+          "7": 7,
+          "8": 8,
+          "9": 9,
+          "10": 10
+        },
+        "label": {
+          "SS": "Yhteensä",
+          "1": "I (pienituloisin 10 %)",
+          "2": "II",
+          "3": "III",
+          "4": "IV",
+          "5": "V",
+          "6": "VI",
+          "7": "VII",
+          "8": "VIII",
+          "9": "IX",
+          "10": "X (suurituloisin 10 %)"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "SS",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "desiilit_2_20120101": "SCALE-TYPE=ordinal"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "extension": {
+    "px": {
+      "tableid": "128c",
+      "decimals": 0,
+      "official-statistics": true,
+      "aggregallowed": true,
+      "language": "fi",
+      "contents": "Asuntokuntien tulot ja tulojen rakenne",
+      "description": "128c -- Asuntokuntien tulot ja tulojen rakenne tulokymmenyksittäin, 1995-2024",
+      "descriptiondefault": false,
+      "heading": [
+        "timeperiod_y",
+        "desiilit_2_20120101"
+      ],
+      "stub": [
+        "contentscode"
+      ],
+      "matrix": "128c",
+      "subject-code": "tjt",
+      "subject-area": "Tulonjakotilasto"
+    },
+    "contact": [
+      {
+        "raw": "<A HREF='https://stat.fi/tilasto/tjt' TARGET=_blank>Tilaston kotisivu</A>"
+      }
+    ]
+  },
+  "value": [
+    2860961,
+    374586,
+    350041,
+    309150,
+    285103,
+    272354,
+    262986,
+    255449,
+    251570,
+    249513,
+    250209,
+    5505446,
+    550547,
+    550543,
+    550544,
+    550545,
+    550545,
+    550544,
+    550545,
+    550545,
+    550544,
+    550544,
+    1.92,
+    1.47,
+    1.57,
+    1.78,
+    1.93,
+    2.02,
+    2.09,
+    2.16,
+    2.19,
+    2.21,
+    2.2,
+    1.41,
+    1.2,
+    1.24,
+    1.33,
+    1.41,
+    1.45,
+    1.48,
+    1.52,
+    1.54,
+    1.56,
+    1.56,
+    38351,
+    3402,
+    7168,
+    14452,
+    22916,
+    31172,
+    40356,
+    50112,
+    61958,
+    77544,
+    112297,
+    714,
+    16,
+    34,
+    75,
+    128,
+    192,
+    287,
+    411,
+    612,
+    1036,
+    5272,
+    2340,
+    324,
+    457,
+    770,
+    1090,
+    1354,
+    1709,
+    2210,
+    2938,
+    4324,
+    10652,
+    248,
+    33,
+    49,
+    89,
+    126,
+    155,
+    196,
+    243,
+    337,
+    493,
+    1011,
+    563,
+    29,
+    47,
+    92,
+    154,
+    212,
+    309,
+    442,
+    675,
+    1133,
+    3224,
+    1249,
+    234,
+    323,
+    521,
+    709,
+    858,
+    1036,
+    1295,
+    1609,
+    2172,
+    4903,
+    280,
+    28,
+    38,
+    67,
+    101,
+    129,
+    168,
+    230,
+    317,
+    526,
+    1514,
+    5102,
+    221,
+    301,
+    547,
+    806,
+    1084,
+    1437,
+    2013,
+    2929,
+    5120,
+    43201,
+    2336,
+    76,
+    111,
+    185,
+    265,
+    349,
+    463,
+    673,
+    1037,
+    1940,
+    21379,
+    648,
+    51,
+    67,
+    130,
+    190,
+    261,
+    348,
+    482,
+    675,
+    1132,
+    3909,
+    1362,
+    53,
+    50,
+    88,
+    133,
+    177,
+    236,
+    337,
+    505,
+    922,
+    12953,
+    757,
+    41,
+    73,
+    144,
+    219,
+    297,
+    389,
+    521,
+    713,
+    1127,
+    4959,
+    45794,
+    3947,
+    7926,
+    15769,
+    24812,
+    33610,
+    43501,
+    54336,
+    67825,
+    86988,
+    166150,
+    17811,
+    11858,
+    17863,
+    19353,
+    19462,
+    19315,
+    18474,
+    18015,
+    17243,
+    17175,
+    21525,
+    245,
+    186,
+    198,
+    221,
+    245,
+    259,
+    264,
+    283,
+    294,
+    289,
+    265,
+    1458,
+    1002,
+    1916,
+    1546,
+    1417,
+    1438,
+    1473,
+    1497,
+    1457,
+    1383,
+    1482,
+    11589,
+    2830,
+    8846,
+    12218,
+    13475,
+    13873,
+    13318,
+    13051,
+    12606,
+    12966,
+    17419,
+    657,
+    267,
+    838,
+    1084,
+    899,
+    761,
+    635,
+    595,
+    526,
+    469,
+    482,
+    975,
+    614,
+    984,
+    1144,
+    1173,
+    1159,
+    1148,
+    1071,
+    954,
+    829,
+    749,
+    1452,
+    2582,
+    1989,
+    1547,
+    1387,
+    1250,
+    1186,
+    1118,
+    1048,
+    908,
+    756,
+    777,
+    2428,
+    2074,
+    963,
+    413,
+    222,
+    144,
+    107,
+    76,
+    60,
+    53,
+    288,
+    681,
+    300,
+    273,
+    231,
+    195,
+    182,
+    186,
+    189,
+    194,
+    275,
+    369,
+    1267,
+    717,
+    357,
+    222,
+    158,
+    124,
+    107,
+    93,
+    77,
+    44,
+    63605,
+    15805,
+    25789,
+    35123,
+    44274,
+    52925,
+    61975,
+    72351,
+    85068,
+    104163,
+    187675,
+    15721,
+    1090,
+    2783,
+    5438,
+    8212,
+    11043,
+    14179,
+    17827,
+    22525,
+    29993,
+    60472,
+    7291,
+    373,
+    1023,
+    1996,
+    3102,
+    4392,
+    5922,
+    7817,
+    10356,
+    14780,
+    31236,
+    1166,
+    53,
+    68,
+    125,
+    189,
+    254,
+    347,
+    484,
+    710,
+    1213,
+    9731,
+    3294,
+    294,
+    836,
+    1639,
+    2370,
+    3012,
+    3627,
+    4291,
+    5058,
+    6100,
+    8691,
+    3970,
+    370,
+    855,
+    1679,
+    2551,
+    3385,
+    4282,
+    5235,
+    6401,
+    7900,
+    10814,
+    47886,
+    14721,
+    23008,
+    29685,
+    36063,
+    41883,
+    47797,
+    54524,
+    62544,
+    74171,
+    127203,
+    37777,
+    14405,
+    19244,
+    23518,
+    35008,
+    41700,
+    47245,
+    53440,
+    60921,
+    71873,
+    101856,
+    32662,
+    12280,
+    18550,
+    22229,
+    25649,
+    28898,
+    32207,
+    35934,
+    40602,
+    47668,
+    82089,
+    28604,
+    13646,
+    18556,
+    22226,
+    25647,
+    28893,
+    32184,
+    35891,
+    40521,
+    47365,
+    64694,
+    1309,
+    146,
+    235,
+    465,
+    766,
+    1080,
+    1426,
+    1778,
+    2157,
+    2699,
+    3628,
+    2116,
+    354,
+    449,
+    803,
+    1233,
+    1671,
+    2158,
+    2675,
+    3266,
+    4131,
+    6414
+  ]
+}

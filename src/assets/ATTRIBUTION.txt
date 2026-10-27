@@ -1,0 +1,8 @@
+Claw slashes by Lorc, from Game-icons.net
+https://game-icons.net/1x1/lorc/claw-slashes.html
+Licensed under Creative Commons Attribution 3.0 Unported:
+https://creativecommons.org/licenses/by/3.0/
+
+claw-slashes.svg is the downloaded black-on-white original.
+The build removes the background and changes the foreground to currentColor
+for light/dark appearance. The icon's geometry is unchanged.

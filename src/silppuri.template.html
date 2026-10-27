@@ -1,0 +1,666 @@
+<style>
+#silppuri-demo{--sp-paper:light-dark(#f5f3ed,#20231f);--sp-panel:light-dark(#fffefa,#292d27);--sp-ink:light-dark(#202820,#f2f4e9);--sp-muted:light-dark(#62695f,#b4bcae);--sp-line:light-dark(#dedfd5,#464d40);--sp-track:light-dark(#e4e7dc,#41483a);--sp-lime:light-dark(#d8ef97,#405522);--sp-tax:light-dark(#5068c8,#92a2ef);--sp-cut:light-dark(#ed2b36,#ff4d57);--sp-button:light-dark(#253c2b,#d8ef97);--sp-button-text:light-dark(#fffefa,#243021);color:var(--sp-ink);background:var(--sp-paper);font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;border-radius:12px;overflow:clip}
+#silppuri-demo *{box-sizing:border-box}
+#silppuri-demo{position:relative}
+#silppuri-demo button,#silppuri-demo select{font:inherit;color:inherit}
+#silppuri-demo button,#silppuri-demo summary{touch-action:manipulation}
+#silppuri-demo button:disabled{opacity:.5}
+#silppuri-demo .sp-top{padding:23px 34px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--sp-line);padding-right:110px}
+#silppuri-demo .sp-wordmark{font-size:20px;font-weight:800;letter-spacing:-1px;display:flex;align-items:center;gap:10px}
+#silppuri-demo .sp-wordmark .sp-logo{display:block;width:30px;height:30px;flex:0 0 30px}
+#silppuri-demo .sp-tag{margin-left:auto;color:var(--sp-muted);font-size:11px;letter-spacing:1.7px;text-transform:uppercase}
+#silppuri-demo .sp-hero{padding:24px 34px}
+#silppuri-demo h1{font-size:clamp(32px,4.2vw,43px);font-weight:700;line-height:1.1;letter-spacing:-1.6px;margin:0 0 12px;max-width:900px}
+#silppuri-demo h1 em{font-style:normal;background:var(--sp-lime);padding:0 4px}
+#silppuri-demo .sp-subtitle{margin:0;color:var(--sp-muted);font-size:15px;max-width:650px}
+#silppuri-demo .sp-workspace{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.2fr);gap:24px;padding:0 34px 32px;align-items:start}
+#silppuri-demo .sp-budget{background:var(--sp-panel);border:1px solid var(--sp-line);border-radius:var(--sp-radius,12px);padding:22px;min-width:0}
+#silppuri-demo .sp-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+#silppuri-demo .sp-panel-heading h2,#silppuri-demo .sp-actions h2{margin:0;font-size:18px;letter-spacing:-.4px;font-weight:700;line-height:1.3}
+#silppuri-demo .sp-chart{position:relative;width:100%;aspect-ratio:1;margin:8px auto 12px;max-width:230px}
+#silppuri-demo .sp-chart svg{display:block;width:100%;height:100%;overflow:visible}
+#silppuri-demo .sp-chart-center{position:absolute;inset:22%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;pointer-events:none;border-radius:50%;color:var(--sp-ink)}
+#silppuri-demo .sp-chart-center small{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--sp-muted)}
+#silppuri-demo .sp-total{font-size:clamp(40px,5.1vw,58px);line-height:1.1;font-weight:700;letter-spacing:-2.6px;font-variant-numeric:tabular-nums;margin:5px 0}
+#silppuri-demo .sp-chart-center span{font-size:12px;color:var(--sp-muted)}
+#silppuri-demo .sp-remaining{background:var(--sp-lime);padding:12px 14px;border-radius:7px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+#silppuri-demo .sp-remaining strong{font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#silppuri-demo .sp-legend{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:19px 0}
+#silppuri-demo .sp-legend-item{font-size:12px;color:var(--sp-muted)}
+#silppuri-demo .sp-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:var(--sp-tax)}
+#silppuri-demo .sp-dot.cut{background:var(--sp-cut)}
+#silppuri-demo .sp-legend-item strong{display:block;font-size:18px;color:var(--sp-ink);margin-top:2px;font-variant-numeric:tabular-nums;font-weight:500}
+#silppuri-demo .sp-selected{border-top:1px solid var(--sp-line);padding-top:14px}
+#silppuri-demo .sp-selection-head{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--sp-muted);font-size:12px}
+#silppuri-demo .sp-text-button{border:0;padding:4px 0;background:transparent;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+#silppuri-demo .sp-selection-list{list-style:none;margin:10px 0 0;padding:0}
+#silppuri-demo .sp-selection-list li{display:flex;gap:8px;align-items:center;border-top:1px solid var(--sp-line);padding:8px 0;font-size:12px}
+#silppuri-demo .sp-selection-list li:first-child{border-top:0}
+#silppuri-demo .sp-selection-list .sp-short-title{flex:1}
+#silppuri-demo .sp-selection-list strong{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-remove{background:transparent;border:0;width:28px;height:28px;display:grid;place-items:center;flex-shrink:0}
+#silppuri-demo .sp-empty{color:var(--sp-muted);font-size:12px;margin:14px 0 2px}
+#silppuri-demo .sp-note{font-size:11px;color:var(--sp-muted);margin:16px 0 0;line-height:1.55}
+#silppuri-demo .sp-scale{margin:16px 6px 0;color:var(--sp-muted);font-size:12px}
+#silppuri-demo .sp-scale strong{color:var(--sp-ink)}
+#silppuri-demo .sp-actions{min-width:0;grid-column:1/-1}
+#silppuri-demo .sp-action-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#silppuri-demo .sp-action[hidden]{display:none}
+#silppuri-demo .sp-list-label{display:flex;gap:10px;justify-content:space-between;align-items:baseline;margin:3px 0 14px}
+#silppuri-demo .sp-list-label span{font-size:11px;color:var(--sp-muted);text-align:right}
+#silppuri-demo .sp-filters{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:15px}
+#silppuri-demo .sp-filter{background:transparent;border:1px solid var(--sp-line);border-radius:6px;padding:7px 12px;font-size:12px;min-height:34px}
+#silppuri-demo .sp-filter[aria-pressed=true]{background:var(--sp-ink);border-color:var(--sp-ink);color:var(--sp-paper)}
+#silppuri-demo .sp-action{background:var(--sp-panel);border:1px solid var(--sp-line);border-radius:var(--sp-radius,12px);padding:16px 18px;margin-bottom:10px;transition:background .15s}
+#silppuri-demo .sp-action.is-picked{border-color:var(--sp-button)}
+#silppuri-demo .sp-action-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--sp-muted);font-size:11px}
+#silppuri-demo .sp-action-top .sp-action-percent{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-action-main{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start}
+#silppuri-demo .sp-action h3{font-weight:600;font-size:16px;line-height:1.3;letter-spacing:-.3px;margin:0}
+#silppuri-demo .sp-amount{font-size:21px;font-weight:600;line-height:1.1;letter-spacing:-.8px;white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right}
+#silppuri-demo .sp-amount small{font-size:11px;display:block;color:var(--sp-muted);font-weight:400;letter-spacing:0;margin-top:5px}
+#silppuri-demo .sp-consequence{font-size:12px;color:var(--sp-muted);margin:10px 0 13px;line-height:1.5}
+#silppuri-demo .sp-scenario-controls{margin:14px 0}
+#silppuri-demo .sp-scenario-controls:empty{display:none}
+#silppuri-demo .sp-stepper{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:10px;max-width:330px;background:var(--sp-paper);padding:7px;border-radius:9px}
+#silppuri-demo .sp-stepper button{height:44px;border:1px solid var(--sp-line);border-radius:6px;background:var(--sp-panel);font-size:24px}
+#silppuri-demo .sp-stepper output{text-align:center;font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+#silppuri-demo .sp-stepper output small{display:block;font-size:11px;font-weight:400;margin-top:3px}
+#silppuri-demo .sp-control-label{font-size:12px;font-weight:600;display:block;margin-bottom:7px}
+#silppuri-demo .sp-scenario-controls .sp-control-note{font-size:11px;color:var(--sp-muted);line-height:1.5;margin:7px 0 0}
+#silppuri-demo .sp-variant-options{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+#silppuri-demo .sp-variant-options button{border:1px solid var(--sp-line);border-radius:8px;background:var(--sp-paper);padding:11px;text-align:left;font-size:12px;line-height:1.4}
+#silppuri-demo .sp-variant-options button[aria-pressed=true]{background:var(--sp-button);color:var(--sp-button-text);border-color:var(--sp-button)}
+#silppuri-demo .sp-variant-options strong{display:block;font-size:13px;margin-bottom:4px}
+#silppuri-demo .sp-variant-options small{display:block;font-size:11px;opacity:.85;margin-top:3px}
+#silppuri-demo .sp-scenario-notice{font-size:11px;color:var(--sp-muted);line-height:1.5;margin:12px 0 0}
+#silppuri-demo .sp-scenario-notice[hidden]{display:none}
+@media(max-width:390px){#silppuri-demo .sp-variant-options{grid-template-columns:1fr}}
+#silppuri-demo details{font-size:12px;min-width:0}
+#silppuri-demo summary{padding:7px 0;text-decoration:underline;text-underline-offset:3px}
+#silppuri-demo .sp-detail{padding-top:6px;color:var(--sp-muted);line-height:1.6;max-width:40ch}
+#silppuri-demo .sp-detail p{margin:0 0 10px}
+#silppuri-demo .sp-detail a{color:var(--sp-ink);text-underline-offset:3px}
+#silppuri-demo .sp-more{background:transparent;border:1px solid var(--sp-line);border-radius:7px;width:100%;padding:10px;font-size:12px;min-height:38px}
+#silppuri-demo .sp-footer{border-top:1px solid var(--sp-line);padding:18px 34px;display:flex;gap:20px;justify-content:space-between;align-items:start;color:var(--sp-muted);font-size:11px}
+#silppuri-demo .sp-footer p{margin:0;max-width:62ch}
+#silppuri-demo .sp-footer a{color:var(--sp-ink);white-space:nowrap;text-underline-offset:3px}
+#silppuri-demo .sp-source-links{display:flex;flex-direction:column;gap:5px}
+#silppuri-demo .sp-announcement{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+#silppuri-demo .sp-hit-panel{min-width:0;background:var(--sp-panel);border:1px solid var(--sp-line);border-radius:var(--sp-radius,12px);padding:22px}
+#silppuri-demo .sp-hit-panel h2{font-size:22px;line-height:1.2;letter-spacing:-.6px;margin:0 0 8px}
+#silppuri-demo .sp-hit-intro{font-size:12px;color:var(--sp-muted);margin:0 0 14px}
+#silppuri-demo .sp-hit-legend{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--sp-muted);font-size:11px;margin-bottom:12px}
+#silppuri-demo .sp-hit-key{display:inline-block;width:10px;height:10px;margin-right:5px;background:var(--sp-ink)}
+#silppuri-demo .sp-hit-key.possible{background:repeating-linear-gradient(135deg,var(--sp-muted) 0 2px,var(--sp-track) 2px 5px)}
+#silppuri-demo .sp-group-row{display:block;width:100%;text-align:left;border:0;border-radius:6px;background:transparent;padding:8px 0;margin:0 0 4px}
+#silppuri-demo .sp-group-row[aria-expanded=true]{background:var(--sp-paper);padding-left:8px;padding-right:8px}
+#silppuri-demo .sp-group-heading{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:5px;font-size:13px}
+#silppuri-demo .sp-group-heading strong{font-weight:500}
+#silppuri-demo .sp-group-heading small{font-size:11px;color:var(--sp-muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-hit-track{display:grid;gap:4px;height:9px}
+#silppuri-demo .sp-hit{background:var(--sp-track);border-radius:2px}
+#silppuri-demo .sp-hit[data-kind=direct]{background:var(--sp-ink)}
+#silppuri-demo .sp-hit[data-kind=possible]{background:repeating-linear-gradient(135deg,var(--sp-muted) 0 2px,var(--sp-track) 2px 5px)}
+#silppuri-demo .sp-hit-summary{padding:12px 14px;border-radius:7px;background:var(--sp-lime);font-size:12px;line-height:1.6;margin-top:14px}
+#silppuri-demo .sp-group-detail{border-top:1px solid var(--sp-line);margin-top:14px;padding-top:14px}
+#silppuri-demo .sp-group-detail h3{font-size:15px;margin:0 0 8px}
+#silppuri-demo .sp-group-detail p{font-size:12px;color:var(--sp-muted);margin:0 0 10px}
+#silppuri-demo .sp-group-detail ul{list-style:none;margin:0;padding:0}
+#silppuri-demo .sp-group-detail li{padding:9px 0;border-top:1px solid var(--sp-line);font-size:12px}
+#silppuri-demo .sp-group-detail li button{background:transparent;border:0;padding:0;text-align:left;text-decoration:underline;text-underline-offset:3px}
+#silppuri-demo .sp-group-detail li span{display:block;color:var(--sp-muted);margin-top:4px}
+#silppuri-demo .sp-group-method{font-size:11px;color:var(--sp-muted);line-height:1.55;margin-top:12px}
+#silppuri-demo .sp-group-method p{margin:6px 0}
+#silppuri-demo .sp-card-hint{font-size:11px;color:var(--sp-muted)}
+#silppuri-demo .sp-basket-open{flex:1;background:transparent;border:0;padding:2px 0;text-align:left;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+#silppuri-demo .sp-selected>summary{font-size:12px;text-decoration:none}
+#silppuri-demo .sp-selected .sp-selection-head{justify-content:flex-end}
+#silppuri-demo .sp-modal{position:absolute;inset:auto;margin:0;width:min(660px,calc(100% - 24px));max-width:660px;max-height:none;overflow:visible;padding:0;border:1px solid var(--sp-line);border-radius:16px;background:var(--sp-panel);color:var(--sp-ink);font:inherit;box-shadow:0 18px 70px light-dark(#17201940,#00000075);scroll-margin-top:16px}
+#silppuri-demo .sp-modal::backdrop{background:light-dark(#19231c80,#050805a8);backdrop-filter:blur(3px)}
+#silppuri-demo .sp-modal{z-index:21}
+#silppuri-demo .sp-modal-mask{position:absolute;inset:0;z-index:20;background:light-dark(#19231c80,#050805a8);backdrop-filter:blur(3px)}
+#silppuri-demo .sp-modal-mask[hidden]{display:none}
+#silppuri-demo .sp-modal-header{padding:22px 24px 16px;border-bottom:1px solid var(--sp-line)}
+#silppuri-demo .sp-modal-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+#silppuri-demo .sp-modal-heading h2{min-width:0;overflow-wrap:anywhere}
+#silppuri-demo .sp-modal-close{background:var(--sp-track);border:0;border-radius:6px;width:36px;height:36px;font-size:22px;display:grid;place-items:center;flex-shrink:0}
+#silppuri-demo .sp-modal h2{font-size:27px;letter-spacing:-.7px;line-height:1.18;margin:0 0 10px;max-width:520px}
+#silppuri-demo .sp-modal-meta{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--sp-muted)}
+#silppuri-demo .sp-modal-meta strong{font-size:19px;letter-spacing:-.5px;color:var(--sp-ink)}
+#silppuri-demo .sp-modal-body{padding:20px 24px}
+#silppuri-demo .sp-modal h3{font-size:13px;font-weight:700;margin:0 0 7px}
+#silppuri-demo .sp-modal p{font-size:13px;line-height:1.55;margin:0}
+#silppuri-demo .sp-impact-section+.sp-impact-section{margin-top:20px}
+#silppuri-demo .sp-who{padding:13px 15px;background:var(--sp-lime);border-radius:8px}
+#silppuri-demo .sp-who h3{font-size:11px;text-transform:uppercase;letter-spacing:1px}
+#silppuri-demo .sp-benefit-concentration{margin:17px 0 0}
+#silppuri-demo .sp-benefit-concentration[hidden]{display:none}
+#silppuri-demo .sp-benefit-concentration figcaption{font-size:12px;font-weight:600;margin-bottom:12px}
+#silppuri-demo .sp-benefit-row+.sp-benefit-row{margin-top:11px}
+#silppuri-demo .sp-benefit-label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;margin-bottom:5px}
+#silppuri-demo .sp-benefit-label strong{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+#silppuri-demo .sp-benefit-track{height:12px;background:color-mix(in srgb,var(--sp-ink) 9%,transparent)}
+#silppuri-demo .sp-benefit-track span{display:block;height:100%;background:var(--sp-tax)}
+#silppuri-demo .sp-benefit-concentration .sp-benefit-source{font-size:11px;line-height:1.5;margin-top:11px;color:var(--sp-muted)}
+#silppuri-demo .sp-benefit-concentration .sp-benefit-source a{font-size:inherit}
+#silppuri-demo .sp-chain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;gap:16px;padding:0;margin:12px 0;font-size:12px;line-height:1.45}
+#silppuri-demo .sp-chain li{position:relative;background:var(--sp-paper);padding:11px;border-radius:7px}
+#silppuri-demo .sp-chain li+li::before{content:'→';position:absolute;left:-13px;top:10px;color:var(--sp-muted)}
+#silppuri-demo .sp-interpretation{display:inline-block;margin-bottom:8px;font-size:11px;color:var(--sp-muted)}
+#silppuri-demo .sp-money-box{padding:13px 15px;background:var(--sp-paper);border-radius:8px}
+#silppuri-demo .sp-money-box p+p{margin-top:8px}
+#silppuri-demo .sp-modal details{margin-top:15px}
+#silppuri-demo .sp-modal details p{font-size:12px;color:var(--sp-muted);margin-bottom:8px}
+#silppuri-demo .sp-modal a{color:var(--sp-ink);font-size:12px;text-underline-offset:3px}
+#silppuri-demo .sp-impact-reference{margin-top:13px!important;color:var(--sp-muted);font-size:11px!important}
+#silppuri-demo .sp-research-note{grid-column:1/-1;border-top:1px solid var(--sp-line);padding-top:8px;color:var(--sp-muted)}
+#silppuri-demo .sp-research-note p{font-size:12px;max-width:85ch;line-height:1.65;margin:10px 0}
+#silppuri-demo .sp-research-note a{color:var(--sp-ink);text-underline-offset:3px}
+#silppuri-demo .sp-modal-footer{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:16px 24px;border-top:1px solid var(--sp-line);background:var(--sp-paper);border-radius:0 0 16px 16px}
+#silppuri-demo .sp-modal-confirm{background:var(--sp-button);color:var(--sp-button-text);border:0;border-radius:7px;padding:10px 15px;font-size:13px;min-height:40px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#silppuri-demo .sp-modal-confirm .sp-logo{display:block;width:20px;height:20px}
+@media(max-width:700px){#silppuri-demo .sp-action-list{grid-template-columns:1fr}#silppuri-demo .sp-hit-panel{padding:18px}#silppuri-demo .sp-modal-header,#silppuri-demo .sp-modal-body{padding:18px}#silppuri-demo .sp-modal h2{font-size:23px}#silppuri-demo .sp-chain{grid-template-columns:1fr;gap:14px}#silppuri-demo .sp-chain li+li::before{content:'↓';top:-16px;left:12px}#silppuri-demo .sp-modal-footer{padding:15px 18px;flex-wrap:wrap}#silppuri-demo .sp-modal-confirm{margin-left:auto}#silppuri-demo .sp-group-heading{gap:5px}#silppuri-demo .sp-group-heading small{font-size:11px}}
+@media(max-width:700px){#silppuri-demo .sp-top{padding:18px 20px;padding-right:100px}#silppuri-demo .sp-tag{display:none}#silppuri-demo .sp-hero{padding:25px 20px}#silppuri-demo h1{font-size:36px;letter-spacing:-1.5px}#silppuri-demo .sp-workspace{grid-template-columns:1fr;padding:0 20px 25px;gap:26px}#silppuri-demo .sp-chart{max-width:270px}#silppuri-demo .sp-chart-center .sp-total{font-size:48px}#silppuri-demo .sp-budget{padding:18px}#silppuri-demo .sp-legend{margin:14px 0}#silppuri-demo .sp-footer{padding:18px 20px;flex-direction:column;gap:12px}#silppuri-demo .sp-source-links{flex-direction:row;flex-wrap:wrap;gap:16px}}
+@media(max-width:390px){#silppuri-demo .sp-hero,#silppuri-demo .sp-top{padding-left:15px;padding-right:15px}#silppuri-demo .sp-workspace{padding-left:15px;padding-right:15px}#silppuri-demo .sp-action{padding:14px}#silppuri-demo .sp-action-main{gap:10px}#silppuri-demo .sp-action h3{font-size:15px}#silppuri-demo .sp-amount{font-size:19px}#silppuri-demo .sp-list-label{display:block}#silppuri-demo .sp-list-label span{display:block;text-align:left;margin-top:5px}}
+@media(pointer:coarse){#silppuri-demo button,#silppuri-demo summary{min-height:44px}#silppuri-demo .sp-remove{min-width:44px}}
+#silppuri-demo .sp-payers{min-width:0;padding:22px 0 0}
+#silppuri-demo .sp-payers-title{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#silppuri-demo .sp-payers-title h2{font-size:27px;line-height:1.15;letter-spacing:-.9px;margin:0}
+#silppuri-demo .sp-payers-title>span{font-size:11px;color:var(--sp-muted);text-transform:uppercase;letter-spacing:1px}
+#silppuri-demo .sp-payers-intro{font-size:13px;color:var(--sp-muted);margin:10px 0 20px}
+#silppuri-demo .sp-payer{padding:10px 0 12px;border-top:1px solid var(--sp-line)}
+#silppuri-demo .sp-payer>summary{display:block;list-style:none;font:inherit;text-decoration:none}
+#silppuri-demo .sp-payer>summary::-webkit-details-marker{display:none}
+#silppuri-demo .sp-payer-name::after{content:' +';font-size:13px;font-weight:400;color:var(--sp-muted)}
+#silppuri-demo .sp-payer[open] .sp-payer-name::after{content:' −'}
+#silppuri-demo .sp-payer-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+#silppuri-demo .sp-payer-name{font-size:15px;line-height:1.3;font-weight:600}
+#silppuri-demo .sp-payer-value{font-size:26px;line-height:1.1;white-space:nowrap;letter-spacing:-1px;font-variant-numeric:tabular-nums;font-weight:600}
+#silppuri-demo .sp-payer-value small{font-size:11px;letter-spacing:0;font-weight:400}
+#silppuri-demo .sp-payer-caption{font-size:11px;color:var(--sp-muted);margin:4px 0 9px}
+#silppuri-demo .sp-money-track{height:10px;background:var(--sp-track);border-radius:2px;overflow:hidden}
+#silppuri-demo .sp-money-fill{height:100%;background:var(--sp-tax);transition:width .25s ease}
+#silppuri-demo .sp-payer[data-type=cut] .sp-money-fill{background:var(--sp-cut)}
+#silppuri-demo .sp-payer[data-zero=true] .sp-payer-caption{color:var(--sp-ink);font-weight:600}
+#silppuri-demo .sp-payer-actions{display:flex;flex-wrap:wrap;column-gap:12px;row-gap:4px;margin-top:7px}
+#silppuri-demo .sp-payer-actions button{background:transparent;border:0;padding:2px 0;text-align:left;font-size:11px;text-decoration:underline;text-underline-offset:3px;color:var(--sp-muted)}
+#silppuri-demo .sp-untouched{padding:14px 15px;margin:7px 0 16px;background:var(--sp-lime);border-radius:8px}
+#silppuri-demo .sp-untouched strong{display:block;font-size:14px;line-height:1.35}
+#silppuri-demo .sp-untouched p{font-size:12px;margin:5px 0 0}
+#silppuri-demo .sp-unallocated{padding:18px 5px 0;margin-top:18px;border-top:1px solid var(--sp-line)}
+#silppuri-demo .sp-unallocated h3{font-size:14px;margin:0;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+#silppuri-demo .sp-unallocated h3 strong{font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.6px}
+#silppuri-demo .sp-unallocated p{font-size:12px;color:var(--sp-muted);margin:6px 0 12px}
+#silppuri-demo .sp-service-line{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12px;margin:7px 0}
+#silppuri-demo .sp-service-line button{border:0;background:transparent;padding:0;text-decoration:underline;text-underline-offset:3px;text-align:left}
+#silppuri-demo .sp-service-line span{white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-distribution{grid-column:1/-1;min-width:0;border-top:1px solid var(--sp-line);padding-top:25px}
+#silppuri-demo .sp-distribution-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:21px}
+#silppuri-demo .sp-section-kicker{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--sp-muted)}
+#silppuri-demo .sp-distribution h2{font-size:23px;letter-spacing:-.6px;line-height:1.25;margin:6px 0 0;max-width:520px}
+#silppuri-demo .sp-evidence-status{font-size:12px;padding:7px 10px;background:var(--sp-track);border-radius:5px;white-space:nowrap}
+#silppuri-demo .sp-distribution-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+#silppuri-demo .sp-decile-scope{font-size:13px;font-weight:600;margin:0 0 16px;line-height:1.4}
+#silppuri-demo .sp-decile-head,#silppuri-demo .sp-decile-row{display:grid;grid-template-columns:112px minmax(0,1fr) minmax(0,1fr);gap:16px}
+#silppuri-demo .sp-decile-head{font-size:11px;color:var(--sp-muted);padding-bottom:7px;border-bottom:1px solid var(--sp-line)}
+#silppuri-demo .sp-decile-head[hidden]{display:none}
+#silppuri-demo .sp-decile-head span:not(:first-child){text-align:right}
+#silppuri-demo .sp-decile-row{align-items:center;min-height:43px;font-size:12px;padding:6px 0;border-bottom:1px solid color-mix(in srgb,var(--sp-line) 60%,transparent)}
+#silppuri-demo .sp-decile-row[data-edge=true]{font-weight:700}
+#silppuri-demo .sp-decile-number{font-variant-numeric:tabular-nums;text-align:right;margin-bottom:3px;display:block}
+#silppuri-demo .sp-decile-bar{height:5px;background:var(--sp-track)}
+#silppuri-demo .sp-decile-bar span{display:block;height:100%;background:var(--sp-tax);transition:width .25s ease}
+#silppuri-demo .sp-decile-percent .sp-decile-bar span{background:var(--sp-ink)}
+#silppuri-demo .sp-decile-source{font-size:11px;color:var(--sp-muted);margin:12px 0 0;line-height:1.6}
+#silppuri-demo .sp-decile-source a,#silppuri-demo .sp-incidence-method a{color:var(--sp-ink);text-underline-offset:3px}
+#silppuri-demo .sp-decile-takeaway{background:var(--sp-panel);border-radius:var(--sp-radius,12px);padding:19px}
+#silppuri-demo .sp-decile-takeaway h3{font-size:15px;line-height:1.4;margin:0 0 13px}
+#silppuri-demo .sp-decile-extremes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+#silppuri-demo .sp-decile-extremes small{font-size:11px;color:var(--sp-muted);display:block}
+#silppuri-demo .sp-decile-extremes strong{font-size:29px;font-weight:600;letter-spacing:-1px;display:block;margin:4px 0 0;line-height:1.1;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-decile-extremes span{font-size:12px;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-decile-takeaway p{font-size:12px;margin:14px 0 0}
+#silppuri-demo .sp-distribution-gap{border-left:3px solid var(--sp-cut);padding-left:13px;margin:20px 0 0}
+#silppuri-demo .sp-distribution-gap strong{font-size:13px}
+#silppuri-demo .sp-distribution-gap p{font-size:12px;line-height:1.6;margin:6px 0}
+#silppuri-demo .sp-distribution-gap ul{padding:0;list-style:none;font-size:11px;color:var(--sp-muted);margin:10px 0}
+#silppuri-demo .sp-distribution-gap li{padding:4px 0;display:flex;justify-content:space-between;gap:12px}
+#silppuri-demo .sp-distribution-gap li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-incidence-method{font-size:11px;color:var(--sp-muted);line-height:1.6;margin-top:18px}
+#silppuri-demo .sp-incidence-method p{margin:10px 0}
+#silppuri-demo .sp-flow-graph{position:relative;width:100%;height:497px;margin-top:10px}
+#silppuri-demo .sp-flow-graph svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#silppuri-demo .sp-flow-source{position:absolute;left:0;min-height:58px;padding:4px 4px 4px 0;border:0;background:transparent;text-align:left;line-height:1.2;border-radius:5px}
+#silppuri-demo .sp-flow-source[aria-expanded=true]{background:var(--sp-lime)}
+#silppuri-demo .sp-flow-name{display:block;font-size:13px;font-weight:500;max-width:145px}
+#silppuri-demo .sp-flow-money{display:block;font-size:27px;letter-spacing:-.8px;font-variant-numeric:tabular-nums;font-weight:700;margin-top:5px;white-space:nowrap}
+#silppuri-demo .sp-flow-money small{font-size:11px;letter-spacing:0;font-weight:400}
+#silppuri-demo .sp-flow-source[data-zero=true] .sp-flow-name{color:var(--sp-muted)}
+#silppuri-demo .sp-flow-zero{font-size:11px;font-weight:400;letter-spacing:0;color:var(--sp-muted);margin-left:6px}
+#silppuri-demo .sp-flow-destination{position:absolute;right:0;width:112px;text-align:right;pointer-events:none}
+#silppuri-demo .sp-flow-destination span{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--sp-muted)}
+#silppuri-demo .sp-flow-destination strong{font-size:22px;line-height:1.2;letter-spacing:-.7px;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-flow-destination small{font-size:11px;font-weight:400;letter-spacing:0}
+#silppuri-demo .sp-flow-hint{font-size:12px;color:var(--sp-muted);margin:6px 0 0}
+#silppuri-demo .sp-flow-note{font-size:11px;color:var(--sp-muted);line-height:1.5;margin:5px 0 0;max-width:52ch}
+#silppuri-demo .sp-flow-detail{padding:15px;background:var(--sp-panel);border-radius:8px;margin:12px 0 0}
+#silppuri-demo .sp-flow-detail[hidden]{display:none}
+#silppuri-demo .sp-flow-detail-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+#silppuri-demo .sp-flow-detail h3{font-size:15px;margin:0}
+#silppuri-demo .sp-flow-detail p{font-size:12px;color:var(--sp-muted);margin:8px 0 10px}
+#silppuri-demo .sp-flow-close{border:0;background:transparent;width:32px;height:32px;font-size:20px;flex-shrink:0}
+#silppuri-demo .sp-distribution>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;font-size:14px;font-weight:600;text-decoration:none}
+#silppuri-demo .sp-distribution>summary::-webkit-details-marker{display:none}
+#silppuri-demo .sp-distribution>summary>span:first-child::before{content:'+ ';color:var(--sp-muted)}
+#silppuri-demo .sp-distribution[open]>summary>span:first-child::before{content:'− '}
+#silppuri-demo .sp-distribution[open]>.sp-distribution-heading{margin-top:25px}
+#silppuri-demo .sp-budget-method{margin-top:12px;font-size:11px;color:var(--sp-muted)}
+#silppuri-demo .sp-budget-method p{font-size:11px;line-height:1.6;margin:8px 0 0}
+@media(max-width:700px){#silppuri-demo .sp-payers{padding:0}#silppuri-demo .sp-distribution-body{grid-template-columns:1fr;gap:22px}#silppuri-demo .sp-distribution-heading{display:block}#silppuri-demo .sp-evidence-status{display:inline-block;margin-top:13px}#silppuri-demo .sp-decile-head,#silppuri-demo .sp-decile-row{grid-template-columns:104px minmax(0,1fr) minmax(0,1fr);gap:12px}#silppuri-demo .sp-payer-name{max-width:65%}}
+@media(max-width:390px){#silppuri-demo .sp-payer-value{font-size:23px}#silppuri-demo .sp-decile-head,#silppuri-demo .sp-decile-row{grid-template-columns:92px minmax(0,1fr) minmax(0,1fr);gap:9px}#silppuri-demo .sp-payers-title h2{font-size:26px}#silppuri-demo .sp-distribution h2{font-size:22px}}
+@media(max-width:700px){#silppuri-demo .sp-distribution>summary{align-items:flex-start;flex-direction:column;gap:7px}#silppuri-demo .sp-distribution>summary .sp-evidence-status{margin:0}#silppuri-demo .sp-flow-name{font-size:12px}#silppuri-demo .sp-flow-money{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#silppuri-demo .sp-action,#silppuri-demo .sp-money-fill,#silppuri-demo .sp-decile-bar span{transition:none}}
+</style>
+<div id="silppuri-demo" lang="fi" aria-label="Silppuri – verkkosivun konsepti">
+  <header class="sp-top"><div class="sp-wordmark"><!--SILPPURI_LOGO-->SILPPURI</div><span class="sp-tag">Julkinen talous. Oma valinta.</span></header>
+  <div class="sp-hero"><h1>Mistä Sinä ottaisit <em>10 miljardia?</em></h1><p class="sp-subtitle">Kuka maksaa, kun sinä päätät? Tutustu vaikutuksiin ja silppua Suomi kuntoon!</p></div>
+  <div class="sp-workspace">
+    <aside>
+      <section class="sp-budget" aria-label="Oma sopeutuspiirakka">
+        <div class="sp-panel-heading"><h2>Sinun pakettisi</h2></div>
+        <div class="sp-chart"><svg viewBox="0 0 320 320" role="img" aria-label="Ei vielä valintoja. Tavoite 10 miljardia euroa."><g class="sp-tracks"></g><g class="sp-slices"></g><circle class="sp-hole" cx="160" cy="160" r="106" fill="var(--sp-panel)"></circle></svg><div class="sp-chart-center"><strong class="sp-total">0,00</strong><span>mrd. €</span></div></div>
+        <div class="sp-remaining"><span class="sp-remaining-label">Vielä täyttämättä</span><strong class="sp-remaining-value">10,00 mrd. €</strong></div>
+        <div class="sp-legend"><div class="sp-legend-item"><span class="sp-dot cut"></span>Menoleikkaukset<strong class="sp-cut-total">0,00 mrd. €</strong></div><div class="sp-legend-item"><span class="sp-dot"></span>Veronkorotukset<strong class="sp-tax-total">0,00 mrd. €</strong></div></div>
+        <details class="sp-selected"><summary class="cursor-interaction"><span class="sp-count">0 valittua toimea</span></summary><div class="sp-selection-head"><button class="sp-text-button sp-clear cursor-interaction" type="button" disabled>Tyhjennä paketti</button></div><p class="sp-empty">Ei valittuja toimia.</p><ul class="sp-selection-list"></ul></details>
+        <details class="sp-package-overlap" hidden></details>
+        <details class="sp-budget-method"><summary class="cursor-interaction">Miten summa on laskettu?</summary><p>Laskuri laskee valittujen toimien arviot yhteen. Arviot ovat eri vuosilta. Lopullinen säästö riippuu myös siitä, miten toimet muuttavat kulutusta, työntekoa ja yritysten toimintaa.</p></details>
+      </section>
+    </aside>
+    <section class="sp-payers" aria-label="Paketin rahanlähteet euroina">
+      <div class="sp-payers-title"><h2>Kuka maksaa?</h2></div>
+      <div class="sp-flow-graph"><svg class="sp-flow-svg" role="img" aria-label="Valittujen toimien rahavirrat pakettiin"></svg><div class="sp-flow-labels"></div><div class="sp-flow-destination"><span>Pakettiin</span><strong></strong></div></div>
+      <div class="sp-flow-detail" id="sp-flow-detail" hidden></div>
+    </section>
+    <details open class="sp-distribution" aria-label="Tuloryhmien suhteelliset menetykset">
+      <summary class="cursor-interaction"><span>Tuloryhmien menetykset</span><span class="sp-evidence-status"></span></summary>
+      <div class="sp-distribution-heading"><div><h2>Keneen leikkaukset ja verot kohdistuvat?</h2></div></div>
+      <div class="sp-distribution-body">
+        <div class="sp-decile-chart">
+          <p class="sp-decile-source"></p>
+          <div class="sp-incidence-panels"><section class="sp-cash-chart">
+          <header class="sp-incidence-panel-heading"><p class="sp-decile-scope"></p></header>
+          <div class="sp-decile-head"><span>Tuloryhmä</span><span>Menetys tuloista</span></div>
+          <div class="sp-decile-rows" role="group" aria-label="Palkkidiagrammi: tuloryhmien ostovoiman menetys suhteessa tuloihin ja arvioitu osuus palveluleikkauksista"></div>
+          <div class="sp-decile-axis" aria-hidden="true"></div>
+          </section></div>
+          <label class="sp-decile-picker" hidden>Erittely tuloryhmästä<select id="sp-decile-picker"><option value="">Valitse tuloryhmä</option></select></label>
+          <div class="sp-decile-detail" id="sp-decile-detail" aria-live="polite"></div>
+        </div>
+        <div class="sp-distribution-reading">
+          <div class="sp-distribution-gap"></div>
+          <!--INCIDENCE_METHOD-->
+        </div>
+      </div>
+    </details>
+    <section class="sp-actions" aria-label="Valitse sopeutustoimia">
+      <div class="sp-list-label"><h2>Isoista paloista alkuun</h2><span>9 esimerkkitoimea · säädä ja vertaile</span></div>
+      <div class="sp-filters" role="group" aria-label="Toimien tyyppi"><button type="button" class="sp-filter cursor-interaction" data-filter="all" aria-pressed="true">Kaikki</button><button type="button" class="sp-filter cursor-interaction" data-filter="cut" aria-pressed="false">Menoleikkaukset</button><button type="button" class="sp-filter cursor-interaction" data-filter="tax" aria-pressed="false">Veronkorotukset</button></div>
+      <div class="sp-action-list"></div>
+      <button class="sp-more cursor-interaction" type="button">Näytä loput 4 esimerkkitoimea ↓</button>
+    </section>
+    <details class="sp-research-note"><summary class="cursor-interaction">Miksi sama euro ei vaikuta samalla tavalla kaikissa tuloryhmissä?</summary>
+      <p><strong>Kulutusosuus ja kulutusreaktio ovat eri asioita.</strong> Suurituloiset kuluttavat keskimäärin pienemmän osan vuosituloistaan. Se ei vielä kerro, kuinka paljon juuri veronkorotus vähentää heidän kulutustaan. <a href="https://stat.fi/tietotrendit/artikkelit/2025/Pienituloiset-maksavat-suhteessa-tuloihin-eniten-arvonlisaeveroja-kulutusmenoihin-naehden-progressio-on-vaehaeistae" target="_blank" rel="noopener noreferrer">Tilastokeskus, 2025 ↗</a></p>
+      <p><strong>Säästöpuskuri vaikuttaa.</strong> Tutkimuksessa vähän helposti käytettäviä varoja omistavien kotitalouksien kulutus reagoi tavallisesti voimakkaammin tulomuutoksiin. Pienituloisuus ja pieni säästöpuskuri eivät ole sama asia. Kansainvälistä keskiarvoa ei käytetä tässä Suomen tulodesiilin valmiina kertoimena. <a href="https://www.ecb.europa.eu/press/economic-bulletin/articles/2021/html/ecb.ebart202102_01~1773181511.en.html" target="_blank" rel="noopener noreferrer">EKP, 2021, luku 4 ↗</a></p>
+      <p><strong>Ulkomaanmatkan kotimainen osuus ei ole nolla.</strong> Myös ulkomaanmatkailu synnyttää Suomessa kysyntää, esimerkiksi kotimaisille kuljetusyrityksille ja matkatoimistoille. Kotimainen kysyntä, tuonti ja säästäminen on eroteltava; matkailueuroa ei voi kokonaan kirjata Suomelle merkityksettömäksi. <a href="https://valtioneuvosto.fi/-/1410877/matkailijoiden-kulutus-supistuu-suomessa-koronapandemian-vaikutuksesta-60-70-prosenttia-vuonna-2020" target="_blank" rel="noopener noreferrer">TEM, 2020: matkailukysynnän kotimainen osuus ↗</a></p>
+    </details>
+  </div>
+  <footer class="sp-footer"><p class="sp-icon-credit">Kynnenjäljet: <a href="https://game-icons.net/1x1/lorc/claw-slashes.html" target="_blank" rel="noopener noreferrer">Lorc / Game-icons.net</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. Väri mukautettu.</p><div class="sp-source-links"><a href="https://urn.fi/URN:ISBN:978-952-367-603-9" target="_blank" rel="noopener noreferrer">Meno- ja rakennekartoitus ↗</a><a href="https://urn.fi/URN:ISBN:978-952-367-619-0" target="_blank" rel="noopener noreferrer">Verokartoitus ↗</a></div></footer>
+  <div class="sp-modal-mask" hidden></div>
+  <dialog class="sp-modal" aria-modal="true" aria-labelledby="sp-impact-title" aria-describedby="sp-impact-who">
+    <div class="sp-modal-header"><div class="sp-modal-heading"><h2 id="sp-impact-title"></h2><button type="button" class="sp-modal-close cursor-interaction" aria-label="Sulje vaikutusnäkymä" autofocus>×</button></div><div class="sp-modal-meta"><strong class="sp-impact-amount" aria-describedby="sp-impact-amount-note"></strong></div><p class="sp-impact-amount-note" id="sp-impact-amount-note" hidden></p></div>
+    <div class="sp-modal-body">
+      <div class="sp-modal-controls sp-scenario-controls"></div>
+      <section class="sp-impact-section sp-who"><h3>Keneltä raha tai palvelu vähenee?</h3><p id="sp-impact-who"></p><figure class="sp-benefit-concentration" hidden aria-labelledby="sp-benefit-title" aria-describedby="sp-benefit-source"><figcaption id="sp-benefit-title">Nykyinen veroetu kasautuu suurituloisille</figcaption><div class="sp-benefit-row"><div class="sp-benefit-label"><span>Suurituloisin 10 %</span><strong>71 %</strong></div><div class="sp-benefit-track" aria-hidden="true"><span style="width:71%"></span></div></div><div class="sp-benefit-row"><div class="sp-benefit-label"><span>Muut 90 %</span><strong>29 %</strong></div><div class="sp-benefit-track" aria-hidden="true"><span style="width:29%"></span></div></div><p id="sp-benefit-source" class="sp-benefit-source">Osuus huojennettujen osinkojen verovapaista euroista vuonna 2020, pyöristettynä. <a href="https://www.finnwatch.org/fi/julkaisut/osinkoverojaerjestelmaen-epaetasaisesti-jakautuvat-hyoedyt-seurantaraportti" target="_blank" rel="noopener noreferrer">Finnwatch 2022 · Verohallinnon tilastot ↗</a></p></figure></section>
+      <section class="sp-impact-section"><h3>Mitä arjessa ja taloudessa voi tapahtua?</h3><ol class="sp-chain"></ol><p class="sp-impact-society"></p></section>
+      <section class="sp-impact-section sp-money-box"><h3>Jääkö koko summa julkiselle taloudelle?</h3><p class="sp-impact-money"></p><p class="sp-impact-uncertainty"></p></section>
+      <details class="sp-impact-sources"><summary class="cursor-interaction">Lähteet ja laskentatapa</summary><p class="sp-impact-basis"></p><p class="sp-impact-tradeoff"></p><div class="sp-impact-links"></div></details>
+    </div>
+    <div class="sp-modal-footer"><button type="button" class="sp-modal-confirm cursor-interaction"><span class="sp-confirm-icon" aria-hidden="true"><!--SILPPURI_LOGO--></span><span class="sp-confirm-label">Silppuriin!</span></button></div>
+  </dialog>
+  <div class="sp-announcement" aria-live="polite" aria-atomic="true"></div>
+</div>
+<script>
+(()=>{
+  const root=document.getElementById('silppuri-demo');
+  const target=10000;
+  const data=[
+    {id:'corporate',type:'tax',amount:430,title:'Yhteisöveroa +1 prosenttiyksikkö',short:'Yhteisöveron korotus',year:'2028 · suora verotuotto',impact:'Veroa yritysten voitoista. Samasta tuloksesta jää vähemmän yritykselle ja sen omistajille.',detail:'Yhteisöverokannan korottaminen yhdellä prosenttiyksiköllä: VM:n staattinen yksikkötuottoarvio on noin 430 milj. euroa vuodessa vuoden 2028 tasossa. Arvio ei sisällä osinkoverotulojen vähenemistä eikä yritysten käyttäytymisvaikutuksia. Raportin lähtökohtana on vuodelle 2027 päätetty 18 prosentin yhteisöverokanta; yhden prosenttiyksikön korotus tarkoittaa tästä lähtökohdasta 19 prosenttia.',source:'VM 2026:48, s. 99–105 ja 264',report:'tax'},
+    {id:'vat',type:'tax',amount:3900,title:'Yksi ALV-kanta: 25,5 %',short:'Kaikki ALV-kannat 25,5 %',year:'2028 · suora verotuotto',impact:'Myös ruoan, lääkkeiden ja muiden alennetun verokannan tuotteiden verotus kiristyy.',detail:'Kaikki arvonlisäverokannat yhdistetään yleisen 25,5 prosentin kannan tasolle. VM arvioi suoraksi lisätuotoksi noin 3,9 mrd. euroa vuodessa vuoden 2028 tasossa. Ostovoima-, etuus- ja käyttäytymisvaikutukset pienentävät julkisen talouden hyötyä. Ei lasketa yhteen muiden samoihin ALV-kantoihin kohdistuvien vaihtoehtojen kanssa.',source:'VM 2026:48, s. 149–150',report:'tax'},
+    {id:'health',type:'cut',amount:3310,title:'Sote-rahoituksen indeksit jäihin',short:'Sote-rahoituksen indeksijäädytys',year:'2031 · ehdollinen säästö',impact:'Rahoitus jää jälkeen kustannuksista. Säästö edellyttää myös palvelujen menojen sopeuttamista.',detail:'Hyvinvointialueiden rahoituksen indeksikorotukset jäädytetään vaalikauden ajaksi. Taulukon arvio on 3,31 mrd. euroa vuoden 2031 tasossa. Valtion rahoituksen vähentäminen ei yksin vahvista valtion ja alueiden yhteenlaskettua taloutta: alueiden on sopeutettava menonsa. Toteutukseen liittyy palvelujen riittävyyttä koskevia rajoitteita.',source:'VM 2026:44, s. 570 ja 572–573',report:'cut'},
+    {id:'income',type:'tax',amount:1500,title:'Tuloveroasteikkoa +1 prosenttiyksikkö',short:'Tuloveroasteikon kiristys',year:'2028 · suora verotuotto',impact:'Valtion progressiivisen tuloveroasteikon kaikki marginaaliveroprosentit nousevat.',detail:'VM:n yksikkötuottoarvio valtion progressiivisen tuloveroasteikon kaikkien marginaaliveroprosenttien korottamiselle yhdellä prosenttiyksiköllä on 1,5 mrd. euroa vuoden 2028 tasossa. Luku on staattinen. Työn verotuksen kiristymisellä olisi myös työllisyysvaikutuksia.',source:'VM 2026:48, s. 263',report:'tax'},
+    {id:'income-index',type:'tax',amount:815,title:'Tuloveron indeksitarkistus pois',short:'Tuloveron indeksitarkistus pois',year:'2028 · suora verotuotto',impact:'Verotus kiristyy tulojen noustessa, kun veroasteikkoa ei tarkisteta vastaavasti.',detail:'Ansiotuloverotuksen indeksitarkistuksen tekemättä jättäminen vuoden 2028 tasossa: staattinen tuottovaikutus 815 milj. euroa. Tämä ei tarkoita koko vaalikauden jäädytystä. Yhteisvaikutus muiden tuloveromuutosten kanssa on arvioitava erikseen.',source:'VM 2026:48, s. 263',report:'tax'},
+    {id:'defence',type:'cut',amount:670,title:'Puolustusmenojen indeksit jäihin',short:'Puolustuksen indeksijäädytys',year:'2031 · staattinen nettoarvio',impact:'Puolustusrahoitus ei saa indeksikorotuksia. Sama raha ostaa kustannusten noustessa vähemmän.',detail:'Puolustusmenojen indeksikorotusten täysjäädytys vaalikaudeksi. Raportin staattinen nettovaikutus julkiseen talouteen on 670 milj. euroa vuoden 2031 tasossa. Kyse on indeksitoimesta, ei erillisestä puolustusmenojen BKT-tavoitteen muutoksesta.',source:'VM 2026:44, s. 570–571',report:'cut'},
+    {id:'benefits',type:'cut',amount:540,title:'Sosiaaliturvaetuuksien indeksit jäihin',short:'Etuuksien indeksijäädytys',year:'2031 · staattinen nettoarvio',impact:'Etuuksien ostovoima laskee hintojen noustessa. Työeläkkeet eivät sisälly tähän palaan.',detail:'Sosiaaliturvaetuuksien, pois lukien työeläkkeiden, indeksikorotusten täysjäädytys vaalikaudeksi: taulukossa 540 milj. euroa nettona vuoden 2031 tasossa. Eläketulovähennyksen jäädytyksen erillinen verovaikutus ei sisälly tähän lukuun. Viimesijaisen turvan riittävyys rajoittaa toteutusta.',source:'VM 2026:44, s. 570 ja 572–573',report:'cut'},
+    {id:'dividends',type:'tax',amount:370,title:'Listaamattomien osinkoverotus uusiksi',short:'Listaamattomien osinkoverotus',year:'2028 · suora verotuotto',impact:'Nykyinen osinkoveroetu kasautuu suurituloisille ja suosii suurta yritysvarallisuutta omistavia.',detail:'VM:n tarkastelemassa mallissa nettovarallisuuden tuottoraja sidotaan markkinakorkoon riskipreemiolla lisättynä, veronalainen pääomatulo-osuus on 40 % ja 150 000 euron raja poistetaan. Staattinen tuottoarvio on 370 milj. euroa. Osingonjaon muutokset voivat pienentää tuottoa merkittävästi.',source:'VM 2026:48, s. 264',report:'tax'},
+    {id:'education',type:'cut',amount:350,title:'Korkeakoulujen indeksit jäihin',short:'Korkeakoulujen indeksijäädytys',year:'2031 · staattinen nettoarvio',impact:'Korkeakoulujen rahoituksen ostovoima heikkenee, mikä lisää painetta opetukseen ja tutkimukseen.',detail:'Korkeakoulujen rahoituksen indeksikorotusten täysjäädytys vaalikaudeksi: raportin taulukossa 350 milj. euroa vuoden 2031 tasossa. Todellinen määrä riippuu toteutuvasta kustannuskehityksestä.',source:'VM 2026:44, s. 570–573',report:'cut'}
+  ];
+  data.sort((a,b)=>b.amount-a.amount);
+  const baseData=new Map(data.map(d=>[d.id,{...d}]));
+  const dividendStudyUrl='https://www.sttinfo.fi/files/66784256/70136599/79254/fi';
+  const urls={tax:'https://urn.fi/URN:ISBN:978-952-367-619-0',cut:'https://urn.fi/URN:ISBN:978-952-367-603-9'};
+  const evidence={
+    'corporate-taxpayers':{url:'https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/osakeyhtio-ja-osuuskunta/tuloverotus/',label:'Verohallinto: osakeyhtiö ja osuuskunta ovat erillisiä verovelvollisia'},
+    'nonprofit-taxpayers':{url:'https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/47999/verotusohje-yleishyodyllisille-yhteisoille6/',label:'Verohallinto 2026: yleishyödyllisten yhteisöjen verotus'},
+    consumption:{url:'https://www.ecb.europa.eu/press/economic-bulletin/articles/2021/html/ecb.ebart202102_01~1773181511.en.html',label:'EKP 2021, luku 4: säästöpuskurit ja kulutusreaktiot'},
+    distribution:{url:'https://stat.fi/tietotrendit/artikkelit/2025/Pienituloiset-maksavat-suhteessa-tuloihin-eniten-arvonlisaeveroja-kulutusmenoihin-naehden-progressio-on-vaehaeistae',label:'Tilastokeskus 2025: ALV:n kohdistuminen, kulutustutkimus 2022'},
+    'price-incidence':{url:'https://labore.fi/julkaisu/alv-alennus-ei-paranna-kuluttajien-ostovoimaa/',label:'Benzarti, Carloni, Harju & Kosonen 2020: ALV:n epäsymmetriset hintavaikutukset'},
+    'benefit-interactions':{url:'https://urn.fi/URN:ISBN:978-952-408-495-6',label:'THL 2025: Perusturvan riittävyys 2023–2025, etuuksien ja toimeentulotuen yhteisvaikutus'},
+    'dividend-distribution':{url:'https://www.finnwatch.org/fi/julkaisut/osinkoverojaerjestelmaen-epaetasaisesti-jakautuvat-hyoedyt-seurantaraportti',label:'Finnwatch 2022: osinkoveroedun jakautuminen, Verohallinnon tilastot 2020'},
+    'dividend-rules':{url:'https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/47901/osinkotulojen-verotus6/',label:'Verohallinto 24.2.2026: osinkotulojen verotus, luku 2.2'},
+    'dividend-response':{url:'https://www.sttinfo.fi/tiedote/69970253/listaamattomien-yritysten-voitonjako-reagoi-voimakkaasti-muutoksiin-osinkoverotuksessa?publisherId=69819223',label:'VATT / Koivisto 2023: osinkoveromuutokset, voitonjako ja investoinnit'}
+  };
+  const groups=[{id:'low',name:'Pienituloiset'},{id:'middle',name:'Keskituloiset'},{id:'high',name:'Suurituloiset'},{id:'pension',name:'Eläkeläiset'},{id:'students',name:'Opiskelijat'},{id:'unemployed',name:'Työttömät'},{id:'workers',name:'Palkansaajat'},{id:'owners',name:'Yritysten omistajat'}];
+  const direct=reason=>({kind:'direct',reason});
+  const possible=reason=>({kind:'possible',reason});
+  const consumer=direct('Alennettujen ALV-kantojen tuotteita ostavat kuluttajat maksavat korotusta hinnoissa siltä osin kuin vero siirtyy hintoihin. VM 2026:48, s. 149–153.');
+  const services=possible('Vaikutus syntyy, jos alue vähentää tämän ryhmän käyttämiä palveluja tai muuttaa maksuja. Indeksijäädytys ei vielä määritä palvelukohtaisia päätöksiä. VM 2026:44, s. 572–573.');
+  const taxable=possible('Kohdistuu vain, jos henkilölle jää vähennysten jälkeen maksettavaa valtion ansiotuloveroa. Ryhmä ei yksin määrää verovaikutusta. VM 2026:48, s. 48–59 ja 263.');
+  const indexTax=possible('Vero kiristyy suhteessa indeksitarkistukseen, jos veronalainen ansiotulo kasvaa. Pelkkä ryhmään kuuluminen ei ratkaise vaikutusta. VM 2026:48, s. 65–67.');
+  const effects={
+    corporate:{who:'Verotettavaa voittoa tekeviltä yrityksiltä ja muilta yhteisöiltä, etenkin osakeyhtiöiltä. Vero otetaan voitosta: samalla tuloksella yritykseen tai omistajille jää vähemmän rahaa.',chain:['Sama verotettava voitto','Enemmän yhteisöveroa','Vähemmän voittoa yritykselle ja omistajille'],society:'Korotus voi vaikuttaa investointeihin, rahoitukseen ja siihen, missä maassa konsernit ilmoittavat voittojaan. Se voi myös vähentää palkan muuttamista yritystuloksi. VM toteaa, ettei kansainvälinen tutkimusnäyttö kasvuvaikutuksista ole yksiselitteistä. Lopullista rasitusta omistajien, työntekijöiden ja asiakkaiden kesken ei ole tälle korotukselle laskettu.',money:'430 milj. € on suora lisätuotto. VM arvioi osinkoverotulojen vähenevän noin 10–20 milj. €, jos yritykset jakavat voitostaan osinkoina saman osuuden kuin ennen. Jo tämä pienentää hyötyä; yritysten käyttäytymisen muutokset vaikuttavat lisäksi.',caveat:'Jos myös osinkoverotus muuttuu, molempien toimien tuotto voi muuttua. Laskuri ei huomioi tätä.',tradeoff:'Yhteisöveroa maksavat esimerkiksi osakeyhtiöt ja osuuskunnat. Myös säätiö tai yhdistys voi maksaa sitä veronalaisesta elinkeinotulostaan; tämä toimi ei poista yleishyödyllisten yhteisöjen sijoitustulojen verovapauksia. Toiminimen tuloverotus on eri asia. VM:n s. 105 alaviitteen mukaan voitonsiirron, investointien ja rahoituksen käyttäytymisvaikutukset voisivat vastata noin 20–35 % staattisesta arviosta. Tämä ei ole kokonaisnetto: työllisyysvaikutuksia ei arvioitu, ja vaikutusten suuruus sekä ajoitus ovat epävarmoja.',refs:'VM 2026:48, s. 99–105 ja 264',extra:['corporate-taxpayers','nonprofit-taxpayers'],map:{}},
+    vat:{who:'Kuluttajilta, myös pienituloisilta. Ruoka, lääkkeet ja muut nyt alennettuun verokantaan kuuluvat ostokset kallistuvat siltä osin kuin korotus menee hintoihin.',chain:['Verollinen ostos kallistuu','Samalla rahalla saa vähemmän','Kulutus ja siitä kertyvät verot voivat vähentyä'],society:'VM:n pienempiä ALV-korotuksia koskevissa laskelmissa ostovoiman menetys on tuloihin suhteutettuna suurempi pienituloisilla. Ylimmän tuloryhmän euromääräinen menetys voi silti olla suurempi. Näitä laskelmia ei voi suoraan kertoa suuren uudistuksen suuruudella.',money:'3,90 mrd. € on suora verotuottoarvio. Se ei sisällä kaikkia seurauksia: hintojen nousu kasvattaa indeksisidonnaisia etuuksia ja ostovoiman heikkeneminen vähentää muuta kulutusta.',caveat:'Etuuksien indeksijäädytys muuttaa myös ALV-korotuksen vaikutusta julkiseen talouteen.',tradeoff:'VM esittää ALV-muutoksille yleisen suuntaa antavan arvion, jossa hyöty olisi 60–70 % suorasta verotuotosta. Se ei ole tämän suuren yhtenäistämisen eikä sinun pakettisi tarkistettu kerroin.',refs:'VM 2026:48, s. 149–153',extra:['distribution','price-incidence'],map:Object.fromEntries(groups.map(g=>[g.id,consumer]))},
+    health:{who:'Ensin hyvinvointialueiden rahoituksesta. Asukkaalle vaikutus voi näkyä palveluissa; henkilöstölle työssä. Tarkkaa maksajaa ei tiedetä ennen kuin alue päättää, mistä se sopeuttaa.',chain:['Rahoitus ei seuraa kustannuksia','Alue joutuu muuttamaan toimintaansa','Palvelut, työ tai hankinnat voivat muuttua'],society:'Jonot, saavutettavuus ja palvelujen laatu riippuvat toteutuksesta. Sama rahoitusleikkaus voi johtaa erilaisiin ratkaisuihin eri alueilla. ',money:'3,31 mrd. € on vuoden 2031 ehdollinen arvio. Pelkkä valtion maksun pienentäminen ei säästä valtion ja alueiden yhteenlaskettuja menoja, jos alueet jatkavat entistä kulutusta.',caveat:'Säästö edellyttää todellista menojen sopeuttamista. Rahoituksen jälkikäteinen tarkistus ja palvelujen riittävyys rajoittavat toteutusta.',tradeoff:'Tehokkaampi toiminta voi vähentää palveluhaittoja. Ilman toimenpidekohtaista suunnitelmaa ei tiedetä, kuinka paljon säästöistä syntyisi tehokkuudesta ja kuinka paljon palvelujen vähentämisestä.',refs:'VM 2026:44, s. 15–16 ja 570–573',extra:[],map:{low:services,middle:services,high:services,pension:services,students:services,unemployed:services,workers:possible('Palvelujen käytön lisäksi työ voi muuttua, jos henkilö työskentelee alueella. Henkilöstötoimia ei ole määritetty. VM 2026:44, s. 572–573.')}},
+    income:{who:'Valtion ansiotuloveroa maksavilta. Mukana on palkansaajia ja eläkeläisiä; pääomatulojen verokanta ei muutu tällä toimella. Pienillä tuloilla vähennykset voivat poistaa valtionveron.',chain:['Ansiotuloista maksetaan enemmän veroa','Käteen jää vähemmän rahaa','Kulutus ja työnteon kannustimet voivat muuttua'],society:'Kulutuksen muutos riippuu muun muassa säästöpuskurista. Sama veroeuro ei vähennä kaikkien kulutusta yhtä paljon. VM arvioi myös työn tarjonnan muutosten pienentävän verotuottoa; vaikutuksen koko on epävarma.',money:'1,50 mrd. € on suora verotuottoarvio vuoden 2028 tasossa. Se ei ole käyttäytymisvaikutukset sisältävä nettosumma.',caveat:'',tradeoff:'VM:n ansiotuloverotuksen yleisarviossa pidemmän aikavälin nettovaikutus on 60–75 % suorasta tuotosta. Laskentaoletuksia ei pidä tulkita tulodesiileittäin havaituiksi vaikutuksiksi.',refs:'VM 2026:48, s. 48–59, 67–68 ja 263',extra:['consumption'],map:{low:taxable,middle:taxable,high:taxable,pension:taxable,students:taxable,unemployed:taxable,workers:direct('Toimi kohdistuu valtion ansiotuloveroa maksaviin palkansaajiin. Kaikki palkansaajat eivät maksa valtionveroa. VM 2026:48, s. 48–59 ja 263.'),owners:possible('Yrittäjän ansiotulo-osuus voi kuulua muutokseen; pelkkä yhtiön omistaminen tai pääomatulo ei riitä. VM 2026:48, s. 48–59.')}},
+    'income-index':{who:'Niiltä, joiden veronalaiset ansiotulot kasvavat. Tämä voi koskea palkkaa, eläkettä ja päivärahaa. Jos tulot eivät muutu, vero ei tämän toimen vuoksi nouse.',chain:['Ansiotulo kasvaa','Veroasteikkoa ei tarkisteta','Veroa kertyy enemmän kuin tarkistuksen kanssa'],society:'Käteen jää vähemmän kuin tilanteessa, jossa tarkistus tehtäisiin. VM arvioi toimen kaventavan tuloeroja hieman. Kulutus- ja työllisyysvaikutukset pienentävät suoraa verotuottoa, mutta niitä ei tunneta tarkasti ryhmittäin.',money:'815 milj. € koskee vuoden 2028 tarkistusta. Se ei tarkoita koko vaalikauden indeksijäädytyksen tuottoa eikä vielä kerro kokonaisnettoa.',caveat:'Myös tuloveron korotus muuttaa tämän toimen tuottoa. Tätä ei ole huomioitu summassa.',tradeoff:'VM:n laskelman kulutusreaktiolle käyttämä oletus on mallioletus, ei todiste siitä, että kaikki tuloryhmät reagoisivat samalla tavalla.',refs:'VM 2026:48, s. 65–68 ja 263',extra:[],map:{low:indexTax,middle:indexTax,high:indexTax,pension:indexTax,students:indexTax,unemployed:indexTax,workers:indexTax,owners:indexTax}},
+    defence:{who:'Puolustuksen rahoituksesta suhteessa kustannusten nousuun. Tämä ei ole suora vähennys tietyn tuloryhmän tililtä. Vaikutus riippuu siitä, mitä toimintaa tai hankintoja muutetaan.',chain:['Indeksikorotus jää tekemättä','Rahan ostovoima heikkenee','Toiminnan sisältö on sovitettava rahoitukseen'],society:'Turvallisuutta, hankintoja ja toimintakykyä on tarkasteltava yhdessä. Tällä aineistolla ei voi päätellä, kuinka suuren turvallisuus- tai työllisyysvaikutuksen juuri tämä indeksijäädytys aiheuttaisi.',money:'670 milj. € on raportin vuoden 2031 staattinen nettoarvio. Koko talouden kysyntävaikutusta ei ole sisällytetty menokartoituksen yksittäisiin arvioihin.',caveat:'',tradeoff:'Puolustuksen indeksijäädytys ja puolustusmenojen BKT-tavoitteen muuttaminen ovat eri toimia. Kotimaisen tuotannon vaikutus riippuu myös hankintojen sisällöstä.',refs:'VM 2026:44, s. 16, 531–534 ja 570–571',extra:[],map:{}},
+    benefits:{who:'Jäädytettävien etuuksien saajilta: esimerkiksi opintorahan, työttömyysturvan sekä kansan- ja takuueläkkeen saajilta. Työeläkkeiden indeksijäädytys ei kuulu tähän palaan.',chain:['Etuus ei nouse hintojen mukana','Sama etuus ostaa vähemmän','Kulutus ja kulutusverot voivat vähentyä'],society:'Kun säästöpuskuria ei ole, tulojen menetystä on vaikeampi tasata säästöillä. Kulutuksen väheneminen voi pienentää yritysten myyntiä ja edelleen työllisyyttä. Vaikutus ei ole sama kaikilla etuuksilla tai saajilla.',money:'540 milj. € on jo VM:n staattinen nettoarvio, ei pelkkä etuusmenon leikkaus. Sosiaaliturva-arvioissa huomioidaan myös muita etuuksia ja verotuloja; koko talouden kysyntävaikutus ei sisälly lukuihin.',caveat:'',tradeoff:'Työllisyysvaikutusta ei voi yleistää kaikkiin etuuksiin: kannustimet ja mahdollisuus lisätä työntekoa ovat erilaisia. Viimesijaisen turvan riittävyys rajoittaa toteutusta.',refs:'VM 2026:44, s. 15–16 ja 569–573; EKP 2021, luku 4',extra:['consumption','benefit-interactions'],map:{low:direct('Perusturvaetuuksien ostovoima heikkenee jäädytyksessä. Kaikki pienituloiset eivät saa näitä etuuksia. VM 2026:44, s. 569–573.'),pension:direct('Kansan- ja takuueläkkeen saajat. Pelkkä työeläke ei sisälly tähän indeksitoimeen. VM 2026:44, s. 570–572.'),students:direct('Opintorahan saajat: opintoraha on indeksisidonnainen. VM 2026:44, s. 570.'),unemployed:direct('Jäädytettävään indeksiin sidottua työttömyysetuutta saavat. VM 2026:44, s. 569–573.'),workers:possible('Voi koskea etuutta saavaa palkansaajaa esimerkiksi sairaus- tai perhevapaalla. Riippuu etuudesta; palkka itsessään ei ole tämän toimen kohde. VM 2026:44, luku 6.')}},
+    dividends:{who:'Listaamattomien yhtiöiden osingonsaajilta. Nykyinen veroetu hyödyttää ennen kaikkea suurituloisia ja suosii suurta yritysvarallisuutta omistavia. Mitä suurempi omistusosuuden nettovarallisuus, sitä enemmän kevyesti verotettua osinkoa voi nostaa 150 000 euron rajaan asti.',chain:['Osingon verosäännöt muuttuvat','Omistaja muuttaa osinkoa tai sen ajoitusta','Osa suorasta verotuotosta jää kertymättä'],society:'Nykyjärjestelmä kannustaa muuttamaan palkkaa osingoksi ja kerryttämään yhtiöön varallisuutta. VATT:n tutkimissa 2010-luvun veromuutoksissa osingonjako reagoi voimakkaasti, mutta investoinneissa tai liikevaihdossa ei havaittu muutosta. Tulos ei ole ennuste tämän uuden mallin kaikista vaikutuksista.',money:'370 milj. € on suora tuottoarvio. VM toteaa, että osingonjaon muutokset pienentävät toteutuvaa lisätuottoa.',caveat:'Kuvaaja näyttää nykyisen veroedun saajat. Uudistuksen veronkorotukset voivat jakautua eri tavalla.',tradeoff:'Esimerkki nykyisestä varallisuusehdosta: 150 000 euron huojennettu vuotuinen osinko edellyttää vähintään 1 875 000 euron osakeomistusta verotuksessa käytettävällä matemaattisella arvolla (150 000 / 8 %). Tämä ei ole sama kuin osakkeiden markkina-arvo. Huojennetusta osingosta 75 % on saajalle verovapaata, 25 % veronalaista pääomatuloa; yhtiön voiton verotus on erillinen. Finnwatchin jakauma perustuu vuoden 2020 veronalaisiin tuloihin ja huojennettujen osinkojen verovapaaseen osaan. Osuudet on pyöristetty. VM:n mallissa myös 150 000 euron raja poistuu, joten jokaisen osingonsaajan vero ei muutu samalla tavalla.',refs:'VM 2026:48, s. 100–106 ja 264',extra:['dividend-distribution','dividend-rules','dividend-response'],map:{owners:direct('Listaamattomien yhtiöiden osingonsaajien verotus muuttuu. Nykyinen veroetu kasautuu suurituloisille ja suosii suurta yritysvarallisuutta omistavia. VM 2026:48, s. 105 ja 264; Finnwatch 2022.'),high:possible('Nykyisestä veroedusta suurin osa kasautuu tähän ryhmään: noin 71 % huojennettujen osinkojen verovapaasta osuudesta meni ylimpään tulokymmenykseen vuonna 2020. Uudistuksen tarkka jakauma vaatii oman laskelman. Finnwatch 2022.'),middle:possible('Nykyisestä veroedusta noin 29 % kohdistui ylimmän tulokymmenyksen ulkopuolelle vuonna 2020. Tämä ei ole erillinen keskituloisten osuus. Finnwatch 2022.')}},
+    education:{who:'Korkeakoulujen rahoituksesta. Opiskelijoille ja henkilöstölle vaikutus riippuu siitä, mitä opetuksessa, tutkimuksessa tai muussa toiminnassa muutetaan. Opintorahaa tämä toimi ei suoraan leikkaa.',chain:['Rahoituksen ostovoima laskee','Korkeakoulu muuttaa toimintaansa','Opetuksen ja tutkimuksen resurssit voivat muuttua'],society:'Pelkkä indeksijäädytys ei kerro, mitä koulutusta tai tutkimusta karsitaan. Tämän toimen pitkän aikavälin osaamis- ja kasvuhyödyn menetystä ei ole tässä lähdeaineistossa yksilöity.',money:'350 milj. € on VM:n vuoden 2031 staattinen nettoarvio. Se ei sisällä kattavaa arviota tulevista osaamis-, kasvu- tai verotuottovaikutuksista.',caveat:'',tradeoff:'Toteutustapa ratkaisee: säästö voi kohdistua eri tavalla opetukseen, tutkimukseen tai muuhun toimintaan. Opintorahan jäädytys on erillinen toimi.',refs:'VM 2026:44, s. 15–16 ja 569–573',extra:[],map:{students:possible('Korkeakouluopiskelijoiden opetus ja palvelut voivat muuttua. Ei koske samalla tavoin kaikkia opiskelijoita. VM 2026:44, s. 570–573.'),workers:possible('Korkeakoulun henkilöstö, jos sopeutus koskee työtä. Henkilöstötoimia ei ole määritetty. VM 2026:44, s. 570–573.')}}
+  };
+  const format=n=>(n/1000).toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const pct=n=>(n/target*100).toLocaleString('fi-FI',{maximumFractionDigits:1});
+  const selected=new Set();
+  const scenario={income:1,corporate:1,dividends:'vm'};
+  const maxPP=20;
+  let filter='all',expanded=false,activeAction=null,activeFlow=null,opener=null,dialogTop=16;
+  const design={radius:12,thickness:40};
+  const q=s=>root.querySelector(s);
+  const list=q('.sp-action-list');
+  const dialog=q('.sp-modal');
+  const scenarioNotice=document.createElement('p');scenarioNotice.className='sp-scenario-notice';scenarioNotice.hidden=true;q('.sp-remaining').after(scenarioNotice);
+  function ppLabel(n){return n+' '+(n===1?'prosenttiyksikkö':'prosenttiyksikköä');}
+  function syncScenario(){
+    data.forEach(d=>Object.assign(d,baseData.get(d.id),{sourceUrl:null,scaled:false,historical:false}));
+    ['income','corporate'].forEach(id=>{
+      const d=data.find(x=>x.id===id),n=scenario[id],unit=id==='income'?1500:430;
+      d.amount=n*unit;d.scaled=n>1;
+      d.title=(id==='income'?'Tuloveroasteikkoa +':'Yhteisöveroa +')+ppLabel(n);
+      d.short=(id==='income'?'Tuloveroasteikko':'Yhteisövero')+' +'+n+' pp';
+      d.year=n===1?'2028 · VM:n arvio':n===0?'Ei korotusta':'2028 · karkea laskelma';
+      d.detail=(id==='income'?'Valtion tuloveroasteikon kaikkia marginaaliveroprosentteja korotetaan '+ppLabel(n)+'. Tämä ei ole kaikkien verojen tai jokaisen ihmisen veroasteen yhtä suuri muutos.':'Raportin 18 prosentin lähtötasosta korotus on '+ppLabel(n)+': 18 % → '+(18+n)+' %.')+' VM:n yhden prosenttiyksikön suora tuottoarvio on '+unit.toLocaleString('fi-FI')+' milj. €. Tässä laskenta on '+n+' × '+unit.toLocaleString('fi-FI')+' = '+d.amount.toLocaleString('fi-FI')+' milj. €. Veropohja pidetään laskennassa muuttumattomana. '+(n>1?'VM ei ole arvioinut tällä luvulla valitsemasi suuremman korotuksen toteutuvaa tuottoa. ':'')+'Käyttäytyminen, vähennykset ja toimien yhteisvaikutukset vaativat oman laskelman.';
+    });
+    if(scenario.dividends==='abolish'){
+      const d=data.find(x=>x.id==='dividends');
+      Object.assign(d,{amount:459,title:'Listaamattomien osinkohuojennus pois',short:'Osinkohuojennuksen poisto',year:'2024 · Laboren vertailulaskelma',historical:true,sourceUrl:dividendStudyUrl,source:'Finér / Kalevi Sorsa -säätiö 2024, s. 27 ja 34; laskelmat Labore',detail:'Erityishuojennus poistetaan: listaamattomia osinkoja verotetaan kuten pörssiosinkoja. Osingosta 85 % on veronalaista pääomatuloa ja 15 % verovapaata. Nettovarallisuussidos ja ansiotulo-osinko poistuvat. Pörssiosinkojen säännöt eivät muutu.'});
+    }
+  }
+  function controlsMarkup(id,place){
+    if(id==='income'||id==='corporate'){
+      const n=scenario[id],name=id==='income'?'tuloveron korotusta':'yhteisöveron korotusta';
+      return `<span class="sp-control-label">Korotuksen suuruus</span><div class="sp-stepper" role="group" aria-label="${name}"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-step="${id}" data-delta="-1" aria-label="Pienennä ${name}" ${n===0?'disabled':''}>−</button><output>+${n}<small>prosenttiyksikköä</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-step="${id}" data-delta="1" aria-label="Kasvata ${name}" ${n===maxPP?'disabled':''}>+</button></div><p class="sp-control-note">${id==='corporate'?'18 % → '+(18+n)+' % · VM:n vuoden 2028 lähtötaso.':'Muutos jokaiseen valtion tuloveroportaan marginaaliprosenttiin.'} Säätö 0–${maxPP} prosenttiyksikköä.</p>`;
+    }
+    if(id==='dividends')return `<span class="sp-control-label">Miten osinkoverotusta muutetaan?</span><div class="sp-variant-options" role="group" aria-label="Osinkoverotuksen vaihtoehto"><button type="button" id="sp-${place}-dividends-vm" class="cursor-interaction" data-dividend-mode="vm" aria-pressed="${scenario.dividends==='vm'}"><strong>VM:n uudistus</strong>+370 milj. € / v<small>VM · arvio vuodelle 2028</small></button><button type="button" id="sp-${place}-dividends-abolish" class="cursor-interaction" data-dividend-mode="abolish" aria-pressed="${scenario.dividends==='abolish'}"><strong>Erityishuojennus kokonaan pois</strong>+459 milj. € / v<small>Labore · laskelma vuodelle 2024</small></button></div><p class="sp-control-note">Poiston jälkeen osingoista 85 % verotetaan pääomatulona, kuten pörssiosingoista.</p>`;
+    return '';
+  }
+  function effectFor(d){
+    const e={...effects[d.id]};
+    if((d.id==='income'||d.id==='corporate')&&scenario[d.id]!==1){
+      const n=scenario[d.id],unit=d.id==='income'?1500:430;
+      e.money=n+' × '+unit.toLocaleString('fi-FI')+' milj. € = '+moneyLabel(d.amount)+'. Laskuri kertoo VM:n yhden prosenttiyksikön arvion valitsemallasi korotuksella.';
+      e.caveat='VM:n raportissa näin suurelle korotukselle ei ole omaa tuottoarviota. Verotuotto muuttuu myös ihmisten ja yritysten reagoidessa korotukseen.';
+      if(d.id==='corporate')e.tradeoff='VM:n arvio 10–20 milj. € osinkoverotulojen vähenemisestä koskee yhden prosenttiyksikön korotusta. Myöskään raportin käyttäytymisvaikutusten prosenttiosuutta ei sovelleta tähän automaattisesti. '+e.tradeoff;
+      if(n===0){e.money='Korotusta ei ole. Tätä toimea ei lasketa pakettiin.';e.caveat='Voit säätää korotuksen suuremmaksi ja lisätä toimen uudelleen.';}
+    }
+    if(d.id==='dividends'&&scenario.dividends==='abolish'){
+      Object.assign(e,{who:'Listaamattomien yhtiöiden osingonsaajilta, painottuen suurituloisiin. Laboren laskelmassa 83 % verojen lisäyksestä kohdistui ylimpään tulokymmenykseen.',chain:['Erityishuojennus poistuu','85 % osingosta veronalaista pääomatuloa','Osinkoveron määrä muuttuu'],money:'459 milj. € on arvio verotulojen kasvusta. Osingonjaon muutoksia ei ole huomioitu.',caveat:'Arvio perustuu vuoden 2024 verotukseen.',tradeoff:'Laskelman vuoden 2021 rekisteriaineisto on ajantasaistettu vuoteen 2024. Käytössä ovat vuoden 2024 verosäännöt. Käyttäytymisvaikutuksia ei ole mukana.',refs:d.source,extra:['dividend-response']});
+    }
+    return e;
+  }
+  data.forEach(d=>{
+    const article=document.createElement('article');
+    article.className='sp-action';article.dataset.id=d.id;
+    article.innerHTML=`<div class="sp-action-top"><span><span class="sp-dot ${d.type==='cut'?'cut':''}"></span>${d.type==='tax'?'Veronkorotus':'Menoleikkaus'}</span><span class="sp-action-percent">${pct(d.amount)} % tavoitteesta</span></div><div class="sp-action-main"><h3>${d.title}</h3><div class="sp-amount">${format(d.amount)}<small>mrd. € / vuosi</small></div></div><p class="sp-consequence">${d.impact}</p><div class="sp-card-bottom"><span class="sp-card-hint">Tutustu ennen valintaa</span><button type="button" class="sp-add cursor-interaction" data-open="${d.id}" aria-haspopup="dialog" aria-label="Tutki vaikutuksia: ${d.title}">Tutki vaikutuksia →</button></div>`;
+    const controls=document.createElement('div');controls.className='sp-scenario-controls';controls.dataset.controls=d.id;
+    const label=document.createElement('span');label.className='sp-estimate-label';
+    article.querySelector('.sp-consequence').before(controls,label);
+    list.appendChild(article);
+  });
+  function stateIn(s){
+    const model=s?.modelContent??s;
+    const source=model?.selectedIds??['vat','health','income','income-index','defence','benefits','dividends','corporate'];
+    ['income','corporate'].forEach(id=>{const n=model?.taxIncreasesPP?.[id];scenario[id]=typeof n==='number'&&Number.isFinite(n)?Math.min(maxPP,Math.max(0,Math.round(n))):1;});
+    scenario.dividends=model?.dividendMode==='abolish'?'abolish':'vm';
+    syncScenario();
+    selected.clear();
+    if(Array.isArray(source))source.forEach(id=>{if(data.some(d=>d.id===id&&d.amount>0))selected.add(id)});
+    const ui=s?.privateContent;
+    filter=['all','cut','tax'].includes(ui?.filter)?ui.filter:'all';expanded=ui?.expanded===true;
+    activeFlow=payerGroups.some(group=>group.id===ui?.activeFlow)?ui.activeFlow:null;
+  }
+  function save(){
+    const p=window.openai?.setWidgetState?.({modelContent:{selectedIds:[...selected],taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},dividendMode:scenario.dividends,note:'Laskuri summaa eri vuosien arvioita. Suurempien veronkorotusten tuotto lasketaan kertomalla VM:n 1 prosenttiyksikön arvio. Osinkohuojennuksen poiston arvio on vuodelta 2024. Toimien yhteisvaikutukset puuttuvat.'},privateContent:{filter,expanded,activeFlow}});
+    if(p?.catch)p.catch(()=>{});
+  }
+  function slice(a,b){
+    const point=t=>[160+148*Math.sin(t*2*Math.PI),160-148*Math.cos(t*2*Math.PI)];
+    if(b-a>=.999999)return 'M160 12 A148 148 0 1 1 159.999 12 L160 160 Z';
+    const p=point(a),e=point(b);
+    return `M160 160 L${p[0]} ${p[1]} A148 148 0 ${b-a>.5?1:0} 1 ${e[0]} ${e[1]} Z`;
+  }
+  const payerGroups=[
+    {id:'consumption',name:'Kuluttajat',ids:['vat'],caption:'ALV:n korotus · suora verotuotto 2028. Kuluttajan todellinen menetys riippuu hintojen muutoksesta.',zero:'Ei valittua ALV-korotusta.',type:'tax'},
+    {id:'earned',name:'Palkat & eläkkeet',ids:['income','income-index'],caption:'Ansiotuloverot · suora verotuotto 2028. Muutokset voivat koskea myös veronalaisia päivärahoja.',zero:'Ei valittua ansiotuloveron kiristystä.',type:'tax'},
+    {id:'support',name:'Tukien saajat',ids:['benefits'],caption:'Etuuksien indeksijäädytys · julkisen talouden nettosäästö 2031. Summa ei ole suoraan etuudensaajien tulonmenetys.',zero:'Ei valittua etuuksien indeksileikkausta.',type:'cut'},
+    {id:'services',name:'Palvelut & hankinnat',ids:['health','defence','education'],caption:'Rahoituksen indeksileikkaukset · arviot vuodelle 2031. Vaikutus palvelujen käyttäjiin ja työntekijöihin riippuu toteutuksesta.',zero:'Ei valittuja rahoituksen indeksileikkauksia näihin kohteisiin.',type:'cut'},
+    {id:'companies',name:'Yritykset ja yhteisöt',ids:['corporate'],caption:'Yhteisöveron korotus yhdellä prosenttiyksiköllä · suora verotuotto 2028. Raha otetaan verotettavista voitoista. Omistajien, työntekijöiden ja asiakkaiden lopullisia osuuksia ei ole laskettu.',zero:'Yhteisöveron korotusta ei ole valittu. Nolla koskee tätä korotusta, ei yritysten kaikkia veroja tai muiden toimien vaikutuksia niihin.',type:'tax'},
+    {id:'capital',name:'Osinkojen saajat',ids:['dividends'],caption:'Listaamattomien yhtiöiden osinkoverotuksen uudistus · suora verotuotto 2028. Nykyinen veroetu kasautuu suurituloisille ja suosii suurta yritysvarallisuutta omistavia.',zero:'Suurituloisille kasautuvaa osinkoveroetua ei tässä paketissa muuteta. Nolla koskee tätä uudistusta, ei osingonsaajien kaikkia veroja.',type:'tax'}
+  ];
+  const moneyLabel=n=>n===0?'0 €':n>=1000?format(n)+' mrd. €':n.toLocaleString('fi-FI')+' milj. €';
+  // VM 2026:48, printed p.67 / PDF p.68, figure 13. Read from vector geometry:
+  // euro bars: [7.78,35.56,88.89,144.44,217.22,296.67,349.44,403.89,482.22,611.67].
+  // Published axes: 21.6 points = 100 euros = 0.1 percentage point.
+  // These are rounded chart readings, not underlying microdata or a package simulation.
+  const decileLoss=[10,40,90,140,220,300,350,400,480,610];
+  const decilePercent=[.05,.17,.32,.42,.54,.62,.65,.67,.66,.48];
+  payerGroups.forEach(group=>{
+    const button=document.createElement('button');button.type='button';button.className='sp-flow-source cursor-interaction';button.dataset.flow=group.id;button.setAttribute('aria-controls','sp-flow-detail');q('.sp-flow-labels').appendChild(button);
+  });
+  function drawFlows(chosen){
+    const graph=q('.sp-flow-graph'),width=Math.max(230,graph.clientWidth);
+    const rowGap=77,firstRow=48,height=112+(payerGroups.length-1)*rowGap,centerY=firstRow+(payerGroups.length-1)*rowGap/2;
+    graph.style.height=height+'px';
+    const labelWidth=Math.min(150,Math.round(width*.43)),startX=labelWidth+8,endX=width-14;
+    const values=payerGroups.map(g=>chosen.filter(d=>g.ids.includes(d.id)).reduce((sum,d)=>sum+d.amount,0));
+    const total=values.reduce((sum,n)=>sum+n,0);
+    const maxSource=Math.max(4330,...values);
+    const scale=Math.min(68/maxSource,(height-120)/Math.max(1,total)),totalHeight=total*scale,startY=centerY-totalHeight/2;
+    const svg=q('.sp-flow-svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+    svg.setAttribute('aria-label',`Budjettivaikutusten rahavirrat: ${payerGroups.map((g,i)=>g.name+' '+moneyLabel(values[i])).join(', ')}. Yhteensä ${moneyLabel(total)}. Virran paksuus kuvaa euromäärää; nollakohteesta ei kulje virtaa.`);
+    let offset=startY;
+    const shapes=[];
+    payerGroups.forEach((group,i)=>{
+      const value=values[i],h=value*scale,y=firstRow+i*rowGap,color=group.type==='cut'?'var(--sp-cut)':'var(--sp-tax)';
+      const control1=startX+(endX-startX)*.48,control2=startX+(endX-startX)*.52;
+      if(value){
+        const top=y-h/2,bottom=y+h/2;
+        shapes.push(`<path d="M${startX} ${top} C${control1} ${top} ${control2} ${offset} ${endX} ${offset} L${endX} ${offset+h} C${control2} ${offset+h} ${control1} ${bottom} ${startX} ${bottom} Z" fill="${color}" opacity="${activeFlow===group.id?'.65':'.3'}" data-tooltip="${group.name}: ${moneyLabel(value)}"></path><rect x="${startX-5}" y="${top}" width="5" height="${h}" fill="${color}"></rect><rect x="${endX}" y="${offset}" width="12" height="${h}" fill="${color}"></rect>`);
+        offset+=h;
+      }else{
+        shapes.push(`<path d="M${startX-5} ${y} H${startX+19}" stroke="var(--sp-muted)" stroke-width="1.5" stroke-dasharray="3 4" fill="none"></path><circle cx="${startX+23}" cy="${y}" r="3" fill="var(--sp-track)"></circle>`);
+      }
+      const button=q(`[data-flow="${group.id}"]`);button.style.width=labelWidth+'px';button.style.top=(y-30)+'px';button.dataset.zero=String(!value);button.setAttribute('aria-expanded',String(activeFlow===group.id));button.setAttribute('aria-label',`${group.name}: ${moneyLabel(value)}. ${value?'Näytä valitut toimet.':'Ei valittua toimea. Näytä vaihtoehdot.'}`);
+      button.innerHTML=`<span class="sp-flow-name">${group.name}</span><span class="sp-flow-money">${value>=1000?format(value)+' <small>mrd. €</small>':value?value+' <small>milj. €</small>':'0 € <span class="sp-flow-zero">ei valittu</span>'}</span>`;
+    });
+    if(!total)shapes.push(`<rect x="${endX}" y="${centerY-50}" width="12" height="100" rx="2" fill="var(--sp-track)"></rect>`);
+    svg.innerHTML=shapes.join('');
+    q('.sp-flow-destination').style.top=((total?startY:centerY-50)-49)+'px';
+    q('.sp-flow-destination strong').innerHTML=total?format(total)+' <small>mrd. €</small>':'0 <small>€</small>';
+  }
+  function renderFlowDetail(chosen){
+    const detail=q('.sp-flow-detail');detail.hidden=!activeFlow;if(!activeFlow)return;
+    const group=payerGroups.find(g=>g.id===activeFlow);if(!group)return;
+    const amount=chosen.filter(d=>group.ids.includes(d.id)).reduce((sum,d)=>sum+d.amount,0);
+    let caption=group.caption;
+    if(group.id==='companies')caption='Yhteisövero +'+scenario.corporate+' prosenttiyksikköä · '+(scenario.corporate===1?'VM:n suora arvio 2028.':'Karkea laskelma VM:n vuoden 2028 arvion pohjalta.')+' Raha otetaan verotettavista voitoista.';
+    if(group.id==='earned'&&selected.has('income')&&scenario.income>1)caption='Mukana tuloveroasteikon +'+scenario.income+' prosenttiyksikön korotus. Tuotto on laskettu kertomalla VM:n yhden prosenttiyksikön arvio korotuksen suuruudella.';
+    if(group.id==='capital'&&scenario.dividends==='abolish')caption='Listaamattomien osinkohuojennuksen poisto · Laboren arvio 459 milj. € vuoden 2024 verotukseen verrattuna.';
+    detail.innerHTML=`<div class="sp-flow-detail-head"><h3>${group.name} · ${moneyLabel(amount)}</h3><button type="button" class="sp-flow-close cursor-interaction" aria-label="Sulje rahanlähteen tiedot">×</button></div><p>${amount?caption:group.zero}</p>${group.ids.map(id=>{const d=data.find(x=>x.id===id);return `<div class="sp-service-line"><button type="button" class="cursor-interaction" data-open="${id}" aria-haspopup="dialog">${d.short} ↗</button><span>${selected.has(id)?moneyLabel(d.amount):'Ei valittu'}</span></div>`}).join('')}`;
+  }
+  function renderIncidence(chosen){
+    drawFlows(chosen);renderFlowDetail(chosen);
+    const hasIndex=selected.has('income-index');
+    const missing=chosen.filter(d=>d.id!=='income-index');
+    q('.sp-evidence-status').textContent=chosen.length?(hasIndex?'1':'0')+' / '+chosen.length+' toimesta tiedot':'Ei valintoja';
+    q('.sp-decile-scope').textContent=hasIndex?'Tuloveron indeksitarkistus pois · 2028 · yhden toimen arvio':'Tuloryhmäkohtaiset arviot puuttuvat';
+    q('.sp-decile-head').hidden=!hasIndex;
+    q('.sp-decile-rows').innerHTML=hasIndex?decileLoss.map((amount,i)=>`<div class="sp-decile-row" data-edge="${i===0||i===9}" aria-label="Tulokymmenys ${i+1}: keskimääräinen tulonmenetys noin ${amount} euroa vuodessa, ${decilePercent[i].toLocaleString('fi-FI')} prosenttia tuloista."><span>${i===0?'Pienituloisin 10&nbsp;%':i===9?'Suurituloisin 10&nbsp;%':(i+1)+'. kymmenys'}</span><div class="sp-decile-euro"><span class="sp-decile-number">−${amount} €</span><div class="sp-decile-bar" aria-hidden="true"><span style="width:${amount/650*100}%"></span></div></div><div class="sp-decile-percent"><span class="sp-decile-number">−${decilePercent[i].toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2})} %</span><div class="sp-decile-bar" aria-hidden="true"><span style="width:${decilePercent[i]/.8*100}%"></span></div></div></div>`).join(''):'<p class="sp-empty">Valitsemistasi toimista ei ole tässä tietoja siitä, paljonko kukin tuloryhmä menettäisi.</p>';
+    q('.sp-decile-source').innerHTML=hasIndex?'Noin-arviot: <a href="'+urls.tax+'" target="_blank" rel="noopener noreferrer">VM 2026:48, kuvio 13, s. 67 ↗</a>. Keskimääräinen tulonmenetys, pyöristetty 10 euroon. Palkansaajat, eläkeläiset ja opiskelijat jakautuvat useisiin tulokymmenyksiin.':'Koko paketin jakauma edellyttää valittujen vero- ja etuusmuutosten yhteistä laskentaa. Palveluvaikutukset on arvioitava lisäksi.';
+    q('.sp-decile-takeaway').innerHTML=hasIndex?'<h3>Tässä toimessa pienituloisin kymmenys maksaa selvästi vähemmän.</h3><div class="sp-decile-extremes"><div><small>Pienituloisin 10 %</small><strong>−10 €</strong><span>−0,05 % tuloista</span></div><div><small>Suurituloisin 10 %</small><strong>−610 €</strong><span>−0,48 % tuloista</span></div></div><p>Euromääräisesti eniten menettää ylin kymmenys. Suhteessa tuloihin suurin menetys on 8. kymmenyksessä: noin 0,67 %. Minkään kymmenyksen keskiarvo ei ole nolla.</p>':'<h3>Kuka jää ilman laskua?</h3><p>'+(chosen.length?'Koko paketista ei vielä voi nimetä tällaista tuloryhmää. Kohdentumaton tai laskematon vaikutus ei ole nollavaikutus.':'Tyhjässä paketissa ei ole uusia toimia. Kun lisäät valintoja, niiden rahanlähteet näkyvät yllä.')+'</p>';
+    q('.sp-distribution-gap').innerHTML=missing.length?`<strong>Näistä toimista puuttuvat tuloryhmäkohtaiset euromäärät:</strong><p>${hasIndex?'Yllä näkyy vain indeksiveron vaikutus. ':''}</p><ul>${missing.map(d=>`<li><span>${d.short}</span><span>${moneyLabel(d.amount)}</span></li>`).join('')}</ul><p>Listan eurot kertovat vaikutuksen julkiseen talouteen.</p>`:hasIndex?'<strong>Tulonjakokuvaaja kattaa valitsemasi toimen.</strong><p>Arvio on staattinen. Kulutus- ja työllisyysreaktioiden vaikutusta tulonjakoon ei ole tässä laskettu.</p>':'<strong>Ei valittuja toimia.</strong><p>Jokaisen lisättävän toimen vaikutusarvio avautuu ennen vahvistamista.</p>';
+  }
+  function positionDialog(){
+    if(!dialog.open)return;
+    const top=dialogTop;
+    dialog.style.top=top+'px';dialog.style.left='50%';dialog.style.transform='translateX(-50%)';
+    root.style.minHeight=(top+dialog.offsetHeight+24)+'px';
+  }
+  function renderImpact(id){
+    const d=data.find(x=>x.id===id);if(!d)return;
+    const e=effectFor(d);
+    q('#sp-impact-title').textContent=d.title;
+    q('.sp-impact-amount').textContent=format(d.amount)+' mrd. € / vuosi';
+    q('.sp-impact-basis').textContent=d.year;
+    q('.sp-modal-controls').innerHTML=controlsMarkup(id,'modal');
+    q('#sp-impact-who').textContent=e.who;
+    q('.sp-benefit-concentration').hidden=id!=='dividends';
+    if(id==='dividends'){
+      const abolished=scenario.dividends==='abolish',share=abolished?83:71;
+      q('#sp-benefit-title').textContent=abolished?'Tämän vaihtoehdon veronkorotus kohdistuu suurituloisiin':'Nykyinen veroetu kasautuu suurituloisille';
+      root.querySelectorAll('.sp-benefit-row').forEach((row,i)=>{const n=i===0?share:100-share;row.querySelector('strong').textContent=n+' %';row.querySelector('.sp-benefit-track span').style.width=n+'%';});
+      q('#sp-benefit-source').innerHTML=abolished?'Osuus verojen lisäyksestä kotitalouksille · vuoden 2024 laskelma. <a href="'+dividendStudyUrl+'" target="_blank" rel="noopener noreferrer">Labore / Finér 2024, s. 34 ↗</a>':'Osuus huojennettujen osinkojen verovapaista euroista vuonna 2020, pyöristettynä. <a href="'+evidence['dividend-distribution'].url+'" target="_blank" rel="noopener noreferrer">Finnwatch 2022 · Verohallinnon tilastot ↗</a>';
+    }
+    q('.sp-chain').innerHTML=e.chain.map(text=>`<li>${text}</li>`).join('');
+    q('.sp-impact-society').textContent=e.society;
+    q('.sp-impact-money').textContent=e.money;
+    q('.sp-impact-uncertainty').textContent=e.caveat;
+    q('.sp-impact-uncertainty').hidden=!e.caveat;
+    q('.sp-impact-detail').textContent=d.detail;
+    q('.sp-impact-tradeoff').textContent=e.tradeoff;
+    q('.sp-impact-reference').textContent='Lähde: '+e.refs+'.';
+    q('.sp-impact-links').innerHTML=`<p><a href="${d.sourceUrl||urls[d.report]}" target="_blank" rel="noopener noreferrer">${e.refs} ↗</a></p>`+e.extra.map(key=>`<p><a href="${evidence[key].url}" target="_blank" rel="noopener noreferrer">${evidence[key].label} ↗</a></p>`).join('');
+    q('.sp-modal-confirm').textContent=selected.has(id)?'Poista paketista':'Lisää pakettiin';
+    q('.sp-modal-confirm').disabled=d.amount===0;
+  }
+  function openImpact(id,button){
+    if(!data.some(d=>d.id===id))return;
+    dialogTop=Math.max(16,(button?.getBoundingClientRect().top??16)-root.getBoundingClientRect().top-160);
+    activeAction=id;opener=button;renderImpact(id);
+    q('.sp-impact-sources').open=false;
+    dialog.setAttribute('open','');q('.sp-modal-mask').hidden=false;
+    [...root.children].forEach(el=>{if(el!==dialog&&!el.classList.contains('sp-modal-mask'))el.inert=true;});
+    positionDialog();q('.sp-modal-close').focus({preventScroll:true});
+    if(globalThis.IntersectionObserver){
+      const observer=new IntersectionObserver(([entry])=>{
+        observer.disconnect();
+        if(dialog.open&&activeAction===id&&entry.intersectionRect.height>0){dialogTop=Math.max(16,entry.intersectionRect.top-entry.boundingClientRect.top+16);positionDialog();}
+      });
+      observer.observe(root);
+    }
+  }
+  function closeImpact(){const previous=activeAction;dialog.removeAttribute('open');q('.sp-modal-mask').hidden=true;[...root.children].forEach(el=>{el.inert=false;});root.style.minHeight='';activeAction=null;const replacement=previous?list.querySelector(`[data-open="${previous}"]`):null;const flowTarget=activeFlow?q(`[data-flow="${activeFlow}"]`):null;const focus=opener?.isConnected&&opener.getClientRects().length?opener:flowTarget|| (replacement?.getClientRects().length?replacement:q('[data-filter="all"]'));focus.focus();}
+  q('.sp-modal-mask').addEventListener('click',closeImpact);
+  dialog.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();closeImpact();}else if(event.key==='Tab'){const controls=[...dialog.querySelectorAll('button:not(:disabled),a[href],summary')].filter(el=>el.getClientRects().length);const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
+  q('.sp-impact-sources').addEventListener('toggle',positionDialog);
+  window.addEventListener('resize',positionDialog);
+  function render(announce=false){
+    syncScenario();
+    const chosen=data.filter(d=>selected.has(d.id));
+    const sum=chosen.reduce((s,d)=>s+d.amount,0);
+    const cuts=chosen.filter(d=>d.type==='cut').reduce((s,d)=>s+d.amount,0);
+    q('.sp-total').textContent=format(sum);
+    const scaledCount=chosen.filter(d=>d.scaled).length,historical=chosen.some(d=>d.historical);
+    scenarioNotice.hidden=!scaledCount&&!historical;
+    scenarioNotice.textContent=(scaledCount?'Suurempien veronkorotusten tuotot on laskettu kertomalla VM:n 1 prosenttiyksikön arvio. ':'')+(historical?'Osinkohuojennuksen poiston arvio on vuodelta 2024.':'');
+    q('.sp-remaining-label').textContent=sum<=target?'Vielä puuttuu':'Yli tavoitteen';
+    q('.sp-remaining-value').textContent=format(Math.abs(target-sum))+' mrd. €';
+    q('.sp-tax-total').textContent=format(sum-cuts)+' mrd. €';q('.sp-cut-total').textContent=format(cuts)+' mrd. €';
+    q('.sp-count').textContent=chosen.length+(chosen.length===1?' valittu toimi':' valittua toimea');
+    q('.sp-clear').disabled=chosen.length===0;q('.sp-empty').hidden=chosen.length>0;
+    q('.sp-chart svg').setAttribute('aria-label',`Arvioiden summa ${format(sum)} miljardia euroa. Menoleikkauksia ${format(cuts)}, veronkorotuksia ${format(sum-cuts)}. Tavoite 10 miljardia. Lopullinen säästö voi poiketa summasta.`);
+    const svgNS='http://www.w3.org/2000/svg';
+    const slices=q('.sp-slices');slices.replaceChildren();
+    let offset=0;
+    chosen.forEach(d=>{
+      const fraction=d.amount/Math.max(target,sum);
+      const path=document.createElementNS(svgNS,'path');
+      path.setAttribute('d',slice(offset,offset+fraction));
+      path.setAttribute('fill',d.type==='cut'?'var(--sp-cut)':'var(--sp-tax)');
+      path.setAttribute('opacity',chosen.filter(x=>x.type===d.type).indexOf(d)%2===0?'1':'.76');
+      path.setAttribute('data-tooltip',`${d.short}: ${format(d.amount)} mrd. €`);
+      const title=document.createElementNS(svgNS,'title');title.textContent=`${d.short}: ${format(d.amount)} mrd. €`;path.appendChild(title);slices.appendChild(path);offset+=fraction;
+    });
+    q('.sp-hole').setAttribute('r',String(148-design.thickness));
+    root.style.setProperty('--sp-radius',design.radius+'px');
+    const basket=q('.sp-selection-list');basket.replaceChildren();
+    chosen.forEach(d=>{
+      const li=document.createElement('li');
+      li.innerHTML=`<span class="sp-dot ${d.type==='cut'?'cut':''}"></span><button type="button" class="sp-basket-open cursor-interaction" data-open="${d.id}" aria-haspopup="dialog">${d.short}</button><strong>${format(d.amount)}</strong><button type="button" class="sp-remove cursor-interaction" data-remove="${d.id}" aria-label="Poista: ${d.title}">×</button>`;
+      basket.appendChild(li);
+    });
+    let visible=0;
+    data.forEach(d=>{
+      const el=list.querySelector(`[data-id="${d.id}"]`),match=filter==='all'||d.type===filter;
+      el.querySelector('h3').textContent=d.title;
+      el.querySelector('.sp-amount').innerHTML=format(d.amount)+'<small>mrd. € / vuosi</small>';
+      el.querySelector('.sp-action-percent').textContent=pct(d.amount)+' % tavoitteesta';
+      el.querySelector('.sp-consequence').textContent=d.impact;
+      el.querySelector('[data-controls]').innerHTML=controlsMarkup(d.id,'card');
+      el.querySelector('.sp-estimate-label').textContent=d.year;
+      el.hidden=!match||(!expanded&&visible>=4);if(match)visible++;
+      const picked=selected.has(d.id);el.classList.toggle('is-picked',picked);
+      const button=el.querySelector('.sp-add');button.setAttribute('aria-label','Tutki vaikutuksia: '+d.title);button.textContent=picked?'✓ Valittu · vaikutukset':'Tutki vaikutuksia →';
+      el.querySelector('.sp-card-hint').textContent=picked?'Mukana paketissasi':'Tutustu ennen valintaa';
+    });
+    root.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));
+    q('.sp-more').hidden=visible<=4;
+    q('.sp-more').textContent=expanded?'Tiivistä valikoima ↑':`Näytä loput ${visible-4} esimerkkitoimea ↓`;
+    renderIncidence(chosen);
+    if(announce)q('.sp-announcement').textContent=`${chosen.length} valittua toimea. Arvioiden summa ${format(sum)} miljardia euroa. Rahanlähteet ja tulonjakonäkymä päivitetty. ${sum<target?'Tavoitteesta puuttuu '+format(target-sum)+' miljardia.':'Tavoite täynnä. Lopullinen säästö voi poiketa summasta.'}`;
+  }
+  root.addEventListener('click',event=>{
+    const button=event.target.closest('button');if(!button)return;
+    if(button.dataset.step||button.dataset.dividendMode){
+      const focusId=button.id;
+      if(button.dataset.step){const id=button.dataset.step;scenario[id]=Math.min(maxPP,Math.max(0,scenario[id]+Number(button.dataset.delta)));if(scenario[id]===0)selected.delete(id);}
+      else scenario.dividends=button.dataset.dividendMode==='abolish'?'abolish':'vm';
+      render(true);if(activeAction){renderImpact(activeAction);positionDialog();}save();
+      const replacement=q('#'+focusId);if(replacement&&!replacement.disabled)replacement.focus({preventScroll:true});else if(replacement){replacement.parentElement.querySelector('button:not(:disabled)')?.focus({preventScroll:true});}
+    }
+    else if(button.dataset.open){openImpact(button.dataset.open,button);}
+    else if(button.dataset.flow){activeFlow=activeFlow===button.dataset.flow?null:button.dataset.flow;const chosen=data.filter(d=>selected.has(d.id));drawFlows(chosen);renderFlowDetail(chosen);save();}
+    else if(button.classList.contains('sp-flow-close')){const previous=activeFlow;activeFlow=null;drawFlows(data.filter(d=>selected.has(d.id)));renderFlowDetail([]);save();q(`[data-flow="${previous}"]`).focus();}
+    else if(button.classList.contains('sp-modal-confirm')){if(activeAction){const id=activeAction;if(selected.has(id))selected.delete(id);else selected.add(id);render(true);save();closeImpact();}}
+    else if(button.classList.contains('sp-modal-close')||button.classList.contains('sp-modal-back')){closeImpact();}
+    else if(button.dataset.remove){const id=button.dataset.remove;selected.delete(id);render(true);save();const same=list.querySelector(`[data-open="${id}"]`);if(!same.closest('article').hidden)same.focus();else q('[data-filter="all"]').focus();}
+    else if(button.dataset.filter){filter=button.dataset.filter;expanded=false;render();save();}
+    else if(button.classList.contains('sp-more')){expanded=!expanded;render();save();}
+    else if(button.classList.contains('sp-clear')){selected.clear();render(true);save();root.querySelector('[data-filter="all"]').focus();}
+  });
+  stateIn(window.openai?.widgetState);render();
+  let lastFlowWidth=q('.sp-flow-graph').clientWidth;
+  if(globalThis.ResizeObserver)new ResizeObserver(()=>{const width=q('.sp-flow-graph').clientWidth;if(width!==lastFlowWidth){lastFlowWidth=width;drawFlows(data.filter(d=>selected.has(d.id)));}}).observe(q('.sp-flow-graph'));
+  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){stateIn(event.detail.globals.widgetState);render();if(activeAction){renderImpact(activeAction);positionDialog();}}});
+  if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=>render()});tweak.addSlider(design,'radius',{label:'Korttien kulmat',min:0,max:24,unit:'px'});tweak.addSlider(design,'thickness',{label:'Piirakan renkaan leveys',min:24,max:55,unit:'px'});}
+})();
+</script>

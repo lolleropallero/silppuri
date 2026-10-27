@@ -1,0 +1,44 @@
+{
+  "query": [
+    {
+      "selection": {
+        "values": [
+          "110",
+          "1120",
+          "2130",
+          "3140",
+          "4150",
+          "5160",
+          "6170",
+          "7180",
+          "8190",
+          "91100"
+        ],
+        "filter": "item"
+      },
+      "code": "fraktiili_3_20221219"
+    },
+    {
+      "selection": {
+        "values": [
+          "alaraja",
+          "ylaraja"
+        ],
+        "filter": "item"
+      },
+      "code": "contentscode"
+    },
+    {
+      "selection": {
+        "values": [
+          "2024"
+        ],
+        "filter": "item"
+      },
+      "code": "timeperiod_y"
+    }
+  ],
+  "response": {
+    "format": "json-stat2"
+  }
+}

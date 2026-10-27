@@ -1,0 +1,2461 @@
+{
+  "asOf": "2026-10-27",
+  "reviewed": 257,
+  "sources": 143,
+  "withExternalResearch": 256,
+  "vmOnly": 1,
+  "contextOnly": 21,
+  "actions": [
+    {
+      "id": "cut-1-5",
+      "title": "T&K-rahoituksen kasvun pysäytys",
+      "status": "mechanism",
+      "sources": [
+        "einio"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-6",
+      "title": "T&K-rahoitus vuoden 2023 tasolle",
+      "status": "mechanism",
+      "sources": [
+        "einio"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-7",
+      "title": "EU-rahaa tutkimukseen",
+      "status": "mechanism",
+      "sources": [
+        "einio",
+        "rdtax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-8",
+      "title": "Korkeakoulujen rahoitusta tutkimukseen",
+      "status": "mechanism",
+      "sources": [
+        "einio",
+        "rdtax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-11",
+      "title": "Business Finlandin muut yritystuet pois",
+      "status": "limited",
+      "sources": [
+        "exportpromotion"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-16",
+      "title": "Maatalouden energiaveron palautus kokonaan pois",
+      "status": "mechanism",
+      "sources": [
+        "energy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-25",
+      "title": "Suoria yritystukia −30 %",
+      "status": "mechanism",
+      "sources": [
+        "einio"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-26",
+      "title": "Yritystukia −30 %, myös T&K-tuista heti",
+      "status": "mechanism",
+      "sources": [
+        "einio"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-28",
+      "title": "Kotoutumiskorvaukset pois",
+      "status": "mechanism",
+      "sources": [
+        "integration"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-29",
+      "title": "EU-rahaa liikenneinvestointeihin",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-30",
+      "title": "Laivojen väylämaksut kustannusten tasolle",
+      "status": "mechanism",
+      "sources": [
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-32",
+      "title": "Uusista väylähankkeista karsiminen",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-33",
+      "title": "Teiden ja ratojen ylläpidosta leikkaaminen",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-38",
+      "title": "Joukkoliikenteen valtionosuus 50 → 30 %",
+      "status": "mechanism",
+      "sources": [
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-41",
+      "title": "Laivojen palveluhenkilöstön tuki pois",
+      "status": "limited",
+      "sources": [
+        "maritimejobs"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-42",
+      "title": "Ylen rahoitusta −20 % vuoteen 2035",
+      "status": "mechanism",
+      "sources": [
+        "media"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-47",
+      "title": "Maatalouslainojen korkotuki 3 → 1 %",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-55",
+      "title": "Maatalouden kansalliset tuet pois",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-56",
+      "title": "Maatalouden kansallisia tukia leikataan asteittain",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-57",
+      "title": "Luonnonhaittakorvauksen kansallista lisäosaa alas",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-58",
+      "title": "Luonnonhaittakorvauksen kansallinen lisäosa pois",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-69",
+      "title": "CAP-ohjelman kansallista rahoitusta −30 %",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-72",
+      "title": "Passiiviviljelyn tuet pois",
+      "status": "mechanism",
+      "sources": [
+        "agri"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-75",
+      "title": "Metsän raivaukselle maksu",
+      "status": "direct-model",
+      "sources": [
+        "landchange"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-76",
+      "title": "Metsähallitukselta lisää tuulivoimatuloja",
+      "status": "limited",
+      "sources": [
+        "windrealisation"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-1-79",
+      "title": "Luonnonsuojelurahoitusta −30 %",
+      "status": "limited",
+      "sources": [
+        "protectedareas"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-9",
+      "title": "Hautauskulut kokonaan omaisten maksettaviksi",
+      "status": "limited",
+      "sources": [
+        "funerals"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-11",
+      "title": "Päivähoitoon 32 euron vähimmäismaksu",
+      "status": "mechanism",
+      "sources": [
+        "childcare",
+        "homecare"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-13",
+      "title": "Päivähoitomaksut ennen vuotta 2017 olleelle tasolle",
+      "status": "mechanism",
+      "sources": [
+        "childcare",
+        "homecare"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-14",
+      "title": "Päivähoitomaksujen tulorajoja −20 %",
+      "status": "mechanism",
+      "sources": [
+        "childcare",
+        "homecare"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-15",
+      "title": "Päiväkotien tuleva koulutusvaatimus perutaan",
+      "status": "limited",
+      "sources": [
+        "teacher"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-19",
+      "title": "Yhteinen katsomusaine kouluihin",
+      "status": "limited",
+      "sources": [
+        "worldviews"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-20",
+      "title": "Koulujen tasa-arvoraha pois",
+      "status": "mechanism",
+      "sources": [
+        "schoolmoney",
+        "schoolmeta"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-21",
+      "title": "Koulujen tasa-arvorahasta −20 miljoonaa",
+      "status": "mechanism",
+      "sources": [
+        "schoolmoney",
+        "schoolmeta"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-22",
+      "title": "Peruskoulusta kolme vuosiviikkotuntia pois",
+      "status": "mechanism",
+      "sources": [
+        "instruction"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-25",
+      "title": "Esi- ja perusopetuksen valtionosuuden indeksijäädytys",
+      "status": "mechanism",
+      "sources": [
+        "schoolmoney",
+        "schoolmeta"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-26",
+      "title": "Kansalais- ja kansanopistojen rahoitusta −30 %",
+      "status": "mechanism",
+      "sources": [
+        "adult"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-27",
+      "title": "Vapaan sivistystyön valtionrahoitus pois",
+      "status": "mechanism",
+      "sources": [
+        "adult"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-28",
+      "title": "Vapaan sivistystyön indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "adult"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-32",
+      "title": "Oppivelvollisuus takaisin 16 ikävuoteen",
+      "status": "mechanism",
+      "sources": [
+        "secondary"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-34",
+      "title": "Aikuisten ammattikoulutuksesta −300 miljoonaa",
+      "status": "mechanism",
+      "sources": [
+        "adult"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-35",
+      "title": "Aikuisten ammattikoulutuksen indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "adult"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-38",
+      "title": "Lukion rahoitus vain kolmeksi vuodeksi",
+      "status": "mechanism",
+      "sources": [
+        "secondary"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-39",
+      "title": "Pienten lukioiden lisärahoitus pois",
+      "status": "mechanism",
+      "sources": [
+        "secondary"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-41",
+      "title": "Lukion kouluruoalle yhden euron maksu",
+      "status": "mechanism",
+      "sources": [
+        "schoolmeals"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-42",
+      "title": "Lukioiden indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "schoolmoney",
+        "schoolmeta"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-43",
+      "title": "Toinen samantasoinen korkeakoulututkinto maksulliseksi",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-44",
+      "title": "Lukuvuosimaksullisten tutkintojen valtionrahoitus pois",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-45",
+      "title": "Lukuvuosimaksut korkeakouluihin",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "education",
+      "title": "Korkeakoulujen indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "einio",
+        "rdtax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-51",
+      "title": "Opintolainahyvitys pois",
+      "status": "limited",
+      "sources": [
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-52",
+      "title": "Opintolainahyvityksen katto 7 000 → 4 000 euroa",
+      "status": "limited",
+      "sources": [
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-53",
+      "title": "Opiskelijoiden asumislisä halvimman kuntaryhmän tasolle",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-54",
+      "title": "Opintorahan huoltajakorotus pois",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-55",
+      "title": "Opintorahan indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-57",
+      "title": "Korkeakoulujen opintotuki kokonaan lainaksi",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-58",
+      "title": "Korkeakoulun opintoraha ja asumislisä 35 kuukauteen",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-59",
+      "title": "Korkeakouluopiskelijan opintoraha puoleen",
+      "status": "mechanism",
+      "sources": [
+        "aid",
+        "loan"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-60",
+      "title": "Opiskelija-aterioiden tuki pois",
+      "status": "mechanism",
+      "sources": [
+        "schoolmeals"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-61",
+      "title": "Koulumatkatukeen vanhempien tulorajat",
+      "status": "mechanism",
+      "sources": [
+        "secondary"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-62",
+      "title": "Koulumatkatuen alaraja 7 → 15 kilometriä",
+      "status": "mechanism",
+      "sources": [
+        "secondary"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-65",
+      "title": "Teattereiden, orkestereiden ja museoiden tuista −30 %",
+      "status": "mechanism",
+      "sources": [
+        "arts"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-66",
+      "title": "Teattereiden ja museoiden indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "arts"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-67",
+      "title": "Taiteen perusopetuksen tunneista −20 %",
+      "status": "mechanism",
+      "sources": [
+        "arts"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-68",
+      "title": "Taiteen perusopetuksen indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "arts"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-70",
+      "title": "Taide- ja kulttuuriavustuksista −30 %",
+      "status": "mechanism",
+      "sources": [
+        "arts"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-74",
+      "title": "Aikuisille 30 euron kirjastomaksu",
+      "status": "limited",
+      "sources": [
+        "libraryfees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-77",
+      "title": "Liikunnan ja urheilun tuista −30 %",
+      "status": "limited",
+      "sources": [
+        "activity"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-2-78",
+      "title": "Suomi liikkeelle -ohjelma pois",
+      "status": "limited",
+      "sources": [
+        "activity"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-5",
+      "title": "Lapsilisän sisarkorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit",
+        "childincome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-6",
+      "title": "Alle 3-vuotiaan lapsilisäkorotus pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit",
+        "childincome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-7",
+      "title": "Lapsilisän yksinhuoltajakorotus pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit",
+        "childincome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-8",
+      "title": "Lapsilisä kokonaan pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit",
+        "childincome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-10",
+      "title": "Elatustuki pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit",
+        "childincome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-11",
+      "title": "Yleinen asumistuki halvimman kuntaryhmän tasolle",
+      "status": "mechanism",
+      "sources": [
+        "housing"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-12",
+      "title": "Asumistuen korvausaste 70 → 60 %",
+      "status": "mechanism",
+      "sources": [
+        "housing"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-13",
+      "title": "Nuorten toimeentulotuen perusosaa alas",
+      "status": "mechanism",
+      "sources": [
+        "spending"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-14",
+      "title": "Puolison tulot vähentämään yleistukea",
+      "status": "mechanism",
+      "sources": [
+        "spending"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-15",
+      "title": "Ansiosidonnainen enintään 300 päiväksi",
+      "status": "mechanism",
+      "sources": [
+        "ui",
+        "spending"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-16",
+      "title": "Kelan harkinnanvaraista kuntoutusta alas",
+      "status": "limited",
+      "sources": [
+        "aslak"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-17",
+      "title": "Kelan kuntoutuspsykoterapia kolme → kaksi vuotta",
+      "status": "limited",
+      "sources": [
+        "psychotherapy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-18",
+      "title": "Yksityisen sairaanhoidon Kela-korvaukset pois",
+      "status": "mechanism",
+      "sources": [
+        "privatecare",
+        "dental"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-21",
+      "title": "Itsehoitolääkkeiden reseptikorvaukset pois",
+      "status": "mechanism",
+      "sources": [
+        "drugmortality",
+        "carefees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-22",
+      "title": "Lääkkeiden alkuomavastuu 70 → 100 euroa",
+      "status": "mechanism",
+      "sources": [
+        "drugmortality",
+        "carefees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-23",
+      "title": "Lääkkeiden peruskorvaus 40 → 30 %",
+      "status": "mechanism",
+      "sources": [
+        "drugmortality",
+        "carefees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-27",
+      "title": "Merenkulkijoiden eläkkeiden valtiontuki pois",
+      "status": "limited",
+      "sources": [
+        "maritimejobs"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-28",
+      "title": "MYEL-maksujen huojennukset pois",
+      "status": "context",
+      "sources": [
+        "myelfinance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-32",
+      "title": "Kansaneläkkeen pieni suojaosa pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-33",
+      "title": "Työeläke leikkaamaan kansaneläkettä nykyistä enemmän",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-34",
+      "title": "Kansan- ja takuueläkkeen indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-36",
+      "title": "Takuueläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-37",
+      "title": "Takuueläkettä noin −107 euroa kuussa",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-38",
+      "title": "Takuueläke riippumaan Suomessa asutuista vuosista",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-39",
+      "title": "Takuueläke vain vanhuuseläkeiän täyttäneille",
+      "status": "mechanism",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-40",
+      "title": "Eläkeläiset yleisen asumistuen piiriin",
+      "status": "mechanism",
+      "sources": [
+        "housing"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-42",
+      "title": "Eläkkeensaajan asumistuki vain vanhuuseläkeläisille",
+      "status": "mechanism",
+      "sources": [
+        "housing"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-43",
+      "title": "Vammais- ja hoitotukien alin taso pois",
+      "status": "limited",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-44",
+      "title": "Tutkinnosta kertyvä eläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-45",
+      "title": "Kotihoidontuesta kertyvä eläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-46",
+      "title": "Muista perhevapaista kertyvä eläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-47",
+      "title": "Ansiosidonnaisesta kertyvä eläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-48",
+      "title": "Sairauspäivärahoista ja muista etuusjaksoista kertyvä eläke pois",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-49",
+      "title": "Eläkeikä kohti 70 vuotta",
+      "status": "mechanism",
+      "sources": [
+        "retirement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-50",
+      "title": "Työeläkkeet seuraamaan vain hintoja",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-51",
+      "title": "Työeläkkeiden indeksit jäihin 2028–2031",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-52",
+      "title": "Leskeneläke kahteen vuoteen, lapsiperheet suojataan",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-54",
+      "title": "Yli 60-vuotiaiden työkyvyttömyyseläkkeen ehtoja tiukemmiksi",
+      "status": "mechanism",
+      "sources": [
+        "retirement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-56",
+      "title": "Nuorten työkyvyttömyyseläkkeen kertakorotus pois",
+      "status": "limited",
+      "sources": [
+        "pensionadequacy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-57",
+      "title": "Eläkkeen karttuma 1,5 → 1,4 %",
+      "status": "mechanism",
+      "sources": [
+        "pensionprojection"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "benefits",
+      "title": "Perusturvaetuuksien indeksit jäihin 2028–2031",
+      "status": "mechanism",
+      "sources": [
+        "spending"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-61",
+      "title": "Joustava hoitoraha pois",
+      "status": "mechanism",
+      "sources": [
+        "childcare",
+        "homecare"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-62",
+      "title": "Kotihoidon tuki pois tai pienemmäksi",
+      "status": "mechanism",
+      "sources": [
+        "homecare",
+        "homecare-immigrant-children",
+        "homecare-germany",
+        "integration",
+        "integration-children",
+        "integration-us-language",
+        "integration-uk-rtof",
+        "integration-germany-fiscal",
+        "integration-germany-language"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-63",
+      "title": "Vanhempainrahan alun korotus pois",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-64",
+      "title": "Vanhempainrahan laskukaavaa alas",
+      "status": "mechanism",
+      "sources": [
+        "childbenefit"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-65",
+      "title": "Ehkäisevän työterveyden Kela-korvaus 60 → 50 %",
+      "status": "limited",
+      "sources": [
+        "occupationaltrial"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-66",
+      "title": "Työterveyden sairaanhoidon korvaus 50 → 40 %",
+      "status": "limited",
+      "sources": [
+        "occupationaltrial"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-67",
+      "title": "Työterveyden korvauskatosta −50 euroa",
+      "status": "limited",
+      "sources": [
+        "occupationaltrial"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-68",
+      "title": "Maatalouslomituksen valtionrahoitus pois",
+      "status": "limited",
+      "sources": [
+        "farmrelief"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-3-69",
+      "title": "Maatalouslomituksen rajaaminen ydintehtäviin",
+      "status": "limited",
+      "sources": [
+        "farmrelief"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-5",
+      "title": "Lastensuojelun asiakasmitoitus pois",
+      "status": "limited",
+      "sources": [
+        "caseload"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-6",
+      "title": "Vanhushoivan henkilöstön vähimmäismitoitus pois",
+      "status": "limited",
+      "sources": [
+        "nursinghome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-7",
+      "title": "Teknologialla alle vanhushoivan minimimitoituksen",
+      "status": "limited",
+      "sources": [
+        "nursinghome"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-9",
+      "title": "Alle 23-vuotiaiden hoitotakuu 14 päivästä 3 kuukauteen",
+      "status": "limited",
+      "sources": [
+        "carefees",
+        "psychotherapy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-11",
+      "title": "Nuorten terapiatakuu pois",
+      "status": "limited",
+      "sources": [
+        "carefees",
+        "psychotherapy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-14",
+      "title": "Lastensuojelun jälkihuolto pois täysi-ikäisiltä",
+      "status": "mechanism",
+      "sources": [
+        "fostercare"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-16",
+      "title": "Hoivamaksu varallisuudesta, asunto suojataan",
+      "status": "direct-model",
+      "sources": [
+        "carewealth"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-17",
+      "title": "Laajempi hoivamaksu varallisuudesta, asunto suojataan",
+      "status": "direct-model",
+      "sources": [
+        "carewealth"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-18",
+      "title": "Hoivamaksuun myös asunto, puolison koti suojataan",
+      "status": "direct-model",
+      "sources": [
+        "carewealth"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-19",
+      "title": "Hoivamaksuun koko asunto- ja muu varallisuus",
+      "status": "direct-model",
+      "sources": [
+        "carewealth"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-20",
+      "title": "Kotihoitomaksu myös varallisuudesta",
+      "status": "direct-model",
+      "sources": [
+        "carewealth"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-21",
+      "title": "Sote-asiakasmaksut kaikkialla lakisääteiseen maksimiin",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "deductible"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-22",
+      "title": "Vammaispalveluihin lisää asiakasmaksuja",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "deductible"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-24",
+      "title": "Kuulokojeisiin ja CPAP-hoitoon lisää omavastuuta",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "deductible"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-25",
+      "title": "Yöpäivystyksiä harvempiin sairaaloihin",
+      "status": "limited",
+      "sources": [
+        "hospitaldistance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-26",
+      "title": "Vaativa sairaalahoito harvempiin sairaaloihin",
+      "status": "limited",
+      "sources": [
+        "hospitaldistance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-27",
+      "title": "Sairaaloiden tukipalvelut yhteisiksi",
+      "status": "mechanism",
+      "sources": [
+        "procurement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-29",
+      "title": "Aikuisten julkinen hammashoito pois",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "offsets"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-30",
+      "title": "Hammashoitomaksuja noin +25–30 %",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "deductible"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-31",
+      "title": "Hyvinvointialueita yhdistetään",
+      "status": "limited",
+      "sources": [
+        "mergers"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "health",
+      "title": "Hyvinvointialueiden indeksijäädytys",
+      "status": "mechanism",
+      "sources": [
+        "nursing",
+        "lowvalue"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-33",
+      "title": "Sote-järjestelmän kokonaisuudistus",
+      "status": "mechanism",
+      "sources": [
+        "nursing",
+        "lowvalue"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-4-34",
+      "title": "Vähähyötyisiä hoitoja pois",
+      "status": "direct-mechanism",
+      "sources": [
+        "lowvalue"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-35",
+      "title": "Pieniä sote-toimipisteitä yhdistetään",
+      "status": "limited",
+      "sources": [
+        "hospitaldistance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-36",
+      "title": "Vuodeosastolta oikeaan jatkohoitoon",
+      "status": "mechanism",
+      "sources": [
+        "discharge"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-37",
+      "title": "Osa ympärivuorokautisesta hoivasta yhteisölliseksi asumiseksi",
+      "status": "limited",
+      "sources": [
+        "nursinghome",
+        "discharge"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-42",
+      "title": "Sote-erikoistumiskoulutuksen erilliskorvaukset pois",
+      "status": "limited",
+      "sources": [
+        "residency"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-47",
+      "title": "Opiskelijan YTHS-maksu noin kaksinkertaiseksi",
+      "status": "mechanism",
+      "sources": [
+        "carefees",
+        "deductible"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-4-48",
+      "title": "Lääkärihelikopterien vastuu yhdelle alueelle",
+      "status": "limited",
+      "sources": [
+        "hems"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-5-16",
+      "title": "Varsinainen kehitysyhteistyö asteittain pois",
+      "status": "mechanism",
+      "sources": [
+        "aidreview"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-17",
+      "title": "Ukrainan siviilituki pois vuodesta 2030",
+      "status": "mechanism",
+      "sources": [
+        "aidreview"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-20",
+      "title": "Humanitaarisen katastrofiavun erillisrahoitus pois",
+      "status": "mechanism",
+      "sources": [
+        "aidreview"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-22",
+      "title": "Tuomioistuinmaksut kustannusten tasolle",
+      "status": "limited",
+      "sources": [
+        "tribunalfees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-29",
+      "title": "Tuomioistuinten toiminnasta −10 %",
+      "status": "limited",
+      "sources": [
+        "courtefficiency"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-33",
+      "title": "Ulosoton myyntimaksut kustannusten tasolle",
+      "status": "limited",
+      "sources": [
+        "debtburden"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-40",
+      "title": "Poliisin työnohjausta ja palkanlisiä karsitaan",
+      "status": "mechanism",
+      "sources": [
+        "police"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-42",
+      "title": "Poliiseja asteittain 400 vähemmän",
+      "status": "mechanism",
+      "sources": [
+        "police"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-45",
+      "title": "Pakolaiskiintiö nollaan",
+      "status": "mechanism",
+      "sources": [
+        "integration"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-49",
+      "title": "Puolustuksen toimintamenojen indeksit jäihin",
+      "status": "mechanism",
+      "sources": [
+        "publicspend"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-52",
+      "title": "Puolustusmateriaalin indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "publicspend"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-53",
+      "title": "Sotilaallisesta kriisinhallinnasta −30 %",
+      "status": "mechanism",
+      "sources": [
+        "peace"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-55",
+      "title": "Puolustuksen terveysvarautuminen mukaan Nato-menoihin",
+      "status": "context",
+      "sources": [
+        "natofinance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-56",
+      "title": "Enemmän puolustusrahaa tutkimukseen",
+      "status": "mechanism",
+      "sources": [
+        "einio",
+        "rdtax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-58",
+      "title": "Valtion matkakuluista −20 %",
+      "status": "limited",
+      "sources": [
+        "videomeetings"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-62",
+      "title": "Valtion yhteiset tukipalvelut uusiksi",
+      "status": "mechanism",
+      "sources": [
+        "procurement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-64",
+      "title": "Valtion valvonta pääosin maksulliseksi",
+      "status": "context",
+      "sources": [
+        "regulatorfees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-66",
+      "title": "Poliisiasemia ja vankiloita harvempiin paikkoihin",
+      "status": "limited",
+      "sources": [
+        "prison"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-5-67",
+      "title": "Valtion hankintoja yhteisiksi ja halvemmiksi",
+      "status": "mechanism",
+      "sources": [
+        "procurement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-72",
+      "title": "Valtion konesalit ja ICT-tuotanto yhteen",
+      "status": "mechanism",
+      "sources": [
+        "procurement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-75",
+      "title": "Valtion palvelumaksuja kustannusten tasolle",
+      "status": "context",
+      "sources": [
+        "regulatorfees"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-5-77",
+      "title": "Valtion henkilöstömenoihin suurempi tuottavuusleikkuri",
+      "status": "mechanism",
+      "sources": [
+        "publicemployment"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-6-5",
+      "title": "Laaja indeksijäädytys, sote-rahoitus suojataan",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-6-6",
+      "title": "Menojen automaattiset indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-6-7",
+      "title": "Indeksikorotukset pysyvästi pienemmiksi",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-7-12",
+      "title": "Eduskunnan joululahjarahakäytäntö pois",
+      "status": "mechanism",
+      "sources": [
+        "fiscalrules"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-16",
+      "title": "Puoluetuki pois",
+      "status": "mechanism",
+      "sources": [
+        "partyfunding"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-18",
+      "title": "Ministeriöitä 12 → 3",
+      "status": "mechanism",
+      "sources": [
+        "mergers"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-19",
+      "title": "Perusteettomia valtion korvausvastuita pois",
+      "status": "unspecified",
+      "sources": [],
+      "unpriced": true
+    },
+    {
+      "id": "cut-7-20",
+      "title": "Kuntien tehtäviä ja rakenteita yhteen",
+      "status": "mechanism",
+      "sources": [
+        "mergers"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-21",
+      "title": "Kuntien peruspalvelujen indeksikorotukset pois",
+      "status": "mechanism",
+      "sources": [
+        "multiplier"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-24",
+      "title": "Valtionavustuksista ja niiden hallinnosta −20 %",
+      "status": "limited",
+      "sources": [
+        "grantfundraising"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-27",
+      "title": "Budjetin ylityksiin ja joustoihin tiukempi kuri",
+      "status": "mechanism",
+      "sources": [
+        "fiscalrules"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "cut-7-28",
+      "title": "Tulevien lisämenojen varausta pienemmäksi",
+      "status": "mechanism",
+      "sources": [
+        "fiscalrules"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-29",
+      "title": "Sitra lakkautetaan, sijoitukset valtiolle",
+      "status": "limited",
+      "sources": [
+        "sitraevaluation"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-30",
+      "title": "Virastot kattamaan osa palkankorotuksista itse",
+      "status": "mechanism",
+      "sources": [
+        "publicemployment"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-41",
+      "title": "Julkisen sektorin henkilöstöä −1 %",
+      "status": "mechanism",
+      "sources": [
+        "publicemployment"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-42",
+      "title": "Eläköityvien tilalle ei uusia työntekijöitä",
+      "status": "mechanism",
+      "sources": [
+        "publicemployment"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-44",
+      "title": "Julkisella sektorilla 24 työtuntia lisää vuodessa",
+      "status": "limited",
+      "sources": [
+        "workingtimefi",
+        "workingtimerct"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-45",
+      "title": "Ensimmäinen sairauspäivä palkattomaksi julkisella sektorilla",
+      "status": "mechanism",
+      "sources": [
+        "sickpay",
+        "contagion"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-46",
+      "title": "Helatorstai ja loppiainen työpäiviksi julkisella sektorilla",
+      "status": "limited",
+      "sources": [
+        "workingtimefi",
+        "workingtimerct"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-48",
+      "title": "Julkisen sektorin pitkät lomat 38 → 30 päivää",
+      "status": "limited",
+      "sources": [
+        "workingtimerct",
+        "workingtimefi"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-49",
+      "title": "Julkisen sektorin pitkät lomat 38 → 36 päivää",
+      "status": "limited",
+      "sources": [
+        "workingtimerct",
+        "workingtimefi"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-50",
+      "title": "Pitkälomalaisten lomaraha 6 → 5 %",
+      "status": "mechanism",
+      "sources": [
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-51",
+      "title": "Julkisen sektorin lomarahat puoleen",
+      "status": "mechanism",
+      "sources": [
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "cut-7-52",
+      "title": "Julkisen sektorin palkoista −1 %",
+      "status": "mechanism",
+      "sources": [
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "income",
+      "title": "Valtion tuloveroasteikkoa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "incomeelastic",
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "income-index",
+      "title": "Tuloverotuksen indeksitarkistus tekemättä",
+      "status": "mechanism",
+      "sources": [
+        "incomeelastic",
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-pension",
+      "title": "Eläketuloverotusta kiristetään, VM:n 100 miljoonan esimerkki",
+      "status": "mechanism",
+      "sources": [
+        "retirement"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-donation",
+      "title": "Lahjoitusvähennys pois",
+      "status": "mechanism",
+      "sources": [
+        "donation"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-household",
+      "title": "Kotitalousvähennystä supistetaan",
+      "status": "mechanism",
+      "sources": [
+        "cleaning"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "tax-capital-low",
+      "title": "Alempaa pääomatuloveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "incomeelastic",
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-capital-high",
+      "title": "Ylempää pääomatuloveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "incomeelastic",
+        "mpc"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-entrepreneur-remove",
+      "title": "Yrittäjävähennys kokonaan pois",
+      "status": "mechanism",
+      "sources": [
+        "incomeshifting"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-entrepreneur-step",
+      "title": "Yrittäjävähennystä −1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "incomeshifting"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "dividends",
+      "title": "Listaamattomien osinkoverotus uusiksi",
+      "status": "mechanism",
+      "sources": [
+        "incomeshifting"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-dividend-return",
+      "title": "Osinkohuojennuksen tuottorajaa −1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "incomeshifting"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-rd",
+      "title": "Yritysten T&K-yhdistelmävähennys pois tai pienemmäksi",
+      "status": "mechanism",
+      "sources": [
+        "rdtax"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "tax-ifrs",
+      "title": "IFRS-yhtiöiden poisto- ja luottotappiovaraussäännöt uusiksi",
+      "status": "limited",
+      "sources": [
+        "bankprovisions"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "corporate",
+      "title": "Yhteisöveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "corporatetax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-forest",
+      "title": "Metsävähennyksen rajat 75 → 60 %",
+      "status": "limited",
+      "sources": [
+        "forestdeduction"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-transfer-land",
+      "title": "Kiinteistöjen varainsiirtoveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "transfertax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-transfer-homes",
+      "title": "Asunto-osakkeiden varainsiirtoveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "transfertax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-transfer-shares",
+      "title": "Muiden osakkeiden varainsiirtoveroa +1 prosenttiyksikkö",
+      "status": "context",
+      "sources": [
+        "unlistedtransfer"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-succession",
+      "title": "Sijoitusvarat pois yritysperintöjen veroedusta",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "inheritance",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-inheritance",
+      "title": "Perintö- ja lahjaveroa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "inheritance"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat15",
+      "title": "Alennetut ALV-kannat 15 prosenttiin",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat16",
+      "title": "Alennetut ALV-kannat 16 prosenttiin",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-food18",
+      "title": "Ruoan ja ravintoloiden ALV 18 prosenttiin",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat-services",
+      "title": "Muut alennetut ALV-kannat 25,5 prosenttiin",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "vat",
+      "title": "Kaikki ALV-kannat 25,5 prosenttiin",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat-standard",
+      "title": "Yleistä ALV-kantaa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat-reduced",
+      "title": "13,5 prosentin ALV-kantaa +1 prosenttiyksikkö",
+      "status": "mechanism",
+      "sources": [
+        "vatasymmetry"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat-news135",
+      "title": "Lehtien ALV 10 → 13,5 %",
+      "status": "limited",
+      "sources": [
+        "vatservice"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vat-news255",
+      "title": "Lehtien ALV 10 → 25,5 %",
+      "status": "limited",
+      "sources": [
+        "vatservice"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-insurance",
+      "title": "Vakuutusmaksuveroa +1 prosenttiyksikkö",
+      "status": "limited",
+      "sources": [
+        "insurancedemand"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-excise-index",
+      "title": "Valmiste- ja ajoneuvoverot seuraamaan inflaatiota",
+      "status": "mechanism",
+      "sources": [
+        "carbon",
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-tobacco",
+      "title": "Tupakkaveroa lisää asteittain",
+      "status": "mechanism",
+      "sources": [
+        "tobacco"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-diesel",
+      "title": "Dieselin ja kaasun verotukea pienemmäksi",
+      "status": "mechanism",
+      "sources": [
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-commercial-diesel",
+      "title": "Ammattidieselin verotuki pois",
+      "status": "mechanism",
+      "sources": [
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-van",
+      "title": "Paketti- ja kuorma-autojen käyttövoimaveroa ylös",
+      "status": "mechanism",
+      "sources": [
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-vehicle",
+      "title": "Ajoneuvon perusveroa +100 euroa vuodessa",
+      "status": "mechanism",
+      "sources": [
+        "carbon",
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-peat",
+      "title": "Turpeen verotuet pois taakanjakosektorilla",
+      "status": "mechanism",
+      "sources": [
+        "biomass"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-biomass",
+      "title": "Kiinteälle biomassalle vero",
+      "status": "direct-model",
+      "sources": [
+        "biomass"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "tax-waste-energy",
+      "title": "Jätteen polttamiselle vero",
+      "status": "mechanism",
+      "sources": [
+        "waste"
+      ],
+      "unpriced": true
+    },
+    {
+      "id": "tax-heat",
+      "title": "Suurten lämpöpumppujen ja sähkökattiloiden verotuki pois",
+      "status": "mechanism",
+      "sources": [
+        "biomass"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-tickets",
+      "title": "Lento- ja laivalipuille vero",
+      "status": "mechanism",
+      "sources": [
+        "aviation"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-fuel",
+      "title": "Liikennepolttoaineiden veroa +1 €/MWh",
+      "status": "mechanism",
+      "sources": [
+        "carbon",
+        "fuel"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-electric1",
+      "title": "Yleistä sähköveroa +1 €/MWh",
+      "status": "limited",
+      "sources": [
+        "energydemand"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-electric2",
+      "title": "Teollisuuden sähköveroa +1 €/MWh",
+      "status": "mechanism",
+      "sources": [
+        "energy"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-car-all",
+      "title": "Autoveroa +1 prosenttiyksikkö, myös sähköautoille",
+      "status": "mechanism",
+      "sources": [
+        "cartax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-car-combustion",
+      "title": "Autoveroa +1 prosenttiyksikkö vain polttomoottoriautoille",
+      "status": "mechanism",
+      "sources": [
+        "cartax"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-land-values",
+      "title": "Tonttien verotusarvot ajan tasalle",
+      "status": "mechanism",
+      "sources": [
+        "land"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "tax-land-min",
+      "title": "Maapohjan veron alarajaa +0,1 prosenttiyksikköä",
+      "status": "mechanism",
+      "sources": [
+        "land"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-wrappers",
+      "title": "Vakuutuskuorien ja osakesäästötilien lykkäysetu pois",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "etla-wrapper-model",
+        "chetty-saving",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-dividend-withholding",
+      "title": "5 % vero nyt verovapaisiin osinkoihin",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "fin-fsa-fund-ownership"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-interest",
+      "title": "Voitonsiirron korkoporsaanreiät kiinni",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "finland-interest-2026",
+        "eu-interest-2026",
+        "harju-interest",
+        "fw-interest-2025",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "cbo-incidence-assumption"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-corporate-gaps",
+      "title": "Yritysten voitonsiirron aukot kiinni",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "profit-shifting-wier",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "finland-interest-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-corporate-minimum",
+      "title": "Suuryritysten vähimmäisvero 20 % EU-sopimuksella",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "minimum-tax-eutax",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-wealth-minimum",
+      "title": "Yli 100 miljoonan omaisuuksille 2 % vähimmäisvero",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "wealth-minimum-eutax",
+        "wealth-migration-2026",
+        "wealth-norway-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-exit-tax",
+      "title": "Suomessa kertynyt arvonnousu verolle maastamuutossa",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-exit-2020",
+        "exit-review-2026",
+        "wealth-migration-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-property-funds",
+      "title": "Kiinteistörahastojen verovapaus pois",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "kti-funds-2026",
+        "vm-funds-2022",
+        "fin-fsa-fund-ownership",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-treaty-dividends",
+      "title": "Osinkojen nollaverosopimukset ja osinkopesu pois",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "faster-2024",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-portfolio",
+      "title": "Yhtiöiden pienomistusten osingot verolle",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "capital-realizations",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-deemed-cost",
+      "title": "Pitkän omistuksen hankintameno-olettama 40 → 20 %",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "vero-capital-2024",
+        "capital-realizations",
+        "capital-budgetlab",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-succession-abolish",
+      "title": "Yritysperintöjen ja -lahjojen huojennus kokonaan pois",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "inheritance",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "fw-digital",
+      "title": "Suurten alustojen verkkomainonnalle 5 % vero",
+      "status": "context",
+      "sources": [
+        "fw-tax-gaps",
+        "iab-advertising-2025",
+        "austria-digital",
+        "digital-jrc",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "sorsa-bank",
+      "title": "Pankeille rahoitustoimintavero",
+      "status": "context",
+      "sources": [
+        "sorsa-ten",
+        "bank-norway",
+        "bank-incidence",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    },
+    {
+      "id": "sorsa-million-inheritance",
+      "title": "Miljoonaperintöjen ja -lahjojen veroa +10 prosenttiyksikköä",
+      "status": "context",
+      "sources": [
+        "sorsa-ten",
+        "inheritance",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "unpriced": false
+    }
+  ]
+}

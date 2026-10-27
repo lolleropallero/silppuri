@@ -1,0 +1,158 @@
+{
+  "https://urn.fi/URN:ISBN:978-952-367-619-0": {
+    "summary": "VM vertailee veronkorotusten tuottoja ja vaikutuksia. Osassa laskelmista vähennetään jo esimerkiksi muiden verojen menetys, etuusindeksien nousu tai arvioitu käyttäytymisreaktio. Siksi suora verokertymä ja julkisen talouden netto voivat olla eri suuruisia.",
+    "limit": "Laskelmien kattavuus vaihtelee toimen mukaan. Koko paketin yhteisvaikutuksia ei ole arvioitu laskemalla yksittäisiä arvioita yhteen."
+  },
+  "https://urn.fi/URN:ISBN:978-952-367-603-9": {
+    "summary": "VM:n muistioissa kuvataan menoehdotusten toteutus, säästön synty ja keskeiset seuraukset. Säästö voi syntyä esimerkiksi pienemmästä etuudesta, palvelumenosta tai tulevan menolisäyksen peruuttamisesta.",
+    "limit": "Kaikille ehdotuksille ei ole laskettu euromäärää. Menokartoituksen luvut eivät sisällä koko talouden kysynnän muutoksia, eikä jokaista ehdotusta ole tutkittu toteutuneena uudistuksena."
+  },
+  "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/cc17f785-1f60-4239-bf43-adf73cfdbf2c/content": {
+    "summary": "VM:n laskentataulukko erittelee toimien vuosittaiset vaikutukset valtioon, kuntiin ja hyvinvointialueisiin sekä erikseen sosiaaliturvarahastoihin. Koko julkisen talouden vaikutus saadaan yhdistämällä nämä osat.",
+    "limit": "Taulukko on arvioiden lähdeaineisto, ei erillinen vaikutustutkimus. Työllisyys-, kulutus- ja muiden jatkovaikutusten kattavuus pitää tarkistaa kunkin toimen muistiosta."
+  },
+  "https://www.sttinfo.fi/files/66784256/70136599/79254/fi": {
+    "summary": "Laboren laskelmassa listaamattomien osinkojen erityishuojennuksen poistaminen kasvattaisi verotuloja 459 miljoonaa euroa. Kotitalouksien veronkorotuksesta noin 83 % kohdistuisi suurituloisimpaan kymmenykseen.",
+    "limit": "Vuoden 2024 laskelma perustuu ajantasaistettuun rekisteriaineistoon. Se ei huomioi osingonjaon muuttumista, eikä lukua lasketa yhteen VM:n toisen osinkomallin kanssa."
+  },
+  "https://www.vero.fi/yritykset-ja-yhteisot/verot-ja-maksut/osakeyhtio-ja-osuuskunta/tuloverotus/": {
+    "summary": "Osakeyhtiö ja osuuskunta maksavat yhteisöveroa verotettavasta voitostaan erillään omistajiensa verotuksesta. Veroa ei lasketa liikevaihdosta. Tappiollinen yritys ei maksa tuloveroa pelkän myyntinsä perusteella.",
+    "limit": "Tämä on verosääntöjen kuvaus. Se ei arvioi, kuinka suuri osa veronkorotuksesta siirtyy omistajilta työntekijöille tai asiakkaille."
+  },
+  "https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/47999/verotusohje-yleishyodyllisille-yhteisoille6/": {
+    "summary": "Yleishyödyllinen yhdistys tai säätiö voi maksaa veroa elinkeinotulosta ja tietyistä kiinteistötuloista, vaikka suuri osa sen muista tuloista olisi verovapaata. Pelkkä säätiömuoto ei ratkaise verovelvollisuutta.",
+    "limit": "Ohje kertoo nykyisten sääntöjen soveltamisesta. Yhteisöveron korottaminen ei itsessään poista yleishyödyllisten yhteisöjen verovapauksia."
+  },
+  "https://www.ecb.europa.eu/press/economic-bulletin/articles/2021/html/ecb.ebart202102_01~1773181511.en.html": {
+    "summary": "EKP:n katsauksessa pienet rahapuskurit liittyvät voimakkaampaan kulutusreaktioon tulojen muuttuessa. Myös hyvätuloinen kotitalous voi olla tiukilla, jos varallisuus on sidottu asuntoon eikä rahaa ole käytettävissä arjen menoihin.",
+    "limit": "Tuloluokka ei yksin määritä kulutusreaktiota. Katsaus ei anna jokaiselle suomalaiselle tulokymmenykselle omaa verotuottokerrointa."
+  },
+  "https://stat.fi/tietotrendit/artikkelit/2025/Pienituloiset-maksavat-suhteessa-tuloihin-eniten-arvonlisaeveroja-kulutusmenoihin-naehden-progressio-on-vaehaeistae": {
+    "summary": "Suomen kulutustutkimuksessa pienituloiset maksoivat ALV:tä suurimman osuuden tuloistaan. Kun veroa verrattiin kulutusmenoihin, tuloryhmien erot olivat paljon pienempiä. Ero syntyy osin siitä, että suurituloiset säästävät suuremman osan tuloistaan.",
+    "limit": "Vuoden 2022 kulutukseen perustuva jakauma ei vielä kerro, miten kotitaloudet muuttavat ostoksiaan uuden veronkorotuksen jälkeen."
+  },
+  "https://labore.fi/julkaisu/alv-alennus-ei-paranna-kuluttajien-ostovoimaa/": {
+    "researchSummary": "vatasymmetry"
+  },
+  "https://urn.fi/URN:ISBN:978-952-408-495-6": {
+    "summary": "THL:n laskelmissa vuosien 2024–2025 leikkaukset heikensivät perusturvan riittävyyttä etenkin työttömillä lapsiperheillä. Toimeentulotuki korvasi osan muiden etuuksien menetyksistä niille, jotka olivat siihen oikeutettuja ja hakivat sitä.",
+    "limit": "Kyse on esimerkkilaskelmista ja tulonjaon simuloinnista. Työllistymisen ja kulutuksen muutoksia ei voi päätellä suoraan näistä euromuutoksista."
+  },
+  "https://www.finnwatch.org/fi/julkaisut/osinkoverojaerjestelmaen-epaetasaisesti-jakautuvat-hyoedyt-seurantaraportti": {
+    "summary": "Verohallinnon vuoden 2020 tilastoihin perustuvassa selvityksessä noin 71 % huojennettujen osinkojen verovapaista euroista kohdistui suurituloisimpaan kymmenykseen. Nykyinen veroetu kasautui siis selvästi suurituloisille.",
+    "limit": "Tämä kuvaa veroedun nykyisiä saajia. Uuden veromallin veronkorotus voi jakautua eri tavalla, ja tulokymmenykset on määritetty veronalaisten tulojen perusteella."
+  },
+  "https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/47901/osinkotulojen-verotus6/": {
+    "summary": "Listaamattoman yhtiön osingon kevyt verotus riippuu osakkeiden matemaattisesta arvosta. Kahdeksan prosentin tuottorajan sisällä ja 150 000 euroon asti osingosta vain neljännes on veronalaista pääomatuloa. Suuri nettovarallisuus mahdollistaa suuremman huojennetun osingon.",
+    "limit": "Viranomaisohje kertoo verosäännöt, ei niiden käyttäytymisvaikutuksia. Osingon matemaattinen arvo ei ole sama asia kuin osakkeiden markkina-arvo."
+  },
+  "https://www.sttinfo.fi/tiedote/69970253/listaamattomien-yritysten-voitonjako-reagoi-voimakkaasti-muutoksiin-osinkoverotuksessa?publisherId=69819223": {
+    "summary": "VATT:n tutkimissa Suomen osinkoveromuutoksissa listaamattomien yhtiöiden voitonjako reagoi voimakkaasti veroihin. Investoinneissa tai liikevaihdossa ei havaittu vastaavaa muutosta. Verosuunnittelu ja osinkojen ajoitus selittävät siis osan reaktiosta.",
+    "limit": "Tiedote esittelee tutkimuksen tuloksia aiemmista uudistuksista. Se ei ennusta erityishuojennuksen täydellisen poistamisen kaikkia vaikutuksia."
+  },
+  "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf": {
+    "researchSummary": "fw-tax-gaps"
+  },
+  "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content": {
+    "researchSummary": "vm-withholding"
+  },
+  "https://www.nber.org/papers/w18565": {
+    "researchSummary": "chetty-saving"
+  },
+  "https://finnwatch.org/images/pdf/Loppu_korkokikkailulle.pdf": {
+    "researchSummary": "fw-interest-2025"
+  },
+  "https://ifs.org.uk/sites/default/files/2025-09/Fiscal%20Studies%20-%202025%20-%20Harju%20-%20Firm%20responses%20to%20an%20interest%20barrier%20%20empirical%20evidence.pdf": {
+    "researchSummary": "harju-interest"
+  },
+  "https://www.eduskunta.fi/asiat-ja-aanestykset/valtiopaivaasiat/asiakirjat/edktunnus/EDK-2026-AK-45818": {
+    "researchSummary": "joint-forests-2026"
+  },
+  "https://www.eduskunta.fi/asiat-ja-aanestykset/valtiopaivaasiat/asiakirjat/edktunnus/EDK-2026-AK-40709": {
+    "researchSummary": "finland-interest-2026"
+  },
+  "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026SC0561": {
+    "researchSummary": "eu-interest-2026"
+  },
+  "https://obr.uk/docs/dlm_uploads/IHT-APR-and-BPR-supplementary-release-Jan-2025.pdf": {
+    "researchSummary": "obr-business-relief"
+  },
+  "https://www.etla.fi/wp-content/uploads/Etla-Erikoisartikkeli-19-Osakesaastotilin-laajentaminen-rahastosijoituksiin-2026.pdf": {
+    "researchSummary": "etla-wrapper-model"
+  },
+  "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__vtutk/statfin_vtutk_pxt_151u.px/": {
+    "researchSummary": "statfin-wealth-incidence"
+  },
+  "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__tjt/statfin_tjt_pxt_128c.px/": {
+    "researchSummary": "statfin-income-incidence"
+  },
+  "https://publications.bof.fi/bitstream/handle/10024/53958/Valvottavien-taloudellinen-tila-ja-riskit-kev%C3%A4t-2025.pdf": {
+    "researchSummary": "fin-fsa-fund-ownership"
+  },
+  "https://www.cbo.gov/publication/60706": {
+    "researchSummary": "cbo-incidence-assumption"
+  },
+  "https://sorsafoundation.fi/mista-lisaa-verotuloja-kymmenen-vastausta/": {
+    "researchSummary": "sorsa-ten"
+  },
+  "https://sorsafoundation.fi/lahjaveropuhallus/": {
+    "researchSummary": "sorsa-gifts"
+  },
+  "https://ora.ox.ac.uk/objects/uuid:f82e2e0b-9a78-459f-9983-c48bcfe4b462": {
+    "researchSummary": "cfc-clifford"
+  },
+  "https://missingprofits.world/wp-content/uploads/2022/11/WIDER_WP_Wier_and_Zucman___Global_profit_shifting.pdf": {
+    "researchSummary": "profit-shifting-wier"
+  },
+  "https://www.taxobservatory.eu/www-site/uploads/2021/06/TaxObservatory_Report_Tax_Deficit_July2021_Revised.pdf": {
+    "researchSummary": "minimum-tax-eutax"
+  },
+  "https://www.taxobservatory.eu/www-site/uploads/2025/03/Resources-for-a-Safe-and-Resilient-Europe_The-Case-for-Minimum-Taxation-of-Ultra-High-Net-Worth-Individuals-in-the-EU-1.pdf": {
+    "researchSummary": "wealth-minimum-eutax"
+  },
+  "https://www.nber.org/papers/w32153": {
+    "researchSummary": "wealth-migration-2026"
+  },
+  "https://www.nber.org/papers/w35854": {
+    "researchSummary": "wealth-norway-2026"
+  },
+  "https://www.aeaweb.org/articles?id=10.1257/aeri.20200535": {
+    "researchSummary": "capital-realizations"
+  },
+  "https://budgetlab.yale.edu/research/behavioral-responses-capital-gains-realizations": {
+    "researchSummary": "capital-budgetlab"
+  },
+  "https://vero.fi/tietoa-verohallinnosta/tilastot/henkiloasiakkaiden_tuloverotilastoj/verovuosi-2024/henkiloasiakkaiden-tulot-vahennykset-ja-verot-verovuonna-2024/": {
+    "researchSummary": "vero-capital-2024"
+  },
+  "https://kti.fi/wp-content/uploads/2026/05/ESR-Aikasarja-Q1-2026.pdf": {
+    "researchSummary": "kti-funds-2026"
+  },
+  "https://valtioneuvosto.fi/-/10623/uudet-kiinteistosijoitusrahastojen-verotusta-koskevat-saannokset-turvaavat-suomen-veropohjaa": {
+    "researchSummary": "vm-funds-2022"
+  },
+  "https://oikeus.journal.fi/article/download/163214/122403/462038": {
+    "researchSummary": "exit-review-2026"
+  },
+  "https://www.bmf.gv.at/en/topics/taxation/digital-tax-act.html": {
+    "researchSummary": "austria-digital"
+  },
+  "https://www.iab.fi/julkaisut/ajankohtaista/mediamainonnan-maara-paattyi-07-laskuun-vuonna-2025.html": {
+    "researchSummary": "iab-advertising-2025"
+  },
+  "https://www.regjeringen.no/en/documents/prop.-1-ls-20252026/id3125412/?ch=1": {
+    "researchSummary": "bank-norway"
+  },
+  "https://alexandria.unisg.ch/entities/publication/c7101a22-f025-4de3-80f2-1e202fac7a5c": {
+    "researchSummary": "bank-incidence"
+  },
+  "https://valtioneuvosto.fi/en/-/10623/maastapoistumisvero-mista-on-kyse-ja-mista-ei-": {
+    "researchSummary": "vm-exit-2020"
+  },
+  "https://www.consilium.europa.eu/en/press/press-releases/2024/12/10/taxation-council-adopts-new-rules-for-withholding-tax-procedures-faster/": {
+    "researchSummary": "faster-2024"
+  },
+  "https://publications.jrc.ec.europa.eu/repository/handle/JRC130576": {
+    "researchSummary": "digital-jrc"
+  }
+}

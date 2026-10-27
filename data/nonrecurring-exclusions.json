@@ -1,0 +1,13 @@
+{
+  "cut-1-24": {"category":"financial-transaction","sourceKey":"1-24","reason":"Tesin pääomanpalautus tai osinko pienentää lainanottotarvetta, mutta VM:n mukaan ei julkisen talouden alijäämää. Jatkuvaa lisätuottoa ei osoiteta."},
+  "cut-3-30": {"category":"reversing-effect","sourceKey":"3-30","reason":"Ansiotulo-osinkojen lisääminen YEL-työtuloon kasvattaa ensin maksutuloja. VM:n mukaan vaikutus kääntyy pitkällä aikavälillä julkista taloutta heikentäväksi."},
+  "cut-3-53": {"category":"reversing-effect","sourceKey":"3-53","reason":"OVE-eläkkeen poistamisen taulukoitu säästö on eläkemenon siirtymistä: vaikutus kääntyy vastakkaiseksi 2050-luvulla. Mahdolliselle pysyvälle työllisyys- ja verohyödylle ei ole tässä euroarviota. VM esittää alkuvaiheen ylijäämän rahastointia myöhempiin eläkkeisiin, ei valtion velan vähentämiseen."},
+  "cut-4-40": {"category":"temporary-grant","sourceKey":"4-40","reason":"Alueellisten sote-järjestöjen uusi avustus on määräaikainen vuosina 2027–2030. Sen aikaistettu lopettaminen ei tuo säästöä vuodesta 2031 eteenpäin."},
+  "cut-5-8": {"category":"asset-sale","sourceKey":"5-8","reason":"Edustustokiinteistöjen myyntitulo on kertaluonteinen. Tilalle voi tulla vuokramenoja; jatkuvaa nettosäästöä ei ole arvioitu."},
+  "cut-5-9": {"category":"asset-sale","sourceKey":"5-9","reason":"Kulttuuri-instituuttien kiinteistöjen myynti tuottaa kertaluonteisen kauppahinnan. Jatkuvaa nettosäästöä ei ole arvioitu."},
+  "cut-5-19": {"category":"financial-transaction","sourceKey":"5-19","reason":"Kehityspoliittisten lainojen ja sijoitusten vähentäminen pienentää rahoitustaloustoimia. Se ei sellaisenaan pienennä kansantalouden tilinpidon mukaista alijäämää."},
+  "cut-5-39": {"category":"temporary-programme","sourceKey":"5-39","reason":"Tilapäisen suojelun päättyminen maaliskuussa 2028 budjetin maaliskuun 2029 oletuksen sijasta aikaistaa jo päättyväksi oletettua menoa. Taulukossa säästöä on vain vuonna 2028."},
+  "cut-5-50": {"category":"postponement","sourceKey":"5-50","reason":"Puolustusmenojen kasvua lykätään, mutta vuonna 2035 saavutetaan sama 3,5 prosentin BKT-osuus. Tavoiteltu lopullinen menotaso ei alene."},
+  "cut-5-51": {"category":"postponement","sourceKey":"5-51","reason":"Puolustusmenot pidetään 3 prosentissa BKT:sta vuoteen 2034 asti ja nostetaan samaan 3,5 prosenttiin vuonna 2035. Kyse on kasvun lykkäämisestä."},
+  "cut-7-23": {"category":"balance-drawdown","sourceKey":"7-23","reason":"Taulukoitu 100 miljoonan vuosisäästö perustuu aiemmin myönnettyjen määrärahojen käyttämiseen ja uusien määrärahojen väliaikaiseen alibudjetointiin vuosina 2028–2031. Hallinnon pysyvälle tehostumiselle ei ole erillistä arviota."}
+}

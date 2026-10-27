@@ -1,0 +1,19 @@
+{
+  "tax-insurance": {
+    "source": "insurancedemand",
+    "table": "Hodula ym. (2021), Table 2, non-life insurance models 3 and 4",
+    "taxBaseMillion": 4700,
+    "baseRate": 0.255,
+    "newRate": 0.265,
+    "premiumRevenuePriceModels": [
+      {"coefficient": 0.674, "standardError": 0.084},
+      {"coefficient": 0.586, "standardError": 0.076}
+    ],
+    "standardErrorMultiplier": 1.96,
+    "quantityElasticity": "premium revenue price coefficient - 1",
+    "formula": "taxBaseMillion * (newRate * ((1 + newRate) / (1 + baseRate)) ** quantityElasticity - baseRate)",
+    "roundedRangeMillion": [41, 45],
+    "assumptions": "Full tax pass-through; unchanged pre-tax supply price; cross-country conditional price associations used as hypothetical causal elasticities.",
+    "scope": "Sensitivity of insurance-tax receipts only, not a Finnish forecast or confidence interval. Other taxes, benefits and public-sector premiums excluded. Does not replace the pie's direct 47m estimate."
+  }
+}

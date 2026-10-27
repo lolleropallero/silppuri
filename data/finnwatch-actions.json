@@ -1,0 +1,155 @@
+[
+  {
+    "id": "fw-wrappers",
+    "title": "Vakuutuskuorien ja osakesäästötilien lykkäysetu pois",
+    "flow": "capital",
+    "who": "Vakuutuskuoriin ja osakesäästötileille sijoittavilta. Suurten sijoitussalkkujen omistajat menettäisivät euroissa eniten. Myös pienemmillä osakesäästötileillä sijoittavat maksaisivat veroa aiemmin.",
+    "impact": "Sijoitusten tuotot verolle jo tilin sisällä.",
+    "society": "Osingot, korot ja kuoren sisällä realisoidut voitot tulisivat verolle aiemmin. Vero pienentäisi uudelleen sijoitettavaa summaa. Osa sijoittajista voisi vaihtaa esimerkiksi kasvuosuuksia tarjoavaan rahastoon, jossa veroa lykätään edelleen.",
+    "source": "Finnwatch 2024: Veropohjan aukot, s. 73–74",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "estimate": {
+      "model": "wrappers",
+      "caption": "netto vuonna 2031",
+      "basis": "Oma vuosittainen kassavirtalaskelma · aloitus 2028 · ei pysyvä vuosituotto",
+      "money": "Nostojen nykyiset verot ja sijoituspääoman pieneneminen on vähennetty laskelmassa. Vuoden 2031 lisätulo on silti osaksi veron aikaistumista. Samaa summaa ei voi luvata pysyvästi: vanhan sijoituskannan myöhempi verokertymä pienenee. Uusien sijoitusten ja perintöjen vaikutus jää tämän laskelman ulkopuolelle.",
+      "calculation": [
+        "Lähdetieto: Finnwatchin 47,7 mrd. € sijoituspohjalle 3–5 % vuosituotto ja 30 % vero antavat 429,3–715,5 milj. € bruttoluvun. Käytämme samaa pääomaa ilman inflaatio- tai kasvuennustetta. Laskelma seuraa tätä sijoituskantaa vuodesta 2028; uusia talletuksia ei lisätä.",
+        "Vertailumenetelmä: ETLAn vuoden 2026 erikoisartikkeli 19 vertaa vuosittaista verotusta ja osakesäästötilin nostoverotusta. Sen herkkyyslaskelmissa nostetaan 5–15 % varoista vuodessa ja lähtövoittojen osuutena käytetään 20 %. Otamme nämä mallioletuksiksi; ne eivät ole havainto Suomen vakuutuskuorien keskimääräisistä nostoista. Emme skaalaa ETLAn eri uudistuksen euromääräistä tulosta Suomeen.",
+        "Omat oletukset: 50–100 % vuoden tuotosta olisi osinkoa, korkoa tai realisoitua voittoa ja siten heti verollista. Loppu olisi edelleen realisoitumatonta arvonnousua. Tuotteiden vaihtamisen jälkeen 50–80 % sijoituspohjasta jäisi uudistuksen vaikutuksen piiriin. Näitä osuuksia ei ole mitattu; ne kattavat sekä osittaisen että voimakkaan sopeutumisen. Chettyn ym. Tanskan tutkimus osoittaa tilien välisen siirtymisen merkityksen, mutta siitä ei poimita Suomen kerrointa.",
+        "Vuosilaskenta: alkupääomalle lasketaan tuotto. Uudistuksessa heti verollisesta osasta maksetaan 30 %, ja veron jälkeinen verotettu tuotto lisätään hankintamenoon. Sen jälkeen 5–15 % varoista nostetaan. Noston vielä verottamaton voitto verotetaan kummassakin vaihtoehdossa. Veroja ei siis peritä samasta tuotosta kahdesti. Vanhat, ennen uudistusta kertyneet voitot verotetaan vasta nostettaessa.",
+        "Netto kullekin vuodelle = (uudistuksen verot − nykyjärjestelmän saman vuoden verot) × 50–80 % − 2–5 milj. € vuotuisia julkisia kuluja. Kulut ovat oma varaus. Pääoma pienenee nostojen ja verojen vuoksi eri tahtia kummassakin vaihtoehdossa. Kaikki 32 parametrien ääriyhdistelmää lasketaan, eikä alarajaa muodosteta keskenään ristiriitaisista laskelmista.",
+        "Vuodelle 2031 saadaan 24,4–436,4 milj. € eli ulospäin pyöristettynä 20–440 milj. €. Tämä on ehdollinen kassavirran netto vanhalle sijoituskannalle. Se ei ole pysyvän budjettivajeen korjaantumisen arvio eikä tilastollinen luottamusväli. Jos vuotuista verotusta voidaan väistää oletettua enemmän, tuotto jää pienemmäksi.",
+        "Myöhempinä vuosina tulos voi kääntyä negatiiviseksi: tässä vanhan kannan mallissa nykyjärjestelmä saisi silloin veroja aiemmin lykätyistä ja pidempään kasvaneista tuotoista. Uudet talletukset, kuolemantapaukset, perintöverot, ulkomaiset verohyvitykset, valtion korkomenot ja markkinoiden vaihtelu eivät sisälly malliin. Aikaistettu vero ei yksin riitä perusteluksi pysyvälle satojen miljoonien vuotuiselle säästölle."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "etla-wrapper-model",
+        "chetty-saving",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "Tanskan rekisteritutkimuksessa säästämisen veroetu siirsi varoja tilien välillä huomattavasti enemmän kuin lisäsi säästämistä. Etuihin aktiivisesti reagoivat olivat keskimääräistä varakkaampia. Siksi veroedun poisto ei tarkoita, että sijoittaminen vähenisi samalla euromäärällä.",
+      "fiscal": "Netto lasketaan kahden verotuspolun erotuksena vuosittain. Vuoden 2031 hyötyä ei uloteta pysyväksi vuotuiseksi tuotoksi.",
+      "scope": "Finnwatchin pääomapohja, ETLAn mallinnustapa ja Tanskan tutkimuksen käyttäytymiskanava. Verollisten tuottojen osuus, tuotteiden vaihtaminen ja kulut ovat omia herkkyysoletuksia.",
+      "status": "context"
+    }
+  },
+  {
+    "id": "fw-dividend-withholding",
+    "title": "5 % vero nyt verovapaisiin osinkoihin",
+    "flow": "investors",
+    "who": "Suomesta verovapaita osinkoja saavilta rahastoilta, säätiöiltä ja muilta yhteisöiltä, myös ulkomaisilta. Työeläkelaitoksetkin maksaisivat veroa, mutta niiden maksua ei lasketa koko julkisen talouden uudeksi tuloksi.",
+    "impact": "Rahastojen ja säätiöiden osingoista veroa Suomeen.",
+    "society": "Rahastoihin jäisi vähemmän tuottoa sijoittajille ja säätiöihin vähemmän rahaa esimerkiksi apurahoihin. Vero koskisi Suomesta maksettavia osinkoja, mikä voisi ohjata sijoittajia ulkomaisiin osakkeisiin.",
+    "source": "VM 2021:31, s. 117–119 · Silppurin sektorierottelu",
+    "sourceUrl": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content",
+    "estimate": {
+      "amount": 50,
+      "display": "50–80 milj. €",
+      "caption": "/ vuosi",
+      "footnote": "Suora arvio; piirakkaan 50 milj. €.",
+      "basis": "Oma laskelma VM:n vuosien 2016–2020 aineistosta · ei nettoennuste",
+      "money": "Ei välttämättä. Haarukasta on poistettu suorat verot kotimaisilta eläke- ja sosiaaliturvalaitoksilta. Rahastojen kautta kulkevia julkisia sijoituksia, sijoittajien myöhempien verojen vähenemistä ja käyttäytymisen muutoksia ei ole vähennetty. Piirakka käyttää 50 miljoonan suoraa arviota, koska kokonaisnettoa ei tunneta.",
+      "calculation": [
+        "VM:n taulukoista 10–12 laskettu kertymä ilman julkisyhteisöjen suoraa veroa on vuosittain 103, 115, 112, 154 ja 79 milj. €. Kotimaisten eläkevakuuttajien ja sosiaaliturvatoimijoiden jälkeen jäljelle jää 73, 85, 80, 111 ja 50 milj. €.",
+        "Yliopistot ja muut yleishyödylliset yhteisöt ovat samassa tilastoryhmässä. Kun koko ryhmä jätetään varovaisessa laskelmassa pois, jäljelle jää 47, 45, 53, 84 ja 28 milj. €.",
+        "Näiden kahden laskelman viiden vuoden keskiarvot ovat 51,4 ja 79,8 milj. €. Pyöristetty 50–80 milj. € kuvaa sektorijaon puutetta. Se ei ole ennuste vuodelle 2031 eikä tilastollinen luottamusväli.",
+        "Ulkomaisten julkisten toimijoiden vero on Suomelle uutta tuloa ja säilyy laskelmassa. Verosopimusten vapauttamat osingot eivät sisälly alkuperäiseen veropohjaan. Vuoden 2020 tiedot ovat lähteen mukaan poikkeukselliset."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "fin-fsa-fund-ownership"
+      ],
+      "finding": "VM:n vaikutusarvio tunnistaa myös kannustimen korvata osingot omien osakkeiden takaisinostoilla. Se pienentäisi osinkoveron veropohjaa.",
+      "fiscal": "Sektorierottelu pienentää Finnwatchin raportoimaa 79–154 miljoonan historiallista laskelmaa. Käyttäytymisvaikutukset jäävät avoimiksi.",
+      "scope": "Silppurin oma laskelma VM:n taulukoista; lähdeaineiston vuodet 2016–2020. Kansainvälinen vertailu ei tuota Suomen nettokerrointa.",
+      "status": "context"
+    }
+  },
+  {
+    "id": "fw-interest",
+    "title": "Voitonsiirron korkoporsaanreiät kiinni",
+    "flow": "companies",
+    "who": "Yrityksiltä, jotka pienentävät Suomessa verotettavaa voittoaan korkovähennyksillä. Tavoitteena ovat erityisesti konsernien rahoitusjärjestelyt. Rajojen kiristys voi osua myös tavalliseen velkarahoitteiseen toimintaan.",
+    "impact": "Korkovähennyksen tulosraja 25 prosentista 20 prosenttiin.",
+    "society": "Verotettava voitto kasvaisi yrityksissä, joiden korot ylittävät uuden rajan. Konserni voisi vähentää velkaa tai siirtää voittoja muilla tavoilla. Myös tavallinen velkainen yritys voi maksaa enemmän veroa; siksi rajaus ja poikkeukset merkitsevät paljon.",
+    "source": "Finnwatch 2024: Veropohjan aukot, s. 43–47",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "estimate": {
+      "model": "interest",
+      "caption": "nettoskenaario / vuosi",
+      "basis": "Oma ehdollinen laskelma · vuoden 2024 veropohja · 18 % yhteisövero",
+      "money": "Haarukassa on vähennetty myöhempien vähennysten vaikutus ja varattu enintään viidennes muille veromenetyksille sekä julkisille kuluille. Se on laskennallinen netto, ei havaittu tuotto. Arvio koskee 25 prosentin tulosrajan laskua 20 prosenttiin; muista poikkeusten kiristyksistä ei lisätä erillistä tuottoa.",
+      "calculation": [
+        "Lähdetieto: VM arvioi U 51/2026 -kirjelmässä, että tulosrajan nosto 25 prosentista 30 prosenttiin menettäisi noin 50 milj. € veroa vuoden 2024 aineistolla. Silloinen 20 % yhteisövero tarkoittaa noin 250 milj. € muutosta korkovähennysten veropohjassa.",
+        "Oma oletus: vastakkaiselle muutokselle 25 → 20 % käytetään 250–500 milj. € uutta verotettavaa korkoa. Se on saman viiden prosenttiyksikön muutoksen 1–2-kertainen herkkyystarkastelu. Rajan alapuolelta mukaan tulevat yritykset voivat kasvattaa vaikutusta. Ilman yritysaineistoa kerrointa tai haarukan kattavuutta ei voida varmistaa.",
+        "EU-vertailu: komission SWD(2026) 561, liite 4.1, kertoo DiRECT-mallissa noin 30 % pienemmästä verotuottovaikutuksesta, kun myöhemmin käytettävät tappiot huomioidaan. Sovellamme 30 % vähennystä myös tähän skenaarioon. EU:n laskelma koskee eri uudistusta; kerroin ei ole Suomesta mitattu pysyvä veromenetys.",
+        "Oma oletus: jäljelle jäävästä tuotosta menetetään vielä 0–20 % muuhun voitonsiirtoon, pienempiin muihin verotuloihin ja julkisiin toimeenpanokuluihin. Harjun ym. tutkimus tukee kanavien olemassaoloa, mutta sen 25–30 % rahoituskulujen laskua ei käytetä verotuottokertoimena.",
+        "Lasku: 250–500 × 18 % × 70 % × 80–100 % = 25,2–63 milj. €/vuosi. Ulospäin viiden miljoonan tarkkuuteen pyöristettynä 25–65 milj. €. 18 % on vertailuverokanta; erillisen yhteisöveron korotuksen mahdollista lisäyhteisvaikutusta ei lasketa tähän.",
+        "Vuosien 2021–2023 kiristykset ja Carunan noin 9 milj. € lisävero kuuluvat lähtötilanteeseen. Konsernikohtaiselle eurorajalle, vanhojen lainojen poikkeukselle ja muille lisärajauksille ei ole tässä omaa lisätuottoa. Näin tuntemattomia osia ei lasketa päällekkäin.",
+        "Oikeudellinen ehto: kesäkuun 2026 EU-direktiiviehdotus rajoittaisi kansallista kiristämisvaraa. Se ei 27.10.2026 käytetyssä aineistossa ole hyväksytty sääntö. Laskelma edellyttää, että 20 prosentin kansallinen raja on toteutettavissa. Haarukka ei ole luottamusväli; myös pienempi tai suurempi tuotto on mahdollinen."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "finland-interest-2026",
+        "eu-interest-2026",
+        "harju-interest",
+        "fw-interest-2025",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "cbo-incidence-assumption"
+      ],
+      "finding": "Suomen vuoden 2014 uudistusta verrattiin Ruotsin ja Tanskan yrityksiin. Rahoituskulut ja eniten altistuneiden yritysten velat vähenivät; tuotannon muutosta ei havaittu. Tulokset viittaavat myös voitonsiirron vaihtumiseen toisiin keinoihin.",
+      "fiscal": "Tuotto on oma herkkyyslaskelma suomalaisesta veropohjavertailusta ja EU:n jaksotusmallista. Uuden kiristyksen veropohjakerroin sekä lisämenetykset ovat oletuksia.",
+      "scope": "VM:n 2024-aineistoon perustuva lievennyslaskelma ei mittaa päinvastaisen kiristyksen tuottoa. Kansainvälinen tutkimus perustelee huomioitavat kanavat, ei kaikkia käytettyjä prosentteja.",
+      "status": "context"
+    }
+  },
+  {
+    "id": "tax-succession",
+    "title": "Sijoitusvarat pois yritysperintöjen veroedusta",
+    "searchTerms": "sukupolvenvaihdos sukupolvenvaihdoshuojennus perintövero lahjavero",
+    "flow": "capital",
+    "who": "Yritysten mukana sijoitusvarallisuutta periviltä tai lahjaksi saavilta. Suurten yritysvarallisuuksien omistajat voivat saada erittäin suuren veroedun. Tavalliseen asunto- tai rahaperintöön etua ei saa.",
+    "impact": "Yrityksen sijoitussalkkua ei voisi siirtää kevyesti verotettuna perintönä.",
+    "society": "Veroetu säilyisi varsinaiselle yritystoiminnalle, mutta sen ulkopuoliset sijoitusvarat verotettaisiin normaalisti. Tämä kaventaisi varallisuuden siirtämiseen käytettävää etua. Käyttöpääoman ja sijoitusvarojen erottelu vaikuttaisi siihen, joutuuko yritys myymään omaisuutta veron maksamiseksi.",
+    "source": "VM 2026:48, s. 266: sukupolvenvaihdoshuojennuksen koko verotuki",
+    "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-619-0",
+    "estimate": {
+      "model": "succession",
+      "caption": "nettoskenaario / vuosi",
+      "basis": "Oma herkkyyslaskelma · sijoitusvarojen osuus oletettu",
+      "money": "Laskelmassa verosuunnittelu ja muut verovaikutukset vievät 15–35 % suorasta tuotosta. Lisäksi vähennetään 1–3 milj. € julkisia kuluja vuodessa. Suurin epävarmuus on se, kuinka paljon nykyisestä veroedusta koskee sijoitusvaroja. Tästä ei ole edustavaa Suomen tilastoa.",
+      "calculation": [
+        "Lähdetieto: VM arvioi koko sukupolvenvaihdoshuojennuksen verotueksi 240 milj. €/vuosi. Ehdotus säilyttää varsinaisen yritystoiminnan ja tarvittavan käyttöpääoman huojennuksen. Vain liiketoiminnan ulkopuoliset sijoitusvarat rajataan pois.",
+        "Oma oletus: rajattaviin sijoitusvaroihin kohdistuu 20–50 % koko verotuesta, eli 48–120 milj. €. Tämä on valittu herkkyysväli, ei tutkimuksessa havaittu osuus. Osuus koskee menetettävää VEROETUA, ei yritysten taseita; näin varallisuusosuutta ei sekoiteta progressiivisen veron muutokseen. Yksittäiset oikeustapaukset eivät kerro valtakunnallista osuutta.",
+        "Britannian OBR:n tammikuun 2025 vaikutusarviossa yritys- ja maatilahuojennusten kiristyksen käyttäytymisreaktiot leikkasivat keskipitkän aikavälin staattista tuottoa noin 35 %. Suomessa lahjatkin ovat verollisia ja puolisoiden säännöt eroavat. Käytämme siksi erillistä 15–35 % herkkyysväliä, emme brittiläistä kerrointa Suomen ennusteena. Väli kattaa tässä myös muiden verojen muutokset; pitkällä aikavälillä menetys voi olla suurempi.",
+        "Oma kuluoletus: arvostamiseen ja valvontaan varataan 1–3 milj. €/vuosi. Alaraja: 240 × 20 % × 65 % − 3 = 28,2 milj. €. Yläraja: 240 × 50 % × 85 % − 1 = 101 milj. €. Ulospäin viiden miljoonan tarkkuuteen pyöristetty haarukka on 25–105 milj. €/vuosi.",
+        "Herkkyys puuttuvalle tiedolle: jos sijoitusvarojen osuus veroedusta onkin vain 10 %, samoilla vähennyksillä netto on 12,6–19,4 milj. €. Jos osuus on 75 %, netto on 114–152 milj. €. Kortin haarukka ei siis rajaa kaikkia mahdollisia lopputuloksia. Ratkaiseva lisätieto olisi perintö- ja lahjaverotuksen siirtokohtainen omaisuusaineisto."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "inheritance",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "OECD:n katsauksessa yritysvarallisuuden huojennukset hyödyttävät erityisesti varakkaita. Tutkimukset maksuvalmius- ja investointihaitoista antavat erilaisia tuloksia: Kreikassa perintöveron keventäminen lisäsi perheyritysten investointeja, Saksassa aiempaa tiukemman verotuksen ei havaittu yleisesti vaarantavan yrityksiä.",
+      "fiscal": "Koko huojennuksen 240 miljoonasta rajataan oletettu sijoitusvaroihin liittyvä osuus. Britannian käyttäytymisarvio toimii vertailuna; Suomen osuudet ja kulut ovat omia skenaario-oletuksia.",
+      "scope": "Haarukka on ehdollinen laskelma. Suomen sijoitusvarojen osuutta ei ole mitattu, eikä OBR:n eri verojärjestelmän tulosta esitetä Suomen tutkimustuloksena.",
+      "status": "context"
+    }
+  }
+]

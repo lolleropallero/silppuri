@@ -1,0 +1,151 @@
+PAGE 1
+Resources for a Safe and Resilient 
+Europe:
+The Case for Minimum Taxation of 
+Ultra-High-Net-Worth Individuals in the EU
+Quentin Parrinello
+Giulia Varaschin, Gabriel Zucman
+March 2025
+NOTE
+
+PAGE 2
+Geopolitical tensions and the rapid fragmentation of diplomatic coalitions pose a threat to 
+defense capabilities and economic stability of the European Union (EU), particularly in the 
+context of the war of aggression of Russia against Ukraine. 
+According to a recent note by the think tank Bruegel, the EU needs an additional €250 billion 
+annually to meet defense investment needs.1 This comes on top of existing investment gaps to 
+fund reindustrialization, public goods and services that are key to ensure EU competitiveness, 
+tackle climate change and inequality. The Mario Draghi report on the Future of European 
+Competitiveness estimates that the EU needs an investment of EUR 800 billion per annum to 
+keep pace with competitors.2
+The EU Commission has already announced a new instrument providing €150 billion in loans 
+on top of a relaxation of deficit rules for defense spending as part of the ReArm Europe plan.3 
+However, this still leaves a substantial financing gap that will require additional resources – 
+whether at national or European level.
+Retreating from existing investment pledges for European industry, climate transition, and 
+social development to fund defense needs would risk weakening Europe’s international stance. 
+These investments are not just economic policies but strategic tools that enhance the EU’s 
+resilience, technological leadership, and global influence. The challenge for EU institutions and 
+the Member States will therefore be to find avenues to rapidly raise revenue to face urgent 
+needs without undermining economic development and competitiveness.
+When faced with conflict or war, European governments have historically funded increases 
+in defense spending through a mix of debt and tax increases on high-net-worth individuals. 
+During World War II, both France and the UK introduced extraordinary taxes on the wealthy 
+to finance their military efforts, with France relying on progressive war levies and the UK 
+significantly increasing income tax rates for the richest citizens. 4 Taxes on high-net-worth 
+individuals can easily secure support from European taxpayers. They are highly popular 
+amongst European citizens: 67% support such instruments according to Eurobarometer. 5 
+They would also strengthen tax consent, trust in government, and ultimately the social model 
+of EU democracies. 
+Recent research conducted by the EU Tax Observatory in cooperation with scholars in several 
+countries highlights that modern tax systems fail to effectively tax high-net-worth individuals. 
+Last year, the G20 presidency commissioned a report to study how to address this issue. The 
+blueprint released in June 2024 compares various options that are technically feasible at a 
+global, regional and national level to ensure that ultra-high-net-worth individuals do not have 
+lower effective tax rates than other social groups.6
+The views expressed in this note are those of the authors and do not necessarily reflect the views of the European Commission.
+PAGE 3
+Notes: This figure reports estimates of effective tax rates by pre-tax income groups and for U.S. dollar billionaires in France, 
+the Netherlands, and Italy. These estimates include all taxes paid at all levels of government and are expressed as a percent 
+of pre-tax income. P0-10 denotes the 10% of adults at the bottom of the pre-tax income distribution, P10-20 the next decile, 
+etc. Pre-tax income includes all national income (measured following standard national account definitions) before taxes and 
+transfers and after the operation of the pension system. Source and methodology in Zucman (2024).
+The main conclusion is that a minimum tax equal to 2% of wealth is the most effective way 
+to  achieve that goal. A minimum tax addresses all potential forms of tax avoidance, without 
+the need to target specific schemes. A minimum tax expressed as a fraction of wealth is 
+more effective than a minimum tax expressed as a fraction of income, because wealth is 
+better defined than income for ultra-high-net-worth individuals. Even though the tax would 
+be expressed as a fraction of wealth, it would generally not raise liquidity issues, because 2% 
+is significantly lower than the return to capital for ultra-high-net-worth individuals (which has 
+exceeded 7% a year on average over the last four decades, net of inflation). Finally, because any 
+individual income tax (and similar levies) already paid would be creditable against this new tax, 
+it does not create any double taxation. That is, someone already paying a significant amount 
+of income tax would have no extra tax to pay: by construction, the instrument proposed would 
+only affect taxpayers who are both extremely wealthy and undertaxed. It seems difficult to 
+construct a more targeted or fairer levy.
+This proposal is inspiring conversations in the EU parliament as well as in national parliaments. 
+In February, the French National Assembly voted for a 2% minimum tax on centi-millionaires.7 
+Others could follow.
+This policy note provides a revenue estimate of how much European Member States could 
+raise with a minimum tax of 2% or 3% on the wealth of people owning more than €100 million 
+or €1 billion in wealth – the scenarios considered in the report commissioned by the G20 
+presidency.
+
+PAGE 4
+A 2% minimum tax on centi-millionaires would neutralize the regressivity of European tax 
+systems and raise €67 billion, equivalent to a quarter of the revenue needs estimated by Bruegel 
+to meet defense investment needs. A 3% minimum tax would make European tax systems 
+slightly progressive and raise €121 billion, close to 50% of the revenue needs estimated by 
+Bruegel. 
+ 
+  TABLE 1     
+Revenue estimation of a minimum tax on ultra-high-net-worth individuals in the EU
+Revenue with 2% rate (€B) Revenue with 3% rate (€B)
+Number of
+Billionaires
+Billionaire
+Wealth ($B)
+Billionaire
+Wealth (€B)
+On centi-
+millionaires
+Of which:
+Billionaires
+On centi-
+millionaires
+Of which:
+Billionaires
+France 147 730.0 695.2 19.4 12.5 34.8 19.5
+Germany 128 637.0 606.7 16.9 10.9 30.4 17.0
+Italy 71 314.0 299.0 8.3 5.4 15.0 8.4
+Spain 27 195.0 185.7 5.2 3.3 9.3 5.2
+Sweden 43 174.0 165.7 4.6 3.0 8.3 4.6
+Austria 10 72.0 68.6 1.9 1.2 3.4 1.9
+Czech Republic 11 64.0 61.0 1.7 1.1 3.1 1.7
+Ireland 11 54.0 51.4 1.4 0.9 2.6 1.4
+Denmark 8 48.0 45.7 1.3 0.8 2.3 1.3
+Cyprus 10 45.0 42.9 1.2 0.8 2.1 1.2
+Greece 13 39.0 37.1 1.0 0.7 1.9 1.0
+Belgium 10 38.0 36.2 1.0 0.7 1.8 1.0
+Netherlands 12 36.0 34.3 1.0 0.6 1.7 1.0
+Poland 9 28.0 26.7 0.7 0.5 1.3 0.7
+Finland 7 15.0 14.3 0.4 0.3 0.7 0.4
+Romania 6 12.0 11.4 0.3 0.2 0.6 0.3
+Hungary 5 9.0 8.6 0.2 0.2 0.4 0.2
+Portugal 1 6.0 5.7 0.2 0.1 0.3 0.2
+Bulgaria 2 5.0 4.8 0.1 0.1 0.2 0.1
+Slovakia 2 3.0 2.9 0.1 0.1 0.1 0.1
+Estonia 2 3.0 2.9 0.1 0.1 0.1 0.1
+Croatia 1 2.0 1.9 0.1 0.0 0.1 0.1
+Luxembourg 1 1.0 1.0 0.0 0.0 0.0 0.0
+European Union Total 537 2,530 2,410 67.2 43.4 120.8 67.5
+Notes: This table is estimated using Real-Time Billionaire data from Forbes, retrieved on March 3, 2025. Total billionaire wealth 
+for France is upgraded by $150 billion to be reconciled with the 2024 ranking by Challenges (the number of French billionaires 
+reported in col. 1 is also taken from Challenges). We assume that the current effective tax rate of billionaires is equal to 0.2% of 
+their wealth in each EU country, consistent with the evidence discussed in Zucman (2024). We assume simple multiplicative 
+factors of 1.55 (for 2% rate) and 1.79 (for 3% rate) when moving from revenue for billionaires to revenue for centi-millionaires 
+(multiplicative factors taken Zucman, 2024). The minimum tax would yield up to €17 million in Luxembourg, which is rounded 
+down in the table above. 
+PAGE 5
+References
+1 Burilkov, Alexandr, and Guntram B. Wolff. 2025. “Defending Europe without the US: First Estimates 
+of What Is Needed.” Bruegel, February 21, 2025. https://www.bruegel.org/analysis/defending-eu-
+rope-without-us-first-estimates-what-needed
+2 Draghi, Mario. 2024. “The Future of European Competitiveness: A Competitiveness Strategy for 
+Europe.” European Commission, September 2024. https://commission.europa.eu/document/down-
+load/97e481fd-2dc3-412d-be4c-f152a8232961_en
+3 Von der Leyen, Ursula. 2025. “Press Statement by President von der Leyen on the Defence Pack-
+age.” European Commission, March 4, 2025. https://ec.europa.eu/commission/presscorner/detail/
+sv/statement_25_673
+4 UK Parliament. n.d. The Cost of War. Accessed March 13, 2025. https://www.parliament.uk/about/
+living-heritage/transformingsociety/private-lives/taxation/overview/costofwar/#:~:text=In%20
+1938%20the%20standard%20rate,pace%20with%20vast%20expenditure%20needs
+5 European Commission. 2023. Fairness, Inequality, and Inter-Generational Mobility. February 2023. 
+https://europa.eu/eurobarometer/surveys/detail/2652
+6 Zucman, Gabriel. 2024. “A Blueprint for a Coordinated Minimum Effective Taxation Standard 
+for Ultra-High-Net-Worth Individuals.” EU Tax Observatory, June 25, 2024. https://www.taxobser-
+vatory.eu/publication/a-blueprint-for-a-coordinated-minimum-effective-taxation-standard-for-ul-
+tra-high-net-worth-individuals/
+7 Orbitax. 2025. “French National Assembly Approves Wealth Tax on Ultra-Rich — Orbitax Tax News 
+& Alerts.” Orbitax, February 24, 2025. https://orbitax.com/news/archive.php/French-National-Assem-
+bly-Appro-58167

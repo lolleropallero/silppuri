@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-10-27",
+  "interpretation": "Conditional incidence scenarios, not confidence intervals or causal estimates. Asset profiles rank households by income, not wealth. Money is million EUR annually. Source-price bases and 2024 population/income denominators are held fixed.",
+  "wrappers": {
+    "profiles": ["wealth-insurance", "wealth-listed"],
+    "basis": "2031 reform-minus-baseline household taxes from the existing wrapper model, before public administration. All assets belong to Finnish residents, including foreign insurance contracts. The two asset profiles are alternative proxies for the unknown combined contract distribution."
+  },
+  "succession": {
+    "profiles": ["wealth-unlisted", "wealth-financial"],
+    "basis": "Relief expenditure times passive-asset relief share times retained liability after planning, before public costs. For this incidence scenario the fiscal erosion parameter is interpreted as reduced household liability. Assumes Finnish-resident recipients. Current asset holders proxy future recipients; no estate-level data."
+  },
+  "interest": {
+    "wageShare": [0, 0.25],
+    "domesticHouseholdCapitalShare": [0, 1],
+    "personalTaxOffset": [0, 0.30],
+    "basis": "31.5–63m corporate tax after carry-forwards, before the fiscal model's mixed other-tax/administration allowance. Owner/worker split is an assumption, with CBO 25% labour as one comparison. Domestic household share of the capital burden spans 0–100% because ultimate owners of the affected firms are unavailable. 0–30% personal-tax offset is an explicit sensitivity, not a measured marginal tax rate."
+  },
+  "withholding": {
+    "domesticFundTaxMillion": [10, 10, 11, 14, 9],
+    "years": [2016, 2017, 2018, 2019, 2020],
+    "directHouseholdFundShare": 0.208,
+    "insurerFundShare": 0.20,
+    "unitLinkedShareOfInsurance": 0.84,
+    "personalTaxOffset": [0, 0.30],
+    "basis": "VM 2021:31 table 10: domestic investment funds only, mean 10.8m. FIN-FSA March 2025 p.57: December 2024 open-fund capital shares, 20.8% domestic households directly and 20% insurers, 84% of insurer investment unit-linked. Apply these shares to dividend tax as an explicit equal-exposure assumption. Excludes foreign funds (their Finnish beneficial owners unknown), foundations/grants, other institutions and public pensions. Identified partial household effect, not the reform's full effect."
+  }
+}

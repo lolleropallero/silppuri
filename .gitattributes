@@ -1,0 +1,2 @@
+# Keep checkpoint copies byte-for-byte, including their original line endings.
+artifacts/*.html -text

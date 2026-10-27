@@ -1,0 +1,60 @@
+{
+  "title": "Taustatiedot tuloviidenneksen mukaan muuttujina Vuosi, Tuloviidennes ja Tiedot",
+  "variables": [
+    {
+      "code": "timeperiod_y",
+      "text": "Vuosi",
+      "values": [
+        "2012",
+        "2016",
+        "2022"
+      ],
+      "valueTexts": [
+        "2012",
+        "2016",
+        "2022"
+      ]
+    },
+    {
+      "code": "tuloviidennes_2_20140501",
+      "text": "Tuloviidennes",
+      "values": [
+        "SS",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "valueTexts": [
+        "Yhteensä",
+        "I (pienituloisimmat 20 %)",
+        "II",
+        "III",
+        "IV",
+        "V (suurituloisimmat 20 %)"
+      ],
+      "elimination": true
+    },
+    {
+      "code": "contentscode",
+      "text": "Tiedot",
+      "values": [
+        "oklkm_sum",
+        "pklkm_sum",
+        "jlkm_mean",
+        "oecdmod_mean",
+        "Kaytetmk_1_mean",
+        "Kaytetmk_2_mean"
+      ],
+      "valueTexts": [
+        "Kotitalouksia otoksessa",
+        "Kotitalouksia perusjoukossa",
+        "Kotitalouden keskikoko",
+        "Kotitaloudessa kulutusyksiköitä keskimäärin (oecdmod)",
+        "Kotitalouden käytettävissä olevat tulot, nimellisissä euroissa",
+        "Kotitalouden käytettävissä olevat tulot, vuoden 2022 euroissa"
+      ]
+    }
+  ]
+}

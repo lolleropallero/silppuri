@@ -1,0 +1,170 @@
+{
+  "asOf": "2026-10-27",
+  "unit": "million EUR per year",
+  "withholding": {
+    "source": "VM 2021:31, taulukot 10–12, s. 117–118",
+    "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content",
+    "years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ],
+    "listedExPublic": [
+      52,
+      54,
+      60,
+      77,
+      53
+    ],
+    "unlistedExPublic": [
+      17,
+      29,
+      13,
+      11,
+      9
+    ],
+    "foreign": [
+      34,
+      32,
+      39,
+      66,
+      17
+    ],
+    "listedPensions": [
+      25,
+      25,
+      27,
+      36,
+      24
+    ],
+    "unlistedPensions": [
+      4,
+      3,
+      3,
+      5,
+      3
+    ],
+    "socialSecurity": [
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "listedNonprofitsAndUniversities": [
+      13,
+      14,
+      17,
+      21,
+      16
+    ],
+    "unlistedNonprofitsAndUniversities": [
+      13,
+      26,
+      10,
+      6,
+      6
+    ],
+    "method": "Each year's upper sector scenario excludes domestic public entities, pension insurers and social security. The lower also excludes the whole inseparable nonprofits/universities category. Average each scenario over the same five years, then round to the nearest 10 million. This is sector-allocation uncertainty, not a confidence interval or a 2031 forecast.",
+    "expectedAnnualUpper": [
+      73,
+      85,
+      80,
+      111,
+      50
+    ],
+    "expectedAnnualLower": [
+      47,
+      45,
+      53,
+      84,
+      28
+    ],
+    "expectedMeanRange": [
+      51.4,
+      79.8
+    ],
+    "displayRange": [
+      50,
+      80
+    ],
+    "pieAmount": 50,
+    "limitations": "No behavioural response, administration, later investor capital-tax loss, or indirect public pension ownership through funds is deducted. Foreign public entities remain included: their tax is an inflow to Finland. Treaty-exempt dividends remain excluded as in VM. Historical figures are rounded; the source warns that 2020 is exceptional. This is a partially sector-adjusted static estimate, never a full net estimate."
+  },
+  "wrappers": {
+    "source": "Finnwatch 2024, Veropohjan aukot, s. 73–74, alaviitteet 190–192",
+    "assetsMillion": 47700,
+    "assumedReturn": [
+      0.03,
+      0.05
+    ],
+    "capitalTaxRate": 0.3,
+    "reportedGrossRange": [
+      430,
+      715
+    ],
+    "limitations": "2031 net tax receipts for the specified existing-stock scenario, NOT a permanent annual revenue estimate. Subtract same-year baseline withdrawal tax; tax already paid raises basis. Stocks differ because annual taxes reduce reinvestment. Other asset income, inheritance tax, public interest costs, foreign credits and market shocks are not modelled. Unknown inflows and deaths can change the path; negative later differences are retained, not clipped. The retained fraction assumes departing assets keep the baseline treatment in another product. Parameter bounds are sensitivity choices, not a confidence interval.",
+    "startYear": 2028,
+    "displayYear": 2031,
+    "lastYear": 2050,
+    "initialGainShare": 0.2,
+    "annualWithdrawal": [
+      0.05,
+      0.15
+    ],
+    "annuallyTaxableReturnShare": [
+      0.5,
+      1.0
+    ],
+    "retainedReformExposure": [
+      0.5,
+      0.8
+    ],
+    "annualPublicCostMillion": [
+      2,
+      5
+    ],
+    "policy": "Look through wrappers and stock savings accounts for annual dividends, interest and realised gains from 2028. Untaxed initial gains and still-unrealised new gains are taxed proportionately on withdrawal. No retroactive lump-sum assessment.",
+    "assumptions": "Finnwatch supplies the 47700m stock and 3–5% return assumptions. ETLA 2026 article 19 uses 20% initial gains and 5–15% annual withdrawal sensitivity in a different scenario; these are modelling choices, not observed Finnish wrapper averages. We additionally assume 50–100% of returns taxable annually, 50–80% remaining exposure after migration to other tax-deferred products, and 2–5m annual public administration. No new deposits; existing stock runs down. No growth or inflation uplift."
+  },
+  "interest": {
+    "source": "U 51/2026 vp, 3.9.2026, Vaikutukset Suomeen; EC SWD(2026) 561 Annex 4.1; Harju et al. 2025",
+    "referenceStaticLossMillion": 50,
+    "referenceTaxRate": 0.2,
+    "referenceChange": "Finnish 2024 microsimulation: raising the interest/EBITDA cap from 25% to 30%. The loss is an observed published estimate, not new revenue.",
+    "corporateTaxRate": 0.18,
+    "reverseBaseMultipliers": [
+      1,
+      2
+    ],
+    "carryforwardOffset": 0.3,
+    "additionalErosion": [
+      0,
+      0.2
+    ],
+    "policy": "Reduce the Finnish earnings cap from 25% to 20%; group-level euro thresholds and remaining exemptions are part of the proposal but carry no additional booked yield.",
+    "assumptions": "250–500m newly disallowed interest is a chosen reverse-policy sensitivity: 1–2 times the 250m tax-base change implied by the published relaxation estimate. It is not a microsimulation of tightening. The 30% carry-forward offset is borrowed from a different EU reform; 0–20% further leakage covers substitution, other tax effects and public administration, not the 25–30% financial-expense response in Harju et al.",
+    "limitations": "No price/base growth, no corporate-rate interaction bonus, no reuse of Caruna or already implemented reforms. A pending EU proposal could prevent tighter national rules; this is conditional on legal scope remaining. The 30% offset is not a proven permanent loss fraction in Finland."
+  },
+  "succession": {
+    "source": "VM 2026:48 p.266; OBR January 2025, Costing of changes to agricultural and business property relief, paragraph 1.11; OECD 2021",
+    "wholeReliefTaxExpenditureMillion": 240,
+    "affectedReliefShare": [
+      0.2,
+      0.5
+    ],
+    "behaviouralErosion": [
+      0.15,
+      0.35
+    ],
+    "annualPublicCostMillion": [
+      1,
+      3
+    ],
+    "assumptions": "20–50% is a deliberately wide assumed share of TAX RELIEF associated with excluded passive assets, not a measured share of corporate assets. 15–35% avoidance/other-tax erosion is a sensitivity informed by the OBR 35% medium-run estimate, not its direct transplantation. Annual administrative cost 1–3m is an explicit scenario allowance.",
+    "limitations": "No representative Finnish share of relief for passive assets is available. The share is the main uncertainty and can lie outside this bracket. UK spouse exemption and seven-year gifting differ from Finland; long-run avoidance may be larger. Operating assets and working capital retain relief."
+  },
+  "interpretation": "Conditional sensitivity scenarios, not statistical bounds. Inputs labelled assumptions are not Finnish empirical estimates. Frozen source-price bases; no inflation uprating. Outcomes outside the displayed ranges remain possible."
+}

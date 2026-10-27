@@ -1,0 +1,4577 @@
+{
+  "asOf": "2026-10-27",
+  "referenceYear": 2024,
+  "income": [
+    12280,
+    18550,
+    22229,
+    25649,
+    28898,
+    32207,
+    35934,
+    40602,
+    47668,
+    82089
+  ],
+  "incomeBounds": [
+    {
+      "low": 0,
+      "high": 16614
+    },
+    {
+      "low": 16614,
+      "high": 20464
+    },
+    {
+      "low": 20464,
+      "high": 24002
+    },
+    {
+      "low": 24002,
+      "high": 27298
+    },
+    {
+      "low": 27298,
+      "high": 30523
+    },
+    {
+      "low": 30523,
+      "high": 33977
+    },
+    {
+      "low": 33977,
+      "high": 38054
+    },
+    {
+      "low": 38054,
+      "high": 43497
+    },
+    {
+      "low": 43497,
+      "high": 53129
+    },
+    {
+      "low": 53129,
+      "high": null
+    }
+  ],
+  "households": [
+    374586,
+    350041,
+    309150,
+    285103,
+    272354,
+    262986,
+    255449,
+    251570,
+    249513,
+    250209
+  ],
+  "consumptionUnits": [
+    449503.2,
+    434050.84,
+    411169.5,
+    401995.23,
+    394913.3,
+    389219.27999999997,
+    388282.48,
+    387417.8,
+    389240.28,
+    390326.04000000004
+  ],
+  "profiles": {
+    "income-tax": [
+      0.006698566129391136,
+      0.01716785454886725,
+      0.029583616458607367,
+      0.04239992186462726,
+      0.057347906047322664,
+      0.0746659350484524,
+      0.09573390946023355,
+      0.12490285546776174,
+      0.17680277923628507,
+      0.37469665573845157
+    ],
+    "taxable-income": [
+      0.02298420542636085,
+      0.04365947347480616,
+      0.05991164729222298,
+      0.07298037812333254,
+      0.08480085729673686,
+      0.09668804398601345,
+      0.1100977312385464,
+      0.12774070006548383,
+      0.1540403700071536,
+      0.22709659308934335
+    ],
+    "capital-income": [
+      0.005670864651092141,
+      0.0072175678949042855,
+      0.011584093217387643,
+      0.01574136160461699,
+      0.020224067528173635,
+      0.025887783274084256,
+      0.035225198431062005,
+      0.05047585544379103,
+      0.0875122007111214,
+      0.7404610072437666
+    ],
+    "capital-tax": [
+      0.0059505978303412786,
+      0.007134458511574056,
+      0.011582770518589669,
+      0.016150901912405445,
+      0.020734838776833835,
+      0.027352390779824227,
+      0.03705806653759935,
+      0.0535365507060453,
+      0.09071668402137732,
+      0.7297827404054095
+    ],
+    "dividends": [
+      0.004259875083858427,
+      0.005813981221212307,
+      0.008558008416813005,
+      0.011305229710401042,
+      0.01422299033879449,
+      0.018219873216383985,
+      0.025724740421831985,
+      0.03903636195115816,
+      0.07243135969090962,
+      0.800427579948637
+    ],
+    "entrepreneur": [
+      0.01812478204391652,
+      0.023889736342713335,
+      0.03554972264717804,
+      0.04640924742415822,
+      0.055071722864512285,
+      0.06711984316609688,
+      0.08430876379558845,
+      0.11037910848143738,
+      0.16112209641537312,
+      0.39802497681902577
+    ],
+    "forest": [
+      0.006744040515699723,
+      0.010213801300942835,
+      0.01765743878155768,
+      0.027257946769069456,
+      0.035845962821109086,
+      0.050450066148439235,
+      0.07009662486393535,
+      0.10542248609921363,
+      0.17550670745952346,
+      0.5008049252405096
+    ],
+    "pensions": [
+      0.033111434737178085,
+      0.09675177669502867,
+      0.11737387605722287,
+      0.11696735789147841,
+      0.11375802958816562,
+      0.10473346598204336,
+      0.09949352686950969,
+      0.09429202791243184,
+      0.09567888398218727,
+      0.12783962028475418
+    ],
+    "students": [
+      0.30972637229608085,
+      0.1275027943153411,
+      0.10247346700802136,
+      0.07996377698360693,
+      0.0644833960248207,
+      0.05811437208382448,
+      0.057689487828959836,
+      0.0577298177028506,
+      0.058772537267469796,
+      0.08354397848902437
+    ],
+    "housing": [
+      0.4089536673277406,
+      0.32643863325864575,
+      0.13386573316530606,
+      0.052945093769975825,
+      0.02718695794767664,
+      0.01702821027917606,
+      0.01229028255659578,
+      0.008596988088372481,
+      0.0067316001475808225,
+      0.005962833458930039
+    ],
+    "family": [
+      0.08249691266350705,
+      0.12354688425862032,
+      0.126856597388673,
+      0.11995478657717085,
+      0.11322308319874536,
+      0.10829098416350402,
+      0.09813218316727121,
+      0.08608450915954788,
+      0.07419343723523142,
+      0.06722062218772892
+    ],
+    "unemployment": [
+      0.2328086983620618,
+      0.1675888504495765,
+      0.11512005476672924,
+      0.09518525359043938,
+      0.08194740284482561,
+      0.0750773165685115,
+      0.06874441704019382,
+      0.06346167862146786,
+      0.05453438872064165,
+      0.04553193903555265
+    ],
+    "wages": [
+      0.011614343145988672,
+      0.02286786999736588,
+      0.040719834651311855,
+      0.05954556259164143,
+      0.07737616976410464,
+      0.09672740684773444,
+      0.11666880378388894,
+      0.14205778611437705,
+      0.17633973335510394,
+      0.25608248974848313
+    ],
+    "vat-standard": [
+      0.042548038122912815,
+      0.04585724517352267,
+      0.0703180463299052,
+      0.07968171619190507,
+      0.09521325255947294,
+      0.1011723766881433,
+      0.10884865677300634,
+      0.12015137431388319,
+      0.15003381932940474,
+      0.1861754745178437
+    ],
+    "vat-reduced": [
+      0.05717140944500578,
+      0.06778082516553142,
+      0.07844866916832478,
+      0.09093024661881037,
+      0.09601089609087231,
+      0.10151173188315607,
+      0.11220868516479623,
+      0.11476707266733899,
+      0.12877905457162864,
+      0.15239140922453542
+    ],
+    "agriculture": [
+      0.01742174016943706,
+      0.02417358413642973,
+      0.038777991236138884,
+      0.05062888732824908,
+      0.05949651214347213,
+      0.0726465093826507,
+      0.08748559123646925,
+      0.11948538886173324,
+      0.17336688575816772,
+      0.3565169097472522
+    ],
+    "last-resort": [
+      0.44950367355761917,
+      0.23770765090147783,
+      0.10453038636713474,
+      0.05994595044660983,
+      0.04075641105103194,
+      0.0308858390105903,
+      0.025887676523181233,
+      0.02215883313149997,
+      0.01819654734708082,
+      0.010427031663774164
+    ],
+    "sickness": [
+      0.09927901229704146,
+      0.09875908736875333,
+      0.09735415382467996,
+      0.09953156513488004,
+      0.10051398326294801,
+      0.09893034378166733,
+      0.10301100025426703,
+      0.10538993630083908,
+      0.10275050914178462,
+      0.09448040863313914
+    ],
+    "disability": [
+      0.08996949372897431,
+      0.16076460358529776,
+      0.114565737134912,
+      0.09683841015719376,
+      0.09387904379474946,
+      0.0928563032462389,
+      0.09166467872013982,
+      0.08786065060800906,
+      0.08271635175561708,
+      0.08888472726886786
+    ],
+    "population": [
+      0.10000043593198443,
+      0.09999970937867704,
+      0.09999989101700389,
+      0.10000007265533074,
+      0.10000007265533074,
+      0.09999989101700389,
+      0.10000007265533074,
+      0.10000007265533074,
+      0.09999989101700389,
+      0.09999989101700389
+    ],
+    "consumption-total": [
+      0.0502870659897632,
+      0.04855837118399191,
+      0.07658390331508595,
+      0.07487511556048233,
+      0.09736182056568364,
+      0.0959580183804004,
+      0.11530273555714429,
+      0.11504596381358904,
+      0.16278646178619535,
+      0.16324054384766387
+    ],
+    "consumption-food": [
+      0.06161056494292307,
+      0.05949260754172676,
+      0.08757688922586303,
+      0.08562281912212684,
+      0.10418734298074835,
+      0.10268512764720743,
+      0.11379175203264441,
+      0.11353834515178905,
+      0.1355582103494201,
+      0.135936341005551
+    ],
+    "consumption-tobacco": [
+      0.1546175397686766,
+      0.14930232535681057,
+      0.08350884148021223,
+      0.08164554019174927,
+      0.11604139479500739,
+      0.11436826293849439,
+      0.07999503863156851,
+      0.07981689484819733,
+      0.07025409641847295,
+      0.07045006557081075
+    ],
+    "consumption-electricity": [
+      0.04336731646995823,
+      0.041876498637453984,
+      0.08351783181262001,
+      0.08165432992626033,
+      0.09323116897011172,
+      0.09188692419350075,
+      0.1275112549864906,
+      0.12722729565883378,
+      0.15464799949262137,
+      0.1550793798521492
+    ],
+    "consumption-heating": [
+      0.03921596268329188,
+      0.03786785398656004,
+      0.07981231713933623,
+      0.0780314950045186,
+      0.0961322361424217,
+      0.09474616260364832,
+      0.12786592203736874,
+      0.12758117288910106,
+      0.15915146751411618,
+      0.15959540999963728
+    ],
+    "consumption-drugs": [
+      0.061027688738662156,
+      0.05892976859847683,
+      0.1070894609833007,
+      0.10470001422420193,
+      0.12085480346887341,
+      0.11911226993544256,
+      0.10142880183332834,
+      0.10120292644392308,
+      0.11266999014655332,
+      0.1129842756272377
+    ],
+    "consumption-health": [
+      0.058555204339303765,
+      0.056542279631927976,
+      0.09364393505331316,
+      0.09155449324393393,
+      0.1115641209256298,
+      0.10995554421820324,
+      0.1011168434420482,
+      0.10089166276382787,
+      0.13789563282019818,
+      0.1382802835616139
+    ],
+    "consumption-dental": [
+      0.04733725679538539,
+      0.04570996619230462,
+      0.06971966950624123,
+      0.06816404081208705,
+      0.10802094408357,
+      0.10646345433574249,
+      0.10435348619789057,
+      0.10412109772533937,
+      0.17281401554620504,
+      0.17329606880523427
+    ],
+    "consumption-aids": [
+      0.05167322993484267,
+      0.049896883623368214,
+      0.08774552800657161,
+      0.08578769512931576,
+      0.10690302729576938,
+      0.10536165612522977,
+      0.11625411784393272,
+      0.1159952274334839,
+      0.13999606242834547,
+      0.14038657217914055
+    ],
+    "consumption-cars": [
+      0.010741060528896463,
+      0.010371820145125452,
+      0.0498856840607364,
+      0.04877260360436039,
+      0.08882647711948123,
+      0.08754574097499619,
+      0.09953905985023367,
+      0.09931739279414788,
+      0.25214840481735157,
+      0.2528517561046708
+    ],
+    "consumption-fuel": [
+      0.03501119121888128,
+      0.03380762797229484,
+      0.08648555808848538,
+      0.08455583844487258,
+      0.09269734568695523,
+      0.0913607977907754,
+      0.1310944836691428,
+      0.1308025447226855,
+      0.1568735120631773,
+      0.15731110034272974
+    ],
+    "consumption-diesel": [
+      0.026732146144390366,
+      0.02581318773476006,
+      0.08561147698042681,
+      0.08370126037895899,
+      0.08424476991600138,
+      0.08303009468273598,
+      0.13072596347925364,
+      0.1304348452034529,
+      0.17460959678298377,
+      0.17509665869703614
+    ],
+    "consumption-travel": [
+      0.05758887514949261,
+      0.055609169485984516,
+      0.08246247629740933,
+      0.08062252216068218,
+      0.08637511699817124,
+      0.08512972555734125,
+      0.09974257231537006,
+      0.09952045205017127,
+      0.17622875576724964,
+      0.17672033421812797
+    ],
+    "consumption-flights": [
+      0.020515728109707993,
+      0.019810468577821844,
+      0.055201085310235196,
+      0.05396940431023609,
+      0.08218772465682857,
+      0.08100270873573785,
+      0.10469081332631702,
+      0.10445767364804208,
+      0.2387492091036997,
+      0.23941518422137367
+    ],
+    "consumption-culture": [
+      0.03953027432662137,
+      0.03817136068642101,
+      0.0653071905364565,
+      0.06385001582159341,
+      0.09181527464356334,
+      0.09049144480515085,
+      0.13312997813010777,
+      0.13283350626897836,
+      0.17219531367500016,
+      0.17267564110610717
+    ],
+    "consumption-news": [
+      0.041924101975799925,
+      0.04048289684888031,
+      0.08711595045950628,
+      0.08517216510864213,
+      0.10380333474480948,
+      0.1023066561976356,
+      0.11294426542646646,
+      0.1126927458435356,
+      0.1565605840036417,
+      0.15699729939108256
+    ],
+    "consumption-insurance": [
+      0.03382226298030694,
+      0.032659570960347176,
+      0.07628954395895832,
+      0.074587324133664,
+      0.09682903853821377,
+      0.09543291822011518,
+      0.12695023081842907,
+      0.12666752085535252,
+      0.1681462783098401,
+      0.168615311224773
+    ],
+    "service-education": [
+      0.0864642554914267,
+      0.08349191446474324,
+      0.11390284828238785,
+      0.11136137698183741,
+      0.10154616771319268,
+      0.10008203391500894,
+      0.10683556466708691,
+      0.10659764876612651,
+      0.09472697754182259,
+      0.09499121217636712
+    ],
+    "service-school": [
+      0.07126186784998459,
+      0.06881213215001541,
+      0.1278695525530233,
+      0.1250164474469767,
+      0.10777799339315809,
+      0.1062240066068419,
+      0.11104164128093391,
+      0.11079435871906608,
+      0.08548177712007876,
+      0.08572022287992125
+    ],
+    "service-secondary": [
+      0.08349411902140134,
+      0.08062388097859867,
+      0.10227046111616278,
+      0.09998853888383721,
+      0.09803273787144515,
+      0.09661926212855483,
+      0.10889725357448626,
+      0.10865474642551372,
+      0.11055530664449434,
+      0.11086369335550565
+    ],
+    "service-tertiary": [
+      0.14200634261057762,
+      0.1371246573894224,
+      0.08427115525411438,
+      0.08239084474588562,
+      0.07973935718332224,
+      0.07858964281667775,
+      0.08762306545316705,
+      0.08742793454683297,
+      0.11025971890571157,
+      0.11056728109428843
+    ],
+    "service-health": [
+      0.11043671550231382,
+      0.10664028449768619,
+      0.10975091539385877,
+      0.10730208460614124,
+      0.1021574739294725,
+      0.10068452607052751,
+      0.09087018101145973,
+      0.09066781898854026,
+      0.0906186126886549,
+      0.09087138731134511
+    ],
+    "service-childcare": [
+      0.07210383988827666,
+      0.06962516011172333,
+      0.11544493970243888,
+      0.1128690602975611,
+      0.12689581766211017,
+      0.12506618233788985,
+      0.10841171294067341,
+      0.10817028705932656,
+      0.08059409405429419,
+      0.08081890594570582
+    ],
+    "service-eldercare": [
+      0.20707852401044594,
+      0.19995988302796114,
+      0.1431860699803863,
+      0.1399912131968969,
+      0.08913568571273396,
+      0.08785049127344303,
+      0.04211043066792867,
+      0.04201665345915545,
+      0.02430163044064373,
+      0.02436941823040494
+    ],
+    "wealth-housing": [
+      0.021932004188783615,
+      0.03444922862063223,
+      0.04212537466796695,
+      0.06247332581776932,
+      0.07862712973933486,
+      0.09532622004654716,
+      0.101040311035559,
+      0.1252620638904894,
+      0.15094665339573385,
+      0.2878176885971836
+    ],
+    "wealth-home": [
+      0.023190315242150584,
+      0.038428342211371244,
+      0.04431349844710557,
+      0.06738300220565605,
+      0.08224130485509826,
+      0.09846077068900407,
+      0.10972647950550969,
+      0.1305514004044682,
+      0.15369764661819868,
+      0.2520072398214377
+    ],
+    "wealth-shares": [
+      0.017077589057804998,
+      0.012748642669337423,
+      0.025215828448619512,
+      0.06796331417652511,
+      0.03305564972569602,
+      0.05161859053677122,
+      0.05634721138683115,
+      0.0694671462573472,
+      0.1106229593634214,
+      0.555883068377646
+    ],
+    "wealth-unlisted": [
+      0.002623122792258557,
+      0.0023544511229356105,
+      0.001798576984145533,
+      0.001650963491711529,
+      0.005961723959117457,
+      0.006883233300959477,
+      0.01101961590871839,
+      0.03375479415409143,
+      0.04635577661024148,
+      0.8875977416758205
+    ],
+    "wealth-assets": [
+      0.021187013998515497,
+      0.03029760184162995,
+      0.039085447569645736,
+      0.059469495642582554,
+      0.06974876961153824,
+      0.08338534323084466,
+      0.09156078887064656,
+      0.1127695590212909,
+      0.13930669966878248,
+      0.3531892805445234
+    ],
+    "wealth-land-business": [
+      0.033311454701415014,
+      0.04950229357173969,
+      0.06286652891905767,
+      0.07812859522240474,
+      0.08727573327949269,
+      0.07968070833306148,
+      0.08933965519513483,
+      0.11430164212357982,
+      0.1502645560854771,
+      0.255328832568637
+    ],
+    "wealth-insurance": [
+      0.015569283806934054,
+      0.023534092580316423,
+      0.029950703969670613,
+      0.032515609432474904,
+      0.06074902328143554,
+      0.07724894881973354,
+      0.07893946164680485,
+      0.09105069436665998,
+      0.11719777408540206,
+      0.47324440801056805
+    ],
+    "wealth-funds": [
+      0.019140417172454502,
+      0.020468611107975314,
+      0.03863929399713782,
+      0.12247141376586002,
+      0.036144194050424135,
+      0.07275361191972535,
+      0.07335976141151013,
+      0.07788103193729498,
+      0.12869247431072214,
+      0.41044919032689564
+    ],
+    "wealth-listed": [
+      0.015146664681130618,
+      0.005521944796406033,
+      0.012650082725986608,
+      0.016937873229263933,
+      0.03016465060129094,
+      0.03182691656230571,
+      0.040421888790756144,
+      0.06159126961167246,
+      0.09370138155860354,
+      0.6920373274425841
+    ],
+    "wealth-financial": [
+      0.01721162270703161,
+      0.01974705214278741,
+      0.02940036464201932,
+      0.05067439352546037,
+      0.048360257140161275,
+      0.05840280659757716,
+      0.07086859480056312,
+      0.08502406355130168,
+      0.1111393354142694,
+      0.5091715094788286
+    ]
+  },
+  "actions": {
+    "cut-3-5": {
+      "kind": "sisu",
+      "percent": [
+        0.0367,
+        0.0784,
+        0.0798,
+        0.0704,
+        0.055,
+        0.0439,
+        0.0337,
+        0.0243,
+        0.0177,
+        0.0113
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        198
+      ],
+      "referenceTotal": 92.7,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-6": {
+      "kind": "sisu",
+      "percent": [
+        0.0218,
+        0.0246,
+        0.0304,
+        0.032,
+        0.0298,
+        0.0276,
+        0.0235,
+        0.0191,
+        0.013,
+        0.0077
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        198
+      ],
+      "referenceTotal": 40.6,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-7": {
+      "kind": "sisu",
+      "percent": [
+        0.1279,
+        0.1977,
+        0.2613,
+        0.1881,
+        0.1083,
+        0.063,
+        0.0409,
+        0.0251,
+        0.0163,
+        0.013
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        198
+      ],
+      "referenceTotal": 118,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-8": {
+      "kind": "sisu",
+      "percent": [
+        0.5987,
+        0.7503,
+        1.0367,
+        0.9558,
+        0.8851,
+        0.7885,
+        0.6301,
+        0.4684,
+        0.3785,
+        0.2426
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        198
+      ],
+      "referenceTotal": 1165.05,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-10": {
+      "kind": "sisu",
+      "percent": [
+        0.0953,
+        0.1256,
+        0.2586,
+        0.2111,
+        0.1573,
+        0.1296,
+        0.0612,
+        0.0523,
+        0.0184,
+        0.0146
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        203
+      ],
+      "referenceTotal": 176.519601,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-11": {
+      "kind": "sisu",
+      "percent": [
+        0.2652,
+        0.1771,
+        0.1044,
+        0.046,
+        0.0073,
+        0.0022,
+        0.0014,
+        0.0049,
+        0.0016,
+        0.0014
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        207
+      ],
+      "referenceTotal": 80,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-12": {
+      "kind": "sisu",
+      "percent": [
+        0.2958,
+        0.1049,
+        0.0451,
+        0.0219,
+        0.0057,
+        0.0016,
+        0.0014,
+        0.0059,
+        0.0005,
+        0.0008
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        207
+      ],
+      "referenceTotal": 68,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-15": {
+      "kind": "sisu",
+      "percent": [
+        0.04,
+        0.0564,
+        0.0613,
+        0.0464,
+        0.0415,
+        0.0379,
+        0.0293,
+        0.0277,
+        0.0168,
+        0.0154
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        227
+      ],
+      "referenceTotal": 42.84,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-32": {
+      "kind": "sisu",
+      "percent": [
+        0.1714,
+        0.3445,
+        0.2016,
+        0.1103,
+        0.083,
+        0.0504,
+        0.0308,
+        0.0231,
+        0.019,
+        0.0095
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        262
+      ],
+      "referenceTotal": 85.744456,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-33": {
+      "kind": "sisu",
+      "percent": [
+        0.3522,
+        0.759,
+        0.4732,
+        0.2722,
+        0.1773,
+        0.1144,
+        0.0783,
+        0.0534,
+        0.0403,
+        0.0267
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        262
+      ],
+      "referenceTotal": 212.422331,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-36": {
+      "kind": "sisu",
+      "percent": [
+        0.7314,
+        1.1504,
+        0.3894,
+        0.1836,
+        0.1172,
+        0.0675,
+        0.0496,
+        0.0296,
+        0.0232,
+        0.0148
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        270
+      ],
+      "referenceTotal": 157,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-37": {
+      "kind": "sisu",
+      "percent": [
+        0.3515,
+        0.5763,
+        0.1963,
+        0.0971,
+        0.0433,
+        0.0296,
+        0.019,
+        0.0116,
+        0.0158,
+        0.0053
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        270
+      ],
+      "referenceTotal": 105.932214,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-38": {
+      "kind": "sisu",
+      "percent": [
+        0.134,
+        0.1678,
+        0.0412,
+        0.0211,
+        0.0222,
+        0.0084,
+        0.0053,
+        0.0021,
+        0.0021,
+        0.0011
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        270
+      ],
+      "referenceTotal": 33.767405,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-39": {
+      "kind": "sisu",
+      "percent": [
+        0.3863,
+        0.7092,
+        0.2449,
+        0.1066,
+        0.0475,
+        0.0369,
+        0.0274,
+        0.0127,
+        0.0158,
+        0.0053
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        270
+      ],
+      "referenceTotal": 77.735459,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-40": {
+      "kind": "sisu",
+      "percent": [
+        0.8162,
+        2.1289,
+        0.8499,
+        0.1077,
+        0.0387,
+        0.0168,
+        0.0101,
+        0.0034,
+        0.0017,
+        0.0017
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        277
+      ],
+      "referenceTotal": 280.86,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-42": {
+      "kind": "sisu",
+      "percent": [
+        0.2407,
+        0.6681,
+        0.2205,
+        0.0606,
+        0.0303,
+        0.0135,
+        0.0101,
+        0.0034,
+        0.0017,
+        0.0017
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        277
+      ],
+      "referenceTotal": 83,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-43": {
+      "kind": "sisu",
+      "percent": [
+        0.2366,
+        0.4122,
+        0.2475,
+        0.1613,
+        0.1108,
+        0.0868,
+        0.068,
+        0.0458,
+        0.0319,
+        0.0167
+      ],
+      "sources": [
+        "vm-44",
+        "vm-44",
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        281
+      ],
+      "referenceTotal": 165,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "cut-3-61": {
+      "kind": "sisu",
+      "percent": [
+        0.0035,
+        0.0053,
+        0.0069,
+        0.014,
+        0.0201,
+        0.0173,
+        0.0104,
+        0.0117,
+        0.0049,
+        0.0026
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        340
+      ],
+      "referenceTotal": 22.9,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "income-index": {
+      "kind": "sisu",
+      "percent": [
+        0.05,
+        0.17,
+        0.32,
+        0.42,
+        0.54,
+        0.62,
+        0.65,
+        0.67,
+        0.66,
+        0.48
+      ],
+      "sources": [
+        "vm-48",
+        "statfin"
+      ],
+      "pages": [
+        67
+      ],
+      "referenceTotal": 815.0,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen."
+    },
+    "benefits": {
+      "kind": "sisu",
+      "percent": [
+        1.3122,
+        1.2036,
+        0.6918,
+        0.4203,
+        0.2936,
+        0.2192,
+        0.1719,
+        0.1176,
+        0.0825,
+        0.0463
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        331
+      ],
+      "referenceTotal": 992.828076,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Vuodelle 2031 vaikutusta skaalataan VM:n noin 7 % reaalileikkauksella (7/2); muina vuosina suhteessa raportin vuotuiseen säästöarvioon. Tämä jatkolaskelma on oma lineaarinen arvio.",
+      "indexScale": 3.5
+    },
+    "cut-3-34": {
+      "kind": "sisu",
+      "percent": [
+        0.0842,
+        0.1909,
+        0.1476,
+        0.1103,
+        0.0913,
+        0.0735,
+        0.0587,
+        0.0403,
+        0.0267,
+        0.0136
+      ],
+      "sources": [
+        "vm-44",
+        "statfin"
+      ],
+      "pages": [
+        262
+      ],
+      "referenceTotal": 584.948544,
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Vuodelle 2031 vaikutusta skaalataan VM:n noin 7 % reaalileikkauksella (7/2); muina vuosina suhteessa raportin vuotuiseen säästöarvioon. Tämä jatkolaskelma on oma lineaarinen arvio.",
+      "indexScale": 3.5
+    },
+    "income": {
+      "kind": "proxy",
+      "profiles": [
+        "taxable-income",
+        "income-tax"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Korotuksen suora verotuotto jaetaan kahdella tavalla: veronalaisia ansiotuloja kuvaavan tulosumman ja nykyisten ansiotuloverojen suhteessa. Haarukka näyttää näiden kohdentamistapojen eron. Uusia verorajoja ja vähennyksiä ei simuloida. Pienimpien tulojen verovaikutus voi tämän vuoksi ylittyä."
+    },
+    "tax-capital-low": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "capital-tax"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora lisävero jaetaan omaisuustulojen ja nykyisten pääomatuloverojen suhteessa. Haarukka kuvaa jakaumaoletusta. 30 000 euron henkilökohtaista veroporrasta ei voi erottaa kotitalouksien summatilastosta."
+    },
+    "tax-capital-high": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "capital-tax"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora lisävero jaetaan omaisuustulojen ja nykyisten pääomatuloverojen suhteessa. Haarukka kuvaa jakaumaoletusta. 30 000 euron henkilökohtaista veroporrasta ei voi erottaa kotitalouksien summatilastosta."
+    },
+    "dividends": {
+      "kind": "proxy",
+      "profiles": [
+        "dividends",
+        "capital-tax"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora verotuotto kohdennetaan osinkotulojen sekä nykyisten pääomatuloverojen jakaumilla. Tilasto sisältää myös pörssiosinkoja. Haarukka on tämän sijaisaineiston herkkyysvertailu; se ei ole listaamattomien yhtiöiden uudistuksen mikrosimulointi eikä luottamusväli."
+    },
+    "tax-dividend-return": {
+      "kind": "proxy",
+      "profiles": [
+        "dividends",
+        "capital-tax"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora verotuotto kohdennetaan osinkotulojen sekä nykyisten pääomatuloverojen jakaumilla. Tilasto sisältää myös pörssiosinkoja. Haarukka on tämän sijaisaineiston herkkyysvertailu; se ei ole listaamattomien yhtiöiden uudistuksen mikrosimulointi eikä luottamusväli."
+    },
+    "tax-entrepreneur-remove": {
+      "kind": "proxy",
+      "profiles": [
+        "entrepreneur"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora lisävero kohdennetaan kotitalouksien yrittäjätulojen jakaumalla. Saman tuloryhmän kaikki jäsenet eivät ole yrittäjiä."
+    },
+    "tax-entrepreneur-step": {
+      "kind": "proxy",
+      "profiles": [
+        "entrepreneur"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Suora lisävero kohdennetaan kotitalouksien yrittäjätulojen jakaumalla. Saman tuloryhmän kaikki jäsenet eivät ole yrittäjiä."
+    },
+    "tax-forest": {
+      "kind": "proxy",
+      "profiles": [
+        "forest"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Metsävähennyksen muutoksen suora lisävero kohdennetaan metsätalouden yrittäjätulojen jakaumalla. Metsän hankintahinnan ja vähennysoikeuden eroja ei ole eritelty."
+    },
+    "tax-pension": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Veronkorotuksen 100 miljoonan esimerkki kohdennetaan vanhuus- ja perhe-eläkkeiden jakaumalla. VM ei määritä korotuksen tarkkoja tulorajoja, joten kyse on kohdentumisskenaariosta."
+    },
+    "cut-2-53": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen.",
+      "amountBasis": "public-total"
+    },
+    "cut-2-54": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen.",
+      "amountBasis": "public-total"
+    },
+    "cut-2-55": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen.",
+      "amountBasis": "public-total"
+    },
+    "cut-2-59": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen.",
+      "amountBasis": "public-total"
+    },
+    "cut-2-60": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen. Ateriatuen poiston oletetaan siirtyvän kokonaan aterioiden hintoihin. Aterioinnin muutosta ei ole arvioitu.",
+      "amountBasis": "public-total"
+    },
+    "cut-4-47": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "sources": [
+        "statfin"
+      ],
+      "method": "Menetys jaetaan kotitalouksien opintoetuuksien jakaumalla. Tämä tunnistaa opiskelijoiden nykyisen tulotason, mutta ei erottele huoltajia, ateriatukea tai maksujen saajia. Julkisen talouden suorasta summasta muodostetaan kohdentumisarvio; valmistumisen jälkeiset tulot eivät sisälly siihen. Maksu oletetaan opiskelijan maksettavaksi. YTHS:n maksuvelvollisten jakauma voi poiketa opintoetuuksien jakaumasta.",
+      "amountBasis": "public-total"
+    },
+    "tax-vat-standard": {
+      "kind": "proxy",
+      "profiles": [
+        "vat-standard"
+      ],
+      "sources": [
+        "statfin",
+        "vm-48"
+      ],
+      "method": "VM:n yleisen ALV-kannan yhden prosenttiyksikön SISU-kulutusprofiili. Suora veronkorotus jaetaan tämän profiilin suhteessa. Vero oletetaan kokonaan hintoihin; kysyntää tai etuuksien indeksikorvauksia ei vähennetä ostovoimamenetyksestä.",
+      "pages": [
+        152
+      ]
+    },
+    "tax-vat-reduced": {
+      "kind": "proxy",
+      "profiles": [
+        "vat-reduced"
+      ],
+      "sources": [
+        "statfin",
+        "vm-48"
+      ],
+      "method": "VM:n 13,5 % ALV-kannan kulutusprofiili on korotuksen jakauman pohja. Suora verotuotto jaetaan kulutusprofiilin mukaan. Mukana olevien 10 % tuotteiden jakauma voi poiketa tästä. Kyse on omasta skaalauksesta, ei VM:n suuren korotuksen tulonjakolaskelmasta. Hinnat nousevat täyden veron verran; etuusindeksien korvauksia ja kulutuksen muutoksia ei arvioida.",
+      "pages": [
+        152
+      ]
+    },
+    "tax-vat15": {
+      "kind": "proxy",
+      "profiles": [
+        "vat-reduced"
+      ],
+      "sources": [
+        "statfin",
+        "vm-48"
+      ],
+      "method": "VM:n 13,5 % ALV-kannan kulutusprofiili on korotuksen jakauman pohja. Suora verotuotto jaetaan kulutusprofiilin mukaan. Mukana olevien 10 % tuotteiden jakauma voi poiketa tästä. Kyse on omasta skaalauksesta, ei VM:n suuren korotuksen tulonjakolaskelmasta. Hinnat nousevat täyden veron verran; etuusindeksien korvauksia ja kulutuksen muutoksia ei arvioida.",
+      "pages": [
+        152
+      ]
+    },
+    "tax-vat16": {
+      "kind": "proxy",
+      "profiles": [
+        "vat-reduced"
+      ],
+      "sources": [
+        "statfin",
+        "vm-48"
+      ],
+      "method": "VM:n 13,5 % ALV-kannan kulutusprofiili on korotuksen jakauman pohja. Suora verotuotto jaetaan kulutusprofiilin mukaan. Mukana olevien 10 % tuotteiden jakauma voi poiketa tästä. Kyse on omasta skaalauksesta, ei VM:n suuren korotuksen tulonjakolaskelmasta. Hinnat nousevat täyden veron verran; etuusindeksien korvauksia ja kulutuksen muutoksia ei arvioida.",
+      "pages": [
+        152
+      ]
+    },
+    "vat": {
+      "kind": "proxy",
+      "profiles": [
+        "vat-reduced"
+      ],
+      "sources": [
+        "statfin",
+        "vm-48"
+      ],
+      "method": "VM:n 13,5 % ALV-kannan kulutusprofiili on korotuksen jakauman pohja. Suora verotuotto jaetaan kulutusprofiilin mukaan. Mukana olevien 10 % tuotteiden jakauma voi poiketa tästä. Kyse on omasta skaalauksesta, ei VM:n suuren korotuksen tulonjakolaskelmasta. Hinnat nousevat täyden veron verran; etuusindeksien korvauksia ja kulutuksen muutoksia ei arvioida.",
+      "pages": [
+        152
+      ]
+    },
+    "corporate": {
+      "kind": "proxy",
+      "profiles": [
+        "wages",
+        "capital-income"
+      ],
+      "methodKey": "corporate",
+      "channel": "indirect",
+      "amountBasis": "gross",
+      "corporate": true
+    },
+    "cut-1-16": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-47": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-55": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-56": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-57": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-58": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-69": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-72": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-28": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-68": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-69": {
+      "kind": "proxy",
+      "profiles": [
+        "agriculture"
+      ],
+      "methodKey": "agriculture",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-1-11": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-25": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-26": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-30": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-41": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-75": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-1-76": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-3-27": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-3-65": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-3-66": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-3-67": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "cut-5-64": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "public-total"
+    },
+    "tax-diesel": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "gross"
+    },
+    "tax-commercial-diesel": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "gross"
+    },
+    "tax-van": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "gross"
+    },
+    "tax-peat": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "gross"
+    },
+    "tax-electric2": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income",
+        "wages",
+        "consumption-total"
+      ],
+      "methodKey": "business",
+      "channel": "indirect",
+      "amountBasis": "gross"
+    },
+    "cut-2-43": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-45": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-57": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-58": {
+      "kind": "proxy",
+      "profiles": [
+        "students"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-41": {
+      "kind": "proxy",
+      "profiles": [
+        "family"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+    },
+    "cut-2-61": {
+      "kind": "proxy",
+      "profiles": [
+        "family"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+    },
+    "cut-2-62": {
+      "kind": "proxy",
+      "profiles": [
+        "family"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+    },
+    "cut-2-51": {
+      "kind": "proxy",
+      "profiles": [
+        "students",
+        "wages"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-52": {
+      "kind": "proxy",
+      "profiles": [
+        "students",
+        "wages"
+      ],
+      "methodKey": "student",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-13": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-14": {
+      "kind": "proxy",
+      "profiles": [
+        "unemployment"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-44": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-45": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-46": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-47": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-48": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-50": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-51": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-52": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-54": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-56": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-57": {
+      "kind": "proxy",
+      "profiles": [
+        "pensions"
+      ],
+      "methodKey": "pension",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-63": {
+      "kind": "proxy",
+      "profiles": [
+        "family",
+        "wages"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-64": {
+      "kind": "proxy",
+      "profiles": [
+        "family",
+        "wages"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-62": {
+      "kind": "proxy",
+      "profiles": [
+        "family"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "fixed",
+      "fixedMillion": 144,
+      "note": "Tuen poistumisen vertailu on VM:n s. 342 noin 12 milj. euroa kuukaudessa × 12 vuoden 2025 tasossa. Verot, korvaavat etuudet, päivähoitomaksut ja työllistyminen eivät sisälly tähän bruttomenetykseen. Julkisen talouden −82 milj. euroa ei ole perheiden tulonlisäys."
+    },
+    "cut-3-18": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-health"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-21": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-drugs"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-22": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-drugs"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-3-23": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-drugs"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-21": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-health",
+        "service-eldercare"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-24": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-aids"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-30": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-dental"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-16": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "service-eldercare"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-17": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "service-eldercare"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-18": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "service-eldercare"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-19": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "service-eldercare"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-4-20": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "service-eldercare"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-9": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets",
+        "population"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "public-total"
+    },
+    "cut-2-11": {
+      "kind": "proxy",
+      "profiles": [
+        "family",
+        "wages"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Varhaiskasvatusmaksut riippuvat tuloista. Perhe-etuuksien ja palkkatulojen jakaumat ovat kaksi karkeaa vertailua; nykyisiä maksuvapautuksia ja maksukattoja ei ratkaista uudelleen, joten pienituloisten maksu voi ylittyä."
+    },
+    "cut-2-13": {
+      "kind": "proxy",
+      "profiles": [
+        "family",
+        "wages"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Varhaiskasvatusmaksut riippuvat tuloista. Perhe-etuuksien ja palkkatulojen jakaumat ovat kaksi karkeaa vertailua; nykyisiä maksuvapautuksia ja maksukattoja ei ratkaista uudelleen, joten pienituloisten maksu voi ylittyä."
+    },
+    "cut-2-14": {
+      "kind": "proxy",
+      "profiles": [
+        "family",
+        "wages"
+      ],
+      "methodKey": "benefit",
+      "channel": "cash",
+      "amountBasis": "public-total",
+      "note": "Varhaiskasvatusmaksut riippuvat tuloista. Perhe-etuuksien ja palkkatulojen jakaumat ovat kaksi karkeaa vertailua; nykyisiä maksuvapautuksia ja maksukattoja ei ratkaista uudelleen, joten pienituloisten maksu voi ylittyä."
+    },
+    "tax-food18": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-food"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-vat-services": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture",
+        "consumption-travel",
+        "consumption-drugs"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross",
+      "note": "Kulttuuri, matkustaminen ja lääkkeet ovat kolme alennetun ALV:n eri kulutusjakaumaa. Niiden välille muodostuva haarukka kuvaa puuttuvan veropohjajaon epävarmuutta; se ei ole yhdistetty SISU-laskelma."
+    },
+    "tax-vat-news135": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-news"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-vat-news255": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-news"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-insurance": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-insurance"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-excise-index": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-total"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-tobacco": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-tobacco"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-heat": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-heating"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-fuel": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-fuel"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-electric1": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-electricity"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-tickets": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-flights"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-car-all": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-cars"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-car-combustion": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-cars"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-vehicle": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-fuel",
+        "consumption-cars"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross",
+      "note": "Perusvero riippuu auton ominaisuuksista, ei ostohinnasta. Auton hankinta- ja käyttökulut ovat tässä kaksi sijaisjakaumaa; auton omistajien lukumäärää ja päästöluokkaa tuloryhmittäin ei ole mallinnettu."
+    },
+    "tax-transfer-land": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-housing",
+        "wealth-land-business"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-land-values": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-housing",
+        "wealth-land-business"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-land-min": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-housing",
+        "wealth-land-business"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-transfer-homes": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-housing"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-transfer-shares": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-shares"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-inheritance": {
+      "kind": "proxy",
+      "profiles": [
+        "wealth-assets"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-donation": {
+      "kind": "proxy",
+      "profiles": [
+        "capital-income"
+      ],
+      "methodKey": "wealth",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "cut-2-15": {
+      "kind": "proxy",
+      "profiles": [
+        "service-childcare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-19": {
+      "kind": "proxy",
+      "profiles": [
+        "service-school"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-22": {
+      "kind": "proxy",
+      "profiles": [
+        "service-school"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-25": {
+      "kind": "proxy",
+      "profiles": [
+        "service-school"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-32": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-34": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-35": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-38": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-39": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-42": {
+      "kind": "proxy",
+      "profiles": [
+        "service-secondary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-3-16": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-3-17": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-9": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-11": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-25": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-26": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-27": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-29": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-34": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-35": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-36": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-42": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-6": {
+      "kind": "proxy",
+      "profiles": [
+        "service-eldercare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-7": {
+      "kind": "proxy",
+      "profiles": [
+        "service-eldercare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-37": {
+      "kind": "proxy",
+      "profiles": [
+        "service-eldercare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "health": {
+      "kind": "proxy",
+      "profiles": [
+        "service-health",
+        "service-eldercare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "education": {
+      "kind": "proxy",
+      "profiles": [
+        "service-tertiary"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-7-21": {
+      "kind": "proxy",
+      "profiles": [
+        "service-school",
+        "service-childcare"
+      ],
+      "methodKey": "service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-20": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort",
+        "family"
+      ],
+      "methodKey": "targeted-service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-21": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort",
+        "family"
+      ],
+      "methodKey": "targeted-service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-5": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort",
+        "family"
+      ],
+      "methodKey": "targeted-service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-4-14": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort",
+        "family"
+      ],
+      "methodKey": "targeted-service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-1-28": {
+      "kind": "proxy",
+      "profiles": [
+        "last-resort"
+      ],
+      "methodKey": "targeted-service",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-26": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-27": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-28": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-65": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-66": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-67": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-68": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-70": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-74": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-77": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-2-78": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-culture"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-1-38": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-travel"
+      ],
+      "methodKey": "service-consumption",
+      "channel": "services",
+      "amountBasis": "public-total"
+    },
+    "cut-5-40": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-44": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-45": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-46": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-48": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-49": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-50": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-51": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-7-52": {
+      "kind": "proxy",
+      "profiles": [
+        "wages"
+      ],
+      "methodKey": "work",
+      "channel": "work",
+      "amountBasis": "public-total"
+    },
+    "cut-1-29": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-32": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-33": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-42": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-79": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-29": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-42": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-49": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-52": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-53": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-55": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-58": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-62": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-67": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-72": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-77": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-12": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-16": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-18": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-20": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-28": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-30": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-41": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-42": {
+      "kind": "separate",
+      "group": "collective",
+      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-5": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-6": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-7": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-1-8": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-2-44": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-56": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-24": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-29": {
+      "kind": "separate",
+      "group": "research",
+      "method": "Tutkimus-, avustus- tai sijoitusrahoitus vaikuttaa tuottajiin ja tulevaan kasvuun. Nykyisten opiskelijoiden tai pääomatulonsaajien jakauma ei yksin kerro hyötyjien tuloryhmiä. Summalle ei siksi anneta näennäisen tarkkaa tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-16": {
+      "kind": "separate",
+      "group": "abroad",
+      "method": "Suuri osa välittömästä vaikutuksesta kohdistuu ulkomailla asuviin tai Suomeen vasta muuttaviin. He eivät sisälly Suomen vuoden 2024 kotitalouksien tulokymmenyksiin.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-17": {
+      "kind": "separate",
+      "group": "abroad",
+      "method": "Suuri osa välittömästä vaikutuksesta kohdistuu ulkomailla asuviin tai Suomeen vasta muuttaviin. He eivät sisälly Suomen vuoden 2024 kotitalouksien tulokymmenyksiin.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-20": {
+      "kind": "separate",
+      "group": "abroad",
+      "method": "Suuri osa välittömästä vaikutuksesta kohdistuu ulkomailla asuviin tai Suomeen vasta muuttaviin. He eivät sisälly Suomen vuoden 2024 kotitalouksien tulokymmenyksiin.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-45": {
+      "kind": "separate",
+      "group": "abroad",
+      "method": "Suuri osa välittömästä vaikutuksesta kohdistuu ulkomailla asuviin tai Suomeen vasta muuttaviin. He eivät sisälly Suomen vuoden 2024 kotitalouksien tulokymmenyksiin.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-4-31": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-4-33": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-4-48": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-66": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-6-6": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-6-7": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-19": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-7-27": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "tax-household": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-48"
+      ]
+    },
+    "tax-rd": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-48"
+      ]
+    },
+    "tax-ifrs": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-48"
+      ]
+    },
+    "tax-succession": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 31.200000000000003,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 31.200000000000003,
+          "shares": {
+            "wealth-financial": 1
+          }
+        },
+        {
+          "million": 102.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 102.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-financial",
+        "wealth-unlisted"
+      ],
+      "method": "Yritysperintöjen lisävero kohdistetaan vaihtoehtoisesti listaamattomien osakkeiden tai kaiken rahoitusvarallisuuden omistajille. Ylimmän tulokymmenyksen osuudet ovat noin 89 % ja 51 %. Näin vaikutus painottuu suurituloisiin, mutta perillistä ei oleteta automaattisesti yhtä suurituloiseksi kuin nykyistä yritysomistajaa.",
+      "calculation": [
+        "Lisäveron oletus on 240 milj. € × 20–50 % × (1 − 15–35 %) = 31,2–102 milj. €/vuosi. Tässä 15–35 % tulkitaan suunnittelun vähentämäksi kotitalouksien lisäveroksi. Julkisia 1–3 miljoonan hallintokuluja ei vähennetä perillisten veroista. OBR:n Britannian arvio tukee käyttäytymisen huomioimista, mutta Suomen prosentit ovat omia herkkyysoletuksia.",
+        "Jakaumat: Tilastokeskus 151u, muut osakkeet (muosa) ja rahoitusvarat (finan), 2023. Käytämme ryhmän keskimääräistä omistusta × kotitalousmäärää. Rahoitusvarallisuus on väljempi vertailu myös yhtiön passiivisille sijoitusvaroille. Neljä vaihtoehtoa yhdistävät kaksi verosummaa ja kaksi jakaumaa.",
+        "Oletamme verorasituksen jäävän Suomessa asuville saajille. Perintöjen saajia, luovuttajien tuloryhmiä, maksuaikatauluja tai yrityskohtaista huojennusta ei simuloida. Varallisuuden jakauma ei osoita perillisten todellista tuloryhmää; tulos voi jäädä haarukan ulkopuolelle.",
+        "Kunkin ryhmän eurot jaetaan sen vuoden 2024 kulutusyksiköillä ja suhteutetaan ryhmän keskimääräisiin nettotuloihin. Kuvaajan täysi palkki on kokonaisten laskentavaihtoehtojen keskiarvo; viivoitus kattaa niiden pienimmän ja suurimman ryhmävaikutuksen. Vaihtoehdoille ei ole arvioitu todennäköisyyksiä, eikä haarukka ole tilastollinen luottamusväli. Inflaatiota tai väestön muutosta ei ennusteta."
+      ],
+      "note": "Rivin eurot ovat koko tuloryhmälle jaettu vuosittainen verorasitus, eivät yhden perinnön verot. Vero voidaan maksaa myös saadusta varallisuudesta. Suhde vuosituloihin ei tarkoita, että saajan palkka tai kulutus laskisi saman prosenttimäärän.",
+      "sources": [
+        "fw-tax-gaps",
+        "inheritance",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": false,
+      "householdMillion": [
+        31.200000000000003,
+        102.0
+      ]
+    },
+    "tax-biomass": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-48"
+      ]
+    },
+    "tax-waste-energy": {
+      "kind": "separate",
+      "group": "unpriced",
+      "method": "Toimen rajaus tai euromäärä on avoin. Tutkimus kertoo vaikutuskanavista, mutta tässä valinnassa ei vielä määritellä laskettavaa muutosta. Euromäärää ei käsitellä nollana.",
+      "sources": [
+        "ons",
+        "vm-48"
+      ]
+    },
+    "cut-3-49": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "Eläkeiän nosto vähentää eläkemenoja mutta lisää osalla palkkatuloa ja toisilla muita etuuksia. Julkisen talouden säästö ei siksi yksin kerro henkilön tulonmenetystä. Nykyisten eläkeläisten tuloprofiilia ei käytetä tulevien eläkeikäluokkien nettotuloarviona.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-4-22": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "VM kohdistaa uusia maksuja ensisijaisesti hyvätuloisille vammaispalvelujen käyttäjille. Vammaisetuuksien yleinen jakauma osoittaisi maksun väärin myös pienituloisille. Maksutulot on arvioitu, mutta tuloraja ja maksupohja pitää määritellä ennen tulokymmenysjakoa.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-22": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "Toimi sisältää useita eri maksajia tai menolajeja, joiden osuuksia ei ole eroteltu. Kokonaissumman jakaminen yhdellä tuloprofiililla voisi osoittaa leikkauksen väärälle ryhmälle.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-33": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "Toimi sisältää useita eri maksajia tai menolajeja, joiden osuuksia ei ole eroteltu. Kokonaissumman jakaminen yhdellä tuloprofiililla voisi osoittaa leikkauksen väärälle ryhmälle.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-5-75": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "Toimi sisältää useita eri maksajia tai menolajeja, joiden osuuksia ei ole eroteltu. Kokonaissumman jakaminen yhdellä tuloprofiililla voisi osoittaa leikkauksen väärälle ryhmälle.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "cut-6-5": {
+      "kind": "separate",
+      "group": "mixed",
+      "method": "Toimi sisältää useita eri maksajia tai menolajeja, joiden osuuksia ei ole eroteltu. Kokonaissumman jakaminen yhdellä tuloprofiililla voisi osoittaa leikkauksen väärälle ryhmälle.",
+      "sources": [
+        "ons",
+        "vm-44"
+      ]
+    },
+    "fw-wrappers": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 29.44386972399471,
+          "shares": {
+            "wealth-insurance": 1
+          }
+        },
+        {
+          "million": 29.44386972399471,
+          "shares": {
+            "wealth-listed": 1
+          }
+        },
+        {
+          "million": 438.3538322418561,
+          "shares": {
+            "wealth-insurance": 1
+          }
+        },
+        {
+          "million": 438.3538322418561,
+          "shares": {
+            "wealth-listed": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-insurance",
+        "wealth-listed"
+      ],
+      "method": "Vuoden 2031 lisävero jaetaan kahdella vaihtoehdolla: vakuutussäästöjen tai pörssiosakkeiden omistuksen mukaan. Tilastokeskuksen vuoden 2023 aineistossa ylimmälle tulokymmenykselle kuuluu näistä noin 47 % ja 69 %. Molemmat ovat sijaisjakaumia; vakuutuskuorten ja osakesäästötilien yhteistä jakaumaa ei tunneta.",
+      "calculation": [
+        "Kotitalouksien lisävero on 29,4–438,4 milj. € vuonna 2031. Se on saman sijoituskannan verotuspolkujen erotus ennen julkisia hallintokuluja. Nostojen verot, hankintameno ja sijoitusten siirtyminen lasketaan kuten tuottoarviossa. Hallinnon 2–5 miljoonaa ei vähennä sijoittajan verolaskua.",
+        "Tilastokeskuksen taulukko 151u: säästö- ja sijoitusvakuutukset (vaksak) sekä pörssiosakkeet (porsosa). Kunkin tuloryhmän keskimääräinen omistus kerrotaan ryhmän kotitalousmäärällä ja jaetaan kaikkien ryhmien omistusten summalla. Ryhmät on järjestetty tulojen, ei varallisuuden mukaan.",
+        "Oma oletus: verollinen tuotto ja sopimusten vaihtaminen jakautuvat samassa suhteessa kuin omistukset. Haarukka yhdistää pienemmän ja suuremman verolaskelman molempiin jakaumiin. Emme oleta, että ulkomaisen vakuutuksen suomalainen omistaja olisi ulkomainen kotitalous.",
+        "Kunkin ryhmän eurot jaetaan sen vuoden 2024 kulutusyksiköillä ja suhteutetaan ryhmän keskimääräisiin nettotuloihin. Kuvaajan täysi palkki on kokonaisten laskentavaihtoehtojen keskiarvo; viivoitus kattaa niiden pienimmän ja suurimman ryhmävaikutuksen. Vaihtoehdoille ei ole arvioitu todennäköisyyksiä, eikä haarukka ole tilastollinen luottamusväli. Inflaatiota tai väestön muutosta ei ennusteta."
+      ],
+      "note": "Osa rasituksesta on veron aikaistumista ja sijoitusvarojen kasvun hidastumista. Palkki suhteuttaa sen vuoden tuloihin; se ei ennusta saman suuruista kulutuksen laskua eikä pysyvää vuosittaista menetystä. Vuoden 2031 laskelma säilyy myös Myös myöhemmät -valinnassa.",
+      "sources": [
+        "fw-tax-gaps",
+        "etla-wrapper-model",
+        "chetty-saving",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": false,
+      "householdMillion": [
+        29.44386972399471,
+        438.3538322418561
+      ]
+    },
+    "fw-interest": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0,
+            "capital-income": 0
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.0,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0,
+            "capital-income": 1
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.0,
+            "capital-income": 0.7
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.25,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.175,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.25,
+            "capital-income": 0.75
+          }
+        },
+        {
+          "million": 31.499999999999996,
+          "shares": {
+            "wages": 0.175,
+            "capital-income": 0.5249999999999999
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0,
+            "capital-income": 0
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.0,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0,
+            "capital-income": 1
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.0,
+            "capital-income": 0.7
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.25,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.175,
+            "capital-income": 0.0
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.25,
+            "capital-income": 0.75
+          }
+        },
+        {
+          "million": 62.99999999999999,
+          "shares": {
+            "wages": 0.175,
+            "capital-income": 0.5249999999999999
+          }
+        }
+      ],
+      "profiles": [
+        "capital-income",
+        "wages"
+      ],
+      "method": "Lisäveron oletetaan jäävän pääosin omistajille. Vertailussa 0–25 % siirtyy palkkoihin; omistajaosuudesta 0–100 % kuuluu Suomen kotitalouksille. Omistajaosa jaetaan Suomen omaisuustulojen ja palkkaosa palkkatulojen mukaan. Suuri epävarmuus johtuu siitä, ettei kohdeyritysten lopullisia omistajia tunneta.",
+      "calculation": [
+        "Yritysten vero ennen muita julkisia eriä: (50 milj. € / 20 %) × 1–2 × 18 % × 70 % = 31,5–63 milj. €/vuosi. Viimeinen kerroin huomioi vähennysten myöhemmän käytön kuten tuottoarviossa. Sen erillistä 0–20 %:n varausta muiden verojen ja hallinnon vaikutuksiin ei siirretä kotitalouksien menetykseksi.",
+        "Harjun, Kauppisen ja Ropposen Suomen tutkimus havaitsi rahoitusjärjestelyjen muuttuvan, mutta ei osoittanut tuotannon supistumista. Siksi palkkavaikutus voi tässä olla nolla. CBO:n yhdysvaltalaisen tulonjakolaskennan 25 %:n palkkaosuus on toinen vertailu, ei tämän suomalaisen uudistuksen tutkimustulos.",
+        "Omat oletukset: palkkaosuus 0 tai 25 %; jäljelle jäävän pääomaosuuden suomalainen kotitalousomistus 0 tai 100 %. Ulkomaisille omistajille, eläkelaitoksille ja muille yhteisöille jäävää osaa ei jaeta suomalaisille. Tulon pienenemisestä seuraavaa henkilöverojen alenemista kokeillaan 0 ja 30 %:n tasolla. Kertoimet ovat vertailuja, eivät tilastoista mitattuja osuuksia.",
+        "Jokaisessa yhdistelmässä ryhmän rasitus = yritysvero × (palkkaosuus × ryhmän osuus palkoista + pääomaosuus × suomalainen kotitalousosuus × ryhmän osuus omaisuustuloista) × (1 − henkilöverojen hyvitys). Tulojakaumat ovat vuodelta 2024. Hintoihin, työllisyyteen tai etuuksiin ei lisätä erillistä vaikutusta.",
+        "Kunkin ryhmän eurot jaetaan sen vuoden 2024 kulutusyksiköillä ja suhteutetaan ryhmän keskimääräisiin nettotuloihin. Kuvaajan täysi palkki on kokonaisten laskentavaihtoehtojen keskiarvo; viivoitus kattaa niiden pienimmän ja suurimman ryhmävaikutuksen. Vaihtoehdoille ei ole arvioitu todennäköisyyksiä, eikä haarukka ole tilastollinen luottamusväli. Inflaatiota tai väestön muutosta ei ennusteta."
+      ],
+      "note": "Suomen kotitalouksille tulee näissä vaihtoehdoissa 0–63 milj. €/vuosi. Nolla tarkoittaa vertailua, jossa vero jää ulkomaisille tai institutionaalisille omistajille eikä siirry palkkoihin. Se ei tarkoita, ettei valtio saisi veroa.",
+      "sources": [
+        "fw-tax-gaps",
+        "finland-interest-2026",
+        "eu-interest-2026",
+        "harju-interest",
+        "fw-interest-2025",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "cbo-incidence-assumption"
+      ],
+      "partial": false,
+      "householdMillion": [
+        0.0,
+        62.99999999999999
+      ]
+    },
+    "fw-dividend-withholding": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 10.8,
+          "shares": {
+            "wealth-funds": 0.208,
+            "wealth-insurance": 0.168
+          }
+        },
+        {
+          "million": 10.8,
+          "shares": {
+            "wealth-funds": 0.14559999999999998,
+            "wealth-insurance": 0.1176
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-funds",
+        "wealth-insurance"
+      ],
+      "method": "Kuvaajassa on tunnistettu rahasto-omistajien osuus: noin 2,8–4,1 milj. €/vuosi. Suorien rahasto-omistajien rasitus jaetaan rahastovarallisuuden, vakuutusten kautta sijoittavien vakuutussäästöjen mukaan. Säätiöiden apurahojen ja palvelujen muutosta ei ole arvioitu tässä rahatuloksi.",
+      "calculation": [
+        "VM:n taulukon 10 kotimaisten rahastojen lähdevero vuosina 2016–2020 on 10, 10, 11, 14 ja 9 milj. €, keskimäärin 10,8 milj. €. Käytämme rahastoriviä, emme muiden yhteisöjen tai ulkomaisten osingonsaajien veroa.",
+        "Finanssivalvonnan joulukuun 2024 tiedoissa kotitaloudet omistavat avoimista suomalaisista rahastoista suoraan 20,8 % ja vakuutuslaitokset 20,0 %. Vakuutuslaitosten sijoituksista noin 84 % on sijoitussidonnaisia. Näistä saadaan kotitalouksien välilliseksi osuudeksi 16,8 % ja kokonaisosuudeksi 37,6 %. Verorasitus ennen henkilöverojen muutosta on 10,8 × 37,6 % = 4,06 milj. €.",
+        "Oma oletus: osinkoihin kohdistuva vero jakautuu rahastopääoman omistuksen suhteessa. Käytämme avoimien rahastojen omistusta myös VM:n rahastorivin sijaismittarina; rahastotyyppien osinkojakaumaa ei tunneta. Suorien omistajien 2,25 milj. € jaetaan Tilastokeskuksen rahastovarallisuuden (sirave), vakuutusten 1,81 milj. € vakuutussäästöjen (vaksak) jakaumalla, vuosi 2023.",
+        "Tuoton pienentyessä myös sijoittajan myöhempi pääomatulovero voi alentua. Oma vertailu vähentää kotitalousrasituksesta 0–30 %, jolloin saadaan 2,84–4,06 milj. €. Hyvityksen ajankohtaa ei ennusteta. Vakuutuskuorten verouudistuksen kanssa valittaessa yhteistä veropohjaa ei lasketa uudelleen.",
+        "Tämä on osittainen arvio. Ulkomaisten rahastojen suomalaiset edunsaajat, säätiöiden apurahat ja palkat sekä muiden yhteisöjen välilliset vaikutukset puuttuvat. Niitä ei oleteta nollaksi. Vuoden 2024 omistusta sovelletaan vanhempaan veropohjaan ilman kasvuennustetta; koko 50–80 miljoonan verotuottoa ei voi osoittaa Suomen kotitalouksille.",
+        "Kunkin ryhmän eurot jaetaan sen vuoden 2024 kulutusyksiköillä ja suhteutetaan ryhmän keskimääräisiin nettotuloihin. Kuvaajan täysi palkki on kokonaisten laskentavaihtoehtojen keskiarvo; viivoitus kattaa niiden pienimmän ja suurimman ryhmävaikutuksen. Vaihtoehdoille ei ole arvioitu todennäköisyyksiä, eikä haarukka ole tilastollinen luottamusväli. Inflaatiota tai väestön muutosta ei ennusteta."
+      ],
+      "note": "Arvio kertoo sijoitusvarojen tuoton muutoksesta suhteessa vuosituloihin, ei ennusta samansuuruista kulutuksen laskua.",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence",
+        "fin-fsa-fund-ownership"
+      ],
+      "partial": true,
+      "householdMillion": [
+        2.84256,
+        4.0608
+      ]
+    },
+    "fw-corporate-gaps": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 62.208000000000006,
+          "shares": {
+            "capital-income": 0.2
+          }
+        },
+        {
+          "million": 62.208000000000006,
+          "shares": {
+            "capital-income": 0.6,
+            "wages": 0.175
+          }
+        },
+        {
+          "million": 311.04,
+          "shares": {
+            "capital-income": 0.2
+          }
+        },
+        {
+          "million": 311.04,
+          "shares": {
+            "capital-income": 0.6,
+            "wages": 0.175
+          }
+        }
+      ],
+      "profiles": [
+        "capital-income",
+        "wages"
+      ],
+      "method": "Yritysveron välillinen rasitus jaetaan omistajille ja mahdollisesti työntekijöille. Ulkomaisten ja institutionaalisten omistajien osuutta ei jaeta Suomen kotitalouksille.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vertailut: kotitalouksien pääomatuloihin jää 20 % verosta; toisessa vaihtoehdossa pääomatuloihin 60 % ja nettopalkkoihin 17,5 %. Jälkimmäinen palkkaosuus on CBO:n 25 %:n brutto-oletus × 70 % verojen jälkeinen osuus. Omistajaosuudet ovat herkkyysoletuksia, eivät kohdeyritysten havaittuja omistuksia.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "profit-shifting-wier",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "finland-interest-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        12.441600000000001,
+        241.05599999999998
+      ]
+    },
+    "fw-corporate-minimum": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 210.0,
+          "shares": {
+            "capital-income": 0.2
+          }
+        },
+        {
+          "million": 210.0,
+          "shares": {
+            "capital-income": 0.6,
+            "wages": 0.175
+          }
+        },
+        {
+          "million": 810.0,
+          "shares": {
+            "capital-income": 0.2
+          }
+        },
+        {
+          "million": 810.0,
+          "shares": {
+            "capital-income": 0.6,
+            "wages": 0.175
+          }
+        }
+      ],
+      "profiles": [
+        "capital-income",
+        "wages"
+      ],
+      "method": "Yritysveron välillinen rasitus jaetaan omistajille ja mahdollisesti työntekijöille. Ulkomaisten ja institutionaalisten omistajien osuutta ei jaeta Suomen kotitalouksille.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vertailut: kotitalouksien pääomatuloihin jää 20 % verosta; toisessa vaihtoehdossa pääomatuloihin 60 % ja nettopalkkoihin 17,5 %. Jälkimmäinen palkkaosuus on CBO:n 25 %:n brutto-oletus × 70 % verojen jälkeinen osuus. Omistajaosuudet ovat herkkyysoletuksia, eivät kohdeyritysten havaittuja omistuksia.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "minimum-tax-eutax",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        42.0,
+        627.7499999999999
+      ]
+    },
+    "fw-wealth-minimum": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 280.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 280.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        },
+        {
+          "million": 380.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 380.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-financial",
+        "wealth-unlisted"
+      ],
+      "method": "Rasitus keskittyy erittäin varakkaisiin. Tulokymmenykset eivät kuitenkaan ole varallisuuskymmenyksiä: yhtiöön jätetty voitto ei välttämättä näy omistajan vuosituloissa.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Kaksi omaa sijaisjakaumaa: listaamattomien osakkeiden ja rahoitusvarallisuuden omistus. Ne eivät tunnista yli 100 miljoonan henkilöitä, joten tätä laajaa vaihteluväliä ei pidä lukea ryhmän rekisteritiedoksi.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "wealth-minimum-eutax",
+        "wealth-migration-2026",
+        "wealth-norway-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        280.0,
+        380.0
+      ]
+    },
+    "fw-exit-tax": {
+      "kind": "separate",
+      "group": "foreign",
+      "method": "Vero koskee pääosin ulkomaille muuttaneita. Heitä ei jaeta Suomessa asuvien vuoden 2024 tulokymmenyksiin. Suomessa pysymisen verovaikutusta ei ole mallinnettu.",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-exit-2020",
+        "exit-review-2026",
+        "wealth-migration-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ]
+    },
+    "fw-property-funds": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 5.76576,
+          "shares": {
+            "wealth-funds": 0.1
+          }
+        },
+        {
+          "million": 5.76576,
+          "shares": {
+            "wealth-funds": 0.4
+          }
+        },
+        {
+          "million": 44.47872,
+          "shares": {
+            "wealth-funds": 0.1
+          }
+        },
+        {
+          "million": 44.47872,
+          "shares": {
+            "wealth-funds": 0.4
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-funds"
+      ],
+      "method": "Suomen kotitalouksille kohdistuvan osuuden vertailu on 10–40 % laskelman verorasituksesta. Kotimaiset rahasto-osuudet toimivat jakauman sijaismittarina.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "10–40 % on oma herkkyysoletus. Kiinteistörahastojen sijoittajat poikkeavat kaikkien rahastojen sijoittajista; loppuosaa ei siirretä kotitalouksille. Vuokralaisiin siirtyviä hintoja ei ole hinnoiteltu.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "kti-funds-2026",
+        "vm-funds-2022",
+        "fin-fsa-fund-ownership",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        0.5765760000000001,
+        17.791488
+      ]
+    },
+    "fw-treaty-dividends": {
+      "kind": "separate",
+      "group": "foreign",
+      "method": "Veron välitön maksaja asuu ulkomailla. Ulkomaisten rahastojen mahdollisia suomalaisia edunsaajia ei tunneta, eikä koko verotuottoa voi jakaa Suomen tulokymmenyksiin.",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "faster-2024",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ]
+    },
+    "fw-portfolio": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 35.279999999999994,
+          "shares": {
+            "wealth-unlisted": 0.5
+          }
+        },
+        {
+          "million": 35.279999999999994,
+          "shares": {
+            "wealth-unlisted": 0.9
+          }
+        },
+        {
+          "million": 241.92,
+          "shares": {
+            "wealth-unlisted": 0.5
+          }
+        },
+        {
+          "million": 241.92,
+          "shares": {
+            "wealth-unlisted": 0.9
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-unlisted"
+      ],
+      "method": "Rasitus painottuu yhtiöiden omistajiin. Listaamattomien osakkeiden tulokymmenysjakauma on sijaismittari.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vertailut jakavat Suomen kotitalouksille 50 tai 90 % laskelman rasituksesta. Loppu jää muille omistajille; todellista omistajaketjua ei tunneta.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "capital-realizations",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        17.639999999999997,
+        217.72799999999998
+      ]
+    },
+    "fw-deemed-cost": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 11.459895626299696,
+          "shares": {
+            "wealth-listed": 1
+          }
+        },
+        {
+          "million": 11.459895626299696,
+          "shares": {
+            "wealth-financial": 1
+          }
+        },
+        {
+          "million": 139.31046915055532,
+          "shares": {
+            "wealth-listed": 1
+          }
+        },
+        {
+          "million": 139.31046915055532,
+          "shares": {
+            "wealth-financial": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-financial",
+        "wealth-listed"
+      ],
+      "method": "Sijoitusvoittojen lisäveroa jaetaan pörssiosakkeiden tai laajemman rahoitusvarallisuuden tulokymmenysjakaumalla.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Oma oletus on, että veron lisäys jakautuu omistusten suhteessa. Omaisuuden myynnin ajoitus, kiinteistöt ja yksittäiset yrityskaupat voivat tehdä todellisesta jakaumasta erilaisen.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "vero-capital-2024",
+        "capital-realizations",
+        "capital-budgetlab",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        11.459895626299696,
+        139.31046915055532
+      ]
+    },
+    "fw-succession-abolish": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 156.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 156.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        },
+        {
+          "million": 204.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 204.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-financial",
+        "wealth-unlisted"
+      ],
+      "method": "Yritysperintöjen lisävero jaetaan kahdella vaihtoehdolla: listaamattomien osakkeiden ja rahoitusvarallisuuden omistuksen mukaan.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Nykyisen omistajan varallisuusjakauma ei ole perillisten tulorekisteri. Eurot ovat ryhmän keskimääräinen vuotuinen rasitus, eivät yhden perillisen kertaluonteinen verolasku.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "inheritance",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        156.0,
+        204.0
+      ]
+    },
+    "fw-digital": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 14.266770000000001,
+          "shares": {
+            "consumption-total": 0.2
+          }
+        },
+        {
+          "million": 14.266770000000001,
+          "shares": {
+            "consumption-total": 0.6
+          }
+        },
+        {
+          "million": 28.394549999999995,
+          "shares": {
+            "consumption-total": 0.2
+          }
+        },
+        {
+          "million": 28.394549999999995,
+          "shares": {
+            "consumption-total": 0.6
+          }
+        }
+      ],
+      "profiles": [
+        "consumption-total"
+      ],
+      "method": "Suomen kuluttajille siirtyvän hinnan vertailu on 20–60 % mallin verorasituksesta. Loppu jää alustoille, mainostajille tai muille omistajille.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "20–60 % on oma herkkyysoletus. Kulutuksen kokonaisjakauma on väljä sijaismittari mainostavien yritysten asiakkaille; lain tarkkaa kuluttajavaikutusta ei ole tutkittu Suomessa.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "fw-tax-gaps",
+        "iab-advertising-2025",
+        "austria-digital",
+        "digital-jrc",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        2.8533540000000004,
+        17.036729999999995
+      ]
+    },
+    "sorsa-bank": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 142.72500000000002,
+          "shares": {
+            "capital-income": 0.3
+          }
+        },
+        {
+          "million": 142.72500000000002,
+          "shares": {
+            "capital-income": 0.2,
+            "wages": 0.175,
+            "consumption-total": 0.3
+          }
+        },
+        {
+          "million": 180.785,
+          "shares": {
+            "capital-income": 0.3
+          }
+        },
+        {
+          "million": 180.785,
+          "shares": {
+            "capital-income": 0.2,
+            "wages": 0.175,
+            "consumption-total": 0.3
+          }
+        }
+      ],
+      "profiles": [
+        "capital-income",
+        "consumption-total",
+        "wages"
+      ],
+      "method": "Vertailut näyttävät sekä omistajiin jäävän että palkkoihin ja palveluhintoihin siirtyvän rasituksen.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vaihtoehdot: 30 % kotitalouksien pääomatuloihin; tai 20 % pääomatuloihin, 17,5 % nettopalkkoihin ja 30 % kuluttajahintoihin. Kulutusjakauma ei tunnista lainanottajia, joten pankkiasiakkaiden jakauma on osittainen arvio.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "sorsa-ten",
+        "bank-norway",
+        "bank-incidence",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        42.8175,
+        122.029875
+      ]
+    },
+    "sorsa-million-inheritance": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 100.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 100.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        },
+        {
+          "million": 170.0,
+          "shares": {
+            "wealth-unlisted": 1
+          }
+        },
+        {
+          "million": 170.0,
+          "shares": {
+            "wealth-financial": 1
+          }
+        }
+      ],
+      "profiles": [
+        "wealth-financial",
+        "wealth-unlisted"
+      ],
+      "method": "Suurten perintöjen saajien tuloryhmiä lähestytään omistusjakaumilla; miljoonaperintö ei automaattisesti tarkoita miljoonan vuosituloa.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Kaksi omaa sijaisjakaumaa ovat listaamattomien osakkeiden ja rahoitusvarallisuuden omistus. Saajien todelliset vuositulot ja ikä poikkeavat luovuttajien tuloista.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "sorsa-ten",
+        "inheritance",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        100.0,
+        170.0
+      ]
+    }
+  },
+  "sources": {
+    "statfin": {
+      "label": "Tilastokeskus: tulonjakotilasto 2024, taulukko 128c",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__tjt/statfin_tjt_pxt_128c.px/"
+    },
+    "income-bounds": {
+      "label": "Tilastokeskus: tulokymmenysten tulorajat 2024, taulukko 11wh",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__tjt/statfin_tjt_pxt_11wh.px/"
+    },
+    "vm-44": {
+      "label": "VM 2026:44: SISU-tulonjakolaskelmat",
+      "url": "https://urn.fi/URN:ISBN:978-952-367-603-9"
+    },
+    "vm-48": {
+      "label": "VM 2026:48: verojen tulonjakolaskelmat",
+      "url": "https://urn.fi/URN:ISBN:978-952-367-619-0"
+    },
+    "consumption": {
+      "label": "Tilastokeskus: kulutustutkimus 2022, 14pg ja 14qa",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__ktutk/statfin_ktutk_pxt_14pg.px/"
+    },
+    "wealth": {
+      "label": "Tilastokeskus: kotitalouksien varallisuus 2023, 151u",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__vtutk/statfin_vtutk_pxt_151u.px/"
+    },
+    "oecd-services": {
+      "label": "Verbist, Förster & Vaalavuo (OECD 2012): Suomen palvelumenojen jakaumat 2007",
+      "url": "https://doi.org/10.1787/5k9h363c5szq-en"
+    },
+    "ifs-services": {
+      "label": "Ogden & Phillips (2024): julkisten palvelumenojen kohdentaminen",
+      "url": "https://doi.org/10.1093/ooec/odae007"
+    },
+    "cbo": {
+      "label": "CBO (2024), Distribution of Household Income 2021, liite A: yritysveron kohdentamisoletus",
+      "url": "https://www.cbo.gov/publication/60706"
+    },
+    "ons": {
+      "label": "ONS: verojen ja palvelumenojen tulonjakolaskennan menetelmät",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/articles/theeffectsoftaxesandbenefitsonhouseholdincome/financialyearending2015"
+    },
+    "fw-tax-gaps": {
+      "label": "Finnwatch (2024): Veropohjan aukot",
+      "url": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+      "kind": "Suomi · järjestön veropoliittinen selvitys ja ehdotukset"
+    },
+    "etla-wrapper-model": {
+      "label": "Kujanpää & Ropponen (2026): Osakesäästötilin laajentaminen · laskentamenetelmä",
+      "url": "https://www.etla.fi/wp-content/uploads/Etla-Erikoisartikkeli-19-Osakesaastotilin-laajentaminen-rahastosijoituksiin-2026.pdf",
+      "kind": "Suomi · ETLA Erikoisartikkeli 19, skenaariomalli; rahoittaja Finanssiala"
+    },
+    "chetty-saving": {
+      "label": "Chetty ym. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
+      "url": "https://www.nber.org/papers/w18565",
+      "kind": "Tanska · rekisteritutkimus, julkaistu Quarterly Journal of Economicsissa 2014"
+    },
+    "statfin-wealth-incidence": {
+      "label": "Tilastokeskus: varallisuus tulokymmenyksittäin 2023, taulukko 151u",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__vtutk/statfin_vtutk_pxt_151u.px/",
+      "kind": "Suomi · otos- ja rekisteritilasto omistuksesta tuloryhmittäin"
+    },
+    "statfin-income-incidence": {
+      "label": "Tilastokeskus: tulorakenne tulokymmenyksittäin 2024, taulukko 128c",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__tjt/statfin_tjt_pxt_128c.px/",
+      "kind": "Suomi · tulonjakotilasto, kotitalouksien tulot ja kulutusyksiköt"
+    },
+    "inheritance": {
+      "label": "OECD (2021): Inheritance Taxation in OECD Countries",
+      "url": "https://doi.org/10.1787/e2879a7d-en",
+      "kind": "Kansainvälinen tutkimus- ja verojärjestelmäkatsaus"
+    },
+    "obr-business-relief": {
+      "label": "OBR (2025): Agricultural and business property relief · tuottolaskelma",
+      "url": "https://obr.uk/docs/dlm_uploads/IHT-APR-and-BPR-supplementary-release-Jan-2025.pdf",
+      "kind": "Britannia · virallinen vaikutusarvio, ei uudistuksen jälkikäteinen koe"
+    },
+    "finland-interest-2026": {
+      "label": "VM (2026): U 51/2026 · korkorajoitusten vaikutukset Suomeen",
+      "url": "https://www.eduskunta.fi/asiat-ja-aanestykset/valtiopaivaasiat/asiakirjat/edktunnus/EDK-2026-AK-40709",
+      "kind": "Suomi · vuoden 2024 veroilmoitusaineistoon perustuva mikrosimulointi"
+    },
+    "eu-interest-2026": {
+      "label": "Euroopan komissio (2026): SWD(2026) 561 · liite 4.1",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026SC0561",
+      "kind": "EU · Orbis-yritysaineisto ja JRC:n DiRECT-mikrosimulointi"
+    },
+    "harju-interest": {
+      "label": "Harju, Kauppinen & Ropponen (2025): Firm responses to an interest barrier",
+      "url": "https://ifs.org.uk/sites/default/files/2025-09/Fiscal%20Studies%20-%202025%20-%20Harju%20-%20Firm%20responses%20to%20an%20interest%20barrier%20%20empirical%20evidence.pdf",
+      "kind": "Suomi, Ruotsi ja Tanska · vertaisarvioitu uudistusvertailu, Fiscal Studies 46"
+    },
+    "fw-interest-2025": {
+      "label": "Finnwatch (2025): Loppu korkokikkailulle?",
+      "url": "https://finnwatch.org/images/pdf/Loppu_korkokikkailulle.pdf",
+      "kind": "Suomi · Carunan ja Elenian tilinpäätös- ja verotietojen tapaustutkimus"
+    },
+    "cbo-incidence-assumption": {
+      "label": "CBO (2024): The Distribution of Household Income in 2021, liite A",
+      "url": "https://www.cbo.gov/publication/60706",
+      "kind": "Yhdysvallat · tulonjakolaskennan menetelmä, ei Suomen vaikutusarvio"
+    },
+    "vm-withholding": {
+      "label": "VM (2021): Osinkojen lähdeverotus · taulukot 10–12",
+      "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content",
+      "kind": "Suomi · viranomaisten rekisterilaskelma, oikeudellinen arvio ja maavertailu"
+    },
+    "fin-fsa-fund-ownership": {
+      "label": "Finanssivalvonta (2025): rahastojen omistajat, s. 57",
+      "url": "https://publications.bof.fi/bitstream/handle/10024/53958/Valvottavien-taloudellinen-tila-ja-riskit-kev%C3%A4t-2025.pdf",
+      "kind": "Suomi · valvonta- ja tilastoaineisto, joulukuu 2024"
+    },
+    "profit-shifting-wier": {
+      "label": "Wier & Zucman (2022): Global profit shifting, 1975–2019",
+      "url": "https://missingprofits.world/wp-content/uploads/2022/11/WIDER_WP_Wier_and_Zucman___Global_profit_shifting.pdf",
+      "kind": "Kansainvälinen tilastomalli · Suomen maakohtainen arvio"
+    },
+    "cfc-clifford": {
+      "label": "Clifford (2019): Taxing multinationals beyond borders",
+      "url": "https://ora.ox.ac.uk/objects/uuid:f82e2e0b-9a78-459f-9983-c48bcfe4b462",
+      "kind": "Kansainvälinen yritysaineisto · vertaisarvioitu tutkimus verorajojen ympäriltä"
+    },
+    "minimum-tax-eutax": {
+      "label": "Baraké ym. (2021): Collecting the Tax Deficit of Multinational Companies",
+      "url": "https://www.taxobservatory.eu/www-site/uploads/2021/06/TaxObservatory_Report_Tax_Deficit_July2021_Revised.pdf",
+      "kind": "EU Tax Observatory · maakohtainen verosimulaatio"
+    },
+    "wealth-minimum-eutax": {
+      "label": "EU Tax Observatory (2025): Minimum taxation of ultra-high-net-worth individuals",
+      "url": "https://www.taxobservatory.eu/www-site/uploads/2025/03/Resources-for-a-Safe-and-Resilient-Europe_The-Case-for-Minimum-Taxation-of-Ultra-High-Net-Worth-Individuals-in-the-EU-1.pdf",
+      "kind": "Eurooppa · varallisuuslistoihin perustuva ehdollinen laskelma"
+    },
+    "wealth-migration-2026": {
+      "label": "Jakobsen ym. (2026): Taxing Top Wealth",
+      "url": "https://www.nber.org/papers/w32153",
+      "kind": "Pohjoismaat · rekisteritutkimus, julkaistu American Economic Reviewssa 2026"
+    },
+    "wealth-norway-2026": {
+      "label": "Ring (2026): Taxing Entrepreneurial Wealth: Evidence from Norway, 2021–2025",
+      "url": "https://www.nber.org/papers/w35854",
+      "kind": "Norja · tuore tutkimustyöpaperi, ei vielä vertaisarvioitu"
+    },
+    "vm-exit-2020": {
+      "label": "VM (2020): Maastapoistumisvero – mistä on kyse ja mistä ei?",
+      "url": "https://valtioneuvosto.fi/en/-/10623/maastapoistumisvero-mista-on-kyse-ja-mista-ei-",
+      "kind": "Suomi · VM:n selvityksen tekijöiden kuvaus arviosta"
+    },
+    "exit-review-2026": {
+      "label": "Nieminen (2026): Arvonnousuvero osana oikeudenmukaista verojärjestelmää",
+      "url": "https://oikeus.journal.fi/article/download/163214/122403/462038",
+      "kind": "Suomi · oikeustieteellinen arvio vuoden 2022 veroluonnoksesta"
+    },
+    "kti-funds-2026": {
+      "label": "KTI (2026): Erikoissijoitusrahastotaulukko Q1/2026",
+      "url": "https://kti.fi/wp-content/uploads/2026/05/ESR-Aikasarja-Q1-2026.pdf",
+      "kind": "Suomi · rahastojen tiedot ja Suomen Pankin tilastot"
+    },
+    "vm-funds-2022": {
+      "label": "VM (2022): Kiinteistösijoitusrahastojen läpivirtausmalli",
+      "url": "https://valtioneuvosto.fi/-/10623/uudet-kiinteistosijoitusrahastojen-verotusta-koskevat-saannokset-turvaavat-suomen-veropohjaa",
+      "kind": "Suomi · lainvalmistelu, ei toteutuneen uudistuksen vaikutusarvio"
+    },
+    "faster-2024": {
+      "label": "EU:n neuvosto (2024): FASTER-direktiivi hyväksytty",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/12/10/taxation-council-adopts-new-rules-for-withholding-tax-procedures-faster/",
+      "kind": "EU · hyväksytyn sääntelyn aikataulu ja sisältö"
+    },
+    "capital-realizations": {
+      "label": "Agersnap & Zidar (2021): The Tax Elasticity of Capital Gains and Revenue-Maximizing Rates",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aeri.20200535",
+      "kind": "Yhdysvallat · vertaisarvioitu osavaltioiden veromuutosten tutkimus"
+    },
+    "vero-capital-2024": {
+      "label": "Verohallinto: Henkilöasiakkaiden tulot, vähennykset ja verot 2024",
+      "url": "https://vero.fi/tietoa-verohallinnosta/tilastot/henkiloasiakkaiden_tuloverotilastoj/verovuosi-2024/henkiloasiakkaiden-tulot-vahennykset-ja-verot-verovuonna-2024/",
+      "kind": "Suomi · verotuksen valmistumisen mukainen tilasto"
+    },
+    "capital-budgetlab": {
+      "label": "Yale Budget Lab (2024): Behavioral Responses: Capital Gains Realizations",
+      "url": "https://budgetlab.yale.edu/research/behavioral-responses-capital-gains-realizations",
+      "kind": "Yhdysvallat · tutkimuskirjallisuuteen ja omaisuuskoostumukseen perustuva mallioletus"
+    },
+    "sorsa-gifts": {
+      "label": "Finér / Kalevi Sorsa -säätiö (2025): Lahjaveropuhallus",
+      "url": "https://sorsafoundation.fi/lahjaveropuhallus/",
+      "kind": "Suomi · Verohallinnon päätösaineisto 2020–2024"
+    },
+    "iab-advertising-2025": {
+      "label": "IAB Finland / Kantar (2026): Mainonnan määrä vuonna 2025",
+      "url": "https://www.iab.fi/julkaisut/ajankohtaista/mediamainonnan-maara-paattyi-07-laskuun-vuonna-2025.html",
+      "kind": "Suomi · toimialan markkinatilasto"
+    },
+    "austria-digital": {
+      "label": "Itävallan valtiovarainministeriö: Digital Tax Act 2020",
+      "url": "https://www.bmf.gv.at/en/topics/taxation/digital-tax-act.html",
+      "kind": "Itävalta · voimassa olevan veron kuvaus"
+    },
+    "digital-jrc": {
+      "label": "Alvarez Martinez, Gesualdo & Pycroft (2024): Storm in the Cloud",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC130576",
+      "kind": "Britannia · vertaisarvioitu CORTAX-talousmalli, ei toteuman syyvaikutus"
+    },
+    "sorsa-ten": {
+      "label": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",
+      "url": "https://sorsafoundation.fi/mista-lisaa-verotuloja-kymmenen-vastausta/",
+      "kind": "Suomi · veropoliittinen ehdotuskooste, ei vaikutusten syy-seuraustutkimus"
+    },
+    "bank-norway": {
+      "label": "Norjan valtiovarainministeriö: Prop. 1 LS 2025–2026",
+      "url": "https://www.regjeringen.no/en/documents/prop.-1-ls-20252026/id3125412/?ch=1",
+      "kind": "Norja · rahoitustoimintaveron verokannat"
+    },
+    "bank-incidence": {
+      "label": "Kogler (2019): On the Incidence of Bank Levies",
+      "url": "https://alexandria.unisg.ch/entities/publication/c7101a22-f025-4de3-80f2-1e202fac7a5c",
+      "kind": "23 EU-maata · vertaisarvioitu pankkiaineistotutkimus 2007–2013"
+    }
+  },
+  "international": [
+    {
+      "label": "IFS 2019 · Britannian verot ja etuudet 2010–2019",
+      "url": "https://ifs.org.uk/publications/distributional-impact-personal-tax-and-benefit-reforms-2010-2019",
+      "finding": "Britannian muutoksissa alimman tulokymmenyksen keskimääräinen menetys oli 11 % tuloista, ylimmän 2 %. Pienituloisissa lapsiperheissä menetys oli 20 %. Tulos koskee koko toteutettua pakettia, ei yhden etuuden leikkausta.",
+      "flows": [
+        "support",
+        "families",
+        "pension"
+      ]
+    },
+    {
+      "label": "Ganong & Noel 2019 · USA, pankkitiliaineisto",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20170537",
+      "finding": "Työttömyysturvan päättyminen pudotti kulutusta jyrkästi, vaikka tulonmenetys oli ennakoitavissa. Tulos tukee etuusleikkausten kulutuskanavaa. Koko tuen loppumisen vaikutusta ei käytetä pienen indeksileikkauksen kertoimena.",
+      "flows": [
+        "support"
+      ]
+    },
+    {
+      "label": "Fuest, Peichl & Siegloch 2018 · Saksa",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20130570",
+      "finding": "Saksan kuntien yritysveromuutoksissa noin puolet kokonaisrasituksesta siirtyi työntekijöille. Vaikutus oli suurempi vähän koulutetuilla, nuorilla ja naisilla. Suomen yhteisöveron rasitusta ei siis pidä kirjata automaattisesti kokonaan suurituloisille omistajille.",
+      "ids": [
+        "corporate"
+      ]
+    },
+    {
+      "label": "Ball ym. 2013 · 17 OECD-maata",
+      "url": "https://www.elibrary.imf.org/view/journals/001/2013/151/article-A001-en.xml",
+      "finding": "Sopeutusjaksoihin liittyi tuloerojen ja pitkäaikaistyöttömyyden kasvua sekä palkkatulo-osuuden laskua. Menoleikkauksiin painottuvien pakettien tulonjakovaikutukset olivat suurempia. Paketin rakenne ja taloussuhdanne vaikuttavat; tulos ei anna jokaiselle leikkauseurolle yhtä kerrointa.",
+      "flows": [
+        "support",
+        "families",
+        "pension",
+        "services",
+        "employees",
+        "research"
+      ]
+    }
+  ],
+  "unmodelled": {},
+  "methods": {
+    "consumption": {
+      "sources": [
+        "consumption",
+        "ons"
+      ],
+      "method": "Lisävero tai maksu jaetaan kyseisen tuoteryhmän toteutuneen kulutuksen mukaan (Suomi 2022). Koko lisämaksun oletetaan siirtyvän kuluttajille. Kulutuksen vähenemistä tai etuuksien indeksihyvitystä ei vähennetä. Aineistossa on viisi tuloryhmää: kunkin sisällä vaikutus on sama kulutusyksikköä kohden. Yritysten kulutus ja ulkomaiset ostajat voivat pienentää kotitalouksien osuutta."
+    },
+    "benefit": {
+      "sources": [
+        "statfin",
+        "vm-44"
+      ],
+      "method": "Toimen julkistaloudellinen summa kohdennetaan vastaavien etuustulojen vuoden 2024 jakaumalla. Mukana ovat myös sosiaaliturvarahastojen menot. Tämä on oma suuruusluokka-arvio; tuen saajat, verot ja korvaavat etuudet eivät määräydy uudelleen kuten SISU-laskelmassa. Ryhmän keskiarvo ei ole yksittäisen etuudensaajan menetys."
+    },
+    "student": {
+      "sources": [
+        "statfin",
+        "vm-44"
+      ],
+      "method": "Maksu tai tukimuutos kohdennetaan opintoetuuksien jakaumalla vuonna 2024. Opiskelijan nykyiset tulot eivät kuvaa hänen valmistumisen jälkeistä tulotasoaan. Lainahyvityksissä näytetään siksi vaihtoehtona myös palkkatulojen jakauma; tämä on kohdentumisskenaario, ei ennuste urasta."
+    },
+    "pension": {
+      "sources": [
+        "statfin",
+        "vm-44"
+      ],
+      "method": "Valitun vuoden eläkemenoihin ja veroihin arvioitu yhteisvaikutus jaetaan nykyisten eläketulojen jakaumalla. Tulevat eläkkeensaajat eivät välttämättä kuulu samoihin tuloryhmiin. Eläkeikää muuttavissa toimissa työssä jatkamisen palkkatuloa ei ole tässä arvioitu; palkki näyttää eläke-etuuden muutoksen, ei elinkaaritulojen menetystä."
+    },
+    "wealth": {
+      "sources": [
+        "wealth",
+        "vm-48"
+      ],
+      "method": "Lisämaksu jaetaan vastaavan varallisuuslajin vuoden 2023 jakaumalla tulokymmenyksittäin. Omaisuuden määrä on sijaismittari: kauppojen, perintöjen ja palvelumaksujen todellinen jakauma voi poiketa omistamisen jakaumasta. Varallisuustilasto ei kata laitoksissa asuvaa väestöä."
+    },
+    "agriculture": {
+      "sources": [
+        "statfin",
+        "vm-44"
+      ],
+      "method": "Tuen menetys tai lisämaksu jaetaan maatalouden yrittäjätulojen vuoden 2024 jakaumalla. Tuki voi myös päätyä maan vuokraan tai tuotteiden hintoihin; tätä ei ole muutettu keksityksi euromääräiseksi kertoimeksi. Maatalouden pienituloisuus voi johtua myös yksittäisen vuoden tappiosta."
+    },
+    "corporate": {
+      "sources": [
+        "cbo",
+        "statfin"
+      ],
+      "method": "Ehdollinen yritysveroskenaario käyttää CBO:n laskentaoletusta: 25 % työntekijöille, 75 % pääoman omistajille. Palkkaosa jaetaan Suomen palkkatulojen ja pääomaosa omaisuustulojen mukaan. Haarukan alarajalla koko pääomaosa jää ulkomaisille omistajille, ylärajalla kotimaisille. Tämä ei ole Suomen estimoitu vaihteluväli eikä lyhyen aikavälin kassamenetys; myös palkkoihin siirtyminen on oletus."
+    },
+    "business": {
+      "sources": [
+        "statfin",
+        "ons"
+      ],
+      "method": "Yritystuen tai tuotantokustannuksen muutos ei ole suoraan kotitalouden vero. Näytetään erillinen välittymisskenaario: koko summa siirtyy joko omistajien pääomatuloihin, työntekijöiden palkkoihin tai kuluttajahintoihin. Suorat valtiontalouden luvut eivät kerro näiden kanavien osuuksia. Ulkomaille päätyvää osaa ei ole tunnistettu, joten tämä on kotimaisen vaikutuksen täyden välittymisen vertailu."
+    },
+    "service": {
+      "sources": [
+        "oecd-services",
+        "ifs-services",
+        "vm-44"
+      ],
+      "method": "Palvelurahan vähennys kohdennetaan OECD-tutkimuksen Suomen palvelumenojen jakaumalla vuodelta 2007. Se on vanha sijaisjakauma, ei kyseisen leikkauksen uusi vaikutustutkimus. Viisi tuloryhmää jaetaan kahdeksi kulutusyksiköiden suhteessa. Kuvaaja näyttää kunkin tulokymmenyksen osuuden rahoitusleikkauksesta. Sama palvelu voi myös tuottua pienemmällä kustannuksella; rahoituksen muutos ei mittaa palvelun tai hyvinvoinnin menetystä."
+    },
+    "service-consumption": {
+      "sources": [
+        "consumption",
+        "ifs-services"
+      ],
+      "method": "Palvelurahan vähennys jaetaan vastaavan kulutuksen vuoden 2022 jakaumalla. Maksullisten palvelujen kulutus on julkisen palvelun käytön epätäydellinen sijaismittari: maksuton palvelu voi palvella enemmän pienituloisia. Kyse on resurssien kohdentumisesta, ei rahatulon menetyksestä tai palvelun hyvinvointiarvosta."
+    },
+    "targeted-service": {
+      "sources": [
+        "statfin",
+        "ifs-services"
+      ],
+      "method": "Palveluraha kohdennetaan kohderyhmää kuvaavan etuustulon vuoden 2024 jakaumalla. Tulo tai etuus on sijaismittari palvelun tarpeelle; samaa palvelua käyttävät eivät välttämättä kuulu samoihin talouksiin. Palvelumenon vähennystä ei lisätä rahatulon menetykseen."
+    },
+    "work": {
+      "sources": [
+        "statfin",
+        "vm-44"
+      ],
+      "method": "VM:n henkilöstömenoarvio jaetaan palkkatulojen vuoden 2024 jakaumalla. Palkki kuvaa työpanoksen tai työnantajan palkkakustannuksen muutosta suhteessa tuloihin. Se ei ole työntekijän nettotulon menetys: työnantajamaksuja, verotusta, korvaavaa työtä ja vapaa-ajan arvoa ei ole eritelty. Julkisen alan palkkajakauma voi poiketa kaikkien palkansaajien jakaumasta."
+    }
+  },
+  "coverage": {
+    "reviewed": 257,
+    "numericalScenarios": 200,
+    "separate": 57
+  }
+}

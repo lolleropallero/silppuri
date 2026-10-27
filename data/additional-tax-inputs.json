@@ -1,0 +1,224 @@
+{
+  "fw-corporate-gaps": {
+    "formula": "product",
+    "anchor": 4800,
+    "factors": [
+      [
+        0.9
+      ],
+      [
+        0.18
+      ],
+      [
+        0.4,
+        0.8
+      ],
+      [
+        0.2,
+        0.5
+      ]
+    ],
+    "cost": [
+      10,
+      20
+    ]
+  },
+  "fw-corporate-minimum": {
+    "formula": "product",
+    "anchor": 1500,
+    "factors": [
+      [
+        0.2,
+        0.6
+      ],
+      [
+        0.7,
+        0.9
+      ]
+    ],
+    "cost": [
+      5,
+      15
+    ]
+  },
+  "fw-wealth-minimum": {
+    "formula": "product",
+    "anchor": 400,
+    "factors": [
+      [
+        0.7,
+        0.95
+      ]
+    ],
+    "cost": [
+      3,
+      10
+    ]
+  },
+  "fw-exit-tax": {
+    "formula": "reference",
+    "referenceRange": [
+      0,
+      50
+    ]
+  },
+  "fw-property-funds": {
+    "formula": "product",
+    "anchor": 5720,
+    "factors": [
+      [
+        0.02,
+        0.06
+      ],
+      [
+        0.18
+      ],
+      [
+        0.4,
+        0.8
+      ],
+      [
+        0.7,
+        0.9
+      ]
+    ],
+    "cost": [
+      1,
+      4
+    ],
+    "roundTo": 1
+  },
+  "fw-treaty-dividends": {
+    "formula": "product",
+    "anchor": 1332,
+    "factors": [
+      [
+        0.15
+      ],
+      [
+        0.5,
+        0.9
+      ],
+      [
+        0.6,
+        0.9
+      ]
+    ],
+    "cost": [
+      3,
+      8
+    ]
+  },
+  "fw-portfolio": {
+    "formula": "product",
+    "anchor": 11200,
+    "factors": [
+      [
+        0.05,
+        0.15
+      ],
+      [
+        0.18
+      ],
+      [
+        0.5,
+        0.8
+      ],
+      [
+        0.7,
+        1
+      ]
+    ],
+    "cost": [
+      3,
+      8
+    ]
+  },
+  "fw-deemed-cost": {
+    "formula": "realizations",
+    "gains": 5247.637367,
+    "affectedShare": [
+      0.15,
+      0.35
+    ],
+    "baseUplift": [
+      0.15,
+      0.3333333333333333
+    ],
+    "elasticity": [
+      0.3,
+      0.7
+    ],
+    "rate": 0.34,
+    "cost": [
+      1,
+      4
+    ]
+  },
+  "fw-succession-abolish": {
+    "formula": "product",
+    "anchor": 240,
+    "factors": [
+      [
+        0.65,
+        0.85
+      ]
+    ],
+    "cost": [
+      1,
+      3
+    ]
+  },
+  "fw-digital": {
+    "formula": "product",
+    "anchor": 1,
+    "factors": [
+      [
+        497.1,
+        729
+      ],
+      [
+        0.05
+      ],
+      [
+        0.7,
+        0.95
+      ],
+      [
+        0.82
+      ]
+    ],
+    "cost": [
+      1,
+      3
+    ]
+  },
+  "sorsa-bank": {
+    "formula": "product",
+    "anchor": 190.3,
+    "factors": [
+      [
+        0.75,
+        0.95
+      ]
+    ],
+    "cost": [
+      1,
+      4
+    ]
+  },
+  "sorsa-million-inheritance": {
+    "formula": "product",
+    "anchor": 200,
+    "factors": [
+      [
+        0.5,
+        0.85
+      ]
+    ],
+    "cost": [
+      1,
+      5
+    ]
+  }
+}

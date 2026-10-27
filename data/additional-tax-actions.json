@@ -1,0 +1,703 @@
+[
+  {
+    "id": "fw-corporate-gaps",
+    "title": "Yritysten voitonsiirron aukot kiinni",
+    "flow": "companies",
+    "who": "Voittoja matalan verotuksen maihin siirtäviltä yrityksiltä ja niiden omistajilta.",
+    "impact": "Voittoja matalan verotuksen maihin siirtäviltä yrityksiltä ja niiden omistajilta.",
+    "society": "Korkorajoitukset, väliyhteisösäännöt ja verovalvonta vähentäisivät voitonsiirtoa. Yritykset voivat muuttaa rahoitusta tai siirtää voittoja toiseen maahan. Clifford havaitsi juuri tällaista siirtymistä; kaikki takaisin verolle tuleva voitto ei päädy Suomeen.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [
+      "fw-interest"
+    ],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Arviosta vähennetään jo toteutettujen torjuntatoimien osuus sekä 10–20 miljoonaa lisävalvonnan vuosikuluja. Toimi sisältää korkorajoitusten kiristyksen, joten sen erillinen kortti korvautuu.",
+      "calculation": [
+        "Ankkuri: Wier–Zucmanin vuoden 2019 Suomi-arvio 4,8 mrd. dollaria siirrettyjä voittoja. Käytämme pyöristettyä valuuttamuunnosta 0,90 €/dollari ja 18 % yhteisöveroa: vertailuverovaje 777,6 milj. €. Tämä ei ole havaittu vuoden 2031 verovaje.",
+        "Omat oletukset: vanhasta vuodosta 40–80 % on jäljellä nykyisten sääntöjen jälkeen ja laaja uusi torjuntapaketti palauttaa siitä Suomen verolle 20–50 %. Viimeinen osuus sisältää siirtymisen muihin järjestelyihin. Kertoimia ei ole estimoitu Suomelle.",
+        "Netto = 777,6 × 40–80 % × 20–50 % − 10–20 milj. €. Pakettiin kuuluvat myös konsernien raportointi, omistajatietojen tarkistaminen, veronkiertopykälän täsmennys ja tutkimusresurssit. Niille ei lisätä päälle erillisiä tuottoja.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "profit-shifting-wier",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "finland-interest-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Arviosta vähennetään jo toteutettujen torjuntatoimien osuus sekä 10–20 miljoonaa lisävalvonnan vuosikuluja. Toimi sisältää korkorajoitusten kiristyksen, joten sen erillinen kortti korvautuu.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "capital-income": 0.2
+        },
+        {
+          "capital-income": 0.6,
+          "wages": 0.175
+        }
+      ],
+      "method": "Yritysveron välillinen rasitus jaetaan omistajille ja mahdollisesti työntekijöille. Ulkomaisten ja institutionaalisten omistajien osuutta ei jaeta Suomen kotitalouksille.",
+      "assumptions": "Omat vertailut: kotitalouksien pääomatuloihin jää 20 % verosta; toisessa vaihtoehdossa pääomatuloihin 60 % ja nettopalkkoihin 17,5 %. Jälkimmäinen palkkaosuus on CBO:n 25 %:n brutto-oletus × 70 % verojen jälkeinen osuus. Omistajaosuudet ovat herkkyysoletuksia, eivät kohdeyritysten havaittuja omistuksia.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "fw-corporate-minimum",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "fw-corporate-minimum",
+    "title": "Suuryritysten vähimmäisvero 20 % EU-sopimuksella",
+    "flow": "companies",
+    "who": "Kansainvälisiltä konserneilta, joiden voittojen tosiasiallinen vero jää alle 20 prosentin.",
+    "impact": "Kansainvälisiltä konserneilta, joiden voittojen tosiasiallinen vero jää alle 20 prosentin.",
+    "society": "Verokeitaaseen siirtämisen hyöty pienenisi. Suomen lisätulo riippuu myös siitä, mikä maa saa täydennysveron. Muutoksen toteuttaminen edellyttää kansainvälistä sopimusta ja voi muuttaa yritysten sijoittumista.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Tämä on sopimuksen toteutumiseen sidottu skenaario. Nykyisen 15 prosentin veron laskennallinen tuotto vähennetään ensin. Suomen saama osuus ja yritysten reagointi pienentävät jäljelle jäävää summaa.",
+      "calculation": [
+        "EU Tax Observatoryn vuoden 2021 laskelmassa Suomi: 15 % → 1 700 milj. €, 21 % → 3 500 milj. €. Oma suoraviivainen väliarvio 20 prosentille: (3 500 − 1 700) × 5/6 = 1 500 milj. € lisäpotentiaalia. Se ei ole uusi mikrosimulaatio.",
+        "Nykyisen verotusoikeuksien jaon, lähdemaiden omien täydennysverojen, poikkeusten ja vanhan aineiston vuoksi kokeilemme, että Suomeen jäisi tästä 20–60 %. Käyttäytymisen ja muiden verovaikutusten jälkeen säilyisi 70–90 %. Nämä ovat omia stressitestejä, eivät tutkimuksen kertoimia.",
+        "Netto = 1 500 × 20–60 % × 70–90 % − 5–15 milj. € hallintoa. Konserniverotuksen ja verotusoikeuksien jaon muita kansainvälisiä uudistuksia ei ole laskettu tähän. Yhteisöveron korotus, digivero ja voitonsiirtopaketti voivat pienentää tämän toimen erillistä lisätuottoa; yhdistelmästä näytetään päällekkäisyysmerkintä.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ],
+      "condition": "Edellyttää EU-sopimusta"
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "minimum-tax-eutax",
+        "cfc-clifford",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Tämä on sopimuksen toteutumiseen sidottu skenaario. Nykyisen 15 prosentin veron laskennallinen tuotto vähennetään ensin. Suomen saama osuus ja yritysten reagointi pienentävät jäljelle jäävää summaa.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "capital-income": 0.2
+        },
+        {
+          "capital-income": 0.6,
+          "wages": 0.175
+        }
+      ],
+      "method": "Yritysveron välillinen rasitus jaetaan omistajille ja mahdollisesti työntekijöille. Ulkomaisten ja institutionaalisten omistajien osuutta ei jaeta Suomen kotitalouksille.",
+      "assumptions": "Omat vertailut: kotitalouksien pääomatuloihin jää 20 % verosta; toisessa vaihtoehdossa pääomatuloihin 60 % ja nettopalkkoihin 17,5 %. Jälkimmäinen palkkaosuus on CBO:n 25 %:n brutto-oletus × 70 % verojen jälkeinen osuus. Omistajaosuudet ovat herkkyysoletuksia, eivät kohdeyritysten havaittuja omistuksia.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "corporate",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "fw-corporate-gaps",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "fw-interest",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "fw-digital",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "fw-wealth-minimum",
+    "title": "Yli 100 miljoonan omaisuuksille 2 % vähimmäisvero",
+    "flow": "capital",
+    "who": "Erittäin varakkailta henkilöiltä. Kahden prosentin vähimmäistasosta vähennettäisiin heidän jo maksamansa henkilöverot.",
+    "impact": "Erittäin varakkailta henkilöiltä.",
+    "society": "Omaisuuden tuotto jäisi useammin verolle, vaikka voitot jätettäisiin holdingyhtiöön. Pohjoismaisissa tutkimuksissa varallisuusvero lisäsi jonkin verran maastamuuttoa. Vaikutukset koko talouden investointeihin olivat pieniä; vero ei silti ole käyttäytymisen kannalta vaikutukseton.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Tutkimuslaitoksen Suomen laskennallinen lähtökohta on noin 400 miljoonaa. Omassa haarukassa varataan 5–30 % veropohjan ja muiden verotulojen menetyksiin sekä 3–10 miljoonaa hallintoon.",
+      "calculation": [
+        "EU Tax Observatory 2025, taulukko 1: Suomen yli 100 milj. € omaisuuksien 2 % vähimmäisveron lisätuotto noin 400 milj. €. Malli käyttää miljardöörien 14,3 mrd. € varallisuutta, oletettua nykyveroa 0,2 % varallisuudesta ja laajennuskerrointa 1,55. Suomen henkilöveroja ei ole mitattu.",
+        "Oma netto = 400 × 70–95 % − 3–10 milj. €. Varauksessa ovat muuttoliike, arvostus, suunnittelu ja muiden verojen muutokset. Jakobsenin ym. noin 2 %:n muuttovaste ei sellaisenaan ole verotuoton vähennyskerroin. Norjan tuore työpaperi tukee myös pienten lyhyen aikavälin reaalivaikutusten mahdollisuutta.",
+        "Mallina on yhteisesti toteutettava vähimmäisvero. Muut henkilöverot hyvitetään vähimmäisverossa. Siksi niiden korotukset vähentäisivät tämän kortin lisätuottoa siltä osin kuin ne osuvat samoihin ihmisiin; laskuri merkitsee mahdolliset päällekkäisyydet. Verotuksellinen asuinpaikka ja yli 100 miljoonan ryhmän todelliset tulot vaativat jatkovalmistelussa rekisterilaskelman.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ],
+      "condition": "Edellyttää yhteistä verosopimusta"
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "wealth-minimum-eutax",
+        "wealth-migration-2026",
+        "wealth-norway-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Tutkimuslaitoksen Suomen laskennallinen lähtökohta on noin 400 miljoonaa. Omassa haarukassa varataan 5–30 % veropohjan ja muiden verotulojen menetyksiin sekä 3–10 miljoonaa hallintoon.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [
+        {
+          "wealth-unlisted": 1
+        },
+        {
+          "wealth-financial": 1
+        }
+      ],
+      "method": "Rasitus keskittyy erittäin varakkaisiin. Tulokymmenykset eivät kuitenkaan ole varallisuuskymmenyksiä: yhtiöön jätetty voitto ei välttämättä näy omistajan vuosituloissa.",
+      "assumptions": "Kaksi omaa sijaisjakaumaa: listaamattomien osakkeiden ja rahoitusvarallisuuden omistus. Ne eivät tunnista yli 100 miljoonan henkilöitä, joten tätä laajaa vaihteluväliä ei pidä lukea ryhmän rekisteritiedoksi.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "fw-wrappers",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "dividends",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "tax-dividend-return",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "tax-capital-low",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "tax-capital-high",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "fw-deemed-cost",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "fw-exit-tax",
+    "title": "Suomessa kertynyt arvonnousu verolle maastamuutossa",
+    "flow": "capital",
+    "who": "Ulkomaille muuttavilta sijoittajilta, joiden omaisuus on noussut arvossa Suomessa asuessa. Vero kohdistuisi Suomessa kertyneeseen voittoon.",
+    "impact": "Ulkomaille muuttavilta sijoittajilta, joiden omaisuus on noussut arvossa Suomessa asuessa.",
+    "society": "Muutto juuri ennen omaisuuden myyntiä ei enää poistaisi Suomen veroa. Maksun lykkääminen myyntiin asti lieventäisi rahapulaa silloin, kun omaisuutta ei myydä muuton yhteydessä. Rajat ja lykkäysehdot vaikuttavat sekä tuottoon että muuttamiseen.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "VM:n vertailuhaarukka",
+      "basis": "VM 2020 · kokonaisnettoa ei laskettu",
+      "money": "0–50 miljoonaa on VM:n vanhan selvityksen suuruusluokka, ei kattava netto. Nolla on epävarman haarukan alaraja. Laajemman veron suurempaa tuottoa ei ole varmistettu, joten piirakka ei lupaa sitä etukäteen.",
+      "calculation": [
+        "VM:n selvityksen 2020:9 vertailuhaarukka on 0–50 milj. €, vuoden 2022 kapeamman luonnoksen 0–25 milj. €. Oikeus 1/2026 erittelee näiden rajoitukset. Tässä käytetään laajempaa 0–50 miljoonan vertailua; Finnwatchin vielä laajemmalle mallille ei väitetä erikseen mitattua lisätuottoa.",
+        "Toteutus: vero Suomessa asumisaikana syntyneestä arvonnoususta, 100 000 euron arvonnousuraja ilman erillistä omaisuuden vähimmäisrajaa ja maksun lykkäys realisointiin. Tarkka ehdotus on oma konkretisointi. Vanhaa eurohaarukkaa käytetään vain vertailuna, ei tämän rajauksen tuloksena.",
+        "EU:n yhdenmukaiset säännöt, maastamuuton jälkeinen verotusoikeus ja tiedonvaihto tukevat samaa veropohjaa. Niille ei lisätä erillisiä euroja. Hallintoa, lykkäyksen korkoa ja muuta muuttoliikkeen verovaikutusta ei ole netotettu.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ],
+      "condition": "0–50 milj. € vertailu; kokonaisnetto avoin"
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "vm-exit-2020",
+        "exit-review-2026",
+        "wealth-migration-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "0–50 miljoonaa on VM:n vanhan selvityksen suuruusluokka, ei kattava netto. Nolla on epävarman haarukan alaraja. Laajemman veron suurempaa tuottoa ei ole varmistettu, joten piirakka ei lupaa sitä etukäteen.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [],
+      "method": "Vero koskee pääosin ulkomaille muuttaneita. Heitä ei jaeta Suomessa asuvien vuoden 2024 tulokymmenyksiin. Suomessa pysymisen verovaikutusta ei ole mallinnettu.",
+      "assumptions": "",
+      "outsideResidents": true
+    },
+    "possibleOverlaps": []
+  },
+  {
+    "id": "fw-property-funds",
+    "title": "Kiinteistörahastojen verovapaus pois",
+    "flow": "investors",
+    "who": "Kiinteistörahastojen sijoittajilta, myös ulkomaisilta. Kotimaisen sijoittajan jo maksama vero otettaisiin huomioon.",
+    "impact": "Kiinteistörahastojen sijoittajilta, myös ulkomaisilta.",
+    "society": "Rahaston vuokra- ja myyntituotosta maksettaisiin veroa ennen voitonjakoa. Rahaston arvo ja sijoittajan nettotuotto voivat pienentyä. Uusien kohteiden rakentaminen tai ostaminen voi vähentyä; jo rakennetun asunnon vuokra ei nouse automaattisesti veron verran.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Laskelma hyvittää osan nykyisistä sijoittajatason veroista ja jättää julkisten eläkesijoittajien osuuden nettotuoton ulkopuolelle. Ulkomaisten rahastojen lisätuottoa ei arvaamalla lisätä kotimaisen kannan päälle.",
+      "calculation": [
+        "KTI Q1/2026: nettovarallisuus 5 720 milj. €. Jaettu tuotto oli 2,3 %, kokonaistuotto −0,8 %. Oma normaalivuoden verotettavan tuoton väli on 2–6 % nettovarallisuudesta; yläraja kuvaa elpymistä, ei vuoden 2026 toteumaa.",
+        "Oma malli: 18 % vero rahaston verotettavaan tuloon. Nykyisten henkilöverojen hyvitysten ja julkisten omistajien jälkeen 40–80 % mekaanisesta verosta olisi uutta julkista tuloa. Tuoton ja omistusrakenteen muutosten jälkeen siitä säilyisi 70–90 %. Vuosikulut 1–4 milj. €.",
+        "Netto = 5 720 × 2–6 % × 18 % × 40–80 % × 70–90 % − 1–4. Sama veroperiaate ulotettaisiin rinnastuviin ulkomaisiin rahastoihin ja kiinteistömyynnin verosopimusaukot suljettaisiin; näille ei ole omaa lisäsummaa tässä rajatussa laskelmassa. Muiden rahastojen osingot ovat erillisellä lähdeverokortilla.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "kti-funds-2026",
+        "vm-funds-2022",
+        "fin-fsa-fund-ownership",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Laskelma hyvittää osan nykyisistä sijoittajatason veroista ja jättää julkisten eläkesijoittajien osuuden nettotuoton ulkopuolelle. Ulkomaisten rahastojen lisätuottoa ei arvaamalla lisätä kotimaisen kannan päälle.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "wealth-funds": 0.1
+        },
+        {
+          "wealth-funds": 0.4
+        }
+      ],
+      "method": "Suomen kotitalouksille kohdistuvan osuuden vertailu on 10–40 % laskelman verorasituksesta. Kotimaiset rahasto-osuudet toimivat jakauman sijaismittarina.",
+      "assumptions": "10–40 % on oma herkkyysoletus. Kiinteistörahastojen sijoittajat poikkeavat kaikkien rahastojen sijoittajista; loppuosaa ei siirretä kotitalouksille. Vuokralaisiin siirtyviä hintoja ei ole hinnoiteltu.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": []
+  },
+  {
+    "id": "fw-treaty-dividends",
+    "title": "Osinkojen nollaverosopimukset ja osinkopesu pois",
+    "flow": "investors",
+    "who": "Suomesta osinkoja saavilta ulkomaisilta sijoittajilta ja veronkiertojärjestelyjen hyötyjiltä.",
+    "impact": "Suomesta osinkoja saavilta ulkomaisilta sijoittajilta ja veronkiertojärjestelyjen hyötyjiltä.",
+    "society": "Portfolio-osingosta perittäisiin yleensä 15 % lähdevero myös nykyisissä nollaveromaissa. Osingon omistajan tarkistaminen vaikeuttaisi näennäisiä osakekauppoja. Jos asuinmaa hyvittää Suomen veron, sijoittajan kokonaisvero ei välttämättä nouse yhtä paljon.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Osinkopesun vanhaa 80 miljoonan verovajetta ei lisätä nollaverosopimusten tuoton päälle: samaa osinkoa voi olla molemmissa. Jo toteutuneet korjaukset, vastavuoroiset verohyvitykset ja valvontakulut pienentävät arviota.",
+      "calculation": [
+        "VM 2021:31, taulukko 7: verosopimuksen vuoksi verovapaana maksetut muut kuin suorasijoitusosingot 2016–2020 olivat 1 730, 1 300, 1 500, 1 650 ja 480 milj. €, keskimäärin 1 332. Laskennallinen 15 % vero tästä on 199,8 milj. €.",
+        "Omat oletukset: vanhasta pohjasta 50–90 % on yhä aidosti lisäverotettavissa ja siitä 60–90 % jää Suomeen sijoittajien reagoinnin, vastavuoroisten verohyvitysten ja hyvitysoikeuksien jälkeen. Vuosittainen lisävalvonta 3–8 milj. €. Netto = 199,8 × 50–90 % × 60–90 % − 3–8.",
+        "Vuoden 2022 Verohallinnon 80 miljoonan osinkopesuarvio koskee vuosia 2018–2021. TRACE on jo käytössä; FASTER hyväksyttiin 2024 ja sitä sovelletaan vuodesta 2030. Niiden vanhoja hyötyjä ei lasketa uutena. Laskelma on jäljelle jäävän pohjan herkkyystesti, ei ajantasainen sopimuskohtainen simulointi.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ],
+      "condition": "Edellyttää verosopimusten muutoksia"
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "faster-2024",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Osinkopesun vanhaa 80 miljoonan verovajetta ei lisätä nollaverosopimusten tuoton päälle: samaa osinkoa voi olla molemmissa. Jo toteutuneet korjaukset, vastavuoroiset verohyvitykset ja valvontakulut pienentävät arviota.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [],
+      "method": "Veron välitön maksaja asuu ulkomailla. Ulkomaisten rahastojen mahdollisia suomalaisia edunsaajia ei tunneta, eikä koko verotuottoa voi jakaa Suomen tulokymmenyksiin.",
+      "assumptions": "",
+      "outsideResidents": true
+    },
+    "possibleOverlaps": []
+  },
+  {
+    "id": "fw-portfolio",
+    "title": "Yhtiöiden pienomistusten osingot verolle",
+    "flow": "companies",
+    "who": "Listaamattomien yhtiöiden osakkeisiin toisten yhtiöiden kautta sijoittavilta. Suurten omistusten konserniosingot jäisivät ulkopuolelle.",
+    "impact": "Listaamattomien yhtiöiden osakkeisiin toisten yhtiöiden kautta sijoittavilta.",
+    "society": "Alle 10 prosentin omistusosuudesta saadut osingot tulisivat saajayhtiölle verollisiksi. Holdingyhtiön käyttäminen ei enää antaisi näihin osinkoihin täyttä verovapautta. Omistuksia voidaan keskittää yli rajan tai osingonjakoa lykätä.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Tästä veropohjasta ei ole erillistä julkista tilastoa. Euromäärä on siksi avoimesti oletettuun pienomistusten osuuteen perustuva laskelma. Se huomioi järjestelyjen muutoksia, pienemmät myöhemmät omistajaverot ja hallintokulut.",
+      "calculation": [
+        "VM 2021:31, taulukko 1: listaamattomien yhtiöiden kotimaisille saajille maksamat osingot olivat 2016–2020 keskimäärin 11 200 milj. €. Mukana on myös henkilöitä ja konserniomistuksia, joten koko summaa EI veroteta uudelleen.",
+        "Oma puuttuvan veropohjan oletus: 5–15 % tästä olisi alle 10 %:n yhtiöomistuksille maksettuja yksityisen sektorin portfolio-osinkoja. Vero 18 %. Käyttäytymisen jälkeen säilyy 50–80 % ja muiden Suomen verojen hyvitysten jälkeen 70–100 %. Hallinto 3–8 milj. €.",
+        "Netto = 11 200 × 5–15 % × 18 % × 50–80 % × 70–100 % − 3–8. Alempi tuotto edellyttää jo huomattavaa uudelleenjärjestelyä. Yhtiön maksama lisävero ja omistajan henkilökohtainen osinkovero ovat eri veroja; niitä ei tule laskea samaksi suoraksi kotitalousmenetykseksi.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "vm-withholding",
+        "capital-realizations",
+        "cbo-incidence-assumption",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Tästä veropohjasta ei ole erillistä julkista tilastoa. Euromäärä on siksi avoimesti oletettuun pienomistusten osuuteen perustuva laskelma. Se huomioi järjestelyjen muutoksia, pienemmät myöhemmät omistajaverot ja hallintokulut.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "wealth-unlisted": 0.5
+        },
+        {
+          "wealth-unlisted": 0.9
+        }
+      ],
+      "method": "Rasitus painottuu yhtiöiden omistajiin. Listaamattomien osakkeiden tulokymmenysjakauma on sijaismittari.",
+      "assumptions": "Omat vertailut jakavat Suomen kotitalouksille 50 tai 90 % laskelman rasituksesta. Loppu jää muille omistajille; todellista omistajaketjua ei tunneta.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": []
+  },
+  {
+    "id": "fw-deemed-cost",
+    "title": "Pitkän omistuksen hankintameno-olettama 40 → 20 %",
+    "flow": "capital",
+    "who": "Paljon arvonnoussutta omaisuutta myyviltä sijoittajilta. Todelliset hankintakulut voisi edelleen vähentää; oman vakituisen asunnon verovapaus säilyisi.",
+    "impact": "Paljon arvonnoussutta omaisuutta myyviltä sijoittajilta.",
+    "society": "Osa sijoitusvoitoista tulisi aiempaa laajemmin verolle. Myyjä voi käyttää todellista hankintahintaa tai lykätä kauppaa. Yhdysvaltojen tutkimus löytää myyntien reagointia, mutta ei tue oletusta, että veronkorotuksen tuotto katoaisi kokonaan.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Laskenta vähentää myös lykkääntyvistä myynneistä menetetyn nykyisen veron. Hankintameno-olettamaa hyödyntävien voittojen osuus on oma herkkyysoletus, koska julkaistu tilasto ei erittele sitä.",
+      "calculation": [
+        "Verohallinnon vuoden 2024 luovutusvoitot 5 247,637367 milj. €. Oma oletus: 15–35 % tästä liittyy korkean hankintameno-olettaman hyödyntämiseen. Uusi verotettava voitto kasvaa näissä 15–33,33 %; enimmäiskasvu saadaan 80/60 − 1, kun 40 % olettama alenee 20 prosenttiin.",
+        "Vero 34 %. Realisointijouston itse valittu herkkyysväli on 0,3–0,7 veron suhteen, taustana Agersnap–Zidar ja Yale Budget Lab. Kun veropohja kasvaa suhteessa k, myyntimäärän kerroin on (1+k)^(−jousto).",
+        "Netto = vanha verollinen voitto × kohdeosuuden oletus × 34 % × [(1 + k)^(1 − jousto) − 1] − 1–4 milj. € hallintoa. Näin veroa lykkäävien myyjien aiemmin maksamatkin verot poistuvat vertailusta. Jakaumaa tai joustoa ei ole estimoitu tälle Suomen uudistukselle.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "vero-capital-2024",
+        "capital-realizations",
+        "capital-budgetlab",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Laskenta vähentää myös lykkääntyvistä myynneistä menetetyn nykyisen veron. Hankintameno-olettamaa hyödyntävien voittojen osuus on oma herkkyysoletus, koska julkaistu tilasto ei erittele sitä.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [
+        {
+          "wealth-listed": 1
+        },
+        {
+          "wealth-financial": 1
+        }
+      ],
+      "method": "Sijoitusvoittojen lisäveroa jaetaan pörssiosakkeiden tai laajemman rahoitusvarallisuuden tulokymmenysjakaumalla.",
+      "assumptions": "Oma oletus on, että veron lisäys jakautuu omistusten suhteessa. Omaisuuden myynnin ajoitus, kiinteistöt ja yksittäiset yrityskaupat voivat tehdä todellisesta jakaumasta erilaisen.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "fw-wealth-minimum",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "fw-succession-abolish",
+    "title": "Yritysperintöjen ja -lahjojen huojennus kokonaan pois",
+    "flow": "capital",
+    "who": "Huojennettuja yritys- ja maatilaperintöjä tai lahjoja saavilta. Suurten omaisuussiirtojen saajat menettäisivät eniten euroja.",
+    "impact": "Huojennettuja yritys- ja maatilaperintöjä tai lahjoja saavilta.",
+    "society": "Yritysomaisuus verotettaisiin lähtökohtaisesti kuten muu perintö tai lahja. Maksuajan järjestelyt vaikuttavat yrityksen kassaan ja siihen, tarvitseeko osakkeita myydä. Tilasto huojennuksen koosta ei osoita sen olevan välttämätön yrityksen jatkamiselle.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [
+      "tax-succession"
+    ],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Koko huojennuksen 240 miljoonan lähtöarviosta vähennetään suunnittelun ja muiden käyttäytymismuutosten vaikutus sekä hallinto. Sijoitusvarojen rajaus sisältyy poistoon eikä sitä lisätä uudelleen.",
+      "calculation": [
+        "Sama 240 milj. € verotukipohja kuin sijoitusvarojen rajauksen kortilla. Sorsa-säätiön Verohallinnolta saamassa 2020–2024 päätösaineistossa toteutuneet huojennukset olivat keskimäärin noin 202 milj. €/vuosi; eri vuosien ja verosääntöjen luvut eivät ole sama asia.",
+        "Oma tuotto = 240 × (1 − 15–35 %) − 1–3 milj. € = 153–203 milj. €, ulospäin pyöristettynä 150–205. Käyttäytymisväli on sama kuin osittaisessa rajauksessa. OBR:n Britannian huojennusmuutosten laskelma osoittaa, miksi suunnittelu pitää huomioida, mutta kerroin ei ole Suomen tutkimustulos.",
+        "Maksuajat, muuhun omaisuuteen siirtyminen, lahjojen ajoitus ja omistajavaihdokset vaikuttavat toteumaan. Arvio ei sisällä samanaikaista veroprosenttien nostoa. Kortti sisältää sijoitusvarojen rajauksen ja korvaa sen. Perintöverokannan korotukset voivat jäädä valituiksi, mutta niiden yhteisvaikutus merkitään avoimeksi.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "inheritance",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Koko huojennuksen 240 miljoonan lähtöarviosta vähennetään suunnittelun ja muiden käyttäytymismuutosten vaikutus sekä hallinto. Sijoitusvarojen rajaus sisältyy poistoon eikä sitä lisätä uudelleen.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [
+        {
+          "wealth-unlisted": 1
+        },
+        {
+          "wealth-financial": 1
+        }
+      ],
+      "method": "Yritysperintöjen lisävero jaetaan kahdella vaihtoehdolla: listaamattomien osakkeiden ja rahoitusvarallisuuden omistuksen mukaan.",
+      "assumptions": "Nykyisen omistajan varallisuusjakauma ei ole perillisten tulorekisteri. Eurot ovat ryhmän keskimääräinen vuotuinen rasitus, eivät yhden perillisen kertaluonteinen verolasku.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "tax-inheritance",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "sorsa-million-inheritance",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "fw-digital",
+    "title": "Suurten alustojen verkkomainonnalle 5 % vero",
+    "flow": "companies",
+    "who": "Suurilta mainosalustoilta. Osa verosta voi siirtyä suomalaisille mainostajille ja edelleen niiden asiakkaille.",
+    "impact": "Suurilta mainosalustoilta.",
+    "society": "Veron voisi periä Suomessa näytetystä verkkomainonnasta Itävallan mallin tapaan. Alustat voivat nostaa mainonnan hintaa tai muuttaa sopimuksia. Britanniaa koskevassa tutkimusmallissa digivero pienensi BKT:tä mutta kasvatti kotimaista kulutusta; verotuotto ja talouden kokonaishyöty eivät muutu aina samaan suuntaan.",
+    "origin": "finnwatch",
+    "source": "Finnwatch (2024): Veropohjan aukot",
+    "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Arvio vähentää välittäjille jäävää liikevaihtoa, verorajojen ulkopuolista toimintaa, yritysten reagointia ja muuta verotulomenetystä. Tavallinen mainonnan ALV ei poistu.",
+      "calculation": [
+        "IAB/Kantar 2025: some- ja hakumainonta 497,1 milj. €, kaikki verkkomainonta 729 milj. €. Itävallan käytössä oleva verokanta on 5 %. Oma kohde: konsernin globaali liikevaihto vähintään 750 milj. € ja Suomessa verkkomainonnasta vähintään 5 milj. €.",
+        "Oma veropohjan vaihteluväli 497,1–729 milj. €, josta välittäjien, kokorajojen ja sopeutumisen jälkeen 70–95 % jää verolle. Kotimaisen muun verokertymän heikkenemistä varten vähennetään lisäksi 18 %. Hallintokulut 1–3 milj. €.",
+        "Netto = 497,1–729 × 5 % × 70–95 % × 82 % − 1–3. Tässä ei veroteta erikseen kaikkea alustakauppaa tai digitaalista sisältöä. Markkinamaan verotusoikeuden laajaa kansainvälistä mallia ei lisätä päälle.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "fw-tax-gaps",
+        "iab-advertising-2025",
+        "austria-digital",
+        "digital-jrc",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Arvio vähentää välittäjille jäävää liikevaihtoa, verorajojen ulkopuolista toimintaa, yritysten reagointia ja muuta verotulomenetystä. Tavallinen mainonnan ALV ei poistu.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "consumption-total": 0.2
+        },
+        {
+          "consumption-total": 0.6
+        }
+      ],
+      "method": "Suomen kuluttajille siirtyvän hinnan vertailu on 20–60 % mallin verorasituksesta. Loppu jää alustoille, mainostajille tai muille omistajille.",
+      "assumptions": "20–60 % on oma herkkyysoletus. Kulutuksen kokonaisjakauma on väljä sijaismittari mainostavien yritysten asiakkaille; lain tarkkaa kuluttajavaikutusta ei ole tutkittu Suomessa.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "fw-corporate-minimum",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "sorsa-bank",
+    "title": "Pankeille rahoitustoimintavero",
+    "flow": "companies",
+    "who": "Pankeilta ja niiden omistajilta. Osa kustannuksesta voi siirtyä työntekijöille tai lainojen ja pankkipalvelujen hintoihin.",
+    "impact": "Pankeilta ja niiden omistajilta.",
+    "society": "Norjan mallissa rahoitusalaa verotetaan sekä palkoista että tavallista korkeammalla voittoverolla. Pankkiveroja koskeva eurooppalainen tutkimus osoittaa, että osa rasituksesta voi siirtyä lainanottajille, etenkin keskittyneillä markkinoilla.",
+    "origin": "sorsa",
+    "source": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",
+    "sourceUrl": "https://sorsafoundation.fi/mista-lisaa-verotuloja-kymmenen-vastausta/",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Laskelma huomioi palkkaveron vähentämisen yhteisöverotuksessa ja varaa 5–25 % muuhun verotulon ja veropohjan menetykseen. Se ei oleta koko veron jäävän pankin omistajien maksettavaksi.",
+      "calculation": [
+        "Sorsa-säätiön viitetiedot: pankkien vuoden 2022 palkkasumma noin 1 400 milj. € ja yhteisövero 900 milj. € silloisella 20 % verokannalla → voittopohja 4 500 milj. €. Suomessa toteutettavan mallin pohjana käytetään näitä euroja ilman kasvuennustetta.",
+        "Oma rajaus: vain pankit; palkkavero 5 % ja voittovero 3 prosenttiyksikköä yleistä veroa korkeampi. Norjan vuonna 2026 käyttämät lisäprosentit ovat samat. Kun yleinen vero oletetaan 18 prosentiksi, palkkaveron vähennys vähentää 21 % sen tuotosta.",
+        "Ennen muuta reagointia 1 400 × 5 % × (1 − 21 %) + 4 500 × 3 % = 190,3 milj. €. Oma netto = 190,3 × 75–95 % − 1–4 milj. €. Tulos on vanhan suomalaisen pohjan skenaario; uusin pankkitulos ja tarkat vähennyssäännöt muuttaisivat sitä.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "sorsa-ten",
+        "bank-norway",
+        "bank-incidence",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Laskelma huomioi palkkaveron vähentämisen yhteisöverotuksessa ja varaa 5–25 % muuhun verotulon ja veropohjan menetykseen. Se ei oleta koko veron jäävän pankin omistajien maksettavaksi.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "indirect",
+      "allocations": [
+        {
+          "capital-income": 0.3
+        },
+        {
+          "capital-income": 0.2,
+          "wages": 0.175,
+          "consumption-total": 0.3
+        }
+      ],
+      "method": "Vertailut näyttävät sekä omistajiin jäävän että palkkoihin ja palveluhintoihin siirtyvän rasituksen.",
+      "assumptions": "Omat vaihtoehdot: 30 % kotitalouksien pääomatuloihin; tai 20 % pääomatuloihin, 17,5 % nettopalkkoihin ja 30 % kuluttajahintoihin. Kulutusjakauma ei tunnista lainanottajia, joten pankkiasiakkaiden jakauma on osittainen arvio.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "corporate",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  },
+  {
+    "id": "sorsa-million-inheritance",
+    "title": "Miljoonaperintöjen ja -lahjojen veroa +10 prosenttiyksikköä",
+    "flow": "capital",
+    "who": "Yli miljoonan euron perintöosuuksia tai lahjoja saavilta. Korotus koskisi vain miljoonan ylittävää osaa.",
+    "impact": "Yli miljoonan euron perintöosuuksia tai lahjoja saavilta.",
+    "society": "Suuret omaisuussiirrot verotettaisiin nykyistä kireämmin. Lahjojen ajankohta, pilkkominen ja maksuaikajärjestelyt voivat muuttua. Perintöveroa ei pidä rinnastaa saman suuruiseen pienituloisen palkkaveron korotukseen: maksu voidaan kattaa saadusta omaisuudesta.",
+    "origin": "sorsa",
+    "source": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",
+    "sourceUrl": "https://sorsafoundation.fi/mista-lisaa-verotuloja-kymmenen-vastausta/",
+    "conflicts": [],
+    "estimate": {
+      "caption": "oma tuottohaarukka",
+      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+      "money": "Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.",
+      "calculation": [
+        "Finérin vuoden 2024 koosteessa kymmenen prosenttiyksikön korotus miljoonaperintöihin tuotti noin 200 milj. € myös pienperintöjen alarajaa korottavassa esimerkissä. Käytämme sitä vain suuruusluokka-ankkurina. Pienten perintöjen nykyisiä alarajoja ei muuteta tässä kortissa.",
+        "Oma vuosituoton vertailu = 200 × 50–85 % − 1–5 milj. €. Kertoimet kattavat myös vanhan esimerkin ja uuden rajauksen eron; ne eivät ole tutkimuksesta estimoituja. Tarkan tuloksen laskemiseen tarvitaan perintöjen jakauma miljoonan ylittävästä osasta ja nykyiset huojennukset.",
+        "OECD:n perintöverokatsaus tukee laajaa pohjaa, progression arviointia ja suunnittelun rajaamista. Yleisen perintöveron korotuksen ja yrityshuojennuksen poiston kanssa voi syntyä päällekkäisyyttä. Ne voi valita samaan pakettiin, mutta yhteistä veropohjaa ei ole simuloitu.",
+        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+      ]
+    },
+    "research": {
+      "sources": [
+        "sorsa-ten",
+        "inheritance",
+        "sorsa-gifts",
+        "obr-business-relief",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "finding": "",
+      "fiscal": "Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.",
+      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "status": "context"
+    },
+    "incidence": {
+      "channel": "cash",
+      "allocations": [
+        {
+          "wealth-unlisted": 1
+        },
+        {
+          "wealth-financial": 1
+        }
+      ],
+      "method": "Suurten perintöjen saajien tuloryhmiä lähestytään omistusjakaumilla; miljoonaperintö ei automaattisesti tarkoita miljoonan vuosituloa.",
+      "assumptions": "Kaksi omaa sijaisjakaumaa ovat listaamattomien osakkeiden ja rahoitusvarallisuuden omistus. Saajien todelliset vuositulot ja ikä poikkeavat luovuttajien tuloista.",
+      "outsideResidents": false
+    },
+    "possibleOverlaps": [
+      {
+        "id": "tax-inheritance",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      },
+      {
+        "id": "fw-succession-abolish",
+        "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
+      }
+    ]
+  }
+]

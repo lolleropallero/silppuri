@@ -1,0 +1,100 @@
+{
+  "reviewedOn": "2026-10-27",
+  "actionId": "cut-3-62",
+  "question": "Kotihoidon tuen poistamisen työllisyys-, kotoutumis- ja sukupolvivaikutukset julkiseen talouteen",
+  "fiscalConclusion": {
+    "direct2031Million": -82,
+    "fullNet2031Million": null,
+    "annualFullNetTurnsPositive": "VM:n arviossa 2030-luvulla; tarkkaa vuotta tai vuosittaista eurosarjaa ei julkaistu kyseisessä muistiossa",
+    "alreadyIncludedByVM": ["Äitien työllisyys ja ansiot", "Varhaiskasvatuksen lisäkäyttö", "Korvaavat etuudet ja verot"],
+    "setToZeroByVM": ["Lasten koulutus- ja työuravaikutukset"],
+    "source": "VM 2026:44, painetut sivut 348–355; VM_2026_44_Liite.xlsx, sosiaaliturvaetuudet, rivi 62",
+    "pieRule": "Suoraa -82 miljoonaa ei esitetä kokonaisnettona. Ulkomaisia tuottolukuja ei käytetä Suomen vuotuisena säästönä.",
+    "doubleCountingRule": "Kotoutumisen kautta syntyvää äitien työllisyys- tai ansiovaikutusta ei lisätä VM:n jo arvioimaan vaikutukseen sellaisenaan. Lasten koulutus, ansiot ja verot muodostavat yhden vaikutusketjun; niitäkään ei lasketa erillisiksi täysimääräisiksi hyödyiksi.",
+    "missingForEuroRange": ["Uudistuksen toteutus ja aloitusvuosi", "Uudistuksen vuoksi lisää työllistyvät ja koulutukseen siirtyvät äidit kohorteittain", "Varhaiskasvatuksen todellinen lisäkäyttö ja rajakustannus", "Kieli- ja työllistymispalvelujen lisäkustannus", "Ansio- ja etuusmuutokset sekä niiden kesto", "Lasten lisävaikutus ja sen toteutumisvuodet"]
+  },
+  "studies": [
+    {
+      "sourceId": "homecare",
+      "country": "Suomi",
+      "design": "Kuntalisien alueellinen ja ajallinen vaihtelu sekä päivähoitomaksujen uudistus; vertaisarvioitu 2025",
+      "finding": "Kotihoidon tuki vähensi äitien työllisyyttä lyhyellä ja pitkällä aikavälillä. Lasten kognitiivisiin tuloksiin, lukioon hakeutumiseen ja nuorisorikollisuuteen havaittiin kielteisiä vaikutuksia.",
+      "limit": "Marginaalisten kannustinmuutosten vaikutus ei ole sama kuin koko tuen poistaminen. Ei erityisesti maahanmuuttajaäideille estimoitu kokonaisnetto."
+    },
+    {
+      "sourceId": "homecare-immigrant-children",
+      "country": "Suomi",
+      "design": "Sisarusten kiinteiden vaikutusten malli; 140649 lasta, joista 2946 maahanmuuttajataustaisia",
+      "finding": "Pidempi kotihoidon tukijakso oli yhteydessä heikompaan äidinkielen arvosanaan peruskoulun lopussa maahanmuuttajataustaisilla lapsilla.",
+      "estimate": {"outcome": "Äidinkielen arvosana, standardoitu", "perAdditionalBenefitMonth": -0.0052, "standardError": 0.0022},
+      "limit": "Yhteys, ei varma syyvaikutus. Lapsikohtaiset oppimisvaikeudet, myöhemmät perhemuutokset ja päivähoidon laatu voivat sekoittaa tulosta. Kaikissa lähtömaaryhmissä yhteyttä ei havaittu. Tukikuukaudet eivät mittaa kaikkia kotihoitokuukausia."
+    },
+    {
+      "sourceId": "homecare-germany",
+      "country": "Saksa",
+      "design": "Baijerin ja muiden osavaltioiden ennen–jälkeen-erojen vertailu; 856 äitiä, 2537 havaintoa",
+      "estimate": {"immigrantMothersEmploymentPercentagePoints": -24, "nativeMothersEmploymentPercentagePoints": -14},
+      "limit": "Maahanmuuttajaäitien otos pieni, ryhmien vertailukelpoisuus ratkaisee tunnistamisen. Suurta pistelukua ei siirretä Suomen poistoreformin työllisyyskertoimeksi. Ei julkisen talouden nettoarviota."
+    },
+    {
+      "sourceId": "integration",
+      "country": "Suomi",
+      "design": "Vuoden 1999 kotoutumisuudistuksen takautuva maahantulopäivän kelpoisuusraja; paikallinen syyvaikutus",
+      "horizonYears": 10,
+      "estimate": {"cumulativeEarningsPercent": 47, "cumulativeSocialBenefitsPercent": -13},
+      "limit": "Vaikutus uudistuksen vuoksi suunnitelman saaneisiin rajan lähellä. Etuusmuuttuja on kotitalouden ekvivalenssiskaalattu etuus; eurolukua ei pidä käsitellä sellaisenaan valtion kassasäästönä per henkilö. Ei täydellistä kustannus-hyötylaskelmaa."
+    },
+    {
+      "sourceId": "integration-children",
+      "country": "Suomi",
+      "design": "Saman kotoutumisuudistuksen kelpoisuusraja, lapsia seurattu 31-vuotiaaksi; hyväksytty kirjoittajaversio 6.8.2024",
+      "estimate": {"gradesStandardDeviations": 0.5, "educationYears": "yli 1", "earningsPercentTwoDecadesAfterArrival": 42},
+      "limit": "Kotoutumissuunnitelmien vaikutus, ei kotihoidon tuen poiston vaikutus. Lapset olivat keskimäärin 11-vuotiaita maahan tullessaan. Ei suoraa verotuotto- tai nettomenolaskelmaa."
+    },
+    {
+      "sourceId": "integration-us-language",
+      "country": "Yhdysvallat",
+      "design": "Massachusettsin englannin kurssipaikkojen arvonta; noin 4700 hakijaa, seuranta enintään 10 vuotta",
+      "estimate": {"annualReportedEarningsUSD": 2400, "annualReportedEarningsPercent": 56, "modelledTaxpayerInternalRateOfReturnPercent": 6},
+      "limit": "Ansiovaikutus satunnaistetusta asetelmasta; verotuotto ja takaisinmaksu ovat mallinnettuja. Työpaperin kustannus-hyötymalli jatkaa ansiovaikutusta 65-vuotiaaksi. Tulos koskee yhtä kurssiohjelmaa ja osallistumiseen reagoineita hakijoita.",
+      "methodsWorkingPaper": "https://files.eric.ed.gov/fulltext/ED661984.pdf"
+    },
+    {
+      "sourceId": "integration-uk-rtof",
+      "country": "Britannia",
+      "design": "Pakolaisten työllistymis- ja asumistuen arviointi; hallinnollisen verrokkiryhmän painotus havaittujen ominaisuuksien perusteella",
+      "estimate": {"employmentOddsRatio": 1.385, "employmentOddsRatio95CI": [1.242, 1.545], "fiscalBenefitCostRatioAtThreeYearsCentral": 0.96},
+      "limit": "Ei arvontaa; havaitsemattomien erojen riski. Odds ratio ei ole työllisyysasteen prosentti- tai prosenttiyksikkömuutos. Mallin takaisinmaksu hieman kolmen vuoden jälkeen on ennuste; asumis- ja työllisyyshyödyt sisältävät kustannuskertoimia ja pysyvyysoletuksia."
+    },
+    {
+      "sourceId": "integration-germany-fiscal",
+      "country": "Saksa",
+      "design": "Rekisteripohjainen kaltaistaminen, ohjelmaan 2017–2018 tulleet pakolaiset; 60 kuukauden havaintoseuranta ja diskontattu julkisen talouden laskelma",
+      "netFiscalEuroPerParticipantOverFiveYears": {"employerActivationMAG": 8869, "vocationalTrainingFbW": 11633, "wageSubsidyEGZ": 19527, "publicWorkOpportunitiesAGH": -2217},
+      "limit": "Luvut eivät ole vuosituottoja eivätkä saman ohjelman epävarmuushaarukka. Ohjelmien osallistujat eroavat toisistaan; palkkatuen saajat valikoituvat työmarkkinoita lähellä olevista. Kaltaistaminen ei poista havaitsematonta valikoitumista. Hyvä suhdanne rajoittaa siirrettävyyttä."
+    },
+    {
+      "sourceId": "integration-germany-language",
+      "country": "Saksa",
+      "design": "Uuden ohjelman kelpoisuusrajaan perustuva asetelma; vanhan ohjelman ennen–jälkeen-erojen vertailu",
+      "finding": "Yli 230000 pakolaiselle suunnatussa uudessa ohjelmassa ei havaittu työllisyysvaikutusta kahden vuoden seurannassa. Vanhassa, perusteellisemmassa ohjelmassa havaittiin myönteinen vaikutus.",
+      "limit": "Ohjelmien sisältö, laajuus ja tunnistusasetelmat eroavat. Nollatulos ei osoita, ettei mitään kieli- tai muita hyötyjä syntynyt."
+    },
+    {
+      "country": "Britannia",
+      "citation": "IFS (2025): The short- and medium-term effects of Sure Start on children’s outcomes, luku 11 ja taulukko 11.1",
+      "url": "https://ifs.org.uk/publications/short-and-medium-term-effects-sure-start-childrens-outcomes",
+      "design": "Varhaislapsuuden perhepalvelujen asteittaisen laajentamisen arviointi ja elinkaaren kustannus-hyötymalli",
+      "estimateMillionGBP2023PricesPerCohort": {"upfrontCost": 2690, "governmentSavingsAndTaxRevenueLifetimePresentValue": 2420, "netGovernmentCost": 270, "privateBenefits": 3090},
+      "limit": "Yleinen lapsiperhepalvelu, ei kotihoidon tuen poisto eikä puhdas maahanmuuttajien kotoutumistoimi. Vähemmistötaustaisten koulutushyödyt olivat suurempia, mutta koko ohjelman rahatuotto ei ole vähemmistöjen erillinen tuotto. Pitkäaikaistulot ja iso osa verotuotosta on mallinnettu koulutustuloksista. Yhteiskunnallinen hyöty ei ole sama kuin budjettisäästö."
+    },
+    {
+      "country": "Britannia",
+      "citation": "Evaluation Task Force (2022): Community-Based English Language Training",
+      "url": "https://www.gov.uk/government/publications/community-based-english-language-training/community-based-english-language-training-html",
+      "design": "11 viikon kielikurssin arvonta, 527 osallistujaa, pääosin eteläaasialaistaustaisia naisia",
+      "finding": "Kielitaito ja sosiaalisen osallistumisen mittarit paranivat verrokkia enemmän.",
+      "limit": "Kaikkiin mittauksiin osallistui noin 60 %. Ei työllisyys- tai julkisen talouden nettoarviota."
+    }
+  ]
+}

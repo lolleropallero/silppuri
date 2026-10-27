@@ -1,0 +1,115 @@
+{
+  "source": "https://doi.org/10.1787/5k9h363c5szq-en",
+  "country": "Finland",
+  "dataYear": 2007,
+  "publicationYear": 2012,
+  "pdfSha256": "8b893cddf0fce4d3fa2344b3a6810d9c144ec07e6b35479481f48e32ac970288",
+  "method": "Digitised Finnish quintile shares from vector rectangle heights. Q1 is the bottom of each stacked column. Split to deciles in proportion to 2024 consumption-unit counts within each quintile; no within-quintile gradient is invented.",
+  "profiles": {
+    "education": {
+      "page": 42,
+      "quintiles": [
+        0.169956,
+        0.225264,
+        0.201628,
+        0.213433,
+        0.189718
+      ],
+      "coordinates": [
+        334.6,
+        120,
+        255
+      ]
+    },
+    "school": {
+      "page": 42,
+      "quintiles": [
+        0.140074,
+        0.252886,
+        0.214002,
+        0.221836,
+        0.171202
+      ],
+      "coordinates": [
+        643.7,
+        120,
+        255
+      ]
+    },
+    "secondary": {
+      "page": 42,
+      "quintiles": [
+        0.164118,
+        0.202259,
+        0.194652,
+        0.217552,
+        0.221419
+      ],
+      "coordinates": [
+        293.0,
+        325,
+        450
+      ]
+    },
+    "tertiary": {
+      "page": 42,
+      "quintiles": [
+        0.279131,
+        0.166662,
+        0.158329,
+        0.175051,
+        0.220827
+      ],
+      "coordinates": [
+        452.0,
+        330,
+        450
+      ]
+    },
+    "health": {
+      "page": 46,
+      "quintiles": [
+        0.217077,
+        0.217053,
+        0.202842,
+        0.181538,
+        0.18149
+      ],
+      "coordinates": [
+        201.5,
+        130,
+        290
+      ]
+    },
+    "childcare": {
+      "page": 52,
+      "quintiles": [
+        0.141729,
+        0.228314,
+        0.251962,
+        0.216582,
+        0.161413
+      ],
+      "coordinates": [
+        406.3,
+        130,
+        295
+      ]
+    },
+    "eldercare": {
+      "page": 56,
+      "quintiles": [
+        0.407038,
+        0.283177,
+        0.176986,
+        0.084127,
+        0.048671
+      ],
+      "coordinates": [
+        237.2,
+        130,
+        290
+      ]
+    }
+  }
+}

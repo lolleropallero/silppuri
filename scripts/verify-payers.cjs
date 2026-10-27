@@ -1,0 +1,37 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync(require('node:path').join(__dirname,'../src/app.js'),'utf8');
+const elements=new Map();
+const q=key=>{if(!elements.has(key))elements.set(key,{clientWidth:300,style:{},dataset:{},attrs:{},setAttribute(k,v){this.attrs[k]=v;},replaceChildren(){this.innerHTML='';}});return elements.get(key);};
+const ctx=vm.createContext({q,activeFlow:'companies',esc:String,payerGroups:[{id:'companies',name:'Yritykset',type:'tax',ids:['cut','tax']}]});
+vm.runInContext(source.slice(source.indexOf('  const payerMoneyLabel='),source.indexOf("  q('#sp-category').insertAdjacentHTML")),ctx);
+vm.runInContext(source.slice(source.indexOf('  function drawFlows('),source.indexOf('  /*INCIDENCE_VIEW*/')),ctx);
+ctx.chosen=[{id:'cut',flow:'companies',type:'cut',amount:3000,short:'Tukileikkaus'},{id:'tax',flow:'companies',type:'tax',amount:2000,short:'Veronkorotus'}];
+vm.runInContext('drawFlows(chosen);renderFlowDetail(chosen)',ctx);
+assert.match(q('[data-flow="companies"]').innerHTML,/5\s000/);
+assert.match(q('.sp-flow-destination strong').innerHTML,/5\s000/);
+for(const key of ['[data-flow="companies"]','.sp-flow-destination strong','.sp-flow-detail']){
+  assert.ok(!/mrd|miljard/.test(q(key).innerHTML),key);
+  assert.ok(q(key).innerHTML.includes('milj. €'),key);
+}
+const svg=q('.sp-flow-svg').innerHTML;
+assert.ok(svg.includes('data-fiscal-type="cut"')&&svg.includes('data-fiscal-type="tax"'),'same recipient group keeps each action colour');
+ctx.chosen=[{id:'cut',flow:'companies',type:'cut',amount:null,short:'Kokonaisnetto avoin'}];
+vm.runInContext('drawFlows(chosen);renderFlowDetail(chosen)',ctx);
+assert.match(q('[data-flow="companies"]').innerHTML,/Ei arviota/);
+assert.ok(!q('[data-flow="companies"]').innerHTML.includes('milj. €'),'unknown net must not appear as zero');
+assert.match(q('.sp-flow-detail').innerHTML,/Yritykset · Ei arviota/);
+ctx.chosen=[{id:'cut',flow:'companies',type:'cut',amount:0,short:'Myöhempi säästö',horizonEstimate:{amount:110,when:'2033'}}];
+vm.runInContext('drawFlows(chosen);renderFlowDetail(chosen)',ctx);
+assert.match(q('[data-flow="companies"]').innerHTML,/110 .*milj\. €.*<sup>\*<\/sup>/);
+assert.match(q('[data-flow="companies"]').innerHTML,/\* 2033/);
+assert.match(q('.sp-flow-detail').innerHTML,/\* 2033/);
+assert.match(q('.sp-flow-destination strong').innerHTML,/^0 /,'future label must not change the current-year flow total');
+ctx.chosen[0].amount=110;ctx.chosen[0].laterApplied=true;
+vm.runInContext('drawFlows(chosen);renderFlowDetail(chosen)',ctx);
+assert.match(q('[data-flow="companies"]').innerHTML,/\* 2033/);
+assert.match(q('.sp-flow-destination strong').innerHTML,/^110 /,'later mode includes the future estimate');
+ctx.chosen[0].amount=.02016;ctx.chosen[0].laterApplied=false;
+vm.runInContext('drawFlows(chosen)',ctx);
+assert.match(q('[data-flow="companies"]').innerHTML,/0,02 /,'do not round small real savings to zero');
+vm.runInContext('drawFlows([])',ctx);assert.equal(q('.sp-flow-graph').hidden,true);
+console.log('PASS: payer labels, totals and details use millions; mixed recipient groups preserve red cuts and blue taxes; empty state.');

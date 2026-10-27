@@ -1,0 +1,747 @@
+{
+  "einio": {
+    "label": "Einiö (2014): R&D Subsidies and Company Performance",
+    "url": "https://doria.fi/handle/10024/164095",
+    "kind": "Suomi · alueelliseen tukieroon perustuva tutkimus"
+  },
+  "rdtax": {
+    "label": "Dechezleprêtre ym. (2023): Do Tax Incentives Increase Firm Innovation?",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.20200739",
+    "kind": "Britannia · yrityskoon rajan ympäriltä tunnistettu vaikutus"
+  },
+  "howell": {
+    "label": "Howell (2017): Financing Innovation",
+    "url": "https://pubs.aeaweb.org/doi/abs/10.1257/aer.20150808",
+    "kind": "Yhdysvallat · avustushaun pisterajaan perustuva tutkimus"
+  },
+  "integration": {
+    "label": "Sarvimäki & Hämäläinen (2016): Integrating Immigrants",
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/683667",
+    "kind": "Suomi · kotoutumisuudistuksen luonnollinen koe"
+  },
+  "housing": {
+    "label": "Eerola & Lyytikäinen (2021): Housing Allowance and Rents",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/sjoe.12396",
+    "kind": "Suomi · asumistuen porrastukseen perustuva tutkimus"
+  },
+  "ui": {
+    "label": "Kyyrä & Pesola (2020): The effects of unemployment benefit duration",
+    "url": "https://www.doria.fi/handle/10024/177577",
+    "kind": "Suomi · työttömyysturvan keston uudistus"
+  },
+  "spending": {
+    "label": "Ganong & Noel (2019): Consumer Spending during Unemployment",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20170537",
+    "kind": "Yhdysvallat · tilitapahtumat työttömyysturvan päättyessä"
+  },
+  "mpc": {
+    "label": "Fagereng, Holm & Natvik (2021): MPC Heterogeneity and Household Balance Sheets",
+    "url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/mac.20190211",
+    "kind": "Norja · lottovoittoihin perustuva tutkimus, tilapäinen tulonlisäys"
+  },
+  "childcare": {
+    "label": "Kosonen (2014): To Work or Not to Work?",
+    "url": "https://www.ifo.de/DocDL/cesifo1_wp4065.pdf",
+    "kind": "Suomi · kotihoidontuen kuntalisien muutokset; linkki työpaperiin"
+  },
+  "homecare": {
+    "label": "Gruber, Kosonen & Huttunen (2025): Paying Moms to Stay Home",
+    "url": "https://doi.org/10.1016/j.jpubeco.2025.105496",
+    "kind": "Suomi · vertaisarvioitu tutkimus kuntalisien ja päivähoitomaksujen muutoksista"
+  },
+  "homecare-immigrant-children": {
+    "label": "Laaninen (2025): Duration of child home care allowance period and school success",
+    "url": "https://doi.org/10.1016/j.rssm.2025.101063",
+    "kind": "Suomi · sisarusten vertailu; yhteys koulumenestykseen, ei tuen poistamisen syyvaikutus"
+  },
+  "homecare-germany": {
+    "label": "Fendel & Jochimsen (2022): Home care allowance and labor market participation of immigrant and native-born mothers",
+    "url": "https://doi.org/10.1007/s43545-022-00393-w",
+    "kind": "Saksa · Baijerin ja muiden osavaltioiden uudistusten vertailu; pieni maahanmuuttajaäitien otos"
+  },
+  "integration-children": {
+    "label": "Pesola & Sarvimäki: Intergenerational Spillovers of Integration Policies",
+    "url": "https://matti-sarvimaki.github.io/integration_children.pdf",
+    "kind": "Suomi · kotoutumisuudistuksen vaikutukset lapsiin; vertaisarvioitu, hyväksytty käsikirjoitus 2024"
+  },
+  "integration-us-language": {
+    "label": "Heller & Slungaard Mumma (2023): Immigrant Integration in the United States",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.20210336",
+    "kind": "Yhdysvallat · kielikurssipaikkojen arvonta; ansiot havaittu, verotuotto mallinnettu"
+  },
+  "integration-uk-rtof": {
+    "label": "Home Office / Ecorys (2025): Evaluation of the Refugee Transitions Outcomes Fund",
+    "url": "https://www.gov.uk/government/publications/evaluation-of-the-refugee-transitions-outcomes-fund/evaluation-of-the-refugee-transitions-outcomes-fund",
+    "kind": "Britannia · pakolaisten työ- ja asumistuki; kaltaistettu vertailu ja kustannus-hyötymalli"
+  },
+  "integration-germany-fiscal": {
+    "label": "Bonin & Rinne (2025): Aktive Arbeitsmarktpolitik hat Integration der Geflüchteten nachhaltig verbessert",
+    "url": "https://www.wirtschaftsdienst.eu/inhalt/jahr/2025/heft/9/beitrag/aktive-arbeitsmarktpolitik-hat-integration-der-gefluechteten-nachhaltig-verbessert.html",
+    "kind": "Saksa · pakolaisten työllistämistoimien viiden vuoden seuranta; kaltaistaminen ja julkisen talouden laskelma"
+  },
+  "integration-germany-language": {
+    "label": "Marbach ym. (2025): Does ad hoc language training improve the economic integration of refugees?",
+    "url": "https://doi.org/10.1093/jrsssa/qnae106",
+    "kind": "Saksa · uuden kurssiohjelman kelpoisuusraja ja vanhan ohjelman vertailuasetelma; tulokset erosivat"
+  },
+  "schoolmoney": {
+    "label": "Jackson, Johnson & Persico (2016): The Effects of School Spending on Educational and Economic Outcomes",
+    "url": "https://www.nber.org/papers/w20847",
+    "kind": "Yhdysvallat · koulurahoitusuudistukset; linkki työpaperiin"
+  },
+  "schoolmeta": {
+    "label": "Jackson & Mackevicius (2021): The Distribution of School Spending Impacts",
+    "url": "https://www.nber.org/papers/w28517",
+    "kind": "Yhdysvallat · katsaus kausaalisiin koulurahoitustutkimuksiin"
+  },
+  "instruction": {
+    "label": "Lavy (2015): Do Differences in Schools' Instruction Time Explain International Achievement Gaps?",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/ecoj.12233",
+    "kind": "Kansainvälinen oppiaineiden vertailu"
+  },
+  "secondary": {
+    "label": "Huttunen ym. (2023): Lost Boys? Secondary Education and Crime",
+    "url": "https://www.doria.fi/handle/10024/186537",
+    "kind": "Suomi · opiskelupaikan saannin valintarajat"
+  },
+  "aid": {
+    "label": "Dynarski (2003): Does Aid Matter?",
+    "url": "https://pubs.aeaweb.org/doi/10.1257/000282803321455287",
+    "kind": "Yhdysvallat · opintotukiohjelman lakkautus"
+  },
+  "adult": {
+    "label": "Stenberg, de Luna & Westerlund (2011): Does Formal Education for Older Workers Increase Earnings?",
+    "url": "https://swopec.hhs.se/sofiwp/abs/sofiwp2011_008.htm",
+    "kind": "Ruotsi · pitkän aikavälin rekisterivertailu; työpaperi"
+  },
+  "loan": {
+    "label": "VTV (2022): Opintotukiuudistusten tuloksellisuus 2010-luvulla",
+    "url": "https://vtv.fi/en/report/effectiveness-of-the-reforms-of-student-financial-aid-in-the-2010s/",
+    "kind": "Suomi · tarkastuskertomus, ei yksin kausaalista vaikutusarviota"
+  },
+  "teacher": {
+    "label": "Manning ym. (2017): Teacher Qualification and the Quality of Early Childhood Education",
+    "url": "https://onlinelibrary.wiley.com/doi/10.4073/csr.2017.1",
+    "kind": "Systemaattinen katsaus · pääosin yhteyksiä, ei Suomen henkilöstövaatimuksen vaikutusarvio"
+  },
+  "childbenefit": {
+    "label": "Milligan & Stabile (2011): Do Child Tax Benefits Affect the Well-Being of Children?",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.3.3.175",
+    "kind": "Kanada · lapsietuuksien uudistukset"
+  },
+  "childincome": {
+    "label": "Dahl & Lochner (2012): The Impact of Family Income on Child Achievement",
+    "url": "https://pubs.aeaweb.org/doi/abs/10.1257/aer.102.5.1927",
+    "kind": "Yhdysvallat · verotuen muutokset; tulosten korjaus tarkistettava määrällisessä soveltamisessa"
+  },
+  "safetynet": {
+    "label": "Hoynes, Schanzenbach & Almond (2016): Long-Run Impacts of Childhood Access to the Safety Net",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20130375",
+    "kind": "Yhdysvallat · ruoka-apuohjelman vaiheittainen käyttöönotto"
+  },
+  "childcash": {
+    "label": "Aizer ym. (2016): The Long-Run Impact of Cash Transfers to Poor Families",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20140529",
+    "kind": "Yhdysvallat · historiallinen tukea saaneiden ja hylättyjen hakijoiden vertailu"
+  },
+  "carefees": {
+    "label": "Haaga, Sääksvuori & Tervola (2024): Asiakasmaksujen ja lääkkeiden omavastuiden vaikutukset",
+    "url": "https://www.julkari.fi/bitstreams/49b78e1b-35bd-40a6-ad14-b70936fe808b/download",
+    "kind": "Suomi ja Pohjoismaat · tutkimuksia kokoava loppuraportti"
+  },
+  "carewealth": {
+    "label": "Tervola, Ollonqvist & Haaga (2025): Mitä jos varallisuus huomioitaisiin hoivamaksuissa?",
+    "url": "https://www.julkari.fi/bitstream/handle/10024/152542/URN_ISBN_978-952-408-623-3.pdf?sequence=1",
+    "kind": "Suomi · SOTE-SISU-mikrosimulointi, ei käyttäytymisvaikutuksia"
+  },
+  "drugmortality": {
+    "label": "Chandra, Flack & Obermeyer (2024): The Health Costs of Cost-Sharing",
+    "url": "https://www.nber.org/papers/w28439",
+    "kind": "Yhdysvallat · lääkeomavastuiden luonnollinen koe; työpaperi"
+  },
+  "offsets": {
+    "label": "Chandra, Gruber & McKnight (2010): Patient Cost-Sharing and Hospitalization Offsets",
+    "url": "https://www.nber.org/papers/w12972",
+    "kind": "Yhdysvallat · eläkeläisten maksumuutos; linkki työpaperiin"
+  },
+  "deductible": {
+    "label": "Brot-Goldberg ym. (2017): What Does a Deductible Do?",
+    "url": "https://doi.org/10.1093/qje/qjx013",
+    "kind": "Yhdysvallat · vakuutuksen omavastuun muutos"
+  },
+  "nursing": {
+    "label": "Dall'Ora ym. (2022): Nurse Staffing Levels and Patient Outcomes",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35780608/",
+    "kind": "Systemaattinen katsaus · pitkittäistutkimukset, pääosin sairaaloista"
+  },
+  "nursinghome": {
+    "label": "Mukamel ym. (2023): Association of Staffing Instability With Quality of Nursing Home Care",
+    "url": "https://doi.org/10.1001/jamanetworkopen.2022.50389",
+    "kind": "Yhdysvallat · hoivakotien havaintotutkimus"
+  },
+  "discharge": {
+    "label": "Gonçalves-Bradley ym. (2022): Discharge Planning from Hospital",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8867723/",
+    "kind": "Cochrane · satunnaistettujen tutkimusten katsaus"
+  },
+  "lowvalue": {
+    "label": "Sihvonen ym. (2013): Arthroscopic Partial Meniscectomy versus Sham Surgery",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24369076/",
+    "kind": "Suomi · satunnaistettu lumekirurginen koe"
+  },
+  "mergers": {
+    "label": "Moisio & Uusitalo (2013): The Impact of Municipal Mergers on Local Public Expenditures in Finland",
+    "url": "https://journals.sagepub.com/doi/10.1177/152397211301300302",
+    "kind": "Suomi · historialliset kuntaliitokset, ei hyvinvointialueiden yhdistämistä"
+  },
+  "retirement": {
+    "label": "Nivalainen & Ilmakunnas (2023, korjattu 2024): Vanhuuseläkeiän nousun vaikutus",
+    "url": "https://urn.fi/URN:ISBN:978-951-691-362-2",
+    "kind": "Suomi · vuoden 2017 eläkeuudistuksen rekisteritutkimus"
+  },
+  "corporatetax": {
+    "label": "Harju, Koivisto & Matikka (2022): The Effects of Corporate Taxes on Small Firms",
+    "url": "https://trepo.tuni.fi/bitstream/handle/10024/222510/The_effects_of_corporate_taxes_on_small_firms.pdf?isAllowed=y&sequence=1",
+    "kind": "Suomi · yhteisöveronalennukset, pienet osakeyhtiöt"
+  },
+  "incomeelastic": {
+    "label": "Saez, Slemrod & Giertz (2012): The Elasticity of Taxable Income",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/jel.50.1.3",
+    "kind": "Kansainvälinen tutkimuskatsaus"
+  },
+  "vatservice": {
+    "label": "Kosonen (2015): More and Cheaper Haircuts after VAT Cut?",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0047272715001541",
+    "kind": "Suomi · parturi-kampaamoiden ALV-alennus"
+  },
+  "vatrestaurant": {
+    "label": "Benzarti & Carloni (2019): Who Really Benefits from Consumption Tax Cuts?",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.20170504",
+    "kind": "Ranska · ravintoloiden ALV-alennus"
+  },
+  "transfertax": {
+    "label": "Eerola ym. (2021): Revisiting the Effects of Housing Transfer Taxes",
+    "url": "https://acris.aalto.fi/ws/portalfiles/portal/66659415/1_s2.0_S0094119021000498_main.pdf",
+    "kind": "Suomi · varainsiirtoverouudistus ja muuttoliikkeen malli"
+  },
+  "inheritance": {
+    "label": "OECD (2021): Inheritance Taxation in OECD Countries",
+    "url": "https://doi.org/10.1787/e2879a7d-en",
+    "kind": "Kansainvälinen tutkimus- ja verojärjestelmäkatsaus"
+  },
+  "land": {
+    "label": "Høj, Jørgensen & Schou (2018): Land Tax Changes and Full Capitalisation",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12163",
+    "kind": "Tanska · kuntauudistuksen aiheuttamat maaveromuutokset"
+  },
+  "donation": {
+    "label": "Bakija & Heim (2011): How Does Charitable Giving Respond to Incentives and Income?",
+    "url": "https://web.williams.edu/Economics/wp/BakijaHeimCharity.pdf",
+    "kind": "Yhdysvallat · lahjoitusten verohintaa koskeva paneelitutkimus"
+  },
+  "biomass": {
+    "label": "Muilu ym. / AFRY (2024): Biomassan verotuksen laajentamisen mahdollisuudet ja haasteet",
+    "url": "https://urn.fi/URN:ISBN:978-952-383-184-1",
+    "kind": "Suomi · teknistaloudellinen skenaariomallinnus, s. 105–108"
+  },
+  "energy": {
+    "label": "Laukkanen & Ollikka (2025): Effects of Energy Taxes on Energy Use, Emissions and Manufacturing Activity",
+    "url": "https://doria.fi/handle/10024/193739",
+    "kind": "Suomi · teollisuuden energiaverouudistus; työpaperi"
+  },
+  "carbon": {
+    "label": "Andersson (2019): Carbon Taxes and CO₂ Emissions: Sweden as a Case Study",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.20170144",
+    "kind": "Ruotsi · synteettinen verrokkiasetelma"
+  },
+  "fuel": {
+    "label": "Gillingham & Munk-Nielsen (2019): A Tale of Two Tails",
+    "url": "https://www.nber.org/papers/w22937",
+    "kind": "Tanska · ajosuoritteen reagointi polttoainehintoihin; linkki työpaperiin"
+  },
+  "agri": {
+    "label": "Lehtonen (2018): Maataloustukien vähenemisen vaikutukset Suomen maatalouden tuotantoon ja tuloihin",
+    "url": "https://journal.fi/smst/issue/download/5992/571",
+    "kind": "Suomi · maatalouden skenaariomallinnus"
+  },
+  "arts": {
+    "label": "Fancourt & Finn (2019): Arts, Health and Well-Being",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK553773/",
+    "kind": "WHO · laaja kartoittava katsaus, vaihtelevat tutkimusasetelmat"
+  },
+  "media": {
+    "label": "Curran ym. (2009): Media System, Public Knowledge and Democracy",
+    "url": "https://journals.sagepub.com/doi/10.1177/0267323108098943",
+    "kind": "Neljä maata, myös Suomi · vertaileva havaintotutkimus"
+  },
+  "procurement": {
+    "label": "Bandiera, Prat & Valletti (2009): Active and Passive Waste in Government Spending",
+    "url": "https://pubs.aeaweb.org/doi/10.1257/aer.99.4.1278",
+    "kind": "Italia · julkisten hankintojen luonnollinen koe"
+  },
+  "sickpay": {
+    "label": "Puhani & Sonderhof (2010): The Effects of a Sick Pay Reform",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20153537/",
+    "kind": "Saksa · sairausajan palkan muutokset"
+  },
+  "contagion": {
+    "label": "Pichler & Ziebarth (2017): The Pros and Cons of Sick Pay Schemes",
+    "url": "https://www.nber.org/papers/w22530",
+    "kind": "Yhdysvallat ja Saksa · sairausajan palkka, poissaolot ja tartunnat"
+  },
+  "fiscalrules": {
+    "label": "Caselli & Reynaud (2020): Do Fiscal Rules Cause Better Fiscal Balances?",
+    "url": "https://www.imf.org/~/media/Files/Publications/WP/2019/WPIEA2019049.ashx",
+    "kind": "Kansainvälinen instrumenttimuuttujatutkimus; linkki työpaperiin"
+  },
+  "multiplier": {
+    "label": "Gechert (2015): What Fiscal Policy Is Most Effective?",
+    "url": "https://doi.org/10.1093/oep/gpv027",
+    "kind": "104 tutkimuksen meta-analyysi · BKT-vaikutus, ei Suomen yksittäisen leikkauksen netto"
+  },
+  "publicspend": {
+    "label": "Ramey (2011): Can Government Purchases Stimulate the Economy?",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/jel.49.3.673",
+    "kind": "Tutkimuskatsaus · etenkin Yhdysvaltojen tilapäiset menolisäykset"
+  },
+  "prison": {
+    "label": "Bhuller ym. (2020): Incarceration, Recidivism, and Employment",
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/705330",
+    "kind": "Norja · tuomarin määräytymiseen perustuva tutkimus"
+  },
+  "police": {
+    "label": "Chalfin & McCrary (2018): Are U.S. Cities Underpoliced?",
+    "url": "https://eml.berkeley.edu/~jmccrary/chalfin_mccrary2018.pdf",
+    "kind": "Yhdysvallat · poliisimäärän ja rikollisuuden ekonometrinen tutkimus"
+  },
+  "peace": {
+    "label": "Hultman, Kathman & Shannon (2013): United Nations Peacekeeping and Civilian Protection",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/ajps.12036",
+    "kind": "Sisällissodat · rauhanturvaajien ja siviiliuhrien paneelitutkimus"
+  },
+  "fostercare": {
+    "label": "Courtney ym. (2017): Extended Foster Care and Youth Outcomes",
+    "url": "https://www.chapinhall.org/research/additional-time-spent-in-foster-care-improves-education-outcomes/",
+    "kind": "Kalifornia · jälkihuollossa jatkamista koskeva vertailu"
+  },
+  "cleaning": {
+    "label": "Harju, Jysmä, Koivisto & Kosonen (2025/2026): Do Tax Credits for Cleaning Services Increase Consumption?",
+    "url": "https://doi.org/10.1007/s10797-025-09912-w",
+    "kind": "Suomi ja Ruotsi · verovähennyksen uudistukset, vertaisarvioitu"
+  },
+  "schoolmeals": {
+    "label": "Spill ym. (2024): Universal Free School Meals and School and Student Outcomes",
+    "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2822155",
+    "kind": "Systemaattinen katsaus · kuusi yhdysvaltalaista pitkittäistutkimusta"
+  },
+  "activity": {
+    "label": "Vasankari & Kolu (toim., 2018): Liikkumattomuuden lasku kasvaa",
+    "url": "https://urn.fi/URN:ISBN:978-952-287-535-8",
+    "kind": "Suomi · kustannustutkimus, ei avustusohjelman vaikutusarvio"
+  },
+  "pensionadequacy": {
+    "label": "Rantala (2020): Tutkimuksia eläkeläisten pienituloisuuden ja toimeentulon dynamiikasta",
+    "url": "https://urn.fi/URN:ISBN:978-951-691-319-6",
+    "kind": "Suomi · rekisteripaneeli vuosilta 1995–2014"
+  },
+  "pensionprojection": {
+    "label": "ETK (2026): Lakisääteiset eläkkeet – pitkän aikavälin laskelmat",
+    "url": "https://urn.fi/URN:ISBN:978-951-691-427-8",
+    "kind": "Suomi · eläkejärjestelmän ennustelaskelma, ei kausaalinen vaikutusarvio"
+  },
+  "privatecare": {
+    "label": "Blomgren, Kosunen & Moustgaard (2026): Kelan korvaaman yksityisen sairaanhoidon käyttö ja korvaukset",
+    "url": "https://urn.fi/URN:ISBN:978-952-284-247-3",
+    "kind": "Suomi · kuvaileva rekisteritutkimus 2018–2024"
+  },
+  "dental": {
+    "label": "Heinonen & Buri (2026): Julkinen ja yksityinen hammashoito Suomessa",
+    "url": "https://www.kkv.fi/tutkimus-ja-vaikuttaminen/julkaisut/tutkimusraportit/julkinen-ja-yksityinen-hammashoito-suomessa-palvelujen-kaytto-sektorisiirtymat-ja-kela-korvausten-vaikutukset-tutkimusraportteja-3-2026/",
+    "kind": "Suomi · käyntirekisterit ja Kela-korvausten uudistukset; KKV 3/2026"
+  },
+  "psychotherapy": {
+    "label": "Turunen ym. (2025): Gendered effect of psychotherapy on income",
+    "url": "https://doi.org/10.1016/j.jad.2025.02.058",
+    "kind": "Suomi · hoidon aloittamista koskeva kvasikokeellinen tutkimus"
+  },
+  "publicemployment": {
+    "label": "Ramey (2012): Government Spending and Private Activity",
+    "url": "https://www.nber.org/papers/w17787",
+    "kind": "Yhdysvallat · julkisten menojen ja työllisyyden aikasarjatutkimus"
+  },
+  "aidreview": {
+    "label": "Arndt, Jones & Tarp (2013): Assessing Foreign Aid’s Long-Run Contribution to Growth and Development",
+    "url": "https://www.wider.unu.edu/sites/default/files/WP2013-072.pdf",
+    "kind": "Maiden välinen pitkittäistutkimus · UNU-WIDER-työpaperi"
+  },
+  "incomeshifting": {
+    "label": "Harju & Matikka (2016): Business Owners and Income Shifting",
+    "url": "https://www.doria.fi/bitstream/handle/10024/148903/j68.pdf",
+    "kind": "Suomi · osinkoverouudistus; linkki tutkimuksen työpaperiversioon"
+  },
+  "vatasymmetry": {
+    "label": "Benzarti ym. (2020): What Goes Up May Not Come Down",
+    "url": "https://doi.org/10.1086/710558",
+    "kind": "Suomi ja Ruotsi · ALV-korotusten ja -alennusten hintavaikutukset"
+  },
+  "tobacco": {
+    "label": "IARC (2011): Effectiveness of Tax and Price Policies for Tobacco Control",
+    "url": "https://publications.iarc.who.int/Book-And-Report-Series/Iarc-Handbooks-Of-Cancer-Prevention/Effectiveness-Of-Tax-And-Price-Policies-For-Tobacco-Control-2011",
+    "kind": "Kansainvälinen tutkimuskatsaus · tupakkaverotus"
+  },
+  "waste": {
+    "label": "Skatteverket (2021): Utvärdering av avfallsförbränningsskatten",
+    "url": "https://skatteverket.se/download/18.96cca41179bad4b1aa991d/1633068526576/Utv%C3%A4rdering%20av%20avfallsf%C3%B6rbr%C3%A4nningsskatten.pdf",
+    "kind": "Ruotsi · jätteenpolttoveron viranomaisarviointi"
+  },
+  "aviation": {
+    "label": "Borbely (2019): A case study on Germany’s aviation tax",
+    "url": "https://strathprints.strath.ac.uk/69132/",
+    "kind": "Saksa · lentoveron synteettinen verrokkiasetelma"
+  },
+  "cartax": {
+    "label": "Klier & Linn (2015): Using Taxes to Reduce Carbon Dioxide Emissions Rates of New Passenger Vehicles",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/pol.20120256",
+    "kind": "Ranska, Saksa ja Ruotsi · autoverouudistusten vertailu"
+  },
+  "hospitaldistance": {
+    "label": "Chambers ym. (2020): Effects of increased distance to urgent and emergency care facilities",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK559713/",
+    "kind": "Systemaattinen katsaus · päivystysverkon muutokset ja hoitomatkat"
+  },
+  "energydemand": {
+    "label": "Labandeira, Labeaga & López-Otero (2017): A meta-analysis on the price elasticity of energy demand",
+    "url": "https://doi.org/10.1016/j.enpol.2017.01.002",
+    "kind": "Kansainvälinen meta-analyysi · lyhyen ja pitkän ajan energiakysyntä"
+  },
+  "exportpromotion": {
+    "label": "Munch & Schaur (2018): The Effect of Export Promotion on Firm-Level Performance",
+    "url": "https://doi.org/10.1257/pol.20150410",
+    "kind": "Tanska · yritysaineisto ja vientipalvelujen vaikutusten arviointi"
+  },
+  "maritimejobs": {
+    "label": "OECD/ITF (2023): Water Transport Employment in Europe: The Role of Governance",
+    "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/08/water-transport-employment_0928b92b/e9f90e70-en.pdf",
+    "kind": "Eurooppa · merenkulun työmarkkinoiden tutkimuskatsaus"
+  },
+  "landchange": {
+    "label": "MMM (2024:1): Maankäytön muutosmaksun käyttöönoton vaikutusten arviointi, s. 57–60",
+    "url": "https://urn.fi/URN:ISBN:978-952-366-756-3",
+    "kind": "Suomi · ehdotetun maksun vaikutusarvio, ei toteutuneen uudistuksen tutkimus"
+  },
+  "windrealisation": {
+    "label": "Evaluating the German onshore wind auction programme (2023)",
+    "url": "https://doi.org/10.1016/j.enpol.2022.113317",
+    "kind": "Saksa · hankekohtainen huutokauppojen toteutumisen arviointi"
+  },
+  "protectedareas": {
+    "label": "Mixed effects of a national protected area network on terrestrial and freshwater biodiversity (2023)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37704608/",
+    "kind": "Suomi · 638 lajin kehitys suojelluilla ja vertailualueilla"
+  },
+  "funerals": {
+    "label": "CMA (2020): Funerals market investigation — final report",
+    "url": "https://www.gov.uk/government/news/cma-publishes-final-report-in-funerals-market-investigation",
+    "kind": "Britannia · hautauspalvelujen markkinatutkimus"
+  },
+  "worldviews": {
+    "label": "Åhs, Poulter & Kallioniemi (2016): Encountering Worldviews",
+    "url": "https://doi.org/10.1080/15507394.2015.1128311",
+    "kind": "Suomi · oppilaskysely ja haastattelut, ei koeasetelmaa"
+  },
+  "libraryfees": {
+    "label": "AEF / OCW (2026): Toegang zonder drempels — kirjastojäsenyyden maksuttomuuden arviointi",
+    "url": "https://zoek.officielebekendmakingen.nl/kst-33846-75.html",
+    "kind": "Alankomaat · tapaustutkimusten virallinen yhteenveto ja rajoitukset"
+  },
+  "aslak": {
+    "label": "Saltychev ym. (2012): Effectiveness of multidisciplinary primary prevention in decreasing the risk of work disability",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21573316/",
+    "kind": "Suomi · ASLAK-kuntoutujien ja kaltaistettujen verrokkien rekisteriseuranta"
+  },
+  "yelreview": {
+    "label": "Rantala (2025): Yrittäjien eläkejärjestelmän kehittämisselvitys — ETK:n yhteenveto",
+    "url": "https://www.etk.fi/ajankohtaista/jukka-rantalan-selvitys-selkeytta-yrittajan-tyotulon-maaraytymiseen/",
+    "kind": "Suomi · järjestelmäselvitys; ei uudistuksen jälkikäteinen vaikutustutkimus"
+  },
+  "myelfinance": {
+    "label": "Eläketurvakeskus: YEL- ja MYEL-maksut ja rahoitus",
+    "url": "https://www.etk.fi/en/finnish-pension-system/financing-and-investments/pension-contributions/self-employed/",
+    "kind": "Suomi · eläkejärjestelmän rahoitussäännöt, tarkistettu 27.10.2026"
+  },
+  "occupationaltrial": {
+    "label": "Taimela ym. (2008): An occupational health intervention programme for workers at high risk for sickness absence",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17933885/",
+    "kind": "Suomi · satunnaistettu koe ja kustannusvaikuttavuus, 418 työntekijää"
+  },
+  "farmrelief": {
+    "label": "Institutional Responses to Farmer Mental Health Challenges in Europe (2026)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42908437/",
+    "kind": "Suomi, Ranska, Irlanti ja EU · neljän tukijärjestelmän laadullinen vertailu"
+  },
+  "caseload": {
+    "label": "Rhoades ym. (2024): Caseload factors predictive of family abuse and neglect treatment outcomes",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38981310/",
+    "kind": "Yhdysvallat · perhetyön seuranta, 25 työntekijää 11 sotilastukikohdassa"
+  },
+  "grantfundraising": {
+    "label": "Andreoni & Payne (2011): Is crowding out due entirely to fundraising?",
+    "url": "https://doi.org/10.1016/j.jpubeco.2010.11.011",
+    "kind": "Yhdysvallat · yli 8 000 hyväntekeväisyysjärjestön paneeliaineisto"
+  },
+  "residency": {
+    "label": "McNamara & Pineda-Torres (2025): Medical residency subsidies and physician shortages",
+    "url": "https://doi.org/10.1016/j.jpubeco.2025.105494",
+    "kind": "Yhdysvallat · tukikelpoisuuteen perustuva instrumenttimuuttujatutkimus"
+  },
+  "hems": {
+    "label": "Nurmi ym. (2022): Lääkärihelikopteritoiminnan vaikuttavuus ja kustannustehokkuuden kehittäminen",
+    "url": "https://urn.fi/URN:ISBN:978-952-383-137-7",
+    "kind": "Suomi · VN TEAS 2022:62, palveluverkon ja kustannusvaikuttavuuden tutkimus"
+  },
+  "tribunalfees": {
+    "label": "House of Commons Library: Employment tribunal fees",
+    "url": "https://commonslibrary.parliament.uk/research-briefings/sn07081/",
+    "kind": "Britannia · virallinen kooste maksu-uudistuksesta ja hakemusmääristä"
+  },
+  "courtefficiency": {
+    "label": "Peyrache & Zago (2024): The inefficiency of courts of justice: industry structure, capacity and misallocation",
+    "url": "https://doi.org/10.1007/s11123-024-00731-5",
+    "kind": "Italia · tuomioistuinaineistoon sovitettu optimointimalli"
+  },
+  "debtburden": {
+    "label": "Ong, Theseira & Ng (2019): Reducing debt improves psychological functioning and changes decision-making in the poor",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30910964/",
+    "kind": "Singapore · velkahelpotusohjelma, 196 pienituloista; ei ulosottomaksukoe"
+  },
+  "natofinance": {
+    "label": "VTV (2026): Nato-jäsenyyden taloudellisten vaikutusten arviointi",
+    "url": "https://vtv.fi/2026/06/09/nato-jasenyyden-taloudellisia-vaikutuksia-ei-ole-esitetty-riittavan-lapinakyvasti/",
+    "kind": "Suomi · tuloksellisuustarkastus; ei tämän määrärahasiirron tuottoarvio"
+  },
+  "videomeetings": {
+    "label": "Brucks & Levav (2022): Virtual communication curbs creative idea generation",
+    "url": "https://www.nature.com/articles/s41586-022-04643-y",
+    "kind": "Laboratorio- ja kenttäkokeet · kasvokkaisen ja videoyhteistyön vertailu"
+  },
+  "regulatorfees": {
+    "label": "ANAO (2008): The Management of Cost Recovery by Selected Regulators",
+    "url": "https://www.anao.gov.au/work/performance-audit/the-management-cost-recovery-selected-regulators",
+    "kind": "Australia · kolmen viranomaisen maksullisuuden tuloksellisuustarkastus"
+  },
+  "partyfunding": {
+    "label": "Baumert (2024/2025): Effects of Public Party Funding and Parliamentary Representation in German State Elections",
+    "url": "https://doi.org/10.1007/s11615-024-00553-y",
+    "kind": "Saksa · yhden prosentin tukirajaan perustuva tutkimus"
+  },
+  "sitraevaluation": {
+    "label": "Halme, Oosi & Salminen (2024): Kohti muutosvoimaa ja ketteryyttä",
+    "url": "https://www.sitra.fi/julkaisut/arviointi-kohti-muutosvoimaa-ja-ketteryytta/",
+    "kind": "Suomi · ulkopuolinen, Sitran tilaama strategisen asemoinnin arviointi"
+  },
+  "workingtimefi": {
+    "label": "Kauhanen & Lehmus (2019): Työaika, työllisyys ja kilpailukyky",
+    "url": "https://www.etla.fi/julkaisut/tyoaika-tyollisyys-ja-kilpailukyky/",
+    "kind": "Suomi · kirjallisuuskatsaus ja ETLAn makromalli"
+  },
+  "workingtimerct": {
+    "label": "Schiller ym. (2017): The impact of reduced worktime on sleep and perceived stress",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27942734/",
+    "kind": "Ruotsi · julkisen sektorin 33 työpaikan satunnaistettu koe"
+  },
+  "bankprovisions": {
+    "label": "Andries, Gallemore & Jacob (2017): The effect of corporate taxation on bank transparency",
+    "url": "https://doi.org/10.1016/j.jacceco.2017.03.004",
+    "kind": "Kansainvälinen pankkiaineisto · verokohtelun ja luottotappiovarausten muutokset"
+  },
+  "forestdeduction": {
+    "label": "Hänninen & Leppänen, toim. (2016): Metsäverotuksen kehittämistarpeet metsä- ja elinkeinopolitiikan kannalta",
+    "url": "https://jukuri.luke.fi/bitstream/handle/10024/535237/luke-luobio_27_2016.pdf?sequence=9",
+    "kind": "Suomi · Luken tutkimuskooste 27/2016, erityisesti s. 65"
+  },
+  "unlistedtransfer": {
+    "label": "HMRC (2020): Transfer of unlisted securities to connected companies",
+    "url": "https://www.gov.uk/government/publications/transfer-of-unlisted-securities-to-connected-companies-for-stamp-duty-and-stamp-duty-reserve-tax/transfer-of-unlisted-securities-to-connected-companies-for-stamp-duty-and-stamp-duty-reserve-tax",
+    "kind": "Britannia · veropohjan kiertämistä koskeva vaikutusarvio, ei verokannan korotuksen koe"
+  },
+  "insurancedemand": {
+    "label": "Hodula ym. (2021): On the macrofinancial determinants of life and non-life insurance premiums",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8613733/",
+    "kind": "24 Euroopan maata · paneeliregressiot 1997–2017; ei verouudistuksen koe"
+  },
+  "fw-tax-gaps": {
+    "label": "Finnwatch (2024): Veropohjan aukot",
+    "url": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+    "kind": "Suomi · järjestön veropoliittinen selvitys ja ehdotukset"
+  },
+  "vm-withholding": {
+    "label": "VM (2021): Osinkojen lähdeverotus · taulukot 10–12",
+    "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content",
+    "kind": "Suomi · viranomaisten rekisterilaskelma, oikeudellinen arvio ja maavertailu"
+  },
+  "chetty-saving": {
+    "label": "Chetty ym. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
+    "url": "https://www.nber.org/papers/w18565",
+    "kind": "Tanska · rekisteritutkimus, julkaistu Quarterly Journal of Economicsissa 2014"
+  },
+  "fw-interest-2025": {
+    "label": "Finnwatch (2025): Loppu korkokikkailulle?",
+    "url": "https://finnwatch.org/images/pdf/Loppu_korkokikkailulle.pdf",
+    "kind": "Suomi · Carunan ja Elenian tilinpäätös- ja verotietojen tapaustutkimus"
+  },
+  "harju-interest": {
+    "label": "Harju, Kauppinen & Ropponen (2025): Firm responses to an interest barrier",
+    "url": "https://ifs.org.uk/sites/default/files/2025-09/Fiscal%20Studies%20-%202025%20-%20Harju%20-%20Firm%20responses%20to%20an%20interest%20barrier%20%20empirical%20evidence.pdf",
+    "kind": "Suomi, Ruotsi ja Tanska · vertaisarvioitu uudistusvertailu, Fiscal Studies 46"
+  },
+  "joint-forests-2026": {
+    "label": "HE 174/2026: Yhteisetuuksien korkovähennysrajoitukset",
+    "url": "https://www.eduskunta.fi/asiat-ja-aanestykset/valtiopaivaasiat/asiakirjat/edktunnus/EDK-2026-AK-45818",
+    "kind": "Suomi · hallituksen esitys, ehdotettu voimaantulo 2027"
+  },
+  "finland-interest-2026": {
+    "label": "VM (2026): U 51/2026 · korkorajoitusten vaikutukset Suomeen",
+    "url": "https://www.eduskunta.fi/asiat-ja-aanestykset/valtiopaivaasiat/asiakirjat/edktunnus/EDK-2026-AK-40709",
+    "kind": "Suomi · vuoden 2024 veroilmoitusaineistoon perustuva mikrosimulointi"
+  },
+  "eu-interest-2026": {
+    "label": "Euroopan komissio (2026): SWD(2026) 561 · liite 4.1",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026SC0561",
+    "kind": "EU · Orbis-yritysaineisto ja JRC:n DiRECT-mikrosimulointi"
+  },
+  "obr-business-relief": {
+    "label": "OBR (2025): Agricultural and business property relief · tuottolaskelma",
+    "url": "https://obr.uk/docs/dlm_uploads/IHT-APR-and-BPR-supplementary-release-Jan-2025.pdf",
+    "kind": "Britannia · virallinen vaikutusarvio, ei uudistuksen jälkikäteinen koe"
+  },
+  "etla-wrapper-model": {
+    "label": "Kujanpää & Ropponen (2026): Osakesäästötilin laajentaminen · laskentamenetelmä",
+    "url": "https://www.etla.fi/wp-content/uploads/Etla-Erikoisartikkeli-19-Osakesaastotilin-laajentaminen-rahastosijoituksiin-2026.pdf",
+    "kind": "Suomi · ETLA Erikoisartikkeli 19, skenaariomalli; rahoittaja Finanssiala"
+  },
+  "statfin-wealth-incidence": {
+    "label": "Tilastokeskus: varallisuus tulokymmenyksittäin 2023, taulukko 151u",
+    "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__vtutk/statfin_vtutk_pxt_151u.px/",
+    "kind": "Suomi · otos- ja rekisteritilasto omistuksesta tuloryhmittäin"
+  },
+  "statfin-income-incidence": {
+    "label": "Tilastokeskus: tulorakenne tulokymmenyksittäin 2024, taulukko 128c",
+    "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__tjt/statfin_tjt_pxt_128c.px/",
+    "kind": "Suomi · tulonjakotilasto, kotitalouksien tulot ja kulutusyksiköt"
+  },
+  "fin-fsa-fund-ownership": {
+    "label": "Finanssivalvonta (2025): rahastojen omistajat, s. 57",
+    "url": "https://publications.bof.fi/bitstream/handle/10024/53958/Valvottavien-taloudellinen-tila-ja-riskit-kev%C3%A4t-2025.pdf",
+    "kind": "Suomi · valvonta- ja tilastoaineisto, joulukuu 2024"
+  },
+  "cbo-incidence-assumption": {
+    "label": "CBO (2024): The Distribution of Household Income in 2021, liite A",
+    "url": "https://www.cbo.gov/publication/60706",
+    "kind": "Yhdysvallat · tulonjakolaskennan menetelmä, ei Suomen vaikutusarvio"
+  },
+  "sorsa-ten": {
+    "label": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",
+    "url": "https://sorsafoundation.fi/mista-lisaa-verotuloja-kymmenen-vastausta/",
+    "kind": "Suomi · veropoliittinen ehdotuskooste, ei vaikutusten syy-seuraustutkimus"
+  },
+  "sorsa-gifts": {
+    "label": "Finér / Kalevi Sorsa -säätiö (2025): Lahjaveropuhallus",
+    "url": "https://sorsafoundation.fi/lahjaveropuhallus/",
+    "kind": "Suomi · Verohallinnon päätösaineisto 2020–2024"
+  },
+  "cfc-clifford": {
+    "label": "Clifford (2019): Taxing multinationals beyond borders",
+    "url": "https://ora.ox.ac.uk/objects/uuid:f82e2e0b-9a78-459f-9983-c48bcfe4b462",
+    "kind": "Kansainvälinen yritysaineisto · vertaisarvioitu tutkimus verorajojen ympäriltä"
+  },
+  "profit-shifting-wier": {
+    "label": "Wier & Zucman (2022): Global profit shifting, 1975–2019",
+    "url": "https://missingprofits.world/wp-content/uploads/2022/11/WIDER_WP_Wier_and_Zucman___Global_profit_shifting.pdf",
+    "kind": "Kansainvälinen tilastomalli · Suomen maakohtainen arvio"
+  },
+  "minimum-tax-eutax": {
+    "label": "Baraké ym. (2021): Collecting the Tax Deficit of Multinational Companies",
+    "url": "https://www.taxobservatory.eu/www-site/uploads/2021/06/TaxObservatory_Report_Tax_Deficit_July2021_Revised.pdf",
+    "kind": "EU Tax Observatory · maakohtainen verosimulaatio"
+  },
+  "wealth-minimum-eutax": {
+    "label": "EU Tax Observatory (2025): Minimum taxation of ultra-high-net-worth individuals",
+    "url": "https://www.taxobservatory.eu/www-site/uploads/2025/03/Resources-for-a-Safe-and-Resilient-Europe_The-Case-for-Minimum-Taxation-of-Ultra-High-Net-Worth-Individuals-in-the-EU-1.pdf",
+    "kind": "Eurooppa · varallisuuslistoihin perustuva ehdollinen laskelma"
+  },
+  "wealth-migration-2026": {
+    "label": "Jakobsen ym. (2026): Taxing Top Wealth",
+    "url": "https://www.nber.org/papers/w32153",
+    "kind": "Pohjoismaat · rekisteritutkimus, julkaistu American Economic Reviewssa 2026"
+  },
+  "wealth-norway-2026": {
+    "label": "Ring (2026): Taxing Entrepreneurial Wealth: Evidence from Norway, 2021–2025",
+    "url": "https://www.nber.org/papers/w35854",
+    "kind": "Norja · tuore tutkimustyöpaperi, ei vielä vertaisarvioitu"
+  },
+  "capital-realizations": {
+    "label": "Agersnap & Zidar (2021): The Tax Elasticity of Capital Gains and Revenue-Maximizing Rates",
+    "url": "https://www.aeaweb.org/articles?id=10.1257/aeri.20200535",
+    "kind": "Yhdysvallat · vertaisarvioitu osavaltioiden veromuutosten tutkimus"
+  },
+  "capital-budgetlab": {
+    "label": "Yale Budget Lab (2024): Behavioral Responses: Capital Gains Realizations",
+    "url": "https://budgetlab.yale.edu/research/behavioral-responses-capital-gains-realizations",
+    "kind": "Yhdysvallat · tutkimuskirjallisuuteen ja omaisuuskoostumukseen perustuva mallioletus"
+  },
+  "vero-capital-2024": {
+    "label": "Verohallinto: Henkilöasiakkaiden tulot, vähennykset ja verot 2024",
+    "url": "https://vero.fi/tietoa-verohallinnosta/tilastot/henkiloasiakkaiden_tuloverotilastoj/verovuosi-2024/henkiloasiakkaiden-tulot-vahennykset-ja-verot-verovuonna-2024/",
+    "kind": "Suomi · verotuksen valmistumisen mukainen tilasto"
+  },
+  "kti-funds-2026": {
+    "label": "KTI (2026): Erikoissijoitusrahastotaulukko Q1/2026",
+    "url": "https://kti.fi/wp-content/uploads/2026/05/ESR-Aikasarja-Q1-2026.pdf",
+    "kind": "Suomi · rahastojen tiedot ja Suomen Pankin tilastot"
+  },
+  "vm-funds-2022": {
+    "label": "VM (2022): Kiinteistösijoitusrahastojen läpivirtausmalli",
+    "url": "https://valtioneuvosto.fi/-/10623/uudet-kiinteistosijoitusrahastojen-verotusta-koskevat-saannokset-turvaavat-suomen-veropohjaa",
+    "kind": "Suomi · lainvalmistelu, ei toteutuneen uudistuksen vaikutusarvio"
+  },
+  "exit-review-2026": {
+    "label": "Nieminen (2026): Arvonnousuvero osana oikeudenmukaista verojärjestelmää",
+    "url": "https://oikeus.journal.fi/article/download/163214/122403/462038",
+    "kind": "Suomi · oikeustieteellinen arvio vuoden 2022 veroluonnoksesta"
+  },
+  "austria-digital": {
+    "label": "Itävallan valtiovarainministeriö: Digital Tax Act 2020",
+    "url": "https://www.bmf.gv.at/en/topics/taxation/digital-tax-act.html",
+    "kind": "Itävalta · voimassa olevan veron kuvaus"
+  },
+  "iab-advertising-2025": {
+    "label": "IAB Finland / Kantar (2026): Mainonnan määrä vuonna 2025",
+    "url": "https://www.iab.fi/julkaisut/ajankohtaista/mediamainonnan-maara-paattyi-07-laskuun-vuonna-2025.html",
+    "kind": "Suomi · toimialan markkinatilasto"
+  },
+  "bank-norway": {
+    "label": "Norjan valtiovarainministeriö: Prop. 1 LS 2025–2026",
+    "url": "https://www.regjeringen.no/en/documents/prop.-1-ls-20252026/id3125412/?ch=1",
+    "kind": "Norja · rahoitustoimintaveron verokannat"
+  },
+  "bank-incidence": {
+    "label": "Kogler (2019): On the Incidence of Bank Levies",
+    "url": "https://alexandria.unisg.ch/entities/publication/c7101a22-f025-4de3-80f2-1e202fac7a5c",
+    "kind": "23 EU-maata · vertaisarvioitu pankkiaineistotutkimus 2007–2013"
+  },
+  "vm-exit-2020": {
+    "label": "VM (2020): Maastapoistumisvero – mistä on kyse ja mistä ei?",
+    "url": "https://valtioneuvosto.fi/en/-/10623/maastapoistumisvero-mista-on-kyse-ja-mista-ei-",
+    "kind": "Suomi · VM:n selvityksen tekijöiden kuvaus arviosta"
+  },
+  "faster-2024": {
+    "label": "EU:n neuvosto (2024): FASTER-direktiivi hyväksytty",
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/12/10/taxation-council-adopts-new-rules-for-withholding-tax-procedures-faster/",
+    "kind": "EU · hyväksytyn sääntelyn aikataulu ja sisältö"
+  },
+  "digital-jrc": {
+    "label": "Alvarez Martinez, Gesualdo & Pycroft (2024): Storm in the Cloud",
+    "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC130576",
+    "kind": "Britannia · vertaisarvioitu CORTAX-talousmalli, ei toteuman syyvaikutus"
+  }
+}

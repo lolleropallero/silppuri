@@ -1,0 +1,2425 @@
+[
+  {
+    "key": "1-5",
+    "title": "T&K-rahoituslain kumoaminen",
+    "status": "included",
+    "maxReportedMillion": 790
+  },
+  {
+    "key": "1-6",
+    "title": "T&K-rahoituslain kumoaminen ja rahoitustason palauttaminen T&K-rahoituslain voimaantuloa edeltävään tasoon",
+    "status": "included",
+    "maxReportedMillion": 1840
+  },
+  {
+    "key": "1-7",
+    "title": "EU-rahoituksen kohdentaminen uudella rahoituskehyskaudella aiempaa vahvemmin T&k-toimintaan ",
+    "status": "included",
+    "maxReportedMillion": 150
+  },
+  {
+    "key": "1-8",
+    "title": "T&K-rahoituksen osuuden lisääminen korkeakouluissa ",
+    "status": "included",
+    "maxReportedMillion": 40
+  },
+  {
+    "key": "1-9",
+    "title": "Pk-yritysten tutkimus- ja kehittämishankkeen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.8
+  },
+  {
+    "key": "1-10",
+    "title": "Valtionavustuksen tason vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "1-11",
+    "title": "Business Finlandin muiden kuin T&K-tukien lakkauttaminen (elinkeino- ja innovaatiorahoitus) (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 35
+  },
+  {
+    "key": "1-12",
+    "title": "Siviilipalvelusajan lyhentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.3
+  },
+  {
+    "key": "1-13",
+    "title": "Energiatehokkuuden ja uusiutuvan energian käytön edistämisen määrärahan alentaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "1-14",
+    "title": "Energiatuen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 9.9
+  },
+  {
+    "key": "1-15",
+    "title": "Maatalouden energiaveron palautuksen poistaminen polttoaineilta ",
+    "status": "below-20m-net",
+    "maxReportedMillion": 25,
+    "maxNetMillion": 17
+  },
+  {
+    "key": "1-16",
+    "title": "Maatalouden energiaveron palautuksen lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 42
+  },
+  {
+    "key": "1-17",
+    "title": "Laivanrakennuksen innovaatiotuen myöntämisen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "1-18",
+    "title": "Kestävän kasvupolitiikan harkinnanvaraisten avustusten lakkauttaminen (tai  tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 2.1
+  },
+  {
+    "key": "1-19",
+    "title": "Merimiesten matkakustannusten korvaamisen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 1.5
+  },
+  {
+    "key": "1-20",
+    "title": "Harkinnanvaraisten avustusten lakkauttaminen (kansainvälinen rekrytointi ja Itä-Suomi)",
+    "status": "below-20m",
+    "maxReportedMillion": 6
+  },
+  {
+    "key": "1-21",
+    "title": "Maaseutuhallinnon ylimääräisten portaiden purkaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4.5
+  },
+  {
+    "key": "1-22",
+    "title": "Valtion aluehallinnon (elinvoimakeskukset) virastorakenteen tiivistäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "1-23",
+    "title": "Alueellisen kuljetustuen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 3.7
+  },
+  {
+    "key": "1-24",
+    "title": "Pääomanpalautus tai osinkojen maksu valtiolle",
+    "status": "nonrecurring",
+    "maxReportedMillion": 0,
+    "reason": "Tesin pääomanpalautus tai osinko pienentää lainanottotarvetta, mutta VM:n mukaan ei julkisen talouden alijäämää. Jatkuvaa lisätuottoa ei osoiteta.",
+    "category": "financial-transaction"
+  },
+  {
+    "key": "1-25",
+    "title": "Kaikkien suorien avustusmuotoisten yritystukien tason laskeminen 30 prosenttia",
+    "status": "included",
+    "maxReportedMillion": 214
+  },
+  {
+    "key": "1-26",
+    "title": "TAI \nT&K-lain kumoaminen ennenaikaisesti ja  kaikkien suorien avustusmuotoisten yritystukien tason laskeminen 30 prosenttia",
+    "status": "included",
+    "maxReportedMillion": 214
+  },
+  {
+    "key": "1-27",
+    "title": "Finnvera Oyj:n tappiokorvausprosentin laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "1-28",
+    "title": "Kotoutumisen laskennallisten korvausten vähentäminen / poistaminen",
+    "status": "included",
+    "maxReportedMillion": 27
+  },
+  {
+    "key": "1-29",
+    "title": "EU-rahoituksen kohdentaminen uudella rahoituskehyskaudella liikennehankkeisiin (sotilaallisen liikkuvuuden hankkeet)",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "1-30",
+    "title": "Väylämaksujen korottaminen vastaamaan väylien hoitoon liittyviä viranomaiskustannuksia",
+    "status": "included",
+    "maxReportedMillion": 50
+  },
+  {
+    "key": "1-31",
+    "title": "Ratamaksujen korottaminen ja maksujen perimisen laajentaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "1-32",
+    "title": "Väyläverkon hankkeisiin sitomattoman rahoituksen leikkaaminen",
+    "status": "included",
+    "maxReportedMillion": 150
+  },
+  {
+    "key": "1-33",
+    "title": "Perusväylänpidon määrärahatason alentaminen",
+    "status": "included",
+    "maxReportedMillion": 200
+  },
+  {
+    "key": "1-34",
+    "title": "Yksityistieavustuksen ja kävelyn ja pyöräilyn edistämisen avustuksen valtion rahoituksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 8.5
+  },
+  {
+    "key": "1-35",
+    "title": "Finavian lentoasemaverkoston ulkopuolisille lentoasemille ja lentopaikoille myöntämien avustusten lakkauttaminen (tai  tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 0.9
+  },
+  {
+    "key": "1-36",
+    "title": "Maa- ja vesialueiden korvauksista maksettavan valtion tuen laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "1-37",
+    "title": "Saariston yhteysalusliikenteen käyttämiin laiturien korjauksiin, selvityksiin ja tiedottamiseen myönnettävien avustusten pienentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "1-38",
+    "title": "Valtion rahoitusosuuden laskeminen 50 prosentista 30 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "1-39",
+    "title": "Maakuntalentojen tuen lakkauttaminen (tuki lentojen ostoliikenteelle)",
+    "status": "below-20m",
+    "maxReportedMillion": 17
+  },
+  {
+    "key": "1-40",
+    "title": "Liikenteen kehittämishankkeisiin ja liikkumisen ohjaukseen tarkoitettujen valtionavustusten lakkauttaminen  (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 1.35
+  },
+  {
+    "key": "1-41",
+    "title": "Palveluhenkilökunnan rajaaminen varustamotuen ulkopuolelle tai vaihtoehtoisesti koko Suomen merenkulun tukijärjestelmän uudistaminen",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "1-42",
+    "title": " Valtion televisio- ja radiorahaston rahoituksen  laskeminen asteittainen 20 prosentilla ",
+    "status": "included",
+    "maxReportedMillion": 118.7
+  },
+  {
+    "key": "1-43",
+    "title": "TAI  Valtion televisio- ja radiorahaston rahoituksen laskeminen  asteittain 10 prosentilla",
+    "status": "merged",
+    "maxReportedMillion": 59.4,
+    "mergedInto": "cut-1-42",
+    "reason": "Ylen 10 ja 20 prosentin vaihtoehdot on yhdistetty säädettävään rahoitusleikkaukseen."
+  },
+  {
+    "key": "1-44",
+    "title": "Muun kuin EU-rahoitteisen maa- ja metsätalouden tutkimustoiminnan lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4.5
+  },
+  {
+    "key": "1-45",
+    "title": "Maa- ja metsätaloussektorin sekalaisten tukien lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "1-46",
+    "title": "Maaseutuelinkeinotoiminnan korkotuen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 14
+  },
+  {
+    "key": "1-47",
+    "title": "TAI Valtion myöntämän maaseutuelinkeinotoiminnan   korkotukiprosentin laskeminen",
+    "status": "included",
+    "maxReportedMillion": 24
+  },
+  {
+    "key": "1-48",
+    "title": "Valtion myöntämän maaseutuelinkeinotoiminnan korkotuen enimmäismäärän laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "1-49",
+    "title": "Maatalouden neuvontapalveluiden rahoituksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 3.5
+  },
+  {
+    "key": "1-50",
+    "title": "Poroaitojen ylläpitorahoituksen vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.45
+  },
+  {
+    "key": "1-51",
+    "title": "Porotalouden neuvonta- ja kehittämistyön tuen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.9
+  },
+  {
+    "key": "1-52",
+    "title": "Hevostalouden tuen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 14.5
+  },
+  {
+    "key": "1-53",
+    "title": "4H-toiminnan harkinnanvaraisen rahoituksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 3.8
+  },
+  {
+    "key": "1-54",
+    "title": "Maaseudun kehittämisen harkinnanvaraisen rahoituksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 2.8
+  },
+  {
+    "key": "1-55",
+    "title": "Maa- ja puutarhatalouden kansallisen tuen lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 350
+  },
+  {
+    "key": "1-56",
+    "title": "TAI Maa- ja puutarhatalouden kansallisen tuen tason laskeminen asteittain ",
+    "status": "included",
+    "maxReportedMillion": 160
+  },
+  {
+    "key": "1-57",
+    "title": " EU-osarahoitteisen CAP-suunnitelmatuen kokonaan kansallisesti rahoitetun osuuden vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 200
+  },
+  {
+    "key": "1-58",
+    "title": " EU-osarahoitteisen CAP-suunnitelmatuen kokonaan kansallisen lisärahoituksen lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 320
+  },
+  {
+    "key": "1-59",
+    "title": "Ravinnekiertotuen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 5.6
+  },
+  {
+    "key": "1-60",
+    "title": "Valtakunnallisille eläinsuojelujärjestöille ja yliopistoille maksettavien valtionavustusten lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 1.3
+  },
+  {
+    "key": "1-61",
+    "title": "Harkinnanvaraisen hankerahoituksen lakkauttaminen  (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 3.8
+  },
+  {
+    "key": "1-62",
+    "title": "Petovahinkoihin liittyvän korvaustason laskeminen puoleen nykyisestä",
+    "status": "below-20m",
+    "maxReportedMillion": 4.4
+  },
+  {
+    "key": "1-63",
+    "title": "Puuntuotannon kestävyyden turvaamiseen maksettavien tukien puolittaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 16.3
+  },
+  {
+    "key": "1-64",
+    "title": "METSO-ohjelman rahoitustason laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.75
+  },
+  {
+    "key": "1-65",
+    "title": "TAI  METSO-ohjelman rahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 11
+  },
+  {
+    "key": "1-66",
+    "title": "Suomen metsäkeskuksen valtionavustuksen tason laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4
+  },
+  {
+    "key": "1-67",
+    "title": "Luonnonvara-alan yleishyödyllisten yhteisöjen  valtion rahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.3
+  },
+  {
+    "key": "1-68",
+    "title": "Metsähallituksen rahoituksen vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "1-69",
+    "title": "CAP-tukiohjelman kansallisen rahoituksen enimmäismäärän  laskeminen",
+    "status": "included",
+    "maxReportedMillion": 228
+  },
+  {
+    "key": "1-70",
+    "title": "Vähennetään tutkimus-, suunnittelu- ja ylläpitomenoja",
+    "status": "below-20m",
+    "maxReportedMillion": 2.8
+  },
+  {
+    "key": "1-71",
+    "title": "EU-toimintaohjelman  kansallisen rahoituksen enimmäismäärän laskeminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "1-72",
+    "title": "Passiiviviljelyyn kohdennettujen tukien lopettaminen",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "1-73",
+    "title": "Kalastonhoidon  lupamaksujen korottaminen ja  maksujen korvamerkinnän purkaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.8
+  },
+  {
+    "key": "1-74",
+    "title": "Riistatalouden lupamaksujen korottaminen ja maksujen korvamerkinnän  purkaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.1
+  },
+  {
+    "key": "1-75",
+    "title": " Maankäytön muutosmaksun käyttöönotto",
+    "status": "included",
+    "maxReportedMillion": 60
+  },
+  {
+    "key": "1-76",
+    "title": "Metsähallituksen liiketoiminnan tuloutuksen lisääminen (tuloarviot tuulivoimarakentamisen vaikutuksista)",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "1-77",
+    "title": "Metsähallituksen liiketoiminnan tuloutuksen lisääminen (tuloarviot ilman tuulivoimarakentamisen vaikutuksia)",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "1-78",
+    "title": "Järjestöjen ja ympäristönhoidon harkinnanvaraisten avustusten  lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "1-79",
+    "title": "Luonnonsuojelun määrärahojen rahoituksen merkittävä tason alentaminen ",
+    "status": "included",
+    "maxReportedMillion": 30
+  },
+  {
+    "key": "1-80",
+    "title": "Harkinnanvaraisten avustusten, kehittämisen sekä momentilta palkattujen määräaikaisten resurssien vähentäminen; ilmastopaneelin toiminnan  lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.4
+  },
+  {
+    "key": "1-81",
+    "title": "Itämeren ja vesiensuojelun määrärahan tason alentaminen mm. supistamalla momentilta palkattua henkilöstömäärää",
+    "status": "below-20m",
+    "maxReportedMillion": 6.1
+  },
+  {
+    "key": "1-82",
+    "title": "Vesien ja ympäristönhoidon tukemisen momentin harkinnanvaraisen rahoituksen laskeminen ",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "1-83",
+    "title": "Pelastuslaitosten öljyntorjuntakaluston hankintaan liittyvän siirron lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "1-84",
+    "title": "Asumisneuvonnan lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "1-85",
+    "title": "Korjaustoiminnan avustusten vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "1-86",
+    "title": "Valtion tukeman asuntotuotannon avustusten vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10.3
+  },
+  {
+    "key": "1-87",
+    "title": "Rakennusperinnön hoidon avustuksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 1.7
+  },
+  {
+    "key": "2-5",
+    "title": "Ylioppilastutkintomaksujen nostaminen kustannusvastaaviksi",
+    "status": "below-20m",
+    "maxReportedMillion": 0.8
+  },
+  {
+    "key": "2-6",
+    "title": "Lasten ja nuorten harrastustoiminnan avustusten lakkauttaminen (tai tason alentaminen merkittävästi) ",
+    "status": "below-20m",
+    "maxReportedMillion": 19.4
+  },
+  {
+    "key": "2-7",
+    "title": "Järjestöavustusten karsiminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "2-8",
+    "title": "Avustustasojen laskeminen ja karsinta",
+    "status": "below-20m",
+    "maxReportedMillion": 0.5
+  },
+  {
+    "key": "2-9",
+    "title": "Yhteiskunnallisten tehtävien rahoituksen poistaminen hautaustoimen osalta",
+    "status": "included",
+    "maxReportedMillion": 52
+  },
+  {
+    "key": "2-10",
+    "title": "Evankelis-luterilaisen- ja ortodoksisen kirkon indeksikorotusten poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 17
+  },
+  {
+    "key": "2-11",
+    "title": "Varhaiskasvatuksen vähimmäismaksu",
+    "status": "included",
+    "maxReportedMillion": 27.6
+  },
+  {
+    "key": "2-12",
+    "title": "Varhaiskasvatuksen enimmäismaksun korottaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 15.7
+  },
+  {
+    "key": "2-13",
+    "title": "Maksujen määräytymiskriteerien palauttaminen vuotta 2017 edeltäneelle tasolle",
+    "status": "included",
+    "maxReportedMillion": 195.9
+  },
+  {
+    "key": "2-14",
+    "title": "Tulorajojen alentaminen",
+    "status": "included",
+    "maxReportedMillion": 62.1
+  },
+  {
+    "key": "2-15",
+    "title": "Kelpoisuusvaatimusten keventäminen",
+    "status": "included",
+    "maxReportedMillion": 39
+  },
+  {
+    "key": "2-16",
+    "title": "Päiväkodin henkilöstömitoituksen palauttaminen vuosien 2016-2020 tasolle",
+    "status": "below-20m",
+    "maxReportedMillion": 17.3
+  },
+  {
+    "key": "2-17",
+    "title": "Subjektiivisen varhaiskasvatusoikeuden rajaaminen koulujen työajalle",
+    "status": "below-20m",
+    "maxReportedMillion": 9
+  },
+  {
+    "key": "2-18",
+    "title": "Varhaiskasvatuksen täydennyskoulutusmallin valtionavustusten lopettaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 6
+  },
+  {
+    "key": "2-19",
+    "title": "Yhteinen katsomusaineen opetus kaikille",
+    "status": "included",
+    "maxReportedMillion": 29
+  },
+  {
+    "key": "2-20",
+    "title": "Perusopetuksen tasa-arvorahan poistaminen",
+    "status": "included",
+    "maxReportedMillion": 75
+  },
+  {
+    "key": "2-21",
+    "title": "TAI \nPerusopetuksen tasa-arvorahan vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "2-22",
+    "title": "Kolmen vuosiviikkotunnin vähentäminen perusopetuksesta",
+    "status": "included",
+    "maxReportedMillion": 20.6
+  },
+  {
+    "key": "2-23",
+    "title": "B1-kielen opetuksen vähentäminen yhdellä vuosiviikkotunnilla",
+    "status": "below-20m",
+    "maxReportedMillion": 9.9
+  },
+  {
+    "key": "2-24",
+    "title": "Ulkomailla toimivien koulujen rahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.3
+  },
+  {
+    "key": "2-25",
+    "title": "Indeksikorotusten jäädyttäminen",
+    "status": "included",
+    "maxReportedMillion": 73
+  },
+  {
+    "key": "2-26",
+    "title": "Vapaan sivistystyön rahoituksen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 60
+  },
+  {
+    "key": "2-27",
+    "title": "TAI \nVapaan sivistyön rahoituksen lakkauttaminen ",
+    "status": "included",
+    "maxReportedMillion": 204
+  },
+  {
+    "key": "2-28",
+    "title": "TAI\nVapaan sivistystyön rahoituksen indeksikorotusten poistaminen",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "2-29",
+    "title": "Kansanopistovuoden rahoituksen poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 6.6
+  },
+  {
+    "key": "2-30",
+    "title": "Opintokeskusten rahoituksen lakkauttaminen\n",
+    "status": "below-20m",
+    "maxReportedMillion": 15
+  },
+  {
+    "key": "2-31",
+    "title": "Toisen asteen oppimateriaalien maksuttomuuden lakkauttaminen ja oppimateriaalilisän palauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 16.2
+  },
+  {
+    "key": "2-32",
+    "title": "TAI\nVuonna 2021 voimaan tulleen oppivelvollisuuden pidennyksen peruminen ja oppimateriaalisän palauttaminen",
+    "status": "included",
+    "maxReportedMillion": 118
+  },
+  {
+    "key": "2-33",
+    "title": "Valtionhallinnon ammatillisen koulutuksen järjestäjien kokoaminen suuremmiksi kokonaisuuksiksi",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "2-34",
+    "title": "Ammatillisen koulutuksen rahoituksen jakaminen ensimmäistä ammatillista perustutkintoa suorittavien koulutukseen ja aikuisten ammatilliseen koulutukseen. Samalla alennetaan aikuisten ammatillisen koulutuksen rahoitusta.\n",
+    "status": "included",
+    "maxReportedMillion": 300
+  },
+  {
+    "key": "2-35",
+    "title": "Aikuisten ammatillisen koulutuksen rahoituksen indeksisidonnaisuuden poistaminen",
+    "status": "included",
+    "maxReportedMillion": 120
+  },
+  {
+    "key": "2-36",
+    "title": "Pakollisista ammatti- ja erikoisammattitutkintokoulutuksen vähimmäismaksuista säätäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "2-37",
+    "title": "Ammatillisen koulutuksen kouluruokailun maksullisuus",
+    "status": "below-20m",
+    "maxReportedMillion": 12
+  },
+  {
+    "key": "2-38",
+    "title": "Lukiokoulutuksen rahoituksen rajaaminen 3 vuoteen (koulutuksen järjestäjän saama rahoitus)",
+    "status": "included",
+    "maxReportedMillion": 57
+  },
+  {
+    "key": "2-39",
+    "title": "Pienten lukioiden lisän lakkauttaminen lukiokoulutuksen rahoitusmallista",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "2-40",
+    "title": "Lukiokoulutuksen erityisiin koulutustehtäviin ja valtakunnallisiin kehittämistehtäviin tarkoitetun rahoituksen lakkauttaminen\n",
+    "status": "below-20m",
+    "maxReportedMillion": 14.9
+  },
+  {
+    "key": "2-41",
+    "title": "Lukiolaisten kouluruokailun maksullisuus",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "2-42",
+    "title": "Lukiokoulutuksen rahoituksen indeksisidonnaisuuden poistaminen",
+    "status": "included",
+    "maxReportedMillion": 102
+  },
+  {
+    "key": "2-43",
+    "title": "Valtionrahoituksen rajaaminen vain ensimmäiseen saman tason korkeakoulututkintoon",
+    "status": "included",
+    "maxReportedMillion": 120
+  },
+  {
+    "key": "2-44",
+    "title": "Kolmansien maiden lukuvuosimaksuja maksavien opiskelijoiden suorittamien tutkintojen poistaminen valtionrahoituksen piiristä ",
+    "status": "included",
+    "maxReportedMillion": 60
+  },
+  {
+    "key": "2-45",
+    "title": "Korkeakoulujen lukukausimaksuista säätäminen \n",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "2-46",
+    "title": "Tohtorikoulutuksen maksuista säätäminen\n",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "2-47",
+    "title": "Korkeakoulujen rahoituksen indeksisidonnaisuuden poistaminen ",
+    "status": "included",
+    "maxReportedMillion": 734
+  },
+  {
+    "key": "2-48",
+    "title": "Åbo Akademin erillisen lisärahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "2-49",
+    "title": "Yksityisten arkistojen rahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5.6
+  },
+  {
+    "key": "2-50",
+    "title": "Ulkomailla sijaitsevien tiedeinstituuttien rahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.2
+  },
+  {
+    "key": "2-51",
+    "title": "Korkeakouluopiskelijoiden opintolainahyvityksen lakkauttaminen\n",
+    "status": "included",
+    "maxReportedMillion": 110
+  },
+  {
+    "key": "2-52",
+    "title": "TAI\nOpintolainahyvityksen enimmäismäärän alentaminen ",
+    "status": "included",
+    "maxReportedMillion": 26.5
+  },
+  {
+    "key": "2-53",
+    "title": "Asumislisän kuntajaottelusta luopuminen",
+    "status": "included",
+    "maxReportedMillion": 48.5
+  },
+  {
+    "key": "2-54",
+    "title": "Opintorahan huoltajakorotuksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 37
+  },
+  {
+    "key": "2-55",
+    "title": "Opintorahan indeksisidonnaisuuden lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 97
+  },
+  {
+    "key": "2-56",
+    "title": "Vuositulorajan indeksisidonnaisuuden lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 19.5
+  },
+  {
+    "key": "2-57",
+    "title": "Kokonaan lainapohjaiseen opintotukeen siirtyminen",
+    "status": "included",
+    "maxReportedMillion": 690.2
+  },
+  {
+    "key": "2-58",
+    "title": "TAI \nKorkeakouluopintojen opintorahan ja asumislisän keston rajaaminen ",
+    "status": "included",
+    "maxReportedMillion": 67.7
+  },
+  {
+    "key": "2-59",
+    "title": "TAI\nKorkeakouluopiskelijoiden opintorahan alentaminen ja opintolainan valtiontakauksen määrän nostaminen\n",
+    "status": "included",
+    "maxReportedMillion": 194
+  },
+  {
+    "key": "2-60",
+    "title": "Korkeakouluopiskelijoiden ateriatuen lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 39
+  },
+  {
+    "key": "2-61",
+    "title": "Koulumatkatuen kokonaisuudistus",
+    "status": "included",
+    "maxReportedMillion": 50
+  },
+  {
+    "key": "2-62",
+    "title": "TAI\nKoulumatkatuen matkakriteerin pidennys ",
+    "status": "included",
+    "maxReportedMillion": 24
+  },
+  {
+    "key": "2-63",
+    "title": "Uusien taiteilijaeläkkeiden myöntämisen lopettaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 8
+  },
+  {
+    "key": "2-64",
+    "title": "Indeksikorotusten poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "2-65",
+    "title": "Esittävän taiteen ja museoiden rahoituksen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 48
+  },
+  {
+    "key": "2-66",
+    "title": "Esittävän taiteen ja museoiden valtionosuuden indeksikorotuksien poistaminen",
+    "status": "included",
+    "maxReportedMillion": 44
+  },
+  {
+    "key": "2-67",
+    "title": "Taiteen perusopetuksen rahoituksen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 22
+  },
+  {
+    "key": "2-68",
+    "title": "Taiteen perusopetuksen valtionosuuden indeksikorotusten poistaminen",
+    "status": "included",
+    "maxReportedMillion": 28
+  },
+  {
+    "key": "2-69",
+    "title": "Lainauskorvauksen tason pienentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "2-70",
+    "title": "Taiteen ja kulttuurin edistämisen avustusten vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 24
+  },
+  {
+    "key": "2-71",
+    "title": "Elokuvatuotannon tuen vähentäminen uuden av-maksun tuoton arviota ja sitä kautta tulevaa lisätukea vastaavasti",
+    "status": "below-20m",
+    "maxReportedMillion": 8
+  },
+  {
+    "key": "2-72",
+    "title": "Apurahojen myöntämisen vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4
+  },
+  {
+    "key": "2-73",
+    "title": "Kansallisten taidelaitosten rahoituksen indeksikorotusten poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 18
+  },
+  {
+    "key": "2-74",
+    "title": "Aikuisten kirjastokortti maksulliseksi tai varausmaksujen palauttaminen",
+    "status": "included",
+    "maxReportedMillion": 30
+  },
+  {
+    "key": "2-75",
+    "title": "Uusien urheilijaeläkkeiden myöntämisen lopettaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.16
+  },
+  {
+    "key": "2-76",
+    "title": "Liikuntapaikkarakentamisen tuen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 15
+  },
+  {
+    "key": "2-77",
+    "title": "Liikunnan ja urheilun edistämisen rahoituksen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 33
+  },
+  {
+    "key": "2-78",
+    "title": "Suomi liikkeelle -ohjelman rahoituksen lopettaminen (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "2-79",
+    "title": "Kuntien liikuntatoiminnan valtiononsuuden siirtäminen peruspalvelujen valtionosuuteen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "2-80",
+    "title": "Kuntien nuorisotoimen valtionosuuden siirtäminen peruspalvelujen valtionosuuteen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "2-81",
+    "title": "Nuorisokeskusten rahoituksen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 4.7
+  },
+  {
+    "key": "2-82",
+    "title": "Nuorten työpajatoiminnan rahoituksen vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "2-83",
+    "title": "Korkeakouluverkoston laajuuden ja rakenteen kehittäminen\n",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "2-84",
+    "title": "Opetushallituksen toiminnan kehittäminen / uudelleenorganisointi",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "3-5",
+    "title": "Sisarkorotusten poisto",
+    "status": "included",
+    "maxReportedMillion": 97.4
+  },
+  {
+    "key": "3-6",
+    "title": "Alle 3 vuotiaasta lapsesta maksettavan lapsilisän korotuksen poisto",
+    "status": "included",
+    "maxReportedMillion": 41.7
+  },
+  {
+    "key": "3-7",
+    "title": "Yksinhuoltajakorotuksen poisto ",
+    "status": "included",
+    "maxReportedMillion": 126.1
+  },
+  {
+    "key": "3-8",
+    "title": "Lapsilisän lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 1217
+  },
+  {
+    "key": "3-9",
+    "title": "Äitiysavustuksen rajoittaminen yhteen kertaan sekä luopuminen mahdollisuudesta saada äitiysavustus rahana",
+    "status": "below-20m",
+    "maxReportedMillion": 6.1
+  },
+  {
+    "key": "3-10",
+    "title": "Elatustuen lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 185.5242808582078
+  },
+  {
+    "key": "3-11",
+    "title": "Tuen tason alentaminen nykyisen kuntaryhmän 3 tasolle",
+    "status": "included",
+    "maxReportedMillion": 80
+  },
+  {
+    "key": "3-12",
+    "title": "Tukiprosentin alentaminen 70 prosentista 60 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 68
+  },
+  {
+    "key": "3-13",
+    "title": "Perusosan tason sitominen etuuden saajan ikään",
+    "status": "included",
+    "maxReportedMillion": 109
+  },
+  {
+    "key": "3-14",
+    "title": "Puolison tuloihin perustuvan tarveharkinnan käyttöön ottaminen yleistuessa",
+    "status": "included",
+    "maxReportedMillion": 111.1
+  },
+  {
+    "key": "3-15",
+    "title": "Ansiosidonnaisen keston lyhentäminen 300 päivään",
+    "status": "included",
+    "maxReportedMillion": 64
+  },
+  {
+    "key": "3-16",
+    "title": "Harkinnanvaraisen kuntoutuksen rahoituksen alentaminen lain mukaiselle vähimmäistasolle ",
+    "status": "included",
+    "maxReportedMillion": 23.5
+  },
+  {
+    "key": "3-17",
+    "title": "Kelan korvaamaan kuntoutuspsykoterapian rajaaminen",
+    "status": "included",
+    "maxReportedMillion": 30.7
+  },
+  {
+    "key": "3-18",
+    "title": "Yksityislääkärikäyntien Kela-korvausten lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 91.1
+  },
+  {
+    "key": "3-19",
+    "title": "Matkakustannuksen omavastuuosuuden nostaminen 25 eurosta 35 euroon",
+    "status": "below-20m",
+    "maxReportedMillion": 11.1
+  },
+  {
+    "key": "3-20",
+    "title": "Vuotuisen omavastuuosuuden (matkakatto) korottaminen 300 eurosta 500 euroon",
+    "status": "below-20m",
+    "maxReportedMillion": 5.5
+  },
+  {
+    "key": "3-21",
+    "title": "Itsehoitolääkkeiden korvattavuudesta luopuminen ",
+    "status": "included",
+    "maxReportedMillion": 47.41660900800001
+  },
+  {
+    "key": "3-22",
+    "title": "Alkuomavastuun nosto 70 eurosta 100 euroon",
+    "status": "included",
+    "maxReportedMillion": 38.931746704
+  },
+  {
+    "key": "3-23",
+    "title": "Lääkekorvauksen peruskorvausprosentin laskeminen 40 prosentista 30 prosenttiin\n",
+    "status": "included",
+    "maxReportedMillion": 52.55458086400001
+  },
+  {
+    "key": "3-24",
+    "title": "Lääkekorvauksen alemman erityiskorvausryhmän korvausprosentin laskeminen 65 prosentista 60 prosenttiin ",
+    "status": "below-20m",
+    "maxReportedMillion": 15.587023104
+  },
+  {
+    "key": "3-25",
+    "title": "Lääkekorvauksen ylemmän erityiskorvausryhmän omavastuun nostaminen 4,5 eurosta 6 euroon",
+    "status": "below-20m",
+    "maxReportedMillion": 5.089532760000001
+  },
+  {
+    "key": "3-26",
+    "title": "Lääkekorvauksen lisäkorvauksen omavastuun nostaminen 2,5 eurosta 4 euroon",
+    "status": "below-20m",
+    "maxReportedMillion": 7.793511552
+  },
+  {
+    "key": "3-27",
+    "title": "Valtionosuuden lakkauttaminen merenkulkijoiden eläkejärjestelmään",
+    "status": "included",
+    "maxReportedMillion": 67
+  },
+  {
+    "key": "3-28",
+    "title": "Maatalousyrittäjien ja apurahansaajien eläkejärjestelmän maksuhelpotusten poistaminen (tai pienentäminen)",
+    "status": "included",
+    "maxReportedMillion": 75
+  },
+  {
+    "key": "3-29",
+    "title": "Välitä viljelijästä -rahoituksen poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "3-30",
+    "title": "Yrittäjän eläkelain mukaisen työtulon määräytymissääntöjen muuttaminen",
+    "status": "nonrecurring",
+    "maxReportedMillion": 28,
+    "reason": "Ansiotulo-osinkojen lisääminen YEL-työtuloon kasvattaa ensin maksutuloja. VM:n mukaan vaikutus kääntyy pitkällä aikavälillä julkista taloutta heikentäväksi.",
+    "category": "reversing-effect"
+  },
+  {
+    "key": "3-31",
+    "title": "Luovutaan valtion maksuosuudesta tapaturmavakuutuksen rahoituksessa",
+    "status": "below-20m",
+    "maxReportedMillion": 14
+  },
+  {
+    "key": "3-32",
+    "title": "Täyteen kansaneläkkeeseen liittyvän tulorajan poistaminen",
+    "status": "included",
+    "maxReportedMillion": 97.95674914100388
+  },
+  {
+    "key": "3-33",
+    "title": "Kansaneläkkeen sovitteluprosentin nostaminen 50 prosentista 60 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 243.79093347086123
+  },
+  {
+    "key": "3-34",
+    "title": "Kansaneläkkeen ja takuueläkkeen indeksisidonnaisuuden poistaminen",
+    "status": "included",
+    "maxReportedMillion": 1159.0948799834262
+  },
+  {
+    "key": "3-35",
+    "title": "Kansaneläkkeen lapsikorotuksen poistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.9
+  },
+  {
+    "key": "3-36",
+    "title": "Takuueläke-etuuden lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 161
+  },
+  {
+    "key": "3-37",
+    "title": "TAI Takuueläkkeen tason lasku",
+    "status": "included",
+    "maxReportedMillion": 106.8157808677824
+  },
+  {
+    "key": "3-38",
+    "title": "TAI Takuueläkkeen suhteuttaminen asumisaikaan vastaavasti kuin kansaneläke",
+    "status": "included",
+    "maxReportedMillion": 33.7674047030478
+  },
+  {
+    "key": "3-39",
+    "title": "TAI Takuueläkkeen rajaaminen vain alimman vanhuuseläkeiän täyttäneille",
+    "status": "included",
+    "maxReportedMillion": 79.0157971847042
+  },
+  {
+    "key": "3-40",
+    "title": "Eläkkeensaajan asumistuen yhdistäminen yleiseen asumistukeen",
+    "status": "included",
+    "maxReportedMillion": 280.9
+  },
+  {
+    "key": "3-41",
+    "title": "TAI Kuntoutustuen saajien siirtäminen eläkkeensaajan asumistuesta yleiseen asumistukeen",
+    "status": "below-20m",
+    "maxReportedMillion": 10.5
+  },
+  {
+    "key": "3-42",
+    "title": "TAI Eläkkeensaajan asumistuen rajaaminen vanhuuseläkkeen saajiin",
+    "status": "included",
+    "maxReportedMillion": 83
+  },
+  {
+    "key": "3-43",
+    "title": "Alimman tuen tason eli perustuen lakkauttaminen lapsen ja aikuisen vammaistuessa sekä eläkettä saavan hoitotuessa",
+    "status": "included",
+    "maxReportedMillion": 165
+  },
+  {
+    "key": "3-44",
+    "title": "Luovutaan tutkinnoista karttuvasta eläkkeestä",
+    "status": "included",
+    "maxReportedMillion": 1.1842307842661994
+  },
+  {
+    "key": "3-45",
+    "title": "Luovutaan alle 3-vuotiaan lapsen hoidon ajalta karttuvasta eläkkeestä",
+    "status": "included",
+    "maxReportedMillion": 0.11759210587389361
+  },
+  {
+    "key": "3-46",
+    "title": "Luopuminen muiden perhevapaiden kuin kotihoidontuen ajalta kertyvästä eläkkeestä",
+    "status": "included",
+    "maxReportedMillion": 0.8348060437605471
+  },
+  {
+    "key": "3-47",
+    "title": "Luopuminen ansiosidonnainen työttömyyspäivärahan ajalta kertyvästä eläkkeestä",
+    "status": "included",
+    "maxReportedMillion": 38.387685675042874
+  },
+  {
+    "key": "3-48",
+    "title": "Luopuminen muista palkattomien aikojen eläkekarttumista",
+    "status": "included",
+    "maxReportedMillion": 5.610892392457915
+  },
+  {
+    "key": "3-49",
+    "title": "Alimman vanhuuseläkeiän nosto 6 kk ikäluokkaa kohti vuodesta 2032 alkaen siten, että eläkeikä olisi 70 vuotta vuonna 2046",
+    "status": "included",
+    "maxReportedMillion": 876.0727808904559
+  },
+  {
+    "key": "3-50",
+    "title": "Työeläkeindeksin muuttaminen täysin kuluttajahintoihin sidotuksi",
+    "status": "included",
+    "maxReportedMillion": 484.0021981606837
+  },
+  {
+    "key": "3-51",
+    "title": "Työeläkeindeksin ja palkkakertoimen määräaikainen jäädytys",
+    "status": "included",
+    "maxReportedMillion": 2875.2554812436024
+  },
+  {
+    "key": "3-52",
+    "title": "Työeläkejärjestelmän leskeneläkkeen (pl. lapsiperheet) keston rajaaminen 2-vuotiseksi",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "3-53",
+    "title": "Osittaisen varhennetun vanhuuseläkkeen lakkauttaminen tai ehtojen tiukentaminen",
+    "status": "nonrecurring",
+    "maxReportedMillion": 484.3493508071215,
+    "reason": "OVE-eläkkeen poistamisen taulukoitu säästö on eläkemenon siirtymistä: vaikutus kääntyy vastakkaiseksi 2050-luvulla. Mahdolliselle pysyvälle työllisyys- ja verohyödylle ei ole tässä euroarviota. VM esittää alkuvaiheen ylijäämän rahastointia myöhempiin eläkkeisiin, ei valtion velan vähentämiseen.",
+    "category": "reversing-effect"
+  },
+  {
+    "key": "3-54",
+    "title": "Ikääntyneitä koskevien työkyvyttömyyseläkkeen erityissäännösten poistaminen",
+    "status": "included",
+    "maxReportedMillion": 62.608177567745535
+  },
+  {
+    "key": "3-55",
+    "title": "Julkisen sektorin ammatillisen työkyvyttömyyden määritelmästä luopuminen",
+    "status": "below-20m",
+    "maxReportedMillion": 15.48294843219288
+  },
+  {
+    "key": "3-56",
+    "title": "Työkyvyttömyyseläkkeiden kertakorotuksen poistaminen",
+    "status": "included",
+    "maxReportedMillion": 27.158591787058526
+  },
+  {
+    "key": "3-57",
+    "title": "Karttumaprosentin alentaminen",
+    "status": "included",
+    "maxReportedMillion": 77.4070322526033
+  },
+  {
+    "key": "3-58",
+    "title": "Palkkakertoimen painojen muuttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4.552747044763964
+  },
+  {
+    "key": "3-59",
+    "title": "Kaikkien kansaneläkeindeksiin tai muutoin kuluttajahintoihin sidottujen etuuksien indeksikorotusten jäädyttäminen (pl. elatustuki ja lääkekustannusten alku- ja vuosiomavastuu)",
+    "status": "included",
+    "maxReportedMillion": 992.8280761040734
+  },
+  {
+    "key": "3-60",
+    "title": "Osittaisen hoitorahan lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 8.6
+  },
+  {
+    "key": "3-61",
+    "title": "Joustavan hoitorahan lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 22.9
+  },
+  {
+    "key": "3-62",
+    "title": "Kotihoidon tuen lakkauttaminen tai rajaaminen",
+    "status": "included",
+    "maxReportedMillion": 106
+  },
+  {
+    "key": "3-63",
+    "title": "Luopuminen korotettuna maksettavista 16 ensimmäisestä vanhempainrahapäivästä",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "3-64",
+    "title": "Vanhempainrahan laskentaperusteen muuttaminen ",
+    "status": "included",
+    "maxReportedMillion": 89.96141355120677
+  },
+  {
+    "key": "3-65",
+    "title": "Kela-korvausluokan I korvausasteen laskeminen 60 prosentista 50 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 67.8
+  },
+  {
+    "key": "3-66",
+    "title": "Kela-korvausluokan II korvausasteen laskeminen 50 prosentista 40 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 32.1
+  },
+  {
+    "key": "3-67",
+    "title": "Kela-korvauksen työntekijäkohtaisten kustannusten enimmäismäärän laskeminen 50 eurolla.",
+    "status": "included",
+    "maxReportedMillion": 39.9
+  },
+  {
+    "key": "3-68",
+    "title": "Luovutaan valtion rahoittamista lomituspalveluista ja niitä koskevista korvauksista",
+    "status": "included",
+    "maxReportedMillion": 122
+  },
+  {
+    "key": "3-69",
+    "title": "TAI Kohdennetaan valtion korvaamat lomituspalvelut ruokahuollon ja huoltovarmuuden turvaamisen kannalta keskeiseen ydintoimintaan",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "4-5",
+    "title": "Lapsen asioista vastaavan sosiaalityöntekijän asiakasmitoitussääntelyn kumoaminen",
+    "status": "included",
+    "maxReportedMillion": 24
+  },
+  {
+    "key": "4-6",
+    "title": "Iäkkäiden henkilöiden ympärivuorokautisen palveluasumisen vähimmäishenkilöstömitoituksen kumoaminen",
+    "status": "included",
+    "maxReportedMillion": 40
+  },
+  {
+    "key": "4-7",
+    "title": "TAI Teknologian huomioiminen iäkkäiden henkilöiden ympärivuorokautisen palveluasumisen henkilöstömitoituksessa",
+    "status": "included",
+    "maxReportedMillion": 26
+  },
+  {
+    "key": "4-8",
+    "title": "Opiskeluhuollon henkilöstömitoituksen kumoaminen ",
+    "status": "below-20m",
+    "maxReportedMillion": 11
+  },
+  {
+    "key": "4-9",
+    "title": "Alle 23-vuotiaiden perusterveydenhuollon kiireettömän hoidon hoitoon pääsyn enimmäisajan pidentäminen ",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "4-10",
+    "title": "Erikoissairaanhoidon kiireettömän hoidon hoitoonpääsyä koskevan lainsäädännön keventäminen ",
+    "status": "below-20m",
+    "maxReportedMillion": 6
+  },
+  {
+    "key": "4-11",
+    "title": "Lasten ja nuorten terapiatakuuta koskevan lainsäädännön kumoaminen ",
+    "status": "included",
+    "maxReportedMillion": 35
+  },
+  {
+    "key": "4-12",
+    "title": "Määräaikaisten terveystarkastusten vähentäminen ja kohdentaminen tarveperustaisesti",
+    "status": "below-20m",
+    "maxReportedMillion": 12
+  },
+  {
+    "key": "4-13",
+    "title": "Seulontojen kohdentaminen riskiperusteisesti",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "4-14",
+    "title": "Lastensuojelulain täysi-ikäisiä nuoria koskevan jälkihuoltosääntelyn kumoaminen ",
+    "status": "included",
+    "maxReportedMillion": 47
+  },
+  {
+    "key": "4-15",
+    "title": "Sosiaalihuollon ammattihenkilöiden välisen työnjaon sääntelyn keventäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 6.7
+  },
+  {
+    "key": "4-16",
+    "title": "Ympärivuorokautisen hoivan varallisuuteen perustuvasta maksusta säätäminen \n",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "4-17",
+    "title": "TAI Ympärivuorokautisen hoivan laajemmasta varallisuuteen perustuvasta maksusta säätäminen\n",
+    "status": "included",
+    "maxReportedMillion": 90
+  },
+  {
+    "key": "4-18",
+    "title": "TAI Ympärivuorokautisen hoivan asunto- ja muuhun varallisuuteen perustuvasta maksusta säätäminen, asuntovarallisuus huomioidaan rajatusti \n",
+    "status": "included",
+    "maxReportedMillion": 165
+  },
+  {
+    "key": "4-19",
+    "title": "TAI Ympärivuorokautisen hoivan asunto- ja muuhun varallisuuteen perustuvasta maksusta säätäminen , asuntovarallisuus huomioidaan täysimääräisesti\n",
+    "status": "included",
+    "maxReportedMillion": 245
+  },
+  {
+    "key": "4-20",
+    "title": "Ikääntyneiden kotihoidon varallisuuteen perustuvasta maksusta säätäminen ",
+    "status": "included",
+    "maxReportedMillion": 40
+  },
+  {
+    "key": "4-21",
+    "title": "Velvoite hyvinvointialueille periä laissa säädetyt sosiaali- ja terveydenhuollon asiakasmaksut lakisääteisen enimmäistason mukaisina. Yksilökohtainen harkintavalta säilytetään.",
+    "status": "included",
+    "maxReportedMillion": 28
+  },
+  {
+    "key": "4-22",
+    "title": "Vammaispalvelujen maksutuottojen kasvattaminen",
+    "status": "included",
+    "maxReportedMillion": 30
+  },
+  {
+    "key": "4-23",
+    "title": "Perheoikeudellisten sopimusten vahvistamisen säätäminen kokonaan tai osin maksullisiksi ",
+    "status": "below-20m",
+    "maxReportedMillion": 3.2
+  },
+  {
+    "key": "4-24",
+    "title": "Julkiseen palveluvalikoimaan kuuluvien lääkinnällisten apuvälineiden karsiminen ja käytön omavastuuosuus",
+    "status": "included",
+    "maxReportedMillion": 35
+  },
+  {
+    "key": "4-25",
+    "title": "Ympärivuorokautisen päivystysverkon lisätiivistäminen",
+    "status": "included",
+    "maxReportedMillion": 35
+  },
+  {
+    "key": "4-26",
+    "title": "Keskitetään vaativia ja kallista erityisosaamista edellyttäviä erikoissairaanhoidon palveluja nykyistä harvempiin sairaaloihin",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "4-27",
+    "title": "Velvoite tukipalvelujen yhteistyöaluetasoiseen keskittämiseen\n",
+    "status": "included",
+    "maxReportedMillion": 175
+  },
+  {
+    "key": "4-28",
+    "title": "Sosiaalipalveluita koskevan lainsäädännön yksinkertaistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 15
+  },
+  {
+    "key": "4-29",
+    "title": "Aikuisten suun terveydenhuollon järjestämisvastuun rajaaminen",
+    "status": "included",
+    "maxReportedMillion": 250
+  },
+  {
+    "key": "4-30",
+    "title": "TAI Suun terveydenhuollon omavastuun kasvattaminen",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "4-31",
+    "title": "Hyvinvointialueiden määrän vähentäminen ",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "4-32",
+    "title": "Hyvinvointialueindeksin jäädyttäminen ",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "4-33",
+    "title": "Sosiaali- ja terveyspalvelujen, hyvinvointialuejaon ja rahoitusjärjestelmän kokonaisuudistus",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "4-34",
+    "title": "Vähähyötyisten toimien ja hoitojen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 200
+  },
+  {
+    "key": "4-35",
+    "title": "Perustason palveluverkon valtakunnallinen ohjaus",
+    "status": "included",
+    "maxReportedMillion": 50
+  },
+  {
+    "key": "4-36",
+    "title": "Perusterveydenhuollon vuodeosastojen ja ikääntyneiden jatkohoidon palvelurakenteen uudistaminen ",
+    "status": "included",
+    "maxReportedMillion": 45
+  },
+  {
+    "key": "4-37",
+    "title": "Myöntämiskriteerien valtakunnallinen yhdenmukaistaminen ja RAI-arviointitiedon aseman vahvistaminen",
+    "status": "included",
+    "maxReportedMillion": 48
+  },
+  {
+    "key": "4-38",
+    "title": "Välittömään asiakastyöhön osallistuvien ammattihenkilöiden välisten osuuksien yhtenäistäminen ympärivuorokautisessa palveluasumisessa",
+    "status": "below-20m",
+    "maxReportedMillion": 9
+  },
+  {
+    "key": "4-39",
+    "title": "Ilman huoltajaa maahan tulleiden nuorten aikuistumisen tuen sääntelyn kumoaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.6
+  },
+  {
+    "key": "4-40",
+    "title": "Alueellisen sote-järjestötoiminnan sekä terveyden ja hyvinvoinnin edistämisen valtionavustuksesta luopuminen",
+    "status": "nonrecurring",
+    "maxReportedMillion": 25,
+    "reason": "Alueellisten sote-järjestöjen uusi avustus on määräaikainen vuosina 2027–2030. Sen aikaistettu lopettaminen ei tuo säästöä vuodesta 2031 eteenpäin.",
+    "category": "temporary-grant"
+  },
+  {
+    "key": "4-41",
+    "title": "Kaksiportaisen psykoterapiakoulutuksen erilliskorvauksista luopuminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "4-42",
+    "title": "Sote-henkilöstön erikoistumiskoulutuksen valtion erilliskorvauksista luopuminen",
+    "status": "included",
+    "maxReportedMillion": 76.88
+  },
+  {
+    "key": "4-43",
+    "title": "Pohjanmaan hyvinvointialueen tehtäväksi säädetyistä asiakas- ja potilasturvallisuskeskuksen erillistehtävistä luopuminen ja valtion erilliskorvausten lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.1
+  },
+  {
+    "key": "4-44",
+    "title": "Lapseen kohdistuneiden rikosten selvittämisessä avustavien erillisyksiköiden sulauttaminen osaksi yliopistosairaaloita ja  rahoituksen siirtäminen osaksi hyvinvointialueiden yleiskatteista rahoitusta",
+    "status": "below-20m-envelope",
+    "maxReportedMillion": 0,
+    "maxPotentialMillion": 11.6,
+    "reason": "Koko siirrettävä rahoitus on alle 20 milj. euroa; hallinnon säästö tätä pienempi."
+  },
+  {
+    "key": "4-45",
+    "title": "Valtion hyvinvointialueille maksamien erillisten korvausten siirtäminen osaksi hyvinvointialueiden yleiskatteista rahoitusta",
+    "status": "below-20m-envelope",
+    "maxReportedMillion": 0,
+    "maxPotentialMillion": 5.1,
+    "reason": "Koko siirrettävä rahoitus on alle 20 milj. euroa; hallinnon säästö tätä pienempi."
+  },
+  {
+    "key": "4-46",
+    "title": "Korkeakouluopiskelijoiden opiskeluterveydenhuollon sisällön ja palveluverkon rajaaminen sekä valtion/opiskelijoiden maksuosuuksien muuttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.9
+  },
+  {
+    "key": "4-47",
+    "title": "TAI [osin päällekkäinen edellisen kanssa]. Korkeakouluopiskelijoiden opiskeluterveydenhuollon valtion rahoitusosuuden laskeminen ",
+    "status": "included",
+    "maxReportedMillion": 25
+  },
+  {
+    "key": "4-48",
+    "title": "Lääkäri- ja lääkintähelikopteritoiminnan järjestämis- ja rahoitusvastuun keskittäminen yhdelle hyvinvointialueelle\n\n ",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "4-49",
+    "title": "Sosiaalialan osaamiskeskuksia koskevan erillislainsäädännön kumoaminen ja valtionavustuksien  lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.25
+  },
+  {
+    "key": "5-5",
+    "title": "Edustustoverkon karsiminen",
+    "status": "below-20m",
+    "maxReportedMillion": 6.5
+  },
+  {
+    "key": "5-6",
+    "title": "Edustautumisen mallin keventäminen edustustoverkossa",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "5-7",
+    "title": "Tulojen lisääminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.5
+  },
+  {
+    "key": "5-8",
+    "title": "Valtion ulkomailla omistamien edustustoverkon kiinteistöjen luopuminen sekä siirtyminen pienempiin tiloihin",
+    "status": "nonrecurring",
+    "maxReportedMillion": 0,
+    "reason": "Edustustokiinteistöjen myyntitulo on kertaluonteinen. Tilalle voi tulla vuokramenoja; jatkuvaa nettosäästöä ei ole arvioitu.",
+    "category": "asset-sale"
+  },
+  {
+    "key": "5-9",
+    "title": "Myydään kulttuuri- ja tiedeinstituuttikiinteistöjä",
+    "status": "nonrecurring",
+    "maxReportedMillion": 0,
+    "reason": "Kulttuuri-instituuttien kiinteistöjen myynti tuottaa kertaluonteisen kauppahinnan. Jatkuvaa nettosäästöä ei ole arvioitu.",
+    "category": "asset-sale"
+  },
+  {
+    "key": "5-10",
+    "title": "Team Finland -toiminnan priorisointi",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-11",
+    "title": "Maksullisuuden lisääminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "5-12",
+    "title": "Arvioidaan aiempaa kriittisemmin Suomen osallistumista kriisinhallintaoperaatioihin",
+    "status": "below-20m",
+    "maxReportedMillion": 12
+  },
+  {
+    "key": "5-13",
+    "title": "Lakkautetaan siviilikriisinhallintatoiminta huomioiden jo tehdyt sitoumukset siviilikriisinhallintaoperaatioihin",
+    "status": "below-20m",
+    "maxReportedMillion": 13.1
+  },
+  {
+    "key": "5-14",
+    "title": "Lakkautetaan siviilikriisinhallintatoiminta huomioiden jo tehdyt sitoumukset siviilikriisinhallintaoperaatioihin",
+    "status": "below-20m",
+    "maxReportedMillion": 2.3
+  },
+  {
+    "key": "5-15",
+    "title": "Rauhanvälitystoiminnan lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 3.2
+  },
+  {
+    "key": "5-16",
+    "title": "Ulkoministeriön myöntämän varsinaisen kehitysyhteistyön lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 480
+  },
+  {
+    "key": "5-17",
+    "title": "Ukrainan tukemisen momentin lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 68
+  },
+  {
+    "key": "5-18",
+    "title": "Finfundin pääoman korotuksen lopettaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "5-19",
+    "title": "Kehityspoliittisten lainojen ja sijoitusten lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "nonrecurring",
+    "maxReportedMillion": 35,
+    "reason": "Kehityspoliittisten lainojen ja sijoitusten vähentäminen pienentää rahoitustaloustoimia. Se ei sellaisenaan pienennä kansantalouden tilinpidon mukaista alijäämää.",
+    "category": "financial-transaction"
+  },
+  {
+    "key": "5-20",
+    "title": "Humanitaarisen katastrofiavun avustusten lakkautttaminen (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 30
+  },
+  {
+    "key": "5-21",
+    "title": "Määrärahan lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 1.8
+  },
+  {
+    "key": "5-22",
+    "title": "Tuomioistuimien maksullisen toiminnan maksujen korottaminen",
+    "status": "included",
+    "maxReportedMillion": 69.3
+  },
+  {
+    "key": "5-23",
+    "title": "Yleisen edunvalvonnan maksujen korottaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 9.7
+  },
+  {
+    "key": "5-24",
+    "title": "Valtuutettujen määrän vähentäminen/valtuutettujen yhdistäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-25",
+    "title": "Käännös- ja tulkkausmenojen vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 6.7
+  },
+  {
+    "key": "5-26",
+    "title": "TAI Käännös- ja tulkkausmenojen siirto tuomioistuinten nykyisistä määrärahoista rahoitettavaksi",
+    "status": "below-20m",
+    "maxReportedMillion": 11
+  },
+  {
+    "key": "5-27",
+    "title": "Avustusten karsiminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.5
+  },
+  {
+    "key": "5-28",
+    "title": "Valtion maksamien rikosvahinkokorvausten lakkauttaminen ja  syyttömästi vangittujen tai tuomittujen korvausten alentaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 9.5
+  },
+  {
+    "key": "5-29",
+    "title": "Yleinen tuottavuustason nostaminen tuomioistuimissa",
+    "status": "included",
+    "maxReportedMillion": 21.7
+  },
+  {
+    "key": "5-30",
+    "title": "Yksityisille oikeusavustajille maksettavien korvausten tason alentaminen (lisäksi kokonaistarkastelu)",
+    "status": "below-20m",
+    "maxReportedMillion": 7
+  },
+  {
+    "key": "5-31",
+    "title": "Yksityisoikeudellisten velkojen vanhenemisajan lyhentäminen/ulosoton keston lyhentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "5-32",
+    "title": "Yksityisille oikeusavustajille maksettavien matkakorvausten lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 4.3
+  },
+  {
+    "key": "5-33",
+    "title": "Ulosoton myyntimaksujen nostaminen omakustannusarvon mukaan hinnoiteltavaksi julkisoikeudelliseksi suoritteeksi",
+    "status": "included",
+    "maxReportedMillion": 24
+  },
+  {
+    "key": "5-34",
+    "title": "Ulosoton häädöstä perimän täytäntöönpanomaksun nostaminen omakustannusarvoon",
+    "status": "below-20m",
+    "maxReportedMillion": 9.6
+  },
+  {
+    "key": "5-35",
+    "title": "Sakon muuntorangaistuksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10.7
+  },
+  {
+    "key": "5-36",
+    "title": "Kanteluiden käsittelyn tehostaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "5-37",
+    "title": "Vankien päiväraha​n muuttaminen vastikkeelliseksi",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "5-38",
+    "title": "Suljetuissa vankiloissa olevien vankien vähentäminen ja valvontarangaistuksen käytön lisääminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "5-39",
+    "title": "Tilapäisen suojelun lakkauttaminen",
+    "status": "nonrecurring",
+    "maxReportedMillion": 53,
+    "reason": "Tilapäisen suojelun päättyminen maaliskuussa 2028 budjetin maaliskuun 2029 oletuksen sijasta aikaistaa jo päättyväksi oletettua menoa. Taulukossa säästöä on vain vuonna 2028.",
+    "category": "temporary-programme"
+  },
+  {
+    "key": "5-40",
+    "title": "Poliisin toiminnan kehittäminen",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "5-41",
+    "title": "Rajavartiolaitoksen ja Tullin toiminnan ja työnjaon kehittäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-42",
+    "title": "Poliisien lukumäärän vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 35.2
+  },
+  {
+    "key": "5-43",
+    "title": "Poliisin toimitilaverkoston tarkistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "5-44",
+    "title": "Yhden viraston mallin käyttöönotto",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "5-45",
+    "title": "Kiintiöpakolaisten vastaanoton lakkauttaminen ",
+    "status": "included",
+    "maxReportedMillion": 26
+  },
+  {
+    "key": "5-46",
+    "title": "Tekoälyn hyödyntäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "5-47",
+    "title": "Maahanmuuttoviraston maatietopalvelun yhdistäminen ulkoministeriön toimintoihin",
+    "status": "below-20m",
+    "maxReportedMillion": 0.5
+  },
+  {
+    "key": "5-48",
+    "title": "Varusmiespalveluksen lyhentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3.2
+  },
+  {
+    "key": "5-49",
+    "title": "Puolustusvoimien toimintamenoja koskevista indeksitarkistuksista luopuminen  vuosina 2028 - 2031",
+    "status": "included",
+    "maxReportedMillion": 174.8
+  },
+  {
+    "key": "5-50",
+    "title": "Natossa sovitun puolustusmenojen BKT-osuutta koskevan tavoitteen (3,5 % v. 2035) toimeenpano maltillisemmalla aikataululla",
+    "status": "nonrecurring",
+    "maxReportedMillion": 333,
+    "reason": "Puolustusmenojen kasvua lykätään, mutta vuonna 2035 saavutetaan sama 3,5 prosentin BKT-osuus. Tavoiteltu lopullinen menotaso ei alene.",
+    "category": "postponement"
+  },
+  {
+    "key": "5-51",
+    "title": "TAI Natossa sovitun puolustusmenojen BKT-osuutta koskevan tavoitteen (3,5 % v. 2035) toimeenpano vieläkin maltillisemmalla aikataululla",
+    "status": "nonrecurring",
+    "maxReportedMillion": 1331,
+    "reason": "Puolustusmenot pidetään 3 prosentissa BKT:sta vuoteen 2034 asti ja nostetaan samaan 3,5 prosenttiin vuonna 2035. Kyse on kasvun lykkäämisestä.",
+    "category": "postponement"
+  },
+  {
+    "key": "5-52",
+    "title": "Puolustusmateriaalihankintoja koskevista indeksitarkistuksista luopuminen vuosina 2028-2031",
+    "status": "included",
+    "maxReportedMillion": 484.712292862547
+  },
+  {
+    "key": "5-53",
+    "title": "Kriisinhallintaoperaatioihin osallistumisen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 21
+  },
+  {
+    "key": "5-54",
+    "title": "Sotilaallisen kriisinhallinnan kalusto- ja hallintomenoja koskevista indeksitarkistuksista luopuminen vuosina 2028-2031",
+    "status": "below-20m",
+    "maxReportedMillion": 6.1
+  },
+  {
+    "key": "5-55",
+    "title": "Puolustusvoimien terveydenhuollon varautumisen rahoituksen siirtäminen puolustusministeriön hallinnonalalle",
+    "status": "included",
+    "maxReportedMillion": 36
+  },
+  {
+    "key": "5-56",
+    "title": "Puolustusmäärärahoja kohdentaminen nykyistä enemmän T&K-toimintaan",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "5-57",
+    "title": "EU:n kansallisten asiantuntijoiden lukumäärän rajaaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.5
+  },
+  {
+    "key": "5-58",
+    "title": "Valtion virastojen ja laitosten matkakulujen kasvun taittaminen ja kulujen vähentäminen",
+    "status": "included",
+    "maxReportedMillion": 30
+  },
+  {
+    "key": "5-59",
+    "title": "Ministeriö-virasto -työnjaon selkeyttäminen tehtäviä alaiseen hallintoon siirtämällä, ministeriörakenteen yhtenäistäminen ja ministeriöiden sisäisen hallinnon palveluiden työnjaon rationalisointi",
+    "status": "below-20m",
+    "maxReportedMillion": 2.5
+  },
+  {
+    "key": "5-60",
+    "title": "Tutkimusorganisaatioiden tehtävienjaon selkeyttäminen (sis. suhde yliopistoihin)  ja  niiden organisaatiorakenteen uudistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.5
+  },
+  {
+    "key": "5-61",
+    "title": "Valtionavustusten hallinnoinnin tehostaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.5
+  },
+  {
+    "key": "5-62",
+    "title": "Valtion konsernipalveluiden rakenteellinen uudelleenjärjestäminen ja palvelujen standarditason määrittäminen",
+    "status": "included",
+    "maxReportedMillion": 20
+  },
+  {
+    "key": "5-63",
+    "title": "Talous- ja henkilöstöhallinnon palvelujen ja toimintojen nykyistä vahvempi keskittäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 12.5
+  },
+  {
+    "key": "5-64",
+    "title": "Valtion valvontatoiminnan maksullistaminen yhtenäisin periaattein",
+    "status": "included",
+    "maxReportedMillion": 60
+  },
+  {
+    "key": "5-65",
+    "title": "Kelan toimitilojen siirto Senaatin hallintaan ja muodostuvan tilakokonaisuuden rationalisointi",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "5-66",
+    "title": "Hillitään valtion tilakustannuksia ja niiden kasvua tiivistämällä poliisiasema- ja vankilaverkkoa",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "5-67",
+    "title": "Valtion hankintatoimen tehostaminen",
+    "status": "included",
+    "maxReportedMillion": 173
+  },
+  {
+    "key": "5-68",
+    "title": "Valtion lupa- ja valvontatehtävien kokoamisen jatkaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-69",
+    "title": "Tilastotuotannon tehtävien kokoaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.5
+  },
+  {
+    "key": "5-70",
+    "title": "Holhoustoimen tehtävien siirto Digi- ja väestötietovirastosta  Oikeuspalveluvirastoon",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-71",
+    "title": "Lupa- ja valvontaviraston työsuojeluosaston toimintamenojen ja hallinnon integrointi osaksi virastoa",
+    "status": "below-20m",
+    "maxReportedMillion": 1.645
+  },
+  {
+    "key": "5-72",
+    "title": "Valtion hallinnoimien ICT-konesalien ja niihin liittyvän palvelutuotannon yhdistäminen",
+    "status": "included",
+    "maxReportedMillion": 32.5
+  },
+  {
+    "key": "5-73",
+    "title": "Hallinnonalojen tiedonhallinnan ja tietohallinnon vastuiden keskittäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 7.5
+  },
+  {
+    "key": "5-74",
+    "title": "Lupa- ja valvontaviraston tehtävien karsiminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "5-75",
+    "title": "Valtion maksullisen toiminnan kustannusvastaavuuden parantaminen",
+    "status": "included",
+    "maxReportedMillion": 100.365
+  },
+  {
+    "key": "5-76",
+    "title": "Yhteinen kehittämismomentin lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 9.2
+  },
+  {
+    "key": "5-77",
+    "title": "Valtionhallinnon toimijoille asetettava tuottavuusvaade",
+    "status": "included",
+    "maxReportedMillion": 235
+  },
+  {
+    "key": "5-78",
+    "title": "Valtion omistajaohjaustehtävien keskittäminen ",
+    "status": "below-20m",
+    "maxReportedMillion": 0.8
+  },
+  {
+    "key": "5-79",
+    "title": "Karsitaan koordinaatiorakenteita",
+    "status": "below-20m",
+    "maxReportedMillion": 2
+  },
+  {
+    "key": "6-5",
+    "title": "Määräaikainen indeksijäädytys",
+    "status": "included",
+    "maxReportedMillion": 4800
+  },
+  {
+    "key": "6-6",
+    "title": "Indeksisidonnaisuuden  purkaminen",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "6-7",
+    "title": "Indeksointikäytännön niukentaminen pysyvästi ",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-5",
+    "title": "Tasavallan presidentin kanslian vierailuista, kokousmatkoista yms. aiheutuviin harkinnanvaraisiin menoihin osoitetun rahoituksen pienentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "7-6",
+    "title": "Tasavallan presidentin kanslian henkilöstömäärän kasvun taittaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.5
+  },
+  {
+    "key": "7-7",
+    "title": "Entisten tasavallan presidenttien menoihin osoitetun rahoituksen pienentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.165
+  },
+  {
+    "key": "7-8",
+    "title": "Kansanedustajien lukumäärän vähentäminen 200:sta 150:een",
+    "status": "below-20m",
+    "maxReportedMillion": 8.75
+  },
+  {
+    "key": "7-9",
+    "title": "Eduskuntaryhmien tuen pienentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 2.8
+  },
+  {
+    "key": "7-10",
+    "title": "Kansanedustajien sopeutumisrahan määräytysmisperusteiden tiukentaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0.5
+  },
+  {
+    "key": "7-11",
+    "title": "Tuloksellisuustarkastusten yksikkökustannuksia laskeva uudistus",
+    "status": "below-20m",
+    "maxReportedMillion": 1
+  },
+  {
+    "key": "7-12",
+    "title": "Eduskunnan joululahjarahakäytännön lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 50
+  },
+  {
+    "key": "7-13",
+    "title": "Ministereiden lukumäärän vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.4
+  },
+  {
+    "key": "7-14",
+    "title": "Keskitetyn momentin lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "7-15",
+    "title": "Ministereiden valtiosihteereiden ja erityisavustajien määrän vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 8
+  },
+  {
+    "key": "7-16",
+    "title": "Puoluetuen lakkauttaminen (tai tason alentaminen merkittävästi)",
+    "status": "included",
+    "maxReportedMillion": 35
+  },
+  {
+    "key": "7-17",
+    "title": "Ministeriöiden lukumäärän vähentäminen kolmella ",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "7-18",
+    "title": "Ministeriöiden lukumäärän vähentäminen kolmeen",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "7-19",
+    "title": "Perusteettomien vastuiden kartoittaminen ja lakkauttaminen",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-20",
+    "title": "Kuntien tehtävä- ja rakenneuudistus kuntalaisten palvelujen ja kuntien osaavan henkilöstön saatavuuden turvaamiseksi ",
+    "status": "included",
+    "maxReportedMillion": 100
+  },
+  {
+    "key": "7-21",
+    "title": "Valtionosuusindeksin jäädyttäminen",
+    "status": "included",
+    "maxReportedMillion": 390
+  },
+  {
+    "key": "7-22",
+    "title": "Valtuuden määrän pienentäminen ja kohdentumisen tarkastelu",
+    "status": "below-20m",
+    "maxReportedMillion": 16.7
+  },
+  {
+    "key": "7-23",
+    "title": "Hallinnonalojen toimintamenojen kokoaminen yhdelle hallinnonalan momentille ja siirtyvän erän tason normalisointi",
+    "status": "nonrecurring",
+    "maxReportedMillion": 100,
+    "reason": "Taulukoitu 100 miljoonan vuosisäästö perustuu aiemmin myönnettyjen määrärahojen käyttämiseen ja uusien määrärahojen väliaikaiseen alibudjetointiin vuosina 2028–2031. Hallinnon pysyvälle tehostumiselle ei ole erillistä arviota.",
+    "category": "balance-drawdown"
+  },
+  {
+    "key": "7-24",
+    "title": "Valtionavustustoiminnan kokonaisuudistus",
+    "status": "included",
+    "maxReportedMillion": 800
+  },
+  {
+    "key": "7-25",
+    "title": "Ministerivaliokuntien määrän vähentäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-26",
+    "title": "Julkisen talouden suunnitelman ja talousarvioesityksen valmistelun yhdistäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-27",
+    "title": "Valtion talousarvion toimeenpanon aiempaa tiukempi kontrolli ja toimeenpano",
+    "status": "included",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-28",
+    "title": "Lasketaan jakamattoman varauksen mitoitusta ja/tai maltillistetaan harkinnanvaraista hintakorjausta",
+    "status": "included",
+    "maxReportedMillion": 400
+  },
+  {
+    "key": "7-29",
+    "title": "Rahaston toiminnan lakkautaminen",
+    "status": "included",
+    "maxReportedMillion": 70
+  },
+  {
+    "key": "7-30",
+    "title": "Valtion sopimuskorotusten rahoittaminen osin nykyisin määrärahoin tuottavuutta kehittämällä ",
+    "status": "included",
+    "maxReportedMillion": 68
+  },
+  {
+    "key": "7-31",
+    "title": "Suomen kansainvälisten järjestöjen jäsenyyksien välttämättömyyden arviointi",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "7-32",
+    "title": "Valtionavustuksista annettujen erillislakien kumoaminen ja erillisrahoituksen lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 1.8
+  },
+  {
+    "key": "7-33",
+    "title": "Ruoka-aputoiminnan erillisen tukimomentin lakkauttaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 3
+  },
+  {
+    "key": "7-34",
+    "title": "Yksityisen sektorin työeläkelaitosten yhdistäminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-35",
+    "title": "Automaattisen vakauttajan käyttöönotto",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-36",
+    "title": "Myöntövaltuuksien supistaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-37",
+    "title": "Takausmaksujen tasojen ja kattavuuden nostaminen",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-38",
+    "title": "Takauksia koskevien vastuiden ottaminen osaksi talousarvioesitystä",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-39",
+    "title": "Luovutaan nykyisenkaltaisesta tulosohjauksesta",
+    "status": "below-20m",
+    "maxReportedMillion": 10
+  },
+  {
+    "key": "7-40",
+    "title": "Toteutetaan toimintopohjainen menojen tarkastelu kaikissa valtion virastoissa ja laitoksissa",
+    "status": "below-20m",
+    "maxReportedMillion": 0
+  },
+  {
+    "key": "7-41",
+    "title": "Henkilötyövuosien vähentäminen 1 prosentilla",
+    "status": "included",
+    "maxReportedMillion": 318.6
+  },
+  {
+    "key": "7-42",
+    "title": "Henkilöstömäärään vähentäminen eläkepoistumaa hyödyntäen",
+    "status": "included",
+    "maxReportedMillion": 2458.2
+  },
+  {
+    "key": "7-43",
+    "title": "1 tunnin pidennys vuosityöaikaan​",
+    "status": "below-20m",
+    "maxReportedMillion": 17.310000000000002
+  },
+  {
+    "key": "7-44",
+    "title": "24 tunnin pidennys vuosityöaikaan​",
+    "status": "included",
+    "maxReportedMillion": 429.28
+  },
+  {
+    "key": "7-45",
+    "title": "Ensimmäinen sairauspäivä palkattomaksi",
+    "status": "included",
+    "maxReportedMillion": 220.8
+  },
+  {
+    "key": "7-46",
+    "title": "Helatorstain ja loppiaisen muuttaminen työpäiviksi ",
+    "status": "included",
+    "maxReportedMillion": 225.76
+  },
+  {
+    "key": "7-47",
+    "title": "Merkkipäivät (50- ja 60-vuotispäivät) työpäiviksi",
+    "status": "below-20m",
+    "maxReportedMillion": 5
+  },
+  {
+    "key": "7-48",
+    "title": "Pitkien vuosilomien leikkaaminen 38->30 pv",
+    "status": "included",
+    "maxReportedMillion": 566.1
+  },
+  {
+    "key": "7-49",
+    "title": "Pitkien vuosilomien leikkaaminen 38->36 pv​",
+    "status": "included",
+    "maxReportedMillion": 141.2
+  },
+  {
+    "key": "7-50",
+    "title": "Lomarahan tason lasku 6 prosentista 5 prosenttiin",
+    "status": "included",
+    "maxReportedMillion": 169.3
+  },
+  {
+    "key": "7-51",
+    "title": "Kaikkien lomarahojen leikkaus puoleen nykyisestä ",
+    "status": "included",
+    "maxReportedMillion": 812.9000000000001
+  },
+  {
+    "key": "7-52",
+    "title": "Palkkojen alentaminen yhdellä prosentilla",
+    "status": "included",
+    "maxReportedMillion": 313.9
+  }
+]

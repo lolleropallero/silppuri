@@ -1,0 +1,189 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Tulokymmenysten ja sadannesosien tulo-osuudet (%), keskiarvot, mediaanit ja maksimit muuttujina Tulokymmenys tai fraktiiliryhmä, Tiedot ja Vuosi",
+  "source": "Tilastokeskus, tulonjakotilasto",
+  "updated": "2025-12-16T06:00:00Z",
+  "note": [
+    "<A HREF='https://stat.fi/tilasto/dokumentaatio/tjt' TARGET=_blank>Tilaston dokumentaatio</A>",
+    ". tieto on puuttuva\r\n... tieto on salassapitosäännön alainen",
+    "Euromääräiset tiedot on esitetty viimeisimmän tilastovuoden rahassa (reaalisina).\r\nTilastoyksikkö: henkilö (asuntoväestö). \r\nTulokäsite: Asuntokunnan käytettävissä olevat rahatulot (ml. myyntivoitot) kulutusyksikköä kohden. \r\nKulutusyksikköasteikko: Eurostat-asteikko (1.0 - 0.5 - 0.3).",
+    "Tulonimikkeistöön tehtyjen muutosten vuoksi vuosien 1995-2009 ja 2010- tiedot eivät ole keskenään täysin vertailukelpoisia. \r\nPyöristysten vuoksi tulo-osuudet eivät aina summaudu sataan."
+  ],
+  "role": {
+    "time": [
+      "timeperiod_y"
+    ],
+    "metric": [
+      "contentscode"
+    ]
+  },
+  "id": [
+    "fraktiili_3_20221219",
+    "contentscode",
+    "timeperiod_y"
+  ],
+  "size": [
+    10,
+    2,
+    1
+  ],
+  "dimension": {
+    "fraktiili_3_20221219": {
+      "label": "Tulokymmenys tai fraktiiliryhmä",
+      "note": [
+        "Tulokymmenyksissä väestö on järjestetty tulojen mukaan ja jaettu kymmeneen yhtä suureen osaan, joista jokaisessa on saman verran henkilöitä. I tulokymmenys on pienituloisin kymmenesosa ja X tulokymmenys suurituloisin kymmenesosa."
+      ],
+      "category": {
+        "index": {
+          "110": 0,
+          "1120": 1,
+          "2130": 2,
+          "3140": 3,
+          "4150": 4,
+          "5160": 5,
+          "6170": 6,
+          "7180": 7,
+          "8190": 8,
+          "91100": 9
+        },
+        "label": {
+          "110": "I",
+          "1120": "II",
+          "2130": "III",
+          "3140": "IV",
+          "4150": "V",
+          "5160": "VI",
+          "6170": "VII",
+          "7180": "VIII",
+          "8190": "IX",
+          "91100": "X"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "fraktiili_3_20221219": "SCALE-TYPE=ordinal"
+            }
+          }
+        ]
+      }
+    },
+    "contentscode": {
+      "label": "Tiedot",
+      "category": {
+        "index": {
+          "ylaraja": 0,
+          "alaraja": 1
+        },
+        "label": {
+          "ylaraja": "Fraktiilin yläraja, käytettävissä oleva rahatulo kulutusyksikköä kohti",
+          "alaraja": "Fraktiilin alaraja, käytettävissä oleva rahatulo kulutusyksikköä kohti"
+        },
+        "note": {
+          "ylaraja": [
+            "Fraktiilin yläraja, käytettävissä oleva rahatulo kulutusyksikköä kohti"
+          ],
+          "alaraja": [
+            "Fraktiilin alaraja, käytettävissä oleva rahatulo kulutusyksikköä kohti"
+          ]
+        },
+        "unit": {
+          "ylaraja": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "alaraja": {
+            "base": "euroa",
+            "decimals": 0
+          }
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    },
+    "timeperiod_y": {
+      "label": "Vuosi",
+      "category": {
+        "index": {
+          "2024": 0
+        },
+        "label": {
+          "2024": "2024"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "timeperiod_y": "SCALE-TYPE=None"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "extension": {
+    "px": {
+      "tableid": "11wh",
+      "decimals": 0,
+      "official-statistics": true,
+      "aggregallowed": true,
+      "language": "fi",
+      "contents": "Tulokymmenysten ja sadannesosien tulo-osuudet (%), keskiarvot, mediaanit ja maksimit",
+      "description": "11wh -- Tulokymmenysten ja sadannesosien tulo-osuudet (%), keskiarvot, mediaanit ja maksimit, 1995-2024",
+      "descriptiondefault": false,
+      "heading": [
+        "timeperiod_y"
+      ],
+      "stub": [
+        "fraktiili_3_20221219",
+        "contentscode"
+      ],
+      "matrix": "11wh",
+      "subject-code": "tjt",
+      "subject-area": "Tulonjakotilasto"
+    },
+    "contact": [
+      {
+        "raw": "<A HREF='https://stat.fi/tilasto/tjt' TARGET=_blank>Tilaston kotisivu</A>"
+      }
+    ]
+  },
+  "value": [
+    16614,
+    0,
+    20464,
+    16614,
+    24002,
+    20464,
+    27298,
+    24002,
+    30523,
+    27298,
+    33977,
+    30523,
+    38054,
+    33977,
+    43497,
+    38054,
+    53129,
+    43497,
+    null,
+    53129
+  ],
+  "status": {
+    "18": "..."
+  }
+}

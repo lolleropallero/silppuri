@@ -1,0 +1,82 @@
+{
+  "query": [
+    {
+      "code": "contentscode",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "asuntok",
+          "tjt-henkiloita",
+          "kokonum_mean",
+          "modoecd_mean",
+          "tjt-palk",
+          "luon_toptio",
+          "tjt-yrtu",
+          "tjt-matu",
+          "tjt-metu",
+          "muuyrtu",
+          "tjt-mytu",
+          "tjt-omtu",
+          "tjt-ostu",
+          "tjt-vutu",
+          "tjt-myvo",
+          "tjt-muuomtu",
+          "tuotektu",
+          "saatusi",
+          "tjt-saira",
+          "tjt-vamtyoky",
+          "tjt-vanel",
+          "tjt-pelake",
+          "tjt-perav",
+          "tjt-tyoel",
+          "tjt-asutu",
+          "tjt-optuki",
+          "tjt-muutuki",
+          "bruttotu",
+          "makstu",
+          "tjt-ltva",
+          "tjt-ltvp",
+          "tjt-lkuve",
+          "muumts",
+          "kturaha",
+          "tjt-kturaha_med",
+          "tjt-ekvikturaha_mean",
+          "tjt-ekvikturaha_med",
+          "askorot",
+          "korotyht"
+        ]
+      }
+    },
+    {
+      "code": "timeperiod_y",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "2024"
+        ]
+      }
+    },
+    {
+      "code": "desiilit_2_20120101",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "SS",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ]
+      }
+    }
+  ],
+  "response": {
+    "format": "json-stat2"
+  }
+}

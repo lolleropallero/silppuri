@@ -1,0 +1,221 @@
+{
+  "asOf": "2026-10-27",
+  "source": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
+  "recommendations": [
+    {
+      "number": 1,
+      "action": "fw-corporate-minimum",
+      "reason": "Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa."
+    },
+    {
+      "number": 2,
+      "action": null,
+      "reason": "Kehittyvien maiden lähdeverotusoikeudet. Tavoite koskee ensisijaisesti muiden maiden verotuloja; ei Suomen uutta sopeutuserää."
+    },
+    {
+      "number": 3,
+      "action": "fw-corporate-minimum",
+      "reason": "Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa."
+    },
+    {
+      "number": 4,
+      "action": "fw-corporate-minimum",
+      "reason": "Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa."
+    },
+    {
+      "number": 5,
+      "action": "fw-digital",
+      "reason": "Digivero on oma, toteutettuun Itävallan malliin perustuva rajaus raportin vaihtoehtojen pohjalta. Se ei ole sama kuin YK:n 12 b artikla tai konsernien koko voiton jakokaava."
+    },
+    {
+      "number": 6,
+      "action": "fw-corporate-minimum",
+      "reason": "Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa."
+    },
+    {
+      "number": 7,
+      "action": "fw-corporate-minimum",
+      "reason": "Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa."
+    },
+    {
+      "number": 8,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 9,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 10,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 11,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 12,
+      "action": "fw-wealth-minimum",
+      "reason": "Konkretisoitu yli 100 miljoonan varallisuuksien 2 prosentin vähimmäisveroksi. Parametrit ovat kortin lähteissä."
+    },
+    {
+      "number": 13,
+      "action": "fw-exit-tax",
+      "reason": "Maastamuuton veropohjaa suojaava kokonaisuus. Ulkomaisten erityisjärjestelmien ja oleskelulupien muutoksille ei lisätä Suomen arvonnousuveron päälle erillistä tuottoa."
+    },
+    {
+      "number": 14,
+      "action": "fw-exit-tax",
+      "reason": "Maastamuuton veropohjaa suojaava kokonaisuus. Ulkomaisten erityisjärjestelmien ja oleskelulupien muutoksille ei lisätä Suomen arvonnousuveron päälle erillistä tuottoa."
+    },
+    {
+      "number": 15,
+      "action": "fw-exit-tax",
+      "reason": "Maastamuuton veropohjaa suojaava kokonaisuus. Ulkomaisten erityisjärjestelmien ja oleskelulupien muutoksille ei lisätä Suomen arvonnousuveron päälle erillistä tuottoa."
+    },
+    {
+      "number": 16,
+      "action": "fw-exit-tax",
+      "reason": "Maastamuuton veropohjaa suojaava kokonaisuus. Ulkomaisten erityisjärjestelmien ja oleskelulupien muutoksille ei lisätä Suomen arvonnousuveron päälle erillistä tuottoa."
+    },
+    {
+      "number": 17,
+      "action": "fw-wrappers",
+      "reason": "Vakuutuskuorten ja osakesäästötilien vuosiverotus. Kassavirta-arvio ja myöhemmät menetykset näkyvät laskelmassa."
+    },
+    {
+      "number": 18,
+      "action": "fw-dividend-withholding",
+      "reason": "Verovapaiden yhteisöjen osingot. Julkisten eläkelaitosten sisäinen veronsiirto on poistettu vertailusta."
+    },
+    {
+      "number": 19,
+      "action": "fw-property-funds",
+      "reason": "Rahastoverotuksen vaihtoehdot konkretisoitu kiinteistötulon verotukseksi. Kotimaisen kannan laskelmaan ei lisätä erikseen välillisten ulkomaisten myyntien summaa."
+    },
+    {
+      "number": 20,
+      "action": "fw-treaty-dividends",
+      "reason": "Osinkojen sopimusaukot ja väärinkäytökset lasketaan yhdessä. Muiden sopimusartiklojen, esimerkiksi lisäeläkkeiden, tuottoa ei oleteta samaksi osinkotuotoksi."
+    },
+    {
+      "number": 21,
+      "action": "fw-treaty-dividends",
+      "reason": "Osinkojen sopimusaukot ja väärinkäytökset lasketaan yhdessä. Muiden sopimusartiklojen, esimerkiksi lisäeläkkeiden, tuottoa ei oleteta samaksi osinkotuotoksi."
+    },
+    {
+      "number": 22,
+      "action": null,
+      "reason": "FASTER on hyväksytty 10.12.2024 ja sitä sovelletaan 2030 alkaen. Jo päätettyä muutosta ei lasketa uudeksi valinnaksi."
+    },
+    {
+      "number": 23,
+      "action": "dividends",
+      "reason": "Jo olemassa oleva osinkoverokortti ja sen täyspoistovaihtoehto. Progressiivisen mallin tuotto ei tule näiden päälle."
+    },
+    {
+      "number": 24,
+      "action": "fw-portfolio",
+      "reason": "Alle 10 prosentin yhtiöomistusten osinkoverotus. Puuttuva veropohja on ilmaistu herkkyysoletuksena."
+    },
+    {
+      "number": 25,
+      "action": "fw-deemed-cost",
+      "reason": "Konkreettinen rajaus 40 prosentista 20 prosenttiin. Todelliset hankintakulut saa edelleen vähentää."
+    },
+    {
+      "number": 26,
+      "action": null,
+      "reason": "Etuyhteysosakevaihtojen matemaattista arvoa ja hankintamenoa on jo muutettu 2025–2026. Sama toteutettu korjaus ei ole uusi säästö."
+    },
+    {
+      "number": 27,
+      "action": "fw-succession-abolish",
+      "reason": "Täyspoisto ja sijoitusvarojen rajaus ovat vaihtoehdot. Molemmille on oma eurohaarukka."
+    },
+    {
+      "number": 28,
+      "action": "fw-treaty-dividends",
+      "reason": "Osinkojen sopimusaukot ja väärinkäytökset lasketaan yhdessä. Muiden sopimusartiklojen, esimerkiksi lisäeläkkeiden, tuottoa ei oleteta samaksi osinkotuotoksi."
+    },
+    {
+      "number": 29,
+      "action": "fw-treaty-dividends",
+      "reason": "Osinkojen sopimusaukot ja väärinkäytökset lasketaan yhdessä. Muiden sopimusartiklojen, esimerkiksi lisäeläkkeiden, tuottoa ei oleteta samaksi osinkotuotoksi."
+    },
+    {
+      "number": 30,
+      "action": null,
+      "reason": "Kehittyvien maiden lähdeverotusoikeudet. Tavoite koskee ensisijaisesti muiden maiden verotuloja; ei Suomen uutta sopeutuserää."
+    },
+    {
+      "number": 31,
+      "action": "fw-property-funds",
+      "reason": "Rahastoverotuksen vaihtoehdot konkretisoitu kiinteistötulon verotukseksi. Kotimaisen kannan laskelmaan ei lisätä erikseen välillisten ulkomaisten myyntien summaa."
+    },
+    {
+      "number": 32,
+      "action": "fw-exit-tax",
+      "reason": "Maastamuuton veropohjaa suojaava kokonaisuus. Ulkomaisten erityisjärjestelmien ja oleskelulupien muutoksille ei lisätä Suomen arvonnousuveron päälle erillistä tuottoa."
+    },
+    {
+      "number": 33,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 34,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 35,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 36,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 37,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 38,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 39,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 40,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 41,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 42,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    },
+    {
+      "number": 43,
+      "action": "fw-corporate-gaps",
+      "reason": "Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu."
+    }
+  ]
+}

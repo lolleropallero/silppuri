@@ -1,0 +1,82 @@
+{
+  "query": [
+    {
+      "code": "vtutk_varlaji_6_20200101",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "nettoae_DN3001",
+          "nettoae_DN3001_2",
+          "nettoae_suppea",
+          "bruttoae_DA1000",
+          "bruttoae_DA1000_2",
+          "bruttoae_suppea",
+          "realvar2",
+          "realvar",
+          "finan",
+          "finan2",
+          "kturaha",
+          "asvara",
+          "asarav",
+          "vaarvy",
+          "asaram",
+          "kulku",
+          "muurealvar",
+          "talle",
+          "pymar",
+          "sirave",
+          "porsosa",
+          "muosa",
+          "elavak",
+          "vaksak",
+          "muufinan",
+          "luototy",
+          "asuntm",
+          "muutvelat",
+          "asarav_netto"
+        ]
+      }
+    },
+    {
+      "code": "desiilit_2_20120101",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "SS",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ]
+      }
+    },
+    {
+      "code": "timeperiod_y",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "2023"
+        ]
+      }
+    },
+    {
+      "code": "contentscode",
+      "selection": {
+        "filter": "item",
+        "values": [
+          "vtutk_keskiarvo_n",
+          "vtutk_kotitalouksia_perusjoukko"
+        ]
+      }
+    }
+  ],
+  "response": {
+    "format": "json-stat2"
+  }
+}

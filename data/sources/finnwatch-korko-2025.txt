@@ -1,0 +1,529 @@
+
+PAGE 1
+Loppu korkokikkailulle?
+Verolakimuutosten vaikutukset 
+sähkönsiirtoyhtiöiden verovälttelyyn
+Tutkimusartikkeli 
+Helmikuu 2025
+
+
+PAGE 2
+Finnwatch on yritystoiminnan globaaleja vaikutuksia tutkiva kansalaisjärjestö. 
+Finnwatchin taustalla vaikuttaa 11 kehitys-, ympäristö-, ay- ja kuluttajajärjestöä: Solidaarisuus,  
+Eettisen kaupan puolesta, Suomen Ammattiliittojen Solidaarisuuskeskus SASK, Attac,  
+Kirkon Ulkomaanapu, Suomalaiset kehitysjärjestöt Fingo, Dalitien solidaarisuusverkosto, Maan 
+ystävät, Kuluttajaliitto, Kansalaisjärjestöjen ihmisoikeussäätiö KIOS ja Suomen Lähetysseura. 
+ 
+Julkaisuajankohta: helmikuu 2025 
+Kansikuva: Caruna
+Tutkimusartikkeli on tuotettu Palkansaajasäätiön tuella.
+
+PAGE 3
+Johdanto
+Sähkönsiirtoyhtiöiden aggressiivisista verojärjestelyistä on keskusteltu vuosia julkisuu-
+dessa. Finnwatchin vuosina 2018, 2020 ja 2021 julkaisemat selvitykset osoittivat, että 
+Carunan aggressiivisten verojärjestelyjen taustalla oli tasevapautukseksi kutsuttu elinkei-
+noverolain poikkeussäännös. 
+Vaikka poikkeussäännöksen aiheuttamat ongelmat olivat pitkään tiedossa, niihin päätet-
+tiin lainsäätäjän toimesta puuttua vasta vuosina 2021–2023. Tässä artikkelissa käymme 
+läpi vuosina 2022 ja 2023 voimaan astuneita lakimuutoksia ja selvitämme, miten muutok-
+set ovat vaikuttaneet Carunaan. Lisäksi tarkastelemme artikkelissa myös vuosina 2020 ja 
+2021 tutkimamme sähköverkkoyhtiö Elenian verosuunnittelun tilannetta. 
+Tasevapautuksen soveltuessa 
+verotettavan tuloksen voi nollata 
+ulkomaille maksettavilla  
+korkokuluilla
+Tasevapautuksessa on kyse poikkeussäännöksestä, joka vapauttaa soveltuessaan yrityk-
+sen elinkeinoverolakiin sisältyviltä korkovähennysrajoituksilta. Korkovähennysrajoitukset 
+rajoittavat nimensä mukaisesti sitä, kuinka paljon yritys voi vähentää verotuksessaan kor-
+kokuluja. Rajoituksia tarvitaan, koska muutoin moni yritys voisi järjestellä rahoituksensa 
+niin, että se maksaisi omistajalleen aina sen verran korkoa, että yrityksen verotettava 
+tulos menisi nollille. Omistajan kannattaisi ottaa sijoituksensa tuotto kokonaan yrityksen 
+verotusta keventävinä korkoina sen sijaan, että yritys maksaisi ensin syntyneestä voitosta 
+yhteisöveron ja vasta sitten omistajalleen osinkoa. 
+Jos korkojen vähennysoikeutta ei rajoitettaisi, yritysten olisi myös mahdollista siirtää 
+kaikki voittonsa veroparatiiseihin konsernin sisäisten rahoitusjärjestelyjen avulla ja välttyä 
+siten kokonaan yhteisöverolta. Yksinkertaistetusti tämä tapahtuisi niin, että suomalaisen 
+yhtiön toimintaa rahoitettaisiin oman pääoman sijaan mittavalla velkarahoituksella, jol-
+loin suureksi muodostuvat korkokulut painaisivat suomalaisyhtiön verotettavan tuloksen 
+nollille. Näin yhtiö välttyisi maksamasta yhteisöveroa Suomeen. Korkotulot olisi puoles-
+3
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 4
+taan mahdollista kanavoida yhtiöön, joka toimii sellaisessa maassa, jossa yritysten voit-
+toja ei veroteta lainkaan tai niihin kohdistuu hyvin kevyt verotus. 
+Näiden ilmiöiden torjumiseksi korkojen vähennysoikeudelle on asetettu verovuosikoh-
+taiset ylärajat. Rajat ovat tiukemmat niissä tapauksissa, joissa korkoja maksetaan toiselle 
+konserniyhtiölle tai yrityksen omistajille.
+Erityisen velkaisiin konserneihin kuuluvat yhtiöt voivat kuitenkin vapautua kokonaan kor-
+kovähennysrajoituksilta tasevapautukseksi kutsutun poikkeussäännöksen nojalla. Tase-
+vapautuksen soveltuessa yritykset saavat siis vähentää verotuksessaan kaikki korkokulut 
+ilman minkäänlaisia rajoituksia – riippumatta siitä, kenelle korkoja maksetaan. Ennen 
+vuosina 2022 ja 2023 voimaan astuneita lakimuutoksia tasevapautuksen soveltuminen 
+edellytti ainoastaan sitä, että konserni, johon Suomessa korkoja vähentävä yhtiö kuuluu, 
+on vähintään yhtä velkainen kuin korkoja verotuksessaan vähentävä suomalaisyhtiö. 
+Tämä selvitettiin niin kutsutun tasevertailun avulla.
+Tausta-ajatuksena tasevapautuksessa on se, että koko konsernin ollessa yhtä velkainen, 
+ei suomalaisyhtiötä todennäköisesti ole velkaannutettu tarkoituksella veroilta välttymi-
+seksi, vaan kyse on konsernin luontaisesta rahoitusrakenteesta. Sinänsä loogiselta kuu-
+lostava oletus jättää huomioimatta, että myös koko konsernin tarkoituksellinen velkaan-
+nuttaminen omistajilta nostetuilla lainoilla on tietyntyyppisissä omistusrakenteissa mah-
+dollista. Oletus ei myöskään ota huomioon sitä, että yksittäisen yhtiön omaa pääomaa 
+on tietyissä tilanteissa mahdollista vahvistaa ilman että yhtiöön sijoitetaan lisää varoja. 
+Pääomarakenteeseen nojaava vapautus ei siten pelkästään vapauta luontaisesti velkaisia 
+yhtiöitä, vaan luo muillekin vahvat kannusteet toteuttaa erilaisia rahoitus- ja yritysjärjeste-
+lyjä verohyötyjen saamiseksi.
+Edellisellä hallituskaudella 
+tasevapautusta päätettiin vihdoin 
+korjata
+Finnwatchin vuosina 2018, 2020 ja 2021 julkaisemat selvitykset osoittivat, että tasevapau-
+tusta hyödynnetään verovälttelyssä ja siitä koituu valtiolle isot veromenetykset. Pelkäs-
+tään Carunan kohdalla tasevapautuksen aiheuttama veromenetys nousi vuosina 2015–
+2020 yhteensä noin 80 miljoonaan euroon.
+4
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 5
+Vuonna 2021 Marinin hallitus päätti viimein puuttua ongelmaan. Ratkaisuksi ei kuiten-
+kaan esitetty tasevapautuksen poistoa, vaan muutoksia siihen, miten suomalaisyhtiön ja 
+konsernin välinen tasevertailu tehdään. Näin siitä huolimatta, että Finnwatch toi jo var-
+haisessa vaiheessa esiin, että ehdotettu muutos on tehoton eikä todennäköisesti tulisi 
+vaikuttamaan lainkaan esimerkiksi Carunaan. 
+Vuoden 2021 lopulla hyväksytyllä lakiesityksellä tasevapautusta muutettiin siten, että 
+tasevertailua tehtäessä olennaisilta omistajilta (omistusosuus > 10 %) nostetut lainat 
+siirryttiin laskemaan osaksi konsernin omaa pääomaa. Laskentatavan muutoksella tavoi-
+teltiin sitä, että konsernin laskennallisesta velka-asteesta muodostuisi osakaslainoilla 
+velkaannutetuissa konserneissa suomalaisyhtiön velka-astetta matalampi, jolloin tase-
+vapautus ei näissä tapauksissa soveltuisi. Tällainen laskentatapamuutos ei kuitenkaan 
+tehoa tilanteisiin, joissa konsernin oman pääoman suhde taseen loppusummaan on 
+lähtötilanteessa huomattavasti matalampi kuin erillisyhtiön vastaava luku, mikä vaikutti 
+olevan tilanne esimerkiksi Carunan kohdalla.
+Valmistelun edetessä tähän herättiin myös hallituksessa. Hallituksen esitykseen nimittäin 
+kirjattiin, että valitun sääntelyratkaisun tehokkuutta tullaan vielä arvioimaan sen voimaa-
+nastumisen jälkeen, ja hallitus on valmis antamaan lisäesityksen, mikäli toteutetut toimet 
+osoittautuvat tehottomiksi.
+Lisäesityksen aika koittikin heti seuraavana vuonna: kesällä 2022 hallitus julkaisi lisäesi-
+tysluonnoksen, jossa ehdotettiin uusia kiristyksiä tasevapautuksen soveltumisedellytyk-
+siin. Käytännössä mahdollisuus soveltaa tasevapautusta ehdotettiin evättäväksi koko-
+naan konserneilta, joiden korkokuluista vähintään 10 prosenttia maksetaan konsernin 
+olennaisille omistajille (> 10 %:n omistusosuus konsernissa). Ennen eduskuntakäsittelyä 
+ja lakiesityksen hyväksymistä omistajille maksettavien korkojen osuusraja nostettiin 10 
+prosentista 20 prosenttiin. Muilta osin vuoden 2022 lopulla hyväksytty lakiesitys säilyi 
+olennaisesti ennallaan.
+Vaikka me Finnwatchissa olisimme pitäneet tasevapautuksesta luopumista parhaana 
+ratkaisuna, ilmaisimme jo lakiesityksen käsittelyssä selkeän tukemme tälle muutokselle, 
+jonka arvioimme estävän Carunan ja muiden osakaslainoilla velkaannutettujen yhtiöiden 
+harjoittaman verovälttelyn. Lakimuutos astui voimaan vuoden 2023 alussa eli vain vuosi 
+sen jälkeen, kun ensimmäinen (tehottomaksi havaittu) lakimuutos oli saatettu voimaan.
+5
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 6
+Caruna-konserni on edelleen 
+hyvin velkainen
+Selvittääksemme lakimuutosten konkreettisia vaikutuksia kävimme läpi Carunan Suomen 
+emoyhtiön Caruna Networks Oy:n viimeisimmät konsernitilinpäätökset vuosilta 2021–
+2023. Lisäksi tutustuimme Carunan omistusketjussa ylimpänä olevan hollantilaisyhtiön 
+Suomi Power Networks TopCo B.V.:n laatimiin konsernitilinpäätöksiin.
+Caruna Networks Oy:n konsernitilinpäätösten perusteella Carunan rahoitusrakenteessa 
+ei ole tapahtunut olennaisia muutoksia. Suomen konserni on edelleen hyvin velkainen ja 
+sen omavaraisuusaste on negatiivinen. Konsernin toiminta on toisin sanoen rahoitettu 
+isoilta osin lainarahalla sen sijaan, että omistajat olisivat sijoittaneet siihen merkittävissä 
+määrin omaa pääomaa. 
+Caruna Networks Oy:n konsernitilinpäätös
+Tilinpäätöserä/ tunnusluku (milj.€) 2023 2022 2021
+Liikevaihto 494 485 500
+Liikevoitto 213 185 192
+Liikevoittoprosentti* 43% 38% 39%
+Rahoituskulut 143 125 136
+   joista osakaslainojen korkoja 67 67 67
+   osakaslainojen korko 8,5% 8,5% 8,5%
+Tilikauden verot 26 13 12
+Verojen suhde liikevoittoon 12% 7% 6%
+Oma pääoma −128 −41 −110
+Korolliset pitkäaikaiset velat 3 415 3 155 3 379
+   joista osakaslainoja 774 774 774
+Omavaraisuusaste** −3% −1% −3%
+* Liikevoittoprosentti on laskettu jakamalla liikevoitto liikevaihdolla.  
+** Omavaraisuuaste on laskettu jakamalla oman pääoman määrä taseen loppusummalla.
+6
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 7
+Konsernin pitkäaikaisista korollisista veloista yli viidennes on osakaslainoja eli konsernin 
+omistajilta nostettua lainarahoitusta. Osakaslainojen määrä on pysynyt edellisten vuosien 
+tasolla 774 miljoonassa eurossa ja niille maksetaan edelleen 8,5 prosentin korkoa. Huo-
+mattavasti muita lainoja korkeammasta korkotasosta johtuen 67 miljoonaan vuodessa 
+yltävät osakaslainakorot muodostivat tarkasteluperiodilla noin puolet kaikista Suomen 
+konsernin korkokuluista.
+Omistajalle suuntautuvien rahavirtojen osalta olennaisin muutos aiempaan nähden 
+on se, että Caruna on ryhtynyt maksamaan omistajilleen myös osinkoa, kun omistajat 
+aiemmin nostivat tuottonsa yksinomaan korkoina. Ensimmäisen kerran osinkoa jaettiin 
+vuonna 2020, jolloin osingon määrä oli 12 miljoonaa euroa. Tämän jälkeen jaettujen 
+osinkojen määrä on noussut huomattavasti korkeammaksi: vuosina 2021, 2022 ja 2023 
+jaetut osinkomäärät olivat 86, 35 ja 130 miljoonaa euroa. Osingonjakoa ovat helpottaneet 
+konsernissa toteutetut yritysjärjestelyt, joita käsitellään tämän artikkelin lopussa.
+Finnwatchin arvio ensimmäisen 
+lakimuutoksen vaikutuksista osui 
+oikeaan
+Tasevapautuksen soveltumisen kannalta ratkaisevassa roolissa oleva tasevertailu teh-
+dään korkoja verotuksessa vähentävän yhtiön erillisyhtiötaseen ja omistusketjussa ylim-
+pänä olevan yhtiön konsernitaseen välillä. Oman pääoman suhde taseen loppusummaan 
+(=omavaraisuus) tulee olla suomalaisessa erillisyhtiössä vähintäänkin samalla tasolla kuin 
+ylimmän omistusketjuun kuuluvan emoyhtiön laatimassa konsernitilinpäätöksessä.
+Carunan tapauksessa olennaiset yhtiöt ovat suomalainen Caruna Networks Oy ja hollan-
+tilainen Suomi Power Networks TopCo B.V. Näiden tilinpäätöstiedoilla tehty tasevertailu 
+osoittaa, että konserni on huomattavasti suomalaisyhtiötä velkaisempi.
+Vertailu on tehty julkisista tilinpäätöksistä ilmenevillä tiedoilla eikä erillisyhtiön ja kon-
+sernin lukuja ole muunnettu saman tilinpäätössäännöstön mukaiseksi. Siten taulukossa 
+esitetyt luvut voivat poiketa yhtiön laatimasta tasevapautuksen soveltumista koskevasta 
+tasevertailusta. Ero suomalaisyhtiön ja konsernin omavaraisuusasteissa on kuitenkin niin 
+suuri, että konsernin omavaraisuuden voi melko suurella varmuudella arvioida olevan 
+suomalaisyhtiön omavaraisuutta matalampi myös saman tilinpäätössäännöstön mukai-
+silla tilinpäätöstiedoilla laskettuna.
+7
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 8
+Tilanne ei myöskään näytä muuttuneen sillä, että olennaisilta omistajilta nostetut lainat 
+ryhdyttiin vuodesta 2022 alkaen laskemaan tasevertailussa osaksi konsernin omaa pää-
+omaa. Konsernin omavaraisuusaste jää näinkin laskettuna alle suomalaisen erillisyhtiön 
+omavaraisuusasteen. 
+2023 (milj. €) 2022 (milj. €) 2021 (milj. €)
+Tasevertailu 
+(ilman  
+lakimuutosten 
+huomioimista)
+OPO Tase Oma-
+varai-
+suus
+OPO Tase Oma-
+varai-
+suus
+OPO Tase Oma-
+varai-
+suus
+Caruna  
+Networks Oy:n  
+erillistilinpäätös* 615 4 236 15% 763 4 323 18% 706 4 262 17%
+Suomi Power 
+Networks TopCo 
+B.V. konserni- 
+tilinpäätös −263 4 288 −6% −177 4 294 −4% −243 4 264 −6%
+* Vuoden 2023 osalta luvut Caruna Networks Oy:n lopputilityksestä
+2023 (milj. €) 2022 (milj. €)
+Tasevertailu  
+vuoden 2022 
+alussa voimaan 
+astuneilla  
+lakimuutoksilla
+OPO Tase Osakas- 
+lainat 
+> 10 % 
+omista-
+vilta**
+Omava-
+raisuus
+OPO Tase Osakas-
+lainat 
+> 10 % 
+omista-
+vilta**
+Omava-
+raisuus
+Caruna  
+Networks Oy:n  
+erillistilinpäätös* 615 4 236 n/a 15% 763 4 323 n/a 18%
+Suomi Power 
+Networks TopCo  
+B.V. konserni- 
+tilinpäätös −263 4 288 716 11% −177 4 294 716 13%
+* Vuoden 2023 osalta luvut Caruna Networks Oy:n lopputilityksestä 
+** Osakaslainojen on oletettu jakautuvan konsernin omistajien kesken niiden omistusosuuksien suhteessa
+Vuoden 2022 alussa voimaan astuneet lakimuutokset eivät toisin sanoen vaikuta tehon-
+neen Carunaan: tasevapautuksen soveltumisedellytykset täyttyivät sen kohdalla vuonna 
+2022 laskentatapamuutoksesta huolimatta.
+8
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 9
+Vuonna 2023 voimaan  
+tullut lakimuutos tehosi vihdoin 
+Carunan verovälttelyyn
+Vuonna 2023 voimaan astuneen lakimuutoksen kohdalla tilanne on toinen. Lakimuutok-
+sen jälkeen tasevapautuksen soveltaminen ei ole enää ollut mahdollista yrityksille, joiden 
+kohdalla koko konsernin korkokuluista yli 20 prosenttia maksetaan konsernin olennaisille, 
+eli yli 10 prosenttia konsernista omistaville omistajille. Carunan kohdalla yli 10 prosenttia 
+konsernista omistaville tahoille maksettujen korkojen osuus nousee Finnwatchin arvion 
+mukaan yli 40 prosenttiin kaikista korkokuluista. Arviota laskettaessa osakaslainojen on 
+oletettu jakautuvan konsernin omistajien kesken omistusosuuksien suhteessa. 
+Näyttää siis selvältä, ettei Caruna täytä uusia tasevapautuksen soveltumisedellytyksiä.
+Olettama saa tukea myös Carunan tilinpäätöksistä. Suomessa Caruna-konsernin tilikau-
+den tuloverot nousivat vuonna 2023 noin 26 miljoonaan euroon edellisen vuoden 13 mil-
+joonasta eurosta, ja iso osa kasvusta näyttää aiheutuvan vähennyskelvottomista kuluista. 
+Konsernin verotäsmäytyksen mukaan vähennyskelvottomat kulut kasvattivat tilikauden 
+2023 verokulua lähes 9 miljoonalla eurolla, mikä viittaa siihen, että vähennyskelvotto-
+maksi katsottujen kulujen määrä on liikkunut 44 miljoonan euron tuntumassa (verovai-
+kutuksen ollessa 20 % vähennyskelvottoman kulun määrästä). Finnwatchin itse laatiman, 
+Carunan tilinpäätöstietoihin perustuvan arviolaskelman perusteella vähennyskelvotto-
+mien korkokulujen määrä on voinut olla vielä tätäkin korkeampi. Aiempina tilikausina 
+merkittäviä vähennyskelvottomia kuluja ei verotäsmäytysten mukaan ole ollut. 
+Vuonna 2023 voimaan astunut lakimuutos vaikuttaa siis tehonneen Carunan verovält-
+telyyn. Tasevapautusta ei ole enää pystytty hyödyntämään eikä kaikkia osakaslainojen 
+korkomenoja ole siten saatu vähennettyä verotuksessa.
+Ennen tätä tasevapautuksesta ehti kuitenkin koitua valtiolle mittavat veromenetykset. 
+Finnwatchin arvion mukaan Carunan tasevapautuksesta saama verohyöty ylsi vielä vuo-
+sina 2021 ja 2022 yli 10 miljoonaan euroon vuodessa. Kun tämä lasketaan yhteen aiempia 
+vuosia koskeviin verohyötyarvioihin, nousee Carunan vuosien 2015–2022 aikana saama 
+kumulatiivinen verohyöty todennäköisesti yli 100 miljoonaan euroon. Tasevapautuksen 
+Suomen valtiolle aiheuttamat veromenetykset ovat siis olleet todella mittavia jo yksittäi-
+sen yhtiön kohdalla.
+9
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 10
+Toteutettujen yritysjärjestelyjen 
+vuoksi tasevapautuksen  
+soveltumista arvioitava myös  
+Eleniassa
+Finnwatch on selvittänyt aiemmin myös toisen suuren sähkönsiirtoyhtiön, Elenian, rahoi-
+tusjärjestelyitä. Myös Elenia-konsernia rahoitettiin vuosina 2012–2019 korkeakorkoisilla 
+konsernin omistajilta nostetuilla lainoilla. Omistajilta nostetuille lainoille maksettiin 12 
+prosentin korkoa muista lainoista perittyjen korkojen jäädessä samanaikaisesti alle kol-
+meen prosenttiin. Tasevapautusta Elenia ei näinä vuosina tiettävästi hyödyntänyt, koska 
+kaikki korkokulut saatiin vähennettyä kokonaisuudessaan muulla perusteella. Keskeistä 
+korkojen vähennyskelpoisuuden kannalta oli Elenian kohdalla se, että omistajilta nostetut 
+lainat oli kanavoitu suomalaisyhtiöön ulkomaisten holdingyhtiöiden kautta. Tällä tavoin 
+toteutettuna omistajilta nostettuja lainoja ei katsottu Elenian verotuksessa etuyhteyslai-
+noiksi eivätkä ne siten olleet lainkaan korkovähennysrajoitusten piirissä. Tämä johtui siitä, 
+että vuoteen 2019 asti rajoitukset koskivat ainoastaan konserniyhtiöiltä nostettuja lainoja. 
+Holdingyhtiörakenne oli toisin sanoen luotu silloisilta korkovähennysrajoituksilta välttymi-
+seksi.
+Vuonna 2019 tilanne muuttui, kun korkovähennysrajoitukset EU:n veronkiertodirektiivin 
+toimeenpanon seurauksena laajenivat koskemaan myös konsernin ulkopuolisille tahoille 
+maksettavia korkoja. Ilman lainajärjestelyihin tehtäviä muutoksia lakimuutos olisi johta-
+nut siihen, että iso osa Elenian korkomenoista olisi muuttunut vähennyskelvottomaksi. 
+Välttyäkseen tältä operatiiviseen konserniin kuuluvat yhtiöt maksoivat konsernin omista-
+jilta nostetut satojen miljoonien eurojen lainat pois vuosien 2018–2019 aikana. 
+Vuoden 2019 jälkeen osakaslainoja on ollut ainoastaan operatiivisesta konsernista eril-
+lisen, konsernin omistusketjuun lukeutuvan Elenia Group Oy:n ja sen Luxemburgiin 
+rekisteröidyn emoyhtiön taseessa. Holdingyhtiö Elenia Group Oy:n maksamista koroista 
+valtaosa on ollut Suomessa vähennyskelvottomia eikä niitä käsitellä tarkemmin tässä 
+tasevapautuksen soveltumiseen keskittyvässä artikkelissa. On kuitenkin mahdollista, että 
+näitä korkoja pystytään vähentämään tulevina vuosina.
+Osakaslainojen poismaksusta huolimatta myös operatiivinen Elenia-konserni on edelleen 
+hyvin velkainen ja sen omavaraisuusaste on Carunan tapaan negatiivinen.
+10
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 11
+Erillisyhtiötasolla tilanne on kuitenkin toinen. Vuonna 2020 konsernissa toteutettiin mitta-
+vat yritysjärjestelyt, joiden seurauksena jäljelle jäävien suomalaisyhtiöiden omavaraisuus 
+vahvistui merkittävästi. 
+Tämä sai Finnwatchin epäilemään tavoiteltiinko järjestelyillä sitä, että Eleniassakin voitai-
+siin jatkossa hyödyntää tasevapautusta. Näytti nimittäin vahvasti siltä, että vahvistuneen 
+oman pääoman seurauksena tasevapautuksen soveltumisedellytykset voisivat täyttyä. 
+Elenia kuitenkin kertoi vuonna 2021, ettei tämä ollut järjestelyiden tavoite eikä tasevapau-
+tusta ollut tarkoitus soveltaa jatkossakaan. 
+Elenia Oy:n konsernitilinpäätös
+Tilinpäätöserä/ tunnusluku (milj.€) 2023 2022 2021
+Liikevaihto 327 317 329
+Liikevoitto 124 114 126
+Liikevoittoprosentti* 38% 36% 38%
+Rahoituskulut 49 40 41
+   joista osakaslainojen korkoja 0 0 0
+   osakaslainojen korko n/a n/a n/a
+Tilikauden verot 15 14 11
+Verojen suhde liikevoittoon 12% 12% 9%
+Oma pääoma −90 −149 −204
+Korolliset pitkäaikaiset velat 1 936 1 834 1 833
+   joista osakaslainoja 0 0 0
+Omavaraisuusaste** −4% −7% −10%
+* Liikevoittoprosentti on laskettu jakamalla liikevoitto liikevaihdolla.  
+** Omavaraisuuaste on laskettu jakamalla oman pääoman määrä taseen loppusummalla.
+11
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 12
+Yritysjärjestelyt turvasivat Elenian 
+korkokulujen täyden  
+vähennyskelpoisuuden
+Sijoittajille suunnattujen tiedotteiden ja esitteiden mukaan Eleniassa tilikaudella 2020 
+toteutettujen yritysjärjestelyjen tavoitteena oli varmistaa, että mahdollisimman iso osa 
+korkokuluista saadaan vähennettyä myös jatkossa. Tämä näyttäisi myös onnistuneen.
+Ennen yritysjärjestelyjä Elenia oli tilanteessa, jossa konsernin ulkoinen rahoitus oli keski-
+tetty eri yhtiöön kuin missä sen operatiivinen toiminta oli. Korkojen vähennyskelpoisuu-
+den kannalta tästä oli muodostumassa ongelma, koska korkojen vähennysoikeus määrit-
+tyy korkovähennysrajoitusten pääsäännön (nk. EBITDA-sääntö) mukaan sen perusteella, 
+kuinka korkea korkoja maksavan yhtiön oikaistu tulos on. Pelkästään rahoitustoimin-
+noista vastaavalla yhtiöllä oikaistu tulos on tyypillisesti hyvin pieni verrattuna varsinaisiin 
+liiketoimintayhtiöihin. Korkovähennysrajoitusten laajennuttua veronkiertodirektiivin 
+seurauksena koskemaan myös muilta kuin etuyhteystahoilta nostettuja lainoja Elenian 
+valtavat ulkoisiin lainoihin liittyvät korkokulut olisivat ilman rakennejärjestelyjä muuttu-
+neet osin vähennyskelvottomiksi.
+Elenia ratkaisi ongelman toteuttamalla monimutkaisen yritysjärjestelyjen sarjan, jonka 
+lopputulemana sekä sähköverkkoliiketoiminta että konsernin rahoitus saatiin keskitettyä 
+samaan yhtiöön, Elenia Verkko Oyj:öön.
+Järjestelyjen seurauksena Elenia Verkko Oyj:n omasta pääomasta muodostui vahva. 
+Siinä missä konsernin ulkoisesta rahoituksesta aiemmin vastanneen Elenia Finance Oyj:n 
+omavaraisuusaste oli ennen yritysjärjestelyjä pitkällä miinuksella, on Elenia Verkko Oyj:n 
+omavaraisuusaste liikkunut viime vuodet yli 30 prosentissa. Finnwatchin arviolaskelmien 
+mukaan Elenia Verkko Oyj:n omavaraisuusaste on myös huomattavasti korkeampi kuin 
+konsernin ylimmällä ulkomaisella emoyhtiöllä. Tämä tarkoittaa käytännössä sitä, että 
+yhtiö olisi halutessaan voinut soveltaa tasevapautusta vuonna 2023 tapahtuneeseen 
+soveltumisedellytysten kiristykseen asti.
+Tälle ei kuitenkaan vaikuta olleen tarvetta, sillä Finnwatchin arviolaskelman perusteella 
+Elenia Verkko Oyj:n oikaistu tulos on ollut riittävän suuri ja mahdollistanut kaikkien yhtiön 
+nettokorkokulujen vähentämisen verotuksessa ilman tasevapautustakin. Nykyisellään se 
+ei enää olisi mahdollistakaan, sillä vuoden 2023 alussa voimaan astuneiden lakimuutos-
+ten seurauksena tasevapautuksen soveltumisedellytykset eivät vaikuta enää täyttyvän. 
+Konsernin ylimmän emoyhtiön laatimassa konsernitilinpäätöksessä konsernin olennai-
+sille omistajille maksettujen korkojen määrä nousee Finnwatchin arvion mukaan noin 40 
+12
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 13
+prosenttiin kaikista konsernin korkokuluista. Osuuden ylittäessä 20 prosenttia, ei tase-
+vapautusta voida enää nykyisellään soveltaa. Tuorein lakimuutos siis paitsi tehosi Caru-
+naan, myös johti siihen, ettei tasevapautusta voida tulevaisuudessa soveltaa myöskään 
+Eleniassa.
+Carunan ja Elenian yritysjärjeste-
+lyt osoittavat pääomarakenteen 
+muokkaamisen helppouden
+Elenian vuonna 2020 toteutetun yritysjärjestelyn ohella myös Carunassa on toteutettu 
+hiljattain taselukuihin olennaisesti vaikuttava yritysjärjestely. Vuoden 2023 viimeiselle 
+päivälle ajoitetussa sulautumisessa konsernin emoyhtiönä aiemmin toiminut Caruna 
+Networks Oy sulautettiin järjestelyä varten vuonna 2023 perustettuun Caruna Net Oy:öön 
+(jonka nimi vaihdettiin tämän jälkeen vastaamaan aiemman emoyhtiön nimeä). Tiedot 
+käyvät ilmi Carunan konsernitilinpäätöksestä.
+Sulautumisen seurauksena suomalaisemoyhtiön oma pääoma vahvistui lähes 2 miljar-
+dilla eurolla, kun uudelle (transaktiota varten perustetulle) emoyhtiölle siirtyneet tytäryh-
+tiöosakkeet arvostettiin niiden kirjanpitoarvon sijaan käypään arvoon. Omaa pääomaa 
+saatiin toisin sanoen vahvistettua lähes 2 miljardilla eurolla ilman että yritykseen tosiasi-
+allisesti sijoitettiin lisää varoja. Eleniassa vuonna 2020 toteutetulla yritysjärjestelyllä oli 
+hyvin samankaltaiset vaikutukset. 
+Molemmat yritykset ovat kertoneet yritysjärjestelyjen syyksi omavaraisuuden vahvista-
+misen. Lisäksi järjestelyillä on haluttu parantaa rahoituksen hankkimisen edellytyksiä 
+(Caruna) ja varmistaa korkojen vähennyskelpoisuus (Elenia). Yritysjärjestelyjen tavoitteet 
+ovat toisin sanoen liittyneet varsinaisten liiketoimintamuutosten sijaan ennen kaikkea 
+pääomarakenteen muokkaamiseen ja velkarahoituksen mahdollisen tehokkaaseen hyö-
+dyntämiseen.
+Transaktiot osoittavatkin selvästi sen, miten helppoa yrityksen pääomarakennetta on 
+muokata keinotekoisesti ilman että yritykseen sijoitetaan lisää varoja. Siksi tasevapautuk-
+sen kaltaiset yrityksen pääomarakenteeseen sidotut verosäännökset ovat hyvin ongel-
+mallisia. Sama pätee esimerkiksi yhtiön nettovarallisuuden perusteella määräytyvään 
+osinkoverohuojennukseen. Molemmat luovat tietyntyyppisille yrityksille vahvat kannus-
+teet kasvattaa yrityksen tasetta yritysjärjestelyjen avulla verohyötyjen saavuttamiseksi. 
+13
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 14
+Yritysjärjestelyn seurauksena yrityksen mahdollisuus vähentää korkokuluja verotuksessa 
+voi moninkertaistua, ja omistajan osinkoverotus keventyä. Lisäksi omavaraisuutta keino-
+tekoisesti vahvistavat järjestelyt voivat mahdollistaa entistä suuremman velkarahoituksen 
+nostamisen. Järjestelyt voivat myös kasvattaa yrityksen jakokelpoisia varoja ja parantaa 
+tällä tavoin yrityksen osingonjakomahdollisuuksia. Osingonjako ei tällöin tapahdu verote-
+tun tuloksen kautta syntyneistä varoista. 
+Yritysjärjestelyn toteuttajan kannalta kaikki edellä mainitut ovat positiivisia seikkoja. 
+Samalla ne voivat kuitenkin johtaa verokertymän pienenemiseen ja aiheuttaa muita 
+yhteiskunnan kannalta ei-toivottuja seurauksia. Yritysjärjestelysäännösten mahdollis-
+tamia lopputulemia ja niiden tarkoituksenmukaisuutta voisikin olla tarpeen tarkastella 
+muun muassa tästä näkökulmasta. Osakevaihtosäännöksiin ja osinkoverotukseen liittyviä 
+ongelmia valtiovarainministeriö on jo luvannut selvittää, mutta sähkönsiirtoalan järjeste-
+lyt viittaavat siihen, että tarkastelu voisi olla perusteltua ulottaa myös muihin yritysjärjes-
+telyihin.
+Yhteenveto
+Suomessa yritysten voitonsiirtoa kitkevässä verolainsäädännössä on pitkään ollut muun 
+muassa sähkönsiirtoyhtiö Carunan hyödyntämä aukko: tasevapautukseksi kutsuttu poik-
+keussäännös. Sen soveltuessa yritykset ovat voineet vähentää verotuksessaan rajatto-
+masti korkomenoja ja välttyä näin maksamasta Suomeen yhteisöveroa.
+Finnwatch on nostanut tasevapautuksen avaamia verovälttelymahdollisuuksia julkisuu-
+dessa esiin useaan otteeseen. Carunan tasevapautusta hyödyntävistä verojärjestelyistä 
+uutisoimme ensimmäisen kerran jo vuonna 2018.
+Vuonna 2021 pitkään tiedossa olleeseen ongelmaan päätettiin vihdoin puuttua. Ratkai-
+suksi ei kuitenkaan valittu poikkeussäännöksen poistamista. Sen sijaan ongelmaa läh-
+dettiin korjaamaan tasevapautuksen soveltumisedellytyksiä kiristämällä. Käytännössä 
+säännöksen soveltaminen pyrittiin estämään yrityksiltä, joiden toimintaa on rahoitettu 
+mittavilla konsernin omistajilta nostetuilla lainoilla.
+Ensimmäinen, Finnwatchin lausuntokierroksilla kritisoima lakimuutos astui voimaan 
+vuoden 2022 alussa. Lakimuutoksen tehoon liittyvien epäilyjen vuoksi tasevapautusta 
+päädyttiin kuitenkin muuttamaan uudestaan vain vuosi ensimmäisen muutoksen jälkeen. 
+Vaikka sääntelyratkaisu nojasi tälläkin kertaa tasevapautuksen soveltumisedellytysten 
+tiukennukseen, oli se toteutukseltaan toimivampi.
+14
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 15
+Tätä artikkelia varten läpikäymämme tilinpäätösmateriaalit osoittavat, ettei ensimmäisellä 
+lakimuutoksella ollut vaikutusta Carunaan. Jälkimmäinen lakimuutos laittoi sen sijaan 
+pisteen Carunan harjoittamalle verovälttelylle. Kaikkia osakaslainakorkoja ei ole enää 
+vuonna 2023 saatu vähennettyä verotuksessa, ja Carunan Suomeen maksamat yhteisö-
+verot ovat tuplaantuneet aiemmista vuosista. Suomessa vähennyskelvottomien kulujen 
+määrä vaikuttaa nousseen tilikaudella 2023 noin 44 miljoonaan euroon. Tilikauden tulok-
+sesta perittävien yhteisöverojen määrää vähennyskelvottomaksi muuttuneet korkokulut 
+ovat kyseisenä vuonna nostaneet vähintään noin 9 miljoonalla eurolla. Tasevapautus-
+säännön korjaaminen on siis tuonut Suomelle pelkästään yhden vuoden ja yhden yhtiön 
+kohdalla noin 9 miljoonaa euroa lisää verotuottoja.
+Toiseen suureen sähkönsiirtoyhtiöön, Eleniaan, lakimuutoksilla ei vaikuta olleen vaiku-
+tusta. Tämä johtuu siitä, ettei Elenia Finnwatchin selvityksen perusteella ole soveltanut 
+tasevapautusta: kaikki sen Suomessa vähentämät korkomenot ovat olleet vuosina 2022 ja 
+2023 vähennyskelpoisia jo oikaistuun tulokseen perustuvan pääsäännön nojalla. Tuorein 
+lakimuutos varmistaa kuitenkin sen, ettei tasevapautusta voida jatkossakaan soveltaa, 
+sillä myös Eleniassa konsernin omistajille maksettujen korkojen suuri osuus johtaa sii-
+hen, etteivät tasevapautuksen soveltumisedellytykset voi enää niihin tehtyjen muutosten 
+jälkeen täyttyä.
+Jälkimmäinen korkovähennysrajoituksiin tehty kiristys vaikuttaa siis vihdoin tehoavan 
+sähkönsiirtoalalla havaittuun verovälttelyyn. Ennen lakimuutosta tasevapautuksen hyö-
+dyntämisestä ehti kuitenkin Finnwatchin arvion mukaan syntyä Suomelle yli 100 miljoo-
+nan euron veromenetys pelkästään Carunan kohdalla. Myöskään takuita siitä, etteikö 
+tasevapautusta edelleen voitaisi hyödyntää muissa rahoitusjärjestelyjen avulla verotus-
+taan keventävissä konserneissa, ei ole. Siksi suosittelemme hallitukselle seuraavia toimia:
+• Tilannetta tulee seurata ja tasevapautuksesta on luovuttava, jos käy ilmi, että sitä pys-
+tytään edelleen hyödyntämään verovälttelyssä. 
+• Muut Finnwatchin Veropohjan aukot -raportissa eritellyt, korkovähennysrajoitusten 
+tehoa haittaavat ongelmakohdat tulee korjata.
+• Yritysjärjestelysäännösten muutostarpeista tulee laatia kattava selvitys.
+15
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 16
+Lopuksi
+Tapaustutkimuksen kohteena olleille yrityksille on annettu mahdollisuus korjata havait-
+semansa asiavirheet sekä toimittaa lisätietoja sisällytettäväksi artikkelitekstiin. Carunalta 
+saadut kommentit on huomioitu artikkelitekstissä. Elenian toiveena oli, että yrityksen 
+toimittama vastaus julkaistaan sellaisenaan artikkelin yhteydessä.
+Elenian vastine Finnwatchille
+Elenian konsernirakennetta on alusta (vuodesta 2012) asti määritellyt luottoluokittaja  
+Standard & Poorsin luottoluokituksen kriteeristö, mihin on kuulunut mm. erillinen joukko-
+velkakirjat liikkeeseen laskeva yhtiö. Vahva ns. Investment Grade -tasoinen luottoluokitus on 
+mahdollistanut Elenialle pääsyn kansainvälisille pääomamarkkinoille ja mahdollistanut Ele-
+nian mittavan investointiohjelman toteuttamisen kohtuuhintaisella rahoituksella. Elenia on 
+vuosien 2012-2023 aikana investoinut yli 1,5 miljardia euroa sähkönjakelun toimitusvarmuu-
+den parantamiseen ja vihreän siirtymän mahdollistamiseen Suomessa. Luottoluokittaja muutti 
+kriteereitään vuonna 2018, minkä seurauksena vuonna 2020 Elenia yksinkertaisti konsernira-
+kennettaan poistamalla rakenteita, jotka olivat käyneet turhiksi nimenomaan luottoluokittajan 
+muuttuneiden kriteerien vuoksi (mm. erillinen joukkovelkakirjojen liikkeeseenlaskijayhteisö 
+poistui kriteeristöstä).
+Elenian konsernirakenteessa aiemmin olleet holding-yhtiöiltä saadut lainat oli tarkoitettu mää-
+räaikaisiksi tukemaan konsernin pääomarakennetta. Niiden korkotaso oli markkinaehtoinen, 
+mutta pankkirahoitusta korkeampi. Elenia on korvannut holding-yhtiöiltä saadut lainat edulli-
+semmalla rahoituksella sitä mukaa, kun markkinatilanne on sen mahdollistanut. 
+Elenia ei ole hyödyntänyt tasevapautusta tai vähentänyt osakaslainan korkoja verotuksessa, 
+eikä näin tehdä tulevaisuudessakaan. Elenia kuitenkin pyrkii vähentämään ulkopuolisen rahoi-
+tuksen korot täysimääräisesti voimassa olevan verolainsäädännön mukaisesti, kuten muutkin 
+Suomessa toimivat yritykset. Elenia ei ole pyrkinyt konsernirakenteen muutoksella saamaan tai 
+mahdollistamaan mitään veroetua tai muutakaan etua verrattuna muihin Suomessa toimiviin 
+yrityksiin vaan halunnut varmistaa, että Elenia on samassa asemassa kuin muutkin yritykset.
+Elenia ei hyväksy Finnwatchin artikkelissa esittämiä perättömiä ja tarkoitushakuisia spekulaa-
+tioita, jotka esittävät Elenian ja sen rahoituksen kyseenalaisessa valossa.
+16
+Finnwatch | Loppu korkokikkailulle? – Verolakimuutosten vaikutukset sähkönsiirtoyhtiöiden verovälttelyyn
+
+PAGE 17
+Finnwatch ry
+Malminrinne 1B, 2. krs
+00180 Helsinki
+info@finnwatch.org
+www.finnwatch.org
+@Finnwatch1

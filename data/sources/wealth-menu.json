@@ -1,0 +1,68 @@
+[
+  {
+    "id": "151s.px",
+    "type": "t",
+    "text": "151s -- Kotitalouksien varat, velat ja tulot viitehenkilön ikäryhmän mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:04"
+  },
+  {
+    "id": "151t.px",
+    "type": "t",
+    "text": "151t -- Kotitalouksien varat, velat ja tulot kotitalouden elinvaiheen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:04"
+  },
+  {
+    "id": "151u.px",
+    "type": "t",
+    "text": "151u -- Kotitalouksien varat, velat ja tulot kotitalouden tulokymmenyksen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "151v.px",
+    "type": "t",
+    "text": "151v -- Kotitalouksien varat, velat ja tulot kotitalouden nettovarallisuuskymmenyksen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "151w.px",
+    "type": "t",
+    "text": "151w -- Kotitalouksien varat, velat ja tulot viitehenkilön koulutusasteen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "151x.px",
+    "type": "t",
+    "text": "151x -- Kotitalouksien varat, velat ja tulot viitehenkilön sosioekonomisen aseman mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "151y.px",
+    "type": "t",
+    "text": "151y -- Kotitalouksien varat, velat ja tulot suuralueen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "151z.px",
+    "type": "t",
+    "text": "151z -- Kotitalouksien varat, velat ja tulot asunnon hallintasuhteen mukaan, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "152a.px",
+    "type": "t",
+    "text": "152a -- Varallisuuskymmenysten varallisuusosuudet (%), keskiarvot, mediaanit ja maksimit, 1987-2023",
+    "updated": "2026-07-01T18:36:05"
+  },
+  {
+    "id": "15j6.px",
+    "type": "t",
+    "text": "15j6 -- Henkilöiden pörssiosakkeet, sijoitusrahastot ja talletukset iän ja sukupuolen mukaan, 2009-2025",
+    "updated": "2026-09-17T16:07:03"
+  },
+  {
+    "id": "15jx.px",
+    "type": "t",
+    "text": "15jx -- Henkilöiden pörssiosakkeet, sijoitusrahastot ja talletukset iän, sukupuolen ja koulutusasteen mukaan, 18 vuotta täyttänyt väestö, 2025",
+    "updated": "2026-09-17T16:07:03"
+  }
+]

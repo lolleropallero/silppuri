@@ -1,0 +1,202 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "Taustatiedot tuloviidenneksen mukaan muuttujina Vuosi, Tuloviidennes ja Tiedot",
+  "source": "Tilastokeskus, kotitalouksien kulutus",
+  "updated": "2024-04-11T05:00:00Z",
+  "note": [
+    "<A HREF='https://stat.fi/tilasto/dokumentaatio/ktutk' TARGET=_blank>Tilaston dokumentaatio</A>"
+  ],
+  "role": {
+    "metric": [
+      "contentscode"
+    ]
+  },
+  "id": [
+    "timeperiod_y",
+    "tuloviidennes_2_20140501",
+    "contentscode"
+  ],
+  "size": [
+    1,
+    6,
+    6
+  ],
+  "dimension": {
+    "timeperiod_y": {
+      "label": "Vuosi",
+      "category": {
+        "index": {
+          "2022": 0
+        },
+        "label": {
+          "2022": "2022"
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "timeperiod_y": "SCALE-TYPE=None"
+            }
+          }
+        ]
+      }
+    },
+    "tuloviidennes_2_20140501": {
+      "label": "Tuloviidennes",
+      "category": {
+        "index": {
+          "SS": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 4,
+          "5": 5
+        },
+        "label": {
+          "SS": "Yhteensä",
+          "1": "I (pienituloisimmat 20 %)",
+          "2": "II",
+          "3": "III",
+          "4": "IV",
+          "5": "V (suurituloisimmat 20 %)"
+        }
+      },
+      "extension": {
+        "elimination": true,
+        "eliminationValueCode": "SS",
+        "show": "value"
+      },
+      "link": {
+        "describedby": [
+          {
+            "extension": {
+              "tuloviidennes_2_20140501": "SCALE-TYPE=ordinal"
+            }
+          }
+        ]
+      }
+    },
+    "contentscode": {
+      "label": "Tiedot",
+      "category": {
+        "index": {
+          "oklkm_sum": 0,
+          "pklkm_sum": 1,
+          "jlkm_mean": 2,
+          "oecdmod_mean": 3,
+          "Kaytetmk_1_mean": 4,
+          "Kaytetmk_2_mean": 5
+        },
+        "label": {
+          "oklkm_sum": "Kotitalouksia otoksessa",
+          "pklkm_sum": "Kotitalouksia perusjoukossa",
+          "jlkm_mean": "Kotitalouden keskikoko",
+          "oecdmod_mean": "Kotitaloudessa kulutusyksiköitä keskimäärin (oecdmod)",
+          "Kaytetmk_1_mean": "Kotitalouden käytettävissä olevat tulot, nimellisissä euroissa",
+          "Kaytetmk_2_mean": "Kotitalouden käytettävissä olevat tulot, vuoden 2022 euroissa"
+        },
+        "unit": {
+          "oklkm_sum": {
+            "base": "lukumäärä",
+            "decimals": 0
+          },
+          "pklkm_sum": {
+            "base": "lukumäärä",
+            "decimals": 0
+          },
+          "jlkm_mean": {
+            "base": "lukumäärä",
+            "decimals": 2
+          },
+          "oecdmod_mean": {
+            "base": "lukumäärä",
+            "decimals": 2
+          },
+          "Kaytetmk_1_mean": {
+            "base": "euroa",
+            "decimals": 0
+          },
+          "Kaytetmk_2_mean": {
+            "base": "euroa",
+            "decimals": 0
+          }
+        }
+      },
+      "extension": {
+        "elimination": false,
+        "show": "value"
+      }
+    }
+  },
+  "extension": {
+    "px": {
+      "tableid": "14qa",
+      "decimals": 0,
+      "official-statistics": true,
+      "aggregallowed": true,
+      "language": "fi",
+      "contents": "Taustatiedot tuloviidenneksen mukaan",
+      "description": "14qa -- Taustatiedot tuloviidenneksen mukaan, 2012-2022",
+      "descriptiondefault": false,
+      "heading": [
+        "contentscode"
+      ],
+      "stub": [
+        "timeperiod_y",
+        "tuloviidennes_2_20140501"
+      ],
+      "matrix": "14qa",
+      "subject-code": "ktutk",
+      "subject-area": "Kotitalouksien kulutus"
+    },
+    "contact": [
+      {
+        "raw": "<A HREF='https://stat.fi/tilasto/ktutk' TARGET=_blank>Tilaston kotisivu</A>"
+      }
+    ]
+  },
+  "value": [
+    3138,
+    2919000,
+    1.88,
+    1.39,
+    50270,
+    50270,
+    311,
+    584381,
+    1.43,
+    1.18,
+    18796,
+    18796,
+    479,
+    584392,
+    1.86,
+    1.36,
+    33041,
+    33041,
+    603,
+    582714,
+    1.97,
+    1.43,
+    44550,
+    44550,
+    778,
+    584445,
+    2.04,
+    1.47,
+    57642,
+    57642,
+    967,
+    583068,
+    2.09,
+    1.5,
+    97410,
+    97410
+  ]
+}
