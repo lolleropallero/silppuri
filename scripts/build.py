@@ -271,17 +271,6 @@ markup=markup.replace('Sektorien osuudet näkyvät toimien lähdetiedoissa.', 'S
 markup=markup.replace('<div class="sp-flow-graph">','<p class="sp-flow-empty" hidden>Ei vielä valittuja toimia.</p><div class="sp-flow-graph">',1)
 markup=markup.replace('Alle 20 milj. €/vuosi jäävät toimet on karsittu; avoimet arviot on merkitty.',
                       'Mukana toimet, joiden arvio yltää 20 milj. euroon vuodessa; avoimet arviot on merkitty.')
-from html import escape
-proposal_coverage=json.loads((ROOT/'data/finnwatch-proposal-coverage.json').read_text(encoding='utf8'))
-coverage_groups={}
-for row in proposal_coverage['recommendations']:
-    coverage_groups.setdefault((row['action'],row['reason']),[]).append(row['number'])
-coverage_markup='<details class="sp-research-note"><summary class="cursor-interaction">Finnwatchin ehdotukset · mitä laskelmissa on mukana?</summary><p><a href="'+proposal_coverage['source']+'" target="_blank" rel="noopener noreferrer">Veropohjan aukot (2024), liite 1</a>. Raportin numerointi alla. Valvonta- ja avoimuustoimet tukevat veromuutoksia, eikä niiden tuottoja lasketa erikseen samojen veroeurojen päälle. Haarukoissa 20 miljoonan rajaa verrataan yläpäähän; piirakka käyttää alarajaa.</p>'
-for (id,reason),numbers in coverage_groups.items():
-    title=by_id[id]['title'] if id else 'Ei erillistä uutta Suomen verotuottoa'
-    coverage_markup+='<details class="sp-source"><summary class="cursor-interaction">'+', '.join(map(str,numbers))+' · '+escape(title)+'</summary><div class="sp-source-body"><p>'+escape(reason)+'</p></div></details>'
-coverage_markup+='<p>Jo päätettyjen muutosten tarkistus: <a href="https://www.consilium.europa.eu/en/press/press-releases/2024/12/10/taxation-council-adopts-new-rules-for-withholding-tax-procedures-faster/" target="_blank" rel="noopener noreferrer">FASTER</a> · <a href="https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/48557/yritysjarjestelyt-ja-verotus-osakevaihto4/" target="_blank" rel="noopener noreferrer">Osakevaihdot 2026</a>.</p></details>'
-markup=markup.replace('  <footer class="sp-footer">',coverage_markup+'\n  <footer class="sp-footer">')
 # Original annex prose remains in catalogue.json. The interface exclusively uses
 # the reviewed who/society/research fields, so do not embed unused duplicate text.
 runtime_catalogue=[{k:v for k,v in d.items() if k!='detail'} for d in catalogue]
@@ -296,6 +285,7 @@ script=script.replace('{}/*INCIDENCE_DATA*/',json.dumps(incidence,ensure_ascii=F
 script=script.replace('/*INCIDENCE_ENGINE*/',(ROOT/'src/incidence.js').read_text(encoding='utf8'))
 script=script.replace('/*INCIDENCE_VIEW*/',(ROOT/'src/incidence-view.js').read_text(encoding='utf8'))
 script=script.replace('/*PIE_INTERACTION*/',(ROOT/'src/pie-interaction.js').read_text(encoding='utf8'))
+script=script.replace('/*MODAL_SHRED*/',(ROOT/'src/modal-shred.js').read_text(encoding='utf8'))
 OUT.write_text(markup+'<script>\n'+script+'\n</script>\n',encoding='utf-8')
 assert OUT.stat().st_size<1_000_000, OUT.stat().st_size
 print(json.dumps(meta,ensure_ascii=False)); print('Fragment bytes:',OUT.stat().st_size)

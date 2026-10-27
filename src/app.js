@@ -57,6 +57,8 @@
   const q=s=>root.querySelector(s);
   const list=q('.sp-action-list');
   const dialog=q('.sp-modal');
+  /*MODAL_SHRED*/
+  const modalShred=createModalShred(root,dialog);
   q('.sp-chart').insertAdjacentHTML('beforeend','<button type="button" class="sp-zoom-open cursor-interaction" aria-label="Suurenna piirakka" aria-expanded="false" aria-controls="sp-pie-details" data-tooltip="Suurenna piirakka"><i data-lucide="zoom-in" aria-hidden="true"></i></button>');
   const budgetControls=document.createElement('div');budgetControls.className='sp-budget-controls';
   q('.sp-horizon').before(budgetControls);budgetControls.append(q('.sp-horizon'),q('.sp-zoom-open'));
@@ -525,7 +527,7 @@
   /*INCIDENCE_VIEW*/
   function positionDialog(){
     const panel=dialog;
-    if(!panel.open)return;
+    if(!panel.open||modalShred.running)return;
     const rootTop=root.getBoundingClientRect().top;
     const frame=visibleFrame||{top:Math.max(0,-rootTop),height:window.innerHeight};
     panel.style.maxHeight=Math.max(120,frame.height-24)+'px';
@@ -627,7 +629,7 @@
     [...root.children].forEach(el=>{if(el!==dialog&&!el.classList.contains('sp-modal-mask'))el.inert=true;});
     q('.sp-modal-body').scrollTop=0;positionDialog();measureViewport();q('.sp-modal-close').focus({preventScroll:true});
   }
-  function closeImpact(){const previous=activeAction;dialog.removeAttribute('open');q('.sp-modal-mask').hidden=true;[...root.children].forEach(el=>{el.inert=false;});root.style.minHeight='';activeAction=null;const replacement=previous?list.querySelector(`[data-open="${previous}"]`):null;const flowTarget=activeFlow?q(`[data-flow="${activeFlow}"]`):null;const focus=opener?.isConnected&&opener.getClientRects().length?opener:flowTarget|| (replacement?.getClientRects().length?replacement:q('[data-filter="all"]'));focus.focus({preventScroll:true});}
+  function closeImpact(){if(modalShred.running){modalShred.finish();return;}const previous=activeAction;dialog.removeAttribute('open');q('.sp-modal-mask').hidden=true;[...root.children].forEach(el=>{el.inert=false;});root.style.minHeight='';activeAction=null;const replacement=previous?list.querySelector(`[data-open="${previous}"]`):null;const flowTarget=activeFlow?q(`[data-flow="${activeFlow}"]`):null;const focus=opener?.isConnected&&opener.getClientRects().length?opener:flowTarget|| (replacement?.getClientRects().length?replacement:q('[data-filter="all"]'));focus.focus({preventScroll:true});}
   let finishPacking=null;
   let packingWidth=0;
   function packSelectedCard(d){
@@ -662,7 +664,7 @@
   // Height changes and scrollbar appearance are normal inside the host frame.
   window.addEventListener('resize',()=>{if(packingWidth&&Math.abs(root.clientWidth-packingWidth)>20)finishPacking?.();});
   q('.sp-modal-mask').addEventListener('click',closeImpact);
-  dialog.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();closeImpact();}else if(event.key==='Tab'){const controls=[...dialog.querySelectorAll('button:not(:disabled),a[href],summary')].filter(el=>el.getClientRects().length);const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
+  dialog.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();closeImpact();}else if(event.key==='Tab'){if(modalShred.running){event.preventDefault();return;}const controls=[...dialog.querySelectorAll('button:not(:disabled),a[href],summary')].filter(el=>el.getClientRects().length);const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
   q('.sp-impact-sources').addEventListener('toggle',positionDialog);
   q('.sp-impact-links').addEventListener('toggle',positionDialog,true);
   window.addEventListener('resize',positionDialog);
@@ -854,6 +856,7 @@
 
   root.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
+    if(modalShred.running)return;
     finishPacking?.();
     if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
     else if(button.dataset.step||button.dataset.yleStep||button.dataset.dividendMode||button.dataset.condition){
@@ -871,7 +874,7 @@
     else if(button.dataset.decile!==undefined){const chart=button.dataset.incidenceChart;activeDecile=Number(button.dataset.decile);renderIncidence(data.filter(d=>selected.has(d.id)));q(`[data-incidence-chart="${chart}"][data-decile="${activeDecile}"]`).focus({preventScroll:true});}
     else if(button.dataset.flow){activeFlow=activeFlow===button.dataset.flow?null:button.dataset.flow;const chosen=data.filter(d=>selected.has(d.id));drawFlows(chosen);renderFlowDetail(chosen);drawPie(chosen,true);if(pieExpanded)renderZoom();save();}
     else if(button.classList.contains('sp-flow-close')){const previous=activeFlow;activeFlow=null;const chosen=data.filter(d=>selected.has(d.id));drawFlows(chosen);renderFlowDetail([]);drawPie(chosen,true);if(pieExpanded)renderZoom();save();q(`[data-flow="${previous}"]`).focus();}
-    else if(button.classList.contains('sp-modal-confirm')){if(activeAction){const id=activeAction,d=data.find(x=>x.id===id),adding=!selected.has(id);if(adding){d.conflicts.forEach(c=>selected.delete(c));selected.add(id);closeImpact();packSelectedCard(d);}else{selected.delete(id);render(true);save();closeImpact();}}}
+    else if(button.classList.contains('sp-modal-confirm')){if(activeAction){const id=activeAction,d=data.find(x=>x.id===id),adding=!selected.has(id);if(adding){d.conflicts.forEach(c=>selected.delete(c));selected.add(id);modalShred.play(()=>{closeImpact();packSelectedCard(d);});}else{selected.delete(id);render(true);save();closeImpact();}}}
     else if(button.classList.contains('sp-modal-close')){closeImpact();}
     else if(button.dataset.remove){const id=button.dataset.remove;selected.delete(id);render(true);save();const same=list.querySelector(`[data-open="${id}"]`);if(!same.closest('article').hidden)same.focus();else q('[data-filter="all"]').focus();}
     else if(button.dataset.bookmark){filter='selected-'+button.dataset.bookmark;search='';category='all';limit=12;q('#sp-search').value='';q('#sp-category').value='all';render();save();q('.sp-actions').scrollIntoView({block:'start',behavior:'instant'});}
@@ -919,6 +922,6 @@
   let lastFlowWidth=q('.sp-flow-graph').clientWidth;
   if(globalThis.ResizeObserver)new ResizeObserver(syncPieScale).observe(q('.sp-chart'));
   if(globalThis.ResizeObserver)new ResizeObserver(()=>{const width=q('.sp-flow-graph').clientWidth;if(width!==lastFlowWidth){lastFlowWidth=width;drawFlows(data.filter(d=>selected.has(d.id)));}}).observe(q('.sp-flow-graph'));
-  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){finishPacking?.();stateIn(event.detail.globals.widgetState);render();if(activeAction){renderImpact(activeAction);positionDialog();}}});
+  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){modalShred.finish();finishPacking?.();stateIn(event.detail.globals.widgetState);render();if(activeAction){renderImpact(activeAction);positionDialog();}}});
   if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=>render()});tweak.addSlider(design,'radius',{label:'Korttien kulmat',min:0,max:24,unit:'px'});tweak.addSlider(design,'thickness',{label:'Piirakan renkaan leveys',min:40,max:90,unit:'px'});}
 })();
