@@ -197,7 +197,7 @@
       const n=id==='income'||id==='corporate'?scenario[id]:units[id],max=capFor(id);
       const value=d.unit==='0.1pp'?(n/10).toLocaleString('fi-FI'):d.unit==='100 euroa'?n*100:n;
       const label=d.unit==='100 euroa'?'euroa':d.unit==='€/MWh'?'€/MWh':'prosenttiyksikköä';
-      const scope=id==='corporate'?'18 % → '+(18+n)+' %.':id==='income'?'Muutos jokaiseen valtion tuloveroportaan marginaaliprosenttiin.':'';
+      const scope=place==='modal'?(id==='corporate'?'18 % → '+(18+n)+' %.':id==='income'?'Muutos jokaiseen valtion tuloveroportaan marginaaliprosenttiin.':''):'';
       return `<span class="sp-control-label">Muutoksen suuruus</span><div class="sp-stepper" role="group" aria-label="Muutoksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-step="${id}" data-delta="-1" aria-label="Pienennä muutosta" ${n===0?'disabled':''}>−</button><output>${d.unit==='pp-down'?'−':'+'}${value}<small>${label}</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-step="${id}" data-delta="1" aria-label="Kasvata muutosta" ${n===max?'disabled':''}>+</button></div>${scope?'<p class="sp-control-note">'+scope+'</p>':''}`;
     }
 

@@ -71,6 +71,7 @@
 #silppuri-demo .sp-modal.sp-shred-snapshot{position:absolute;top:0;margin:0;max-width:none;max-height:none;transform:none;box-shadow:none;pointer-events:none}
 #silppuri-demo .sp-zoom-open{flex-shrink:0;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--sp-line);border-radius:50%;background:var(--sp-panel);color:var(--sp-ink)}
 #silppuri-demo .sp-zoom-open i,#silppuri-demo .sp-zoom-open svg{width:22px;height:22px}
+@media(max-width:700px){#silppuri-demo .sp-zoom-open{display:none}}
 #silppuri-demo .sp-dot.small{background:var(--sp-small)}
 #silppuri-demo .sp-small-actions{font-size:12px;margin:4px 0 16px}
 #silppuri-demo .sp-small-actions summary{width:fit-content;padding:8px 0}
@@ -99,7 +100,13 @@
 #silppuri-demo [data-bookmark=tax] .sp-bookmark-flag{background:var(--sp-tax);color:#fff}
 #silppuri-demo .sp-bookmark-flag strong{font-size:23px;font-variant-numeric:tabular-nums}
 #silppuri-demo .sp-packing{position:relative;z-index:30;pointer-events:none;transform-origin:center;will-change:transform,opacity}
-@media(max-width:800px){#silppuri-demo .sp-actions{padding-right:0;padding-top:86px}#silppuri-demo .sp-bookmark-rail{width:100%}#silppuri-demo .sp-bookmarks{width:100%;border-radius:8px}#silppuri-demo .sp-list-label{scroll-margin-top:102px}#silppuri-demo .sp-bookmark-flag{width:44px;height:56px}#silppuri-demo .sp-bookmark-flag strong{font-size:21px}}
+@media(max-width:800px){
+  #silppuri-demo .sp-actions{padding-right:0;padding-top:86px}
+  #silppuri-demo .sp-bookmarks{width:max-content;margin-left:auto;padding:0;background:transparent;border:0;box-shadow:none}
+  #silppuri-demo .sp-list-label{scroll-margin-top:102px}
+  #silppuri-demo .sp-bookmark-flag{width:44px;height:56px}
+  #silppuri-demo .sp-bookmark-flag strong{font-size:21px}
+}
 #silppuri-demo .sp-source-notes{font-size:12px;white-space:pre-line;line-height:1.6}
 #silppuri-demo .sp-source-notes summary{font-weight:600;white-space:normal}
 #silppuri-demo .sp-stepper + .sp-control-label{margin-top:14px}
