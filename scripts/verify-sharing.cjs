@@ -97,7 +97,7 @@ ctx.q=selector=>{if(!nodes.has(selector))nodes.set(selector,{hidden:true,value:'
 ctx.window=host.window;ctx.window.addEventListener=(event,fn)=>listeners[event]=fn;
 ctx.location=new URL('https://example.test/');
 ctx.history={replaceState:(_state,_unused,href)=>{ctx.location.href=href;}};
-ctx.shareDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
+ctx.shareDialog={open:false};ctx.nameDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
 run(read('src/share-ui.js').slice(read('src/share-ui.js').indexOf('function readSharedState()')));
 const own={...seed,name:'Oma paketti',selectedIds:['vat','health','cut-3-15']};
 ctx.stateIn({modelContent:own});ctx.save();
@@ -160,7 +160,7 @@ assert.ok(!imageText.includes('#s='),'do not print a giant share token');
 for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
 // File share carries the same summary as the compose/copy actions.
 ctx.File=File;ctx.shareBlob=new Blob(['test image'],{type:'image/png'});ctx.shareName={value:'Kuvan jakotesti'};
-ctx.shareFilename=()=>ctx.shareName.value+'.png';ctx.q('.sp-share-link').value=testUrl;
+ctx.shareFilename=()=>ctx.shareName.value+'.png';ctx.shareLink=testUrl;
 const shareUi=read('src/share-ui.js');run(shareUi.slice(shareUi.indexOf('function nativeShareData()'),shareUi.indexOf('async function refreshShareImage()')));
 const nativePayload=ctx.nativeShareData();
 assert.equal(nativePayload.url,testUrl);assert.equal(nativePayload.files[0].type,'image/png');
