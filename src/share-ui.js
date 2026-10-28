@@ -1,8 +1,21 @@
 const shareDialog=q('.sp-share'),shareName=q('#sp-share-name'),shareStatus=q('.sp-share-status');
 let shareBlob=null,shareObjectUrl=null,shareTimer=null,shareGeneration=0,skipShareNameSave=false;
 function refreshShareLink(){
-  try{q('.sp-share-link').value=shareUrl({...packageModel(),name:shareName.value},location.href);q('.sp-copy-link').disabled=false;}
-  catch(error){q('.sp-share-link').value='';q('.sp-copy-link').disabled=true;shareStatus.textContent=error.message;}
+  const text=shareCaption(data.filter(d=>selected.has(d.id)),shareName.value);
+  try{
+    const url=shareUrl({...packageModel(),name:shareName.value},location.href);
+    q('.sp-share-link').value=url;q('.sp-share-copy').value=text+'\n'+url;q('.sp-copy-link').disabled=false;
+    const links=socialShareLinks(text,url);
+    root.querySelectorAll('[data-share-social]').forEach(a=>{a.href=links[a.dataset.shareSocial];a.removeAttribute('aria-disabled');});
+  }
+  catch(error){
+    q('.sp-share-link').value='';q('.sp-share-copy').value=text;q('.sp-copy-link').disabled=true;shareStatus.textContent=error.message;
+    root.querySelectorAll('[data-share-social]').forEach(a=>{a.removeAttribute('href');a.setAttribute('aria-disabled','true');});
+  }
+}
+function nativeShareData(){
+  return {title:shareTitle(shareName.value),text:shareCaption(data.filter(d=>selected.has(d.id)),shareName.value),
+    url:q('.sp-share-link').value,files:[new File([shareBlob],shareFilename(),{type:'image/png'})]};
 }
 async function refreshShareImage(){
   const generation=++shareGeneration;q('.sp-download').disabled=true;q('.sp-native-share').hidden=true;shareBlob=null;
@@ -20,8 +33,7 @@ async function refreshShareImage(){
     const img=document.createElement('img');img.src=shareObjectUrl;img.alt=shareTitle(shareName.value)+' – piirakka, maksajat, tuloryhmät ja valitut toimet';
     img.width=canvas.width;img.height=canvas.height;q('.sp-share-preview').replaceChildren(img);
     q('.sp-download').disabled=false;shareStatus.textContent='';
-    const file=new File([blob],shareFilename(),{type:'image/png'});
-    q('.sp-native-share').hidden=!(navigator.canShare?.({files:[file]})&&q('.sp-share-link').value);
+    q('.sp-native-share').hidden=!(navigator.canShare?.(nativeShareData())&&q('.sp-share-link').value);
   }catch(error){if(generation===shareGeneration)shareStatus.textContent='Kuvan luonti ei onnistunut. Jakolinkin voi silti kopioida.';}
 }
 function shareFilename(){return shareTitle(shareName.value).replace(/[<>:"/\\|?*\u0000-\u001f]/g,'-').replace(/[. ]+$/,'')+'.png';}
@@ -47,13 +59,25 @@ q('.sp-download').addEventListener('click',()=>{
   const a=document.createElement('a');a.href=shareObjectUrl;a.download=shareFilename();document.body.appendChild(a);a.click();a.remove();shareStatus.textContent='PNG ladattu.';
 });
 q('.sp-copy-link').addEventListener('click',async()=>{
-  rememberShareName();refreshShareLink();const input=q('.sp-share-link');
-  try{await navigator.clipboard.writeText(input.value);shareStatus.textContent='Linkki kopioitu.';}
-  catch{input.focus();input.select();shareStatus.textContent='Kopioi valittu linkki.';}
+  rememberShareName();refreshShareLink();const input=q('.sp-share-copy');
+  try{await navigator.clipboard.writeText(input.value);shareStatus.textContent='Tiivistelmä ja linkki kopioitu.';}
+  catch{input.focus();input.select();shareStatus.textContent='Kopioi valittu teksti.';}
 });
+root.querySelectorAll('[data-share-social]').forEach(a=>a.addEventListener('click',event=>{
+  if(a.getAttribute('aria-disabled')==='true'){event.preventDefault();return;}
+  rememberShareName();
+  // Facebook's link composer does not accept a prefilled personal status.
+  // Keep the user in control: copy their summary while the normal link opens.
+  if(a.dataset.shareSocial==='facebook'){
+    const text=shareCaption(data.filter(d=>selected.has(d.id)),shareName.value);
+    const copy=navigator.clipboard?.writeText?.(text);
+    if(copy)copy.then(()=>{shareStatus.textContent='Tiivistelmä kopioitu. Liitä se Facebookiin.';}).catch(()=>{shareStatus.textContent='Kopioi tiivistelmä Facebookin julkaisutekstiksi.';});
+    else shareStatus.textContent='Kopioi tiivistelmä Facebookin julkaisutekstiksi.';
+  }
+}));
 q('.sp-native-share').addEventListener('click',async()=>{
   if(!shareBlob)return;rememberShareName();
-  try{await navigator.share({title:shareTitle(shareName.value),text:shareTitle(shareName.value),url:q('.sp-share-link').value,files:[new File([shareBlob],shareFilename(),{type:'image/png'})]});}
+  try{await navigator.share(nativeShareData());}
   catch(error){if(error.name!=='AbortError')shareStatus.textContent='Jakaminen ei onnistunut. Lataa PNG ja kopioi linkki.';}
 });
 function readSharedState(){

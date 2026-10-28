@@ -330,8 +330,10 @@
     <div class="sp-share-body">
       <label for="sp-share-name">Silppurisi nimi</label><input id="sp-share-name" maxlength="80" autocomplete="off" placeholder="Hessu Hopon silppuri">
       <div class="sp-share-preview" aria-label="Jaettavan PNG-kuvan esikatselu"></div>
-      <div class="sp-share-buttons"><button type="button" class="sp-download" disabled>Lataa PNG</button><button type="button" class="sp-copy-link">Kopioi linkki</button><button type="button" class="sp-native-share" hidden>Jaa…</button></div>
+      <div class="sp-share-buttons"><button type="button" class="sp-download" disabled>Lataa PNG</button><button type="button" class="sp-copy-link">Kopioi teksti ja linkki</button><button type="button" class="sp-native-share" hidden>Jaa kuva ja linkki</button></div>
+      <nav class="sp-share-social" aria-label="Jaa paketti somessa"><a data-share-social="facebook" target="_blank" rel="noopener noreferrer">Facebook</a><a data-share-social="threads" target="_blank" rel="noopener noreferrer">Threads</a><a data-share-social="x" target="_blank" rel="noopener noreferrer">X</a><a data-share-social="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></nav>
       <p class="sp-share-status" role="status" aria-live="polite"></p>
+      <label for="sp-share-copy">Julkaisuteksti</label><textarea id="sp-share-copy" class="sp-share-copy" readonly rows="4" spellcheck="false"></textarea>
       <label for="sp-share-link">Tutkittava ja muokattava paketti</label><input id="sp-share-link" class="sp-share-link" readonly type="url" spellcheck="false">
       <p class="sp-share-local" hidden>Paikallinen testisivu: linkki toimii tällä koneella. Muille jakaminen tarvitsee sivulle julkisen osoitteen.</p>
     </div>

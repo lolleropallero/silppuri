@@ -24,9 +24,15 @@ function createShareImage(chosen,name,later,href){
   const panel=(x,y,w,h)=>{ctx.fillStyle=color.panel;ctx.beginPath();ctx.roundRect(x,y,w,h,16);ctx.fill();};
   const dot=(x,y,fill)=>{ctx.fillStyle=fill;ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();};
   const result=calculateIncidence(chosen,incidenceModel),sum=chosen.reduce((n,d)=>n+valueOf(d),0);
+  const summary=packageSummary(chosen);
   const groups=payerGroups.filter(g=>chosen.some(d=>d.flow===g.id)).map(g=>({...g,display:payerDisplay(chosen.filter(d=>d.flow===g.id))}));
   const titleLines=lines(shareTitle(name),1104,48,true);
-  const head=180+titleLines.length*56;
+  const totalY=144+(titleLines.length-1)*56+78,profileY=totalY+50;
+  const captionLines=lines(summary.tone.text,1104,23);
+  const captionY=profileY+34;
+  const summaryLines=lines(summary.description,960,23);
+  const summaryY=captionY+captionLines.length*28+18;
+  const head=summaryLines.length?summaryY+(summaryLines.length-1)*30+64:captionY+captionLines.length*28+56;
   const groupHeight=groups.reduce((n,g)=>n+62+(g.display.marked?24:0),92);
   const topHeight=Math.max(560,groupHeight);
   const chartsY=head+topHeight+28,chartHeight=790;
@@ -61,6 +67,10 @@ function createShareImage(chosen,name,later,href){
   text('SILPPURI',94,54,23,true);text('Silputaan Suomi kuntoon!',1152,54,22,true,color.ink,'right');
   rect(48,77,1104,2,color.ink);
   titleLines.forEach((line,i)=>text(line,600,144+i*56,48,true,color.ink,'center'));
+  text(shareTotal(sum),600,totalY,64,true,color.ink,'center');
+  text(summary.profile.name,600,profileY,30,true,color.ink,'center');
+  captionLines.forEach((line,i)=>text(line,600,captionY+i*28,23,false,color.ink,'center'));
+  summaryLines.forEach((line,i)=>text(line,600,summaryY+i*30,23,false,color.ink,'center'));
   if(href){
     try{
       const address=new URL(href);
@@ -109,7 +119,10 @@ function createShareImage(chosen,name,later,href){
     text(count+' / '+chosen.length+' toimea · yksin asuva · nettotulot 2024',x+24,chartsY+126,16,false,color.muted);
     const values=rows.map((r,i)=>service?{mid:r.share,low:r.shareLow,high:r.shareHigh,parts:[[color.cut,r.share]]}:
       {mid:r.mid/incidenceModel.income[i]*100,low:r.percentLow,high:r.percentHigh,parts:[[color.cut,r.cut],[color.tax,r.tax],[color.indirect,r.indirect]].map(([c,v])=>[c,v/incidenceModel.income[i]*100])});
-    const min=Math.min(0,...values.map(v=>v.low)),max=Math.max(1,...values.map(v=>v.high)),barWidth=275;
+    const labels=values.map(v=>!count?'—':service?shareLabel(v.mid):chartPercent(v.mid));
+    font(16,true);
+    const labelWidth=Math.max(...labels.map(label=>ctx.measureText(label).width));
+    const min=Math.min(0,...values.map(v=>v.low)),max=Math.max(1,...values.map(v=>v.high)),barWidth=314-labelWidth-18;
     const position=n=>(n-min)/(max-min)*barWidth;
     values.forEach((v,i)=>{
       const y=chartsY+151+i*57;rect(x+12,y-3,518,57,i%2?'#ebece4':'#f7f7f1');
@@ -119,7 +132,7 @@ function createShareImage(chosen,name,later,href){
         let positive=0,negative=0;for(const [c,n] of v.parts){const from=n>=0?positive:negative;if(n>=0)positive+=n;else negative+=n;rect(bx+position(Math.min(from,from+n)),by,Math.abs(n)/(max-min)*barWidth,26,c);}
         ctx.strokeStyle=color.ink;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(bx+position(v.low),by+13);ctx.lineTo(bx+position(v.high),by+13);ctx.moveTo(bx+position(v.low),by+7);ctx.lineTo(bx+position(v.low),by+19);ctx.moveTo(bx+position(v.high),by+7);ctx.lineTo(bx+position(v.high),by+19);ctx.stroke();
       }
-      text(!count?'—':service?shareLabel(v.mid):chartPercent(v.mid),x+514,y+50,14,true,color.ink,'right');
+      text(labels[i],x+514,by+19,16,true,color.ink,'right');
     });
     if(!service){dot(x+30,chartsY+751,color.cut);text('Etuudet',x+43,chartsY+757,16);dot(x+150,chartsY+751,color.tax);text('Verot',x+163,chartsY+757,16);dot(x+253,chartsY+751,color.indirect);text('Yritysten kautta',x+266,chartsY+757,16);}
   }

@@ -1,4 +1,4 @@
-"""Regenerate in an isolated copy; fail if tracked source/data are stale."""
+"""Regenerate in an isolated copy; fail if repository source/data are stale."""
 import os
 from pathlib import Path
 import shutil
@@ -8,7 +8,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 tracked = subprocess.check_output(
-    ['git', 'ls-files', '-z', 'data', 'src', 'scripts'], cwd=ROOT
+    ['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z', 'data', 'src', 'scripts'], cwd=ROOT
 ).decode('utf8').split('\0')
 paths = [p for p in tracked if p and (ROOT/p).is_file()]
 
@@ -33,4 +33,4 @@ with tempfile.TemporaryDirectory(prefix='rebuild-', dir=scratch) as temporary:
                != (copy/p).read_bytes().replace(b'\r\n', b'\n')]
     if changed:
         raise SystemExit('Stale generated files:\n' + '\n'.join(changed))
-print('PASS: clean rebuild reproduces all tracked data, sources and scripts.')
+print('PASS: clean rebuild reproduces all repository data, sources and scripts.')

@@ -957,6 +957,8 @@
     const top=root.getBoundingClientRect().top;
     return visibleFrame?{top:top+visibleFrame.top,height:visibleFrame.height}:{top:0,height:window.innerHeight};
   }});
+  /*SHARE_SUMMARY*/
+  /*SHARE_SOCIAL*/
   /*SHARE_IMAGE*/
   /*SHARE_PNG*/
   /*SHARE_UI*/
