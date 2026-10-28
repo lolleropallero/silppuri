@@ -24,7 +24,7 @@ async function refreshShareImage(){
     // Yield once so the dialog and busy state paint before generating a long image.
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if(generation!==shareGeneration||!shareDialog.open)return;
-    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater,location.href);
+    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater);
     const rendered=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Kuvan luonti epäonnistui.')),'image/png'));
     const blob=await creditSharePng(rendered);
     if(generation!==shareGeneration||!shareDialog.open)return;

@@ -56,7 +56,10 @@
 #silppuri-demo .sp-action-top .sp-dot{width:12px;height:12px}
 #silppuri-demo .sp-actions{position:relative;padding-right:162px}
 #silppuri-demo .sp-bookmark-rail{position:absolute;inset:0 0 0 auto;width:142px;pointer-events:none;z-index:35}
-#silppuri-demo .sp-bookmarks{position:sticky;top:12px;display:flex;flex-direction:row;justify-content:flex-end;gap:8px;margin:0;padding:6px;background:var(--sp-panel);border:1px solid var(--sp-line);border-radius:12px;box-shadow:0 5px 18px light-dark(#20282014,#00000035);pointer-events:auto}
+#silppuri-demo .sp-bookmarks{position:sticky;top:12px;display:grid;grid-template-columns:repeat(2,auto);justify-content:end;gap:4px 8px;margin:0;padding:6px;background:var(--sp-panel);border:1px solid var(--sp-line);border-radius:12px;box-shadow:0 5px 18px light-dark(#20282014,#00000035);pointer-events:auto}
+#silppuri-demo .sp-bookmark-progress{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0 6px;color:var(--sp-ink);text-align:center;line-height:1.2;white-space:nowrap;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-bookmark-progress strong{font-size:23px}
+#silppuri-demo .sp-bookmark-progress span{font-size:11px}
 #silppuri-demo .sp-bookmarks-floating{position:absolute;top:var(--sp-bookmark-top,0px);right:0}
 #silppuri-demo .sp-list-label{scroll-margin-top:16px}
 #silppuri-demo .sp-actions{scroll-margin-top:12px}
@@ -101,9 +104,10 @@
 #silppuri-demo .sp-bookmark-flag strong{font-size:23px;font-variant-numeric:tabular-nums}
 #silppuri-demo .sp-packing{position:relative;z-index:30;pointer-events:none;transform-origin:center;will-change:transform,opacity}
 @media(max-width:800px){
-  #silppuri-demo .sp-actions{padding-right:0;padding-top:86px}
+  #silppuri-demo .sp-actions{padding-right:0;padding-top:142px}
   #silppuri-demo .sp-bookmarks{width:max-content;margin-left:auto;padding:0;background:transparent;border:0;box-shadow:none}
-  #silppuri-demo .sp-list-label{scroll-margin-top:102px}
+  #silppuri-demo .sp-list-label{scroll-margin-top:158px}
+  #silppuri-demo .sp-bookmark-progress{background:var(--sp-paper);border-radius:6px}
   #silppuri-demo .sp-bookmark-flag{width:44px;height:56px}
   #silppuri-demo .sp-bookmark-flag strong{font-size:21px}
 }

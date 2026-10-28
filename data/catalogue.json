@@ -409,6 +409,12 @@
         "cut-1-41",
         "cut-7-24"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "einio"
@@ -465,6 +471,12 @@
         "cut-1-41",
         "cut-7-24"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "einio"
@@ -1212,6 +1224,12 @@
         "cut-1-58",
         "cut-1-72"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "agri"
@@ -1417,6 +1435,12 @@
       "unit": "",
       "family": "",
       "conflicts": [],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "protectedareas"
@@ -1988,6 +2012,12 @@
         "cut-2-27",
         "cut-2-28"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "adult"
@@ -3323,6 +3353,12 @@
       "conflicts": [
         "cut-2-66"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "arts"
@@ -3429,6 +3465,12 @@
         "cut-2-68",
         "cut-7-24"
       ],
+      "percentCut": {
+        "referencePercent": 20,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "arts"
@@ -3535,6 +3577,12 @@
       "conflicts": [
         "cut-7-24"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "arts"
@@ -3637,6 +3685,12 @@
         "cut-2-78",
         "cut-7-24"
       ],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "activity"
@@ -8309,6 +8363,12 @@
       "unit": "",
       "family": "",
       "conflicts": [],
+      "percentCut": {
+        "referencePercent": 10,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "courtefficiency"
@@ -8568,6 +8628,12 @@
       "unit": "",
       "family": "",
       "conflicts": [],
+      "percentCut": {
+        "referencePercent": 30,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "peace"
@@ -8720,6 +8786,12 @@
       "unit": "",
       "family": "",
       "conflicts": [],
+      "percentCut": {
+        "referencePercent": 20,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "videomeetings"
@@ -9654,6 +9726,12 @@
         "cut-2-77",
         "cut-2-78"
       ],
+      "percentCut": {
+        "referencePercent": 20,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
+      },
       "research": {
         "sources": [
           "grantfundraising"
@@ -9929,6 +10007,12 @@
         "limit": "Eläkepoistuma, irtisanominen ja rekrytoinnin vähentäminen muuttavat veroja ja etuusmenoja eri tavoin. Väli havainnollistaa tätä epävarmuutta; alaraja ei ole taattu säästö.",
         "source": "VM 2026:44, s. 667–668 ja Excel-liitteen rivi 7-30",
         "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-603-9"
+      },
+      "percentCut": {
+        "referencePercent": 1,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
       },
       "possibleOverlaps": [
         {
@@ -10541,6 +10625,12 @@
         "limit": "Julkisen alan palkkajakaumaa ja sosiaalivakuutusmaksuja ei ole simuloitu toimikohtaisesti. Kerroin ei sisällä kaikkia kulutus- ja terveysvaikutuksia.",
         "source": "VM 2026:44, s. 667–668 ja Excel-liitteen rivi 7-30",
         "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-603-9"
+      },
+      "percentCut": {
+        "referencePercent": 1,
+        "step": 5,
+        "minPercent": 5,
+        "maxPercent": 100
       },
       "possibleOverlaps": [
         {

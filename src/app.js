@@ -85,6 +85,14 @@
         d.title=d.short='Ylen rahoitusta −'+d.cutPercent+' % vuoteen 2035';
         d.scaled=!d.fundingCut.vmVariants[d.cutPercent];
       }
+      if(d.percentCut){
+        d.cutPercent=cutPercentValue(d,scenario.cutPercents?.[d.id]);
+        const scale=d.cutPercent/d.percentCut.referencePercent;
+        d.budget=base.budget.map(n=>Number.isFinite(n)?n*scale:null);
+        d.funds=base.funds.map(n=>Number.isFinite(n)?n*scale:null);
+        d.title=d.short=base.title.replace(/−\d+\s*%/,'−'+d.cutPercent+' %');
+        d.scaled=scale!==1;
+      }
       const index=year-2028;
       d.budgetAmount=d.budget[index];d.fundAmount=d.funds[index];
       d.amount=Number.isFinite(d.budgetAmount)||Number.isFinite(d.fundAmount)?(d.budgetAmount??0)+(d.fundAmount??0):null;
@@ -97,6 +105,7 @@
       if(d.spendingNet)d.year=year+' · oma nettoherkkyyslaskelma';
       if(d.directOnly)d.year=year+' · suora arvio, vastavaikutuksia avoinna';
       if(d.fundingCut&&d.scaled)d.year+=' · oma laskelma VM:n rahoituspohjasta';
+      if(d.percentCut&&d.scaled)d.year+=' · oma lineaarinen laskelma';
       if(d.revenueEstimate){d.amount=d.revenueEstimate.amount;d.year=d.revenueEstimate.label;}
       if(d.estimate){d.amount=d.estimate.amount;d.year=d.estimate.basis;}
       if(d.unit){
@@ -136,6 +145,11 @@
     if(!settings)return 20;
     return Number.isFinite(value)?Math.min(settings.maxPercent,Math.max(settings.minPercent,Math.round(value/settings.step)*settings.step)):settings.defaultPercent;
   }
+  function cutPercentValue(d,value){
+    const s=d.percentCut;
+    if(!Number.isFinite(value)||value===s.referencePercent)return s.referencePercent;
+    return Math.min(s.maxPercent,Math.max(s.minPercent,Math.round(value/s.step)*s.step));
+  }
   function yleBudget(d,percent){
     const s=d.fundingCut;
     if(s.vmVariants[percent])return [...s.vmVariants[percent]];
@@ -145,8 +159,8 @@
   function laterEstimateFor(d,baseYear,choices){
     if(d.report!=='cut'||d.net||d.spendingNet||d.unit||d.cashOnly||d.unquantifiedNet||d.revenueEstimate||d.zeroNote)return null;
     if(d.conditional==='yle'&&choices.yle!=='keep-tax'||d.conditional==='farm'&&choices.farm!=='save')return null;
-    const candidates=(d.budget||[]).map((b,i)=>({amount:Number.isFinite(b)||Number.isFinite(d.funds[i])?(b??0)+(d.funds[i]??0):null,budget:b,funds:d.funds[i],year:2028+i,when:String(2028+i),precision:d.fundingCut&&d.scaled?'Oma laskelma':'',longRun:false}))
-      .filter(e=>e.year>baseYear&&Number.isFinite(e.amount)&&e.amount>=20);
+    const candidates=(d.budget||[]).map((b,i)=>({amount:Number.isFinite(b)||Number.isFinite(d.funds[i])?(b??0)+(d.funds[i]??0):null,budget:b,funds:d.funds[i],year:2028+i,when:String(2028+i),precision:(d.fundingCut||d.percentCut)&&d.scaled?'Oma laskelma':'',longRun:false}))
+      .filter(e=>e.year>baseYear&&Number.isFinite(e.amount)&&(d.percentCut?e.amount>0:e.amount>=20));
     const near=candidates.filter(e=>e.amount>(d.amount??0)).sort((a,b)=>b.amount-a.amount||a.year-b.year)[0];
     if(near)return near;
     if(d.longRunEstimate){const e=d.longRunEstimate;return {amount:e.million,when:e.when.replace(/^vuonna /,''),precision:e.precision||'',longRun:true,basis:e.basis};}
@@ -156,7 +170,7 @@
     for(const d of actions){
       d.currentAmount=d.amount;d.horizonEstimate=laterEstimateFor(d,baseYear,choices);d.laterApplied=!!(later&&d.horizonEstimate&&!d.horizonEstimate.longRun);d.incidenceHorizonGap=false;
       if(!d.laterApplied)continue;
-      const e=d.horizonEstimate;d.amount=e.amount;d.year=e.when+' · '+(d.fundingCut&&d.scaled?'oma laskelma VM:n rahoituspohjasta':'VM:n myöhempi vuosiarvio');
+      const e=d.horizonEstimate;d.amount=e.amount;d.year=e.when+' · '+(d.fundingCut&&d.scaled?'oma laskelma VM:n rahoituspohjasta':d.percentCut&&d.scaled?'oma lineaarinen laskelma':'VM:n myöhempi vuosiarvio');
       d.budgetAmount=e.budget??null;d.fundAmount=e.funds??null;d.gross=e.budget??null;
       d.incidenceHorizonGap=e.longRun;
     }
@@ -188,6 +202,10 @@
 
   function controlsMarkup(id,place){
     const d=data.find(x=>x.id===id);
+    if(d?.percentCut){
+      const s=d.percentCut,n=d.cutPercent,min=Math.min(s.minPercent,s.referencePercent);
+      return `<span class="sp-control-label">Leikkauksen suuruus</span><div class="sp-stepper" role="group" aria-label="Leikkauksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-cut-step="${id}" data-delta="-${s.step}" aria-label="Pienennä leikkausta" ${n===min?'disabled':''}>−</button><output>${n}<small>%</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-cut-step="${id}" data-delta="${s.step}" aria-label="Kasvata leikkausta" ${n===s.maxPercent?'disabled':''}>+</button></div>`;
+    }
     if(d?.conditional){
       const yle=d.conditional==='yle',key=d.conditional,value=conditions[key];
       const reduction=d.fundingCut?`<span class="sp-control-label">Leikkaus vuoteen 2035</span><div class="sp-stepper" role="group" aria-label="Ylen rahoitusleikkaus"><button type="button" id="sp-${place}-yle-minus" class="cursor-interaction" data-yle-step="-${d.fundingCut.step}" aria-label="Pienennä Ylen leikkausta 5 prosenttiyksikköä" ${d.cutPercent===d.fundingCut.minPercent?'disabled':''}>−</button><output aria-live="polite">${d.cutPercent}<small>%</small></output><button type="button" id="sp-${place}-yle-plus" class="cursor-interaction" data-yle-step="${d.fundingCut.step}" aria-label="Kasvata Ylen leikkausta 5 prosenttiyksikköä" ${d.cutPercent===d.fundingCut.maxPercent?'disabled':''}>+</button></div>`:'';
@@ -275,6 +293,12 @@
     }else if(d.unit&&d.scaled){
       e.tradeoff+=' Yksikköarvio on kerrottu muutoksen suuruudella. Tämä on oma lineaarinen herkkyyslaskelma, ei tämän suuruiselle muutokselle tehty tutkimusarvio.';
     }
+    if(d.percentCut&&d.scaled){
+      const reference=d.percentCut.referencePercent,scale=d.cutPercent/reference;
+      e.money='Valittu leikkaus on '+d.cutPercent+' %. Piirakkaan '+moneyLabel(d.amount)+(Number.isFinite(d.netUpper)&&d.netUpper!==d.amount?' (herkkyysväli '+moneyLabel(d.amount)+'–'+moneyLabel(d.netUpper)+')':'')+'. Alkuperäisen '+reference+' prosentin leikkauksen vuosiarvio on kerrottu '+scale.toLocaleString('fi-FI',{maximumFractionDigits:3})+':lla. Lähteen arvio koskee alkuperäistä toteutusta: '+(d.research?.fiscal||'');
+      if(d.spendingNet)e.money+=' '+d.spendingNet.explanation;
+      e.caveat='Oma lineaarinen laskelma, ei valitulle prosentille tehty tutkimusarvio. Toiminnan, käyttäytymisen ja tuloryhmäjakauman muutoksia ei lasketa uudelleen; erityisesti suurten leikkausten vaikutus voi poiketa suorasta skaalauksesta.';
+    }
     return e;
   }
 
@@ -295,6 +319,7 @@
     year=2031;includeLater=model?.includeLater===true;
     ['income','corporate'].forEach(id=>{const n=model?.taxIncreasesPP?.[id];scenario[id]=Number.isFinite(n)?Math.min(maxPP,Math.max(0,Math.round(n))):(id==='income'?2:3);});
     Object.keys(units).forEach(id=>{const n=model?.unitSteps?.[id];units[id]=Number.isFinite(n)?Math.min(capFor(id),Math.max(0,Math.round(n))):1;});
+    scenario.cutPercents=Object.fromEntries(data.filter(d=>d.percentCut).map(d=>[d.id,cutPercentValue(d,model?.cutPercents?.[d.id])]));
     scenario.dividends=model?.dividendMode==='abolish'?'abolish':'vm';
     conditions.yle=model?.fundingChoices?.yle==='keep-tax'?'keep-tax':'reduce-tax';
     conditions.farm=model?.fundingChoices?.farm==='save'?'save':'redirect';
@@ -322,7 +347,7 @@
   }
   function packageModel(){
     return {selectedIds:[...selected],name:packageName,year,includeLater,yleCutPercent:ylePercent(scenario.ylePercent),
-      taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},unitSteps:{...units},dividendMode:scenario.dividends,fundingChoices:{...conditions}};
+      taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},unitSteps:{...units},cutPercents:{...scenario.cutPercents},dividendMode:scenario.dividends,fundingChoices:{...conditions}};
   }
   function save(){
     const p=packageSession.save({modelContent:packageModel(),privateContent:{catalogueViewVersion:1,filter,category,search,sortOrder,activeFlow,visibleCount:limit,catalogueOrder,catalogueOrderKey}});
@@ -499,6 +524,7 @@
     if(d.estimate)return d.estimate.footnote||'';
     if(d.referenceEstimate?.kind==='static')return payerMoneyLabel(d.referenceEstimate.amount)+' on staattinen viiteluku. Nettotuottoa ei ole arvioitu euroina, eikä viitelukua lasketa piirakkaan.';
     if(d.fundingCut&&d.scaled&&d.amount>0)return d.laterApplied?'Oma laskelma · '+d.horizonEstimate.when+'.':d.amount<20?'Oma laskelma: '+moneyLabel(d.budget[7])+'/vuosi vuonna 2035.':'Oma laskelma VM:n rahoituspohjasta.';
+    if(d.percentCut&&d.scaled)return 'Oma lineaarinen laskelma · '+(d.laterApplied?d.horizonEstimate.when:year)+'.';
     if(d.laterApplied)return 'VM:n vuosiarvio: '+[d.horizonEstimate.precision,moneyLabel(d.amount),d.horizonEstimate.when].filter(Boolean).join(' ')+'.';
     if(!Number.isFinite(d.amount)||d.amount>=20||d.amount<0)return '';
     if(d.amount===0){
@@ -526,7 +552,7 @@
     return esc(cardAmountDisplay(d).text).replace(' *','<sup aria-hidden="true">*</sup>');
   }
   q('#sp-category').insertAdjacentHTML('beforeend',payerGroups.map(g=>`<option value="${g.id}">${g.name}</option>`).join(''));
-  q('.sp-list-label').insertAdjacentHTML('afterend','<nav class="sp-bookmarks" aria-label="Paketin valitut toimet"><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="cut" aria-pressed="false" aria-label="Valitut menoleikkaukset" data-tooltip="Valitut menoleikkaukset"><span class="sp-bookmark-flag"><strong>0</strong></span></button><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="tax" aria-pressed="false" aria-label="Valitut verot ja maksut" data-tooltip="Valitut verot ja maksut"><span class="sp-bookmark-flag"><strong>0</strong></span></button></nav>');
+  q('.sp-list-label').insertAdjacentHTML('afterend','<nav class="sp-bookmarks" aria-label="Paketin valitut toimet"><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="cut" aria-pressed="false" aria-label="Valitut menoleikkaukset" data-tooltip="Valitut menoleikkaukset"><span class="sp-bookmark-flag"><strong>0</strong></span></button><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="tax" aria-pressed="false" aria-label="Valitut verot ja maksut" data-tooltip="Valitut verot ja maksut"><span class="sp-bookmark-flag"><strong>0</strong></span></button><output class="sp-bookmark-progress"><strong>0 %</strong><span>10 mrd. €:sta</span></output></nav>');
   q('[data-filter="all"]').textContent='Kaikki uudet';
 
   payerGroups.forEach(group=>{
@@ -861,6 +887,8 @@
     root.style.setProperty('--sp-radius',design.radius+'px');
     q('.sp-selection-list').innerHTML=chosen.map(d=>`<li><span class="sp-dot ${d.type==='cut'?'cut':''}"></span><button type="button" class="sp-basket-open cursor-interaction" data-open="${d.id}">${esc(d.short)}</button><strong>${moneyLabel(d.amount)}</strong><button type="button" class="sp-remove cursor-interaction" data-remove="${d.id}" aria-label="Poista: ${esc(d.title)}">×</button></li>`).join('');
     root.querySelectorAll('[data-bookmark]').forEach(b=>{const type=b.dataset.bookmark,count=chosen.filter(d=>d.type===type).length;b.querySelector('strong').textContent=count;b.setAttribute('aria-pressed',String(filter==='selected-'+type));b.setAttribute('aria-label',(type==='cut'?'Valitut menoleikkaukset':'Valitut verot ja maksut')+': '+count+' toimea');});
+    q('.sp-bookmark-progress strong').textContent=pct(sum)+' %';
+    q('.sp-bookmark-progress').setAttribute('aria-label','Valittu '+pct(sum)+' prosenttia 10 miljardin euron tavoitteesta');
     q('.sp-list-label h2').textContent=filter==='selected-cut'?'Valitut menoleikkaukset':filter==='selected-tax'?'Valitut verot ja maksut':filter==='selected'?'Valitut toimet':'Valitse mistä otetaan';
     q('.sp-list-label > span').textContent=data.length+' toimea ja vaihtoehtoa';
     const terms=searchWords(search);
@@ -929,10 +957,15 @@
     if(modalShred.running)return;
     finishPacking?.();
     if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
-    else if(button.dataset.step||button.dataset.yleStep||button.dataset.dividendMode||button.dataset.condition){
+    else if(button.dataset.step||button.dataset.yleStep||button.dataset.cutStep||button.dataset.dividendMode||button.dataset.condition){
       const focusId=button.id;
       if(button.dataset.step){const id=button.dataset.step,store=id==='income'||id==='corporate'?scenario:units;store[id]=Math.min(capFor(id),Math.max(0,store[id]+Number(button.dataset.delta)));}
       else if(button.dataset.yleStep)scenario.ylePercent=ylePercent(ylePercent(scenario.ylePercent)+Number(button.dataset.yleStep));
+      else if(button.dataset.cutStep){
+        const id=button.dataset.cutStep,d=data.find(x=>x.id===id),s=d.percentCut,delta=Number(button.dataset.delta);
+        const next=delta<0&&d.cutPercent===s.minPercent?Math.min(s.referencePercent,s.minPercent):d.cutPercent+delta;
+        scenario.cutPercents[id]=cutPercentValue(d,next);
+      }
       else if(button.dataset.condition)conditions[button.dataset.condition]=button.dataset.value;
       else scenario.dividends=button.dataset.dividendMode==='abolish'?'abolish':'vm';
       render(true);if(activeAction){renderImpact(activeAction);positionDialog();}save();

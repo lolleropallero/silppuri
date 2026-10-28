@@ -12,7 +12,8 @@ function encodeShare(model){
   const unitSteps=Object.fromEntries(Object.entries(model.unitSteps||{}).filter(([id,n])=>model.selectedIds.includes(id)&&n!==1));
   const payload={v:SHARE_VERSION,n:shareTitle(model.name),a:model.selectedIds,h:model.includeLater===true,
     i:model.taxIncreasesPP.income,c:model.taxIncreasesPP.corporate,y:model.yleCutPercent,
-    d:model.dividendMode==='abolish',f:[model.fundingChoices.yle==='keep-tax',model.fundingChoices.farm==='save'],u:unitSteps};
+    d:model.dividendMode==='abolish',f:[model.fundingChoices.yle==='keep-tax',model.fundingChoices.farm==='save'],u:unitSteps,
+    p:Object.fromEntries(Object.entries(model.cutPercents||{}).filter(([id])=>model.selectedIds.includes(id)))};
   return btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(payload)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
 }
 function decodeShare(token,knownIds){
@@ -24,11 +25,12 @@ function decodeShare(token,knownIds){
     !p.a.every(id=>typeof id==='string'&&id.length<80)||new Set(p.a).size!==p.a.length||typeof p.h!=='boolean'||
     !integer(p.i,0,10)||!integer(p.c,0,10)||!integer(p.y,5,100)||p.y%5||typeof p.d!=='boolean'||
     !Array.isArray(p.f)||p.f.length!==2||!p.f.every(b=>typeof b==='boolean')||
-    !p.u||typeof p.u!=='object'||Array.isArray(p.u)||Object.entries(p.u).some(([id,n])=>!p.a.includes(id)||!integer(n,0,100)))throw new Error('Virheellinen jakolinkki.');
+    !p.u||typeof p.u!=='object'||Array.isArray(p.u)||Object.entries(p.u).some(([id,n])=>!p.a.includes(id)||!integer(n,0,100))||
+    (p.p!==undefined&&(!p.p||typeof p.p!=='object'||Array.isArray(p.p)||Object.entries(p.p).some(([id,n])=>!p.a.includes(id)||!integer(n,1,100)||(n!==1&&n%5)))))throw new Error('Virheellinen jakolinkki.');
   // Do not silently open a partial package if a future catalogue removes a card.
   if(p.a.some(id=>!knownIds.has(id)))throw new Error('Linkissä on toimi, jota tämä versio ei tunne.');
   return {selectedIds:p.a,name:shareTitle(p.n),year:2031,includeLater:p.h,yleCutPercent:p.y,
-    taxIncreasesPP:{income:p.i,corporate:p.c},dividendMode:p.d?'abolish':'vm',unitSteps:p.u,
+    taxIncreasesPP:{income:p.i,corporate:p.c},dividendMode:p.d?'abolish':'vm',unitSteps:p.u,cutPercents:p.p||{},
     fundingChoices:{yle:p.f[0]?'keep-tax':'reduce-tax',farm:p.f[1]?'save':'redirect'}};
 }
 function shareUrl(model,href){

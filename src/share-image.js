@@ -3,7 +3,7 @@
 function shareCardAmount(d){
   return cardAmountDisplay(d).text;
 }
-function createShareImage(chosen,name,later,href){
+function createShareImage(chosen,name,later){
   const canvas=document.createElement('canvas');canvas.width=1200;
   let ctx=canvas.getContext('2d');
   const color={ink:'#202820',muted:'#62695f',paper:'#f5f3ed',panel:'#fffefa',track:'#e4e7dc',cut:'#ed2b36',tax:'#5068c8',small:'#9548c6',indirect:'#bf7816'};
@@ -12,7 +12,7 @@ function createShareImage(chosen,name,later,href){
     font(size,bold);const out=[];let line='';
     for(const word of String(text).split(/\s+/)){
       if(line&&ctx.measureText(line+' '+word).width>width){out.push(line);line='';}
-      // Names and URLs may contain a long unbroken word.
+      // A name may contain a long unbroken word.
       for(const ch of (line?' ':'')+word){if(ctx.measureText(line+ch).width>width){out.push(line);line='';}line+=ch;}
     }
     if(line)out.push(line);return out;
@@ -32,9 +32,8 @@ function createShareImage(chosen,name,later,href){
   const captionY=profileY+34;
   const summaryLines=lines(summary.description,960,23);
   const summaryY=captionY+captionLines.length*28+18;
-  const evidenceLines=lines(summary.evidence,1040,17),evidenceY=summaryY+summaryLines.length*30+12;
-  const largestLines=lines(summary.largest,1040,20,true),largestY=evidenceY+evidenceLines.length*23+(evidenceLines.length?12:0);
-  const head=largestY+largestLines.length*26+48;
+  const largestLines=lines(summary.largest,1040,20,true),largestY=summaryY+summaryLines.length*30+12;
+  const head=largestY+largestLines.length*26+28;
   const groupHeight=groups.reduce((n,g)=>n+62+(g.display.marked?24:0),92);
   const topHeight=Math.max(560,groupHeight);
   const chartsY=head+topHeight+28,chartHeight=760;
@@ -76,19 +75,7 @@ function createShareImage(chosen,name,later,href){
   text(summary.profile.name,600,profileY,30,true,color.ink,'center');
   captionLines.forEach((line,i)=>text(line,600,captionY+i*28,23,false,color.ink,'center'));
   summaryLines.forEach((line,i)=>text(line,600,summaryY+i*30,23,false,color.ink,'center'));
-  evidenceLines.forEach((line,i)=>text(line,600,evidenceY+i*23,17,false,color.muted,'center'));
   largestLines.forEach((line,i)=>text(line,600,largestY+i*26,20,true,color.ink,'center'));
-  if(href){
-    try{
-      const address=new URL(href);
-      if(['http:','https:'].includes(address.protocol)){
-        const local=['localhost','127.0.0.1','[::1]'].includes(address.hostname);
-        const label=(local?'Paikallinen esikatselu · ':'')+address.host+address.pathname;
-        let size=16;while(size>10&&(font(size),ctx.measureText(label).width>1104))size--;
-        text(label,600,head-20,size,false,color.muted,'center');
-      }
-    }catch{}
-  }
   panel(48,head,542,topHeight);panel(614,head,538,topHeight);
   text(later?'2031 + myöhemmät':'2031',566,head+43,17,true,color.muted,'right');
   const chart=piePresentation(chosen,sum,72,null),view=pieViewport(chart);

@@ -1,6 +1,7 @@
 """Build the self-contained Silppuri concept from reviewed VM source data."""
 import json
 import argparse
+import re
 from pathlib import Path
 from finnwatch_models import calculate as calculate_finnwatch, apply_estimates
 from additional_tax_models import calculate as calculate_additional, apply as apply_additional
@@ -77,6 +78,9 @@ for row in raw:
                                        for p,k in [(10,'1-43'),(20,'1-42')]}}
         d['source']=d['source'].replace('rivi 42','rivit 42–43')
     if key=='1-72': d['conditional']='farm'
+    percent_cut = re.search(r'−(\d+)\s*%', title)
+    if d['type']=='cut' and percent_cut and not d.get('fundingCut'):
+        d['percentCut']={'referencePercent':int(percent_cut[1]),'step':5,'minPercent':5,'maxPercent':100}
     if key in ['1-24','5-19','5-8','5-9']:
         d['cashOnly']=True
         # Financial transactions do not automatically reduce the national-accounts deficit.
@@ -298,7 +302,6 @@ markup=markup.replace('<div class="sp-action-list">','<div class="sp-catalogue-t
 markup=markup.replace('Isoista paloista alkuun','Valitse mistä otetaan')
 markup=markup.replace('Veronkorotukset','Verot ja muut tulot')
 # Do not leave the old nine-example count in the expanded catalogue.
-import re
 markup=re.sub(r'9 esimerkkitoimea[^<]*',f'{len(catalogue)} toimea ja vaihtoehtoa',markup)
 markup=markup.replace('<div class="sp-filters"','<p class="sp-threshold-note">Alle 20 milj. €/vuosi jäävät toimet on karsittu; avoimet arviot on merkitty.</p><div class="sp-filters"',1)
 markup=markup.replace('Sektorien osuudet näkyvät toimien lähdetiedoissa.', 'Sektorien osuudet näkyvät toimien lähdetiedoissa.</p><p>Määräaikaisten menojen aikaistetut lopetukset, pelkät menojen lykkäykset ja kertaluonteiset omaisuus- ja rahoitusvarasiirrot on rajattu pois. Indeksijäädytyksiä ei poisteta määräaikaisuuden perusteella: ne voivat jättää myöhempien maksujen pohjan alemmaksi. Työeläkejäädytyksen vaikutus kuitenkin hiipuu ajan myötä, ja puolustusmenojen myöhempi kasvutavoite voi kumota indeksisäästöä. Toimikohtaiset rajoitukset ovat lähdetiedoissa.')

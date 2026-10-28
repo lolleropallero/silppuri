@@ -146,18 +146,18 @@ ctx.root={querySelector:()=>({querySelectorAll:()=>[]})};ctx.Path2D=function(){}
 ctx.decileName=i=>'Ryhmä '+i;ctx.decileIncomeRange=()=>'';ctx.shareLabel=n=>n+' %';ctx.chartPercent=n=>n+' %';
 ctx.piePresentation=()=>({parts:[],rings:[]});ctx.pieViewport=()=>({width:320,height:320,x:0,y:0});ctx.smallSliceLabel=()=>'';
 ctx.stateIn({modelContent:{...seed,includeLater:true,selectedIds:[],fundingChoices:{yle:'reduce-tax',farm:'redirect'}}});
-ctx.createShareImage(ctx.data,'Testi',true,'https://example.test/silppuri/#s=secret');
+ctx.createShareImage(ctx.data,'Testi',true);
 const imageText=drawn.join(' ');
 assert.ok(imageText.includes(ctx.packageSummary(ctx.data).description),'PNG carries the selected satire');
 assert.ok(imageText.includes(ctx.packageSummary(ctx.data).largest),'PNG includes the biggest actual measure');
 for(const required of ['50–80 milj. €','Arvio palvelujen käytön perusteella',
-  'ei mitattu menetys','Osin vastaavista toimista arvioitu jakauma','example.test/silppuri/'])assert.ok(imageText.includes(required),required);
+  'ei mitattu menetys','Osin vastaavista toimista arvioitu jakauma'])assert.ok(imageText.includes(required),required);
 assert.ok(!imageText.includes('#s='),'do not print a giant share token');
-for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
+for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako','Arvioitu raharasitus','Arvioiduissa toimissa:','Osasta valituista toimista','silppuri.fi/','example.test/'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
 for(const [selectedIds,money,services] of [[['vat'],true,false],[['health'],false,true],[['health','vat'],true,true],[['cut-1-42'],false,false],[['income'],false,false]]){
   ctx.stateIn({modelContent:{...seed,selectedIds,includeLater:false,taxIncreasesPP:{income:0,corporate:1}}});
   drawn.length=0;panels.length=0;
-  ctx.createShareImage(ctx.data.filter(d=>ctx.selected.has(d.id)),'Osioiden testi',false,'https://example.test/');
+  ctx.createShareImage(ctx.data.filter(d=>ctx.selected.has(d.id)),'Osioiden testi',false);
   assert.equal(drawn.includes('Rahat ja ostovoima'),money,selectedIds+': household chart');
   assert.equal(drawn.includes('Julkiset palvelut'),services,selectedIds+': service chart');
   assert.equal(panels.some(p=>p.width===1104),money!==services,selectedIds+': a single populated chart uses the whole width');

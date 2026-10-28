@@ -26,7 +26,6 @@ assert.ok(flatSummary.distribution.money.deciles.every(r=>r.mid===5),'compare pe
 const almostSpared=synthetic(poor.map((n,i)=>i>6?.001:n));
 assert.equal(almostSpared.tone.id,'lower','small is not zero');
 assert.ok(!almostSpared.description.includes('katsomosta'));
-assert.ok(almostSpared.evidence.includes('< 0,01'));
 assert.equal(synthetic([1,1,1,10,12,10,10,1,1,1]).tone.id,'middle');
 assert.equal(synthetic([1,1,1,2,2,2,2,10,12,15]).tone.id,'upper');
 const hiddenByAverages=synthetic([10,0,5,0,10,0,10,5,0,10]);
@@ -38,8 +37,8 @@ assert.equal(ctx.packageSummary([d],ctx.calculateIncidence([d],uncertainModel),u
 const unknown={id:'unknown',amount:50000,type:'cut',flow:'services',title:'Ei jakaumaa'};
 const partialModel={...testModel,actions:{test:{kind:'sisu',percent:poor}}};
 const partial=ctx.packageSummary([d,unknown],ctx.calculateIncidence([d,unknown],partialModel),partialModel);
-assert.ok(partial.tone.text.startsWith('Arvioiduissa toimissa:'));
-assert.match(partial.evidence,/Osasta valituista toimista/);
+assert.ok(!partial.tone.text.includes('Arvioiduissa toimissa:'));
+assert.equal(partial.distribution.missing.length,1);
 assert.equal(ctx.packageSummary([unknown],ctx.calculateIncidence([unknown],testModel),testModel).tone.id,'unknown');
 // Service use allocation is independent of household income percentages.
 const serviceModel={...testModel,profiles:{services:[.2,.2,.2,.1,.1,.1,.05,.02,.02,.01]},actions:{test:{kind:'sisu',percent:rich},service:{kind:'proxy',channel:'services',profiles:['services'],amountBasis:'public-total'}}};
@@ -60,7 +59,6 @@ const workModel={...testModel,actions:{test:{kind:'sisu',channel:'work',percent:
 const workAction={...d,flow:'employees'};
 const work=ctx.packageSummary([workAction],ctx.calculateIncidence([workAction],workModel),workModel);
 assert.equal(work.tone.id,'even-work');assert.equal(work.distribution.money.state,'none');
-assert.match(work.evidence,/ei työntekijän nettotulon/);
 // Every profile has a distinct reading for lower, middle and upper burdens.
 const patterns=[[10,10,10,2,2,2,2,1,1,1],[1,1,1,10,10,10,10,1,1,1],[1,1,1,2,2,2,2,10,10,10]];
 for(const flow of ['services','support','employees','earned','consumption','capital','companies','abroad']){
@@ -83,7 +81,7 @@ for(const later of [false,true]){
   for(const action of ctx.data){
     const s=ctx.packageSummary([action]);
     assert.ok(s.tone.text&&s.description,action.id);
-    assert.ok(!/NaN|undefined|Infinity/.test(s.tone.text+s.description+s.evidence+s.largest),action.id);
+    assert.ok(!/NaN|undefined|Infinity/.test(s.tone.text+s.description+s.largest),action.id);
     for(const channel of ['money','services','work'])assert.ok(s.distribution[channel].deciles.every(r=>Number.isFinite(r.mid)),action.id);
   }
 }

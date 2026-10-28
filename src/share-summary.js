@@ -65,23 +65,6 @@ function packageDistribution(chosen,result,model){
   const missing=chosen.filter(d=>!covered.has(d.id));
   return {money,services,work,missing};
 }
-function shareEvidence(distribution){
-  const {money,services,work}=distribution;
-  const percent=n=>Math.abs(n)<1e-9?'0':Math.abs(n)<.01?'< 0,01':n.toLocaleString('fi-FI',{maximumFractionDigits:2});
-  const range=r=>Math.abs(r.high-r.low)<.005?percent(r.mid):percent(r.low)+'–'+percent(r.high);
-  const notes=[];
-  if(!['none','zero'].includes(money.state)){
-    notes.push('Arvioitu raharasitus suhteessa tuloihin: alin 10 % '+range(money.deciles[0])+' %, ylin 10 % '+range(money.deciles[9])+' %.'+
-      (money.peak>0&&money.peak<9?' Suurin keskiarvio: '+(money.peak+1)+'. tulokymmenys ('+range(money.deciles[money.peak])+' %).':''));
-  }
-  if(!['none','zero'].includes(services.state)){
-    const sum=indices=>indices.reduce((n,i)=>n+services.deciles[i].mid,0);
-    notes.push('Palvelurahan leikkauksesta kohdentuu käytön perusteella alimpaan 30 %:iin '+percent(sum(shareIncomeBands.lower))+' %, ylimpään 30 %:iin '+percent(sum(shareIncomeBands.upper))+' %. Tämä ei mittaa rahatulon menetystä.');
-  }
-  if(!['none','zero'].includes(work.state))notes.push('Henkilöstömenojen kohdennus on työnantajan kustannusarvio, ei työntekijän nettotulon menetys.');
-  if(distribution.missing.length)notes.push('Osasta valituista toimista ei ole tuloryhmäarviota; vertailu koskee arvioitua osaa.');
-  return notes.join(' ');
-}
 function packageStory(profile,distribution,total,chosen){
   const {money,services,work}=distribution;
   const active=s=>!['none','zero'].includes(s.state);
@@ -102,10 +85,7 @@ function packageStory(profile,distribution,total,chosen){
   else if(key==='uncertain'&&profile==='companies')key='uncertain-companies';
   const voice=profile==='services'&&primary.channel==='money'?'fees':profile;
   copy=shareEditorial[key]?.[voice]||shareSpecialEditorial[key]||shareSpecialEditorial.unknown;
-  // Incomplete coverage must qualify the headline too, because the link caption
-  // is intentionally shorter than the image and does not carry the evidence.
-  const partial=distribution.missing.length&&active(primary)&&total>=0;
-  return {id:key,channel:primary.channel,text:(partial?'Arvioiduissa toimissa: ':'')+copy[0],body:copy[1]};
+  return {id:key,channel:primary.channel,text:copy[0],body:copy[1]};
 }
 function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),model=incidenceModel){
   const weights=Object.fromEntries(Object.keys(packageProfiles).map(key=>[key,0]));
@@ -125,8 +105,7 @@ function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),
   const biggest=chosen.filter(d=>Number.isFinite(d.amount)&&d.amount>0).sort((a,b)=>b.amount-a.amount||a.id.localeCompare(b.id))[0];
   const title=biggest?.title?.trim().replace(/[.!?]+$/,'');
   const largest=title?'Suurin siivu: '+title+' ('+shareTotal(biggest.amount)+').':'';
-  const evidence=shareEvidence(distribution);
-  return {total,weights,profile:{id,...packageProfiles[id]},tone,distribution,description:tone.body,evidence,largest};
+  return {total,weights,profile:{id,...packageProfiles[id]},tone,distribution,description:tone.body,largest};
 }
 function shareTotal(amount){
   return (Math.abs(amount)>=1000?amount/1000:amount).toLocaleString('fi-FI',{maximumFractionDigits:Math.abs(amount)>=1000?2:1})+(Math.abs(amount)>=1000?' mrd. €':' milj. €');
