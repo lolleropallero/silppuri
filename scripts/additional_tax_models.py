@@ -7,6 +7,10 @@ from itertools import product
 from math import floor, ceil
 
 
+def number(value):
+    return f'{value:,.6f}'.rstrip('0').rstrip('.').replace(',', ' ').replace('.', ',')
+
+
 def calculate(inputs):
     results = {}
     for key, p in inputs.items():
@@ -21,20 +25,31 @@ def calculate(inputs):
                 # Include the loss of EXISTING tax from deferred sales, not just
                 # an arbitrary haircut on the mechanical additional tax.
                 tax = p['gains'] * share * p['rate'] * ((1 + uplift)**(1-elasticity) - 1)
-                cases.append({'tax': tax, 'net': tax-cost})
+                expression = (f"{number(p['gains'])} × {number(share)} × {number(p['rate'])} × "
+                              f"[(1 + {'1/3' if abs(uplift-1/3)<1e-10 else number(uplift)})^"
+                              f"(1 − {number(elasticity)}) − 1] − {number(cost)}")
+                cases.append({'tax': tax, 'net': tax-cost, 'expression': expression})
         else:
             for factors in product(*p['factors']):
                 tax = p['anchor']
                 for f in factors:
                     tax *= f
                 for cost in p['cost']:
-                    cases.append({'tax': tax, 'net': tax-cost})
+                    terms = ([p['anchor']] if p['anchor'] != 1 else []) + list(factors)
+                    expression = ' × '.join(number(n) for n in terms) + ' − ' + number(cost)
+                    cases.append({'tax': tax, 'net': tax-cost, 'expression': expression})
         values = [c['net'] for c in cases]
         step = p.get('roundTo', 5)
         results[key] = {'raw': [min(values), max(values)],
                         'range': [floor((min(values)+1e-10)/step)*step, ceil((max(values)-1e-10)/step)*step],
                         'taxRange': [min(c['tax'] for c in cases), max(c['tax'] for c in cases)],
                         'caseCount': len(cases)}
+        if p['formula'] != 'reference':
+            results[key]['bounds'] = [
+                {'label': label, 'expression': case['expression'], 'value': case['net']}
+                for label, case in [('Alaraja', min(cases, key=lambda c: c['net'])),
+                                    ('Yläraja', max(cases, key=lambda c: c['net']))]]
+            results[key]['roundTo'] = step
     return results
 
 
@@ -46,6 +61,8 @@ def apply(actions, results):
         low, high = r['range']
         e = d['estimate']
         e.update(amount=low, range=r['range'], display=f'{low}–{high} milj. €')
+        if r.get('bounds'):
+            e.update(bounds=r['bounds'], roundTo=r['roundTo'])
         e['footnote'] = e.get('condition', 'Oma skenaario') + f'; piirakkaan {low} milj. €.'
 
 

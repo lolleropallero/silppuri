@@ -111,8 +111,9 @@
   #silppuri-demo .sp-bookmark-flag{width:44px;height:56px}
   #silppuri-demo .sp-bookmark-flag strong{font-size:21px}
 }
-#silppuri-demo .sp-source-notes{font-size:12px;white-space:pre-line;line-height:1.6}
+#silppuri-demo .sp-source-notes{font-size:13px;white-space:pre-line;line-height:1.6;margin:16px 0;overflow-wrap:anywhere}
 #silppuri-demo .sp-source-notes summary{font-weight:600;white-space:normal}
+#silppuri-demo .sp-calculation-bounds{background:var(--sp-paper);padding:2px 12px;border-radius:6px;font-variant-numeric:tabular-nums;white-space:normal}
 #silppuri-demo .sp-stepper + .sp-control-label{margin-top:14px}
 #silppuri-demo .sp-overlap{font-size:12px;background:var(--sp-lime);padding:12px;border-radius:6px;margin-top:16px}
 #silppuri-demo .sp-package-overlap{font-size:12px;line-height:1.5;margin-top:12px}

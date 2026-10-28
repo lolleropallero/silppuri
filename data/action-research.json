@@ -2328,7 +2328,7 @@
     ],
     "finding": "",
     "fiscal": "Arviosta vähennetään jo toteutettujen torjuntatoimien osuus sekä 10–20 miljoonaa lisävalvonnan vuosikuluja. Toimi sisältää korkorajoitusten kiristyksen, joten sen erillinen kortti korvautuu.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-corporate-minimum": {
@@ -2343,7 +2343,7 @@
     ],
     "finding": "",
     "fiscal": "Suomen lisätuotto jää avoimeksi. Jo päätetyn 15 prosentin järjestelmän tuottoa ei lisätä uutena säästönä.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-wealth-minimum": {
@@ -2358,7 +2358,7 @@
     ],
     "finding": "",
     "fiscal": "Omassa laskelmassa nykyiset henkilöverot ja veropohjan muutokset vaihtelevat erikseen. Suomen erittäin varakkaiden tosiasiallista veroastetta ei tunneta.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context",
     "society": "Vero kohdistuisi erittäin suuriin varallisuuksiin. Ilmoitettuun varallisuuteen voi tulla huomattavia muutoksia verosuunnittelun, arvostuksen ja maastamuuton vuoksi. Sveitsin tutkimuksessa kokonaisreaktio oli suuri; Pohjoismaiden pieni muuttoreaktio ei sulje tätä pois."
   },
@@ -2373,7 +2373,7 @@
     ],
     "finding": "",
     "fiscal": "0–50 miljoonaa on VM:n vanhan selvityksen suuruusluokka, ei kattava netto. Nolla on epävarman haarukan alaraja. Laajemman veron suurempaa tuottoa ei ole varmistettu, joten piirakka ei lupaa sitä etukäteen.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-property-funds": {
@@ -2387,20 +2387,20 @@
     ],
     "finding": "",
     "fiscal": "Laskelma hyvittää osan nykyisistä sijoittajatason veroista ja jättää julkisten eläkesijoittajien osuuden nettotuoton ulkopuolelle. Ulkomaisten rahastojen lisätuottoa ei arvaamalla lisätä kotimaisen kannan päälle.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-treaty-dividends": {
     "sources": [
       "fw-tax-gaps",
-      "vm-withholding",
+      "vm-treaty-dividends",
       "faster-2024",
       "statfin-wealth-incidence",
       "statfin-income-incidence"
     ],
     "finding": "",
     "fiscal": "Osinkopesun vanhaa 80 miljoonan verovajetta ei lisätä nollaverosopimusten tuoton päälle: samaa osinkoa voi olla molemmissa. Jo toteutuneet korjaukset, vastavuoroiset verohyvitykset ja valvontakulut pienentävät arviota.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-portfolio": {
@@ -2414,7 +2414,7 @@
     ],
     "finding": "",
     "fiscal": "Tästä veropohjasta ei ole erillistä julkista tilastoa. Euromäärä on siksi avoimesti oletettuun pienomistusten osuuteen perustuva laskelma. Se huomioi järjestelyjen muutoksia, pienemmät myöhemmät omistajaverot ja hallintokulut.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-deemed-cost": {
@@ -2428,7 +2428,7 @@
     ],
     "finding": "",
     "fiscal": "Laskenta vähentää myös lykkääntyvistä myynneistä menetetyn nykyisen veron. Hankintameno-olettamaa hyödyntävien voittojen osuus on oma herkkyysoletus, koska julkaistu tilasto ei erittele sitä.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-succession-abolish": {
@@ -2442,7 +2442,7 @@
     ],
     "finding": "",
     "fiscal": "Koko huojennuksen 240 miljoonan lähtöarviosta vähennetään suunnittelun ja muiden käyttäytymismuutosten vaikutus sekä hallinto. Sijoitusvarojen rajaus sisältyy poistoon eikä sitä lisätä uudelleen.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   },
   "fw-digital": {
@@ -2457,7 +2457,7 @@
     ],
     "finding": "",
     "fiscal": "Arvio vähentää välittäjille jäävää liikevaihtoa, verorajojen ulkopuolista toimintaa, yritysten reagointia ja muuta verotulomenetystä. Tavallinen mainonnan ALV ei poistu.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context",
     "society": "Suomalaisten yritysten mainonta voi kallistua. Itävallassa Google lisää koko 5 prosentin verokannan mainostajan laskuun. Mainostajien myöhempi hinnankorotus asiakkaille on eri vaikutus, josta ei ole Suomen arviota."
   },
@@ -2485,7 +2485,7 @@
     ],
     "finding": "",
     "fiscal": "Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.",
-    "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+    "scope": "",
     "status": "context"
   }
 }

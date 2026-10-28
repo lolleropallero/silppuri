@@ -649,6 +649,71 @@
     }
     measureViewport();
   }
+  function fiscalCalculation(d){
+    const n=value=>value.toLocaleString('fi-FI',{maximumFractionDigits:3}),m=value=>n(value)+' milj. €';
+    const base=baseData.get(d.id),lines=[];
+    const steps=d.unit?(d.id==='income'||d.id==='corporate'?scenario[d.id]:units[d.id]):1;
+    const counted=()=>lines.push('Piirakkaan lasketaan '+m(d.amount)+(Number.isFinite(d.netUpper)&&d.netUpper!==d.amount?' eli haarukan alaraja.':'.'));
+    if(d.estimate)return {kind:'estimate',lines:d.estimate.calculation};
+    if(d.scaleNetOpen)return {kind:'unpriced',lines:['Valittu muutos on '+steps+' askelta. Lähteessä ei ole tämän suuruisen muutoksen nettoarviota. Piirakkaan ei lisätä tuottoa.']};
+    if(d.unquantifiedNet)return {kind:'unpriced',lines:['Lähteen suora vaikutus on '+m(d.directAmount)+'. Kokonaisnetto puuttuu, joten tätä lukua ei lisätä piirakkaan.',d.research.fiscal]};
+    if(!Number.isFinite(d.amount))return {kind:'unpriced',lines:['Lähteessä ei ole tälle toteutukselle euromääräistä arviota. Laskuri ei johda puuttuvaa lukua muista toimista. Piirakkaan ei lisätä summaa.']};
+    if(d.earliest>year)return {kind:'timing',lines:['Toimi on toteutettavissa aikaisintaan '+d.earliest+'. Vuoden '+year+' summaan lasketaan 0 €.']};
+    if(d.conditional){
+      const saving=d.conditional==='yle'?conditions.yle==='keep-tax':conditions.farm==='save';
+      lines.push((d.conditional==='yle'?'Rahoituksen vähennys':'Vapautuva tukiraha')+': '+m(d.gross)+'.');
+      lines.push(saving?'Rahaa ei palauteta veroalennuksena tai jaeta uudelleen: '+m(d.gross)+' jää julkiselle taloudelle.':m(d.gross)+' − '+m(d.gross)+' = 0 €. '+(d.conditional==='yle'?'Yle-veron alennus kumoaa rahoitussäästön.':'Vapautuva tuki jaetaan uudelleen.'));
+      counted();return {kind:'conditional',lines};
+    }
+    if(d.cashOnly)return {kind:'transfer',lines:['Omaisuuden tai rahoitusvarojen siirtoa ei lasketa pysyväksi säästöksi. Piirakkaan 0 €.']};
+    if(d.historical||d.revenueEstimate){
+      lines.push((d.historical?'Labore / Finér 2024: ':d.revenueEstimate.label+': ')+m(d.amount)+'. Laskuri käyttää lähteen valmista arviota.');
+      counted();return {kind:'reference',lines};
+    }
+    if(d.percentCut){
+      const index=(d.laterApplied?d.horizonEstimate.year:year)-2028;
+      const original=(base.budget[index]??0)+(d.spendingNet?0:base.funds[index]??0);
+      lines.push('Lähteen '+d.percentCut.referencePercent+' % leikkauksen arvio on '+m(original)+'. Valittu '+d.cutPercent+' %: '+n(original)+' × '+d.cutPercent+' / '+d.percentCut.referencePercent+' = '+m(d.spendingNet?d.gross:d.amount)+'.');
+    }
+    if(d.spendingNet){
+      lines.push('Verot ja muut vastavaikutukset huomioiva kerroin: '+d.spendingNet.factors.map(f=>n(f*100)+' %').filter((v,i,a)=>a.indexOf(v)===i).join('–')+'.');
+      lines.push('Alaraja: '+n(d.gross)+' × '+n(d.spendingNet.factors[0])+' ≈ '+m(d.amount)+'.');
+      if(d.netUpper!==d.amount)lines.push('Yläraja: '+n(d.gross)+' × '+n(d.spendingNet.factors[1])+' ≈ '+m(d.netUpper)+'.');
+      lines.push(d.spendingNet.explanation);counted();return {kind:'spending-net',lines};
+    }
+    if(d.net){
+      if(!d.net.calculation){
+        if(d.id==='income'||d.id==='income-index')lines.push('Lähteen suora tuotto '+m(base.budget[0])+'. VM:n nettokertoimet: '+n(base.budget[0])+' × 60 % = '+m(d.net.low)+'; '+n(base.budget[0])+' × 75 % = '+m(d.net.high)+'.');
+        else{
+          lines.push('VM:n suoran arvion ja nettoarvion erotus on vähennysten yhteismäärä. '+d.net.explanation);
+          lines.push(n(base.budget[0])+' − '+n(base.budget[0]-d.net.low)+' = '+m(d.net.low)+'.');
+          if(d.net.high!==undefined&&d.net.high!==d.net.low)lines.push('Yläraja: '+n(d.net.grossHigh??base.budget[0])+' − '+n((d.net.grossHigh??base.budget[0])-d.net.high)+' = '+m(d.net.high)+'.');
+        }
+        lines.push('Lähde: '+d.net.source+'.');
+      }
+      if(d.unit)lines.push('Valittu '+steps+' askelta: '+n(d.net.low)+' × '+steps+' = '+m(d.amount)+(d.netUpper!==d.amount?'; yläraja '+n(d.net.high??d.net.low)+' × '+steps+' = '+m(d.netUpper):'')+'.');
+      counted();return {kind:'tax-net',lines};
+    }
+    if(d.unit){
+      const perUnit=d.id==='tax-land-min'&&selected.has('tax-land-values')?100:base.budget[0];
+      lines.push('VM:n suora yksikköarvio '+m(perUnit)+'. Valittu '+steps+' askelta: '+n(perUnit)+' × '+steps+' = '+m(d.amount)+'.');
+      if(d.id==='tax-land-min'&&selected.has('tax-land-values'))lines.push('100 miljoonan yksikköarvio koskee samalla valittua tonttien arvostusuudistusta; ilman sitä yksikköarvio on '+m(base.budget[0])+'.');
+      counted();return {kind:'unit',lines};
+    }
+    if(d.report==='cut'){
+      const at=d.laterApplied?d.horizonEstimate.year:year;
+      if(!d.percentCut)lines.push('VM:n vuoden '+at+' taulukko: valtio, kunnat ja alueet '+m(d.budgetAmount??0)+' + sosiaaliturvarahastot '+m(d.fundAmount??0)+' = '+m(d.amount)+'.');
+      lines.push('Kyseessä on vuoden '+at+' vuosivaikutus, ei usean vuoden säästöjen summa.');
+      counted();return {kind:d.percentCut?'percent':'annual',lines};
+    }
+    lines.push('VM:n verokartoituksen suora arvio on '+m(d.amount)+' vuoden 2028 tasossa. Luku on otettu lähteen taulukosta; laskuri ei laske sitä uudelleen verovelvollisten aineistosta.');
+    counted();return {kind:'reference',lines};
+  }
+  function estimateBoundsMarkup(estimate){
+    if(!estimate.bounds)return '';
+    const n=value=>value.toLocaleString('fi-FI',{maximumFractionDigits:3});
+    return '<div class="sp-calculation-bounds"><p><strong>Haarukan lasku</strong> · luvut miljoonina euroina</p>'+estimate.bounds.map(row=>'<p><strong>'+esc(row.label)+':</strong> '+esc(row.expression)+' ≈ <strong>'+esc(n(row.value))+' milj. €</strong></p>').join('')+'<p>Alaraja pyöristetään alas ja yläraja ylös '+esc(n(estimate.roundTo))+' miljoonan tarkkuuteen: <strong>'+estimate.range.map(v=>esc(n(v))).join('–')+' milj. €</strong>. Piirakkaan '+esc(n(estimate.amount))+' milj. €.</p></div>';
+  }
   function renderImpact(id){
     const d=data.find(x=>x.id===id);if(!d)return;
     const e=effectFor(d);
@@ -673,12 +738,12 @@
     q('.sp-impact-uncertainty').textContent=e.caveat;
     q('.sp-impact-uncertainty').hidden=!e.caveat;
     const hasAnnuals=d.report==='cut'&&[...d.budget,...d.funds].some(Number.isFinite);
-    let notes=q('.sp-source-notes');if(!notes){notes=document.createElement('details');notes.className='sp-source-notes';q('.sp-impact-tradeoff').before(notes);notes.addEventListener('toggle',positionDialog);}
+    let notes=q('.sp-source-notes');if(!notes){notes=document.createElement('details');notes.className='sp-source-notes';q('.sp-impact-sources').before(notes);notes.addEventListener('toggle',positionDialog);}
     notes.hidden=!hasAnnuals;notes.open=false;
     notes.innerHTML=hasAnnuals?'<summary class="cursor-interaction">VM:n arviot vuosittain</summary><table class="sp-annuals"><thead><tr><th>Vuosi</th><th>Julkinen talous</th><th>Valtio, kunnat, alueet</th><th>Sosiaali­turva­rahastot</th></tr></thead><tbody>'+d.budget.map((v,i)=>'<tr><td>'+(2028+i)+'</td><td>'+moneyLabel(Number.isFinite(v)||Number.isFinite(d.funds[i])?(v??0)+(d.funds[i]??0):null)+'</td><td>'+moneyLabel(v)+'</td><td>'+moneyLabel(d.funds[i])+'</td></tr>').join('')+'</tbody></table>':'';
     if(hasAnnuals&&(d.conditional||d.cashOnly||d.net||d.revenueEstimate))notes.innerHTML+='<p>Taulukossa ovat VM:n alkuperäiset luvut ennen yllä kuvattua netto- tai rahoitusoikaisua.</p>';
     if(hasAnnuals&&d.unquantifiedNet)notes.innerHTML+='<p>Taulukko sisältää suorat vaikutukset. Työllisyyden ja muiden käyttäytymismuutosten vaikutukset eivät sisälly näihin lukuihin.</p>';
-    if(d.spendingNet)notes.innerHTML=notes.innerHTML.replace('Julkinen talous','VM:n brutto yhteensä')+'<p>'+esc(d.spendingNet.explanation)+' '+esc(d.spendingNet.limit)+'</p>';
+    if(d.spendingNet)notes.innerHTML=notes.innerHTML.replace('Julkinen talous','VM:n brutto yhteensä')+'<p>'+esc(d.spendingNet.limit)+'</p>';
     if(d.directOnly)notes.innerHTML=notes.innerHTML.replace('Julkinen talous','Suora vaikutus');
     if(d.continuationNote)notes.innerHTML+='<p>'+esc(d.continuationNote)+'</p>';
     if(d.longRunEstimate)notes.innerHTML+='<p>'+esc(d.longRunEstimate.source)+'. '+esc(d.longRunEstimate.basis||'')+' Pitkän aikavälin lukua ei lisätä kummankaan näkymän piirakkaan.</p>';
@@ -696,7 +761,13 @@
     }
     if(d.estimate){
       notes.hidden=false;
-      notes.innerHTML='<summary class="cursor-interaction">Miten tuotto on laskettu?</summary>'+d.estimate.calculation.map(text=>'<p>'+esc(text)+'</p>').join('')+(d.estimate.sensitivity?'<table class="sp-estimate-years"><caption>Sama sijoituskanta myöhemmin</caption><thead><tr><th>Vuosi</th><th>Netto, milj. €</th></tr></thead><tbody>'+d.estimate.sensitivity.map(row=>'<tr><th scope="row">'+esc(row.label)+'</th><td>'+row.range.map(n=>esc(n.toLocaleString('fi-FI'))).join(' … ')+'</td></tr>').join('')+'</tbody></table>':'');
+      notes.open=true;
+      notes.innerHTML='<summary class="cursor-interaction">Miten tuotto on laskettu?</summary>'+estimateBoundsMarkup(d.estimate)+d.estimate.calculation.map(text=>'<p>'+esc(text)+'</p>').join('')+(d.estimate.sensitivity?'<table class="sp-estimate-years"><caption>Sama sijoituskanta myöhemmin</caption><thead><tr><th>Vuosi</th><th>Netto, milj. €</th></tr></thead><tbody>'+d.estimate.sensitivity.map(row=>'<tr><th scope="row">'+esc(row.label)+'</th><td>'+row.range.map(n=>esc(n.toLocaleString('fi-FI'))).join(' … ')+'</td></tr>').join('')+'</tbody></table>':'');
+    }else{
+      const calculation=fiscalCalculation(d);
+      const detail=notes.hidden?'':notes.innerHTML.replace(/^<summary[^>]*>.*?<\/summary>/,'');
+      notes.hidden=false;
+      notes.innerHTML='<summary class="cursor-interaction">'+(Number.isFinite(d.amount)?'Miten summa on laskettu?':'Miksi summaa ei ole laskettu?')+'</summary>'+calculation.lines.map(text=>'<p>'+esc(text)+'</p>').join('')+detail;
     }
     let incomeNotes=q('.sp-income-source-notes');
     if(!incomeNotes){incomeNotes=document.createElement('details');incomeNotes.className='sp-source-notes sp-income-source-notes';notes.after(incomeNotes);incomeNotes.addEventListener('toggle',positionDialog);}
@@ -705,7 +776,7 @@
     incomeNotes.innerHTML=incomeSpec?.calculation?'<summary class="cursor-interaction">Miten tuloryhmäarvio on laskettu?</summary><p>'+esc(incomeSpec.method)+'</p>'+incomeSpec.calculation.map(text=>'<p>'+esc(text)+'</p>').join('')+'<p>'+esc(incomeSpec.note)+'</p>':'';
     q('.sp-impact-tradeoff').textContent=e.tradeoff;
     q('.sp-impact-tradeoff').hidden=!e.tradeoff;
-    q('.sp-impact-sources > summary').textContent='Lähteet ja laskentatapa';
+    q('.sp-impact-sources > summary').textContent='Lähteet';
     const links=[{url:e.sourceUrl||d.sourceUrl||urls[d.report],label:e.refs},...e.extra.map(key=>evidence[key]),...(d.research?.sources||[]).map(key=>researchSources[key])];
     if(d.report==='cut')links.splice(1,0,{url:urls.cut,label:d.memo&&d.memo!=='Ei taustamuistiota'?'VM 2026:44 · muistio: '+d.memo:'VM 2026:44 · menokartoitus'});
     const seenUrls=new Set();

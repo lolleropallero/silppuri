@@ -53,16 +53,15 @@ ctx.stateIn({modelContent:{selectedIds:[id],cutPercents:{[id]:65}}});
 ctx.window={openai:{setWidgetState:s=>{ctx.saved=structuredClone(s);}}};ctx.save();
 ctx.stateIn({modelContent:{selectedIds:[id]}});assert.equal(get(id).cutPercent,30,'old saved packages retain the source percentage');
 ctx.stateIn(ctx.saved);assert.equal(get(id).cutPercent,65,'own saved package retains adjustment');
-const valid=JSON.parse(Buffer.from(ctx.encodeShare(ctx.packageModel()),'base64url'));
-delete valid.p;ctx.stateIn({modelContent:ctx.decodeShare(Buffer.from(JSON.stringify(valid)).toString('base64url'),new Set(actions.map(d=>d.id)))});
-assert.equal(get(id).cutPercent,30,'old URL without percentages keeps its original amount');
-for(const bad of [null,[],{[id]:0},{[id]:101},{[id]:7},{[id]:'50'},{unknown:50}]){
- const token=Buffer.from(JSON.stringify({...valid,p:bad})).toString('base64url');
- assert.throws(()=>ctx.decodeShare(token,new Set(actions.map(d=>d.id))));
+const defaultModel={...ctx.packageModel(),cutPercents:{}};
+ctx.stateIn({modelContent:ctx.decodeShare(ctx.encodeShare(defaultModel),new Set(actions.map(d=>d.id)))});
+assert.equal(get(id).cutPercent,30,'a link without a percentage adjustment uses the source percentage');
+for(const bad of [0,101,7,'50']){
+ assert.throws(()=>ctx.encodeShare({...defaultModel,cutPercents:{[id]:bad}}));
 }
 for(const percent of [5,100]){
  ctx.stateIn({modelContent:{selectedIds:[id],cutPercents:{[id]:percent}}});
  for(const place of ['card','modal'])assert.match(ctx.controlsMarkup(id,place),new RegExp('id="sp-'+place+'-'+id+'-'+(percent===5?'minus':'plus')+'"[^>]*disabled'));
 }
 ctx.stateIn({modelContent:{selectedIds:['cut-7-52']}});assert.equal(get('cut-7-52').cutPercent,1,'original one-percent wage cut remains available');
-console.log('PASS: 15 adjustable cuts, 5–100% in 5-point steps, original defaults, all eight years, net ranges, later horizon, repeated rendering, incidence scaling, saved packages and old/new share links.');
+console.log('PASS: 15 adjustable cuts, 5–100% in 5-point steps, original defaults, all eight years, net ranges, later horizon, repeated rendering, incidence scaling, saved packages and compact share links.');

@@ -52,7 +52,7 @@ for(const e of r.entries){
  assert.ok(e.mid.every((v,i)=>Number.isFinite(v)&&v>=e.low[i]-1e-8&&v<=e.high[i]+1e-8));
 }
 assert.equal(model.actions['sorsa-bank'].channel,'indirect');assert.equal(model.actions['sorsa-million-inheritance'].channel,'cash');
-const fragment=fs.readFileSync('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html','utf8');
+const fragment=fs.readFileSync(path.join(root,'tmp/silppuri-konsepti.html'),'utf8');
 assert.ok(Buffer.byteLength(fragment)<1000000);
 // Compact reference pointers must resolve to the same complete visible notes.
 const app=fragment.slice(fragment.indexOf('  const researchSources='),fragment.indexOf('  const evidence='));

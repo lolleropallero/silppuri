@@ -263,7 +263,7 @@ for d in catalogue:
     if r['status']=='skipped':
         assert d.get('cashOnly'), d['id']
         continue
-    assert r['fiscal'] and r['scope'], d['id']
+    assert r['fiscal'], d['id']
     assert set(r['sources'])<=set(research_sources), d['id']
     d['research']=r
 used_sources={s for d in catalogue for s in d.get('research',{}).get('sources',[])}

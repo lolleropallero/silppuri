@@ -102,6 +102,12 @@ source('digital-jrc', 'Alvarez Martinez, Gesualdo & Pycroft (2024): Storm in the
  'Britannian digiveron mallinnus tuotti pienen kielteisen BKT-vaikutuksen mutta lisäsi mallissa maan kulutusta ja hyvinvointia. Malli erottaa digitoimialan muusta tuotannosta ja huomioi kansainväliset yritykset.',
  'Britannian veropohja poikkeaa Suomen verkkomainontaveron skenaariosta. Mallin tulosta ei käytetä Suomen tuotto- tai kulutusvaikutuksen kertoimena.')
 
+source('vm-treaty-dividends', 'VM 2021:31, s. 78, taulukko 7: verosopimusten vuoksi verovapaat osingot',
+ 'https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content#page=79',
+ 'Suomi · Verohallinnon vuosi-ilmoitukset 2016–2020',
+ 'Verosopimuksen vuoksi verovapaana maksettujen osinkojen rivi on 1 730, 1 300, 1 500, 1 650 ja 480 miljoonaa euroa vuosina 2016–2020. Suorasijoitusosingot on erotettu omalle rivilleen. Näiden viiden vuoden keskiarvo on 1 332 miljoonaa euroa.',
+ 'Taulukko kuvaa maksettuja osinkoja, ei verouudistuksen tuottoa. Raportin mukaan saajaluokitteluun liittyy epävarmuutta. Silppurin 15 prosentin vero, veropohjan säilyminen, kertymän vähennykset ja valvontakulut eivät ole tästä taulukosta saatu nettoarvio.')
+
 actions, models = [], {}
 def add(id, title, flow, who, society, money, calc, sources, model, allocations,
         incidence_method, incidence_assumptions, *, channel='cash', conflicts=(), condition=None, outside=False, origin='finnwatch'):
@@ -113,7 +119,7 @@ def add(id, title, flow, who, society, money, calc, sources, model, allocations,
     d = dict(id=id, title=title, flow=flow, who=who, impact=who.split('. ')[0].rstrip('.')+'.', society=society,
         origin=origin, source=refs[source_key]['label'], sourceUrl=refs[source_key]['url'], conflicts=list(conflicts),
         estimate=e, research=dict(sources=sources, finding='', fiscal=money,
-        scope='Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.', status='context'),
+        scope='', status='context'),
         incidence=dict(channel=channel, allocations=allocations, method=incidence_method, assumptions=incidence_assumptions, outsideResidents=outside))
     actions.append(d); models[id] = model
 
@@ -186,10 +192,12 @@ add('fw-treaty-dividends', 'Osinkojen nollaverosopimukset ja osinkopesu pois', '
  'Suomesta osinkoja saavilta ulkomaisilta sijoittajilta ja veronkiertojärjestelyjen hyötyjiltä.',
  'Portfolio-osingosta perittäisiin yleensä 15 % lähdevero myös nykyisissä nollaveromaissa. Osingon omistajan tarkistaminen vaikeuttaisi näennäisiä osakekauppoja. Jos asuinmaa hyvittää Suomen veron, sijoittajan kokonaisvero ei välttämättä nouse yhtä paljon.',
  'Osinkopesun vanhaa 80 miljoonan verovajetta ei lisätä nollaverosopimusten tuoton päälle: samaa osinkoa voi olla molemmissa. Jo toteutuneet korjaukset, vastavuoroiset verohyvitykset ja valvontakulut pienentävät arviota.',
- ['VM 2021:31, taulukko 7: verosopimuksen vuoksi verovapaana maksetut muut kuin suorasijoitusosingot 2016–2020 olivat 1 730, 1 300, 1 500, 1 650 ja 480 milj. €, keskimäärin 1 332. Laskennallinen 15 % vero tästä on 199,8 milj. €.',
-  'Omat oletukset: vanhasta pohjasta 50–90 % on yhä aidosti lisäverotettavissa ja siitä 60–90 % jää Suomeen sijoittajien reagoinnin, vastavuoroisten verohyvitysten ja hyvitysoikeuksien jälkeen. Vuosittainen lisävalvonta 3–8 milj. €. Netto = 199,8 × 50–90 % × 60–90 % − 3–8.',
+ ['Lähdeluku: VM 2021:31, s. 78, taulukko 7. Ulkomaille verosopimuksen vuoksi verovapaana maksetut osingot, suorasijoitusosingot pois lukien: 2016: 1 730; 2017: 1 300; 2018: 1 500; 2019: 1 650; 2020: 480 milj. €. Viiden vuoden keskiarvo = (1 730 + 1 300 + 1 500 + 1 650 + 480) / 5 = 1 332 milj. € vuodessa.',
+  'Ehdotuksen verokanta: 15 %. Jos koko historiallinen osinkopohja verotettaisiin, tuotto olisi 1 332 × 15 % = 199,8 milj. € vuodessa.',
+  'Oma oletus veropohjasta: 50–90 % vanhasta osinkopohjasta olisi edelleen uuden veron piirissä. Tämä vähentää jo toteutuneiden korjausten ja muiden verovapauksien osuuden.',
+  'Oma oletus kertymästä: edellisestä summasta 60–90 % jäisi Suomen julkiselle taloudelle sijoittajien reagoinnin ja vastavuoroisten verohyvitysten jälkeen. Lisäksi vähennetään 3–8 milj. € vuodessa valvontakuluja. Nämä prosentit ja kulut ovat laskurin valittuja oletuksia; niitä ei ole mitattu tästä uudistuksesta.',
   'Vuoden 2022 Verohallinnon 80 miljoonan osinkopesuarvio koskee vuosia 2018–2021. TRACE on jo käytössä; FASTER hyväksyttiin 2024 ja sitä sovelletaan vuodesta 2030. Niiden vanhoja hyötyjä ei lasketa uutena. Laskelma on jäljelle jäävän pohjan herkkyystesti, ei ajantasainen sopimuskohtainen simulointi.'],
- ['vm-withholding','faster-2024'],
+ ['vm-treaty-dividends','faster-2024'],
  dict(formula='product', anchor=1332, factors=[[.15],[.5,.9],[.6,.9]], cost=[3,8]), [],
  'Veron välitön maksaja asuu ulkomailla. Ulkomaisten rahastojen mahdollisia suomalaisia edunsaajia ei tunneta, eikä koko verotuottoa voi jakaa Suomen tulokymmenyksiin.', '', outside=True,
  condition='Edellyttää verosopimusten muutoksia')

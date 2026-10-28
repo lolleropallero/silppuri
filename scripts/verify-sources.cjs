@@ -53,7 +53,7 @@ ctx.example={url:'https://example.com/?a="b"',label:'<script>bad</script>',summa
 const escaped=vm.runInContext('sourceMarkup(example)',ctx);
 assert.ok(!escaped.includes('<script>')&&escaped.includes('&lt;script&gt;'));
 assert.ok(escaped.includes('A &amp; B &lt; C')&&escaped.includes('&quot;quoted&quot;'));
-const fragment=fs.readFileSync('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html','utf8');
+const fragment=fs.readFileSync(path.join(root,'tmp/silppuri-konsepti.html'),'utf8');
 assert.ok(!fragment.includes('/*SOURCE_NOTES*/'));
 for(const key of used)assert.ok(fragment.includes(summaries[key].summary),key);
 console.log(`PASS: all ${actions.length} cards, both dividend variants, ${urls.size} source URLs, ${rendered} reference renders; findings, limits, closed disclosures and escaped links.`);

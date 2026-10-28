@@ -4,6 +4,20 @@ Kokoa oma 10 miljardin sopeutuspakettisi, vertaile sen vaikutuksia ja jaa tulos 
 
 Aineisto pohjautuu valtiovarainministeriön vuoden 2026 meno- ja verokartoituksiin sekä niitä täydentävään tutkimukseen. Lähteet ja laskentaoletukset löytyvät toimikorteista.
 
+## Jakolinkit
+
+Paketin nimi, valinnat ja säädöt pakataan selaimessa osoitteen `#s=`-osaan. Jakaminen ei käytä palvelintallennusta tai linkinlyhennyspalvelua.
+
+`src/share-state.js` sisältää linkkimuodon pysyvät numerotunnisteet. Lisää uudet kortit `SHARE_ACTION_IDS`-listan loppuun. Älä muuta vanhojen tunnisteiden järjestystä tai poista niitä: julkaistujen linkkien on avattava samat valinnat myös myöhemmin.
+
+Jakolinkkien tarkistukset: `node scripts/verify-share-codec.cjs`, `node scripts/verify-sharing.cjs` ja `node scripts/verify-percent-cuts.cjs`.
+
+## Korttien laskelmat
+
+Kortin laskenta näkyy omassa osiossaan ennen lähdeluetteloa. Omien tuottoarvioiden laskenta on valmiiksi auki. Haarukoiden päätepisteet tuotetaan samasta laskentamallista kuin kortin euromäärä; lähtötiedot ja oletukset ovat niiden alla. VM:n valmiissa nettoarvioissa erotetaan lähteen ilmoittamat luvut laskurin omista skaalauksista.
+
+`node scripts/verify-calculations.cjs` tarkistaa kaikki kortit molemmilla aikavalinnoilla, säädettävät muutokset ja haarukoiden aritmetiikan. `python scripts/verify_rebuild.py` tarkistaa, että lähdedatan uudelleenluonti säilyttää korjaukset.
+
 ## Build
 
 Tarvitset Python 3.10+:n. Aja repositorion juuressa:

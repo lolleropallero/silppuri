@@ -618,5 +618,9 @@
   "childcuts-mari": {
     "summary": "Suurten perheiden lapsilisäleikkauksella oli vähän keskimääräisiä vaikutuksia lasten koulutukseen ja mielenterveyteen. Pienituloisten perheiden lapsille syntyi kuitenkin pysyviä koulutushaittoja, ja perheiden köyhyysriski kasvoi.",
     "limit": "Keskiarvon pieni muutos ei sulje pois haittoja tietyssä ryhmässä. Suomen leikkauksen euromääräistä pitkän aikavälin vaikutusta ei lasketa tästä."
+  },
+  "vm-treaty-dividends": {
+    "summary": "Verosopimuksen vuoksi verovapaana maksettujen osinkojen rivi on 1 730, 1 300, 1 500, 1 650 ja 480 miljoonaa euroa vuosina 2016–2020. Suorasijoitusosingot on erotettu omalle rivilleen. Näiden viiden vuoden keskiarvo on 1 332 miljoonaa euroa.",
+    "limit": "Taulukko kuvaa maksettuja osinkoja, ei verouudistuksen tuottoa. Raportin mukaan saajaluokitteluun liittyy epävarmuutta. Silppurin 15 prosentin vero, veropohjan säilyminen, kertymän vähennykset ja valvontakulut eivät ole tästä taulukosta saatu nettoarvio."
   }
 }
