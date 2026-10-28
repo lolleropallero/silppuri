@@ -32,7 +32,7 @@ assert.equal(ctx.packageSummary([measure('services',5000),measure('earned',5000)
 assert.equal(ctx.packageSummary([measure('services',5100),measure('earned',4900)]).profile.name,'SILPPURI','a narrow lead is mixed');
 assert.equal(ctx.packageSummary([measure('services',100),measure('earned',null),measure('capital',0)]).profile.name,'Omahoidon apostoli','unpriced/zero options have no scoring weight');
 assert.equal(ctx.packageSummary([]).tone.id,'empty');
-assert.equal(ctx.packageSummary([measure('capital',null)]).tone.id,'unknown');
+assert.equal(ctx.packageSummary([measure('capital',null)]).story.id,'unknown');
 assert.equal(ctx.packageSummary([measure('services',-50)]).tone.id,'reverse');
 const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
 ctx.expectedNames=names;assert.ok(run('expectedNames.every(name=>Object.values(packageProfiles).some(p=>p.name===name))'));
@@ -149,6 +149,7 @@ ctx.stateIn({modelContent:{...seed,includeLater:true,selectedIds:[],fundingChoic
 ctx.createShareImage(ctx.data,'Testi',true);
 const imageText=drawn.join(' ');
 assert.ok(imageText.includes(ctx.packageSummary(ctx.data).description),'PNG carries the selected satire');
+assert.ok(imageText.includes(ctx.packageSummary(ctx.data).tone.text),'PNG carries the goal subtitle');
 assert.ok(imageText.includes(ctx.packageSummary(ctx.data).largest),'PNG includes the biggest actual measure');
 for(const required of ['50–80 milj. €','Arvio palvelujen käytön perusteella',
   'ei mitattu menetys','Osin vastaavista toimista arvioitu jakauma'])assert.ok(imageText.includes(required),required);

@@ -87,6 +87,14 @@ function packageStory(profile,distribution,total,chosen){
   copy=shareEditorial[key]?.[voice]||shareSpecialEditorial[key]||shareSpecialEditorial.unknown;
   return {id:key,channel:primary.channel,text:copy[0],body:copy[1]};
 }
+function packageTone(total,hasChoices=true){
+  // Amounts are in millions. Keep both escalating subtitles below the
+  // demolition headline, which now starts at 20 billion.
+  const id=!hasChoices?'empty':total<0?'reverse':total===0?'zero':
+    total<5000?'rookie':total<9500?'under':total<=10500?'target':
+    total<=15000?'over':total<17500?'heavy':total<20000?'extreme':'demolition';
+  return {id,text:shareGoalEditorial[id]};
+}
 function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),model=incidenceModel){
   const weights=Object.fromEntries(Object.keys(packageProfiles).map(key=>[key,0]));
   let total=0;
@@ -101,11 +109,12 @@ function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),
   const [leader,leadingAmount]=ranked[0],second=ranked[1][1];
   const id=positive>0&&leadingAmount>=positive*.5&&leadingAmount-second>=positive*.1?leader:'mixed';
   const distribution=packageDistribution(chosen,result,model);
-  const tone=packageStory(id,distribution,total,chosen);
+  const story=packageStory(id,distribution,total,chosen);
+  const tone=packageTone(total,chosen.length>0);
   const biggest=chosen.filter(d=>Number.isFinite(d.amount)&&d.amount>0).sort((a,b)=>b.amount-a.amount||a.id.localeCompare(b.id))[0];
   const title=biggest?.title?.trim().replace(/[.!?]+$/,'');
   const largest=title?'Suurin siivu: '+title+' ('+shareTotal(biggest.amount)+').':'';
-  return {total,weights,profile:{id,...packageProfiles[id]},tone,distribution,description:tone.body,largest};
+  return {total,weights,profile:{id,...packageProfiles[id]},tone,story,distribution,description:story.body,largest};
 }
 function shareTotal(amount){
   return (Math.abs(amount)>=1000?amount/1000:amount).toLocaleString('fi-FI',{maximumFractionDigits:Math.abs(amount)>=1000?2:1})+(Math.abs(amount)>=1000?' mrd. €':' milj. €');

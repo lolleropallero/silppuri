@@ -1,3 +1,16 @@
+// The subtitle rates the package against the EUR 10 billion goal.
+const shareGoalEditorial={
+  empty:'Terät vielä puhtaina.',
+  zero:'Terät pyörivät. Laskuri ei.',
+  reverse:'Silppuri kävi takaperin.',
+  rookie:'IMF hoitaa loput myöhemmin.',
+  under:'Loput seuraavan hallituksen murheeksi.',
+  target:'Kympin tuntumassa. Sormet tallella.',
+  over:'Tavoite oli ilmeisesti alaraja.',
+  heavy:'Lähti vähän kantavaa seinää.',
+  extreme:'Sammutusnappi meni mukana.',
+  demolition:'Budjetti loppui. Jumala armahtaa, Silppuri ei.'
+};
 // Satirical readings of modeled distributions. No entry promises a gain to a
 // group merely because another group bears more of the cost.
 const shareEditorial={
