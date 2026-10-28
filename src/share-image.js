@@ -41,7 +41,7 @@ function createShareImage(chosen,name,later,href){
   const columns=chosen.length>40?3:2,gap=18,cardWidth=(1104-gap*(columns-1))/columns;
   const sorted=[...chosen].sort((a,b)=>(a.type===b.type?valueOf(b)-valueOf(a):a.type==='cut'?-1:1));
   const cardGroups=[
-    {title:'Summassa mukana',items:sorted.filter(d=>Number.isFinite(d.amount))},
+    {title:'Summassa mukana',showCount:true,items:sorted.filter(d=>Number.isFinite(d.amount))},
     {title:'Nettoarvio puuttuu – ei laskettu summaan',items:sorted.filter(d=>!Number.isFinite(d.amount))}
   ].filter(group=>group.items.length);
   const makeCard=d=>{
@@ -138,7 +138,7 @@ function createShareImage(chosen,name,later,href){
   }
   drawDeciles(48,false);drawDeciles(614,true);
   for(const group of cardGroups){
-    text(group.title+' · '+group.items.length+' toimea',48,group.y-22,28,true);
+    text(group.title+(group.showCount?' · '+group.items.length+' toimea':''),48,group.y-22,28,true);
     let cyCards=group.y;
     group.cards.forEach((c,i)=>{
       const col=i%columns,x=48+col*(cardWidth+gap),h=group.rowHeights[Math.floor(i/columns)];panel(x,cyCards,cardWidth,h);

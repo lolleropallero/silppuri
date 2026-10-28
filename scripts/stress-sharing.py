@@ -27,7 +27,7 @@ createShareImage=function(...args){
   prototype.fillText=function(value,x,y,...rest){
     const m=this.measureText(value),tr=this.getTransform(),left=x-m.actualBoundingBoxLeft,right=x+m.actualBoundingBoxRight;
     const top=y-m.actualBoundingBoxAscent,bottom=y+m.actualBoundingBoxDescent;
-    if(/^(Summassa mukana|Nettoarvio puuttuu – ei laskettu summaan) ·/.test(String(value))){cardsY=y+22;card=null;}
+    if(/^(Summassa mukana ·|Nettoarvio puuttuu – ei laskettu summaan$)/.test(String(value))){cardsY=y+22;card=null;}
     if(card&&(left<card.x||right>card.x+card.w||top<card.y||bottom>card.y+card.h))stressMetrics.cardTextOverflows.push(String(value));
     if(left*tr.a+tr.e<0||right*tr.a+tr.e>this.canvas.width||top*tr.d+tr.f<0||bottom*tr.d+tr.f>this.canvas.height)stressMetrics.canvasTextOverflows.push(String(value));
     return oldText.call(this,value,x,y,...rest);
@@ -39,7 +39,7 @@ createShareImage=function(...args){
 const stressObserver=new MutationObserver(()=>{
   const image=q('.sp-share-preview img');if(!image)return;
   const ready=()=>{stressMetrics.decodedWidth=image.naturalWidth;stressMetrics.decodedHeight=image.naturalHeight;
-    stressMetrics.selected=selected.size;stressMetrics.linkLength=q('.sp-share-link').value.length;
+    stressMetrics.selected=selected.size;stressMetrics.linkLength=shareLink.length;
     document.getElementById('stress-metrics').textContent=JSON.stringify(stressMetrics,null,2);};
   if(image.complete)ready();else image.addEventListener('load',ready,{once:true});
 });
