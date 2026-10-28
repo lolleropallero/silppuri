@@ -36,8 +36,8 @@ assert.equal(ctx.packageSummary([measure('capital',null)]).story.id,'unknown');
 assert.equal(ctx.packageSummary([measure('services',-50)]).tone.id,'reverse');
 const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
 ctx.expectedNames=names;assert.ok(run('expectedNames.every(name=>Object.values(packageProfiles).some(p=>p.name===name))'));
-const summaryText=ctx.shareCaption([measure('capital',30000)],'Hessu & ystävät 🐾');
-assert.equal(summaryText,'Hessu & ystävät 🐾\n\n30 miljardia kasassa. '+ctx.packageSummary([measure('capital',30000)]).tone.text);
+const summaryText=ctx.shareCaption([measure('capital',30000)],'Porukan silppuri 🐾');
+assert.equal(summaryText,'Porukan silppuri 🐾\n\n30 miljardia kasassa. '+ctx.packageSummary([measure('capital',30000)]).tone.text);
 // Descriptions follow priced selections, not a generic cuts-and-taxes script.
 const companyCut=measure('companies',600,{type:'cut',title:'Yritystukia −30 %'});
 const companyTax=measure('companies',700,{title:'Yhteisöveroa +3 prosenttiyksikköä'});
@@ -59,7 +59,7 @@ for(const key of ['threads','x','whatsapp']){
   assert.equal(url.searchParams.get('text'),summaryText+'\n\n'+testUrl,'preserve paragraphs and put the link on its own line');
   assert.equal(url.searchParams.has('url'),false,'do not append the link twice');
 }
-const seed={name:'Hessu Hopon silppuri 🐾 Ää <img onerror=alert(1)>',selectedIds:['vat','health','income','corporate','dividends','benefits','cut-1-42','cut-1-72','cut-2-51','tax-vehicle','fw-wrappers','cut-3-15'],
+const seed={name:'Testisilppuri 🐾 Ää <img onerror=alert(1)>',selectedIds:['vat','health','income','corporate','dividends','benefits','cut-1-42','cut-1-72','cut-2-51','tax-vehicle','fw-wrappers','cut-3-15'],
   year:2031,includeLater:true,taxIncreasesPP:{income:4,corporate:10},yleCutPercent:75,dividendMode:'abolish',unitSteps:{'tax-vehicle':2},fundingChoices:{yle:'keep-tax',farm:'save'}};
 function roundtrip(model){
   ctx.stateIn({modelContent:model});const before=fingerprint(),snapshot=canonical(ctx.packageModel());ctx.snapshot=snapshot;
@@ -124,7 +124,7 @@ assert.equal(nodes.get('.sp-share-notice').hidden,false);assert.equal(nodes.get(
 assert.deepEqual(canonical(ctx.packageModel()),JSON.parse(latestOwn).modelContent);
 assert.equal(store.get('silppuri:state:v1:/'),latestOwn);
 // Create a normal URL fixture; browser tests exercise the production import path.
-const example=roundtrip({...seed,name:'Hessu Hopon silppuri',taxIncreasesPP:{income:2,corporate:3}});
+const example=roundtrip({...seed,name:'Testisilppuri',taxIncreasesPP:{income:2,corporate:3}});
 const wrappers=ctx.data.find(d=>d.id==='fw-wrappers');
 assert.equal(ctx.shareCardAmount(wrappers),'20–440 milj. €');assert.equal(wrappers.amount,null,'the 2031 cash estimate does not become permanent revenue');
 assert.match(ctx.amountFootnote(wrappers),/ei pysyvä vuosituotto/);
