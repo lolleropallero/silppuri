@@ -268,7 +268,7 @@
   <div class="sp-workspace">
     <aside>
       <section class="sp-budget" aria-label="Oma sopeutuspiirakka">
-        <div class="sp-panel-heading"><h2>Sinun pakettisi</h2><button class="sp-clear cursor-interaction" type="button" title="Tyhjennä valitut toimet ja palauta säädöt oletuksiin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>Nollaa</button></div>
+        <div class="sp-panel-heading"><h2>Sinun pakettisi</h2><button class="sp-clear cursor-interaction" type="button" aria-haspopup="dialog" aria-controls="sp-reset-dialog" title="Tyhjennä valitut toimet ja palauta säädöt oletuksiin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>Nollaa</button></div>
         <div class="sp-chart"><svg viewBox="0 0 320 320" role="img" aria-label="Ei vielä valintoja. Tavoite 10 miljardia euroa."><g class="sp-tracks"></g><g class="sp-slices"></g><circle class="sp-hole" cx="160" cy="160" r="106" fill="var(--sp-panel)"></circle></svg><div class="sp-chart-center"><strong class="sp-total">0,00</strong><span>mrd. €</span></div></div>
         <div class="sp-remaining"><span class="sp-remaining-label">Vielä täyttämättä</span><strong class="sp-remaining-value">10,00 mrd. €</strong></div>
         <div class="sp-legend"><div class="sp-legend-item"><span class="sp-dot cut"></span>Menoleikkaukset<strong class="sp-cut-total">0,00 mrd. €</strong></div><div class="sp-legend-item"><span class="sp-dot"></span>Veronkorotukset<strong class="sp-tax-total">0,00 mrd. €</strong></div></div>
@@ -324,6 +324,11 @@
     <div class="sp-modal-footer"><button type="button" class="sp-modal-confirm cursor-interaction"><span class="sp-confirm-icon" aria-hidden="true"><!--SILPPURI_LOGO--></span><span class="sp-confirm-label">Silppuriin!</span></button></div>
   </dialog>
   <div class="sp-announcement" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="sp-reset-dialog" class="sp-reset-dialog" aria-labelledby="sp-reset-title" aria-describedby="sp-reset-description">
+    <h2 id="sp-reset-title">Nollataanko silppuri?</h2>
+    <p id="sp-reset-description">Kaikki valitut toimet poistetaan ja säädöt palautetaan oletuksiin.</p>
+    <div class="sp-reset-actions"><button type="button" class="sp-reset-cancel cursor-interaction" autofocus>Peruuta</button><button type="button" class="sp-reset-confirm cursor-interaction">Nollaa silppuri</button></div>
+  </dialog>
   <dialog class="sp-share-name-dialog" aria-labelledby="sp-share-name-title">
     <header class="sp-share-head"><h2 id="sp-share-name-title">Nimeä silppurisi</h2><button type="button" class="sp-name-close" aria-label="Sulje nimeäminen">×</button></header>
     <form class="sp-share-name-form">

@@ -60,6 +60,7 @@
   const q=s=>root.querySelector(s);
   const list=q('.sp-action-list');
   const dialog=q('.sp-modal');
+  const resetDialog=q('.sp-reset-dialog');
   /*MODAL_SHRED*/
   const modalShred=createModalShred(root,dialog);
   const zoomIcon=expanded=>'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M6 10h8'+(expanded?'':'M10 6v8')+'"/></svg>';
@@ -1028,6 +1029,8 @@
   }
   q('#sp-sort').addEventListener('change',event=>{sortOrder=event.target.value==='asc'?'asc':'desc';limit=12;render();save();});
   q('#sp-decile-picker').addEventListener('change',event=>{activeDecile=event.target.value===''?null:Number(event.target.value);renderIncidence(data.filter(d=>selected.has(d.id)));});
+  resetDialog.addEventListener('close',()=>q('.sp-clear').focus({preventScroll:true}));
+  resetDialog.addEventListener('click',event=>{if(event.target===resetDialog){const r=resetDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)resetDialog.close();}});
 
   root.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
@@ -1060,7 +1063,9 @@
     else if(button.dataset.bookmark){filter='selected-'+button.dataset.bookmark;search='';category='all';limit=12;q('#sp-search').value='';q('#sp-category').value='all';render();save();q('.sp-actions').scrollIntoView({block:'start',behavior:'instant'});}
     else if(button.dataset.filter){if(button.dataset.filter==='all')resetCatalogueView();else{filter=button.dataset.filter;limit=12;}render();save();}
     else if(button.classList.contains('sp-more')){limit+=20;render();save();}
-    else if(button.classList.contains('sp-clear')){resetPackage();}
+    else if(button.classList.contains('sp-clear')){resetDialog.showModal();q('.sp-reset-cancel').focus();}
+    else if(button.classList.contains('sp-reset-cancel')){resetDialog.close();}
+    else if(button.classList.contains('sp-reset-confirm')){resetDialog.close();resetPackage();}
   });
   /*PIE_INTERACTION*/
   const pieInteraction=createPieInteraction(q('.sp-chart'),{moneyLabel,measureViewport:()=>measureViewport(),getVisibleFrame:()=>{

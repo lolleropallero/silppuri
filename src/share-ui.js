@@ -102,7 +102,7 @@ function loadSharedLocation(){
   const incomingUrl=location.href;
   const state=readSharedState();
   // Finish pending callbacks under the old session before switching persistence.
-  if(nameDialog.open)nameDialog.close();if(shareDialog.open)shareDialog.close();if(activeAction)closeImpact();
+  if(nameDialog.open)nameDialog.close();if(shareDialog.open)shareDialog.close();if(resetDialog.open)resetDialog.close();if(activeAction)closeImpact();
   modalShred.finish();finishPacking?.();
   if(location.href!==incomingUrl)history.replaceState(null,'',incomingUrl);
   if(state)packageSession.enter();else packageSession.leave();

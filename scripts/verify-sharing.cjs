@@ -97,12 +97,14 @@ ctx.window=host.window;ctx.window.addEventListener=(event,fn)=>listeners[event]=
 ctx.location=new URL('https://example.test/');
 ctx.history={replaceState:(_state,_unused,href)=>{ctx.location.href=href;}};
 ctx.shareDialog={open:false};ctx.nameDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
+ctx.resetDialog={open:true,close(){this.open=false;}};
 run(read('src/share-ui.js').slice(read('src/share-ui.js').indexOf('function readSharedState()')));
 const own={...seed,name:'Oma paketti',selectedIds:['vat','health','cut-3-15']};
 ctx.stateIn({modelContent:own});ctx.save();
 const ownSaved=store.get('silppuri:state:v1:/');
 const originalSharedLink=ctx.shareUrl({...seed,name:'Jaettu paketti',selectedIds:['corporate','income']},ctx.location.href);
 ctx.location.href=originalSharedLink;ctx.loadSharedLocation();
+assert.equal(ctx.resetDialog.open,false,'changing packages dismisses pending reset confirmation');
 assert.equal(nodes.get('.sp-shared-session').hidden,false);
 for(const edit of [()=>ctx.search='yle',()=>ctx.sortOrder='asc',()=>ctx.includeLater=false,
   ()=>ctx.selected.add('tax-peat'),()=>ctx.selected.delete('corporate'),()=>ctx.packageName='Muokattu jaettu paketti']){
