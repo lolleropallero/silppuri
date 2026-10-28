@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 catalogue = json.loads((ROOT/'data/catalogue.json').read_text(encoding='utf-8'))['actions']
 actions = {a['id']: a for a in catalogue}
 scope_excluded=set(json.loads((ROOT/'data/nonrecurring-exclusions.json').read_text(encoding='utf-8')))
+scope_excluded.update({'cut-5-40','cut-5-42','tax-car-combustion'})
 reviews = {}
 
 def review(ids, sources, finding, fiscal, scope, status='mechanism'):
@@ -349,7 +350,7 @@ review('tax-ifrs', '', '',
        'Toteutustapa ja siirtymäsäännöt puuttuvat. Pelkkä tilinpäätösstandardin nimi ei määritä verotuottoa.', 'unspecified')
 review('corporate', 'corporatetax',
        'Suomen yhteisöveronalennus ei lisännyt pienten osakeyhtiöiden investointeja, mutta niiden liiketoiminta kasvoi. Kaikki yritykset eivät reagoi samoin.',
-       'Investointien, voitonsiirron ja rahoituksen muutokset jäävät osinkoverovähennyksen jälkeenkin epävarmoiksi. Pienten yritysten tulos ei anna kansainvälisten konsernien tai suuren korotuksen kokonaisnettoa.',
+       'Tulonmuunnon väheneminen voi vahvistaa ansio- ja pääomatuloveroja. Sitä ja työllisyysvaikutuksia ei ole laskettu tähän haarukkaan. Osa käyttäytymisvaikutuksista syntyy vasta vuosien kuluttua; kyse ei ole vuoden 2031 ennusteesta eikä suuren korotuksen erillisestä laskelmasta.',
        'Tutkimus koskee vuosien 2012–2014 veronalennuksia. Korotuksen vaikutus ei välttämättä ole niiden peilikuva.')
 review('tax-forest', '', '',
        'Hakkuun tai puukaupan lykkäys voi siirtää verotuloa myöhemmäksi. Metsävähennyksen juuri tämän rajan muuttamisesta ei löytynyt kausaalista nettohaarukkaa.',
@@ -368,7 +369,7 @@ review('tax-succession tax-inheritance', 'inheritance',
        'Kansainvälinen tutkimuskatsaus. Suomen 240 miljoonan verotukiarvio on VM:n laskelma, ei tässä todettu nettotuotto.')
 review('tax-vat15 tax-vat16 tax-food18 tax-vat-services vat tax-vat-standard tax-vat-reduced', 'vatasymmetry',
        'ALV-korotukset ja alennukset eivät siirry hintoihin samalla tavalla. Korotus voi näkyä sekä asiakkaan hinnassa että yrityksen katteessa.',
-       'Näytetty netto huomioi etuusindeksit. Muiden ostosten, työn tarjonnan ja yritysten toiminnan muutoksia ei ole laskettu kattavasti juuri tälle vaihtoehdolle.',
+       'Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista.',
        'Suomen ja Ruotsin toimialauudistukset osoittavat hinnoittelureaktion. Niistä ei saada yhdenmukaista kerrointa kaikkiin hyödykkeisiin.')
 review('tax-vat-news135 tax-vat-news255', 'vatservice',
        'Palvelualan verouudistus osoitti, ettei veromuutos siirry aina kokonaan kuluttajahintaan. Osa voi jäädä yrityksen katteeseen.',
@@ -477,7 +478,7 @@ for id, society in social_overrides.items():
 # The amount and known deductions are already displayed above these sentences.
 # Explain the remaining uncertainty only once.
 for id in ['tax-vat15','tax-vat16','tax-food18','tax-vat-services','vat','tax-vat-standard','tax-vat-reduced']:
-    reviews[id]['fiscal'] = 'Ostosten, työnteon ja yritysten toiminnan muutoksia ei ole laskettu kattavasti tähän nettoon.'
+    reviews[id]['fiscal'] = 'Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista.'
 for id in ['income','income-index']:
     reviews[id]['fiscal'] = 'Eri tuloryhmät voivat reagoida eri tavoin. Kansainvälisten tutkimusten joustolukuja ei vähennetä VM:n arviosta uudelleen.'
 reviews['tax-electric1']['fiscal'] = 'Sähkönkäytön sopeutuminen ja lämmitystavan vaihto voivat lisäksi pienentää kertymää. Kansainvälistä keskimääräistä reaktiota ei käytetä Suomen nettoennusteena.'
@@ -508,10 +509,17 @@ for id, reason in skipped.items():
         assert id not in reviews
         reviews[id] = dict(status='skipped', reason=reason, sources=[])
 
-for proposal in json.loads((ROOT/'data/finnwatch-actions.json').read_text(encoding='utf-8')):
-    if proposal['id'] in actions:
-        reviews[proposal['id']]=proposal['research']
-reviews={id:review for id,review in reviews.items() if id not in scope_excluded}
+for filename in ['finnwatch-actions.json', 'additional-tax-actions.json']:
+    for proposal in json.loads((ROOT/'data'/filename).read_text(encoding='utf-8')):
+        if proposal['id'] in actions:
+            reviews[proposal['id']]=proposal['research']
+from audit_corrections import apply_research, apply_sources
+sources=json.loads((ROOT/'data/research-sources.json').read_text(encoding='utf-8'))
+summaries=json.loads((ROOT/'data/source-summaries.json').read_text(encoding='utf-8'))
+apply_sources(sources,summaries)
+for filename,values in [('research-sources.json',sources),('source-summaries.json',summaries)]:
+    (ROOT/'data'/filename).write_text(json.dumps(values,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+reviews={id:apply_research(id,review) for id,review in reviews.items() if id in actions}
 assert set(reviews)==set(actions), ('missing',sorted(set(actions)-set(reviews)))
 (ROOT/'data/action-research.json').write_text(json.dumps(reviews,ensure_ascii=False,indent=2),encoding='utf-8')
 print('Reviewed:',len(reviews),'Skipped:',sum(r['status']=='skipped' for r in reviews.values()))

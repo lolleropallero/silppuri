@@ -58,7 +58,9 @@ function cell(asset,decile,info){
 for(const [profile,asset] of Object.entries({'wealth-insurance':'vaksak','wealth-funds':'sirave','wealth-listed':'porsosa','wealth-unlisted':'muosa','wealth-financial':'finan'})){
  const values=Array.from({length:10},(_,i)=>cell(asset,i+1,'vtutk_keskiarvo_n')*cell(asset,i+1,'vtutk_kotitalouksia_perusjoukko'));
  const total=values.reduce((a,b)=>a+b,0);
- values.forEach((n,i)=>close(n/total,model.profiles[profile][i]));
+ const counts=values.map((_,i)=>cell(asset,i+1,'vtutk_kotitalouksia_perusjoukko'));
+ const sc=[0],tc=[0];counts.forEach(n=>sc.push(sc.at(-1)+n/counts.reduce((a,b)=>a+b,0)));model.households.forEach(n=>tc.push(tc.at(-1)+n/model.households.reduce((a,b)=>a+b,0)));
+ for(let i=0;i<10;i++){const share=values.reduce((sum,n,j)=>sum+n/total*Math.max(0,Math.min(tc[i+1],sc[j+1])-Math.max(tc[i],sc[j]))/(sc[j+1]-sc[j]),0);close(share,model.profiles[profile][i]);}
 }
 const allMean=result.householdRows.reduce((n,v,i)=>n+v.mid*model.consumptionUnits[i]/1e6,0);
 close(allMean,result.entries.reduce((n,e)=>n+money(e),0));

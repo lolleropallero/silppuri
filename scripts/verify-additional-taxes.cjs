@@ -5,20 +5,21 @@ const model=read('incidence-model.json'),refs=read('research-sources.json');
 const get=id=>actions.find(d=>d.id===id),close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 assert.equal(additional.length,12);assert.equal(meta.finnwatchRows,14);assert.equal(meta.sorsaRows,2);
 const expected={
- 'fw-corporate-gaps':[40,305],'fw-corporate-minimum':[195,805],
- 'fw-wealth-minimum':[270,380],'fw-exit-tax':[0,50],
+ 'fw-corporate-gaps':[40,305],'fw-corporate-minimum':null,
+ 'fw-wealth-minimum':[55,280],'fw-exit-tax':[0,50],
  'fw-property-funds':[1,44],'fw-treaty-dividends':[50,160],
  'fw-portfolio':[25,240],'fw-deemed-cost':[5,140],
  'fw-succession-abolish':[150,205],'fw-digital':[10,30],
- 'sorsa-bank':[135,180],'sorsa-million-inheritance':[95,170]
+ 'sorsa-bank':[55,185],'sorsa-million-inheritance':[95,170]
 };
 // Independently reproduce key domestic source bridges and existing-tax losses.
 close(results['fw-treaty-dividends'].raw[0],(1730+1300+1500+1650+480)/5*.15*.5*.6-8);
-close(results['sorsa-bank'].raw[1],(1400*.05*(1-.21)+(900/.20)*.03)*.95-1);
+close(results['sorsa-bank'].raw[1],(1400*.05+(900/.20)*.03)*.9-2);
 close(results['fw-deemed-cost'].raw[0],5247.637367*.15*.34*((1.15)**.3-1)-4);
-close(results['fw-corporate-minimum'].raw[0],(3500-1700)*5/6*.2*.7-15);
+assert.equal(results['fw-corporate-minimum'].raw,null,'invalid historical anchor is withdrawn');
+close(results['fw-wealth-minimum'].raw[0],14300*1.55*(.02-.01)*.3-10);
 for(const [id,range] of Object.entries(expected)){
- const d=get(id),r=results[id];assert.deepEqual(r.range,range,id);assert.deepEqual(d.estimate.range,range,id);
+ const d=get(id),r=results[id]; if(range===null){assert.equal(d.estimate.amount,null);assert.equal(r.range,null);continue;}assert.deepEqual(r.range,range,id);assert.deepEqual(d.estimate.range,range,id);
  assert.equal(d.estimate.amount,range[0]);assert.ok(range[1]>=20);
  assert.ok(d.estimate.display.includes('–')&&d.estimate.footnote&&d.estimate.calculation.length>=4,id);
  assert.ok(r.raw[0]>=range[0]&&r.raw[1]<=range[1]);
@@ -41,7 +42,7 @@ for(const n of [22,26])assert.equal(coverage.find(r=>r.number===n).action,null,'
 const ctx=vm.createContext({model,actions:additional.map(d=>get(d.id))});
 vm.runInContext(fs.readFileSync(path.join(root,'src/incidence.js'),'utf8'),ctx);
 const r=vm.runInContext('calculateIncidence(actions,model)',ctx);
-assert.equal(r.entries.length,10);assert.deepEqual(Array.from(r.missing,d=>d.id).sort(),['fw-exit-tax','fw-treaty-dividends']);
+assert.equal(r.entries.length,9);assert.deepEqual(Array.from(r.missing,d=>d.id).sort(),['fw-corporate-minimum','fw-exit-tax','fw-treaty-dividends']);
 for(const e of r.entries){
  assert.ok(e.spec.partial);assert.ok(e.spec.calculation.length>=4);
  for(const s of e.spec.scenarios){assert.ok(Object.keys(s.shares).every(k=>model.profiles[k]));assert.ok(Object.values(s.shares).reduce((a,b)=>a+b,0)<=1+1e-9);}
@@ -57,4 +58,4 @@ assert.ok(Buffer.byteLength(fragment)<1000000);
 const app=fragment.slice(fragment.indexOf('  const researchSources='),fragment.indexOf('  const evidence='));
 const c=vm.createContext({});vm.runInContext(app+';globalThis.notes=sourceNotes;',c);
 assert.ok(Object.values(c.notes).every(s=>s.summary&&s.limit));
-console.log('PASS: 12 new intervals, domestic fiscal anchors, 43 recommendations, 10 household scenarios, foreign taxpayers excluded, overlap semantics, complete compact source notes.');
+console.log('PASS: 11 intervals and one explicitly unquantified proposal, domestic fiscal anchors, 43 recommendations, 9 household scenarios, foreign taxpayers excluded, overlap semantics, complete compact source notes.');

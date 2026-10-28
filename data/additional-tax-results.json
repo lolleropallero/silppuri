@@ -15,34 +15,25 @@
     "caseCount": 8
   },
   "fw-corporate-minimum": {
-    "raw": [
-      195.0,
-      805.0
-    ],
-    "range": [
-      195,
-      805
-    ],
-    "taxRange": [
-      210.0,
-      810.0
-    ],
-    "caseCount": 8
+    "raw": null,
+    "range": null,
+    "taxRange": null,
+    "caseCount": 0
   },
   "fw-wealth-minimum": {
     "raw": [
-      270.0,
-      377.0
+      56.495000000000005,
+      276.27899999999994
     ],
     "range": [
-      270,
-      380
+      55,
+      280
     ],
     "taxRange": [
-      280.0,
-      380.0
+      66.495,
+      279.27899999999994
     ],
-    "caseCount": 4
+    "caseCount": 8
   },
   "fw-exit-tax": {
     "raw": [
@@ -151,18 +142,18 @@
   },
   "sorsa-bank": {
     "raw": [
-      138.72500000000002,
-      179.785
+      56.5,
+      182.5
     ],
     "range": [
-      135,
-      180
+      55,
+      185
     ],
     "taxRange": [
-      142.72500000000002,
-      180.785
+      61.5,
+      184.5
     ],
-    "caseCount": 4
+    "caseCount": 8
   },
   "sorsa-million-inheritance": {
     "raw": [

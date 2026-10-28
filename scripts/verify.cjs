@@ -39,7 +39,7 @@ for(const [id,reason] of Object.entries(excluded)){
 // A temporary freeze is not a temporary appropriation: payment bases can stay lower.
 for(const id of ['benefits','health','education','cut-3-51','cut-5-49','cut-5-52','cut-6-5'])assert.ok(ids.has(id),id);
 assert.ok(!ids.has('cut-4-44')&&!ids.has('cut-4-45'));
-assert.deepEqual(catalogue.meta.excludedBelow20mNet,['cut-1-15','tax-biogas','tax-commute','tax-rail']);
+assert.deepEqual(catalogue.meta.excludedBelow20mNet,['cut-1-15','cut-5-40','cut-5-42','tax-biogas','tax-car-combustion','tax-commute','tax-rail']);
 assert.ok(catalogue.meta.excludedBelow20mNet.every(id=>!ids.has(id)));
 
 // Exercise the actual app calculation with source-based expected outcomes.
@@ -49,8 +49,8 @@ vm.runInContext(source.slice(source.indexOf('  function syncScenario(){'),source
 const calculate=()=>vm.runInContext('syncScenario();Object.fromEntries(data.map(d=>[d.id,{amount:d.amount,budget:d.budgetAmount,direct:d.directAmount,gross:d.gross,netUpper:d.netUpper,funds:d.fundAmount,title:d.title,year:d.year}]))',ctx);
 let r=calculate();
 assert.equal(r['cut-1-42'].amount,0);assert.ok(!r['cut-1-43']);
-assert.equal(r.income.amount,3600);assert.equal(r.income.gross,6000);
-assert.equal(r.corporate.amount,4100);assert.equal(r.corporate.gross,4300);
+assert.equal(r.income.amount,null);assert.equal(r.income.gross,6000);
+assert.equal(r.corporate.amount,null);assert.equal(r.corporate.gross,4300);
 assert.equal(r.health.amount,3310);assert.ok(!r['cut-5-19']);
 assert.equal(r['cut-1-72'].amount,0);assert.equal(r['cut-3-62'].amount,null);assert.equal(r['cut-3-62'].direct,-82);
 assert.equal(r['cut-7-29'].amount,70); // VM classifies Sitra outside general government; transferred assets yield government income.
@@ -74,7 +74,7 @@ ctx.year=2031;
 ctx.selected.clear();
 ctx.conditions.yle='keep-tax';ctx.conditions.farm='save';r=calculate();
 assert.equal(r['cut-1-42'].amount,59.4);assert.equal(r['cut-1-72'].amount,100);
-ctx.year=2035;r=calculate();assert.equal(r['cut-1-42'].amount,118.7);assert.equal(r.health.amount,null);
+ctx.year=2035;r=calculate();assert.equal(r['cut-1-42'].amount,118.7);assert.equal(r.health.amount,3310);
 ctx.year=2028;r=calculate();assert.equal(r['tax-vehicle'].amount,0);assert.equal(r['tax-diesel'].amount,0);
 ctx.year=2029;r=calculate();assert.equal(r['tax-vehicle'].amount,230);
 ctx.selected.add('tax-land-values');r=calculate();assert.equal(r['tax-land-min'].amount,100);
@@ -87,25 +87,25 @@ ctx.scenario.dividends='vm';r=calculate();assert.equal(r.dividends.amount,370);
 // the pie, sum, ranking and payer diagram must use the same reviewed value.
 Object.assign(ctx.scenario,{income:1,corporate:1});ctx.year=2031;
 r=calculate();
-const netAmounts={income:900,'income-index':489,corporate:410,'tax-transfer-land':95,'tax-transfer-homes':140.65,'tax-transfer-shares':103.75,'tax-vat15':380,'tax-vat16':630,'tax-food18':920,'tax-vat-services':550,vat:2950,'tax-vat-standard':570,'tax-vat-reduced':240,'tax-excise-index':80,'tax-tobacco':41,'tax-diesel':150,'tax-commercial-diesel':33,'tax-van':90,'tax-vehicle':230,'tax-heat':116.8,'tax-fuel':31,'tax-electric1':36,'tax-electric2':36,'tax-car-all':50,'tax-land-values':676.2};
+const netAmounts={income:900,'income-index':489,corporate:259.5,'tax-transfer-land':95,'tax-transfer-homes':140.65,'tax-transfer-shares':103.75,'tax-vat15':300,'tax-vat16':492,'tax-food18':708,'tax-vat-services':480,vat:2322,'tax-vat-standard':416.4,'tax-vat-reduced':188.4,'tax-excise-index':80,'tax-tobacco':41,'tax-diesel':150,'tax-commercial-diesel':33,'tax-van':90,'tax-vehicle':230,'tax-heat':116.8,'tax-fuel':31,'tax-electric1':36,'tax-electric2':36,'tax-car-all':50,'tax-land-values':676.2};
 assert.equal(Object.keys(netAmounts).length,catalogue.meta.netEstimates);
 for(const [id,amount] of Object.entries(netAmounts))assert.equal(r[id].amount,amount,id);
 assert.equal(r.vat.gross,3870);
-assert.equal(r.corporate.netUpper,420);
+assert.equal(r.corporate.netUpper,334);
 assert.equal(r['tax-van'].netUpper,120);
 assert.equal(r['tax-insurance'].amount,47); // No separate net estimate: keep and label the direct estimate.
 assert.equal(r['cut-1-75'].amount,30); // MMM 2024:1 p.57: estimated fee receipts, not the VM annex's 60m.
 assert.ok(actions.find(d=>d.id==='cut-1-75').budget.includes(60)); // Preserve original source figures.
 assert.equal(r['tax-rd'].amount,null);
 ctx.units['tax-vat-standard']=2;ctx.units['tax-vehicle']=2;r=calculate();
-assert.equal(r['tax-vat-standard'].amount,1140);assert.equal(r['tax-vat-standard'].gross,1388);
+assert.equal(r['tax-vat-standard'].amount,832.8);assert.equal(r['tax-vat-standard'].gross,1388);
 assert.equal(r['tax-vehicle'].amount,460);
-assert.equal(calculate()['tax-vat-standard'].amount,1140); // Re-render must not deduct twice.
+assert.equal(calculate()['tax-vat-standard'].amount,832.8); // Re-render must not deduct twice.
 ctx.units['tax-vat-standard']=0;r=calculate();assert.equal(r['tax-vat-standard'].amount,0);
 ctx.year=2028;r=calculate();assert.equal(r['tax-vehicle'].amount,0);assert.equal(r['tax-vehicle'].gross,0);
 ctx.year=2031;ctx.units['tax-vat-standard']=1;ctx.units['tax-vehicle']=1;
-r=calculate();assert.equal(r['tax-vat-standard'].amount,570);
-assert.equal(r.vat.amount+r['tax-tobacco'].amount,2991);
+r=calculate();assert.equal(r['tax-vat-standard'].amount,416.4);
+assert.equal(r.vat.amount+r['tax-tobacco'].amount,2363);
 assert.deepEqual(actions.find(d=>d.id==='cut-1-42').mergedIds,['cut-1-43']);
 assert.ok(actions.find(d=>d.id==='vat').conflicts.includes('tax-vat16'));
 assert.ok(!actions.find(d=>d.id==='health').conflicts.includes('cut-4-6'));
@@ -118,7 +118,7 @@ for(const id of ['cut-7-41','cut-7-42','cut-7-52']){
   assert.ok(!actions.find(d=>d.id===id).conflicts.includes('health'));
   assert.ok(!actions.find(d=>d.id==='health').conflicts.includes(id));
 }
-vm.runInContext(source.slice(source.indexOf('  const conflictsFor='),source.indexOf('  function capFor')),ctx);
+vm.runInContext(source.slice(source.indexOf('  const conflictsFor='),source.indexOf('  function controlsMarkup')),ctx);
 for(const ids of [['health','cut-7-42'],['cut-7-42','health']]){
   ctx.selected.clear();
   for(const id of ids){
@@ -135,7 +135,7 @@ new vm.Script(source.replace('[]/*CATALOGUE*/',JSON.stringify(actions)));
 // A host state echo must not collapse an expanded catalogue back to 12 rows.
 Object.assign(ctx,{maxPP:20,payerGroups:[],filter:'all',category:'all',search:'',sortOrder:'desc',activeFlow:null,limit:32,catalogueOrder:[],catalogueOrderKey:'',q:()=>({value:''})});
 ctx.window={openai:{setWidgetState:snapshot=>{ctx.savedSnapshot=snapshot;return Promise.resolve();}}};
-vm.runInContext(source.slice(source.indexOf('  function capFor'),source.indexOf('  function controlsMarkup')),ctx);
+// capFor is loaded with syncScenario above.
 vm.runInContext(source.slice(source.indexOf('  function stateIn'),source.indexOf('  function slice')),ctx);
 vm.runInContext('save()',ctx);
 assert.equal(ctx.savedSnapshot.privateContent.visibleCount,32);

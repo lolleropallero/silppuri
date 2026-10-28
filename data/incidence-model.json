@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-27",
+  "asOf": "2026-10-28",
   "referenceYear": 2024,
   "income": [
     12280,
@@ -321,208 +321,220 @@
       0.09999989101700389
     ],
     "consumption-total": [
-      0.0502870659897632,
-      0.04855837118399191,
-      0.07658390331508595,
-      0.07487511556048233,
-      0.09736182056568364,
-      0.0959580183804004,
-      0.11530273555714429,
-      0.11504596381358904,
-      0.16278646178619535,
-      0.16324054384766387
+      0.06464489559780107,
+      0.07435851019217876,
+      0.08174896922713308,
+      0.0882275759272393,
+      0.09218852951899584,
+      0.09777178511448996,
+      0.10272318608938281,
+      0.1132445717754386,
+      0.1423474538778595,
+      0.14274452267948107
     ],
     "consumption-food": [
-      0.06161056494292307,
-      0.05949260754172676,
-      0.08757688922586303,
-      0.08562281912212684,
-      0.10418734298074835,
-      0.10268512764720743,
-      0.11379175203264441,
-      0.11353834515178905,
-      0.1355582103494201,
-      0.135936341005551
+      0.0792014499169145,
+      0.08782403544031538,
+      0.09348335763036034,
+      0.09658296142592387,
+      0.0986513798538379,
+      0.10002325020221012,
+      0.1013770511428423,
+      0.10545005132526483,
+      0.11853790471116206,
+      0.11886855835116872
     ],
     "consumption-tobacco": [
-      0.1546175397686766,
-      0.14930232535681057,
-      0.08350884148021223,
-      0.08164554019174927,
-      0.11604139479500739,
-      0.11436826293849439,
-      0.07999503863156851,
-      0.07981689484819733,
-      0.07025409641847295,
-      0.07045006557081075
+      0.19876352933316208,
+      0.14894550414461316,
+      0.08914094759929307,
+      0.10215708156489348,
+      0.10987557019096579,
+      0.08897853293386931,
+      0.07126756533460947,
+      0.06783352368671926,
+      0.06143319069612788,
+      0.06160455451574655
     ],
     "consumption-electricity": [
-      0.04336731646995823,
-      0.041876498637453984,
-      0.08351783181262001,
-      0.08165432992626033,
-      0.09323116897011172,
-      0.09188692419350075,
-      0.1275112549864906,
-      0.12722729565883378,
-      0.15464799949262137,
-      0.1550793798521492
+      0.05574943756169716,
+      0.07328826011954381,
+      0.0891505442687697,
+      0.08841387590288773,
+      0.08827735885334288,
+      0.10182754636223046,
+      0.11359975382350265,
+      0.11885433784558505,
+      0.13523083390062338,
+      0.13560805136181717
     ],
     "consumption-heating": [
-      0.03921596268329188,
-      0.03786785398656004,
-      0.07981231713933623,
-      0.0780314950045186,
-      0.0961322361424217,
-      0.09474616260364832,
-      0.12786592203736874,
-      0.12758117288910106,
-      0.15915146751411618,
-      0.15959540999963728
+      0.050412800260503,
+      0.06852185435479849,
+      0.08519511771195572,
+      0.08873233735636121,
+      0.09102427869417166,
+      0.10326274216855066,
+      0.11391572663447791,
+      0.12020922207772777,
+      0.13916885920964517,
+      0.13955706153180847
     ],
     "consumption-drugs": [
-      0.061027688738662156,
-      0.05892976859847683,
-      0.1070894609833007,
-      0.10470001422420193,
-      0.12085480346887341,
-      0.11911226993544256,
-      0.10142880183332834,
-      0.10120292644392308,
-      0.11266999014655332,
-      0.1129842756272377
+      0.07845215244589958,
+      0.09765934023209248,
+      0.11431192027985354,
+      0.114157155634035,
+      0.11443321984294949,
+      0.10136023057724276,
+      0.0903629010639075,
+      0.0919413257859803,
+      0.09852346472687731,
+      0.09879828941116198
     ],
     "consumption-health": [
-      0.058555204339303765,
-      0.056542279631927976,
-      0.09364393505331316,
-      0.09155449324393393,
-      0.1115641209256298,
-      0.10995554421820324,
-      0.1011168434420482,
-      0.10089166276382787,
-      0.13789563282019818,
-      0.1382802835616139
+      0.07527373086337472,
+      0.08892741643902548,
+      0.0999595846334064,
+      0.10336974897371318,
+      0.10563619492175247,
+      0.09715925400417436,
+      0.09008497738998276,
+      0.09808904364290874,
+      0.12058184702492253,
+      0.12091820210673934
     ],
     "consumption-dental": [
-      0.04733725679538539,
-      0.04570996619230462,
-      0.06971966950624123,
-      0.06816404081208705,
-      0.10802094408357,
-      0.10646345433574249,
-      0.10435348619789057,
-      0.10412109772533937,
-      0.17281401554620504,
-      0.17329606880523427
+      0.06085286471171189,
+      0.0687529584356761,
+      0.07442178930920172,
+      0.09200257963799806,
+      0.10228128371531206,
+      0.09716697319364825,
+      0.09296850183115678,
+      0.10889956847482293,
+      0.15111597633788743,
+      0.1515375043525848
     ],
     "consumption-aids": [
-      0.05167322993484267,
-      0.049896883623368214,
-      0.08774552800657161,
-      0.08578769512931576,
-      0.10690302729576938,
-      0.10536165612522977,
-      0.11625411784393272,
-      0.1159952274334839,
-      0.13999606242834547,
-      0.14038657217914055
+      0.0664268333932839,
+      0.08115402142219397,
+      0.09366336995537762,
+      0.09828465363878966,
+      0.1012227670997316,
+      0.10238876657602503,
+      0.10357077239525564,
+      0.10811023180909424,
+      0.12241855262985261,
+      0.12276003108039582
     ],
     "consumption-cars": [
-      0.010741060528896463,
-      0.010371820145125452,
-      0.0498856840607364,
-      0.04877260360436039,
-      0.08882647711948123,
-      0.08754574097499619,
-      0.09953905985023367,
-      0.09931739279414788,
-      0.25214840481735157,
-      0.2528517561046708
+      0.013807819621878948,
+      0.033463400444532374,
+      0.05325013579390506,
+      0.07278144812905563,
+      0.08410670897914517,
+      0.0864872912818617,
+      0.08867933027564859,
+      0.12583009700952857,
+      0.220489363988115,
+      0.22110440447632904
     ],
     "consumption-fuel": [
-      0.03501119121888128,
-      0.03380762797229484,
-      0.08648555808848538,
-      0.08455583844487258,
-      0.09269734568695523,
-      0.0913607977907754,
-      0.1310944836691428,
-      0.1308025447226855,
-      0.1568735120631773,
-      0.15731110034272974
+      0.04500749360799778,
+      0.06916138188920012,
+      0.09231842359456115,
+      0.08923734687900572,
+      0.08777190010974843,
+      0.10331380408034685,
+      0.11679205160369258,
+      0.12166111749343733,
+      0.13717691740483937,
+      0.1375595633371707
     ],
     "consumption-diesel": [
-      0.026732146144390366,
-      0.02581318773476006,
-      0.08561147698042681,
-      0.08370126037895899,
-      0.08424476991600138,
-      0.08303009468273598,
-      0.13072596347925364,
-      0.1304348452034529,
-      0.17460959678298377,
-      0.17509665869703614
+      0.034364637558314884,
+      0.06307241451419891,
+      0.09138539163207797,
+      0.08380607880960061,
+      0.07976844940962073,
+      0.09945115896270956,
+      0.11646373703369767,
+      0.12589000534045572,
+      0.15268610947108377,
+      0.1531120172682402
     ],
     "consumption-travel": [
-      0.05758887514949261,
-      0.055609169485984516,
-      0.08246247629740933,
-      0.08062252216068218,
-      0.08637511699817124,
-      0.08512972555734125,
-      0.09974257231537006,
-      0.09952045205017127,
-      0.17622875576724964,
-      0.17672033421812797
+      0.07403149792814709,
+      0.08240703709527838,
+      0.0880240121673477,
+      0.08387480946264306,
+      0.08178560114044554,
+      0.08551597986498327,
+      0.08886063949374041,
+      0.10686662273501113,
+      0.15410197143100787,
+      0.15453182868139562
     ],
     "consumption-flights": [
-      0.020515728109707993,
-      0.019810468577821844,
-      0.055201085310235196,
-      0.05396940431023609,
-      0.08218772465682857,
-      0.08100270873573785,
-      0.10469081332631702,
-      0.10445767364804208,
-      0.2387492091036997,
-      0.23941518422137367
+      0.026373324346163372,
+      0.04289842559097862,
+      0.058924024879805775,
+      0.07083167612257972,
+      0.0778207046314792,
+      0.08606391258569888,
+      0.09326902650838072,
+      0.12569148135863037,
+      0.20877253340576235,
+      0.20935489057052104
     ],
     "consumption-culture": [
-      0.03953027432662137,
-      0.03817136068642101,
-      0.0653071905364565,
-      0.06385001582159341,
-      0.09181527464356334,
-      0.09049144480515085,
-      0.13312997813010777,
-      0.13283350626897836,
-      0.17219531367500016,
-      0.17267564110610717
+      0.05081685332998104,
+      0.061129629418058065,
+      0.06971171849925324,
+      0.08053348668863598,
+      0.08693669764589633,
+      0.10390568554088742,
+      0.11860547324791698,
+      0.12679052290367468,
+      0.15057495692442321,
+      0.15099497580127297
     ],
     "consumption-news": [
-      0.041924101975799925,
-      0.04048289684888031,
-      0.08711595045950628,
-      0.08517216510864213,
-      0.10380333474480948,
-      0.1023066561976356,
-      0.11294426542646646,
-      0.1126927458435356,
-      0.1565605840036417,
-      0.15699729939108256
+      0.053894160295787696,
+      0.07419345094338547,
+      0.09299133166412747,
+      0.09617367095408491,
+      0.09828777577999558,
+      0.09944922080608509,
+      0.10062202547988626,
+      0.1101999220230785,
+      0.13690327970774183,
+      0.13728516234582724
     ],
     "consumption-insurance": [
-      0.03382226298030694,
-      0.032659570960347176,
-      0.07628954395895832,
-      0.074587324133664,
-      0.09682903853821377,
-      0.09543291822011518,
-      0.12695023081842907,
-      0.12666752085535252,
-      0.1681462783098401,
-      0.168615311224773
+      0.043479105734432796,
+      0.06300634488589572,
+      0.08143475732483825,
+      0.0877929057397137,
+      0.09168405670428036,
+      0.10312729263096343,
+      0.11309993749444543,
+      0.12189684303285804,
+      0.147034306992189,
+      0.14744444946038338
+    ],
+    "consumption-transit": [
+      0.12770033073748066,
+      0.12723018135532493,
+      0.121469328933695,
+      0.09411571697446863,
+      0.07887973573323397,
+      0.07848549553561995,
+      0.07829000492650566,
+      0.08508324625313185,
+      0.10422761176280759,
+      0.10451834778773184
     ],
     "service-education": [
       0.0864642554914267,
@@ -609,124 +621,124 @@
       0.02436941823040494
     ],
     "wealth-housing": [
-      0.021932004188783615,
-      0.03444922862063223,
-      0.04212537466796695,
-      0.06247332581776932,
-      0.07862712973933486,
-      0.09532622004654716,
-      0.101040311035559,
-      0.1252620638904894,
-      0.15094665339573385,
-      0.2878176885971836
+      0.032538418658535496,
+      0.046227431609912856,
+      0.058010205107944704,
+      0.07208661778880324,
+      0.08421373589189585,
+      0.09042064414459396,
+      0.09928007677647376,
+      0.11659605480406979,
+      0.14881828638868827,
+      0.2518085288290821
     ],
     "wealth-home": [
-      0.023190315242150584,
-      0.038428342211371244,
-      0.04431349844710557,
-      0.06738300220565605,
-      0.08224130485509826,
-      0.09846077068900407,
-      0.10972647950550969,
-      0.1305514004044682,
-      0.15369764661819868,
-      0.2520072398214377
+      0.03502184068406292,
+      0.05014416130534459,
+      0.06204313506170607,
+      0.07618973923240398,
+      0.0873851307371172,
+      0.0959718957039056,
+      0.10576768009684447,
+      0.12060411153036128,
+      0.14639394442242182,
+      0.2204783612258321
     ],
     "wealth-shares": [
-      0.017077589057804998,
-      0.012748642669337423,
-      0.025215828448619512,
-      0.06796331417652511,
-      0.03305564972569602,
-      0.05161859053677122,
-      0.05634721138683115,
-      0.0694671462573472,
-      0.1106229593634214,
-      0.555883068377646
+      0.021002709981899455,
+      0.022222730136477884,
+      0.05344908442320539,
+      0.046461243509394574,
+      0.041878594124982446,
+      0.049747839504137525,
+      0.05522067174777782,
+      0.07146061596018488,
+      0.15222053059830262,
+      0.48633598001363737
     ],
     "wealth-unlisted": [
-      0.002623122792258557,
-      0.0023544511229356105,
-      0.001798576984145533,
-      0.001650963491711529,
-      0.005961723959117457,
-      0.006883233300959477,
-      0.01101961590871839,
-      0.03375479415409143,
-      0.04635577661024148,
-      0.8875977416758205
+      0.0033480239136633966,
+      0.0025852793707779823,
+      0.001854182620713755,
+      0.00427022874381983,
+      0.006191992022035676,
+      0.00831880645307128,
+      0.018335482341468652,
+      0.03285453571675801,
+      0.1456919710687493,
+      0.7765494977489421
     ],
     "wealth-assets": [
-      0.021187013998515497,
-      0.03029760184162995,
-      0.039085447569645736,
-      0.059469495642582554,
-      0.06974876961153824,
-      0.08338534323084466,
-      0.09156078887064656,
-      0.1127695590212909,
-      0.13930669966878248,
-      0.3531892805445234
+      0.030515203204452727,
+      0.04173867104485044,
+      0.05474557298603915,
+      0.06551606385339509,
+      0.07404441691318094,
+      0.08062129946355273,
+      0.08968900797757413,
+      0.10583041089387174,
+      0.14829793833801852,
+      0.3090014153250645
     ],
     "wealth-land-business": [
-      0.033311454701415014,
-      0.04950229357173969,
-      0.06286652891905767,
-      0.07812859522240474,
-      0.08727573327949269,
-      0.07968070833306148,
-      0.08933965519513483,
-      0.11430164212357982,
-      0.1502645560854771,
-      0.255328832568637
+      0.04855248806698504,
+      0.06766732987135911,
+      0.07731989630398045,
+      0.08341876756848388,
+      0.07881975972773521,
+      0.07792706775475403,
+      0.08910788969954725,
+      0.10955860338010776,
+      0.14424381145494378,
+      0.22338438617210354
     ],
     "wealth-insurance": [
-      0.015569283806934054,
-      0.023534092580316423,
-      0.029950703969670613,
-      0.032515609432474904,
-      0.06074902328143554,
-      0.07724894881973354,
-      0.07893946164680485,
-      0.09105069436665998,
-      0.11719777408540206,
-      0.47324440801056805
+      0.022815087271074664,
+      0.03220351969333237,
+      0.033953644944807744,
+      0.04959267971067418,
+      0.06708342121120983,
+      0.07186058051412668,
+      0.0750188210731441,
+      0.08664074478676695,
+      0.1467951754440901,
+      0.41403632535077334
     ],
     "wealth-funds": [
-      0.019140417172454502,
-      0.020468611107975314,
-      0.03863929399713782,
-      0.12247141376586002,
-      0.036144194050424135,
-      0.07275361191972535,
-      0.07335976141151013,
-      0.07788103193729498,
-      0.12869247431072214,
-      0.41044919032689564
+      0.025442403652968317,
+      0.034698805571379124,
+      0.0931297459430095,
+      0.06946005163295116,
+      0.05494108759745324,
+      0.06720490547754655,
+      0.06720015675353758,
+      0.08129606113982545,
+      0.14752930188169738,
+      0.3590974803496317
     ],
     "wealth-listed": [
-      0.015146664681130618,
-      0.005521944796406033,
-      0.012650082725986608,
-      0.016937873229263933,
-      0.03016465060129094,
-      0.03182691656230571,
-      0.040421888790756144,
-      0.06159126961167246,
-      0.09370138155860354,
-      0.6920373274425841
+      0.016846790853322916,
+      0.010543830354156946,
+      0.01630374811235582,
+      0.024932014810400607,
+      0.029646839606146145,
+      0.033403187484222975,
+      0.0440068761666026,
+      0.06225218828326359,
+      0.15660868119677857,
+      0.6054558431327498
     ],
     "wealth-financial": [
-      0.01721162270703161,
-      0.01974705214278741,
-      0.02940036464201932,
-      0.05067439352546037,
-      0.048360257140161275,
-      0.05840280659757716,
-      0.07086859480056312,
-      0.08502406355130168,
-      0.1111393354142694,
-      0.5091715094788286
+      0.023291451718261354,
+      0.029290013928196308,
+      0.04481931906146393,
+      0.04908331782214656,
+      0.0516682543733546,
+      0.0597062494333731,
+      0.06857529601373528,
+      0.0813352352189272,
+      0.1467623113193937,
+      0.44546855111114797
     ]
   },
   "actions": {
@@ -1646,15 +1658,12 @@
       "amountBasis": "public-total"
     },
     "cut-1-76": {
-      "kind": "proxy",
-      "profiles": [
-        "capital-income",
-        "wages",
-        "consumption-total"
-      ],
-      "methodKey": "business",
-      "channel": "indirect",
-      "amountBasis": "public-total"
+      "kind": "separate",
+      "group": "collective",
+      "method": "Metsähallituksen tuloutus valtiolle ei ole suora kotitalousmaksu. Vaikutus riippuu liikelaitoksen tuloksesta, investoinneista ja tuloutuksen rahoituksesta. Sitä ei jaeta tuulivoimayhtiöiden tai metsänomistajien tuloprofiililla.",
+      "sources": [
+        "vm-44"
+      ]
     },
     "cut-3-27": {
       "kind": "proxy",
@@ -1805,32 +1814,35 @@
     "cut-2-41": {
       "kind": "proxy",
       "profiles": [
-        "family"
+        "wages",
+        "taxable-income"
       ],
       "methodKey": "student",
       "channel": "cash",
       "amountBasis": "public-total",
-      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
     },
     "cut-2-61": {
       "kind": "proxy",
       "profiles": [
-        "family"
+        "wages",
+        "taxable-income"
       ],
       "methodKey": "student",
       "channel": "cash",
       "amountBasis": "public-total",
-      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
     },
     "cut-2-62": {
       "kind": "proxy",
       "profiles": [
-        "family"
+        "wages",
+        "taxable-income"
       ],
       "methodKey": "student",
       "channel": "cash",
       "amountBasis": "public-total",
-      "note": "Toisen asteen opiskelijat asuvat usein vanhempiensa taloudessa. Siksi jakaumana käytetään perhe-etuuksia, ei korkeakouluopiskelijoiden opintoetuuksia. Kuljetuksen käyttöä ja uuden tulorajan vaikutusta ei ole erikseen tunnistettu."
+      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
     },
     "cut-2-51": {
       "kind": "proxy",
@@ -1864,11 +1876,13 @@
     "cut-3-14": {
       "kind": "proxy",
       "profiles": [
-        "unemployment"
+        "wages",
+        "taxable-income"
       ],
       "methodKey": "benefit",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
     },
     "cut-3-44": {
       "kind": "proxy",
@@ -1945,18 +1959,18 @@
     "cut-3-54": {
       "kind": "proxy",
       "profiles": [
-        "pensions"
+        "disability"
       ],
-      "methodKey": "pension",
+      "methodKey": "benefit",
       "channel": "cash",
       "amountBasis": "public-total"
     },
     "cut-3-56": {
       "kind": "proxy",
       "profiles": [
-        "pensions"
+        "disability"
       ],
-      "methodKey": "pension",
+      "methodKey": "benefit",
       "channel": "cash",
       "amountBasis": "public-total"
     },
@@ -1977,7 +1991,9 @@
       ],
       "methodKey": "benefit",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "householdShare": 0.4,
+      "note": "VM:n mukaan osa etuudesta maksetaan työnantajille. Kotitalouksille kohdennetaan tässä 40% julkistaloudellisesta summasta. Osuus on karkea sijaislaskelma, ei verojen ja korvaavien etuuksien jälkeen laskettu kotitalouden menetys. Työnantajan osuutta ei kirjata työntekijän suoraksi menetykseksi."
     },
     "cut-3-64": {
       "kind": "proxy",
@@ -1987,7 +2003,9 @@
       ],
       "methodKey": "benefit",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "householdShare": 0.9,
+      "note": "VM:n mukaan osa etuudesta maksetaan työnantajille. Kotitalouksille kohdennetaan tässä 90% julkistaloudellisesta summasta. Osuus on karkea sijaislaskelma, ei verojen ja korvaavien etuuksien jälkeen laskettu kotitalouden menetys. Työnantajan osuutta ei kirjata työntekijän suoraksi menetykseksi."
     },
     "cut-3-62": {
       "kind": "proxy",
@@ -2058,51 +2076,52 @@
     "cut-4-30": {
       "kind": "proxy",
       "profiles": [
-        "consumption-dental"
+        "service-health"
       ],
-      "methodKey": "consumption",
+      "methodKey": "service",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Julkisen hammashoidon maksun sijaisjakaumana on julkisen terveydenhuollon käyttö, ei yksityisen hammashoidon ostaminen. Vanha laaja palvelujakauma ei yksilöi maksajia tai maksuvapautuksia."
     },
     "cut-4-16": {
       "kind": "proxy",
       "profiles": [
-        "wealth-assets",
         "service-eldercare"
       ],
-      "methodKey": "wealth",
+      "methodKey": "service",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Maksu kohdistuu hoivan käyttäjiin. Koko väestön varallisuusjakaumaa ei käytetä. Vanha hoivapalvelujen jakauma on sijaismittari eikä ratkaise asiakkaan tulo-, omaisuus- ja perhesääntöjä uudelleen."
     },
     "cut-4-17": {
       "kind": "proxy",
       "profiles": [
-        "wealth-assets",
         "service-eldercare"
       ],
-      "methodKey": "wealth",
+      "methodKey": "service",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Maksu kohdistuu hoivan käyttäjiin. Koko väestön varallisuusjakaumaa ei käytetä. Vanha hoivapalvelujen jakauma on sijaismittari eikä ratkaise asiakkaan tulo-, omaisuus- ja perhesääntöjä uudelleen."
     },
     "cut-4-18": {
       "kind": "proxy",
       "profiles": [
-        "wealth-assets",
         "service-eldercare"
       ],
-      "methodKey": "wealth",
+      "methodKey": "service",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Maksu kohdistuu hoivan käyttäjiin. Koko väestön varallisuusjakaumaa ei käytetä. Vanha hoivapalvelujen jakauma on sijaismittari eikä ratkaise asiakkaan tulo-, omaisuus- ja perhesääntöjä uudelleen."
     },
     "cut-4-19": {
       "kind": "proxy",
       "profiles": [
-        "wealth-assets",
         "service-eldercare"
       ],
-      "methodKey": "wealth",
+      "methodKey": "service",
       "channel": "cash",
-      "amountBasis": "public-total"
+      "amountBasis": "public-total",
+      "note": "Maksu kohdistuu hoivan käyttäjiin. Koko väestön varallisuusjakaumaa ei käytetä. Vanha hoivapalvelujen jakauma on sijaismittari eikä ratkaise asiakkaan tulo-, omaisuus- ja perhesääntöjä uudelleen."
     },
     "cut-4-20": {
       "kind": "proxy",
@@ -2260,15 +2279,6 @@
       "amountBasis": "gross"
     },
     "tax-car-all": {
-      "kind": "proxy",
-      "profiles": [
-        "consumption-cars"
-      ],
-      "methodKey": "consumption",
-      "channel": "cash",
-      "amountBasis": "gross"
-    },
-    "tax-car-combustion": {
       "kind": "proxy",
       "profiles": [
         "consumption-cars"
@@ -2759,19 +2769,10 @@
     "cut-1-38": {
       "kind": "proxy",
       "profiles": [
-        "consumption-travel"
+        "consumption-transit"
       ],
       "methodKey": "service-consumption",
       "channel": "services",
-      "amountBasis": "public-total"
-    },
-    "cut-5-40": {
-      "kind": "proxy",
-      "profiles": [
-        "wages"
-      ],
-      "methodKey": "work",
-      "channel": "work",
       "amountBasis": "public-total"
     },
     "cut-7-44": {
@@ -2892,15 +2893,6 @@
       ]
     },
     "cut-5-29": {
-      "kind": "separate",
-      "group": "collective",
-      "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
-      "sources": [
-        "ons",
-        "vm-44"
-      ]
-    },
-    "cut-5-42": {
       "kind": "separate",
       "group": "collective",
       "method": "Yhteinen palvelu tai hallinnon meno. Puolustuksen ja muiden yhteisten palvelujen hyötyä ei voida jakaa kotitalouksille käytön tai tulon perusteella samalla tavalla kuin hoitoa. Siksi budjettisummaa ei esitetä kenenkään rahatulon menetyksenä.",
@@ -3302,7 +3294,7 @@
         "wealth-financial",
         "wealth-unlisted"
       ],
-      "method": "Yritysperintöjen lisävero kohdistetaan vaihtoehtoisesti listaamattomien osakkeiden tai kaiken rahoitusvarallisuuden omistajille. Ylimmän tulokymmenyksen osuudet ovat noin 89 % ja 51 %. Näin vaikutus painottuu suurituloisiin, mutta perillistä ei oleteta automaattisesti yhtä suurituloiseksi kuin nykyistä yritysomistajaa.",
+      "method": "Yritysperintöjen lisävero kohdistetaan vaihtoehtoisesti listaamattomien osakkeiden tai kaiken rahoitusvarallisuuden omistajille. Jakaumat on muunnettu henkilökymmenyksiksi kotitalousjärjestyksen perusteella. Näin vaikutus painottuu suurituloisiin, mutta perillistä ei oleteta automaattisesti yhtä suurituloiseksi kuin nykyistä yritysomistajaa.",
       "calculation": [
         "Lisäveron oletus on 240 milj. € × 20–50 % × (1 − 15–35 %) = 31,2–102 milj. €/vuosi. Tässä 15–35 % tulkitaan suunnittelun vähentämäksi kotitalouksien lisäveroksi. Julkisia 1–3 miljoonan hallintokuluja ei vähennetä perillisten veroista. OBR:n Britannian arvio tukee käyttäytymisen huomioimista, mutta Suomen prosentit ovat omia herkkyysoletuksia.",
         "Jakaumat: Tilastokeskus 151u, muut osakkeet (muosa) ja rahoitusvarat (finan), 2023. Käytämme ryhmän keskimääräistä omistusta × kotitalousmäärää. Rahoitusvarallisuus on väljempi vertailu myös yhtiön passiivisille sijoitusvaroille. Neljä vaihtoehtoa yhdistävät kaksi verosummaa ja kaksi jakaumaa.",
@@ -3428,10 +3420,10 @@
         "wealth-insurance",
         "wealth-listed"
       ],
-      "method": "Vuoden 2031 lisävero jaetaan kahdella vaihtoehdolla: vakuutussäästöjen tai pörssiosakkeiden omistuksen mukaan. Tilastokeskuksen vuoden 2023 aineistossa ylimmälle tulokymmenykselle kuuluu näistä noin 47 % ja 69 %. Molemmat ovat sijaisjakaumia; vakuutuskuorten ja osakesäästötilien yhteistä jakaumaa ei tunneta.",
+      "method": "Vuoden 2031 lisävero jaetaan kahdella vaihtoehdolla: vakuutussäästöjen tai pörssiosakkeiden omistuksen mukaan. Omistusjakaumat muunnetaan vuoden 2023 kotitalouskymmenyksistä vuoden 2024 henkilökymmenyksiksi kumulatiivisen kotitalousjärjestyksen avulla. Molemmat ovat sijaisjakaumia; vakuutuskuorten ja osakesäästötilien yhteistä jakaumaa ei tunneta.",
       "calculation": [
         "Kotitalouksien lisävero on 29,4–438,4 milj. € vuonna 2031. Se on saman sijoituskannan verotuspolkujen erotus ennen julkisia hallintokuluja. Nostojen verot, hankintameno ja sijoitusten siirtyminen lasketaan kuten tuottoarviossa. Hallinnon 2–5 miljoonaa ei vähennä sijoittajan verolaskua.",
-        "Tilastokeskuksen taulukko 151u: säästö- ja sijoitusvakuutukset (vaksak) sekä pörssiosakkeet (porsosa). Kunkin tuloryhmän keskimääräinen omistus kerrotaan ryhmän kotitalousmäärällä ja jaetaan kaikkien ryhmien omistusten summalla. Ryhmät on järjestetty tulojen, ei varallisuuden mukaan.",
+        "Tilastokeskuksen taulukko 151u: säästö- ja sijoitusvakuutukset (vaksak) sekä pörssiosakkeet (porsosa). Kunkin lähderyhmän keskimääräinen omistus kerrotaan kotitalousmäärällä. Ryhmät muunnetaan henkilökymmenyksiksi olettaen, että omistus kotitaloutta kohti on vakio lähderyhmän sisällä. Ryhmät on järjestetty tulojen, ei varallisuuden mukaan.",
         "Oma oletus: verollinen tuotto ja sopimusten vaihtaminen jakautuvat samassa suhteessa kuin omistukset. Haarukka yhdistää pienemmän ja suuremman verolaskelman molempiin jakaumiin. Emme oleta, että ulkomaisen vakuutuksen suomalainen omistaja olisi ulkomainen kotitalous.",
         "Kunkin ryhmän eurot jaetaan sen vuoden 2024 kulutusyksiköillä ja suhteutetaan ryhmän keskimääräisiin nettotuloihin. Kuvaajan täysi palkki on kokonaisten laskentavaihtoehtojen keskiarvo; viivoitus kattaa niiden pienimmän ja suurimman ryhmävaikutuksen. Vaihtoehdoille ei ole arvioitu todennäköisyyksiä, eikä haarukka ole tilastollinen luottamusväli. Inflaatiota tai väestön muutosta ei ennusteta."
       ],
@@ -3700,60 +3692,17 @@
       ]
     },
     "fw-corporate-minimum": {
-      "kind": "scenarios",
-      "channel": "indirect",
-      "scenarios": [
-        {
-          "million": 210.0,
-          "shares": {
-            "capital-income": 0.2
-          }
-        },
-        {
-          "million": 210.0,
-          "shares": {
-            "capital-income": 0.6,
-            "wages": 0.175
-          }
-        },
-        {
-          "million": 810.0,
-          "shares": {
-            "capital-income": 0.2
-          }
-        },
-        {
-          "million": 810.0,
-          "shares": {
-            "capital-income": 0.6,
-            "wages": 0.175
-          }
-        }
-      ],
-      "profiles": [
-        "capital-income",
-        "wages"
-      ],
+      "kind": "separate",
+      "group": "unpriced",
       "method": "Yritysveron välillinen rasitus jaetaan omistajille ja mahdollisesti työntekijöille. Ulkomaisten ja institutionaalisten omistajien osuutta ei jaeta Suomen kotitalouksille.",
-      "calculation": [
-        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
-        "Omat vertailut: kotitalouksien pääomatuloihin jää 20 % verosta; toisessa vaihtoehdossa pääomatuloihin 60 % ja nettopalkkoihin 17,5 %. Jälkimmäinen palkkaosuus on CBO:n 25 %:n brutto-oletus × 70 % verojen jälkeinen osuus. Omistajaosuudet ovat herkkyysoletuksia, eivät kohdeyritysten havaittuja omistuksia.",
-        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
-        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
-      ],
-      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
       "sources": [
         "fw-tax-gaps",
         "minimum-tax-eutax",
         "cfc-clifford",
         "cbo-incidence-assumption",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
-      ],
-      "partial": true,
-      "householdMillion": [
-        42.0,
-        627.7499999999999
+        "statfin-income-incidence",
+        "he77-minimum"
       ]
     },
     "fw-wealth-minimum": {
@@ -3761,25 +3710,25 @@
       "channel": "cash",
       "scenarios": [
         {
-          "million": 280.0,
+          "million": 66.495,
           "shares": {
             "wealth-unlisted": 1
           }
         },
         {
-          "million": 280.0,
+          "million": 66.495,
           "shares": {
             "wealth-financial": 1
           }
         },
         {
-          "million": 380.0,
+          "million": 279.27899999999994,
           "shares": {
             "wealth-unlisted": 1
           }
         },
         {
-          "million": 380.0,
+          "million": 279.27899999999994,
           "shares": {
             "wealth-financial": 1
           }
@@ -3803,12 +3752,13 @@
         "wealth-migration-2026",
         "wealth-norway-2026",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "wealth-swiss"
       ],
       "partial": true,
       "householdMillion": [
-        280.0,
-        380.0
+        66.495,
+        279.27899999999994
       ]
     },
     "fw-exit-tax": {
@@ -4086,7 +4036,7 @@
       "profiles": [
         "consumption-total"
       ],
-      "method": "Suomen kuluttajille siirtyvän hinnan vertailu on 20–60 % mallin verorasituksesta. Loppu jää alustoille, mainostajille tai muille omistajille.",
+      "method": "Mainostajilta edelleen Suomen kuluttajille siirtyvä osuus on omissa vertailuissa 20–60 % mallin verorasituksesta. Alustan maksu mainostajalle ja mainostajan hinnankorotus kuluttajalle ovat kaksi eri vaihetta.",
       "calculation": [
         "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
         "20–60 % on oma herkkyysoletus. Kulutuksen kokonaisjakauma on väljä sijaismittari mainostavien yritysten asiakkaille; lain tarkkaa kuluttajavaikutusta ei ole tutkittu Suomessa.",
@@ -4100,7 +4050,8 @@
         "austria-digital",
         "digital-jrc",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "google-dst"
       ],
       "partial": true,
       "householdMillion": [
@@ -4113,13 +4064,13 @@
       "channel": "indirect",
       "scenarios": [
         {
-          "million": 142.72500000000002,
+          "million": 61.5,
           "shares": {
             "capital-income": 0.3
           }
         },
         {
-          "million": 142.72500000000002,
+          "million": 61.5,
           "shares": {
             "capital-income": 0.2,
             "wages": 0.175,
@@ -4127,13 +4078,13 @@
           }
         },
         {
-          "million": 180.785,
+          "million": 184.5,
           "shares": {
             "capital-income": 0.3
           }
         },
         {
-          "million": 180.785,
+          "million": 184.5,
           "shares": {
             "capital-income": 0.2,
             "wages": 0.175,
@@ -4163,8 +4114,8 @@
       ],
       "partial": true,
       "householdMillion": [
-        42.8175,
-        122.029875
+        18.45,
+        124.53750000000001
       ]
     },
     "sorsa-million-inheritance": {
@@ -4264,6 +4215,11 @@
       "label": "ONS: verojen ja palvelumenojen tulonjakolaskennan menetelmät",
       "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/articles/theeffectsoftaxesandbenefitsonhouseholdincome/financialyearending2015"
     },
+    "corporate-wages-meta": {
+      "label": "Knaisch & Pöschel (2024): Wage response to corporate income taxes",
+      "url": "https://doi.org/10.1111/joes.12557",
+      "kind": "Kansainvälinen · vertaisarvioitu meta-regressio"
+    },
     "fw-tax-gaps": {
       "label": "Finnwatch (2024): Veropohjan aukot",
       "url": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
@@ -4275,9 +4231,9 @@
       "kind": "Suomi · ETLA Erikoisartikkeli 19, skenaariomalli; rahoittaja Finanssiala"
     },
     "chetty-saving": {
-      "label": "Chetty ym. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
+      "label": "Chetty ym. (2012): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
       "url": "https://www.nber.org/papers/w18565",
-      "kind": "Tanska · rekisteritutkimus, julkaistu Quarterly Journal of Economicsissa 2014"
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
     },
     "statfin-wealth-incidence": {
       "label": "Tilastokeskus: varallisuus tulokymmenyksittäin 2023, taulukko 151u",
@@ -4349,20 +4305,30 @@
       "url": "https://www.taxobservatory.eu/www-site/uploads/2021/06/TaxObservatory_Report_Tax_Deficit_July2021_Revised.pdf",
       "kind": "EU Tax Observatory · maakohtainen verosimulaatio"
     },
+    "he77-minimum": {
+      "label": "HE 77/2023: suurten konsernien vähimmäisverotus",
+      "url": "https://www.finlex.fi/fi/hallituksen-esitykset/2023/77",
+      "kind": "Suomi · hallituksen esityksen vaikutusarvio"
+    },
     "wealth-minimum-eutax": {
       "label": "EU Tax Observatory (2025): Minimum taxation of ultra-high-net-worth individuals",
       "url": "https://www.taxobservatory.eu/www-site/uploads/2025/03/Resources-for-a-Safe-and-Resilient-Europe_The-Case-for-Minimum-Taxation-of-Ultra-High-Net-Worth-Individuals-in-the-EU-1.pdf",
       "kind": "Eurooppa · varallisuuslistoihin perustuva ehdollinen laskelma"
     },
     "wealth-migration-2026": {
-      "label": "Jakobsen ym. (2026): Taxing Top Wealth",
+      "label": "Jakobsen ym. (2024): Taxing Top Wealth",
       "url": "https://www.nber.org/papers/w32153",
-      "kind": "Pohjoismaat · rekisteritutkimus, julkaistu American Economic Reviewssa 2026"
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
     },
     "wealth-norway-2026": {
       "label": "Ring (2026): Taxing Entrepreneurial Wealth: Evidence from Norway, 2021–2025",
       "url": "https://www.nber.org/papers/w35854",
       "kind": "Norja · tuore tutkimustyöpaperi, ei vielä vertaisarvioitu"
+    },
+    "wealth-swiss": {
+      "label": "Brülhart, Gruber, Krapf & Schmidheiny (2022): Behavioral Responses to Wealth Taxes",
+      "url": "https://doi.org/10.1257/pol.20200258",
+      "kind": "Sveitsi · vertaisarvioitu veromuutosten tutkimus"
     },
     "vm-exit-2020": {
       "label": "VM (2020): Maastapoistumisvero – mistä on kyse ja mistä ei?",
@@ -4420,9 +4386,14 @@
       "kind": "Itävalta · voimassa olevan veron kuvaus"
     },
     "digital-jrc": {
-      "label": "Alvarez Martinez, Gesualdo & Pycroft (2024): Storm in the Cloud",
+      "label": "Alvarez Martinez, Gesualdo & Pycroft (2025): Storm in the Cloud",
       "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC130576",
       "kind": "Britannia · vertaisarvioitu CORTAX-talousmalli, ei toteuman syyvaikutus"
+    },
+    "google-dst": {
+      "label": "Google Ads: Jurisdiction-specific surcharges",
+      "url": "https://support.google.com/google-ads/answer/9750227?hl=en-GB",
+      "kind": "Yhtiön virallinen hinnasto · tarkistettu 28.10.2026"
     },
     "sorsa-ten": {
       "label": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",
@@ -4430,9 +4401,9 @@
       "kind": "Suomi · veropoliittinen ehdotuskooste, ei vaikutusten syy-seuraustutkimus"
     },
     "bank-norway": {
-      "label": "Norjan valtiovarainministeriö: Prop. 1 LS 2025–2026",
-      "url": "https://www.regjeringen.no/en/documents/prop.-1-ls-20252026/id3125412/?ch=1",
-      "kind": "Norja · rahoitustoimintaveron verokannat"
+      "label": "Norjan verohallinto: Financial activity tax",
+      "url": "https://www.skatteetaten.no/en/business-and-organisation/reporting-and-industries/financial-activity-tax/",
+      "kind": "Norja · viranomaisen kuvaus, tarkistettu 28.10.2026"
     },
     "bank-incidence": {
       "label": "Kogler (2019): On the Incidence of Bank Levies",
@@ -4462,7 +4433,7 @@
     {
       "label": "Fuest, Peichl & Siegloch 2018 · Saksa",
       "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20130570",
-      "finding": "Saksan kuntien yritysveromuutoksissa noin puolet kokonaisrasituksesta siirtyi työntekijöille. Vaikutus oli suurempi vähän koulutetuilla, nuorilla ja naisilla. Suomen yhteisöveron rasitusta ei siis pidä kirjata automaattisesti kokonaan suurituloisille omistajille.",
+      "finding": "Saksan kuntien yritysveromuutoksissa noin puolet kokonaisrasituksesta siirtyi työntekijöille. Vaikutus oli suurempi vähän koulutetuilla, nuorilla ja naisilla. Tämä on yhden maan kunnallisveroa koskeva tulos. Knaischin ja Pöschelin (2024) meta-analyysissa keskimääräinen palkkavaikutus ei erottunut nollasta julkaisuharhan korjauksen jälkeen.",
       "ids": [
         "corporate"
       ]
@@ -4482,13 +4453,563 @@
     }
   ],
   "unmodelled": {},
+  "regroupingInputs": {
+    "consumption-total": {
+      "totals": [
+        11614420435.939999,
+        17796559703.04,
+        22715240605.2,
+        27066162261.600002,
+        38308442202.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-food": {
+      "totals": [
+        1963894163.84,
+        2808728206.0800004,
+        3354789386.52,
+        3686544637.65,
+        4402746468.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-tobacco": {
+      "totals": [
+        181356799.54,
+        98551866.88000001,
+        137491368.3,
+        95363890.65,
+        83961792.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-electricity": {
+      "totals": [
+        285481806.12,
+        553162091.5200001,
+        619961078.88,
+        853120210.95,
+        1037277972.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-heating": {
+      "totals": [
+        336509955.03999996,
+        689068295.0400001,
+        833281020.0,
+        1115156126.7,
+        1391491782.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-drugs": {
+      "totals": [
+        184115077.85999998,
+        325062206.08000004,
+        368310210.84000003,
+        311006562.3,
+        346342392.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-health": {
+      "totals": [
+        490973540.96,
+        790004481.2800001,
+        944940676.6800001,
+        861711552.45,
+        1178088894.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-dental": {
+      "totals": [
+        82058780.02,
+        121600287.36000001,
+        189154791.54,
+        183854708.1,
+        305236098.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-aids": {
+      "totals": [
+        58613414.3,
+        100141413.12000002,
+        122492309.94,
+        134024927.4,
+        161801370.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-cars": {
+      "totals": [
+        126880802.72,
+        592900747.5200001,
+        1059933457.44,
+        1195055602.65,
+        3034868940.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-fuel": {
+      "totals": [
+        290998362.76,
+        723243539.2,
+        778284472.6800001,
+        1107423919.3500001,
+        1328520438.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-diesel": {
+      "totals": [
+        64129970.94,
+        206641011.20000002,
+        204153849.9,
+        318738769.65000004,
+        426805776.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-travel": {
+      "totals": [
+        182046369.11999997,
+        262275129.60000002,
+        275816017.62,
+        320457037.95,
+        567616698.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-flights": {
+      "totals": [
+        29651491.939999998,
+        80272085.12,
+        119992466.88,
+        153785012.85,
+        351590004.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-culture": {
+      "totals": [
+        578548877.62,
+        961675475.2000002,
+        1357414781.58,
+        1980304215.75,
+        2567831472.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-news": {
+      "totals": [
+        59302983.879999995,
+        123984606.72000001,
+        148324021.56,
+        162376354.35,
+        225647316.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-insurance": {
+      "totals": [
+        222730974.33999997,
+        505475704.32000005,
+        644126228.46,
+        849683674.35,
+        1128236580.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-transit": {
+      "totals": [
+        133776498.52,
+        154185985.28000003,
+        113326218.72,
+        120278781.0,
+        163550574.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "wealth-housing": {
+      "totals": [
+        10962294000,
+        17218789900,
+        21055565100,
+        31226100400,
+        39300271200,
+        47646993000,
+        50503072400,
+        62609853600,
+        75447805800,
+        143860182300
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-home": {
+      "totals": [
+        8504566000,
+        14092795600,
+        16251054300,
+        24711315200,
+        30160288800,
+        36108440700,
+        40239905200,
+        47877012000,
+        56365416600,
+        92418416100
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-shares": {
+      "totals": [
+        1353522800,
+        1010422400,
+        1998537300,
+        5386585600,
+        2619900000,
+        4091147700,
+        4465925200,
+        5505775200,
+        8767671900,
+        44057765100
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-unlisted": {
+      "totals": [
+        136770200,
+        122761600,
+        93778200,
+        86081600,
+        310845600,
+        358893300,
+        574565200,
+        1759982400,
+        2417000400,
+        46279541700
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-assets": {
+      "totals": [
+        17315461800,
+        24761250800,
+        31943273100,
+        48602496800,
+        57003415200,
+        68148146100,
+        74829673600,
+        92162916000,
+        113850863400,
+        288650184300
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-land-business": {
+      "totals": [
+        1210549200,
+        1798929600,
+        2284590300,
+        2839218800,
+        3171628800,
+        2895623100,
+        3246632400,
+        4153759200,
+        5460663300,
+        9278733600
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-insurance": {
+      "totals": [
+        315487200,
+        476881600,
+        606904200,
+        658878000,
+        1230984000,
+        1565329200,
+        1599584800,
+        1845000000,
+        2374829700,
+        9589558200
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-funds": {
+      "totals": [
+        733478200,
+        784375800,
+        1480692900,
+        4693216000,
+        1385078400,
+        2787984600,
+        2811212800,
+        2984472000,
+        4931612700,
+        15728786400
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-listed": {
+      "totals": [
+        620044600,
+        226046600,
+        517844400,
+        693369600,
+        1234821600,
+        1302868200,
+        1654712400,
+        2521303200,
+        3835764300,
+        28329273600
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    },
+    "wealth-financial": {
+      "totals": [
+        4311363000,
+        4946466200,
+        7364537700,
+        12693498400,
+        12113827200,
+        14629399200,
+        17751971600,
+        21297794400,
+        27839444700,
+        127543070400
+      ],
+      "households": [
+        295400,
+        295100,
+        294900,
+        294800,
+        295200,
+        294900,
+        294800,
+        295200,
+        294900,
+        294900
+      ]
+    }
+  },
   "methods": {
     "consumption": {
       "sources": [
         "consumption",
         "ons"
       ],
-      "method": "Lisävero tai maksu jaetaan kyseisen tuoteryhmän toteutuneen kulutuksen mukaan (Suomi 2022). Koko lisämaksun oletetaan siirtyvän kuluttajille. Kulutuksen vähenemistä tai etuuksien indeksihyvitystä ei vähennetä. Aineistossa on viisi tuloryhmää: kunkin sisällä vaikutus on sama kulutusyksikköä kohden. Yritysten kulutus ja ulkomaiset ostajat voivat pienentää kotitalouksien osuutta."
+      "method": "Lisävero tai maksu jaetaan kyseisen tuoteryhmän toteutuneen kulutuksen mukaan (Suomi 2022). Koko lisämaksun oletetaan siirtyvän kuluttajille. Kulutuksen vähenemistä tai etuuksien indeksihyvitystä ei vähennetä. Aineistossa on viisi tuloryhmää: kunkin sisällä määrä kotitaloutta kohti oletetaan samaksi. Yritysten kulutus ja ulkomaiset ostajat voivat pienentää kotitalouksien osuutta. Lähteen kotitalousryhmät muunnetaan henkilökymmenyksiksi kotitalouksien kumulatiivisen tulonjärjestyksen avulla. Ryhmän sisällä määrä kotitaloutta kohti oletetaan vakioksi. Vuosien 2022/2023 ja 2024 väestörakenteen erot jäävät epävarmuudeksi; tämä ei ole mikroaineistosta laskettu jakauma."
     },
     "benefit": {
       "sources": [
@@ -4516,7 +5037,7 @@
         "wealth",
         "vm-48"
       ],
-      "method": "Lisämaksu jaetaan vastaavan varallisuuslajin vuoden 2023 jakaumalla tulokymmenyksittäin. Omaisuuden määrä on sijaismittari: kauppojen, perintöjen ja palvelumaksujen todellinen jakauma voi poiketa omistamisen jakaumasta. Varallisuustilasto ei kata laitoksissa asuvaa väestöä."
+      "method": "Lisämaksu jaetaan vastaavan varallisuuslajin vuoden 2023 jakaumalla tulokymmenyksittäin. Omaisuuden määrä on sijaismittari: kauppojen, perintöjen ja palvelumaksujen todellinen jakauma voi poiketa omistamisen jakaumasta. Varallisuustilasto ei kata laitoksissa asuvaa väestöä. Lähteen kotitalousryhmät muunnetaan henkilökymmenyksiksi kotitalouksien kumulatiivisen tulonjärjestyksen avulla. Ryhmän sisällä määrä kotitaloutta kohti oletetaan vakioksi. Vuosien 2022/2023 ja 2024 väestörakenteen erot jäävät epävarmuudeksi; tämä ei ole mikroaineistosta laskettu jakauma."
     },
     "agriculture": {
       "sources": [
@@ -4528,9 +5049,10 @@
     "corporate": {
       "sources": [
         "cbo",
-        "statfin"
+        "statfin",
+        "corporate-wages-meta"
       ],
-      "method": "Ehdollinen yritysveroskenaario käyttää CBO:n laskentaoletusta: 25 % työntekijöille, 75 % pääoman omistajille. Palkkaosa jaetaan Suomen palkkatulojen ja pääomaosa omaisuustulojen mukaan. Haarukan alarajalla koko pääomaosa jää ulkomaisille omistajille, ylärajalla kotimaisille. Tämä ei ole Suomen estimoitu vaihteluväli eikä lyhyen aikavälin kassamenetys; myös palkkoihin siirtyminen on oletus."
+      "method": "Yritysveron rasituksesta 0 tai 25 % kohdennetaan palkkoihin ja loppu pääomaan. Pääomaosasta 0 tai 100 % kohdennetaan Suomessa asuville. Nämä ovat neljä herkkyysskenaariota, eivät todennäköisyysrajat. CBO käyttää 25/75-jakoa laskentaoletuksena; tutkimus ei vahvista sitä Suomen vakiokertoimeksi. Knaisch & Pöschelin (2024) meta-analyysissa keskimääräinen palkkavaikutus ei erottunut nollasta julkaisuharhan korjauksen jälkeen."
     },
     "business": {
       "sources": [
@@ -4552,7 +5074,7 @@
         "consumption",
         "ifs-services"
       ],
-      "method": "Palvelurahan vähennys jaetaan vastaavan kulutuksen vuoden 2022 jakaumalla. Maksullisten palvelujen kulutus on julkisen palvelun käytön epätäydellinen sijaismittari: maksuton palvelu voi palvella enemmän pienituloisia. Kyse on resurssien kohdentumisesta, ei rahatulon menetyksestä tai palvelun hyvinvointiarvosta."
+      "method": "Palvelurahan vähennys jaetaan vastaavan kulutuksen vuoden 2022 jakaumalla. Maksullisten palvelujen kulutus on julkisen palvelun käytön epätäydellinen sijaismittari: maksuton palvelu voi palvella enemmän pienituloisia. Kyse on resurssien kohdentumisesta, ei rahatulon menetyksestä tai palvelun hyvinvointiarvosta. Lähteen kotitalousryhmät muunnetaan henkilökymmenyksiksi kotitalouksien kumulatiivisen tulonjärjestyksen avulla. Ryhmän sisällä määrä kotitaloutta kohti oletetaan vakioksi. Vuosien 2022/2023 ja 2024 väestörakenteen erot jäävät epävarmuudeksi; tämä ei ole mikroaineistosta laskettu jakauma."
     },
     "targeted-service": {
       "sources": [
@@ -4570,8 +5092,8 @@
     }
   },
   "coverage": {
-    "reviewed": 257,
-    "numericalScenarios": 200,
-    "separate": 57
+    "reviewed": 254,
+    "numericalScenarios": 196,
+    "separate": 58
   }
 }

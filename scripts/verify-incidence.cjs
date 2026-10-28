@@ -9,7 +9,7 @@ const model=JSON.parse(read('data/incidence-model.json'));
 const app=read('src/app.js');
 const close=(a,b,message)=>assert.ok(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),`${message}: ${a} != ${b}`);
 assert.equal(Object.keys(model.actions).length,actions.length);
-assert.equal(model.coverage.numericalScenarios,200);
+assert.equal(model.coverage.numericalScenarios,196);
 // Official group boundaries, not group means or guessed salary bands.
 const bounds=JSON.parse(read('data/sources/income-bounds-2024.json'));
 const boundIndex=bounds.dimension.contentscode.category.index;
@@ -74,8 +74,9 @@ ctx.syntheticModel.income=Array(10).fill(99999);
 let differentIncome=vm.runInContext('calculateIncidence(syntheticActions,syntheticModel)',ctx);
 assert.deepEqual(Array.from(differentIncome.serviceRows,r=>r.share),Array.from(synthetic.serviceRows,r=>r.share),'service shares do not depend on cash income');
 assert.ok(empty.serviceRows.every(r=>r.share===0&&Number.isFinite(r.shareLow)));
-close(company.low.reduce((s,v,i)=>s+v*model.consumptionUnits[i],0),430e6*.25,'corporate lower scenario');
-close(company.high.reduce((s,v,i)=>s+v*model.consumptionUnits[i],0),430e6,'corporate upper scenario');
+close(company.low.reduce((s,v,i)=>s+v*model.consumptionUnits[i],0),0,'corporate lower scenario');
+company.scenarios.forEach(s=>assert.ok(s.reduce((n,v,i)=>n+v*model.consumptionUnits[i],0)<=430e6+1e-7));
+close(company.mid.reduce((n,v,i)=>n+v*model.consumptionUnits[i],0),430e6*.5625,'mean of four coherent corporate allocations');
 assert.equal(calculate(['cut-5-49']).missing.length,1,'collective defence not allocated as cash');
 const homecare=calculate(['cut-3-62']);
 assert.equal(homecare.entries[0].action.amount,null);assert.equal(homecare.entries[0].action.directAmount,-82);assert.ok(homecare.rows.every(r=>r.mid>=0));
@@ -97,12 +98,13 @@ for(let i=0;i<10;i++)close(combined.rows[i].low,benefit.rows[i].low+index.rows[i
 let tax=calculate(['income']),entry=tax.entries[0];
 assert.equal(entry.action.amount,900);assert.equal(entry.action.gross,1500);
 close(entry.mid.reduce((n,x,i)=>n+x*model.consumptionUnits[i],0),1500e6,'allocated tax liability');
-ctx.scenario.income=4;let larger=calculate(['income']);
-for(let i=0;i<10;i++)close(larger.rows[i].mid,4*tax.rows[i].mid,'tax slider');
+ctx.scenario.income=3;let larger=calculate(['income']);
+for(let i=0;i<10;i++)close(larger.rows[i].mid,3*tax.rows[i].mid,'tax slider');
+ctx.scenario.income=4;assert.equal(calculate(['income']).missing.length,1,'large changes must not reuse linear incidence');
 ctx.scenario.income=0;assert.ok(calculate(['income']).rows.every(r=>r.mid===0));ctx.scenario.income=1;
 const dividends=calculate(['dividends']);ctx.scenario.dividends='abolish';const abolished=calculate(['dividends']);
 for(let i=0;i<10;i++)close(abolished.rows[i].mid/dividends.rows[i].mid,459/370,'dividend replacement');
-const vat=calculate(['vat']);assert.equal(vat.entries[0].action.amount,2950);
+const vat=calculate(['vat']);assert.equal(vat.entries[0].action.amount,2322);
 close(vat.entries[0].mid.reduce((n,x,i)=>n+x*model.consumptionUnits[i],0),3870e6,'VAT before index compensation');
 assert.ok(vat.rows[0].percentHigh>vat.rows[9].percentHigh,'VAT burden relative to income');
 

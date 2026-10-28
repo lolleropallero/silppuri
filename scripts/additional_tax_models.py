@@ -11,6 +11,9 @@ def calculate(inputs):
     results = {}
     for key, p in inputs.items():
         cases = []
+        if p['formula'] == 'unquantified':
+            results[key]={'raw':None,'range':None,'taxRange':None,'caseCount':0}
+            continue
         if p['formula'] == 'reference':
             cases = [{'tax': n, 'net': n} for n in p['referenceRange']]
         elif p['formula'] == 'realizations':
@@ -38,6 +41,8 @@ def calculate(inputs):
 def apply(actions, results):
     for d in actions:
         r = results[d['id']]
+        if r['range'] is None:
+            continue
         low, high = r['range']
         e = d['estimate']
         e.update(amount=low, range=r['range'], display=f'{low}–{high} milj. €')
@@ -49,8 +54,8 @@ def extend_incidence(model, actions, results, references):
         p = d['incidence']
         keys = d['research']['sources']
         model['sources'].update({key: references[key] for key in keys})
-        if p.get('outsideResidents'):
-            model['actions'][d['id']] = dict(kind='separate', group='foreign',
+        if p.get('outsideResidents') or results[d['id']]['range'] is None:
+            model['actions'][d['id']] = dict(kind='separate', group='foreign' if p.get('outsideResidents') else 'unpriced',
                 method=p['method'], sources=keys)
             continue
         amounts = results[d['id']]['taxRange']

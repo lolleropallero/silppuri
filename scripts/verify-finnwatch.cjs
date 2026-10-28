@@ -43,16 +43,16 @@ const actual=vm.runInContext("syncScenario();data.filter(d=>matchesSearch(d,sear
 assert.equal(actual.length,14,'all proposals are found in the ordinary search');
 assert.equal(vm.runInContext("data.filter(d=>d.id==='tax-succession'&&matchesSearch(d,searchWords('sukupolvenvaihdoshuojennus'))).length",ctx),1);
 assert.equal(actual.find(d=>d.id==='fw-dividend-withholding').amount,50);
-assert.equal(actual.filter(d=>d.amount===null).length,0);
-assert.equal(actual.filter(d=>originalIds.includes(d.id)).reduce((sum,d)=>sum+(d.amount??0),0),120);
-for(const [id,key] of [['fw-interest','interest'],['tax-succession','succession'],['fw-wrappers','wrappers']]){
+assert.equal(actual.filter(d=>d.amount===null).length,2);
+assert.equal(actual.filter(d=>originalIds.includes(d.id)).reduce((sum,d)=>sum+(d.amount??0),0),100);
+for(const [id,key] of [['fw-interest','interest'],['tax-succession','succession']]){
  assert.equal(actual.find(d=>d.id===id).amount,results[key].range[0]);
  assert.deepEqual(actions.find(d=>d.id===id).estimate.range,results[key].range);
 }
 assert.ok(actual.every(d=>!d.year.includes('VM:n netto')));
 ctx.includeLater=true;
 ctx.originalIds=originalIds;
-assert.equal(vm.runInContext('syncScenario();data.filter(d=>originalIds.includes(d.id)).reduce((sum,d)=>sum+(d.amount??0),0)',ctx),120);
+assert.equal(vm.runInContext('syncScenario();data.filter(d=>originalIds.includes(d.id)).reduce((sum,d)=>sum+(d.amount??0),0)',ctx),100);
 const incidence=read('incidence-model.json');
 for(const d of proposals){
  assert.equal(incidence.actions[d.id].kind,'scenarios');
@@ -61,4 +61,4 @@ for(const d of proposals){
 }
 const template=fs.readFileSync(path.join(root,'src/silppuri.template.html'),'utf8');
 assert.ok(!template.includes('sp-loopholes')&&!template.includes('sp-loophole-list'));
-console.log('PASS: 4 selectable proposals; lower bounds total 120m; historical sector calculation reproduced; own scenarios labelled separately; wrapper later-year losses preserved; household incidence assumptions disclosed.');
+console.log('PASS: 4 selectable proposals; lower bounds total 100m; wrapper cash timing excluded; historical sector calculation reproduced; own scenarios labelled separately; wrapper later-year losses preserved; household incidence assumptions disclosed.');

@@ -1,0 +1,28 @@
+{
+  "source": "VM 2026:44, s. 667–668 ja Excel-liitteen rivi 7-30",
+  "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-603-9",
+  "methods": {
+    "pay": {
+      "factors": [0.497, 0.497],
+      "explanation": "Oma verokorjaus: VM:n rivin 7-30 nettosuhde 49,7 % on sovellettu tämän rivin bruttotyövoimakustannukseen. Tämä ei ole tämän palkkatoimen erillinen nettolaskelma.",
+      "limit": "Julkisen alan palkkajakaumaa ja sosiaalivakuutusmaksuja ei ole simuloitu toimikohtaisesti. Kerroin ei sisällä kaikkia kulutus- ja terveysvaikutuksia."
+    },
+    "staff": {
+      "factors": [0.24, 0.497],
+      "explanation": "Oma herkkyysväli: 24–49,7 % VM:n bruttotyövoimakustannuksesta. Alapää on VM:n referoima valtion irtisanomisten arvio, yläpää toisen palkkamenotoimen verokorjaus. Ne eivät ole tämän toimen estimoidut rajat.",
+      "limit": "Eläkepoistuma, irtisanominen ja rekrytoinnin vähentäminen muuttavat veroja ja etuusmenoja eri tavoin. Väli havainnollistaa tätä epävarmuutta; alaraja ei ole taattu säästö."
+    },
+    "hours": {
+      "factors": [0.24, 0.497],
+      "explanation": "Oma herkkyysväli: 24–49,7 % VM:n työvoimakustannusarviosta, jos lisätyöaika käytetään henkilöstömenojen vähentämiseen. Vertailukertoimet ovat VM:n irtisanomis- ja palkkamenolaskelmista.",
+      "limit": "Pelkkä työajan pidentäminen tai lomien lyhentäminen ei vähennä maksettuja palkkoja. Ilman vastaavaa henkilöstömenojen vähentämistä rahasäästöä ei synny."
+    }
+  },
+  "actions": {
+    "cut-7-41": "staff", "cut-7-42": "staff",
+    "cut-7-44": "hours", "cut-7-45": "pay", "cut-7-46": "hours",
+    "cut-7-48": "hours", "cut-7-49": "hours",
+    "cut-7-50": "pay", "cut-7-51": "pay", "cut-7-52": "pay",
+    "cut-5-40": "pay", "cut-5-42": "staff", "cut-5-77": "staff"
+  }
+}

@@ -57,7 +57,7 @@
   "homecare-germany": {
     "label": "Fendel & Jochimsen (2022): Home care allowance and labor market participation of immigrant and native-born mothers",
     "url": "https://doi.org/10.1007/s43545-022-00393-w",
-    "kind": "Saksa · Baijerin ja muiden osavaltioiden uudistusten vertailu; pieni maahanmuuttajaäitien otos"
+    "kind": "Saksa · korjattu julkaisu 2022; korjaus 10.1007/s43545-022-00415-7. Pieni maahanmuuttajaäitien otos."
   },
   "integration-children": {
     "label": "Pesola & Sarvimäki: Intergenerational Spillovers of Integration Policies",
@@ -85,14 +85,14 @@
     "kind": "Saksa · uuden kurssiohjelman kelpoisuusraja ja vanhan ohjelman vertailuasetelma; tulokset erosivat"
   },
   "schoolmoney": {
-    "label": "Jackson, Johnson & Persico (2016): The Effects of School Spending on Educational and Economic Outcomes",
+    "label": "Jackson, Johnson & Persico (2015): The Effects of School Spending on Educational and Economic Outcomes",
     "url": "https://www.nber.org/papers/w20847",
-    "kind": "Yhdysvallat · koulurahoitusuudistukset; linkki työpaperiin"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "schoolmeta": {
-    "label": "Jackson & Mackevicius (2021): The Distribution of School Spending Impacts",
-    "url": "https://www.nber.org/papers/w28517",
-    "kind": "Yhdysvallat · katsaus kausaalisiin koulurahoitustutkimuksiin"
+    "label": "Jackson & Mackevicius (2024): What Impacts Can We Expect from School Spending Policy?",
+    "url": "https://doi.org/10.1257/app.20220279",
+    "kind": "Yhdysvallat · vertaisarvioitu meta-analyysi"
   },
   "instruction": {
     "label": "Lavy (2015): Do Differences in Schools' Instruction Time Explain International Achievement Gaps?",
@@ -132,7 +132,7 @@
   "childincome": {
     "label": "Dahl & Lochner (2012): The Impact of Family Income on Child Achievement",
     "url": "https://pubs.aeaweb.org/doi/abs/10.1257/aer.102.5.1927",
-    "kind": "Yhdysvallat · verotuen muutokset; tulosten korjaus tarkistettava määrällisessä soveltamisessa"
+    "kind": "Yhdysvallat · EITC; käytössä vuoden 2017 korjattu tulkinta"
   },
   "safetynet": {
     "label": "Hoynes, Schanzenbach & Almond (2016): Long-Run Impacts of Childhood Access to the Safety Net",
@@ -155,14 +155,14 @@
     "kind": "Suomi · SOTE-SISU-mikrosimulointi, ei käyttäytymisvaikutuksia"
   },
   "drugmortality": {
-    "label": "Chandra, Flack & Obermeyer (2024): The Health Costs of Cost-Sharing",
+    "label": "Chandra, Flack & Obermeyer (2021): The Health Costs of Cost-Sharing",
     "url": "https://www.nber.org/papers/w28439",
-    "kind": "Yhdysvallat · lääkeomavastuiden luonnollinen koe; työpaperi"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "offsets": {
-    "label": "Chandra, Gruber & McKnight (2010): Patient Cost-Sharing and Hospitalization Offsets",
+    "label": "Chandra, Gruber & McKnight (2007): Patient Cost-Sharing and Hospitalization Offsets",
     "url": "https://www.nber.org/papers/w12972",
-    "kind": "Yhdysvallat · eläkeläisten maksumuutos; linkki työpaperiin"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "deductible": {
     "label": "Brot-Goldberg ym. (2017): What Does a Deductible Do?",
@@ -255,14 +255,14 @@
     "kind": "Ruotsi · synteettinen verrokkiasetelma"
   },
   "fuel": {
-    "label": "Gillingham & Munk-Nielsen (2019): A Tale of Two Tails",
+    "label": "Gillingham & Munk-Nielsen (2016): A Tale of Two Tails",
     "url": "https://www.nber.org/papers/w22937",
-    "kind": "Tanska · ajosuoritteen reagointi polttoainehintoihin; linkki työpaperiin"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "agri": {
     "label": "Lehtonen (2018): Maataloustukien vähenemisen vaikutukset Suomen maatalouden tuotantoon ja tuloihin",
     "url": "https://journal.fi/smst/issue/download/5992/571",
-    "kind": "Suomi · maatalouden skenaariomallinnus"
+    "kind": "Suomi · Maataloustieteen Päivien 2018 abstraktikirja, s. 99; skenaariomallin tiivistelmä"
   },
   "arts": {
     "label": "Fancourt & Finn (2019): Arts, Health and Well-Being",
@@ -285,9 +285,9 @@
     "kind": "Saksa · sairausajan palkan muutokset"
   },
   "contagion": {
-    "label": "Pichler & Ziebarth (2017): The Pros and Cons of Sick Pay Schemes",
+    "label": "Pichler & Ziebarth (2016): The Pros and Cons of Sick Pay Schemes",
     "url": "https://www.nber.org/papers/w22530",
-    "kind": "Yhdysvallat ja Saksa · sairausajan palkka, poissaolot ja tartunnat"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "fiscalrules": {
     "label": "Caselli & Reynaud (2020): Do Fiscal Rules Cause Better Fiscal Balances?",
@@ -325,9 +325,9 @@
     "kind": "Kalifornia · jälkihuollossa jatkamista koskeva vertailu"
   },
   "cleaning": {
-    "label": "Harju, Jysmä, Koivisto & Kosonen (2025/2026): Do Tax Credits for Cleaning Services Increase Consumption?",
+    "label": "Harju, Jysmä, Koivisto & Kosonen (2026): Do Tax Credits for Cleaning Services Increase Consumption?",
     "url": "https://doi.org/10.1007/s10797-025-09912-w",
-    "kind": "Suomi ja Ruotsi · verovähennyksen uudistukset, vertaisarvioitu"
+    "kind": "Ruotsi · käyttöönotto 2007; suomalaiset yritykset verrokkina"
   },
   "schoolmeals": {
     "label": "Spill ym. (2024): Universal Free School Meals and School and Student Outcomes",
@@ -350,9 +350,9 @@
     "kind": "Suomi · eläkejärjestelmän ennustelaskelma, ei kausaalinen vaikutusarvio"
   },
   "privatecare": {
-    "label": "Blomgren, Kosunen & Moustgaard (2026): Kelan korvaaman yksityisen sairaanhoidon käyttö ja korvaukset",
-    "url": "https://urn.fi/URN:ISBN:978-952-284-247-3",
-    "kind": "Suomi · kuvaileva rekisteritutkimus 2018–2024"
+    "label": "Kosunen, Blomgren & Moustgaard (2026): Yksityisen sairaanhoidon Kela-korvausten kohdentuminen",
+    "url": "https://tietotarjotin.fi/tutkimusblogi/1436825/yksityisen-sairaanhoidon-kela-korvausmenot-ovat-vaihdelleet-suuresti-viime-vuosina-nain-ne-ovat-kohdentuneet-eri-vaestoryhmiin",
+    "kind": "Suomi · tutkijoiden oma yhteenveto rekisteriraportista 17/2026"
   },
   "dental": {
     "label": "Heinonen & Buri (2026): Julkinen ja yksityinen hammashoito Suomessa",
@@ -375,9 +375,9 @@
     "kind": "Maiden välinen pitkittäistutkimus · UNU-WIDER-työpaperi"
   },
   "incomeshifting": {
-    "label": "Harju & Matikka (2016): Business Owners and Income Shifting",
+    "label": "Matikka (2014): Essays on the Behavioral Effects of Income Taxes",
     "url": "https://www.doria.fi/bitstream/handle/10024/148903/j68.pdf",
-    "kind": "Suomi · osinkoverouudistus; linkki tutkimuksen työpaperiversioon"
+    "kind": "Suomi · väitöskirja; sisältää Harjun ja Matikan tulonmuuntoa koskevan tutkimuksen"
   },
   "vatasymmetry": {
     "label": "Benzarti ym. (2020): What Goes Up May Not Come Down",
@@ -430,12 +430,12 @@
     "kind": "Suomi · ehdotetun maksun vaikutusarvio, ei toteutuneen uudistuksen tutkimus"
   },
   "windrealisation": {
-    "label": "Evaluating the German onshore wind auction programme (2023)",
+    "label": "Batz Liñeiro & Müsgens (2023): Evaluating the German onshore wind auction programme",
     "url": "https://doi.org/10.1016/j.enpol.2022.113317",
     "kind": "Saksa · hankekohtainen huutokauppojen toteutumisen arviointi"
   },
   "protectedareas": {
-    "label": "Mixed effects of a national protected area network on terrestrial and freshwater biodiversity (2023)",
+    "label": "Santangeli ym. (2023): Mixed effects of a national protected area network on terrestrial and freshwater biodiversity",
     "url": "https://pubmed.ncbi.nlm.nih.gov/37704608/",
     "kind": "Suomi · 638 lajin kehitys suojelluilla ja vertailualueilla"
   },
@@ -475,7 +475,7 @@
     "kind": "Suomi · satunnaistettu koe ja kustannusvaikuttavuus, 418 työntekijää"
   },
   "farmrelief": {
-    "label": "Institutional Responses to Farmer Mental Health Challenges in Europe (2026)",
+    "label": "Shortall & Barillà (2026): Institutional Responses to Farmer Mental Health Challenges in Europe: A Comparative Analysis of Four Cases",
     "url": "https://pubmed.ncbi.nlm.nih.gov/42908437/",
     "kind": "Suomi, Ranska, Irlanti ja EU · neljän tukijärjestelmän laadullinen vertailu"
   },
@@ -530,7 +530,7 @@
     "kind": "Australia · kolmen viranomaisen maksullisuuden tuloksellisuustarkastus"
   },
   "partyfunding": {
-    "label": "Baumert (2024/2025): Effects of Public Party Funding and Parliamentary Representation in German State Elections",
+    "label": "Baumert (2025): Effects of Public Party Funding and Parliamentary Representation in German State Elections",
     "url": "https://doi.org/10.1007/s11615-024-00553-y",
     "kind": "Saksa · yhden prosentin tukirajaan perustuva tutkimus"
   },
@@ -552,11 +552,11 @@
   "bankprovisions": {
     "label": "Andries, Gallemore & Jacob (2017): The effect of corporate taxation on bank transparency",
     "url": "https://doi.org/10.1016/j.jacceco.2017.03.004",
-    "kind": "Kansainvälinen pankkiaineisto · verokohtelun ja luottotappiovarausten muutokset"
+    "kind": "Kansainvälinen · julkaisijatiivistelmä tarkistettu; kokoteksti avoinna"
   },
   "forestdeduction": {
     "label": "Hänninen & Leppänen, toim. (2016): Metsäverotuksen kehittämistarpeet metsä- ja elinkeinopolitiikan kannalta",
-    "url": "https://jukuri.luke.fi/bitstream/handle/10024/535237/luke-luobio_27_2016.pdf?sequence=9",
+    "url": "https://jukuri.luke.fi/server/api/core/bitstreams/e0f82259-d4aa-4c3e-bc39-fc30b46a6f78/content",
     "kind": "Suomi · Luken tutkimuskooste 27/2016, erityisesti s. 65"
   },
   "unlistedtransfer": {
@@ -565,7 +565,7 @@
     "kind": "Britannia · veropohjan kiertämistä koskeva vaikutusarvio, ei verokannan korotuksen koe"
   },
   "insurancedemand": {
-    "label": "Hodula ym. (2021): On the macrofinancial determinants of life and non-life insurance premiums",
+    "label": "Hodula ym. (2023): On the macrofinancial determinants of life and non-life insurance premiums",
     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8613733/",
     "kind": "24 Euroopan maata · paneeliregressiot 1997–2017; ei verouudistuksen koe"
   },
@@ -580,9 +580,9 @@
     "kind": "Suomi · viranomaisten rekisterilaskelma, oikeudellinen arvio ja maavertailu"
   },
   "chetty-saving": {
-    "label": "Chetty ym. (2014): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
+    "label": "Chetty ym. (2012): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
     "url": "https://www.nber.org/papers/w18565",
-    "kind": "Tanska · rekisteritutkimus, julkaistu Quarterly Journal of Economicsissa 2014"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "fw-interest-2025": {
     "label": "Finnwatch (2025): Loppu korkokikkailulle?",
@@ -670,9 +670,9 @@
     "kind": "Eurooppa · varallisuuslistoihin perustuva ehdollinen laskelma"
   },
   "wealth-migration-2026": {
-    "label": "Jakobsen ym. (2026): Taxing Top Wealth",
+    "label": "Jakobsen ym. (2024): Taxing Top Wealth",
     "url": "https://www.nber.org/papers/w32153",
-    "kind": "Pohjoismaat · rekisteritutkimus, julkaistu American Economic Reviewssa 2026"
+    "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
   },
   "wealth-norway-2026": {
     "label": "Ring (2026): Taxing Entrepreneurial Wealth: Evidence from Norway, 2021–2025",
@@ -720,9 +720,9 @@
     "kind": "Suomi · toimialan markkinatilasto"
   },
   "bank-norway": {
-    "label": "Norjan valtiovarainministeriö: Prop. 1 LS 2025–2026",
-    "url": "https://www.regjeringen.no/en/documents/prop.-1-ls-20252026/id3125412/?ch=1",
-    "kind": "Norja · rahoitustoimintaveron verokannat"
+    "label": "Norjan verohallinto: Financial activity tax",
+    "url": "https://www.skatteetaten.no/en/business-and-organisation/reporting-and-industries/financial-activity-tax/",
+    "kind": "Norja · viranomaisen kuvaus, tarkistettu 28.10.2026"
   },
   "bank-incidence": {
     "label": "Kogler (2019): On the Incidence of Bank Levies",
@@ -740,8 +740,58 @@
     "kind": "EU · hyväksytyn sääntelyn aikataulu ja sisältö"
   },
   "digital-jrc": {
-    "label": "Alvarez Martinez, Gesualdo & Pycroft (2024): Storm in the Cloud",
+    "label": "Alvarez Martinez, Gesualdo & Pycroft (2025): Storm in the Cloud",
     "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC130576",
     "kind": "Britannia · vertaisarvioitu CORTAX-talousmalli, ei toteuman syyvaikutus"
+  },
+  "childincome-reply": {
+    "label": "Dahl & Lochner (2017): The Impact of Family Income on Child Achievement: Reply",
+    "url": "https://doi.org/10.1257/aer.20161329",
+    "kind": "Yhdysvallat · alkuperäisen tutkimuksen korjaus"
+  },
+  "wealth-swiss": {
+    "label": "Brülhart, Gruber, Krapf & Schmidheiny (2022): Behavioral Responses to Wealth Taxes",
+    "url": "https://doi.org/10.1257/pol.20200258",
+    "kind": "Sveitsi · vertaisarvioitu veromuutosten tutkimus"
+  },
+  "google-dst": {
+    "label": "Google Ads: Jurisdiction-specific surcharges",
+    "url": "https://support.google.com/google-ads/answer/9750227?hl=en-GB",
+    "kind": "Yhtiön virallinen hinnasto · tarkistettu 28.10.2026"
+  },
+  "he77-minimum": {
+    "label": "HE 77/2023: suurten konsernien vähimmäisverotus",
+    "url": "https://www.finlex.fi/fi/hallituksen-esitykset/2023/77",
+    "kind": "Suomi · hallituksen esityksen vaikutusarvio"
+  },
+  "income-top-2025": {
+    "label": "Varjonen-Ollus (2025): Behavioural Effects of a Top Marginal Income Tax Rate Increase",
+    "url": "https://www.doria.fi/handle/10024/193607",
+    "kind": "Suomi · VATT Working Papers 180, ei vertaisarvioitu"
+  },
+  "corporate-us-2024": {
+    "label": "Chodorow-Reich, Zidar & Zwick (2024): Lessons from the Biggest Business Tax Cut in US History",
+    "url": "https://doi.org/10.1257/jep.38.3.61",
+    "kind": "Yhdysvallat · vertaisarvioitu TCJA-uudistuksen tutkimuskooste"
+  },
+  "corporate-wages-meta": {
+    "label": "Knaisch & Pöschel (2024): Wage response to corporate income taxes",
+    "url": "https://doi.org/10.1111/joes.12557",
+    "kind": "Kansainvälinen · vertaisarvioitu meta-regressio"
+  },
+  "helsinki-fees": {
+    "label": "Haaga, Böckerman, Kortelainen & Tukiainen (2024): Does Abolishing a Copayment Increase Doctor Visits?",
+    "url": "https://doi.org/10.1515/bejeap-2023-0056",
+    "kind": "Suomi · Helsingin maksun poisto, vertaisarvioitu"
+  },
+  "ui-shortening": {
+    "label": "Korpela (2023): Changing the unemployment insurance duration",
+    "url": "https://doria.fi/handle/10024/187918",
+    "kind": "Suomi · VATT Working Papers 158, ei vertaisarvioitu"
+  },
+  "childcuts-mari": {
+    "label": "Mari (2024): Less for more? Cuts to child benefits",
+    "url": "https://doi.org/10.1007/s00148-024-01029-4",
+    "kind": "Alankomaat · rekisterit ja regressioepäjatkuvuus, vertaisarvioitu"
   }
 }

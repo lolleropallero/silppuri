@@ -37,14 +37,14 @@
     'income-index':{who:'Niiltä, joiden veronalaiset ansiotulot kasvavat. Tämä voi koskea palkkaa, eläkettä ja päivärahaa. Jos tulot eivät muutu, vero ei tämän toimen vuoksi nouse.',chain:['Ansiotulo kasvaa','Veroasteikkoa ei tarkisteta','Veroa kertyy enemmän kuin tarkistuksen kanssa'],society:'Käteen jää vähemmän kuin tilanteessa, jossa tarkistus tehtäisiin. VM arvioi toimen kaventavan tuloeroja hieman. Kulutus- ja työllisyysvaikutukset pienentävät suoraa verotuottoa, mutta niitä ei tunneta tarkasti ryhmittäin.',money:'815 milj. € koskee vuoden 2028 tarkistusta. Se ei tarkoita koko vaalikauden indeksijäädytyksen tuottoa eikä vielä kerro kokonaisnettoa.',caveat:'Myös tuloveron korotus muuttaa tämän toimen tuottoa. Tätä ei ole huomioitu summassa.',tradeoff:'VM:n laskelman kulutusreaktiolle käyttämä oletus on mallioletus, ei todiste siitä, että kaikki tuloryhmät reagoisivat samalla tavalla.',refs:'VM 2026:48, s. 65–68 ja 263',extra:[],map:{low:indexTax,middle:indexTax,high:indexTax,pension:indexTax,students:indexTax,unemployed:indexTax,workers:indexTax,owners:indexTax}},
     defence:{who:'Puolustuksen rahoituksesta suhteessa kustannusten nousuun. Tämä ei ole suora vähennys tietyn tuloryhmän tililtä. Vaikutus riippuu siitä, mitä toimintaa tai hankintoja muutetaan.',chain:['Indeksikorotus jää tekemättä','Rahan ostovoima heikkenee','Toiminnan sisältö on sovitettava rahoitukseen'],society:'Turvallisuutta, hankintoja ja toimintakykyä on tarkasteltava yhdessä. Tällä aineistolla ei voi päätellä, kuinka suuren turvallisuus- tai työllisyysvaikutuksen juuri tämä indeksijäädytys aiheuttaisi.',money:'670 milj. € on raportin vuoden 2031 staattinen nettoarvio. Koko talouden kysyntävaikutusta ei ole sisällytetty menokartoituksen yksittäisiin arvioihin.',caveat:'',tradeoff:'Puolustuksen indeksijäädytys ja puolustusmenojen BKT-tavoitteen muuttaminen ovat eri toimia. Kotimaisen tuotannon vaikutus riippuu myös hankintojen sisällöstä.',refs:'VM 2026:44, s. 16, 531–534 ja 570–571',extra:[],map:{}},
     benefits:{who:'Jäädytettävien etuuksien saajilta: esimerkiksi opintorahan, työttömyysturvan sekä kansan- ja takuueläkkeen saajilta. Työeläkkeiden indeksijäädytys ei kuulu tähän palaan.',chain:['Etuus ei nouse hintojen mukana','Sama etuus ostaa vähemmän','Kulutus ja kulutusverot voivat vähentyä'],society:'Kun säästöpuskuria ei ole, tulojen menetystä on vaikeampi tasata säästöillä. Kulutuksen väheneminen voi pienentää yritysten myyntiä ja edelleen työllisyyttä. Vaikutus ei ole sama kaikilla etuuksilla tai saajilla.',money:'540 milj. € on jo VM:n staattinen nettoarvio, ei pelkkä etuusmenon leikkaus. Sosiaaliturva-arvioissa huomioidaan myös muita etuuksia ja verotuloja; koko talouden kysyntävaikutus ei sisälly lukuihin.',caveat:'',tradeoff:'Työllisyysvaikutusta ei voi yleistää kaikkiin etuuksiin: kannustimet ja mahdollisuus lisätä työntekoa ovat erilaisia. Viimesijaisen turvan riittävyys rajoittaa toteutusta.',refs:'VM 2026:44, s. 15–16 ja 569–573; EKP 2021, luku 4',extra:['consumption','benefit-interactions'],map:{low:direct('Perusturvaetuuksien ostovoima heikkenee jäädytyksessä. Kaikki pienituloiset eivät saa näitä etuuksia. VM 2026:44, s. 569–573.'),pension:direct('Kansan- ja takuueläkkeen saajat. Pelkkä työeläke ei sisälly tähän indeksitoimeen. VM 2026:44, s. 570–572.'),students:direct('Opintorahan saajat: opintoraha on indeksisidonnainen. VM 2026:44, s. 570.'),unemployed:direct('Jäädytettävään indeksiin sidottua työttömyysetuutta saavat. VM 2026:44, s. 569–573.'),workers:possible('Voi koskea etuutta saavaa palkansaajaa esimerkiksi sairaus- tai perhevapaalla. Riippuu etuudesta; palkka itsessään ei ole tämän toimen kohde. VM 2026:44, luku 6.')}},
-    dividends:{who:'Listaamattomien yhtiöiden osingonsaajilta. Nykyinen veroetu hyödyttää ennen kaikkea suurituloisia ja suosii suurta yritysvarallisuutta omistavia. Mitä suurempi omistusosuuden nettovarallisuus, sitä enemmän kevyesti verotettua osinkoa voi nostaa 150 000 euron rajaan asti.',chain:['Osingon verosäännöt muuttuvat','Omistaja muuttaa osinkoa tai sen ajoitusta','Osa suorasta verotuotosta jää kertymättä'],society:'Nykyjärjestelmä kannustaa muuttamaan palkkaa osingoksi ja kerryttämään yhtiöön varallisuutta. VATT:n tutkimissa 2010-luvun veromuutoksissa osingonjako reagoi voimakkaasti, mutta investoinneissa tai liikevaihdossa ei havaittu muutosta. Tulos ei ole ennuste tämän uuden mallin kaikista vaikutuksista.',money:'370 milj. € on suora tuottoarvio. VM toteaa, että osingonjaon muutokset pienentävät toteutuvaa lisätuottoa.',caveat:'Kuvaaja näyttää nykyisen veroedun saajat. Uudistuksen veronkorotukset voivat jakautua eri tavalla.',tradeoff:'Esimerkki nykyisestä varallisuusehdosta: 150 000 euron huojennettu vuotuinen osinko edellyttää vähintään 1 875 000 euron osakeomistusta verotuksessa käytettävällä matemaattisella arvolla (150 000 / 8 %). Tämä ei ole sama kuin osakkeiden markkina-arvo. Huojennetusta osingosta 75 % on saajalle verovapaata, 25 % veronalaista pääomatuloa; yhtiön voiton verotus on erillinen. Finnwatchin jakauma perustuu vuoden 2020 veronalaisiin tuloihin ja huojennettujen osinkojen verovapaaseen osaan. Osuudet on pyöristetty. VM:n mallissa myös 150 000 euron raja poistuu, joten jokaisen osingonsaajan vero ei muutu samalla tavalla.',refs:'VM 2026:48, s. 100–106 ja 264',extra:['dividend-distribution','dividend-rules','dividend-response'],map:{owners:direct('Listaamattomien yhtiöiden osingonsaajien verotus muuttuu. Nykyinen veroetu kasautuu suurituloisille ja suosii suurta yritysvarallisuutta omistavia. VM 2026:48, s. 105 ja 264; Finnwatch 2022.'),high:possible('Nykyisestä veroedusta suurin osa kasautuu tähän ryhmään: noin 71 % huojennettujen osinkojen verovapaasta osuudesta meni ylimpään tulokymmenykseen vuonna 2020. Uudistuksen tarkka jakauma vaatii oman laskelman. Finnwatch 2022.'),middle:possible('Nykyisestä veroedusta noin 29 % kohdistui ylimmän tulokymmenyksen ulkopuolelle vuonna 2020. Tämä ei ole erillinen keskituloisten osuus. Finnwatch 2022.')}},
+    dividends:{who:'Listaamattomien yhtiöiden osingonsaajilta. Nykyinen veroetu hyödyttää ennen kaikkea suurituloisia ja suosii suurta yritysvarallisuutta omistavia. Mitä suurempi omistusosuuden nettovarallisuus, sitä enemmän kevyesti verotettua osinkoa voi nostaa 150 000 euron rajaan asti.',chain:['Osingon verosäännöt muuttuvat','Omistaja muuttaa osinkoa tai sen ajoitusta','Osa suorasta verotuotosta jää kertymättä'],society:'Nykyjärjestelmä kannustaa muuttamaan palkkaa osingoksi ja kerryttämään yhtiöön varallisuutta. VATT:n tutkimissa 2010-luvun veromuutoksissa osingonjako reagoi voimakkaasti, mutta investoinneissa tai liikevaihdossa ei havaittu muutosta. Tulos ei ole ennuste tämän muutoksen kaikista vaikutuksista.',money:'370 milj. € on suora tuottoarvio. VM toteaa, että osingonjaon muutokset pienentävät toteutuvaa lisätuottoa.',caveat:'Kuvaaja näyttää nykyisen veroedun saajat. Uudistuksen veronkorotukset voivat jakautua eri tavalla.',tradeoff:'Esimerkki nykyisestä varallisuusehdosta: 150 000 euron huojennettu vuotuinen osinko edellyttää vähintään 1 875 000 euron osakeomistusta verotuksessa käytettävällä matemaattisella arvolla (150 000 / 8 %). Tämä ei ole sama kuin osakkeiden markkina-arvo. Huojennetusta osingosta 75 % on saajalle verovapaata, 25 % veronalaista pääomatuloa; yhtiön voiton verotus on erillinen. Finnwatchin jakauma perustuu vuoden 2020 veronalaisiin tuloihin ja huojennettujen osinkojen verovapaaseen osaan. Osuudet on pyöristetty. VM:n mallissa myös 150 000 euron raja poistuu, joten jokaisen osingonsaajan vero ei muutu samalla tavalla.',refs:'VM 2026:48, s. 100–106 ja 264',extra:['dividend-distribution','dividend-rules','dividend-response'],map:{owners:direct('Listaamattomien yhtiöiden osingonsaajien verotus muuttuu. Nykyinen veroetu kasautuu suurituloisille ja suosii suurta yritysvarallisuutta omistavia. VM 2026:48, s. 105 ja 264; Finnwatch 2022.'),high:possible('Nykyisestä veroedusta suurin osa kasautuu tähän ryhmään: noin 71 % huojennettujen osinkojen verovapaasta osuudesta meni ylimpään tulokymmenykseen vuonna 2020. Uudistuksen tarkka jakauma vaatii oman laskelman. Finnwatch 2022.'),middle:possible('Nykyisestä veroedusta noin 29 % kohdistui ylimmän tulokymmenyksen ulkopuolelle vuonna 2020. Tämä ei ole erillinen keskituloisten osuus. Finnwatch 2022.')}},
     education:{who:'Korkeakoulujen rahoituksesta. Opiskelijoille ja henkilöstölle vaikutus riippuu siitä, mitä opetuksessa, tutkimuksessa tai muussa toiminnassa muutetaan. Opintorahaa tämä toimi ei suoraan leikkaa.',chain:['Rahoituksen ostovoima laskee','Korkeakoulu muuttaa toimintaansa','Opetuksen ja tutkimuksen resurssit voivat muuttua'],society:'Pelkkä indeksijäädytys ei kerro, mitä koulutusta tai tutkimusta karsitaan. Tämän toimen pitkän aikavälin osaamis- ja kasvuhyödyn menetystä ei ole tässä lähdeaineistossa yksilöity.',money:'350 milj. € on VM:n vuoden 2031 staattinen nettoarvio. Se ei sisällä kattavaa arviota tulevista osaamis-, kasvu- tai verotuottovaikutuksista.',caveat:'',tradeoff:'Toteutustapa ratkaisee: säästö voi kohdistua eri tavalla opetukseen, tutkimukseen tai muuhun toimintaan. Opintorahan jäädytys on erillinen toimi.',refs:'VM 2026:44, s. 15–16 ja 569–573',extra:[],map:{students:possible('Korkeakouluopiskelijoiden opetus ja palvelut voivat muuttua. Ei koske samalla tavoin kaikkia opiskelijoita. VM 2026:44, s. 570–573.'),workers:possible('Korkeakoulun henkilöstö, jos sopeutus koskee työtä. Henkilöstötoimia ei ole määritetty. VM 2026:44, s. 570–573.')}}
   };
   const format=n=>(n/1000).toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2});
   const pct=n=>(n/target*100).toLocaleString('fi-FI',{maximumFractionDigits:1});
   const selected=new Set();
-  const scenario={income:2,corporate:3,dividends:'abolish',ylePercent:20};
-  const maxPP=20;
+  const scenario={income:2,corporate:3,dividends:'vm',ylePercent:20};
+  const maxPP=10;
   const units={};
   data.forEach(d=>{if(d.unit)units[d.id]=1;});
   const conditions={yle:'reduce-tax',farm:'redirect'};
@@ -74,7 +74,7 @@
   function syncScenario(){
     data.forEach(d=>{
       const base=baseData.get(d.id);
-      Object.assign(d,base,{scaled:false,historical:false,netUpper:null});
+      Object.assign(d,base,{scaled:false,historical:false,netUpper:null,scaleNetOpen:false});
       if(d.fundingCut){
         d.cutPercent=ylePercent(scenario.ylePercent);
         d.budget=yleBudget(base,d.cutPercent);
@@ -85,13 +85,20 @@
       d.budgetAmount=d.budget[index];d.fundAmount=d.funds[index];
       d.amount=Number.isFinite(d.budgetAmount)||Number.isFinite(d.fundAmount)?(d.budgetAmount??0)+(d.fundAmount??0):null;
       d.gross=d.budgetAmount;
+      if(d.spendingNet&&Number.isFinite(d.gross)){
+        d.amount=d.gross*d.spendingNet.factors[0];d.netUpper=d.gross*d.spendingNet.factors[1];
+      }
       if(d.net){d.amount=d.net.low;d.netUpper=d.net.high??d.net.low;}
-      d.year=d.net?(d.net.model?'VM:n nettohaarukasta laskettu':'VM:n nettoarvio')+(d.net.high?' · alaraja':'')+' · 2028':d.report==='tax'?(d.amount===null?'Ei euromääräistä arviota':'Suora arvio · 2028 · nettoa ei laskettu'):year+' · koko julkinen talous';
+      d.year=d.net?(d.net.model?'VM:n arvioista laskettu':'VM:n nettoarvio')+(d.net.high?' · alaraja':'')+' · 2028':d.report==='tax'?(d.amount===null?'Ei euromääräistä arviota':'Suora arvio · 2028 · nettoa ei laskettu'):year+' · koko julkinen talous';
+      if(d.spendingNet)d.year=year+' · oma nettoherkkyyslaskelma';
+      if(d.directOnly)d.year=year+' · suora arvio, vastavaikutuksia avoinna';
       if(d.fundingCut&&d.scaled)d.year+=' · oma laskelma VM:n rahoituspohjasta';
       if(d.revenueEstimate){d.amount=d.revenueEstimate.amount;d.year=d.revenueEstimate.label;}
       if(d.estimate){d.amount=d.estimate.amount;d.year=d.estimate.basis;}
       if(d.unit){
-        const n=d.id==='income'||d.id==='corporate'?scenario[d.id]:(units[d.id]??1);
+        const requested=d.id==='income'||d.id==='corporate'?scenario[d.id]:(units[d.id]??1);
+        const n=Math.min(capFor(d.id),Math.max(0,Number.isFinite(requested)?requested:1));
+        if(d.id==='income'||d.id==='corporate')scenario[d.id]=n;else units[d.id]=n;
         let perUnit=base.budget[0];
         if(d.id==='tax-land-min'&&selected.has('tax-land-values'))perUnit=100;
         d.gross=perUnit*n;
@@ -103,6 +110,10 @@
         if(n!==1)d.title=d.title.replace(/prosenttiyksikkö(?!ä)/g,'prosenttiyksikköä');
         d.short=d.title;
         d.year+=(n!==1?' · yksikköarviosta kerrottu':'');
+        if(n>3&&!['tax-entrepreneur-step','tax-dividend-return'].includes(d.id)){
+          d.scaleNetOpen=true;d.amount=null;d.netUpper=null;
+          d.year='Suuri muutos · nettoa ei ole arvioitu';
+        }
       }
       if(d.earliest>year){d.amount=0;d.gross=0;d.netUpper=d.net?0:null;d.year='Aikaisintaan '+d.earliest;}
       if(d.conditional==='yle'&&conditions.yle!=='keep-tax')d.amount=0;
@@ -128,21 +139,31 @@
     return d.budget.map((_,i)=>Math.round(s.referenceMillion*percent/100*(i+1)/years*10)/10);
   }
   function laterEstimateFor(d,baseYear,choices){
-    if(d.report!=='cut'||d.net||d.unit||d.cashOnly||d.unquantifiedNet||d.revenueEstimate||d.zeroNote)return null;
+    if(d.report!=='cut'||d.net||d.spendingNet||d.unit||d.cashOnly||d.unquantifiedNet||d.revenueEstimate||d.zeroNote)return null;
     if(d.conditional==='yle'&&choices.yle!=='keep-tax'||d.conditional==='farm'&&choices.farm!=='save')return null;
     const candidates=(d.budget||[]).map((b,i)=>({amount:Number.isFinite(b)||Number.isFinite(d.funds[i])?(b??0)+(d.funds[i]??0):null,budget:b,funds:d.funds[i],year:2028+i,when:String(2028+i),precision:d.fundingCut&&d.scaled?'Oma laskelma':'',longRun:false}))
       .filter(e=>e.year>baseYear&&Number.isFinite(e.amount)&&e.amount>=20);
-    if(d.longRunEstimate){const e=d.longRunEstimate;candidates.push({amount:e.million,when:e.when.replace(/^vuonna /,''),precision:e.precision||'',longRun:true});}
-    return candidates.filter(e=>e.amount>(d.amount??0)).sort((a,b)=>b.amount-a.amount||(a.year??9999)-(b.year??9999))[0]||null;
+    const near=candidates.filter(e=>e.amount>(d.amount??0)).sort((a,b)=>b.amount-a.amount||a.year-b.year)[0];
+    if(near)return near;
+    if(d.longRunEstimate){const e=d.longRunEstimate;return {amount:e.million,when:e.when.replace(/^vuonna /,''),precision:e.precision||'',longRun:true,basis:e.basis};}
+    return null;
   }
   function applyHorizon(actions,baseYear,later,choices){
     for(const d of actions){
-      d.currentAmount=d.amount;d.horizonEstimate=laterEstimateFor(d,baseYear,choices);d.laterApplied=!!(later&&d.horizonEstimate);d.incidenceHorizonGap=false;
+      d.currentAmount=d.amount;d.horizonEstimate=laterEstimateFor(d,baseYear,choices);d.laterApplied=!!(later&&d.horizonEstimate&&!d.horizonEstimate.longRun);d.incidenceHorizonGap=false;
       if(!d.laterApplied)continue;
       const e=d.horizonEstimate;d.amount=e.amount;d.year=e.when+' · '+(d.fundingCut&&d.scaled?'oma laskelma VM:n rahoituspohjasta':'VM:n myöhempi vuosiarvio');
       d.budgetAmount=e.budget??null;d.fundAmount=e.funds??null;d.gross=e.budget??null;
       d.incidenceHorizonGap=e.longRun;
     }
+  }
+  function capFor(id){
+    if(id==='tax-dividend-return')return 7;
+    if(id==='tax-entrepreneur-step')return 4;
+    if(id==='income')return 5;
+    if(id==='corporate')return 10;
+    if(id==='tax-vat-reduced')return Math.min(3,Math.floor(25.5-13.5));
+    return 3;
   }
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function sourceMarkup(s){
@@ -159,7 +180,7 @@
     }
     return pairs;
   }
-  function capFor(id){return id==='tax-dividend-return'?7:id==='tax-entrepreneur-step'?4:20;}
+
 
   function controlsMarkup(id,place){
     const d=data.find(x=>x.id===id);
@@ -176,7 +197,7 @@
       return `<span class="sp-control-label">Muutoksen suuruus</span><div class="sp-stepper" role="group" aria-label="Muutoksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-step="${id}" data-delta="-1" aria-label="Pienennä muutosta" ${n===0?'disabled':''}>−</button><output>${d.unit==='pp-down'?'−':'+'}${value}<small>${label}</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-step="${id}" data-delta="1" aria-label="Kasvata muutosta" ${n===max?'disabled':''}>+</button></div>${scope?'<p class="sp-control-note">'+scope+'</p>':''}`;
     }
 
-    if(id==='dividends')return `<span class="sp-control-label">Miten osinkoverotusta muutetaan?</span><div class="sp-variant-options" role="group" aria-label="Osinkoverotuksen vaihtoehto"><button type="button" id="sp-${place}-dividends-vm" class="cursor-interaction" data-dividend-mode="vm" aria-pressed="${scenario.dividends==='vm'}"><strong>VM:n uudistus</strong>+370 milj. € / v<small>VM · arvio vuodelle 2028</small></button><button type="button" id="sp-${place}-dividends-abolish" class="cursor-interaction" data-dividend-mode="abolish" aria-pressed="${scenario.dividends==='abolish'}"><strong>Erityishuojennus kokonaan pois</strong>+459 milj. € / v<small>Labore · laskelma vuodelle 2024</small></button></div>`;
+    if(id==='dividends')return `<span class="sp-control-label">Miten osinkoverotusta muutetaan?</span><div class="sp-variant-options" role="group" aria-label="Osinkoverotuksen vaihtoehto"><button type="button" id="sp-${place}-dividends-vm" class="cursor-interaction" data-dividend-mode="vm" aria-pressed="${scenario.dividends==='vm'}"><strong>VM:n uudistus</strong>+370 milj. € / v<small>VM · arvio vuodelle 2028</small></button><button type="button" id="sp-${place}-dividends-abolish" class="cursor-interaction" data-dividend-mode="abolish" aria-pressed="${scenario.dividends==='abolish'}"><strong>Erityishuojennus kokonaan pois</strong>+459 milj. € / v<small>Labore 2024 · suora arvio, netto avoin</small></button></div>`;
     return '';
   }
   function effectFor(d){
@@ -196,11 +217,12 @@
       const range=d.netUpper!==d.amount;
       const estimate=range?moneyLabel(d.amount)+' – '+moneyLabel(d.netUpper):moneyLabel(d.amount);
       const gross=d.net.grossHigh?moneyLabel(d.gross)+' – '+moneyLabel(d.net.grossHigh):moneyLabel(d.gross);
-      e.money='Suora verotuotto on '+gross+'. '+(range?'Nettoarvio on '+estimate+'. Piirakka käyttää alarajaa.':'Piirakkaan lasketaan '+estimate+' nettoa.')+' '+d.net.explanation+' '+(d.research?.fiscal||d.net.limit);
+      e.money='Suora verotuotto on '+gross+'. '+(range?(d.net.model?'VM:n arvioista laskettu nettohaarukka on ':'Nettoarvio on ')+estimate+'. Piirakka käyttää alarajaa.':'Piirakkaan lasketaan '+estimate+' nettoa.')+' '+d.net.explanation+' '+(d.research?.fiscal||d.net.limit);
       if(d.scaled&&n>0)e.money+=' Summa on laskettu kertomalla '+moneyLabel(d.net.low)+' nettoyksikköarvio '+n+':lla.';
       e.refs=d.net.source;
       if(d.net.sourceUrl)e.sourceUrl=d.net.sourceUrl;
       if(d.id==='income')e.tradeoff='VM:n laskelmassa työn tarjontajousto on 0,10–0,25. Kulutusvaikutuksessa rajakulutusalttius on 0,9 ja kulutusveroaste 0,17. Oletukset kuvaavat keskimääräistä reaktiota.';
+      if(d.id==='corporate')e.tradeoff='Yhteisöveroa maksavat esimerkiksi osakeyhtiöt ja osuuskunnat. Myös säätiö tai yhdistys voi maksaa sitä veronalaisesta elinkeinotulostaan; tämä toimi ei poista yleishyödyllisten yhteisöjen sijoitustulojen verovapauksia. Toiminimen tuloverotus on eri asia.';
       if(d.earliest>year){e.money='Piirakkaan 0 € vuonna '+year+'. Toimi olisi toteutettavissa aikaisintaan vuonna '+d.earliest+'.';e.caveat='';}
       else if(n===0){e.money='Korotusta ei ole valittu. Piirakkaan 0 €.';e.caveat='';}
     }
@@ -229,12 +251,25 @@
       if(d.report==='cut')e.tradeoff='';
     }
     if(d.unquantifiedNet){
-      e.money='Excel-liitteen suora vaikutus vuonna '+year+' on '+moneyLabel(d.directAmount)+'. Se ei sisällä kaikkia käyttäytymisvaikutuksia. '+d.research.fiscal+' Toimi on piirakassa ilman euromäärää.';
-      e.tradeoff='VM arvioi alle 3-vuotiaan varhaiskasvatuksen kustannukseksi noin 21 200 €/vuosi, josta julkinen talous maksaisi 95 %. Päivähoidon käyttö kasvaisi myös osassa perheitä, joissa vanhempi ei työllisty. Kokonaisarvio riippuu näistä kustannuksista, korvaavista etuuksista ja työuravaikutusten kestosta.';
+      e.money='Lähteen suora vaikutus on '+moneyLabel(d.directAmount)+'. '+d.research.fiscal+' Nettoarvion puuttuessa toimi ei kasvata piirakan summaa.';
+      e.tradeoff=d.id==='cut-3-62'?'VM arvioi alle 3-vuotiaan varhaiskasvatuksen kustannukseksi noin 21 200 €/vuosi, josta julkinen talous maksaisi 95 %. Päivähoidon käyttö kasvaisi myös osassa perheitä, joissa vanhempi ei työllisty. Kokonaisarvio riippuu näistä kustannuksista, korvaavista etuuksista ja työuravaikutusten kestosta.':'';
     }
     if(d.estimate){
       e.money=d.estimate.money;
       e.tradeoff='';
+    }
+    if(d.spendingNet){
+      e.money='VM:n bruttotyövoimakustannus on '+moneyLabel(d.gross)+'. Piirakkaan '+moneyLabel(d.amount)+(d.netUpper!==d.amount?' (herkkyysväli '+moneyLabel(d.amount)+'–'+moneyLabel(d.netUpper)+')':'')+'. '+d.spendingNet.explanation+' '+d.spendingNet.limit;
+      e.refs=d.spendingNet.source;
+    }
+    if(d.directOnly)e.money='Suora budjettivaikutus on '+moneyLabel(d.amount)+'. '+d.research.fiscal;
+    if(d.continuationNote&&year>2031)e.money+=' '+d.continuationNote;
+    if(d.horizonEstimate?.longRun)e.money+=' Pitkän aikavälin '+moneyLabel(d.horizonEstimate.amount)+' ('+d.horizonEstimate.when+') näytetään erikseen eikä sitä lisätä piirakkaan. '+(d.horizonEstimate.basis||'');
+    if(d.scaleNetOpen){
+      e.money='Tämän suuruiselle muutokselle ei ole lähteessä nettoarviota. Yksikköarvion suoraviivaista kertolaskua ei lasketa piirakkaan.';
+      e.caveat='Laskuri käyttää enintään kolmen askeleen muutoksille lineaarista herkkyyslaskelmaa. Kolme askelta on laskurin oma käyttöraja, ei tutkimuksessa vahvistettu raja.';
+    }else if(d.unit&&d.scaled){
+      e.tradeoff+=' Yksikköarvio on kerrottu muutoksen suuruudella. Tämä on oma lineaarinen herkkyyslaskelma, ei tämän suuruiselle muutokselle tehty tutkimusarvio.';
     }
     return e;
   }
@@ -255,7 +290,7 @@
     year=2031;includeLater=model?.includeLater===true;
     ['income','corporate'].forEach(id=>{const n=model?.taxIncreasesPP?.[id];scenario[id]=Number.isFinite(n)?Math.min(maxPP,Math.max(0,Math.round(n))):(id==='income'?2:3);});
     Object.keys(units).forEach(id=>{const n=model?.unitSteps?.[id];units[id]=Number.isFinite(n)?Math.min(capFor(id),Math.max(0,Math.round(n))):1;});
-    scenario.dividends=model?.dividendMode==='vm'?'vm':'abolish';
+    scenario.dividends=model?.dividendMode==='abolish'?'abolish':'vm';
     conditions.yle=model?.fundingChoices?.yle==='keep-tax'?'keep-tax':'reduce-tax';
     conditions.farm=model?.fundingChoices?.farm==='save'?'save':'redirect';
     selected.clear();
@@ -590,7 +625,17 @@
     notes.innerHTML=hasAnnuals?'<summary class="cursor-interaction">VM:n arviot vuosittain</summary><table class="sp-annuals"><thead><tr><th>Vuosi</th><th>Julkinen talous</th><th>Valtio, kunnat, alueet</th><th>Sosiaali­turva­rahastot</th></tr></thead><tbody>'+d.budget.map((v,i)=>'<tr><td>'+(2028+i)+'</td><td>'+moneyLabel(Number.isFinite(v)||Number.isFinite(d.funds[i])?(v??0)+(d.funds[i]??0):null)+'</td><td>'+moneyLabel(v)+'</td><td>'+moneyLabel(d.funds[i])+'</td></tr>').join('')+'</tbody></table>':'';
     if(hasAnnuals&&(d.conditional||d.cashOnly||d.net||d.revenueEstimate))notes.innerHTML+='<p>Taulukossa ovat VM:n alkuperäiset luvut ennen yllä kuvattua netto- tai rahoitusoikaisua.</p>';
     if(hasAnnuals&&d.unquantifiedNet)notes.innerHTML+='<p>Taulukko sisältää suorat vaikutukset. Työllisyyden ja muiden käyttäytymismuutosten vaikutukset eivät sisälly näihin lukuihin.</p>';
-    if(d.longRunEstimate)notes.innerHTML+='<p>'+esc(d.longRunEstimate.source)+'. '+esc(d.longRunEstimate.basis||'')+(d.laterApplied?' Pitkän aikavälin arvio on mukana tässä näkymässä.':' Pitkän aikavälin lukua ei lisätä vuoden 2031 piirakkaan.')+'</p>';
+    if(d.spendingNet)notes.innerHTML=notes.innerHTML.replace('Julkinen talous','VM:n brutto yhteensä')+'<p>'+esc(d.spendingNet.explanation)+' '+esc(d.spendingNet.limit)+'</p>';
+    if(d.directOnly)notes.innerHTML=notes.innerHTML.replace('Julkinen talous','Suora vaikutus');
+    if(d.continuationNote)notes.innerHTML+='<p>'+esc(d.continuationNote)+'</p>';
+    if(d.longRunEstimate)notes.innerHTML+='<p>'+esc(d.longRunEstimate.source)+'. '+esc(d.longRunEstimate.basis||'')+' Pitkän aikavälin lukua ei lisätä kummankaan näkymän piirakkaan.</p>';
+    if(d.net?.calculation){
+      const n=d.unit?(d.id==='income'||d.id==='corporate'?scenario[d.id]:units[d.id]):1;
+      notes.hidden=false;
+      notes.innerHTML='<summary class="cursor-interaction">Miten netto on laskettu?</summary><p>'+esc(d.net.calculation)+'</p>';
+      if(Number.isFinite(d.net.indexAdjusted))notes.innerHTML+='<p>VM:n liitteessä tuotto pelkkien etuusindeksien jälkeen: '+moneyLabel(d.net.indexAdjusted*n)+(d.scaled?' (yksikköarvio × '+n+')':'')+'. Ostovoiman vaikutusta ei ole vähennetty tästä vertailuluvusta.</p>';
+      if(d.net.limit!==d.research?.fiscal)notes.innerHTML+='<p>'+esc(d.net.limit)+'</p>';
+    }
     if(d.fundingCut){
       const settings=d.fundingCut;
       notes.hidden=false;

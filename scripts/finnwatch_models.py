@@ -47,7 +47,7 @@ def calculate(inputs):
                          for share, erosion, cost in product(succession['affectedReliefShare'],
                                                              succession['behaviouralErosion'],
                                                              succession['annualPublicCostMillion'])]
-    p = inputs['wrappers']
+    p = {**inputs['wrappers'],'lastYear':2200}
     cases = []
     for r, w, q, retained, cost in product(p['assumedReturn'], p['annualWithdrawal'],
                                           p['annuallyTaxableReturnShare'],
@@ -61,12 +61,15 @@ def calculate(inputs):
     for i, year in enumerate(range(p['startYear'], p['lastYear'] + 1)):
         values = [c['net'][i] for c in cases]
         series[str(year)] = {'raw': [min(values), max(values)], 'range': outward(values, 10)}
+    pv=[sum(v/(1.03**(i+1)) for i,v in enumerate(c['net'])) for c in cases]
     return {
         'interest': {'range': outward(interest_values), 'raw': [min(interest_values), max(interest_values)],
                      'newInterestBase': [base * s for s in interest['reverseBaseMultipliers']]},
         'succession': {'range': outward(succession_values), 'raw': [min(succession_values), max(succession_values)]},
         'wrappers': {'range': series[str(p['displayYear'])]['range'], 'byYear': series,
-                     'caseCount': len(cases), 'cashFlowOnly': True}
+                     'caseCount': len(cases), 'cashFlowOnly': True,
+                     'presentValue3pct':[min(pv),max(pv)],
+                     'annualEquivalent3pct':[min(pv)*.03,max(pv)*.03]}
     }
 
 
@@ -83,6 +86,10 @@ def apply_estimates(proposals, results):
         if key == 'wrappers':
             # The card is an explicit 2031 cash-flow scenario, not a promise of
             # a permanent annual yield. Later mode must not pick its early peak.
-            e['footnote'] = f'Oma 2031-laskelma; sisältää veron aikaistumista. Piirakkaan {low} milj. €.'
+            e.update(amount=None,display='Pysyvä netto avoin',caption='Veron aikaistuminen',footnote=f'2031 kassavirta {low}–{high} milj. €; ei pysyvä vuosituotto.')
+            d['unquantifiedNet']=True
+            e['money']=f'Vuoden 2031 kassavirta on omassa mallissa {low}–{high} milj. €. Veron aikaistuminen vähentää myöhempiä nostoveroja, joten summaa ei lasketa pysyväksi sopeutukseksi eikä piirakkaan.'
+            lo,hi=result['annualEquivalent3pct']
+            e['calculation']=[x for x in e['calculation'] if 'piirakkaan' not in x.lower()]+[f'Malli jatketaan vuoteen 2200 ja tulevat erot diskontataan 3 prosentilla vuoden 2027 loppuun. Nykyarvon ikuinen vuosivastine on noin {lo:.1f}–{hi:.1f} milj. €. Vuosittaiset hallintokulut 2–5 milj. € jatkuvat tässä koko laskentajakson, vaikka nykyinen sijoituskanta pienenee. Tämä on rahoituksellinen vertailu, ei jonkin vuoden verotuotto. Uusia sijoituksia ei ole mallinnettu; todellinen pysyvä tuotto jää siksi avoimeksi.']
             e['sensitivity'] = [{'label': str(year), 'range': result['byYear'][str(year)]['range']}
                                 for year in (2031, 2035, 2050)]

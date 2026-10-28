@@ -6,12 +6,12 @@ const read=name=>JSON.parse(fs.readFileSync(path.join(root,'data',name),'utf8'))
 const {actions,meta}=read('catalogue.json');
 const sources=read('research-sources.json');
 const reviewed=actions.filter(d=>!d.cashOnly);
-assert.equal(reviewed.length,257);
+assert.equal(reviewed.length,254);
 for(const d of reviewed){
   const r=d.research;
   assert.ok(r&&r.fiscal&&r.scope,d.id+': missing review');
   assert.ok(r.society||d.society,d.id+': missing everyday effect');
-  assert.ok(r.sources.length||['vm-only','unspecified'].includes(r.status),d.id+': unexplained evidence gap');
+  assert.ok(r.sources.length||['vm-only','unspecified','limited'].includes(r.status),d.id+': unexplained evidence gap');
   for(const key of r.sources){
     assert.ok(sources[key]?.label&&sources[key]?.kind,key);
     assert.equal(new URL(sources[key].url).protocol,'https:');

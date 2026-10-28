@@ -84,7 +84,7 @@ def build_incidence(actions):
             'sources':a.get('research',{}).get('sources',[]),
         }
     model={
-      'asOf':'2026-10-27','referenceYear':2024,'income':row('tjt-ekvikturaha_mean'),
+      'asOf':'2026-10-28','referenceYear':2024,'income':row('tjt-ekvikturaha_mean'),
       'incomeBounds':income_bounds,
       'households':count,'consumptionUnits':units,'profiles':profiles,'actions':models,
       'sources':{
@@ -99,7 +99,7 @@ def build_incidence(actions):
         {'label':'Ganong & Noel 2019 · USA, pankkitiliaineisto','url':'https://www.aeaweb.org/articles?id=10.1257/aer.20170537',
          'finding':'Työttömyysturvan päättyminen pudotti kulutusta jyrkästi, vaikka tulonmenetys oli ennakoitavissa. Tulos tukee etuusleikkausten kulutuskanavaa. Koko tuen loppumisen vaikutusta ei käytetä pienen indeksileikkauksen kertoimena.', 'flows':['support']},
         {'label':'Fuest, Peichl & Siegloch 2018 · Saksa','url':'https://www.aeaweb.org/articles?id=10.1257/aer.20130570',
-         'finding':'Saksan kuntien yritysveromuutoksissa noin puolet kokonaisrasituksesta siirtyi työntekijöille. Vaikutus oli suurempi vähän koulutetuilla, nuorilla ja naisilla. Suomen yhteisöveron rasitusta ei siis pidä kirjata automaattisesti kokonaan suurituloisille omistajille.', 'ids':['corporate']},
+         'finding':'Saksan kuntien yritysveromuutoksissa noin puolet kokonaisrasituksesta siirtyi työntekijöille. Vaikutus oli suurempi vähän koulutetuilla, nuorilla ja naisilla. Tämä on yhden maan kunnallisveroa koskeva tulos. Knaischin ja Pöschelin (2024) meta-analyysissa keskimääräinen palkkavaikutus ei erottunut nollasta julkaisuharhan korjauksen jälkeen.', 'ids':['corporate']},
         {'label':'Ball ym. 2013 · 17 OECD-maata','url':'https://www.elibrary.imf.org/view/journals/001/2013/151/article-A001-en.xml',
          'finding':'Sopeutusjaksoihin liittyi tuloerojen ja pitkäaikaistyöttömyyden kasvua sekä palkkatulo-osuuden laskua. Menoleikkauksiin painottuvien pakettien tulonjakovaikutukset olivat suurempia. Paketin rakenne ja taloussuhdanne vaikuttavat; tulos ei anna jokaiselle leikkauseurolle yhtä kerrointa.', 'flows':['support','families','pension','services','employees','research']},
       ],

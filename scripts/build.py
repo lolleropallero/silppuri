@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from finnwatch_models import calculate as calculate_finnwatch, apply_estimates
 from additional_tax_models import calculate as calculate_additional, apply as apply_additional
+from audit_corrections import apply_actions, apply_inputs, apply_sources, apply_research
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html')
@@ -18,6 +19,7 @@ def read_psv(name, size):
 
 raw=json.loads((ROOT/'data/vm-spending-source.json').read_text(encoding='utf-8'))
 long_run=json.loads((ROOT/'data/long-run-estimates.json').read_text(encoding='utf-8'))
+spending_nets=json.loads((ROOT/'data/spending-net-estimates.json').read_text(encoding='utf-8'))
 copies={r[0]:r[1:] for r in read_psv('cut-copy.psv',5)}
 aliases={'4-32':'health','2-47':'education','3-59':'benefits'}
 fee_keys={'1-30','1-75','2-11','2-13','2-14','2-41','2-43','2-45','2-74','4-16','4-17','4-18','4-19','4-20','4-21','4-22','4-24','4-30','4-47','5-22','5-33','5-64','5-75'}
@@ -49,9 +51,15 @@ for row in raw:
            source=f"VM 2026:44, Excel-liite: {row['sheet']}, rivi {row['row']}",
            memo=row['memo'],sourceKey=key,report='cut',sourceUrl=ANNEX,unit='',family='',conflicts=[])
     if key=='4-32':
-        d['budget']=[820,1630,2460,3310,None,None,None,None]
-        d['funds']=[0,0,0,0,None,None,None,None]
+        d['budget']=[820,1630,2460,3310,3310,3310,3310,3310]
+        d['funds']=[0]*8
         d['source']+='; raportin indeksitaulukko s. 570'
+        d['continuationNote']='2032–2035: oma vakionimellinen jatko vuoden 2031 tasolla. Jäädytys alentaa rahoituspohjaa, ellei sitä palauteta. Myöhempiä indeksikorotuksia ei ole ennustettu.'
+    if d['id'] in spending_nets['actions']:
+        method=spending_nets['methods'][spending_nets['actions'][d['id']]]
+        d['spendingNet']={**method,'source':spending_nets['source'],'sourceUrl':spending_nets['sourceUrl']}
+    if key in ['1-16','2-9']:
+        d['directOnly']=True
     if key=='1-42':
         d['conditional']='yle'
         d['filterTypes']=['cut','tax']
@@ -89,6 +97,7 @@ for id,title,amount,flow,who,society,page,unit,family in read_psv('tax-copy.psv'
         unit=unit,family=family,net=tax_nets.get(id),conflicts=[],earliest=2029 if id in ['tax-diesel','tax-van','tax-vehicle'] else 2028))
 
 by_id={d['id']:d for d in catalogue}
+by_id['tax-peat']['unquantifiedNet']=True
 assert len(by_id)==len(catalogue)
 # Finnwatch proposals share the catalogue and all selection paths. Upsert the
 # existing succession proposal so persisted selections never acquire a duplicate.
@@ -97,8 +106,11 @@ finnwatch_results=calculate_finnwatch(json.loads((ROOT/'data/finnwatch-estimates
 apply_estimates(finnwatch,finnwatch_results)
 (ROOT/'data/finnwatch-results.json').write_text(json.dumps(finnwatch_results,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 additional=json.loads((ROOT/'data/additional-tax-actions.json').read_text(encoding='utf-8'))
-additional_results=calculate_additional(json.loads((ROOT/'data/additional-tax-inputs.json').read_text(encoding='utf-8')))
+additional_inputs=json.loads((ROOT/'data/additional-tax-inputs.json').read_text(encoding='utf-8'))
+apply_inputs(additional_inputs)
+additional_results=calculate_additional(additional_inputs)
 apply_additional(additional,additional_results)
+apply_actions(finnwatch+additional)
 (ROOT/'data/additional-tax-results.json').write_text(json.dumps(additional_results,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 for proposal in finnwatch+additional:
     d=by_id.get(proposal['id'])
@@ -124,10 +136,15 @@ for id,net in tax_nets.items():
 # Apply the existing size cutoff to the best available estimate. Keep the
 # original report figures and the exclusion reason in the coverage audit.
 excluded_net={id for id,net in tax_nets.items() if net.get('high',net['low'])<20}
+for d in catalogue:
+    if d.get('spendingNet'):
+        if max(v or 0 for v in d['budget'])*d['spendingNet']['factors'][1]<20:
+            excluded_net.add(d['id'])
 for row in coverage:
     if cid(row['key']) in excluded_net:
         row['status']='below-20m-net'
-        row['maxNetMillion']=tax_nets[cid(row['key'])].get('high',tax_nets[cid(row['key'])]['low'])
+        id=cid(row['key'])
+        row['maxNetMillion']=tax_nets[id].get('high',tax_nets[id]['low']) if id in tax_nets else max(v or 0 for v in by_id[id]['budget'])*by_id[id]['spendingNet']['factors'][1]
 # Scope is reviewed from the underlying policy, never inferred from a title
 # containing "temporary" or a missing/zero estimate at the end of the horizon.
 # An index freeze can lower the subsequent payment base and remains eligible.
@@ -163,6 +180,13 @@ for keys in [
  ['7-12','7-28'],['7-41','7-42'],['7-44','7-46'],['7-48','7-49'],['7-50','7-51']
 ]:conflict(*keys)
 for family in set(d['family'] for d in catalogue)-{''}:conflict(*[d['id'] for d in catalogue if d['family']==family])
+# Disjoint VAT bases can coexist. Their revenue estimates can still overlap.
+def possible_overlap(a,b,note):
+    if a not in by_id or b not in by_id:return
+    for left,right in [(a,b),(b,a)]:
+        if right in by_id[left]['conflicts']:by_id[left]['conflicts'].remove(right)
+        by_id[left].setdefault('possibleOverlaps',[]).append({'id':right,'note':note})
+possible_overlap('tax-food18','tax-vat-services','Molempiin laskelmiin sisältyy lehtien ALV-muutos. Yhteissummassa on enintään 22 milj. euroa samaa suoraa tuottoa; yhteisnettoa ei ole laskettu.')
 overlap('3-8',['3-5','3-6','3-7'])
 overlap('3-67',['3-65','3-66'])
 overlap('1-69',['1-55','1-56','1-57','1-58','1-72'])
@@ -203,7 +227,8 @@ for key,regional in [('7-41',144),('7-42',1123),('7-52',141)]:
 for parent in ['7-24']:
     overlap(parent,[d['id'] for d in catalogue if any(s in d['title'].lower() for s in ['avustu','yritystuki','yritystu','taiteen','tasa-arvora','liikunnan','kulttuuri','suomi liikkeelle'])])
 for parent in ['vat','tax-vat15','tax-vat16','tax-food18','tax-vat-services']:
-    overlap(parent,['tax-vat-news135','tax-vat-news255','tax-vat-standard'])
+    overlap(parent,['tax-vat-news135','tax-vat-news255'])
+    possible_overlap(parent,'tax-vat-standard','Yleisen ALV-kannan korotus voidaan yhdistää tähän muutokseen, mutta yhteinen veropohja muuttuu. Näytetty summa on erillisarvioiden summa, ei yhdistelmän nettolaskelma.')
 
 for d in catalogue:
     for other in list(d['conflicts']):
@@ -218,11 +243,13 @@ research=json.loads((ROOT/'data/action-research.json').read_text(encoding='utf-8
 research_sources=json.loads((ROOT/'data/research-sources.json').read_text(encoding='utf-8'))
 source_summaries=json.loads((ROOT/'data/source-summaries.json').read_text(encoding='utf-8'))
 source_notes=json.loads((ROOT/'data/source-notes.json').read_text(encoding='utf-8'))
+apply_sources(research_sources,source_summaries)
+apply_actions(catalogue)
 for url,note in source_notes.items():
     if 'researchSummary' in note: source_notes[url]=source_summaries[note['researchSummary']]
     assert source_notes[url].get('summary') and source_notes[url].get('limit'), url
 for d in catalogue:
-    r=d.get('research') or research[d['id']]
+    r=apply_research(d['id'],d.get('research') or research[d['id']])
     if r['status']=='skipped':
         assert d.get('cashOnly'), d['id']
         continue
@@ -243,7 +270,7 @@ meta['research']={'reviewed':sum('research' in d for d in catalogue),'sources':l
                   'withExternalResearch':sum(bool(d.get('research',{}).get('sources')) for d in catalogue),
                   'vmOnly':sum(d.get('research',{}).get('status') in ['vm-only','unspecified'] for d in catalogue),
                   'contextOnly':sum(d.get('research',{}).get('status')=='context' for d in catalogue),
-                  'asOf':'2026-10-27'}
+                  'asOf':'2026-10-28'}
 (ROOT/'data/catalogue.json').write_text(json.dumps({'meta':meta,'actions':catalogue},ensure_ascii=False,indent=2),encoding='utf-8')
 (ROOT/'data/coverage.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=2),encoding='utf-8')
 template=(ROOT/'src/silppuri.template.html').read_text(encoding='utf-8')
@@ -259,7 +286,7 @@ markup=markup.replace('<!--INCIDENCE_METHOD-->',(ROOT/'src/incidence-method.html
 markup=markup.replace('</style>',(ROOT/'src/catalogue.css').read_text(encoding='utf-8')+'\n</style>')
 markup=markup.replace('<div class="sp-chart">','<div class="sp-horizon" role="group" aria-label="Säästöjen ajankohta"><button type="button" class="cursor-interaction" data-horizon="2031" aria-pressed="true">2031</button><button type="button" class="cursor-interaction" data-horizon="later" aria-pressed="false">Myös myöhemmät</button></div><div class="sp-chart">',1)
 markup=markup.replace('Laskuri laskee valittujen toimien arviot yhteen. Arviot ovat eri vuosilta. Lopullinen säästö riippuu myös siitä, miten toimet muuttavat kulutusta, työntekoa ja yritysten toimintaa.',
- 'Piirakka laskee koko julkisen talouden vaikutuksen: valtio, kunnat, hyvinvointialueet sekä eläke- ja muut sosiaaliturvarahastot. Nettoarvio on käytössä aina, kun se on saatavilla; vaihteluvälistä käytetään alarajaa. Muuten mukana on suora arvio. Kaikkia käyttäytymisvaikutuksia ja toimien yhteisvaikutuksia ei ole laskettu. 2031 näyttää kyseisen vuoden menosäästöt. Myös myöhemmät käyttää niiden tilalla suurempia, lähteissä annettuja myöhempiä vuosiarvioita. Ne merkitään tähdellä ja ajankohdalla: summa yhdistää eri ajankohtien vuosivaikutuksia, ei vuosien aikana kertynyttä säästöä eikä yhden tulevan vuoden ennustetta. Verot ovat pääosin vuoden 2028 tasossa. Jos maksajaryhmän säästö on vuonna 2031 nolla, sen tuleva vuosiarvio näkyy tähdellä myös 2031-näkymässä; se tulee piirakkaan vasta Myös myöhemmät -valinnalla. Sektorien osuudet näkyvät toimien lähdetiedoissa.')
+ 'Piirakka laskee koko julkisen talouden vaikutuksen: valtio, kunnat, hyvinvointialueet sekä eläke- ja muut sosiaaliturvarahastot. Nettoarvio on käytössä aina, kun se on saatavilla; vaihteluvälistä käytetään alarajaa. Muuten mukana on suora arvio. Kaikkia käyttäytymisvaikutuksia ja toimien yhteisvaikutuksia ei ole laskettu. 2031 näyttää kyseisen vuoden menosäästöt. Myös myöhemmät käyttää niiden tilalla suurempia vuosien 2032–2035 vuosiarvioita. Tätä kauemmas ulottuvat arviot näytetään kortilla, mutta niitä ei summata piirakkaan. Ne merkitään tähdellä ja ajankohdalla: summa yhdistää eri ajankohtien vuosivaikutuksia, ei vuosien aikana kertynyttä säästöä eikä yhden tulevan vuoden ennustetta. Verot ovat pääosin vuoden 2028 tasossa. Jos maksajaryhmän säästö on vuonna 2031 nolla, sen tuleva vuosiarvio näkyy tähdellä myös 2031-näkymässä. Vain vuosien 2032–2035 arviot tulevat mukaan Myös myöhemmät -valinnalla. Sektorien osuudet näkyvät toimien lähdetiedoissa.')
 markup=markup.replace('<div class="sp-action-list">','<div class="sp-catalogue-tools"><label>Hae toimea<input id="sp-search" type="search" placeholder="Esim. Yle, eläke, yritys…"></label><label>Kohde<select id="sp-category"><option value="all">Kaikki kohteet</option></select></label><label>Järjestys<select id="sp-sort"><option value="desc">Suurin ensin</option><option value="asc">Pienin ensin</option></select></label></div><p class="sp-results" aria-live="polite"></p><div class="sp-action-list">',1)
 markup=markup.replace('Isoista paloista alkuun','Valitse mistä otetaan')
 markup=markup.replace('Veronkorotukset','Verot ja muut tulot')

@@ -26,6 +26,18 @@ def extend(model, actions):
             offset=offset*size+pos
         return table['value'][offset]
     profiles=model['profiles']; specs=model['actions']; by_id={a['id']:a for a in actions}
+    excluded.update(r['id'] for r in json.loads((ROOT/'data/catalogue.json').read_text(encoding='utf8'))['actions'] if r['id'] not in by_id)
+    excluded.update({'cut-5-40','cut-5-42','tax-car-combustion'})
+    def regroup(totals, counts):
+        # Both surveys rank by equivalised income, but source bins contain
+        # households and destination bins contain people. Interpolate the
+        # cumulative household rank; do not equate their decile labels.
+        source=[0]; target=[0]
+        for n in counts: source.append(source[-1]+n/sum(counts))
+        for n in model['households']: target.append(target[-1]+n/sum(model['households']))
+        shares=normal(totals)
+        return normal([sum(shares[j]*max(0,min(target[i+1],source[j+1])-max(target[i],source[j]))/(source[j+1]-source[j]) for j in range(len(counts))) for i in range(10)])
+    model['regroupingInputs']={}
     income=read('income-deciles-2024.json')
     income_index=income['dimension']['contentscode']['category']['index']
     def income_row(code): return income['value'][income_index[code]*11+1:income_index[code]*11+11]
@@ -46,15 +58,23 @@ def extend(model, actions):
                 'culture':'09','news':'0972','insurance':'121'}
     for name,code in categories.items():
         values=[cell(consumption,coicop_46_20231201=code,tuloviidennes_2_20140501=str(i)) for i in range(1,6)]
-        profiles['consumption-'+name]=split_quintiles(normal([v*u for v,u in zip(values,quintile_units)]))
+        totals=[v*u for v,u in zip(values,quintile_units)]
+        counts=[cell(households,tuloviidennes_2_20140501=str(i),contentscode='pklkm_sum') for i in range(1,6)]
+        profiles['consumption-'+name]=regroup(totals,counts)
+        model['regroupingInputs']['consumption-'+name]={'totals':totals,'households':counts}
+    transit=[sum(cell(consumption,coicop_46_20231201=c,tuloviidennes_2_20140501=str(i)) for c in ['0731','0732'])*quintile_units[i-1] for i in range(1,6)]
+    profiles['consumption-transit']=regroup(transit,counts)
+    model['regroupingInputs']['consumption-transit']={'totals':transit,'households':counts}
     services=read('services-finland-2007.json')
     for name,p in services['profiles'].items():profiles['service-'+name]=split_quintiles(p['quintiles'])
     wealth=read('wealth-2023.json')
     for name,code in {'housing':'asvara','home':'asarav','shares':'pymar','unlisted':'muosa',
                       'assets':'bruttoae_DA1000','land-business':'muurealvar',
                       'insurance':'vaksak','funds':'sirave','listed':'porsosa','financial':'finan'}.items():
-        profiles['wealth-'+name]=normal([cell(wealth,vtutk_varlaji_6_20200101=code,desiilit_2_20120101=str(i),contentscode='vtutk_keskiarvo_n')*
-             cell(wealth,vtutk_varlaji_6_20200101=code,desiilit_2_20120101=str(i),contentscode='vtutk_kotitalouksia_perusjoukko') for i in range(1,11)])
+        counts=[cell(wealth,vtutk_varlaji_6_20200101=code,desiilit_2_20120101=str(i),contentscode='vtutk_kotitalouksia_perusjoukko') for i in range(1,11)]
+        totals=[cell(wealth,vtutk_varlaji_6_20200101=code,desiilit_2_20120101=str(i),contentscode='vtutk_keskiarvo_n')*counts[i-1] for i in range(1,11)]
+        profiles['wealth-'+name]=regroup(totals,counts)
+        model['regroupingInputs']['wealth-'+name]={'totals':totals,'households':counts}
     model['sources'].update({
       'consumption':{'label':'Tilastokeskus: kulutustutkimus 2022, 14pg ja 14qa','url':'https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__ktutk/statfin_ktutk_pxt_14pg.px/'},
       'wealth':{'label':'Tilastokeskus: kotitalouksien varallisuus 2023, 151u','url':'https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__vtutk/statfin_vtutk_pxt_151u.px/'},
@@ -78,6 +98,13 @@ def extend(model, actions):
       'work':{'sources':['statfin','vm-44'],'method':'VM:n henkilöstömenoarvio jaetaan palkkatulojen vuoden 2024 jakaumalla. Palkki kuvaa työpanoksen tai työnantajan palkkakustannuksen muutosta suhteessa tuloihin. Se ei ole työntekijän nettotulon menetys: työnantajamaksuja, verotusta, korvaavaa työtä ja vapaa-ajan arvoa ei ole eritelty. Julkisen alan palkkajakauma voi poiketa kaikkien palkansaajien jakaumasta.'},
     }
     model['methods']=methods
+    regroup_note=' Lähteen kotitalousryhmät muunnetaan henkilökymmenyksiksi kotitalouksien kumulatiivisen tulonjärjestyksen avulla. Ryhmän sisällä määrä kotitaloutta kohti oletetaan vakioksi. Vuosien 2022/2023 ja 2024 väestörakenteen erot jäävät epävarmuudeksi; tämä ei ole mikroaineistosta laskettu jakauma.'
+    methods['consumption']['method']=methods['consumption']['method'].replace('kunkin sisällä vaikutus on sama kulutusyksikköä kohden.','kunkin sisällä määrä kotitaloutta kohti oletetaan samaksi.')+regroup_note
+    methods['wealth']['method']+=regroup_note
+    methods['service-consumption']['method']+=regroup_note
+    model['sources']['corporate-wages-meta']=json.loads((ROOT/'data/research-sources.json').read_text(encoding='utf8'))['corporate-wages-meta']
+    methods['corporate']['sources'].append('corporate-wages-meta')
+    methods['corporate']['method']='Yritysveron rasituksesta 0 tai 25 % kohdennetaan palkkoihin ja loppu pääomaan. Pääomaosasta 0 tai 100 % kohdennetaan Suomessa asuville. Nämä ovat neljä herkkyysskenaariota, eivät todennäköisyysrajat. CBO käyttää 25/75-jakoa laskentaoletuksena; tutkimus ei vahvista sitä Suomen vakiokertoimeksi. Knaisch & Pöschelin (2024) meta-analyysissa keskimääräinen palkkavaikutus ei erottunut nollasta julkaisuharhan korjauksen jälkeen.'
     def add(ids,weights,method,channel='cash',basis='public-total',**extra):
         for id in ids.split():
             if id in excluded: continue
@@ -158,6 +185,17 @@ def extend(model, actions):
             specs[id]={'kind':'separate','group':group,'method':explanations[group],'sources':['ons','vm-44' if by_id[id]['report']=='cut' else 'vm-48']}
     specs['cut-4-22']['method']='VM kohdistaa uusia maksuja ensisijaisesti hyvätuloisille vammaispalvelujen käyttäjille. Vammaisetuuksien yleinen jakauma osoittaisi maksun väärin myös pienituloisille. Maksutulot on arvioitu, mutta tuloraja ja maksupohja pitää määritellä ennen tulokymmenysjakoa.'
     specs['cut-3-49']['method']='Eläkeiän nosto vähentää eläkemenoja mutta lisää osalla palkkatuloa ja toisilla muita etuuksia. Julkisen talouden säästö ei siksi yksin kerro henkilön tulonmenetystä. Nykyisten eläkeläisten tuloprofiilia ei käytetä tulevien eläkeikäluokkien nettotuloarviona.'
+    # Target population corrections, audited against the actual policy rules.
+    for id in ['cut-3-14','cut-2-41','cut-2-61','cut-2-62']:
+        specs[id].update(profiles=['wages','taxable-income'],note='Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida.')
+    for id,share in [('cut-3-63',.4),('cut-3-64',.9)]:
+        specs[id].update(householdShare=share,note=f'VM:n mukaan osa etuudesta maksetaan työnantajille. Kotitalouksille kohdennetaan tässä {share:.0%} julkistaloudellisesta summasta. Osuus on karkea sijaislaskelma, ei verojen ja korvaavien etuuksien jälkeen laskettu kotitalouden menetys. Työnantajan osuutta ei kirjata työntekijän suoraksi menetykseksi.')
+    for id in ['cut-3-54','cut-3-56']: specs[id].update(profiles=['disability'],methodKey='benefit')
+    specs['cut-4-30'].update(profiles=['service-health'],methodKey='service',channel='cash',note='Julkisen hammashoidon maksun sijaisjakaumana on julkisen terveydenhuollon käyttö, ei yksityisen hammashoidon ostaminen. Vanha laaja palvelujakauma ei yksilöi maksajia tai maksuvapautuksia.')
+    for id in ['cut-4-16','cut-4-17','cut-4-18','cut-4-19']:
+        specs[id].update(profiles=['service-eldercare'],methodKey='service',channel='cash',note='Maksu kohdistuu hoivan käyttäjiin. Koko väestön varallisuusjakaumaa ei käytetä. Vanha hoivapalvelujen jakauma on sijaismittari eikä ratkaise asiakkaan tulo-, omaisuus- ja perhesääntöjä uudelleen.')
+    specs['cut-1-38']['profiles']=['consumption-transit']
+    specs['cut-1-76']={'kind':'separate','group':'collective','method':'Metsähallituksen tuloutus valtiolle ei ole suora kotitalousmaksu. Vaikutus riippuu liikelaitoksen tuloksesta, investoinneista ja tuloutuksen rahoituksesta. Sitä ei jaeta tuulivoimayhtiöiden tai metsänomistajien tuloprofiililla.','sources':['vm-44']}
     from finnwatch_incidence import extend_finnwatch
     extend_finnwatch(model)
     from additional_tax_models import extend_incidence as extend_additional

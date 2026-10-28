@@ -265,7 +265,7 @@ add('sorsa-million-inheritance', 'Miljoonaperintöjen ja -lahjojen veroa +10 pro
  'Yli miljoonan euron perintöosuuksia tai lahjoja saavilta. Korotus koskisi vain miljoonan ylittävää osaa.',
  'Suuret omaisuussiirrot verotettaisiin nykyistä kireämmin. Lahjojen ajankohta, pilkkominen ja maksuaikajärjestelyt voivat muuttua. Perintöveroa ei pidä rinnastaa saman suuruiseen pienituloisen palkkaveron korotukseen: maksu voidaan kattaa saadusta omaisuudesta.',
  'Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.',
- ['Finérin vuoden 2024 koosteessa kymmenen prosenttiyksikön korotus miljoonaperintöihin tuotti noin 200 milj. € myös pienperintöjen alarajaa korottavassa esimerkissä. Käytämme sitä vain suuruusluokka-ankkurina. Pienten perintöjen nykyisiä alarajoja ei muuteta tässä kortissa.',
+ ['Finér arvioi vuoden 2024 blogissa kymmenen prosenttiyksikön korotuksen miljoonaperintöihin tuovan noin 200 milj. € myös pienperintöjen alarajaa nostettaessa. Laskentamenetelmää ei julkaista, joten tämä on ehdotuksen esittäjän suuruusluokka-arvio. Pienten perintöjen nykyisiä alarajoja ei muuteta tässä kortissa.',
   'Oma vuosituoton vertailu = 200 × 50–85 % − 1–5 milj. €. Kertoimet kattavat myös vanhan esimerkin ja uuden rajauksen eron; ne eivät ole tutkimuksesta estimoituja. Tarkan tuloksen laskemiseen tarvitaan perintöjen jakauma miljoonan ylittävästä osasta ja nykyiset huojennukset.',
   'OECD:n perintöverokatsaus tukee laajaa pohjaa, progression arviointia ja suunnittelun rajaamista. Yleisen perintöveron korotuksen ja yrityshuojennuksen poiston kanssa voi syntyä päällekkäisyyttä. Ne voi valita samaan pakettiin, mutta yhteistä veropohjaa ei ole simuloitu.'],
  ['inheritance','sorsa-gifts','obr-business-relief'],
@@ -286,6 +286,10 @@ for d in actions:
     d['possibleOverlaps'] = [dict(id=other, note='Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty.') for other in overlaps]
     if d['id'] == 'fw-exit-tax':
         d['estimate'].update(caption='VM:n vertailuhaarukka', basis='VM 2020 · kokonaisnettoa ei laskettu')
+from audit_corrections import apply_actions, apply_sources, apply_inputs
+apply_actions(actions)
+apply_sources(refs, summaries)
+apply_inputs(models)
 write('additional-tax-actions.json', actions)
 write('additional-tax-inputs.json', models)
 write('research-sources.json', refs)
@@ -295,7 +299,7 @@ write('source-notes.json', notes)
 # Coverage is explicit even where a recommendation is an enabling institution,
 # already enacted, or a choice of international negotiating position.
 groups = [
- ([1,3,4,6,7], 'fw-corporate-minimum', 'Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Yksi ehdollinen vähimmäisverolaskelma; BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa.'),
+ ([1,3,4,6,7], 'fw-corporate-minimum', 'Kansainvälisen yritysverotuksen vaihtoehtoiset mallit ja niiden päätöksenteko. Vähimmäisveron lisänetto on avoin; aiempi ristiriitaiseen ankkuriin perustunut haarukka on poistettu. BEFITille tai päätöksentekotavalle ei lisätä erillistä verotuottoa.'),
  ([5], 'fw-digital', 'Digivero on oma, toteutettuun Itävallan malliin perustuva rajaus raportin vaihtoehtojen pohjalta. Se ei ole sama kuin YK:n 12 b artikla tai konsernien koko voiton jakokaava.'),
  ([2,30], None, 'Kehittyvien maiden lähdeverotusoikeudet. Tavoite koskee ensisijaisesti muiden maiden verotuloja; ei Suomen uutta sopeutuserää.'),
  ([8,9,10,11,33,34,35,36,37,38,39,40,41,42,43], 'fw-corporate-gaps', 'Yritysten veropohjaa suojaavat säännöt ja niitä tukeva valvonta, julkisuus ja tutkimus ovat yhteisessä torjuntaskenaariossa. Yksityishenkilöiden avoimuudesta saatavaa mahdollista lisätuottoa ei ole hinnoiteltu erikseen eikä yhden valvontasäännön tuottoa erotettu.'),

@@ -24,36 +24,28 @@
     ]
   },
   "fw-corporate-minimum": {
-    "formula": "product",
-    "anchor": 1500,
-    "factors": [
-      [
-        0.2,
-        0.6
-      ],
-      [
-        0.7,
-        0.9
-      ]
-    ],
-    "cost": [
-      5,
-      15
-    ]
+    "formula": "unquantified",
+    "reason": "HE 77/2023 contradicts the old anchor; no defensible Finnish 20% marginal yield is identified."
   },
   "fw-wealth-minimum": {
     "formula": "product",
-    "anchor": 400,
+    "anchor": 22165,
     "factors": [
       [
-        0.7,
-        0.95
+        0.01,
+        0.018
+      ],
+      [
+        0.3,
+        0.7
       ]
     ],
     "cost": [
       3,
       10
-    ]
+    ],
+    "roundTo": 5,
+    "assumptions": "Varallisuus 14 300 × 1,55 = 22 165 milj. €. Kahden prosentin vähimmäisverosta hyvitetään nykyisiä henkilöveroja 0,2–1,0 % varallisuudesta. Veropohjasta säilyy 30–70 %. Molemmat vaihteluvälit ovat omia herkkyysoletuksia, eivät Suomen mitattuja rajoja."
   },
   "fw-exit-tax": {
     "formula": "reference",
@@ -195,17 +187,23 @@
   },
   "sorsa-bank": {
     "formula": "product",
-    "anchor": 190.3,
+    "anchor": 205,
     "factors": [
       [
-        0.75,
-        0.95
+        0.5,
+        1
+      ],
+      [
+        0.6,
+        0.9
       ]
     ],
     "cost": [
-      1,
-      4
-    ]
+      2,
+      5
+    ],
+    "roundTo": 5,
+    "assumptions": "Rahoitusalan 900 milj. € yhteisöveroa /20 % ×3 %-yks. =135; pankkien 1 400 milj. € palkat ×5 %=70. Koko 205 milj. euron ankkurin normalisointi 50–100 %, käyttäytymisen ja muiden verojen jälkeen 60–90 %, kulut 2–5. Ei pelkkien pankkien voittopohja."
   },
   "sorsa-million-inheritance": {
     "formula": "product",

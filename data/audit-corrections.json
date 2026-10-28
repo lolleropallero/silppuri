@@ -1,0 +1,564 @@
+{
+  "asOf": "2026-10-28",
+  "actions": {
+    "cut-2-51": {
+      "research": {
+        "society": "Hyvitys auttaa lainaa ottaneita valmistuneita. VTV arvioi sen todennäköisesti nopeuttaneen valmistumista. Poisto voi heikentää tätä kannustetta ja siirtää työuran alkua, mutta vaikutuksen suuruutta ei ole luotettavasti erotettu muista muutoksista.",
+        "fiscal": "Menosäästöstä voi vähentyä valmistumisen viivästymisen aiheuttamia menoja ja verotulojen menetyksiä. VTV pitää nopeutumisen julkistaloudellista vaikutusta myönteisenä, mutta ei anna poistolle nettoarviota."
+      }
+    },
+    "cut-2-52": {
+      "research": {
+        "society": "Hyvitys auttaa lainaa ottaneita valmistuneita. VTV arvioi sen todennäköisesti nopeuttaneen valmistumista. Poisto voi heikentää tätä kannustetta ja siirtää työuran alkua, mutta vaikutuksen suuruutta ei ole luotettavasti erotettu muista muutoksista.",
+        "fiscal": "Menosäästöstä voi vähentyä valmistumisen viivästymisen aiheuttamia menoja ja verotulojen menetyksiä. VTV pitää nopeutumisen julkistaloudellista vaikutusta myönteisenä, mutta ei anna poistolle nettoarviota."
+      }
+    },
+    "cut-4-9": {
+      "removeSources": [
+        "carefees"
+      ],
+      "research": {
+        "finding": "Asiakasmaksututkimus ei mittaa hoitotakuun pidentämistä. VM kuvaa odotusaikojen ja hoidon järjestämisen muutoksia.",
+        "scope": "Hoitotakuun muutoksen terveys- ja kustannusvaikutuksia ei voi johtaa asiakasmaksun kysyntäjoustosta.",
+        "status": "limited"
+      }
+    },
+    "cut-4-11": {
+      "removeSources": [
+        "carefees"
+      ],
+      "research": {
+        "finding": "Asiakasmaksututkimus ei mittaa hoitotakuun pidentämistä. VM kuvaa odotusaikojen ja hoidon järjestämisen muutoksia.",
+        "scope": "Hoitotakuun muutoksen terveys- ja kustannusvaikutuksia ei voi johtaa asiakasmaksun kysyntäjoustosta.",
+        "status": "limited"
+      }
+    },
+    "cut-3-5": {
+      "addSources": [
+        "childincome-reply",
+        "childcuts-mari"
+      ],
+      "research": {
+        "finding": "Alankomaiden suurten perheiden lapsilisäleikkauksessa keskimääräiset lapsivaikutukset jäivät pieniksi, mutta pienituloisten lasten koulutushaitat kestivät pitkään. Tulos täydentää lisätuloja koskevia Pohjois-Amerikan tutkimuksia."
+      }
+    },
+    "cut-3-6": {
+      "addSources": [
+        "childincome-reply"
+      ]
+    },
+    "cut-3-7": {
+      "addSources": [
+        "childincome-reply"
+      ]
+    },
+    "cut-3-8": {
+      "addSources": [
+        "childincome-reply",
+        "childcuts-mari"
+      ],
+      "research": {
+        "finding": "Alankomaiden suurten perheiden lapsilisäleikkauksessa keskimääräiset lapsivaikutukset jäivät pieniksi, mutta pienituloisten lasten koulutushaitat kestivät pitkään. Tulos täydentää lisätuloja koskevia Pohjois-Amerikan tutkimuksia."
+      }
+    },
+    "cut-3-10": {
+      "addSources": [
+        "childincome-reply"
+      ]
+    },
+    "cut-3-13": {
+      "research": {
+        "finding": "Yhdysvaltalaisessa tutkimuksessa kulutus laski korvauksen ennakoidun päättymisen kohdalla. Tutkijat painottavat nykyhetkeen keskittyvää käyttäytymistä; havainto ei yksin todista säästöpuskurin puutetta."
+      }
+    },
+    "cut-3-14": {
+      "research": {
+        "finding": "Yhdysvaltalaisessa tutkimuksessa kulutus laski korvauksen ennakoidun päättymisen kohdalla. Tutkijat painottavat nykyhetkeen keskittyvää käyttäytymistä; havainto ei yksin todista säästöpuskurin puutetta."
+      }
+    },
+    "cut-3-15": {
+      "research": {
+        "finding": "Suomen lyhennysten tulokset vaihtelevat: yksi 20 viikon lyhennys ei muuttanut keskimääräistä työttömyysaikaa, toinen lyhensi sitä noin kolme viikkoa. Pidennystutkimuksessa pidempi etuuskausi paransi myös seuraavan työn palkkaa ja kestoa."
+      },
+      "addSources": [
+        "ui-shortening"
+      ]
+    },
+    "benefits": {
+      "research": {
+        "finding": "Yhdysvaltalaisessa tutkimuksessa kulutus laski korvauksen ennakoidun päättymisen kohdalla. Tutkijat painottavat nykyhetkeen keskittyvää käyttäytymistä; havainto ei yksin todista säästöpuskurin puutetta."
+      }
+    },
+    "cut-7-29": {
+      "research": {
+        "finding": "Sitran tilaama ulkoinen arviointi korostaa Sitran kasvanutta tarvetta ja toimijoiden kokoamista. Se arvostelee samalla epäselvää rahoittajaroolia ja hankkeiden hajanaisuutta."
+      }
+    },
+    "tax-household": {
+      "research": {
+        "finding": "Ruotsin siivouspalveluvähennyksen käyttöönottoa koskevassa tutkimuksessa kysynnän ja veronkierron muutokset jäivät vähäisiksi. Suomalaiset yritykset olivat vertailuryhmä.",
+        "society": "Asiakkaan verojen jälkeinen hinta nousisi. Ruotsin siivousvähennyksen käyttöönotosta ei havaittu selvää kysynnän kasvua, mutta tulos ei kata suomalaisia remontteja tai hoivapalveluja."
+      }
+    },
+    "cut-2-9": {
+      "research": {
+        "fiscal": "52 milj. € on koko nykyinen valtionrahoitus, ei muiden menojen jälkeen laskettu säästö. Varattomien kuolinpesien toimeentulotuki, kunnille ja seurakunnille jäävät tehtävät sekä muut korvaavat menot pienentävät nettoa. Niiden määrää ei ole vähennetty."
+      }
+    },
+    "cut-1-76": {
+      "who": "Metsähallituksen valtiolle tulouttamasta voitosta. Kyse ei ole suoraan tuulivoimayhtiöiden vuokran korottamisesta.",
+      "society": "Suurempi tuloutus jättää Metsähallitukselle vähemmän rahaa investointeihin, ellei liiketoiminnan tulos parane.",
+      "research": {
+        "society": "Tuulivoimahankkeiden toteutuminen vaikuttaa vuokratuloihin, mutta tuloutuksen korottaminen ei itsessään tuota uusia hankkeita. Vaikutus riippuu liikelaitoksen tuloksesta ja investoinneista.",
+        "scope": "Tuulivoimatutkimus on taustaa hankkeiden epävarmuudelle. Se ei mittaa Metsähallituksen tuloutuspäätöksen syyvaikutusta."
+      }
+    },
+    "cut-1-11": {
+      "society": "Business Finlandin muut kuin T&K-avustukset vähenisivät. Mukana on innovaatio- ja kansainvälistymisrahoitusta sekä audiovisuaalisen alan kannustin.",
+      "research": {
+        "society": "Leikkaus koskee Business Finlandin muita kuin T&K-avustuksia, kuten kansainvälistymis- ja innovaatiorahoitusta sekä audiovisuaalisen alan kannustinta. VM:n erittelyssä AV-osuus on 10 milj. €. Hankkeiden toteutuminen riippuu tuen merkityksestä niille.",
+        "scope": "T&K- tai vientineuvontatutkimus ei osoita tämän avustusjoukon yhteistä vaikutusta. Tutkimusta käytetään vain tukien vaikutuskanavien taustana."
+      }
+    },
+    "cut-2-32": {
+      "title": "Oppivelvollisuus peruskoulun loppuun",
+      "who": "Nuorilta, joiden velvollisuus opiskella päättyisi peruskoulun suorittamiseen tai viimeistään sen vuoden keväällä, jona he täyttävät 17.",
+      "research": {
+        "society": "Peruskoulun jälkeen opiskelu olisi vapaaehtoista. Osa nuorista voisi jäädä koulutuksen ulkopuolelle; vaikutus riippuu myös ohjauksesta ja muusta tuesta."
+      }
+    },
+    "cut-4-17": {
+      "research": {
+        "society": "Varallisuuden huomiointiaste ja maksun enimmäismäärä muuttuisivat. Osa hoivan asiakkaista maksaisi enemmän. Maksu riippuu myös asiakkaan tuloista ja hoivan muodosta."
+      }
+    },
+    "tax-entrepreneur-remove": {
+      "who": "Yrittäjävähennystä käyttäviltä toiminimi- ja henkilöyhtiöyrittäjiltä sekä maa- ja metsätalouden ja poronhoidon harjoittajilta."
+    },
+    "tax-van": {
+      "title": "Pakettiautojen ja kevyiden kuorma-autojen verotukea pois",
+      "who": "Pakettiautojen ja kevyiden kuorma-autojen omistajilta. Kustannuksia voi siirtyä yritysten asiakkaille."
+    },
+    "tax-pension": {
+      "research": {
+        "fiscal": "100 milj. € on suora esimerkki, ei kokonaisnetto. Työikäisten ansiotuloveron työn tarjontakerrointa ei sovelleta eläkkeisiin. Ostovoiman väheneminen voi silti pienentää kulutusverotuloja; tästä ei ole toimikohtaista arviota."
+      }
+    },
+    "cut-1-16": {
+      "research": {
+        "fiscal": "42 milj. € koskee koko palautusjärjestelmää. Polttoaineita koskevaa 17/25 miljoonan osittaista nettovertailua ei voi soveltaa koko summaan. Koko muutoksen käyttäytymisvaikutuksia ei ole laskettu."
+      }
+    },
+    "tax-peat": {
+      "research": {
+        "fiscal": "55 milj. € on staattinen verotuottoluku. VM arvioi nettotuoton vähäiseksi, koska turvetta korvataan biomassalla ja sähköllä. Euromääräistä nettoa ei anneta, joten 55 miljoonaa ei täytä piirakkaa."
+      }
+    },
+    "fw-wealth-minimum": {
+      "addSources": [
+        "wealth-swiss"
+      ],
+      "research": {
+        "society": "Vero kohdistuisi erittäin suuriin varallisuuksiin. Ilmoitettuun varallisuuteen voi tulla huomattavia muutoksia verosuunnittelun, arvostuksen ja maastamuuton vuoksi. Sveitsin tutkimuksessa kokonaisreaktio oli suuri; Pohjoismaiden pieni muuttoreaktio ei sulje tätä pois.",
+        "fiscal": "Omassa laskelmassa nykyiset henkilöverot ja veropohjan muutokset vaihtelevat erikseen. Suomen erittäin varakkaiden tosiasiallista veroastetta ei tunneta."
+      },
+      "estimate": {
+        "caption": "oma tuottohaarukka",
+        "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+        "money": "Omassa laskelmassa nykyiset henkilöverot ja veropohjan muutokset vaihtelevat erikseen. Suomen erittäin varakkaiden tosiasiallista veroastetta ei tunneta.",
+        "calculation": [
+          "EU Tax Observatoryn miljardöörien 14,3 mrd. € varallisuus × yli 100 miljoonan ryhmän laajennuskerroin 1,55 = 22 165 milj. €. Tämäkin laajennus on oletus.",
+          "Vähimmäisvero 2 % miinus hyvitetyt nykyverot 0,2–1,0 % varallisuudesta. Veropohjasta säilyy 30–70 %, hallintoon 3–10 milj. € vuodessa. Netto = 22 165 × 1,0–1,8 % × 30–70 % − 3–10.",
+          "Nykyverojen ja vuodon haarukat ovat valittuja herkkyysoletuksia, eivät Suomen tutkimuksella estimoituja rajoja. Sveitsin suuri ilmoitusreaktio on peruste tarkastella myös huomattavaa vuotoa, ei peruste käyttää 43 prosenttia Suomen kertoimena.",
+          "Muut henkilöverojen korotukset pienentävät vähimmäisveron lisätuottoa, jos ne hyvitetään samalle henkilölle. Paketin yhteisvaikutusta ei simuloida."
+        ],
+        "condition": "Edellyttää yhteistä verosopimusta"
+      }
+    },
+    "fw-digital": {
+      "who": "Vero peritään suurilta mainosalustoilta, mutta kustannus voi siirtyä mainoksia ostaville yrityksille. Google laskuttaa Itävallan 5 prosentin digiveron erillisenä lisämaksuna mainostajilta.",
+      "addSources": [
+        "google-dst"
+      ],
+      "research": {
+        "society": "Suomalaisten yritysten mainonta voi kallistua. Itävallassa Google lisää koko 5 prosentin verokannan mainostajan laskuun. Mainostajien myöhempi hinnankorotus asiakkaille on eri vaikutus, josta ei ole Suomen arviota."
+      },
+      "incidence": {
+        "channel": "indirect",
+        "allocations": [
+          {
+            "consumption-total": 0.2
+          },
+          {
+            "consumption-total": 0.6
+          }
+        ],
+        "method": "Mainostajilta edelleen Suomen kuluttajille siirtyvä osuus on omissa vertailuissa 20–60 % mallin verorasituksesta. Alustan maksu mainostajalle ja mainostajan hinnankorotus kuluttajalle ovat kaksi eri vaihetta.",
+        "assumptions": "20–60 % on oma herkkyysoletus. Kulutuksen kokonaisjakauma on väljä sijaismittari mainostavien yritysten asiakkaille; lain tarkkaa kuluttajavaikutusta ei ole tutkittu Suomessa.",
+        "outsideResidents": false
+      }
+    },
+    "fw-corporate-minimum": {
+      "unquantifiedNet": true,
+      "addSources": [
+        "he77-minimum"
+      ],
+      "estimate": {
+        "amount": null,
+        "range": null,
+        "display": "Netto avoin",
+        "caption": "20 %:n vähimmäisvero",
+        "basis": "Suomen lisätuottoa ei vahvistettu",
+        "footnote": "Aiempi 195–805 milj. € ei ollut perusteltu.",
+        "money": "Suomen 20 prosentin vähimmäisveron lisätuottoa ei voi johtaa vuoden 2021 emomaamallista. HE 77/2023 arvioi jo säädetyn 15 prosentin veron tuotoksi aluksi noin 20 milj. €/vuosi; se ei ole uuden ehdotuksen tuotto.",
+        "calculation": [
+          "Aiempi 1 500 milj. euron lisäpotentiaali oletti Suomelle veropohjaa, jota ulkomaiset täydennysverot voivat verottaa ensin. Suomen virallinen 15 prosentin verovaje 150–300 milj. € on jo lähtötasoltaan eri suuruinen.",
+          "20 prosentin lisätuotto vaatii konsernikohtaiset efektiiviset veroasteet, kotimaisten täydennysverojen etuoikeudet ja hyvitykset. Näitä ei ole tässä aineistossa. Aiempi 195–805 milj. € poistettiin laskennasta."
+        ]
+      },
+      "research": {
+        "fiscal": "Suomen lisätuotto jää avoimeksi. Jo päätetyn 15 prosentin järjestelmän tuottoa ei lisätä uutena säästönä."
+      }
+    },
+    "sorsa-bank": {
+      "title": "Rahoitusalalle lisävero ja pankeille palkkavero",
+      "who": "Rahoitusalan voitollisilta yrityksiltä ja palkkaveron osalta pankeilta. Osa rasituksesta voi siirtyä omistajille, asiakkaille tai työntekijöille.",
+      "research": {
+        "scope": "Voittovero koskee koko rahoitusalaa, koska 900 miljoonan ankkuri koskee tätä joukkoa. Viiden prosentin palkkavero koskee pankkeja. Vuosi 2022 ei välttämättä kuvaa pysyvää voitto- ja palkkapohjaa.",
+        "fiscal": "Laskelman veropohja kattaa rahoitusalan voitot ja pankkien palkat. Vuoden 2022 pohjaa herkistetään alaspäin; laskelma ei ole nykyisten pankkien rekisteripohjainen veroarvio."
+      },
+      "estimate": {
+        "caption": "oma tuottohaarukka",
+        "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+        "money": "Laskelman veropohja kattaa rahoitusalan voitot ja pankkien palkat. Vuoden 2022 pohjaa herkistetään alaspäin; laskelma ei ole nykyisten pankkien rekisteripohjainen veroarvio.",
+        "calculation": [
+          "Sorsa-säätiön viitteessä rahoitusala maksoi yhteisöveroa noin 900 milj. € vuonna 2022. Tämä on koko rahoitusala, ei vain pankit. Pankkien palkkasumma oli noin 1 400 milj. €.",
+          "Voittoveron lisäys koko rahoitusalalle: 900 /20 % ×3 %-yks. =135 milj. €. Pankkien palkkavero 1 400 ×5 %=70 milj. €. Yhteensä 205 milj. € ennen vähennyksiä.",
+          "Normalisoiduksi pohjaksi oletetaan 50–100 % vuoden 2022 pohjasta. Palkkaveron vähennyskelpoisuuden, käyttäytymisen ja muiden verojen jälkeen säilyy 60–90 %. Hallinto 2–5 milj. €. Netto =205 ×50–100 % ×60–90 % −2–5. Nämä ovat omia herkkyysoletuksia.",
+          "Rajaus on Suomen oma ehdotus, ei Norjan veron kopio. Kaikkia keskinäisiä verovähennyksiä, poikkeuksia tai korkotason vaikutuksia ei ole mallinnettu."
+        ]
+      }
+    },
+    "income": {
+      "addSources": [
+        "income-top-2025"
+      ],
+      "research": {
+        "finding": "Verotettavien tulojen reaktio vaihtelee tulotason ja uudistuksen mukaan. Suomen ylimmälle prosentille on saatu noin 0,5:n jousto, joka ei ole sama asia kuin kaikkien palkansaajien työn tarjontajousto."
+      }
+    },
+    "corporate": {
+      "addSources": [
+        "corporate-us-2024",
+        "corporate-wages-meta"
+      ],
+      "research": {
+        "finding": "Suomen pienyritystutkimuksessa ei havaittu selvää investointikasvua. Yhdysvaltojen laajassa vuoden 2017 uudistuksessa investoinnit kasvoivat. Palkkavaikutusten meta-analyysissa keskimääräinen vaikutus ei erottunut nollasta julkaisuharhan korjauksen jälkeen."
+      }
+    },
+    "cut-4-21": {
+      "addSources": [
+        "helsinki-fees"
+      ],
+      "research": {
+        "finding": "Helsingin maksunpoistossa käynnit lisääntyivät arviolta noin 4,4 %. Tulos tukee maksun vaikutusta käyttöön, mutta yhden kaupungin koe jättää merkittävää epävarmuutta."
+      }
+    }
+  },
+  "sources": {
+    "childincome-reply": {
+      "label": "Dahl & Lochner (2017): The Impact of Family Income on Child Achievement: Reply",
+      "url": "https://doi.org/10.1257/aer.20161329",
+      "kind": "Yhdysvallat · alkuperäisen tutkimuksen korjaus"
+    },
+    "childincome": {
+      "kind": "Yhdysvallat · EITC; käytössä vuoden 2017 korjattu tulkinta"
+    },
+    "schoolmeta": {
+      "label": "Jackson & Mackevicius (2024): What Impacts Can We Expect from School Spending Policy?",
+      "url": "https://doi.org/10.1257/app.20220279",
+      "kind": "Yhdysvallat · vertaisarvioitu meta-analyysi"
+    },
+    "incomeshifting": {
+      "label": "Matikka (2014): Essays on the Behavioral Effects of Income Taxes",
+      "kind": "Suomi · väitöskirja; sisältää Harjun ja Matikan tulonmuuntoa koskevan tutkimuksen"
+    },
+    "cleaning": {
+      "label": "Harju, Jysmä, Koivisto & Kosonen (2026): Do Tax Credits for Cleaning Services Increase Consumption?",
+      "kind": "Ruotsi · käyttöönotto 2007; suomalaiset yritykset verrokkina"
+    },
+    "windrealisation": {
+      "label": "Batz Liñeiro & Müsgens (2023): Evaluating the German onshore wind auction programme"
+    },
+    "protectedareas": {
+      "label": "Santangeli ym. (2023): Mixed effects of a national protected area network on terrestrial and freshwater biodiversity"
+    },
+    "farmrelief": {
+      "label": "Shortall & Barillà (2026): Institutional Responses to Farmer Mental Health Challenges in Europe: A Comparative Analysis of Four Cases"
+    },
+    "wealth-swiss": {
+      "label": "Brülhart, Gruber, Krapf & Schmidheiny (2022): Behavioral Responses to Wealth Taxes",
+      "url": "https://doi.org/10.1257/pol.20200258",
+      "kind": "Sveitsi · vertaisarvioitu veromuutosten tutkimus"
+    },
+    "google-dst": {
+      "label": "Google Ads: Jurisdiction-specific surcharges",
+      "url": "https://support.google.com/google-ads/answer/9750227?hl=en-GB",
+      "kind": "Yhtiön virallinen hinnasto · tarkistettu 28.10.2026"
+    },
+    "he77-minimum": {
+      "label": "HE 77/2023: suurten konsernien vähimmäisverotus",
+      "url": "https://www.finlex.fi/fi/hallituksen-esitykset/2023/77",
+      "kind": "Suomi · hallituksen esityksen vaikutusarvio"
+    },
+    "chetty-saving": {
+      "label": "Chetty ym. (2012): Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "contagion": {
+      "label": "Pichler & Ziebarth (2016): The Pros and Cons of Sick Pay Schemes",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "digital-jrc": {
+      "label": "Alvarez Martinez, Gesualdo & Pycroft (2025): Storm in the Cloud"
+    },
+    "drugmortality": {
+      "label": "Chandra, Flack & Obermeyer (2021): The Health Costs of Cost-Sharing",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "fuel": {
+      "label": "Gillingham & Munk-Nielsen (2016): A Tale of Two Tails",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "insurancedemand": {
+      "label": "Hodula ym. (2023): On the macrofinancial determinants of life and non-life insurance premiums"
+    },
+    "offsets": {
+      "label": "Chandra, Gruber & McKnight (2007): Patient Cost-Sharing and Hospitalization Offsets",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "partyfunding": {
+      "label": "Baumert (2025): Effects of Public Party Funding and Parliamentary Representation in German State Elections"
+    },
+    "schoolmoney": {
+      "label": "Jackson, Johnson & Persico (2015): The Effects of School Spending on Educational and Economic Outcomes",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "wealth-migration-2026": {
+      "label": "Jakobsen ym. (2024): Taxing Top Wealth",
+      "kind": "Tutkimuksen työpaperiversio; viitteen vuosi vastaa linkitettyä julkaisua"
+    },
+    "income-top-2025": {
+      "label": "Varjonen-Ollus (2025): Behavioural Effects of a Top Marginal Income Tax Rate Increase",
+      "url": "https://www.doria.fi/handle/10024/193607",
+      "kind": "Suomi · VATT Working Papers 180, ei vertaisarvioitu"
+    },
+    "corporate-us-2024": {
+      "label": "Chodorow-Reich, Zidar & Zwick (2024): Lessons from the Biggest Business Tax Cut in US History",
+      "url": "https://doi.org/10.1257/jep.38.3.61",
+      "kind": "Yhdysvallat · vertaisarvioitu TCJA-uudistuksen tutkimuskooste"
+    },
+    "corporate-wages-meta": {
+      "label": "Knaisch & Pöschel (2024): Wage response to corporate income taxes",
+      "url": "https://doi.org/10.1111/joes.12557",
+      "kind": "Kansainvälinen · vertaisarvioitu meta-regressio"
+    },
+    "helsinki-fees": {
+      "label": "Haaga, Böckerman, Kortelainen & Tukiainen (2024): Does Abolishing a Copayment Increase Doctor Visits?",
+      "url": "https://doi.org/10.1515/bejeap-2023-0056",
+      "kind": "Suomi · Helsingin maksun poisto, vertaisarvioitu"
+    },
+    "ui-shortening": {
+      "label": "Korpela (2023): Changing the unemployment insurance duration",
+      "url": "https://doria.fi/handle/10024/187918",
+      "kind": "Suomi · VATT Working Papers 158, ei vertaisarvioitu"
+    },
+    "childcuts-mari": {
+      "label": "Mari (2024): Less for more? Cuts to child benefits",
+      "url": "https://doi.org/10.1007/s00148-024-01029-4",
+      "kind": "Alankomaat · rekisterit ja regressioepäjatkuvuus, vertaisarvioitu"
+    },
+    "agri": {
+      "kind": "Suomi · Maataloustieteen Päivien 2018 abstraktikirja, s. 99; skenaariomallin tiivistelmä"
+    },
+    "bankprovisions": {
+      "kind": "Kansainvälinen · julkaisijatiivistelmä tarkistettu; kokoteksti avoinna"
+    },
+    "forestdeduction": {
+      "url": "https://jukuri.luke.fi/server/api/core/bitstreams/e0f82259-d4aa-4c3e-bc39-fc30b46a6f78/content"
+    },
+    "homecare-germany": {
+      "kind": "Saksa · korjattu julkaisu 2022; korjaus 10.1007/s43545-022-00415-7. Pieni maahanmuuttajaäitien otos."
+    },
+    "bank-norway": {
+      "label": "Norjan verohallinto: Financial activity tax",
+      "url": "https://www.skatteetaten.no/en/business-and-organisation/reporting-and-industries/financial-activity-tax/",
+      "kind": "Norja · viranomaisen kuvaus, tarkistettu 28.10.2026"
+    },
+    "privatecare": {
+      "label": "Kosunen, Blomgren & Moustgaard (2026): Yksityisen sairaanhoidon Kela-korvausten kohdentuminen",
+      "url": "https://tietotarjotin.fi/tutkimusblogi/1436825/yksityisen-sairaanhoidon-kela-korvausmenot-ovat-vaihdelleet-suuresti-viime-vuosina-nain-ne-ovat-kohdentuneet-eri-vaestoryhmiin",
+      "kind": "Suomi · tutkijoiden oma yhteenveto rekisteriraportista 17/2026"
+    }
+  },
+  "summaries": {
+    "carefees": {
+      "summary": "Suomen ja Pohjoismaiden tutkimuksissa alemmat asiakasmaksut yleensä lisäsivät hoidon ja lääkkeiden käyttöä. Näyttö ei johdonmukaisesti tue sitä, että pienituloisten suhteellinen käyttöreaktio olisi suurempi. Sama tasamaksu vie kuitenkin pienituloiselta suuremman osan tuloista.",
+      "limit": "Raportti ei ratkaise, oliko vähentynyt käyttö tarpeellista tai miten terveys muuttui. Muiden maiden vakuutustutkimusten terveyshaitat on erotettava tästä tuloksesta."
+    },
+    "loan": {
+      "summary": "VTV arvioi opintolainahyvityksen todennäköisesti nopeuttaneen valmistumista. Vuonna 2014 aloittaneissa tavoiteajassa valmistuneiden osuus oli yliopistoissa noin 5 ja ammattikorkeakouluissa 4,3 prosenttiyksikköä suurempi. Nopeampi valmistuminen voi vahvistaa julkista taloutta.",
+      "limit": "Kaikki uudet aloittajat tulivat uudistuksen piiriin, joten luotettavaa verrokkiryhmää ei ollut. Kohorttiero ei ole puhtaasti hyvityksen syyvaikutus eikä sen poistamisen euromääräinen arvio."
+    },
+    "childincome": {
+      "summary": "Perheiden lisätulo paransi lasten testituloksia yhdysvaltalaisessa EITC-tutkimuksessa. Vuoden 2017 vastauksessa korjattiin koodausvirhe: vaikutusarviot pienenivät noin 32 %, mutta myönteinen suunta ja tilastollinen merkitsevyys säilyivät.",
+      "limit": "Käytetään vain korjattua laadullista johtopäätöstä. Tulosta ei käytetä Suomen lapsilisien tai verotuoton euromääräisenä kertoimena."
+    },
+    "childincome-reply": {
+      "summary": "Kirjoittajat korjaavat vuoden 2012 aineistonkäsittelyvirheen. Arvioitu tulovaikutus pienenee noin kolmanneksen, mutta johtopäätös säilyy.",
+      "limit": "Korjaus koskee samaa EITC-asetelmaa, ei itsenäistä uutta tutkimusta."
+    },
+    "schoolmeta": {
+      "summary": "Koulurahan lisäys paransi keskimäärin oppimistuloksia ja korkeakouluun osallistumista. Vaikutukset olivat pienempiä hyväosaisilla. Rakennus- ja muiden menojen rajavaikutukset olivat keskimäärin samankaltaisia.",
+      "limit": "Yhdysvaltojen uudistusten keskiarvo ei ennusta yksittäisen suomalaisen leikkauksen vaikutusta. Tutkimusten välillä on vaihtelua."
+    },
+    "spending": {
+      "summary": "Yhdysvaltalaisessa pankkiaineistossa kulutus putosi työttömyyskorvauksen ennalta tiedetyn päättymisen kohdalla. Tutkijoiden mukaan nykyhetkeä painottava käyttäytyminen selitti havaintoa paremmin kuin tavallinen rationaalinen likviditeettirajoitemalli.",
+      "limit": "Havainto ei yksin osoita, että syynä olisi säästöjen tai luotonsaannin puute. Suomen muu sosiaaliturva muuttaa nettovaikutusta."
+    },
+    "ui": {
+      "summary": "Suomessa pidempi oikeus ansiosidonnaiseen pidensi työttömyyttä mutta nosti myös seuraavan työn palkkaa ja kestoa. Työnhaun nopeus ja uuden työn laatu voivat siis muuttua eri suuntiin.",
+      "limit": "Tutkittu etuuskauden pidennys ei ole korvaustason leikkaus. Pidennyksen vaikutus ei välttämättä käänny samansuuruisena lyhennyksen vaikutukseksi."
+    },
+    "sitraevaluation": {
+      "summary": "Sitran tilaaman ulkoisen arvioinnin mukaan tarve Sitralle oli kasvanut. Sen vahvuutena oli toimijoiden kokoaminen ja tulevaisuuskeskustelu. Rahoittajarooli jäi epäselväksi ja rahoitus hajautui pieniin hankkeisiin.",
+      "limit": "Strateginen arviointi ei mittaa syyvaikutusta tai euromääräistä tuottoa. Se ei perustele, että pääoman siirto olisi haitaton."
+    },
+    "cleaning": {
+      "summary": "Tutkimus vertasi Ruotsin vuoden 2007 siivouspalveluvähennyksen käyttöönottoa suomalaisiin vertailuyrityksiin. Kysynnän kasvu ja veronkierron väheneminen jäivät vähäisiksi.",
+      "limit": "Tutkimus ei arvioi Suomen vähennyksen muutosta eikä remontteja, hoivapalveluja tai koko kotitalousvähennyksen poistamista."
+    },
+    "carewealth": {
+      "summary": "THL:n SOTE-SISU-laskelmassa 15 000 euron ylittävästä sijoitusvarallisuudesta huomioitiin 15 % vuosituloina. Hoivan maksukertymä kasvoi noin 45 milj. € ja muutos koski 14 % asiakkaista.",
+      "limit": "Oma asunto jäi pois aineistorajoitteen vuoksi. Paperi ei arvioi asunnon sisällyttämistä tai kaikkia VM:n laajempia vaihtoehtoja eikä käyttäytymisvaikutuksia."
+    },
+    "regulatorfees": {
+      "summary": "Australian tarkastus totesi kustannusvastaavuuden ohjeita yleensä noudatetun ja seurannan toimivaksi. Parannettavaa löytyi dokumentoinnissa, riskien käsittelyssä ja raportoinnissa.",
+      "limit": "Luettu viranomaisen yhteenveto. Se ei anna Suomen maksunkorotuksen tuottoa tai osoita suomalaisen viranomaisen toiminnan tehottomuutta."
+    },
+    "tribunalfees": {
+      "summary": "Britanniassa työtuomioistuinmaksujen käyttöönoton jälkeen yksittäiset asiat vähenivät noin 68 % ja usean hakijan asiat noin 75 %. Korkein oikeus katsoi maksujen rajoittavan lainvastaisesti oikeutta saada oikeutta, ja maksut poistettiin.",
+      "limit": "Luettu virallinen yhteenveto, ei koko raporttia. Ennen–jälkeen-muutos ei sellaisenaan erota maksun syyvaikutusta muista samanaikaisista muutoksista eikä kuvaa Suomen kaikkia oikeudenkäyntimaksuja."
+    },
+    "fw-interest-2025": {
+      "summary": "Finnwatchin tapaustutkimuksessa Carunan vuoden 2023 vähennyskelvottomat korot lisäsivät verokulua lähes 9 milj. €. Eleniaa koskeva kuvaus rajoituksen ohittamisesta liittyy vuotta 2019 edeltäneisiin sääntöihin.",
+      "limit": "Yksittäiset yritykset eivät kerro jäljellä olevan veropohjan kokoa. Jo toteutuneita kiristyksiä ei voi laskea uudeksi verotuotoksi."
+    },
+    "kti-funds-2026": {
+      "summary": "KTI:n Q1/2026-taulukon nettovarallisuus on 5 720 milj. €. Edeltävän 12 kuukauden kokonaistuotto oli −0,8 % ja maksettu tuotto-osuus 2,3 %.",
+      "limit": "Jaettu tuotto ei ole sama kuin verotettava vuokratulo tai myyntivoitto. Laskelman 2–6 % on oma normaalivuoden oletus, ei KTI:n veroennuste."
+    },
+    "wealth-swiss": {
+      "summary": "Kantonin varallisuusveron yhden prosenttiyksikön alennus kasvatti ilmoitettua varallisuutta vähintään 43 % kuudessa vuodessa. Muuttoliike selitti noin neljänneksen vaikutuksesta; myös hinnat ja veronkierto vaikuttivat.",
+      "limit": "43 % ei ole muuttajien osuus tai Suomen tuottokerroin. Sveitsin ilmoitusjärjestelmä ja verot poikkeavat ehdotetusta suomalaisesta vähimmäisverosta."
+    },
+    "google-dst": {
+      "summary": "Google lisää Itävallassa näytettyjen mainosten laskuun 5 %:n digiveromaksun. Lakisääteinen verovelvollinen ja laskun maksava mainostaja voivat siis olla eri tahoja.",
+      "limit": "Hinnasto osoittaa tämän alustan lisämaksun. Se ei mittaa Suomen veron kaikkia hintareaktioita tai mainostajien kustannusten siirtymistä kuluttajille."
+    },
+    "he77-minimum": {
+      "summary": "Suomalaiskonsernien 15 prosentin verovajeeksi arvioitiin 150–300 milj. €. Ulkomaiden omat täydennysverot rajaavat Suomen tuoton, jonka alkuarvio oli noin 20 milj. €/vuosi.",
+      "limit": "Koskee jo säädettyä 15 prosentin järjestelmää. Luku ei ole 20 prosentin vähimmäisveron lisätuotto eikä vahvista vuoden 2021 emomaamallin 1,5 miljardin lisäankkuria."
+    },
+    "iab-advertising-2025": {
+      "summary": "IAB/Kantarin vuoden 2025 taulukossa somemainonta on 247,7 ja hakumainonta 249,4 milj. €, yhteensä 497,1 milj. €. Kaikki verkkomainonta on 729 milj. €.",
+      "limit": "Mainosmarkkinan koko ei ole suoraan lain veropohja. Välittäjät, konsernikohtaiset rajat ja ulkomaisten myyjien toiminta pitää erottaa erikseen."
+    },
+    "income-top-2025": {
+      "summary": "Vuoden 2013 ylimmän veroporrastuksen tutkimuksessa ylimmän prosentin verotettavien tulojen joustoksi arvioidaan noin 0,5. Reaktio painottui työnantajaa vaihtaviin ja usean työn tekijöihin.",
+      "limit": "Verotettavan tulon jousto ei ole työn tarjonnan jousto. Ylimmän prosentin tulosta ei käytetä koko väestön tai kaikkien portaiden korotuksen kertoimena."
+    },
+    "corporate-us-2024": {
+      "summary": "Tutkimuskoosteen kolme tarkastelutapaa arvioivat Yhdysvaltojen vuoden 2017 verouudistuksen kasvattaneen aineellisia investointeja 8–14 %. Pitkän aikavälin palkkavaikutukseksi mallinnettiin noin 750 dollaria työntekijää kohti. Verotuotto laski voimakkaasti.",
+      "limit": "Uudistus muutti myös poistoja ja kansainvälistä verotusta. Yhdysvaltojen alennusta ei voi kääntää suoraan Suomen korotusennusteeksi."
+    },
+    "corporate-wages-meta": {
+      "summary": "Yhteisöveron palkkoja pienentävät vaikutukset korostuvat julkaistuissa tuloksissa. Julkaisuharhan korjauksen jälkeen keskimääräinen yhteys ei erottunut tilastollisesti nollasta.",
+      "limit": "Tutkimukset ja veromuutokset vaihtelevat. Nollasta erottumaton keskiarvo ei todista, ettei yksittäisellä uudistuksella olisi palkkavaikutusta."
+    },
+    "helsinki-fees": {
+      "summary": "Helsingin 14 euron lääkärimaksun poisto lisäsi käyntejä arviolta 0,04 vuodessa aikuista kohti eli noin 4,4 %. Kasvu painottui pienituloisiin.",
+      "limit": "Vain yksi kunta poisti maksun; tilastollinen merkitsevyys riippuu klusteroinnista. Korotuksen vaikutus ei välttämättä ole poiston peilikuva."
+    },
+    "ui-shortening": {
+      "summary": "Kahdesta 20 viikon lyhennyksestä lyhyen työhistorian ryhmään kohdistunut ei lyhentänyt työttömyyttä keskimäärin. Laajempi lyhennys vähensi kestoa noin kolme viikkoa.",
+      "limit": "Toteutustapa ja siirtyminen etuuden maksajalta toiselle vaikuttivat. Yksi kestokerroin ei kuvaa kaikkia lyhennyksiä."
+    },
+    "childcuts-mari": {
+      "summary": "Suurten perheiden lapsilisäleikkauksella oli vähän keskimääräisiä vaikutuksia lasten koulutukseen ja mielenterveyteen. Pienituloisten perheiden lapsille syntyi kuitenkin pysyviä koulutushaittoja, ja perheiden köyhyysriski kasvoi.",
+      "limit": "Keskiarvon pieni muutos ei sulje pois haittoja tietyssä ryhmässä. Suomen leikkauksen euromääräistä pitkän aikavälin vaikutusta ei lasketa tästä."
+    },
+    "bankprovisions": {
+      "summary": "Tutkimuksen julkaisijatiivistelmän mukaan pankkien verosäännöt muuttavat luottotappiovarausten kirjaamiskannustimia ja tilinpäätöksen informatiivisuutta.",
+      "limit": "Kokotekstiä ei saatu tarkistukseen. Tiivistelmä ei vahvista Suomen verotuottoarviota, eikä pankin luottotappiovaraus ole teollisuuden konepoisto."
+    },
+    "inheritance": {
+      "summary": "OECD suosittelee laajaa perintöveropohjaa ja verosuunnittelun rajoittamista. Jos esimerkiksi yritysvarallisuutta huojennetaan, ehtojen tulisi olla tiukat, valvottavat ja tarvittaessa euromääräisesti rajatut.",
+      "limit": "Katsaus tunnistaa myös huojennusten mahdollisia perusteita. Se ei laske Suomen tuottoa eikä todista kaikkia perheyritysten maksuvalmiusongelmia olemattomiksi."
+    },
+    "bank-norway": {
+      "summary": "Norja perii rahoitus- ja vakuutustoiminnasta 5 prosentin palkkaveroa ja 25 prosentin voittoveroa. Veron soveltamisessa on toiminnan ja henkilöstön perusteella poikkeuksia.",
+      "limit": "Suomen kortin rajaus ja tuotto ovat oma laskelma. Norjan veroa ei voi kopioida laskemalla kaikki Suomen rahoitusalan voitot pankkien voitoiksi."
+    },
+    "tobacco": {
+      "summary": "IARC:n tutkimuskoosteen mukaan tupakkaverojen nostaminen vähentää tupakointia ja lisää verotuottoa. Nuoret reagoivat hintaan aikuisia enemmän; korkean tulotason maissa pienituloiset reagoivat suurituloisia enemmän.",
+      "limit": "Johtopäätökset koskevat kansainvälistä näyttöä (luku 11, s. 355–356). Ne eivät anna Suomen tietyn korotuksen nettoa. Salakuljetus ja veron välttäminen heikentävät terveys- ja tuottovaikutuksia."
+    }
+  },
+  "additionalInputs": {
+    "fw-wealth-minimum": {
+      "formula": "product",
+      "anchor": 22165,
+      "factors": [
+        [
+          0.01,
+          0.018
+        ],
+        [
+          0.3,
+          0.7
+        ]
+      ],
+      "cost": [
+        3,
+        10
+      ],
+      "roundTo": 5,
+      "assumptions": "Varallisuus 14 300 × 1,55 = 22 165 milj. €. Kahden prosentin vähimmäisverosta hyvitetään nykyisiä henkilöveroja 0,2–1,0 % varallisuudesta. Veropohjasta säilyy 30–70 %. Molemmat vaihteluvälit ovat omia herkkyysoletuksia, eivät Suomen mitattuja rajoja."
+    },
+    "sorsa-bank": {
+      "formula": "product",
+      "anchor": 205,
+      "factors": [
+        [
+          0.5,
+          1
+        ],
+        [
+          0.6,
+          0.9
+        ]
+      ],
+      "cost": [
+        2,
+        5
+      ],
+      "roundTo": 5,
+      "assumptions": "Rahoitusalan 900 milj. € yhteisöveroa /20 % ×3 %-yks. =135; pankkien 1 400 milj. € palkat ×5 %=70. Koko 205 milj. euron ankkurin normalisointi 50–100 %, käyttäytymisen ja muiden verojen jälkeen 60–90 %, kulut 2–5. Ei pelkkien pankkien voittopohja."
+    },
+    "fw-corporate-minimum": {
+      "formula": "unquantified",
+      "reason": "HE 77/2023 contradicts the old anchor; no defensible Finnish 20% marginal yield is identified."
+    }
+  }
+}

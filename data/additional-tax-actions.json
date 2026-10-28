@@ -72,16 +72,18 @@
     "sourceUrl": "https://finnwatch.org/images/reports_pdf/Veropohjan_aukot.pdf",
     "conflicts": [],
     "estimate": {
-      "caption": "oma tuottohaarukka",
-      "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
-      "money": "Tämä on sopimuksen toteutumiseen sidottu skenaario. Nykyisen 15 prosentin veron laskennallinen tuotto vähennetään ensin. Suomen saama osuus ja yritysten reagointi pienentävät jäljelle jäävää summaa.",
+      "caption": "20 %:n vähimmäisvero",
+      "basis": "Suomen lisätuottoa ei vahvistettu",
+      "money": "Suomen 20 prosentin vähimmäisveron lisätuottoa ei voi johtaa vuoden 2021 emomaamallista. HE 77/2023 arvioi jo säädetyn 15 prosentin veron tuotoksi aluksi noin 20 milj. €/vuosi; se ei ole uuden ehdotuksen tuotto.",
       "calculation": [
-        "EU Tax Observatoryn vuoden 2021 laskelmassa Suomi: 15 % → 1 700 milj. €, 21 % → 3 500 milj. €. Oma suoraviivainen väliarvio 20 prosentille: (3 500 − 1 700) × 5/6 = 1 500 milj. € lisäpotentiaalia. Se ei ole uusi mikrosimulaatio.",
-        "Nykyisen verotusoikeuksien jaon, lähdemaiden omien täydennysverojen, poikkeusten ja vanhan aineiston vuoksi kokeilemme, että Suomeen jäisi tästä 20–60 %. Käyttäytymisen ja muiden verovaikutusten jälkeen säilyisi 70–90 %. Nämä ovat omia stressitestejä, eivät tutkimuksen kertoimia.",
-        "Netto = 1 500 × 20–60 % × 70–90 % − 5–15 milj. € hallintoa. Konserniverotuksen ja verotusoikeuksien jaon muita kansainvälisiä uudistuksia ei ole laskettu tähän. Yhteisöveron korotus, digivero ja voitonsiirtopaketti voivat pienentää tämän toimen erillistä lisätuottoa; yhdistelmästä näytetään päällekkäisyysmerkintä.",
-        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+        "Aiempi 1 500 milj. euron lisäpotentiaali oletti Suomelle veropohjaa, jota ulkomaiset täydennysverot voivat verottaa ensin. Suomen virallinen 15 prosentin verovaje 150–300 milj. € on jo lähtötasoltaan eri suuruinen.",
+        "20 prosentin lisätuotto vaatii konsernikohtaiset efektiiviset veroasteet, kotimaisten täydennysverojen etuoikeudet ja hyvitykset. Näitä ei ole tässä aineistossa. Aiempi 195–805 milj. € poistettiin laskennasta."
       ],
-      "condition": "Edellyttää EU-sopimusta"
+      "condition": "Edellyttää EU-sopimusta",
+      "amount": null,
+      "range": null,
+      "display": "Netto avoin",
+      "footnote": "Aiempi 195–805 milj. € ei ollut perusteltu."
     },
     "research": {
       "sources": [
@@ -90,10 +92,11 @@
         "cfc-clifford",
         "cbo-incidence-assumption",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "he77-minimum"
       ],
       "finding": "",
-      "fiscal": "Tämä on sopimuksen toteutumiseen sidottu skenaario. Nykyisen 15 prosentin veron laskennallinen tuotto vähennetään ensin. Suomen saama osuus ja yritysten reagointi pienentävät jäljelle jäävää summaa.",
+      "fiscal": "Suomen lisätuotto jää avoimeksi. Jo päätetyn 15 prosentin järjestelmän tuottoa ei lisätä uutena säästönä.",
       "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
       "status": "context"
     },
@@ -129,7 +132,8 @@
         "id": "fw-digital",
         "note": "Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty."
       }
-    ]
+    ],
+    "unquantifiedNet": true
   },
   {
     "id": "fw-wealth-minimum",
@@ -145,12 +149,12 @@
     "estimate": {
       "caption": "oma tuottohaarukka",
       "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
-      "money": "Tutkimuslaitoksen Suomen laskennallinen lähtökohta on noin 400 miljoonaa. Omassa haarukassa varataan 5–30 % veropohjan ja muiden verotulojen menetyksiin sekä 3–10 miljoonaa hallintoon.",
+      "money": "Omassa laskelmassa nykyiset henkilöverot ja veropohjan muutokset vaihtelevat erikseen. Suomen erittäin varakkaiden tosiasiallista veroastetta ei tunneta.",
       "calculation": [
-        "EU Tax Observatory 2025, taulukko 1: Suomen yli 100 milj. € omaisuuksien 2 % vähimmäisveron lisätuotto noin 400 milj. €. Malli käyttää miljardöörien 14,3 mrd. € varallisuutta, oletettua nykyveroa 0,2 % varallisuudesta ja laajennuskerrointa 1,55. Suomen henkilöveroja ei ole mitattu.",
-        "Oma netto = 400 × 70–95 % − 3–10 milj. €. Varauksessa ovat muuttoliike, arvostus, suunnittelu ja muiden verojen muutokset. Jakobsenin ym. noin 2 %:n muuttovaste ei sellaisenaan ole verotuoton vähennyskerroin. Norjan tuore työpaperi tukee myös pienten lyhyen aikavälin reaalivaikutusten mahdollisuutta.",
-        "Mallina on yhteisesti toteutettava vähimmäisvero. Muut henkilöverot hyvitetään vähimmäisverossa. Siksi niiden korotukset vähentäisivät tämän kortin lisätuottoa siltä osin kuin ne osuvat samoihin ihmisiin; laskuri merkitsee mahdolliset päällekkäisyydet. Verotuksellinen asuinpaikka ja yli 100 miljoonan ryhmän todelliset tulot vaativat jatkovalmistelussa rekisterilaskelman.",
-        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+        "EU Tax Observatoryn miljardöörien 14,3 mrd. € varallisuus × yli 100 miljoonan ryhmän laajennuskerroin 1,55 = 22 165 milj. €. Tämäkin laajennus on oletus.",
+        "Vähimmäisvero 2 % miinus hyvitetyt nykyverot 0,2–1,0 % varallisuudesta. Veropohjasta säilyy 30–70 %, hallintoon 3–10 milj. € vuodessa. Netto = 22 165 × 1,0–1,8 % × 30–70 % − 3–10.",
+        "Nykyverojen ja vuodon haarukat ovat valittuja herkkyysoletuksia, eivät Suomen tutkimuksella estimoituja rajoja. Sveitsin suuri ilmoitusreaktio on peruste tarkastella myös huomattavaa vuotoa, ei peruste käyttää 43 prosenttia Suomen kertoimena.",
+        "Muut henkilöverojen korotukset pienentävät vähimmäisveron lisätuottoa, jos ne hyvitetään samalle henkilölle. Paketin yhteisvaikutusta ei simuloida."
       ],
       "condition": "Edellyttää yhteistä verosopimusta"
     },
@@ -161,12 +165,14 @@
         "wealth-migration-2026",
         "wealth-norway-2026",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "wealth-swiss"
       ],
       "finding": "",
-      "fiscal": "Tutkimuslaitoksen Suomen laskennallinen lähtökohta on noin 400 miljoonaa. Omassa haarukassa varataan 5–30 % veropohjan ja muiden verotulojen menetyksiin sekä 3–10 miljoonaa hallintoon.",
+      "fiscal": "Omassa laskelmassa nykyiset henkilöverot ja veropohjan muutokset vaihtelevat erikseen. Suomen erittäin varakkaiden tosiasiallista veroastetta ei tunneta.",
       "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
-      "status": "context"
+      "status": "context",
+      "society": "Vero kohdistuisi erittäin suuriin varallisuuksiin. Ilmoitettuun varallisuuteen voi tulla huomattavia muutoksia verosuunnittelun, arvostuksen ja maastamuuton vuoksi. Sveitsin tutkimuksessa kokonaisreaktio oli suuri; Pohjoismaiden pieni muuttoreaktio ei sulje tätä pois."
     },
     "incidence": {
       "channel": "cash",
@@ -528,7 +534,7 @@
     "id": "fw-digital",
     "title": "Suurten alustojen verkkomainonnalle 5 % vero",
     "flow": "companies",
-    "who": "Suurilta mainosalustoilta. Osa verosta voi siirtyä suomalaisille mainostajille ja edelleen niiden asiakkaille.",
+    "who": "Vero peritään suurilta mainosalustoilta, mutta kustannus voi siirtyä mainoksia ostaville yrityksille. Google laskuttaa Itävallan 5 prosentin digiveron erillisenä lisämaksuna mainostajilta.",
     "impact": "Suurilta mainosalustoilta.",
     "society": "Veron voisi periä Suomessa näytetystä verkkomainonnasta Itävallan mallin tapaan. Alustat voivat nostaa mainonnan hintaa tai muuttaa sopimuksia. Britanniaa koskevassa tutkimusmallissa digivero pienensi BKT:tä mutta kasvatti kotimaista kulutusta; verotuotto ja talouden kokonaishyöty eivät muutu aina samaan suuntaan.",
     "origin": "finnwatch",
@@ -553,12 +559,14 @@
         "austria-digital",
         "digital-jrc",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "google-dst"
       ],
       "finding": "",
       "fiscal": "Arvio vähentää välittäjille jäävää liikevaihtoa, verorajojen ulkopuolista toimintaa, yritysten reagointia ja muuta verotulomenetystä. Tavallinen mainonnan ALV ei poistu.",
       "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
-      "status": "context"
+      "status": "context",
+      "society": "Suomalaisten yritysten mainonta voi kallistua. Itävallassa Google lisää koko 5 prosentin verokannan mainostajan laskuun. Mainostajien myöhempi hinnankorotus asiakkaille on eri vaikutus, josta ei ole Suomen arviota."
     },
     "incidence": {
       "channel": "indirect",
@@ -570,7 +578,7 @@
           "consumption-total": 0.6
         }
       ],
-      "method": "Suomen kuluttajille siirtyvän hinnan vertailu on 20–60 % mallin verorasituksesta. Loppu jää alustoille, mainostajille tai muille omistajille.",
+      "method": "Mainostajilta edelleen Suomen kuluttajille siirtyvä osuus on omissa vertailuissa 20–60 % mallin verorasituksesta. Alustan maksu mainostajalle ja mainostajan hinnankorotus kuluttajalle ovat kaksi eri vaihetta.",
       "assumptions": "20–60 % on oma herkkyysoletus. Kulutuksen kokonaisjakauma on väljä sijaismittari mainostavien yritysten asiakkaille; lain tarkkaa kuluttajavaikutusta ei ole tutkittu Suomessa.",
       "outsideResidents": false
     },
@@ -583,9 +591,9 @@
   },
   {
     "id": "sorsa-bank",
-    "title": "Pankeille rahoitustoimintavero",
+    "title": "Rahoitusalalle lisävero ja pankeille palkkavero",
     "flow": "companies",
-    "who": "Pankeilta ja niiden omistajilta. Osa kustannuksesta voi siirtyä työntekijöille tai lainojen ja pankkipalvelujen hintoihin.",
+    "who": "Rahoitusalan voitollisilta yrityksiltä ja palkkaveron osalta pankeilta. Osa rasituksesta voi siirtyä omistajille, asiakkaille tai työntekijöille.",
     "impact": "Pankeilta ja niiden omistajilta.",
     "society": "Norjan mallissa rahoitusalaa verotetaan sekä palkoista että tavallista korkeammalla voittoverolla. Pankkiveroja koskeva eurooppalainen tutkimus osoittaa, että osa rasituksesta voi siirtyä lainanottajille, etenkin keskittyneillä markkinoilla.",
     "origin": "sorsa",
@@ -595,12 +603,12 @@
     "estimate": {
       "caption": "oma tuottohaarukka",
       "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
-      "money": "Laskelma huomioi palkkaveron vähentämisen yhteisöverotuksessa ja varaa 5–25 % muuhun verotulon ja veropohjan menetykseen. Se ei oleta koko veron jäävän pankin omistajien maksettavaksi.",
+      "money": "Laskelman veropohja kattaa rahoitusalan voitot ja pankkien palkat. Vuoden 2022 pohjaa herkistetään alaspäin; laskelma ei ole nykyisten pankkien rekisteripohjainen veroarvio.",
       "calculation": [
-        "Sorsa-säätiön viitetiedot: pankkien vuoden 2022 palkkasumma noin 1 400 milj. € ja yhteisövero 900 milj. € silloisella 20 % verokannalla → voittopohja 4 500 milj. €. Suomessa toteutettavan mallin pohjana käytetään näitä euroja ilman kasvuennustetta.",
-        "Oma rajaus: vain pankit; palkkavero 5 % ja voittovero 3 prosenttiyksikköä yleistä veroa korkeampi. Norjan vuonna 2026 käyttämät lisäprosentit ovat samat. Kun yleinen vero oletetaan 18 prosentiksi, palkkaveron vähennys vähentää 21 % sen tuotosta.",
-        "Ennen muuta reagointia 1 400 × 5 % × (1 − 21 %) + 4 500 × 3 % = 190,3 milj. €. Oma netto = 190,3 × 75–95 % − 1–4 milj. €. Tulos on vanhan suomalaisen pohjan skenaario; uusin pankkitulos ja tarkat vähennyssäännöt muuttaisivat sitä.",
-        "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+        "Sorsa-säätiön viitteessä rahoitusala maksoi yhteisöveroa noin 900 milj. € vuonna 2022. Tämä on koko rahoitusala, ei vain pankit. Pankkien palkkasumma oli noin 1 400 milj. €.",
+        "Voittoveron lisäys koko rahoitusalalle: 900 /20 % ×3 %-yks. =135 milj. €. Pankkien palkkavero 1 400 ×5 %=70 milj. €. Yhteensä 205 milj. € ennen vähennyksiä.",
+        "Normalisoiduksi pohjaksi oletetaan 50–100 % vuoden 2022 pohjasta. Palkkaveron vähennyskelpoisuuden, käyttäytymisen ja muiden verojen jälkeen säilyy 60–90 %. Hallinto 2–5 milj. €. Netto =205 ×50–100 % ×60–90 % −2–5. Nämä ovat omia herkkyysoletuksia.",
+        "Rajaus on Suomen oma ehdotus, ei Norjan veron kopio. Kaikkia keskinäisiä verovähennyksiä, poikkeuksia tai korkotason vaikutuksia ei ole mallinnettu."
       ]
     },
     "research": {
@@ -612,8 +620,8 @@
         "statfin-income-incidence"
       ],
       "finding": "",
-      "fiscal": "Laskelma huomioi palkkaveron vähentämisen yhteisöverotuksessa ja varaa 5–25 % muuhun verotulon ja veropohjan menetykseen. Se ei oleta koko veron jäävän pankin omistajien maksettavaksi.",
-      "scope": "Lähdetiedot ja omat parametrit erotetaan laskentakohdassa. Kansainvälisiä tuloksia käytetään vain ilmoitetulla tavalla.",
+      "fiscal": "Laskelman veropohja kattaa rahoitusalan voitot ja pankkien palkat. Vuoden 2022 pohjaa herkistetään alaspäin; laskelma ei ole nykyisten pankkien rekisteripohjainen veroarvio.",
+      "scope": "Voittovero koskee koko rahoitusalaa, koska 900 miljoonan ankkuri koskee tätä joukkoa. Viiden prosentin palkkavero koskee pankkeja. Vuosi 2022 ei välttämättä kuvaa pysyvää voitto- ja palkkapohjaa.",
       "status": "context"
     },
     "incidence": {
@@ -655,7 +663,7 @@
       "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
       "money": "Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.",
       "calculation": [
-        "Finérin vuoden 2024 koosteessa kymmenen prosenttiyksikön korotus miljoonaperintöihin tuotti noin 200 milj. € myös pienperintöjen alarajaa korottavassa esimerkissä. Käytämme sitä vain suuruusluokka-ankkurina. Pienten perintöjen nykyisiä alarajoja ei muuteta tässä kortissa.",
+        "Finér arvioi vuoden 2024 blogissa kymmenen prosenttiyksikön korotuksen miljoonaperintöihin tuovan noin 200 milj. € myös pienperintöjen alarajaa nostettaessa. Laskentamenetelmää ei julkaista, joten tämä on ehdotuksen esittäjän suuruusluokka-arvio. Pienten perintöjen nykyisiä alarajoja ei muuteta tässä kortissa.",
         "Oma vuosituoton vertailu = 200 × 50–85 % − 1–5 milj. €. Kertoimet kattavat myös vanhan esimerkin ja uuden rajauksen eron; ne eivät ole tutkimuksesta estimoituja. Tarkan tuloksen laskemiseen tarvitaan perintöjen jakauma miljoonan ylittävästä osasta ja nykyiset huojennukset.",
         "OECD:n perintöverokatsaus tukee laajaa pohjaa, progression arviointia ja suunnittelun rajaamista. Yleisen perintöveron korotuksen ja yrityshuojennuksen poiston kanssa voi syntyä päällekkäisyyttä. Ne voi valita samaan pakettiin, mutta yhteistä veropohjaa ei ole simuloitu.",
         "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."

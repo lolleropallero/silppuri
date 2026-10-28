@@ -49,10 +49,10 @@ def extend_finnwatch(model):
     amount = [min(tax), max(tax)]
     amount_text = '–'.join(f'{n:.1f}'.replace('.', ',') for n in amount)
     add('fw-wrappers', 'cash', alternatives(amount, inputs['wrappers']['profiles']),
-        'Vuoden 2031 lisävero jaetaan kahdella vaihtoehdolla: vakuutussäästöjen tai pörssiosakkeiden omistuksen mukaan. Tilastokeskuksen vuoden 2023 aineistossa ylimmälle tulokymmenykselle kuuluu näistä noin 47 % ja 69 %. Molemmat ovat sijaisjakaumia; vakuutuskuorten ja osakesäästötilien yhteistä jakaumaa ei tunneta.',
+        'Vuoden 2031 lisävero jaetaan kahdella vaihtoehdolla: vakuutussäästöjen tai pörssiosakkeiden omistuksen mukaan. Omistusjakaumat muunnetaan vuoden 2023 kotitalouskymmenyksistä vuoden 2024 henkilökymmenyksiksi kumulatiivisen kotitalousjärjestyksen avulla. Molemmat ovat sijaisjakaumia; vakuutuskuorten ja osakesäästötilien yhteistä jakaumaa ei tunneta.',
         [
           f'Kotitalouksien lisävero on {amount_text} milj. € vuonna 2031. Se on saman sijoituskannan verotuspolkujen erotus ennen julkisia hallintokuluja. Nostojen verot, hankintameno ja sijoitusten siirtyminen lasketaan kuten tuottoarviossa. Hallinnon 2–5 miljoonaa ei vähennä sijoittajan verolaskua.',
-          'Tilastokeskuksen taulukko 151u: säästö- ja sijoitusvakuutukset (vaksak) sekä pörssiosakkeet (porsosa). Kunkin tuloryhmän keskimääräinen omistus kerrotaan ryhmän kotitalousmäärällä ja jaetaan kaikkien ryhmien omistusten summalla. Ryhmät on järjestetty tulojen, ei varallisuuden mukaan.',
+          'Tilastokeskuksen taulukko 151u: säästö- ja sijoitusvakuutukset (vaksak) sekä pörssiosakkeet (porsosa). Kunkin lähderyhmän keskimääräinen omistus kerrotaan kotitalousmäärällä. Ryhmät muunnetaan henkilökymmenyksiksi olettaen, että omistus kotitaloutta kohti on vakio lähderyhmän sisällä. Ryhmät on järjestetty tulojen, ei varallisuuden mukaan.',
           'Oma oletus: verollinen tuotto ja sopimusten vaihtaminen jakautuvat samassa suhteessa kuin omistukset. Haarukka yhdistää pienemmän ja suuremman verolaskelman molempiin jakaumiin. Emme oleta, että ulkomaisen vakuutuksen suomalainen omistaja olisi ulkomainen kotitalous.'
         ],
         'Osa rasituksesta on veron aikaistumista ja sijoitusvarojen kasvun hidastumista. Palkki suhteuttaa sen vuoden tuloihin; se ei ennusta saman suuruista kulutuksen laskua eikä pysyvää vuosittaista menetystä. Vuoden 2031 laskelma säilyy myös Myös myöhemmät -valinnassa.')
@@ -61,7 +61,7 @@ def extend_finnwatch(model):
     tax = [p['wholeReliefTaxExpenditureMillion'] * share * (1 - erosion)
            for share, erosion in product(p['affectedReliefShare'], p['behaviouralErosion'])]
     add('tax-succession', 'cash', alternatives([min(tax), max(tax)], inputs['succession']['profiles']),
-        'Yritysperintöjen lisävero kohdistetaan vaihtoehtoisesti listaamattomien osakkeiden tai kaiken rahoitusvarallisuuden omistajille. Ylimmän tulokymmenyksen osuudet ovat noin 89 % ja 51 %. Näin vaikutus painottuu suurituloisiin, mutta perillistä ei oleteta automaattisesti yhtä suurituloiseksi kuin nykyistä yritysomistajaa.',
+        'Yritysperintöjen lisävero kohdistetaan vaihtoehtoisesti listaamattomien osakkeiden tai kaiken rahoitusvarallisuuden omistajille. Jakaumat on muunnettu henkilökymmenyksiksi kotitalousjärjestyksen perusteella. Näin vaikutus painottuu suurituloisiin, mutta perillistä ei oleteta automaattisesti yhtä suurituloiseksi kuin nykyistä yritysomistajaa.',
         [
           'Lisäveron oletus on 240 milj. € × 20–50 % × (1 − 15–35 %) = 31,2–102 milj. €/vuosi. Tässä 15–35 % tulkitaan suunnittelun vähentämäksi kotitalouksien lisäveroksi. Julkisia 1–3 miljoonan hallintokuluja ei vähennetä perillisten veroista. OBR:n Britannian arvio tukee käyttäytymisen huomioimista, mutta Suomen prosentit ovat omia herkkyysoletuksia.',
           'Jakaumat: Tilastokeskus 151u, muut osakkeet (muosa) ja rahoitusvarat (finan), 2023. Käytämme ryhmän keskimääräistä omistusta × kotitalousmäärää. Rahoitusvarallisuus on väljempi vertailu myös yhtiön passiivisille sijoitusvaroille. Neljä vaihtoehtoa yhdistävät kaksi verosummaa ja kaksi jakaumaa.',

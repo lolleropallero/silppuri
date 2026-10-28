@@ -1,8 +1,8 @@
 {
-  "asOf": "2026-10-27",
-  "reviewed": 257,
-  "sources": 143,
-  "withExternalResearch": 256,
+  "asOf": "2026-10-28",
+  "reviewed": 254,
+  "sources": 152,
+  "withExternalResearch": 253,
   "vmOnly": 1,
   "contextOnly": 21,
   "actions": [
@@ -367,7 +367,7 @@
     },
     {
       "id": "cut-2-32",
-      "title": "Oppivelvollisuus takaisin 16 ikävuoteen",
+      "title": "Oppivelvollisuus peruskoulun loppuun",
       "status": "mechanism",
       "sources": [
         "secondary"
@@ -652,7 +652,9 @@
       "status": "mechanism",
       "sources": [
         "childbenefit",
-        "childincome"
+        "childincome",
+        "childincome-reply",
+        "childcuts-mari"
       ],
       "unpriced": false
     },
@@ -662,7 +664,8 @@
       "status": "mechanism",
       "sources": [
         "childbenefit",
-        "childincome"
+        "childincome",
+        "childincome-reply"
       ],
       "unpriced": false
     },
@@ -672,7 +675,8 @@
       "status": "mechanism",
       "sources": [
         "childbenefit",
-        "childincome"
+        "childincome",
+        "childincome-reply"
       ],
       "unpriced": false
     },
@@ -682,7 +686,9 @@
       "status": "mechanism",
       "sources": [
         "childbenefit",
-        "childincome"
+        "childincome",
+        "childincome-reply",
+        "childcuts-mari"
       ],
       "unpriced": false
     },
@@ -692,7 +698,8 @@
       "status": "mechanism",
       "sources": [
         "childbenefit",
-        "childincome"
+        "childincome",
+        "childincome-reply"
       ],
       "unpriced": false
     },
@@ -738,7 +745,8 @@
       "status": "mechanism",
       "sources": [
         "ui",
-        "spending"
+        "spending",
+        "ui-shortening"
       ],
       "unpriced": false
     },
@@ -1147,7 +1155,6 @@
       "title": "Alle 23-vuotiaiden hoitotakuu 14 päivästä 3 kuukauteen",
       "status": "limited",
       "sources": [
-        "carefees",
         "psychotherapy"
       ],
       "unpriced": false
@@ -1157,7 +1164,6 @@
       "title": "Nuorten terapiatakuu pois",
       "status": "limited",
       "sources": [
-        "carefees",
         "psychotherapy"
       ],
       "unpriced": false
@@ -1222,7 +1228,8 @@
       "status": "mechanism",
       "sources": [
         "carefees",
-        "deductible"
+        "deductible",
+        "helsinki-fees"
       ],
       "unpriced": false
     },
@@ -1438,24 +1445,6 @@
       "status": "limited",
       "sources": [
         "debtburden"
-      ],
-      "unpriced": false
-    },
-    {
-      "id": "cut-5-40",
-      "title": "Poliisin työnohjausta ja palkanlisiä karsitaan",
-      "status": "mechanism",
-      "sources": [
-        "police"
-      ],
-      "unpriced": false
-    },
-    {
-      "id": "cut-5-42",
-      "title": "Poliiseja asteittain 400 vähemmän",
-      "status": "mechanism",
-      "sources": [
-        "police"
       ],
       "unpriced": false
     },
@@ -1811,7 +1800,8 @@
       "status": "mechanism",
       "sources": [
         "incomeelastic",
-        "mpc"
+        "mpc",
+        "income-top-2025"
       ],
       "unpriced": false
     },
@@ -1931,7 +1921,9 @@
       "title": "Yhteisöveroa +1 prosenttiyksikkö",
       "status": "mechanism",
       "sources": [
-        "corporatetax"
+        "corporatetax",
+        "corporate-us-2024",
+        "corporate-wages-meta"
       ],
       "unpriced": false
     },
@@ -2122,7 +2114,7 @@
     },
     {
       "id": "tax-van",
-      "title": "Paketti- ja kuorma-autojen käyttövoimaveroa ylös",
+      "title": "Pakettiautojen ja kevyiden kuorma-autojen verotukea pois",
       "status": "mechanism",
       "sources": [
         "fuel"
@@ -2222,15 +2214,6 @@
       "unpriced": false
     },
     {
-      "id": "tax-car-combustion",
-      "title": "Autoveroa +1 prosenttiyksikkö vain polttomoottoriautoille",
-      "status": "mechanism",
-      "sources": [
-        "cartax"
-      ],
-      "unpriced": false
-    },
-    {
       "id": "tax-land-values",
       "title": "Tonttien verotusarvot ajan tasalle",
       "status": "mechanism",
@@ -2259,7 +2242,7 @@
         "statfin-wealth-incidence",
         "statfin-income-incidence"
       ],
-      "unpriced": false
+      "unpriced": true
     },
     {
       "id": "fw-dividend-withholding",
@@ -2315,9 +2298,10 @@
         "cfc-clifford",
         "cbo-incidence-assumption",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "he77-minimum"
       ],
-      "unpriced": false
+      "unpriced": true
     },
     {
       "id": "fw-wealth-minimum",
@@ -2329,7 +2313,8 @@
         "wealth-migration-2026",
         "wealth-norway-2026",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "wealth-swiss"
       ],
       "unpriced": false
     },
@@ -2426,13 +2411,14 @@
         "austria-digital",
         "digital-jrc",
         "statfin-wealth-incidence",
-        "statfin-income-incidence"
+        "statfin-income-incidence",
+        "google-dst"
       ],
       "unpriced": false
     },
     {
       "id": "sorsa-bank",
-      "title": "Pankeille rahoitustoimintavero",
+      "title": "Rahoitusalalle lisävero ja pankeille palkkavero",
       "status": "context",
       "sources": [
         "sorsa-ten",

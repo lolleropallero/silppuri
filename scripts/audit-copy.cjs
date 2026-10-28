@@ -49,7 +49,7 @@ const render=source.slice(source.indexOf('  function renderImpact'),source.index
 assert.ok(!render.includes('d.detail'),'Original descriptions must not duplicate the curated effect in Sources');
 assert.ok(!render.includes('sp-impact-reference'),'Citations belong in the linked source list');
 const vat=vm.runInContext("effectFor(data.find(d=>d.id==='vat'))",ctx);
-assert.ok(vat.money.includes('3,87')&&vat.money.includes('2,95'));
+assert.ok(vat.money.includes('3,87')&&vat.money.includes('2,32'));
 assert.ok(!vat.society.includes('miljardi'));
 const municipalities=vm.runInContext("effectFor(data.find(d=>d.id==='cut-7-20'))",ctx);
 assert.ok(!/ministeriö/i.test([municipalities.who,municipalities.society,municipalities.money,municipalities.scope].join(' ')));

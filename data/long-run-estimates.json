@@ -1,10 +1,58 @@
 {
-  "cut-3-44": {"million":450,"when":"vuonna 2100","precision":"noin","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 44"},
-  "cut-3-45": {"million":50,"when":"vuonna 2100","precision":"noin","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 45"},
-  "cut-3-46": {"million":250,"when":"vuonna 2100","precision":"noin","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 46"},
-  "cut-3-47": {"million":450,"when":"vuonna 2100","precision":"noin","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 47"},
-  "cut-3-48": {"million":100,"when":"vuonna 2100","precision":"yli","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 48"},
-  "cut-3-52": {"million":300,"when":"2060-luvulle tultaessa","precision":"noin","source":"VM 2026:44, s. 305–306 ja Excel-liite: Sosiaaliturvaetuudet, rivi 52","basis":"Euroarvio on suhteutettu vuoden 2027 BKT:hen, ei 2060-luvun nimelliseen euroarvoon."},
-  "cut-3-56": {"million":40,"when":"2060-luvulla","precision":"noin","source":"VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 56"},
-  "cut-3-57": {"million":1400,"when":"2090-luvulta lähtien","precision":"noin","source":"VM 2026:44, s. 323 ja Excel-liite: Sosiaaliturvaetuudet, rivi 57","basis":"Euroarvio on suhteutettu vuoden 2027 BKT:hen. Se ei ole 2090-luvun nimellinen euromäärä."}
+  "cut-3-44": {
+    "million": 450,
+    "when": "vuonna 2100",
+    "precision": "noin",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 44",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen (VM 2026:44, s. 290), ei vuoden 2100 nimelliseen euromäärään. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-45": {
+    "million": 50,
+    "when": "vuonna 2100",
+    "precision": "noin",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 45",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen (VM 2026:44, s. 290), ei vuoden 2100 nimelliseen euromäärään. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-46": {
+    "million": 250,
+    "when": "vuonna 2100",
+    "precision": "noin",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 46",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen (VM 2026:44, s. 290), ei vuoden 2100 nimelliseen euromäärään. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-47": {
+    "million": 450,
+    "when": "vuonna 2100",
+    "precision": "noin",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 47",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen (VM 2026:44, s. 290), ei vuoden 2100 nimelliseen euromäärään. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-48": {
+    "million": 100,
+    "when": "vuonna 2100",
+    "precision": "yli",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 48",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen (VM 2026:44, s. 290), ei vuoden 2100 nimelliseen euromäärään. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-52": {
+    "million": 300,
+    "when": "2060-luvulle tultaessa",
+    "precision": "noin",
+    "source": "VM 2026:44, s. 305–306 ja Excel-liite: Sosiaaliturvaetuudet, rivi 52",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen, ei 2060-luvun nimelliseen euroarvoon."
+  },
+  "cut-3-56": {
+    "million": 40,
+    "when": "2060-luvulla",
+    "precision": "noin",
+    "source": "VM 2026:44, Excel-liite: Sosiaaliturvaetuudet, rivi 56",
+    "basis": "2060-luvun suuruusluokka-arvio; hintaperustetta ei ole Excel-rivillä yksilöity. Lukua ei yhdistetä 2031–2035 summiin."
+  },
+  "cut-3-57": {
+    "million": 1400,
+    "when": "2090-luvulta lähtien",
+    "precision": "noin",
+    "source": "VM 2026:44, s. 323 ja Excel-liite: Sosiaaliturvaetuudet, rivi 57",
+    "basis": "Euroarvio on suhteutettu vuoden 2027 BKT:hen. Se ei ole 2090-luvun nimellinen euromäärä."
+  }
 }

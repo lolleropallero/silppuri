@@ -1873,8 +1873,9 @@
   {
     "key": "5-40",
     "title": "Poliisin toiminnan kehittäminen",
-    "status": "included",
-    "maxReportedMillion": 20
+    "status": "below-20m-net",
+    "maxReportedMillion": 20,
+    "maxNetMillion": 9.94
   },
   {
     "key": "5-41",
@@ -1885,8 +1886,9 @@
   {
     "key": "5-42",
     "title": "Poliisien lukumäärän vähentäminen",
-    "status": "included",
-    "maxReportedMillion": 35.2
+    "status": "below-20m-net",
+    "maxReportedMillion": 35.2,
+    "maxNetMillion": 17.494400000000002
   },
   {
     "key": "5-43",

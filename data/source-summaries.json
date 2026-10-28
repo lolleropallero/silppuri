@@ -16,12 +16,12 @@
     "limit": "Tutkimus tarkastelee paikallisia eroja tuessa. Koko asumistukijärjestelmän pitkäaikainen vaikutus asuntotarjontaan ja vuokriin voi olla erilainen."
   },
   "ui": {
-    "summary": "Suomalaisessa rekisteriaineistossa pidempi oikeus ansiosidonnaiseen työttömyysturvaan pidensi työttömyyttä. Etuuden kesto vaikuttaa siis työnhaun ajoitukseen, eikä etuusmenon muutos ole pelkkä mekaaninen laskutoimitus.",
-    "limit": "Tutkittu muutos koski etuuskauden pituutta. Tulosta ei voi sellaisenaan käyttää korvaustason leikkauksen tai koko etuuden poistamisen kertoimena."
+    "summary": "Suomessa pidempi oikeus ansiosidonnaiseen pidensi työttömyyttä mutta nosti myös seuraavan työn palkkaa ja kestoa. Työnhaun nopeus ja uuden työn laatu voivat siis muuttua eri suuntiin.",
+    "limit": "Tutkittu etuuskauden pidennys ei ole korvaustason leikkaus. Pidennyksen vaikutus ei välttämättä käänny samansuuruisena lyhennyksen vaikutukseksi."
   },
   "spending": {
-    "summary": "Yhdysvaltalaisesta pankkiaineistosta näkyi, että työttömien kulutus laski jyrkästi työttömyyskorvauksen loppuessa, vaikka päättymispäivä oli tiedossa. Moni ei pystynyt tasaamaan menetystä säästöillä tai velalla.",
-    "limit": "Tulos tukee kulutusriskin huomioimista, mutta Suomen toimeentulotuki ja muut etuudet muuttavat nettomenetystä."
+    "summary": "Yhdysvaltalaisessa pankkiaineistossa kulutus putosi työttömyyskorvauksen ennalta tiedetyn päättymisen kohdalla. Tutkijoiden mukaan nykyhetkeä painottava käyttäytyminen selitti havaintoa paremmin kuin tavallinen rationaalinen likviditeettirajoitemalli.",
+    "limit": "Havainto ei yksin osoita, että syynä olisi säästöjen tai luotonsaannin puute. Suomen muu sosiaaliturva muuttaa nettovaikutusta."
   },
   "mpc": {
     "summary": "Norjalaiset lottovoittajat käyttivät osan voitostaan kulutukseen. Vähän helposti käytettäviä säästöjä omistavat kuluttivat suuremman osuuden lisärahasta kuin suuret säästöpuskurit omistavat.",
@@ -68,8 +68,8 @@
     "limit": "Tutkimus seuraa pitkään jatkuneita rahoitusmuutoksia. Suomen koululeikkauksen vaikutusta ei voi laskea suoraan näillä kertoimilla."
   },
   "schoolmeta": {
-    "summary": "Koulurahoituksen syyvaikutuksia tutkineiden yhdysvaltalaisten tutkimusten koosteessa lisäraha paransi keskimäärin oppimistuloksia ja koulutukseen osallistumista. Vaikutusten koko vaihteli huomattavasti tutkimusten ja rahoituskohteiden välillä.",
-    "limit": "Kooste tukee rahoituksen merkitystä, mutta ei osoita kaikkia koulutusmenoja yhtä vaikuttaviksi."
+    "summary": "Koulurahan lisäys paransi keskimäärin oppimistuloksia ja korkeakouluun osallistumista. Vaikutukset olivat pienempiä hyväosaisilla. Rakennus- ja muiden menojen rajavaikutukset olivat keskimäärin samankaltaisia.",
+    "limit": "Yhdysvaltojen uudistusten keskiarvo ei ennusta yksittäisen suomalaisen leikkauksen vaikutusta. Tutkimusten välillä on vaihtelua."
   },
   "instruction": {
     "summary": "Kansainvälisessä oppilasaineistossa enemmän opetustunteja saaneissa aineissa saavutettiin parempia oppimistuloksia. Hyöty vaihteli koulujärjestelmän ja oppilaiden taustan mukaan.",
@@ -88,8 +88,8 @@
     "limit": "Tutkimus koski 42–55-vuotiaita ja vertasi osallistujia samankaltaisiin verrokkeihin. Tulos ei kata kaikkea aikuiskoulutusta tai Suomen aikuiskoulutustukea."
   },
   "loan": {
-    "summary": "VTV:n tarkastuksessa opintotukiuudistukset olivat siirtäneet opiskelijoiden rahoitusta aiempaa enemmän lainan varaan. Uudistusten erillistä vaikutusta opintojen nopeutumiseen oli vaikea erottaa muista samaan aikaan tapahtuneista muutoksista.",
-    "limit": "Tarkastus ei osoita, kuinka paljon opintolainahyvityksen poistaminen hidastaisi valmistumista tai vähentäisi verotuloja."
+    "summary": "VTV arvioi opintolainahyvityksen todennäköisesti nopeuttaneen valmistumista. Vuonna 2014 aloittaneissa tavoiteajassa valmistuneiden osuus oli yliopistoissa noin 5 ja ammattikorkeakouluissa 4,3 prosenttiyksikköä suurempi. Nopeampi valmistuminen voi vahvistaa julkista taloutta.",
+    "limit": "Kaikki uudet aloittajat tulivat uudistuksen piiriin, joten luotettavaa verrokkiryhmää ei ollut. Kohorttiero ei ole puhtaasti hyvityksen syyvaikutus eikä sen poistamisen euromääräinen arvio."
   },
   "teacher": {
     "summary": "Varhaiskasvatusta koskevassa tutkimuskoosteessa henkilöstön korkeampi koulutus oli yhteydessä laadukkaampaan toimintaan ja vuorovaikutukseen lasten kanssa. Pelkkä henkilöstön määrä ei siis kuvaa kaikkea laatua.",
@@ -100,16 +100,16 @@
     "limit": "Tutkimus koskee Kanadan verojen kautta maksettavia tukia. Se ei suoraan arvioi Suomen lapsilisää eikä sen poistamisen nettovaikutusta."
   },
   "childincome": {
-    "summary": "Yhdysvalloissa pienituloisten perheiden tulojen kasvu paransi lasten matematiikan ja lukemisen testituloksia. Tutkimus hyödynsi työtuloon sidotun verotuen muutoksia erottaakseen tulovaikutusta muista perheiden eroista.",
-    "limit": "Tuloksia ei voi siirtää sellaisinaan Suomen etuusjärjestelmään, eikä tutkimus laske lapsilisäleikkauksen vaikutusta tuleviin verotuloihin."
+    "summary": "Perheiden lisätulo paransi lasten testituloksia yhdysvaltalaisessa EITC-tutkimuksessa. Vuoden 2017 vastauksessa korjattiin koodausvirhe: vaikutusarviot pienenivät noin 32 %, mutta myönteinen suunta ja tilastollinen merkitsevyys säilyivät.",
+    "limit": "Käytetään vain korjattua laadullista johtopäätöstä. Tulosta ei käytetä Suomen lapsilisien tai verotuoton euromääräisenä kertoimena."
   },
   "carefees": {
-    "summary": "Terveydenhuollon maksut vähentävät palvelujen käyttöä, mutta vähennys ei kohdistu vain tarpeettomiin käynteihin. Pienituloiset ja paljon sairastavat joutuvat muita helpommin tinkimään tarvitsemastaan hoidosta.",
-    "limit": "Katsauksessa maksujärjestelmät ja tutkimusasetelmat vaihtelevat. Se ei anna yhdelle suomalaiselle maksunkorotukselle yleispätevää nettosäästöprosenttia."
+    "summary": "Suomen ja Pohjoismaiden tutkimuksissa alemmat asiakasmaksut yleensä lisäsivät hoidon ja lääkkeiden käyttöä. Näyttö ei johdonmukaisesti tue sitä, että pienituloisten suhteellinen käyttöreaktio olisi suurempi. Sama tasamaksu vie kuitenkin pienituloiselta suuremman osan tuloista.",
+    "limit": "Raportti ei ratkaise, oliko vähentynyt käyttö tarpeellista tai miten terveys muuttui. Muiden maiden vakuutustutkimusten terveyshaitat on erotettava tästä tuloksesta."
   },
   "carewealth": {
-    "summary": "Suomalaisessa laskentamallissa varallisuuteen perustuvat hoivamaksut siirtäisivät maksurasitusta etenkin varakkaammille palvelunkäyttäjille. Omistusasunnon suoja ja muut rajaukset muuttavat ratkaisevasti sekä maksajia että kertymää.",
-    "limit": "Kyse on maksusääntöjen simuloinnista. Malli ei mittaa perheiden varallisuusjärjestelyjä, hoitoon hakeutumista tai maksujen kaikkia käyttäytymisvaikutuksia."
+    "summary": "THL:n SOTE-SISU-laskelmassa 15 000 euron ylittävästä sijoitusvarallisuudesta huomioitiin 15 % vuosituloina. Hoivan maksukertymä kasvoi noin 45 milj. € ja muutos koski 14 % asiakkaista.",
+    "limit": "Oma asunto jäi pois aineistorajoitteen vuoksi. Paperi ei arvioi asunnon sisällyttämistä tai kaikkia VM:n laajempia vaihtoehtoja eikä käyttäytymisvaikutuksia."
   },
   "drugmortality": {
     "summary": "Yhdysvaltojen Medicare-järjestelmässä lääkkeiden omavastuun kasvu vähensi myös tärkeiden lääkkeiden käyttöä ja lisäsi kuolleisuutta. Potilaat eivät siis karsineet vain vähähyötyisiä lääkkeitä.",
@@ -164,8 +164,8 @@
     "limit": "Tutkimus koskee asuntomarkkinoita. Yritysjärjestelyjen, kiinteistöjen ja arvopaperien veropohjat voivat reagoida eri tavalla."
   },
   "inheritance": {
-    "summary": "OECD:n katsauksen mukaan perintöveron poikkeukset ja huojennukset hyödyttävät usein suuria varallisuuksia ja helpottavat verosuunnittelua. Yritysvarallisuuden laajojen huojennusten välttämättömyydestä yritysten jatkuvuudelle on rajallisesti näyttöä.",
-    "limit": "Katsaus vertailee maiden järjestelmiä. Se ei laske Suomen yksittäisen huojennuksen poiston verotuottoa tai kaikkien perheyritysten reaktiota."
+    "summary": "OECD suosittelee laajaa perintöveropohjaa ja verosuunnittelun rajoittamista. Jos esimerkiksi yritysvarallisuutta huojennetaan, ehtojen tulisi olla tiukat, valvottavat ja tarvittaessa euromääräisesti rajatut.",
+    "limit": "Katsaus tunnistaa myös huojennusten mahdollisia perusteita. Se ei laske Suomen tuottoa eikä todista kaikkia perheyritysten maksuvalmiusongelmia olemattomiksi."
   },
   "land": {
     "summary": "Tanskassa pysyvät maapohjan verotuksen erot näkyivät kiinteistöjen hinnoissa: korkeampi tuleva vero alensi ostajan maksamaa hintaa. Rasitus kohdistui näin myös veromuutoksen hetkellä maan omistaneisiin.",
@@ -244,8 +244,8 @@
     "limit": "Tuen piiriin jääneet ja siitä poistuneet voivat erota toisistaan. Suomen jälkihuollon poistamiselle ei ole tästä suoraa kustannuskerrointa."
   },
   "cleaning": {
-    "summary": "Suomen ja Ruotsin siivouspalvelujen verovähennysten muutokset eivät tutkimuksessa lisänneet kysyntää tai vähentäneet veronkiertoa selvästi. Vähennys saattoi siis tukea paljon ostoja, jotka olisi tehty muutenkin.",
-    "limit": "Tulos koskee tutkittuja siivouspalveluja ja muutoksia. Se ei kata kaikkia remontteja, hoivapalveluja tai koko kotitalousvähennyksen poistamista."
+    "summary": "Tutkimus vertasi Ruotsin vuoden 2007 siivouspalveluvähennyksen käyttöönottoa suomalaisiin vertailuyrityksiin. Kysynnän kasvu ja veronkierron väheneminen jäivät vähäisiksi.",
+    "limit": "Tutkimus ei arvioi Suomen vähennyksen muutosta eikä remontteja, hoivapalveluja tai koko kotitalousvähennyksen poistamista."
   },
   "schoolmeals": {
     "summary": "Yhdysvaltalaisten tutkimusten koosteessa maksuton kouluruoka kaikille lisäsi kouluruokailuun osallistumista. Oppimista, terveyttä ja muita seurauksia koskeva näyttö oli suppeampaa ja vaihtelevampaa.",
@@ -292,8 +292,8 @@
     "limit": "Hintareaktiot riippuvat markkinoista ja yrityksistä. Tutkimus ei tarkoita, että kaikki Suomen ALV-korotukset siirtyisivät hintoihin täysimääräisinä."
   },
   "tobacco": {
-    "summary": "Laaja tutkimuskooste osoittaa, että tupakan hinnan nousu vähentää tupakointia. Nuoret ja pienituloiset reagoivat usein muita enemmän. Tupakointia jatkavilla veronkorotus kuitenkin kasvattaa rahamenoja.",
-    "limit": "Vaikutuksen koko riippuu muun muassa lähtöhinnasta ja vaihtoehtoisista hankintakanavista. Verotulo ei kasva suoraviivaisesti, kun kulutus vähenee."
+    "summary": "IARC:n tutkimuskoosteen mukaan tupakkaverojen nostaminen vähentää tupakointia ja lisää verotuottoa. Nuoret reagoivat hintaan aikuisia enemmän; korkean tulotason maissa pienituloiset reagoivat suurituloisia enemmän.",
+    "limit": "Johtopäätökset koskevat kansainvälistä näyttöä (luku 11, s. 355–356). Ne eivät anna Suomen tietyn korotuksen nettoa. Salakuljetus ja veron välttäminen heikentävät terveys- ja tuottovaikutuksia."
   },
   "waste": {
     "summary": "Ruotsin jätteenpolttoveron arvioinnissa veron ohjausvaikutus kierrätykseen jäi heikoksi. Kustannusta voitiin siirtää eteenpäin, eikä vero yksin ratkaissut jätteen syntyä tai lajittelua.",
@@ -384,8 +384,8 @@
     "limit": "Selvitys ei laske säästöä siitä, että rahoitusvastuu siirtyisi valtiolta yhdelle hyvinvointialueelle. Maksajan vaihtaminen ei itsessään vähennä julkista menoa."
   },
   "tribunalfees": {
-    "summary": "Britanniassa työriita-asioiden käsittelymaksujen käyttöönottoa seurasi hakemusten jyrkkä väheneminen. Virallisessa arvioinnissa maksuesteet olivat yksi selitys: kaikki pois jääneet asiat eivät olleet perusteettomia.",
-    "limit": "Samanaikaiset uudistukset vaikeuttavat vaikutuksen erottamista. Aiemmin maksuttomien asioiden suuri maksu ei vastaa kaikkia Suomen tuomioistuinmaksujen korotuksia."
+    "summary": "Britanniassa työtuomioistuinmaksujen käyttöönoton jälkeen yksittäiset asiat vähenivät noin 68 % ja usean hakijan asiat noin 75 %. Korkein oikeus katsoi maksujen rajoittavan lainvastaisesti oikeutta saada oikeutta, ja maksut poistettiin.",
+    "limit": "Luettu virallinen yhteenveto, ei koko raporttia. Ennen–jälkeen-muutos ei sellaisenaan erota maksun syyvaikutusta muista samanaikaisista muutoksista eikä kuvaa Suomen kaikkia oikeudenkäyntimaksuja."
   },
   "courtefficiency": {
     "summary": "Italian tuomioistuinaineistoon sovitetussa mallissa työn ja voimavarojen parempi jakaminen sekä parhaiden käytäntöjen käyttö lyhensivät laskennallisia käsittelyaikoja. Pelkkä yksikön koko ei ratkaissut tehokkuutta.",
@@ -404,16 +404,16 @@
     "limit": "Tulos koskee tiettyjä yhteistyötehtäviä. Se ei tarkoita, että jokainen etäkokous heikentäisi tuottavuutta tai jokainen työmatka olisi tarpeellinen."
   },
   "regulatorfees": {
-    "summary": "Australian tarkastuksessa viranomaisten maksujen kustannusperustassa ja seurannassa löytyi puutteita. Palvelun todelliset kustannukset on tunnettava, jotta maksulla voidaan kattaa ne johdonmukaisesti.",
-    "limit": "Tarkastus ei mittaa asiakkaiden reagointia korkeampiin maksuihin eikä anna Suomen viranomaismaksuille tuottoarviota."
+    "summary": "Australian tarkastus totesi kustannusvastaavuuden ohjeita yleensä noudatetun ja seurannan toimivaksi. Parannettavaa löytyi dokumentoinnissa, riskien käsittelyssä ja raportoinnissa.",
+    "limit": "Luettu viranomaisen yhteenveto. Se ei anna Suomen maksunkorotuksen tuottoa tai osoita suomalaisen viranomaisen toiminnan tehottomuutta."
   },
   "partyfunding": {
     "summary": "Saksassa puoluetuen saamisen äänikynnyksen ylittäminen lisäsi pienten puolueiden osallistumista seuraaviin vaaleihin. Se ei kuitenkaan tuonut selvää lisäystä niiden seuraavaan ääniosuuteen.",
     "limit": "Tutkimus koskee tukirajan lähellä olevia puolueita. Se ei suoraan kerro Suomen suurten puolueiden toiminnasta tai puoluerahoituksen kaikkien leikkausten vaikutuksista."
   },
   "sitraevaluation": {
-    "summary": "Sitran ulkoisessa arvioinnissa vahvuutena oli eri toimijoiden kokoaminen yhteistyöhön ja tulevaisuutta koskevan keskustelun edistäminen. Rahoittajan rooli jäi osin epäselväksi, ja toiminnassa havaittiin hajanaisuutta.",
-    "limit": "Sitran tilaama arviointi perustuu muun muassa aineistoihin ja sidosryhmiin. Se ei osoita euromääräistä tuottoa pääomalle eikä laske pääoman siirron menetyksiä."
+    "summary": "Sitran tilaaman ulkoisen arvioinnin mukaan tarve Sitralle oli kasvanut. Sen vahvuutena oli toimijoiden kokoaminen ja tulevaisuuskeskustelu. Rahoittajarooli jäi epäselväksi ja rahoitus hajautui pieniin hankkeisiin.",
+    "limit": "Strateginen arviointi ei mittaa syyvaikutusta tai euromääräistä tuottoa. Se ei perustele, että pääoman siirto olisi haitaton."
   },
   "workingtimefi": {
     "summary": "ETLAn tarkastelussa työajan pidentämisen työllisyysvaikutus riippui siitä, miten palkka ja työn yksikkökustannus muuttuvat. Samalla vuosipalkalla tehty lisätyö voi parantaa kustannuskilpailukykyä, mutta lisätunnit eivät automaattisesti synnytä työpaikkoja.",
@@ -424,8 +424,8 @@
     "limit": "Suuri työajan lyhennys ei ole kahden lomapäivän vähentämisen käänteinen koe. Tutkimus ei laske Suomen työaikamuutoksen nettosäästöä."
   },
   "bankprovisions": {
-    "summary": "Pankkien verosäännöt vaikuttivat siihen, milloin luottotappioita kirjattiin. Varausten verovähennyskelpoisuus voi siis muuttaa tilinpäätöksen ajoitusta ja sen antamaa kuvaa pankin riskeistä.",
-    "limit": "Luottotappiovaraus ei ole sama asia kuin teollisuusyrityksen konepoisto. Tutkimus tarjoaa tietoa kirjaamiskannustimista, ei Suomen poistosääntöjen tuottoarviota."
+    "summary": "Tutkimuksen julkaisijatiivistelmän mukaan pankkien verosäännöt muuttavat luottotappiovarausten kirjaamiskannustimia ja tilinpäätöksen informatiivisuutta.",
+    "limit": "Kokotekstiä ei saatu tarkistukseen. Tiivistelmä ei vahvista Suomen verotuottoarviota, eikä pankin luottotappiovaraus ole teollisuuden konepoisto."
   },
   "forestdeduction": {
     "summary": "Luken tutkimuskoosteen mukaan metsävähennyksen laajentumisen hyöty saattoi siirtyä osittain metsätilojen kauppahintoihin. Veroetu voi siten hyödyttää myös myyjää eikä vain myöhemmin puuta myyvää ostajaa.",
@@ -452,8 +452,8 @@
     "limit": "Tutkimus koskee Tanskan eläkesäästämistä, ei Suomen vakuutuskuorien tai osakesäästötilien verotuksen poistamista. Sen prosentteja ei käytetä Suomen tuoton vähennyskertoimina. Linkki avaa tutkimuksen työpaperiversion."
   },
   "fw-interest-2025": {
-    "summary": "Vuoden 2023 kiristys esti Carunalta noin 44 miljoonan euron korkovähennykset ja kasvatti veroa noin 9 miljoonalla eurolla. Elenian järjestelyihin kiristys ei vastaavasti osunut. Tapausten ero osoittaa, että rajoituksen rakenne ratkaisee, mitä rahoitusjärjestelyjä se tavoittaa.",
-    "limit": "Kahden yrityksen tulos ei ole valtakunnallinen tuottoarvio. Jo toteutuneen kiristyksen lisäveroa ei voi laskea uudelleen seuraavan hallituksen säästöksi."
+    "summary": "Finnwatchin tapaustutkimuksessa Carunan vuoden 2023 vähennyskelvottomat korot lisäsivät verokulua lähes 9 milj. €. Eleniaa koskeva kuvaus rajoituksen ohittamisesta liittyy vuotta 2019 edeltäneisiin sääntöihin.",
+    "limit": "Yksittäiset yritykset eivät kerro jäljellä olevan veropohjan kokoa. Jo toteutuneita kiristyksiä ei voi laskea uudeksi verotuotoksi."
   },
   "harju-interest": {
     "summary": "Suomen vuoden 2014 korkovähennysrajoitus vähensi monikansallisten yritysten rahoituskuluja noin 25–30 prosenttia suhteessa vertailuyrityksiin Ruotsissa ja Tanskassa. Eniten altistuneet vähensivät velkaa. Tuotannon muutosta ei havaittu, mutta tulokset viittaavat voitonsiirron siirtymiseen muihin kanaviin.",
@@ -540,8 +540,8 @@
     "limit": "Julkinen taulukko ei kerro, kuinka suuri osa euroista on laskettu hankintameno-olettamalla. Tämä osuus on oman laskelman herkkyysoletus."
   },
   "kti-funds-2026": {
-    "summary": "Kiinteistörahastojen nettovarallisuus oli 5 720 miljoonaa euroa maaliskuussa 2026. Viimeisten 12 kuukauden jaettu tuotto oli 2,3 %, mutta arvonalennukset painoivat kokonaistuoton miinukselle.",
-    "limit": "Jaettu tuotto ei ole täsmälleen verotettava tulos. Aineisto ei kata kaikkia ulkomaisia kiinteistörakenteita, eikä sijoittajien nykyistä henkilöveroa voi sivuuttaa."
+    "summary": "KTI:n Q1/2026-taulukon nettovarallisuus on 5 720 milj. €. Edeltävän 12 kuukauden kokonaistuotto oli −0,8 % ja maksettu tuotto-osuus 2,3 %.",
+    "limit": "Jaettu tuotto ei ole sama kuin verotettava vuokratulo tai myyntivoitto. Laskelman 2–6 % on oma normaalivuoden oletus, ei KTI:n veroennuste."
   },
   "vm-funds-2022": {
     "summary": "VM valmisteli mallia, jossa kiinteistörahaston tuloa verotettaisiin suoraan sen osuudenomistajan tulona. Tarkoitus oli saattaa myös ulkomaisten omistajien Suomessa syntyvät kiinteistötulot verotukseen.",
@@ -556,12 +556,12 @@
     "limit": "Tämä on esimerkki toteutetusta verosta, ei näyttö siitä, että vero jäisi kokonaan alustayhtiön omistajien maksettavaksi."
   },
   "iab-advertising-2025": {
-    "summary": "Verkkomainontaan käytettiin vuonna 2025 yhteensä 729 miljoonaa euroa. Some- ja hakumainonnan yhteissumma oli 497,1 miljoonaa. Ne antavat kotimaisen mittakaavan mahdolliselle mainosverolle.",
-    "limit": "Mainostajan meno ei ole automaattisesti verovelvollisen alustan liikevaihtoa. Välittäjät, liikevaihtorajat ja hinnanmuutokset pienentävät veropohjaa."
+    "summary": "IAB/Kantarin vuoden 2025 taulukossa somemainonta on 247,7 ja hakumainonta 249,4 milj. €, yhteensä 497,1 milj. €. Kaikki verkkomainonta on 729 milj. €.",
+    "limit": "Mainosmarkkinan koko ei ole suoraan lain veropohja. Välittäjät, konsernikohtaiset rajat ja ulkomaisten myyjien toiminta pitää erottaa erikseen."
   },
   "bank-norway": {
-    "summary": "Norjan rahoitustoimintaverossa palkkoihin kohdistuu viiden prosentin vero. Alan voittovero on kolme prosenttiyksikköä tavallista yhteisöveroa korkeampi. Malli antaa konkreettisen vaihtoehdon Suomen pankkiveron rakenteelle.",
-    "limit": "Norjan verotuottoa ei ole skaalattu Suomen BKT:lla. Suomen laskelma käyttää kotimaista palkka- ja voittopohjaa, jotka ovat tässä vanhoja viitetietoja."
+    "summary": "Norja perii rahoitus- ja vakuutustoiminnasta 5 prosentin palkkaveroa ja 25 prosentin voittoveroa. Veron soveltamisessa on toiminnan ja henkilöstön perusteella poikkeuksia.",
+    "limit": "Suomen kortin rajaus ja tuotto ovat oma laskelma. Norjan veroa ei voi kopioida laskemalla kaikki Suomen rahoitusalan voitot pankkien voitoiksi."
   },
   "bank-incidence": {
     "summary": "Pankkien velkoihin kohdistuneita veroja siirtyi lainakorkoihin. Välittyminen riippui pankkien vakavaraisuudesta ja kilpailutilanteesta. Pelkkä verovelvollinen pankki ei siis kerro lopullista maksajaa.",
@@ -578,5 +578,45 @@
   "digital-jrc": {
     "summary": "Britannian digiveron mallinnus tuotti pienen kielteisen BKT-vaikutuksen mutta lisäsi mallissa maan kulutusta ja hyvinvointia. Malli erottaa digitoimialan muusta tuotannosta ja huomioi kansainväliset yritykset.",
     "limit": "Britannian veropohja poikkeaa Suomen verkkomainontaveron skenaariosta. Mallin tulosta ei käytetä Suomen tuotto- tai kulutusvaikutuksen kertoimena."
+  },
+  "childincome-reply": {
+    "summary": "Kirjoittajat korjaavat vuoden 2012 aineistonkäsittelyvirheen. Arvioitu tulovaikutus pienenee noin kolmanneksen, mutta johtopäätös säilyy.",
+    "limit": "Korjaus koskee samaa EITC-asetelmaa, ei itsenäistä uutta tutkimusta."
+  },
+  "wealth-swiss": {
+    "summary": "Kantonin varallisuusveron yhden prosenttiyksikön alennus kasvatti ilmoitettua varallisuutta vähintään 43 % kuudessa vuodessa. Muuttoliike selitti noin neljänneksen vaikutuksesta; myös hinnat ja veronkierto vaikuttivat.",
+    "limit": "43 % ei ole muuttajien osuus tai Suomen tuottokerroin. Sveitsin ilmoitusjärjestelmä ja verot poikkeavat ehdotetusta suomalaisesta vähimmäisverosta."
+  },
+  "google-dst": {
+    "summary": "Google lisää Itävallassa näytettyjen mainosten laskuun 5 %:n digiveromaksun. Lakisääteinen verovelvollinen ja laskun maksava mainostaja voivat siis olla eri tahoja.",
+    "limit": "Hinnasto osoittaa tämän alustan lisämaksun. Se ei mittaa Suomen veron kaikkia hintareaktioita tai mainostajien kustannusten siirtymistä kuluttajille."
+  },
+  "he77-minimum": {
+    "summary": "Suomalaiskonsernien 15 prosentin verovajeeksi arvioitiin 150–300 milj. €. Ulkomaiden omat täydennysverot rajaavat Suomen tuoton, jonka alkuarvio oli noin 20 milj. €/vuosi.",
+    "limit": "Koskee jo säädettyä 15 prosentin järjestelmää. Luku ei ole 20 prosentin vähimmäisveron lisätuotto eikä vahvista vuoden 2021 emomaamallin 1,5 miljardin lisäankkuria."
+  },
+  "income-top-2025": {
+    "summary": "Vuoden 2013 ylimmän veroporrastuksen tutkimuksessa ylimmän prosentin verotettavien tulojen joustoksi arvioidaan noin 0,5. Reaktio painottui työnantajaa vaihtaviin ja usean työn tekijöihin.",
+    "limit": "Verotettavan tulon jousto ei ole työn tarjonnan jousto. Ylimmän prosentin tulosta ei käytetä koko väestön tai kaikkien portaiden korotuksen kertoimena."
+  },
+  "corporate-us-2024": {
+    "summary": "Tutkimuskoosteen kolme tarkastelutapaa arvioivat Yhdysvaltojen vuoden 2017 verouudistuksen kasvattaneen aineellisia investointeja 8–14 %. Pitkän aikavälin palkkavaikutukseksi mallinnettiin noin 750 dollaria työntekijää kohti. Verotuotto laski voimakkaasti.",
+    "limit": "Uudistus muutti myös poistoja ja kansainvälistä verotusta. Yhdysvaltojen alennusta ei voi kääntää suoraan Suomen korotusennusteeksi."
+  },
+  "corporate-wages-meta": {
+    "summary": "Yhteisöveron palkkoja pienentävät vaikutukset korostuvat julkaistuissa tuloksissa. Julkaisuharhan korjauksen jälkeen keskimääräinen yhteys ei erottunut tilastollisesti nollasta.",
+    "limit": "Tutkimukset ja veromuutokset vaihtelevat. Nollasta erottumaton keskiarvo ei todista, ettei yksittäisellä uudistuksella olisi palkkavaikutusta."
+  },
+  "helsinki-fees": {
+    "summary": "Helsingin 14 euron lääkärimaksun poisto lisäsi käyntejä arviolta 0,04 vuodessa aikuista kohti eli noin 4,4 %. Kasvu painottui pienituloisiin.",
+    "limit": "Vain yksi kunta poisti maksun; tilastollinen merkitsevyys riippuu klusteroinnista. Korotuksen vaikutus ei välttämättä ole poiston peilikuva."
+  },
+  "ui-shortening": {
+    "summary": "Kahdesta 20 viikon lyhennyksestä lyhyen työhistorian ryhmään kohdistunut ei lyhentänyt työttömyyttä keskimäärin. Laajempi lyhennys vähensi kestoa noin kolme viikkoa.",
+    "limit": "Toteutustapa ja siirtyminen etuuden maksajalta toiselle vaikuttivat. Yksi kestokerroin ei kuvaa kaikkia lyhennyksiä."
+  },
+  "childcuts-mari": {
+    "summary": "Suurten perheiden lapsilisäleikkauksella oli vähän keskimääräisiä vaikutuksia lasten koulutukseen ja mielenterveyteen. Pienituloisten perheiden lapsille syntyi kuitenkin pysyviä koulutushaittoja, ja perheiden köyhyysriski kasvoi.",
+    "limit": "Keskiarvon pieni muutos ei sulje pois haittoja tietyssä ryhmässä. Suomen leikkauksen euromääräistä pitkän aikavälin vaikutusta ei lasketa tästä."
   }
 }

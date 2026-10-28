@@ -2,7 +2,7 @@
 function calculateIncidence(chosen, model){
   const entries=[],missing=[];
   for(const d of chosen){
-    if(d.incidenceHorizonGap){missing.push(d);continue;}
+    if(d.incidenceHorizonGap||d.scaleNetOpen){missing.push(d);continue;}
     const rawSpec=model.actions[d.id];
     const spec=rawSpec?.methodKey?{...model.methods[rawSpec.methodKey],...rawSpec}:rawSpec;
     if(!spec||spec.kind==='separate'){missing.push(d);continue;}
@@ -22,14 +22,14 @@ function calculateIncidence(chosen, model){
       scenarios=spec.scenarios.map(s=>model.income.map((_,i)=>
         s.million*1e6*Object.entries(s.shares).reduce((n,[profile,share])=>n+model.profiles[profile][i]*share,0)/model.consumptionUnits[i]));
     }else{
-      const amount=spec.amountBasis==='fixed'?spec.fixedMillion:spec.amountBasis==='public-total'?d.amount:d.gross;
+      const amount=(spec.amountBasis==='fixed'?spec.fixedMillion:spec.amountBasis==='public-total'?d.amount:d.gross)*(spec.householdShare??1);
       if(!Number.isFinite(amount)){missing.push(d);continue;}
-      const weights=spec.corporate?[model.profiles.wages.map(p=>p*.25),model.profiles.wages.map((p,i)=>p*.25+model.profiles['capital-income'][i]*.75)]:spec.profiles.map(key=>model.profiles[key]);
+      const weights=spec.corporate?[0,.25].flatMap(labor=>[0,1].map(domestic=>model.profiles.wages.map((p,i)=>p*labor+model.profiles['capital-income'][i]*(1-labor)*domestic))):spec.profiles.map(key=>model.profiles[key]);
       scenarios=weights.map(p=>p.map((share,i)=>amount*1e6*share/model.consumptionUnits[i]));
     }
     const low=Array.from({length:10},(_,i)=>Math.min(...scenarios.map(s=>s[i])));
     const high=Array.from({length:10},(_,i)=>Math.max(...scenarios.map(s=>s[i])));
-    const mid=low.map((v,i)=>spec.kind==='scenarios'?scenarios.reduce((n,s)=>n+s[i],0)/scenarios.length:(v+high[i])/2);
+    const mid=low.map((v,i)=>scenarios.reduce((n,s)=>n+s[i],0)/scenarios.length);
     entries.push({id:d.id,action:d,spec,low,high,mid,scenarios,derived,channel:spec.channel||'cash'});
   }
   const channels={};

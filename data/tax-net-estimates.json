@@ -1,31 +1,223 @@
 {
-  "cut-1-15": {"low": 17, "source": "VM 2026:48, s. 270; VM 2026:44, Excel-liite, rivi 15", "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-619-0", "explanation": "Muiden verojen tuoton muutokset on vähennetty.", "limit": "Maatalouden tuotannon muutosta ei ole laskettu mukaan."},
-  "income": {"low": 900, "high": 1125, "model": true, "source": "VM 2026:48, s. 67–68 ja 263", "explanation": "VM arvioi ansiotuloveron kiristämisen pidemmän aikavälin nettotuotoksi 60–75 % suorasta tuotosta, kun työnteon ja kulutuksen muutokset huomioidaan.", "limit": "Tämä on VM:n yleisarviosta laskettu haarukka, ei tämän veromuutoksen erillinen simulointi."},
-  "income-index": {"low": 489, "high": 611.25, "model": true, "source": "VM 2026:48, s. 65–68 ja 263", "explanation": "VM:n arvio työnteon ja kulutuksen vaikutusten jälkeen on 60–75 % suorasta tuotosta.", "limit": "Arvio kuvaa pidemmän aikavälin vaikutusta."},
-  "tax-commute": {"low": 15, "high": 18.75, "model": true, "source": "VM 2026:48, s. 67–68 ja 263", "explanation": "Laskuri soveltaa VM:n ansiotuloverotuksen nettohaarukkaa: työnteon ja kulutuksen muutosten jälkeen jää 60–75 % suorasta tuotosta.", "limit": "Matkakuluvähennykselle ei ole erillistä käyttäytymislaskelmaa."},
-  "corporate": {"low": 410, "high": 420, "source": "VM 2026:48, s. 105 ja 264", "explanation": "VM arvioi osinkoverojen kertymän pienenevän 10–20 miljoonaa euroa yhtä prosenttiyksikön korotusta kohti.", "limit": "Yritysten käyttäytymisen ja työllisyyden vaikutukset eivät sisälly tähän nettoon."},
-  "tax-transfer-land": {"low": 95, "source": "VM 2026:48, s. 265", "explanation": "Yhteisöveropohjan muutos pienentää tuoton 95 prosenttiin suorasta arviosta.", "limit": "Kauppojen määrän muutosta ei ole vähennetty."},
-  "tax-transfer-homes": {"low": 140.65, "source": "VM 2026:48, s. 265", "explanation": "Yhteisöveropohjan muutos pienentää tuoton 97 prosenttiin suorasta arviosta.", "limit": "Kauppojen määrän muutosta ei ole vähennetty."},
-  "tax-transfer-shares": {"low": 103.75, "source": "VM 2026:48, s. 265", "explanation": "Yhteisöveropohjan muutos pienentää tuoton 83 prosenttiin suorasta arviosta.", "limit": "Kauppojen määrän muutosta ei ole vähennetty."},
-  "tax-vat15": {"low": 380, "source": "VM 2026:48, s. 266", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-vat16": {"low": 630, "source": "VM 2026:48, s. 266", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-food18": {"low": 920, "source": "VM 2026:48, s. 266", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-vat-services": {"low": 550, "source": "VM 2026:48, s. 266", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "vat": {"low": 2950, "source": "VM 2026:48, s. 267", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-vat-standard": {"low": 570, "source": "VM 2026:48, s. 267", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-vat-reduced": {"low": 240, "source": "VM 2026:48, s. 267", "explanation": "Hintojen nousun aiheuttamat etuuksien indeksikorotukset on vähennetty.", "limit": "Kulutuksen ja yritysten toiminnan muutokset voivat pienentää tuottoa lisää."},
-  "tax-excise-index": {"low": 80, "source": "VM 2026:48, s. 268", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Kulutuksen muutoksia ei ole laskettu mukaan."},
-  "tax-tobacco": {"low": 41, "source": "VM 2026:48, s. 268", "explanation": "Arviossa on huomioitu tupakkatuotteiden kysynnän väheneminen sekä muiden verojen ja etuuksien muutokset.", "limit": "Koko talouden myöhempiä vaikutuksia ei ole laskettu."},
-  "tax-diesel": {"low": 150, "source": "VM 2026:48, s. 269", "explanation": "Kysynnän sekä muiden verojen ja indeksisidonnaisten etuuksien muutokset on huomioitu.", "limit": "Koko talouden myöhempiä vaikutuksia ei ole laskettu."},
-  "tax-commercial-diesel": {"low": 33, "source": "VM 2026:48, s. 269", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Kuljetusten kysynnän muutoksia ei ole laskettu mukaan."},
-  "tax-rail": {"low": 16, "source": "VM 2026:48, s. 269", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Liikenteen kysynnän muutoksia ei ole laskettu mukaan."},
-  "tax-van": {"low": 90, "high": 120, "grossHigh": 140, "source": "VM 2026:48, s. 269", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Dieseltuen samanaikainen pienentäminen vähentäisi tuottoa; vaihtoehdot korvaavat laskurissa toisensa."},
-  "tax-vehicle": {"low": 230, "source": "VM 2026:48, s. 270", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Autojen määrän muutosta ei ole laskettu mukaan."},
-  "tax-biogas": {"low": 16, "source": "VM 2026:48, s. 271", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Polttoaineiden vaihdon vaikutusta ei ole laskettu mukaan."},
-  "tax-heat": {"low": 116.8, "source": "VM 2026:48, s. 272", "explanation": "Muiden verojen ja etuuksien muutosten jälkeen VM arvioi tuotoksi 80 % suorasta arviosta.", "limit": "Polttoaineiden vaihtoa ei ole vähennetty."},
-  "tax-fuel": {"low": 31, "source": "VM 2026:48, s. 273", "explanation": "Lyhyen aikavälin kysyntäreaktio sekä muiden verojen ja etuuksien muutokset on huomioitu.", "limit": "Pidemmän aikavälin muutokset voivat pienentää tuottoa lisää."},
-  "tax-electric1": {"low": 36, "source": "VM 2026:48, s. 273", "explanation": "Muiden verojen, etuuksien ja julkisen sektorin sähköveromenojen muutokset on vähennetty.", "limit": "Sähkön kulutuksen muutosta ei ole laskettu mukaan."},
-  "tax-electric2": {"low": 36, "source": "VM 2026:48, s. 273", "explanation": "Muiden verojen kertymän muutos on vähennetty.", "limit": "Tuotannon ja sähkön kulutuksen muutoksia ei ole laskettu mukaan."},
-  "tax-car-all": {"low": 50, "source": "VM 2026:48, s. 274", "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.", "limit": "Autokaupan määrän muutosta ei ole laskettu mukaan."},
-  "tax-land-values": {"low": 676.2, "source": "VM 2026:48, s. 274", "explanation": "Yhteisöveropohjan muutos pienentää tuoton 98 prosenttiin suorasta arviosta.", "limit": "Muita käyttäytymisvaikutuksia ei ole laskettu mukaan."}
+  "cut-1-15": {
+    "low": 17,
+    "source": "VM 2026:48, s. 270; VM 2026:44, Excel-liite, rivi 15",
+    "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-619-0",
+    "explanation": "Muiden verojen tuoton muutokset on vähennetty.",
+    "limit": "Maatalouden tuotannon muutosta ei ole laskettu mukaan."
+  },
+  "income": {
+    "low": 900,
+    "high": 1125,
+    "model": true,
+    "source": "VM 2026:48, s. 67–68 ja 263",
+    "explanation": "VM arvioi ansiotuloveron kiristämisen pidemmän aikavälin nettotuotoksi 60–75 % suorasta tuotosta, kun työnteon ja kulutuksen muutokset huomioidaan.",
+    "limit": "Tämä on VM:n yleisarviosta laskettu haarukka, ei tämän veromuutoksen erillinen simulointi."
+  },
+  "income-index": {
+    "low": 489,
+    "high": 611.25,
+    "model": true,
+    "source": "VM 2026:48, s. 65–68 ja 263",
+    "explanation": "VM:n arvio työnteon ja kulutuksen vaikutusten jälkeen on 60–75 % suorasta tuotosta.",
+    "limit": "Arvio kuvaa pidemmän aikavälin vaikutusta."
+  },
+  "tax-commute": {
+    "low": 15,
+    "high": 18.75,
+    "model": true,
+    "source": "VM 2026:48, s. 67–68 ja 263",
+    "explanation": "Laskuri soveltaa VM:n ansiotuloverotuksen nettohaarukkaa: työnteon ja kulutuksen muutosten jälkeen jää 60–75 % suorasta tuotosta.",
+    "limit": "Matkakuluvähennykselle ei ole erillistä käyttäytymislaskelmaa."
+  },
+  "corporate": {
+    "low": 259.5,
+    "high": 334,
+    "model": true,
+    "source": "VM 2026:48, s. 105, alaviite 106, ja s. 264",
+    "explanation": "VM:n arvion mukaan voitonsiirron, investointien ja rahoitusvalintojen muutokset pienentäisivät suoraa tuottoa 20–35 %. Lisäksi osinkoveroja kertyisi 10–20 milj. € vähemmän prosenttiyksikköä kohti.",
+    "calculation": "Yhtä prosenttiyksikköä kohti: alaraja 430 × (1 − 0,35) − 20 = 259,5 milj. €; yläraja 430 × (1 − 0,20) − 10 = 334 milj. €.",
+    "limit": "Tulonmuunnon väheneminen voi vahvistaa ansio- ja pääomatuloveroja. Sitä ja työllisyysvaikutuksia ei ole laskettu tähän haarukkaan. Osa käyttäytymisvaikutuksista syntyy vasta vuosien kuluttua; kyse ei ole vuoden 2031 ennusteesta eikä suuren korotuksen erillisestä laskelmasta."
+  },
+  "tax-transfer-land": {
+    "low": 95,
+    "source": "VM 2026:48, s. 265",
+    "explanation": "Yhteisöveropohjan muutos pienentää tuoton 95 prosenttiin suorasta arviosta.",
+    "limit": "Kauppojen määrän muutosta ei ole vähennetty."
+  },
+  "tax-transfer-homes": {
+    "low": 140.65,
+    "source": "VM 2026:48, s. 265",
+    "explanation": "Yhteisöveropohjan muutos pienentää tuoton 97 prosenttiin suorasta arviosta.",
+    "limit": "Kauppojen määrän muutosta ei ole vähennetty."
+  },
+  "tax-transfer-shares": {
+    "low": 103.75,
+    "source": "VM 2026:48, s. 265",
+    "explanation": "Yhteisöveropohjan muutos pienentää tuoton 83 prosenttiin suorasta arviosta.",
+    "limit": "Kauppojen määrän muutosta ei ole vähennetty."
+  },
+  "tax-vat15": {
+    "low": 300,
+    "high": 350,
+    "model": true,
+    "indexAdjusted": 380,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 266",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "500 × 0,60–0,70 = 300–350 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-vat16": {
+    "low": 492,
+    "high": 574,
+    "model": true,
+    "indexAdjusted": 630,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 266",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "820 × 0,60–0,70 = 492–574 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-food18": {
+    "low": 708,
+    "high": 826,
+    "model": true,
+    "indexAdjusted": 920,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 266",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "1 180 × 0,60–0,70 = 708–826 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-vat-services": {
+    "low": 480,
+    "high": 560,
+    "model": true,
+    "indexAdjusted": 550,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 266",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "800 × 0,60–0,70 = 480–560 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista. Yleisellä kertoimella saatu yläraja voi ylittää liitteen pelkät indeksit huomioivan luvun; laskelmat käyttävät eri tarkkuutta."
+  },
+  "vat": {
+    "low": 2322,
+    "high": 2709,
+    "model": true,
+    "indexAdjusted": 2950,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 267",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "3 870 × 0,60–0,70 = 2 322–2 709 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-vat-standard": {
+    "low": 416.4,
+    "high": 485.8,
+    "model": true,
+    "indexAdjusted": 570,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 267",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "Yhtä prosenttiyksikköä kohti: 694 × 0,60–0,70 = 416,4–485,8 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-vat-reduced": {
+    "low": 188.4,
+    "high": 219.8,
+    "model": true,
+    "indexAdjusted": 240,
+    "source": "VM 2026:48, s. 149, alaviite 133; s. 153 ja 267",
+    "explanation": "VM arvioi, että etuusindeksien ja kotitalouksien ostovoiman vaikutusten jälkeen jäljelle jää noin 60–70 % suorasta verotuotosta.",
+    "calculation": "Yhtä prosenttiyksikköä kohti: 314 × 0,60–0,70 = 188,4–219,8 milj. €. Kerroin sisältää etuusindeksit: niitä ei vähennetä toista kertaa.",
+    "limit": "Haarukka on laskettu VM:n yleisarviosta, ei tämän vaihtoehdon erillisestä kokonaistaloudellisesta simuloinnista."
+  },
+  "tax-excise-index": {
+    "low": 80,
+    "source": "VM 2026:48, s. 268",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Kulutuksen muutoksia ei ole laskettu mukaan."
+  },
+  "tax-tobacco": {
+    "low": 41,
+    "source": "VM 2026:48, s. 268",
+    "explanation": "Arviossa on huomioitu tupakkatuotteiden kysynnän väheneminen sekä muiden verojen ja etuuksien muutokset.",
+    "limit": "Koko talouden myöhempiä vaikutuksia ei ole laskettu."
+  },
+  "tax-diesel": {
+    "low": 150,
+    "source": "VM 2026:48, s. 269",
+    "explanation": "Kysynnän sekä muiden verojen ja indeksisidonnaisten etuuksien muutokset on huomioitu.",
+    "limit": "Koko talouden myöhempiä vaikutuksia ei ole laskettu."
+  },
+  "tax-commercial-diesel": {
+    "low": 33,
+    "source": "VM 2026:48, s. 269",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Kuljetusten kysynnän muutoksia ei ole laskettu mukaan."
+  },
+  "tax-rail": {
+    "low": 16,
+    "source": "VM 2026:48, s. 269",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Liikenteen kysynnän muutoksia ei ole laskettu mukaan."
+  },
+  "tax-van": {
+    "low": 90,
+    "high": 120,
+    "grossHigh": 140,
+    "source": "VM 2026:48, s. 269",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Dieseltuen samanaikainen pienentäminen vähentäisi tuottoa; vaihtoehdot korvaavat laskurissa toisensa."
+  },
+  "tax-vehicle": {
+    "low": 230,
+    "source": "VM 2026:48, s. 270",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Autojen määrän muutosta ei ole laskettu mukaan."
+  },
+  "tax-biogas": {
+    "low": 16,
+    "source": "VM 2026:48, s. 271",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Polttoaineiden vaihdon vaikutusta ei ole laskettu mukaan."
+  },
+  "tax-heat": {
+    "low": 116.8,
+    "source": "VM 2026:48, s. 272",
+    "explanation": "Muiden verojen ja etuuksien muutosten jälkeen VM arvioi tuotoksi 80 % suorasta arviosta.",
+    "limit": "Polttoaineiden vaihtoa ei ole vähennetty."
+  },
+  "tax-fuel": {
+    "low": 31,
+    "source": "VM 2026:48, s. 273",
+    "explanation": "Lyhyen aikavälin kysyntäreaktio sekä muiden verojen ja etuuksien muutokset on huomioitu.",
+    "limit": "Pidemmän aikavälin muutokset voivat pienentää tuottoa lisää."
+  },
+  "tax-electric1": {
+    "low": 36,
+    "source": "VM 2026:48, s. 273",
+    "explanation": "Muiden verojen, etuuksien ja julkisen sektorin sähköveromenojen muutokset on vähennetty.",
+    "limit": "Sähkön kulutuksen muutosta ei ole laskettu mukaan."
+  },
+  "tax-electric2": {
+    "low": 36,
+    "source": "VM 2026:48, s. 273",
+    "explanation": "Muiden verojen kertymän muutos on vähennetty.",
+    "limit": "Tuotannon ja sähkön kulutuksen muutoksia ei ole laskettu mukaan."
+  },
+  "tax-car-all": {
+    "low": 50,
+    "source": "VM 2026:48, s. 274",
+    "explanation": "Muiden verojen ja indeksisidonnaisten etuuksien muutokset on vähennetty.",
+    "limit": "Autokaupan määrän muutosta ei ole laskettu mukaan."
+  },
+  "tax-land-values": {
+    "low": 676.2,
+    "source": "VM 2026:48, s. 274",
+    "explanation": "Yhteisöveropohjan muutos pienentää tuoton 98 prosenttiin suorasta arviosta.",
+    "limit": "Muita käyttäytymisvaikutuksia ei ole laskettu mukaan."
+  },
+  "tax-car-combustion": {
+    "low": 16.666666666666668,
+    "model": true,
+    "source": "VM 2026:48, s. 274",
+    "explanation": "Oma vertailu: polttomoottoriautojen 20 miljoonan suoraan arvioon sovelletaan kaikkien autojen veronkorotuksen nettosuhdetta 50/60.",
+    "limit": "Ei polttomoottoriautoille erikseen simuloitu netto. Vertailuluku 16,7 milj. euroa jää mukaanottorajan alle."
+  }
 }

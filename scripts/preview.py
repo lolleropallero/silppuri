@@ -3,7 +3,7 @@ import importlib.util,json,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 folder=ROOT/'tmp/review';folder.mkdir(parents=True,exist_ok=True)
-runtime=Path('C:/Users/aleks/.codex/plugins/cache/openai-bundled/visualize/1.0.55/skills/visualize/scripts/render.py')
+runtime=Path('C:/Users/aleks/.codex/plugins/cache/openai-bundled/visualize/1.0.57/skills/visualize/scripts/render.py')
 spec=importlib.util.spec_from_file_location('visualize_render',runtime)
 render=importlib.util.module_from_spec(spec);sys.modules[spec.name]=render;spec.loader.exec_module(render)
 source=Path('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html').read_text(encoding='utf8')
