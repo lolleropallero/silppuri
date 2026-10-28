@@ -761,7 +761,6 @@
     }
     if(d.estimate){
       notes.hidden=false;
-      notes.open=true;
       notes.innerHTML='<summary class="cursor-interaction">Miten tuotto on laskettu?</summary>'+estimateBoundsMarkup(d.estimate)+d.estimate.calculation.map(text=>'<p>'+esc(text)+'</p>').join('')+(d.estimate.sensitivity?'<table class="sp-estimate-years"><caption>Sama sijoituskanta myöhemmin</caption><thead><tr><th>Vuosi</th><th>Netto, milj. €</th></tr></thead><tbody>'+d.estimate.sensitivity.map(row=>'<tr><th scope="row">'+esc(row.label)+'</th><td>'+row.range.map(n=>esc(n.toLocaleString('fi-FI'))).join(' … ')+'</td></tr>').join('')+'</tbody></table>':'');
     }else{
       const calculation=fiscalCalculation(d);

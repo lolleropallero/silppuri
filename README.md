@@ -14,7 +14,7 @@ Jakolinkkien tarkistukset: `node scripts/verify-share-codec.cjs`, `node scripts/
 
 ## Korttien laskelmat
 
-Kortin laskenta näkyy omassa osiossaan ennen lähdeluetteloa. Omien tuottoarvioiden laskenta on valmiiksi auki. Haarukoiden päätepisteet tuotetaan samasta laskentamallista kuin kortin euromäärä; lähtötiedot ja oletukset ovat niiden alla. VM:n valmiissa nettoarvioissa erotetaan lähteen ilmoittamat luvut laskurin omista skaalauksista.
+Kortin laskenta näkyy omassa, oletuksena suljetussa osiossaan ennen lähdeluetteloa. Haarukoiden päätepisteet tuotetaan samasta laskentamallista kuin kortin euromäärä; lähtötiedot ja oletukset ovat niiden alla. VM:n valmiissa nettoarvioissa erotetaan lähteen ilmoittamat luvut laskurin omista skaalauksista.
 
 `node scripts/verify-calculations.cjs` tarkistaa kaikki kortit molemmilla aikavalinnoilla, säädettävät muutokset ja haarukoiden aritmetiikan. `python scripts/verify_rebuild.py` tarkistaa, että lähdedatan uudelleenluonti säilyttää korjaukset.
 
