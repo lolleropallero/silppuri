@@ -312,7 +312,7 @@
   });
   function stateIn(s){
     const model=s?.modelContent??s;
-    packageName=typeof model?.name==='string'?shareTitle(model.name):'';
+    packageName=typeof model?.name==='string'&&model.name.trim()?shareTitle(model.name):'';
     const source=Array.isArray(model?.selectedIds)?model.selectedIds:[];
     const legacyYle=source.filter(id=>id==='cut-1-42'||id==='cut-1-43').at(-1);
     scenario.ylePercent=ylePercent(Number.isFinite(model?.yleCutPercent)?model.yleCutPercent:legacyYle==='cut-1-43'?10:20);
@@ -949,7 +949,7 @@
     q('.sp-remaining-label').textContent=sum<=target?'Vielä puuttuu':'Yli tavoitteen';
     q('.sp-remaining-value').textContent=moneyLabel(Math.abs(target-sum));
     q('.sp-tax-total').textContent=moneyLabel(sum-cuts);q('.sp-cut-total').textContent=moneyLabel(cuts);
-    q('.sp-count').textContent=chosen.length+' valittua toimea';q('.sp-clear').disabled=!chosen.length;q('.sp-empty').hidden=!!chosen.length;
+    q('.sp-count').textContent=chosen.length+' valittua toimea';q('.sp-empty').hidden=!!chosen.length;
     const overlaps=selectedOverlaps(chosen);
     q('.sp-package-overlap').hidden=!overlaps.length;
     q('.sp-package-overlap').innerHTML=overlaps.length?'<summary class="cursor-interaction">Summassa voi olla sama säästö kahdesti</summary>'+overlaps.map(p=>'<p><strong>'+esc(p.action.short)+' + '+esc(p.other.short)+'</strong><br>'+esc(p.note)+'</p>').join(''):'';
@@ -989,6 +989,13 @@
     search='';category='all';filter='all';limit=12;
     catalogueOrder=[];catalogueOrderKey='';
     q('#sp-search').value='';q('#sp-category').value='all';
+  }
+  function resetPackage(){
+    stateIn({modelContent:{name:packageName,selectedIds:[]}});
+    activeDecile=null;q('.sp-selected').open=false;
+    render();save();
+    q('.sp-announcement').textContent='Silppuri nollattu. Ei valittuja toimia.';
+    q('.sp-clear').focus({preventScroll:true});
   }
   function searchWords(text){return String(text??'').toLocaleLowerCase('fi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean);}
   function matchesType(d){
@@ -1053,7 +1060,7 @@
     else if(button.dataset.bookmark){filter='selected-'+button.dataset.bookmark;search='';category='all';limit=12;q('#sp-search').value='';q('#sp-category').value='all';render();save();q('.sp-actions').scrollIntoView({block:'start',behavior:'instant'});}
     else if(button.dataset.filter){if(button.dataset.filter==='all')resetCatalogueView();else{filter=button.dataset.filter;limit=12;}render();save();}
     else if(button.classList.contains('sp-more')){limit+=20;render();save();}
-    else if(button.classList.contains('sp-clear')){selected.clear();render(true);save();root.querySelector('[data-filter="all"]').focus();}
+    else if(button.classList.contains('sp-clear')){resetPackage();}
   });
   /*PIE_INTERACTION*/
   const pieInteraction=createPieInteraction(q('.sp-chart'),{moneyLabel,measureViewport:()=>measureViewport(),getVisibleFrame:()=>{

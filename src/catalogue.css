@@ -3,6 +3,11 @@
 #silppuri-demo .sp-horizon button[aria-pressed=true]{background:var(--sp-button);color:var(--sp-button-text);border-color:var(--sp-button)}
 #silppuri-demo .sp-budget-controls{display:flex;align-items:center;gap:8px;margin:18px 0 12px}
 #silppuri-demo .sp-budget-controls .sp-horizon{flex:1;min-width:0;margin:0}
+#silppuri-demo .sp-panel-heading h2{min-width:0;overflow-wrap:anywhere}
+#silppuri-demo .sp-clear{display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0;min-height:44px;padding:8px 12px;border:1px solid var(--sp-line);border-radius:8px;background:var(--sp-paper);color:var(--sp-ink);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+#silppuri-demo .sp-clear svg{width:18px;height:18px}
+#silppuri-demo .sp-clear:hover{background:var(--sp-lime)}
+#silppuri-demo .sp-clear:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
 #silppuri-demo select,#silppuri-demo input{font:inherit;color:var(--sp-ink);background:var(--sp-paper);border:1px solid var(--sp-line);border-radius:6px;min-height:42px;padding:8px;max-width:100%}
 #silppuri-demo .sp-catalogue-tools{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,.8fr);gap:16px;margin:18px 0 8px;align-items:end}
 #silppuri-demo .sp-catalogue-tools label{display:grid;gap:6px;font-size:12px;min-width:0}
