@@ -50,7 +50,6 @@ function renderIncidence(chosen){
   const household=entries.filter(e=>e.channel==='cash'||e.channel==='indirect'),has=household.length>0;
   const hasServices=serviceEntries.length>0&&serviceTotal>0,any=has||hasServices;
   q('.sp-cash-chart').hidden=false;
-  q('.sp-evidence-status').textContent=chosen.length?(household.length+(hasServices?serviceEntries.length:0))+' / '+chosen.length+' toimea kuvaajassa':'Ei valintoja';
   q('.sp-decile-scope').textContent='';
   q('.sp-decile-head').hidden=true;
   q('.sp-decile-axis').hidden=true;

@@ -24,7 +24,7 @@ function createShareImage(chosen,name,later,href){
   const panel=(x,y,w,h)=>{ctx.fillStyle=color.panel;ctx.beginPath();ctx.roundRect(x,y,w,h,16);ctx.fill();};
   const dot=(x,y,fill)=>{ctx.fillStyle=fill;ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();};
   const result=calculateIncidence(chosen,incidenceModel),sum=chosen.reduce((n,d)=>n+valueOf(d),0);
-  const summary=packageSummary(chosen);
+  const summary=packageSummary(chosen,result);
   const groups=payerGroups.filter(g=>chosen.some(d=>d.flow===g.id)).map(g=>({...g,display:payerDisplay(chosen.filter(d=>d.flow===g.id))}));
   const titleLines=lines(shareTitle(name),1104,48,true);
   const totalY=144+(titleLines.length-1)*56+78,profileY=totalY+50;
@@ -32,12 +32,17 @@ function createShareImage(chosen,name,later,href){
   const captionY=profileY+34;
   const summaryLines=lines(summary.description,960,23);
   const summaryY=captionY+captionLines.length*28+18;
-  const head=summaryLines.length?summaryY+(summaryLines.length-1)*30+64:captionY+captionLines.length*28+56;
+  const evidenceLines=lines(summary.evidence,1040,17),evidenceY=summaryY+summaryLines.length*30+12;
+  const largestLines=lines(summary.largest,1040,20,true),largestY=evidenceY+evidenceLines.length*23+(evidenceLines.length?12:0);
+  const head=largestY+largestLines.length*26+48;
   const groupHeight=groups.reduce((n,g)=>n+62+(g.display.marked?24:0),92);
   const topHeight=Math.max(560,groupHeight);
-  const chartsY=head+topHeight+28,chartHeight=790;
+  const chartsY=head+topHeight+28,chartHeight=760;
   const chartEntries=result.entries.filter(e=>['cash','indirect'].includes(e.channel));
-  const cardsY=chartsY+chartHeight+82;
+  const hasMoney=chartEntries.length>0&&result.householdRows.some(r=>Math.abs(r.low)>1e-9||Math.abs(r.high)>1e-9);
+  const hasServices=result.serviceEntries.length>0&&result.serviceTotal>1e-9;
+  const chartSections=[...(hasMoney?[false]:[]),...(hasServices?[true]:[])];
+  const cardsY=chartsY+(chartSections.length?chartHeight+82:54);
   const columns=chosen.length>40?3:2,gap=18,cardWidth=(1104-gap*(columns-1))/columns;
   const sorted=[...chosen].sort((a,b)=>(a.type===b.type?valueOf(b)-valueOf(a):a.type==='cut'?-1:1));
   const cardGroups=[
@@ -71,6 +76,8 @@ function createShareImage(chosen,name,later,href){
   text(summary.profile.name,600,profileY,30,true,color.ink,'center');
   captionLines.forEach((line,i)=>text(line,600,captionY+i*28,23,false,color.ink,'center'));
   summaryLines.forEach((line,i)=>text(line,600,summaryY+i*30,23,false,color.ink,'center'));
+  evidenceLines.forEach((line,i)=>text(line,600,evidenceY+i*23,17,false,color.muted,'center'));
+  largestLines.forEach((line,i)=>text(line,600,largestY+i*26,20,true,color.ink,'center'));
   if(href){
     try{
       const address=new URL(href);
@@ -109,34 +116,34 @@ function createShareImage(chosen,name,later,href){
     }
     if(g.display.marked){text('* '+g.display.dates.join(' · '),640,gy+52,16,false,color.muted);gy+=24;}gy+=62;
   }
-  function drawDeciles(x,service){
+  function drawDeciles(x,service,width){
     const rows=service?result.serviceRows:result.householdRows;
     const count=service?result.serviceEntries.length:chartEntries.length;
-    panel(x,chartsY,542,chartHeight);
+    panel(x,chartsY,width,chartHeight);
     text(service?'Julkiset palvelut':'Rahat ja ostovoima',x+24,chartsY+42,26,true);
     text(service?'Arvio palvelujen käytön perusteella':'Arvio menetyksestä suhteessa nettotuloihin',x+24,chartsY+73,18);
     text(service?'Osuus leikkauksista · ei mitattu menetys':'Osin vastaavista toimista arvioitu jakauma',x+24,chartsY+98,16,false,color.muted);
-    text(count+' / '+chosen.length+' toimea · yksin asuva · nettotulot 2024',x+24,chartsY+126,16,false,color.muted);
+    text('Yksin asuva · nettotulot 2024',x+24,chartsY+126,16,false,color.muted);
     const values=rows.map((r,i)=>service?{mid:r.share,low:r.shareLow,high:r.shareHigh,parts:[[color.cut,r.share]]}:
       {mid:r.mid/incidenceModel.income[i]*100,low:r.percentLow,high:r.percentHigh,parts:[[color.cut,r.cut],[color.tax,r.tax],[color.indirect,r.indirect]].map(([c,v])=>[c,v/incidenceModel.income[i]*100])});
     const labels=values.map(v=>!count?'—':service?shareLabel(v.mid):chartPercent(v.mid));
     font(16,true);
     const labelWidth=Math.max(...labels.map(label=>ctx.measureText(label).width));
-    const min=Math.min(0,...values.map(v=>v.low)),max=Math.max(1,...values.map(v=>v.high)),barWidth=314-labelWidth-18;
+    const min=Math.min(0,...values.map(v=>v.low)),max=Math.max(1,...values.map(v=>v.high)),barWidth=width-228-labelWidth-18;
     const position=n=>(n-min)/(max-min)*barWidth;
     values.forEach((v,i)=>{
-      const y=chartsY+151+i*57;rect(x+12,y-3,518,57,i%2?'#ebece4':'#f7f7f1');
+      const y=chartsY+151+i*54;rect(x+12,y-3,width-24,54,i%2?'#ebece4':'#f7f7f1');
       text(decileName(i),x+24,y+19,16,true);text(decileIncomeRange(i),x+24,y+40,13,false,color.muted);
       const bx=x+200,by=y+8;rect(bx,by,barWidth,26,color.track);
       if(count){
         let positive=0,negative=0;for(const [c,n] of v.parts){const from=n>=0?positive:negative;if(n>=0)positive+=n;else negative+=n;rect(bx+position(Math.min(from,from+n)),by,Math.abs(n)/(max-min)*barWidth,26,c);}
         ctx.strokeStyle=color.ink;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(bx+position(v.low),by+13);ctx.lineTo(bx+position(v.high),by+13);ctx.moveTo(bx+position(v.low),by+7);ctx.lineTo(bx+position(v.low),by+19);ctx.moveTo(bx+position(v.high),by+7);ctx.lineTo(bx+position(v.high),by+19);ctx.stroke();
       }
-      text(labels[i],x+514,by+19,16,true,color.ink,'right');
+      text(labels[i],x+width-28,by+19,16,true,color.ink,'right');
     });
-    if(!service){dot(x+30,chartsY+751,color.cut);text('Etuudet',x+43,chartsY+757,16);dot(x+150,chartsY+751,color.tax);text('Verot',x+163,chartsY+757,16);dot(x+253,chartsY+751,color.indirect);text('Yritysten kautta',x+266,chartsY+757,16);}
+    if(!service){dot(x+30,chartsY+721,color.cut);text('Etuudet',x+43,chartsY+727,16);dot(x+150,chartsY+721,color.tax);text('Verot',x+163,chartsY+727,16);dot(x+253,chartsY+721,color.indirect);text('Yritysten kautta',x+266,chartsY+727,16);}
   }
-  drawDeciles(48,false);drawDeciles(614,true);
+  chartSections.forEach((service,i)=>drawDeciles(48+i*566,service,chartSections.length===1?1104:542));
   for(const group of cardGroups){
     text(group.title+(group.showCount?' · '+group.items.length+' toimea':''),48,group.y-22,28,true);
     let cyCards=group.y;

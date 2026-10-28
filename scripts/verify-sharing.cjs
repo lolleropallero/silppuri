@@ -1,12 +1,14 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const source=read('src/app.js'),actions=JSON.parse(read('data/catalogue.json')).actions;
-const ctx=vm.createContext({TextEncoder,TextDecoder,Uint8Array,btoa,atob,URL,
+const ctx=vm.createContext({TextEncoder,TextDecoder,Uint8Array,btoa,atob,URL,incidenceModel:JSON.parse(read('data/incidence-model.json')),
   data:structuredClone(actions),selected:new Set(),scenario:{income:2,corporate:3,dividends:'vm'},units:{},conditions:{yle:'reduce-tax',farm:'redirect'},year:2031,includeLater:false,
   maxPP:10,packageName:'',payerGroups:[],filter:'all',category:'all',search:'',sortOrder:'desc',activeFlow:null,limit:12,catalogueOrder:[],catalogueOrderKey:'',q:()=>({value:''}),
   dividendStudyUrl:'https://www.sttinfo.fi/files/66784256/70136599/79254/fi'});
 const run=s=>vm.runInContext(s,ctx);
 run(read('src/share-state.js'));
+run(read('src/incidence.js'));
+run(read('src/share-editorial.js'));
 run(read('src/share-summary.js'));
 run(read('src/share-social.js'));
 run('const packageSession=createShareSession(()=>window.openai);');
@@ -30,29 +32,23 @@ assert.equal(ctx.packageSummary([measure('services',5000),measure('earned',5000)
 assert.equal(ctx.packageSummary([measure('services',5100),measure('earned',4900)]).profile.name,'SILPPURI','a narrow lead is mixed');
 assert.equal(ctx.packageSummary([measure('services',100),measure('earned',null),measure('capital',0)]).profile.name,'Omahoidon apostoli','unpriced/zero options have no scoring weight');
 assert.equal(ctx.packageSummary([]).tone.id,'empty');
-assert.equal(ctx.packageSummary([measure('capital',null)]).tone.id,'zero');
+assert.equal(ctx.packageSummary([measure('capital',null)]).tone.id,'unknown');
 assert.equal(ctx.packageSummary([measure('services',-50)]).tone.id,'reverse');
-for(const [sum,id] of [[0,'empty'],[0.01,'rookie'],[4999.99,'rookie'],[5000,'under'],[9499.99,'under'],[9500,'target'],[10000,'target'],[10500,'target'],[10500.01,'over'],[15000,'over'],[15000.01,'heavy'],[20000,'heavy'],[20000.01,'extreme'],[29999.99,'extreme'],[30000,'demolition']])assert.equal(ctx.packageTone(sum).id,id,String(sum));
-const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Ruokakassiryöstäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
+const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
 ctx.expectedNames=names;assert.ok(run('expectedNames.every(name=>Object.values(packageProfiles).some(p=>p.name===name))'));
 const summaryText=ctx.shareCaption([measure('capital',30000)],'Hessu & ystävät 🐾');
-assert.match(summaryText,/30 mrd\. € · Kansankomissaari\nBudjetti loppui\. Silppuri ei\./);
+assert.equal(summaryText,'Hessu & ystävät 🐾: 30 mrd. €, Kansankomissaari.\n'+ctx.packageSummary([measure('capital',30000)]).tone.text);
 // Descriptions follow priced selections, not a generic cuts-and-taxes script.
 const companyCut=measure('companies',600,{type:'cut',title:'Yritystukia −30 %'});
 const companyTax=measure('companies',700,{title:'Yhteisöveroa +3 prosenttiyksikköä'});
-assert.match(ctx.packageSummary([companyCut]).description,/yrityksille maksettavasta rahasta/);
-assert.ok(!ctx.packageSummary([companyCut]).description.includes('vero'));
-assert.match(ctx.packageSummary([companyTax]).description,/vero ja|veroja/);
-assert.ok(!ctx.packageSummary([companyTax]).description.includes('leikka'));
-assert.match(ctx.packageSummary([companyCut,companyTax]).description,/Kiristät yritysten veroja ja leikkaat/);
 const withReferences=ctx.packageSummary([companyTax,{...companyCut,amount:null,gross:50000},{...companyCut,amount:0,horizonEstimate:{amount:60000}}]);
-assert.ok(withReferences.description.endsWith('Suurin siivu: Yhteisöveroa +3 prosenttiyksikköä.'),'only counted amounts determine the headline');
+assert.equal(withReferences.largest,'Suurin siivu: Yhteisöveroa +3 prosenttiyksikköä (700 milj. €).','only counted amounts determine the headline and amount');
 assert.equal(ctx.packageSummary([]).description,'');
-assert.equal(ctx.packageSummary([measure('capital',null)]).description,'');
-assert.equal(ctx.packageSummary([measure('services',-50)]).description,'');
-assert.match(ctx.packageSummary([measure('earned',500),measure('capital',500)]).description,/useista veroista/);
-assert.ok(!ctx.packageSummary([measure('earned',500),measure('capital',500)]).description.includes('menoleikkauksia'));
-assert.equal(ctx.shareCaption([companyTax],'Testi').split('\n').at(-1),withReferences.description,'description follows the character and tone');
+assert.equal(ctx.packageSummary([measure('capital',null)]).largest,'');
+const compactCaption=ctx.shareCaption([companyTax],'Testi');
+assert.equal(compactCaption,'Testi: 700 milj. €, Näkymätön käsi.\n'+withReferences.tone.text);
+assert.equal(compactCaption.split('\n').length,2,'link captions contain only the title/amount/profile and subtitle');
+assert.ok(!compactCaption.includes('Suurin siivu'),'long description stays in the image');
 const testUrl='https://example.test/?lang=fi#s=abc_123-xyz',social=ctx.socialShareLinks(summaryText,testUrl);
 assert.equal(new URL(social.facebook).searchParams.get('u'),testUrl);
 for(const key of ['threads','x']){const url=new URL(social[key]);assert.equal(url.searchParams.get('text'),summaryText);assert.equal(url.searchParams.get('url'),testUrl);}
@@ -143,21 +139,29 @@ assert.equal(ctx.cardAmountDisplay({amount:0}).excluded,false);
 assert.equal(ctx.shareCardAmount(ctx.data.find(d=>d.id==='cut-1-42')),'445,3 milj. € *');
 assert.equal(ctx.shareCardAmount(ctx.data.find(d=>d.id==='cut-1-72')),'100 milj. €');
 // Inspect actual Canvas text calls, rather than searching source strings alone.
-const drawn=[];
-const drawing=new Proxy({measureText:value=>({width:String(value).length*11}),fillText:value=>drawn.push(String(value))},{get:(target,key)=>target[key]||(()=>{})});
+const drawn=[],panels=[];
+const drawing=new Proxy({measureText:value=>({width:String(value).length*11}),fillText:value=>drawn.push(String(value)),roundRect:(x,y,width,height)=>panels.push({x,y,width,height})},{get:(target,key)=>target[key]||(()=>{})});
 const bitmap={getContext:()=>drawing};ctx.document={createElement:()=>bitmap};
 ctx.root={querySelector:()=>({querySelectorAll:()=>[]})};ctx.Path2D=function(){};
-ctx.calculateIncidence=()=>({entries:[],serviceEntries:[],serviceRows:Array.from({length:10},()=>({share:0,shareLow:0,shareHigh:0})),householdRows:Array.from({length:10},()=>({mid:0,percentLow:0,percentHigh:0,cut:0,tax:0,indirect:0}))});
-ctx.incidenceModel={income:Array(10).fill(10000)};ctx.decileName=i=>'Ryhmä '+i;ctx.decileIncomeRange=()=>'';
+ctx.decileName=i=>'Ryhmä '+i;ctx.decileIncomeRange=()=>'';ctx.shareLabel=n=>n+' %';ctx.chartPercent=n=>n+' %';
 ctx.piePresentation=()=>({parts:[],rings:[]});ctx.pieViewport=()=>({width:320,height:320,x:0,y:0});ctx.smallSliceLabel=()=>'';
 ctx.stateIn({modelContent:{...seed,includeLater:true,selectedIds:[],fundingChoices:{yle:'reduce-tax',farm:'redirect'}}});
 ctx.createShareImage(ctx.data,'Testi',true,'https://example.test/silppuri/#s=secret');
 const imageText=drawn.join(' ');
-assert.ok(imageText.includes(ctx.packageSummary(ctx.data).description),'PNG carries the same description as sharing text');
+assert.ok(imageText.includes(ctx.packageSummary(ctx.data).description),'PNG carries the selected satire');
+assert.ok(imageText.includes(ctx.packageSummary(ctx.data).largest),'PNG includes the biggest actual measure');
 for(const required of ['50–80 milj. €','Arvio palvelujen käytön perusteella',
   'ei mitattu menetys','Osin vastaavista toimista arvioitu jakauma','example.test/silppuri/'])assert.ok(imageText.includes(required),required);
 assert.ok(!imageText.includes('#s='),'do not print a giant share token');
 for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
+for(const [selectedIds,money,services] of [[['vat'],true,false],[['health'],false,true],[['health','vat'],true,true],[['cut-1-42'],false,false],[['income'],false,false]]){
+  ctx.stateIn({modelContent:{...seed,selectedIds,includeLater:false,taxIncreasesPP:{income:0,corporate:1}}});
+  drawn.length=0;panels.length=0;
+  ctx.createShareImage(ctx.data.filter(d=>ctx.selected.has(d.id)),'Osioiden testi',false,'https://example.test/');
+  assert.equal(drawn.includes('Rahat ja ostovoima'),money,selectedIds+': household chart');
+  assert.equal(drawn.includes('Julkiset palvelut'),services,selectedIds+': service chart');
+  assert.equal(panels.some(p=>p.width===1104),money!==services,selectedIds+': a single populated chart uses the whole width');
+}
 // File share carries the same summary as the compose/copy actions.
 ctx.File=File;ctx.shareBlob=new Blob(['test image'],{type:'image/png'});ctx.shareName={value:'Kuvan jakotesti'};
 ctx.shareFilename=()=>ctx.shareName.value+'.png';ctx.shareLink=testUrl;
@@ -173,7 +177,7 @@ fs.writeFileSync(path.join(root,'tmp/local-site/share-fixtures.html'),'<!doctype
 for(const removed of ['Palkit: skenaarioiden keskiarvo.','Tutkimukset ja laskentatavat: avaa','Palvelurahoituksen jakautuminen, ei menetys','const notes='])assert.ok(!read('src/share-image.js').includes(removed),'export stays visual: '+removed);
 console.log('PASS: all 254 cards × both horizons, all funding/dividend modes, selected units, Unicode names, malformed/unknown links, immutable originals, private storage, legacy migration; largest URL '+full.length+' characters.');
 console.log('Browser fixture: tmp/share-qa/url.txt');
-console.log('PASS: eight profile names, euro weighting, ambiguous bundles, zero/missing/negative amounts, all tone boundaries, and encoded social compose links.');
+console.log('PASS: profile names, euro weighting, missing estimates, compact captions, incidence-based image copy and encoded social compose links.');
 (async()=>{
   const pngContext=vm.createContext({Blob,TextEncoder,Uint8Array,DataView});vm.runInContext(read('src/share-png.js'),pngContext);
   const original=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aH9sAAAAASUVORK5CYII=','base64');
