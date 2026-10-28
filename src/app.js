@@ -43,6 +43,8 @@
   const format=n=>(n/1000).toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2});
   const pct=n=>(n/target*100).toLocaleString('fi-FI',{maximumFractionDigits:1});
   const selected=new Set();
+  let packageName='';
+  /*SHARE_STATE*/
   const scenario={income:2,corporate:3,dividends:'vm',ylePercent:20};
   const maxPP=10;
   const units={};
@@ -59,7 +61,8 @@
   const dialog=q('.sp-modal');
   /*MODAL_SHRED*/
   const modalShred=createModalShred(root,dialog);
-  q('.sp-chart').insertAdjacentHTML('beforeend','<button type="button" class="sp-zoom-open cursor-interaction" aria-label="Suurenna piirakka" aria-expanded="false" aria-controls="sp-pie-details" data-tooltip="Suurenna piirakka"><i data-lucide="zoom-in" aria-hidden="true"></i></button>');
+  const zoomIcon=expanded=>'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M6 10h8'+(expanded?'':'M10 6v8')+'"/></svg>';
+  q('.sp-chart').insertAdjacentHTML('beforeend','<button type="button" class="sp-zoom-open cursor-interaction" aria-label="Suurenna piirakka" aria-expanded="false" aria-controls="sp-pie-details" data-tooltip="Suurenna piirakka">'+zoomIcon(false)+'</button>');
   const budgetControls=document.createElement('div');budgetControls.className='sp-budget-controls';
   q('.sp-horizon').before(budgetControls);budgetControls.append(q('.sp-horizon'),q('.sp-zoom-open'));
   q('.sp-chart').insertAdjacentHTML('afterend','<details class="sp-small-actions" hidden><summary class="cursor-interaction"></summary><ul></ul></details>');
@@ -284,6 +287,7 @@
   });
   function stateIn(s){
     const model=s?.modelContent??s;
+    packageName=typeof model?.name==='string'?shareTitle(model.name):'';
     const source=Array.isArray(model?.selectedIds)?model.selectedIds:[];
     const legacyYle=source.filter(id=>id==='cut-1-42'||id==='cut-1-43').at(-1);
     scenario.ylePercent=ylePercent(Number.isFinite(model?.yleCutPercent)?model.yleCutPercent:legacyYle==='cut-1-43'?10:20);
@@ -315,9 +319,15 @@
     activeFlow=payerGroups.some(g=>g.id===ui?.activeFlow)?ui.activeFlow:null;
     q('#sp-search').value=search;q('#sp-category').value=category;q('#sp-sort').value=sortOrder;
   }
+  function packageModel(){
+    return {selectedIds:[...selected],name:packageName,year,includeLater,yleCutPercent:ylePercent(scenario.ylePercent),
+      taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},unitSteps:{...units},dividendMode:scenario.dividends,fundingChoices:{...conditions}};
+  }
   function save(){
-    const p=window.openai?.setWidgetState?.({modelContent:{selectedIds:[...selected],year,includeLater,yleCutPercent:ylePercent(scenario.ylePercent),taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},unitSteps:units,dividendMode:scenario.dividends,fundingChoices:conditions},privateContent:{catalogueViewVersion:1,filter,category,search,sortOrder,activeFlow,visibleCount:limit,catalogueOrder,catalogueOrderKey}});
+    const p=window.openai?.setWidgetState?.({modelContent:packageModel(),privateContent:{catalogueViewVersion:1,filter,category,search,sortOrder,activeFlow,visibleCount:limit,catalogueOrder,catalogueOrderKey}});
     if(p?.catch)p.catch(()=>{});
+    // Editing a shared package changes this browser's copy. The original link stays immutable.
+    if(globalThis.location?.hash.startsWith('#s='))try{history.replaceState(null,'',shareUrl(packageModel(),location.href));}catch{}
   }
 
   function slice(a,b,outer=148,inner=108){
@@ -457,6 +467,22 @@
   const moneyLabel=n=>n===null||n===undefined?'Ei arviota':n===0?'0 €':Math.abs(n)>=1000?format(n)+' mrd. €':n.toLocaleString('fi-FI',Math.abs(n)<.1?{maximumSignificantDigits:2}:{maximumFractionDigits:1})+' milj. €';
   const payerMoneyLabel=n=>Number.isFinite(n)?n.toLocaleString('fi-FI',n!==0&&Math.abs(n)<.1?{maximumSignificantDigits:2}:{maximumFractionDigits:1})+' milj. €':'Ei arviota';
   const valueOf=d=>Number.isFinite(d.amount)?d.amount:0;
+  function cardAmountDisplay(d){
+    const rangeLabel=range=>range.map(n=>payerMoneyLabel(n).replace(' milj. €','')).join('–')+' milj. €';
+    const validRange=range=>range?.length===2&&range.every(Number.isFinite);
+    const excluded=!Number.isFinite(d.amount);
+    if(excluded){
+      const reference=d.estimate?.sensitivity?.find(row=>row.label==='2031');
+      if(validRange(reference?.range))return {text:rangeLabel(reference.range)+' *',excluded,hasAmount:true};
+      // Only an explicitly reviewed reference is eligible. A tax expenditure,
+      // partial cost or unsupported scaled gross value is not a revenue estimate.
+      if(Number.isFinite(d.referenceEstimate?.amount))return {text:payerMoneyLabel(d.referenceEstimate.amount)+' *',excluded,hasAmount:true};
+      return {text:'Tuotto avoin',excluded,hasAmount:false};
+    }
+    const future=d.laterApplied||d.amount>=0&&d.amount<20&&d.horizonEstimate?.amount>d.amount;
+    const amount=validRange(d.estimate?.range)?rangeLabel(d.estimate.range):payerMoneyLabel(d.amount);
+    return {text:amount+(future?' *':''),excluded,hasAmount:true};
+  }
   function payerDisplay(actions){
     const actual=actions.some(d=>Number.isFinite(d.amount))?actions.reduce((n,d)=>n+valueOf(d),0):null;
     const deferred=actual===0?actions.filter(d=>d.horizonEstimate&&!d.laterApplied):[];
@@ -495,6 +521,7 @@
     return d.amount===0?'VM:n taulukossa vuodelle '+year+' on merkitty 0 €.':'';
   }
   function actionAmountMarkup(d){
+    if(!Number.isFinite(d.amount))return esc(cardAmountDisplay(d).text).replace(' *','<sup aria-hidden="true">*</sup>');
     return esc(d.estimate?.display||moneyLabel(d.amount))+(amountFootnote(d)?'<sup aria-hidden="true">*</sup>':'');
   }
   q('#sp-category').insertAdjacentHTML('beforeend',payerGroups.map(g=>`<option value="${g.id}">${g.name}</option>`).join(''));
@@ -584,8 +611,7 @@
     q('.sp-zoom-list').hidden=!pieExpanded;
     const button=q('.sp-zoom-open'),label=pieExpanded?'Pienennä piirakka':'Suurenna piirakka';
     button.setAttribute('aria-expanded',String(pieExpanded));button.setAttribute('aria-label',label);button.dataset.tooltip=label;
-    button.innerHTML='<i data-lucide="'+(pieExpanded?'zoom-out':'zoom-in')+'" aria-hidden="true"></i>';
-    globalThis.lucide?.createIcons({attrs:{width:22,height:22}});
+    button.innerHTML=zoomIcon(pieExpanded);
     if(pieExpanded)renderZoom();
     const after=moving.map(el=>el.getBoundingClientRect());
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -815,6 +841,9 @@
   }
   function render(announce=false){
     syncScenario();
+    q('.sp-publish').disabled=selected.size===0;
+    q('.sp-panel-heading h2').textContent=packageName||'Sinun pakettisi';
+    q('.sp-panel-heading h2').classList.add('sp-package-name');
     const chosen=data.filter(d=>selected.has(d.id));
     if(activeFlow&&!chosen.some(d=>d.flow===activeFlow))activeFlow=null;
     root.querySelectorAll('[data-horizon]').forEach(button=>button.setAttribute('aria-pressed',String((button.dataset.horizon==='later')===includeLater)));
@@ -840,8 +869,8 @@
       const el=list.querySelector(`[data-id="${d.id}"]`);el.hidden=!visible.has(d.id);if(el.hidden)return;
       el.querySelector('.sp-card-open').textContent=d.title;
       const amountNote=amountFootnote(d),amountElement=el.querySelector('.sp-amount');
-      amountElement.innerHTML=actionAmountMarkup(d)+'<small>'+esc(d.estimate?.caption||(d.amount===null?'Tuottoa ei laskettu':d.amount<0?'Heikentää julkista taloutta / vuosi':'/ vuosi'))+'</small>';
-      const footnote=el.querySelector('.sp-amount-note');footnote.textContent=amountNote?'* '+amountNote:'';footnote.hidden=!amountNote;
+      amountElement.innerHTML=actionAmountMarkup(d)+(Number.isFinite(d.amount)?'<small>'+esc(d.estimate?.caption||(d.amount<0?'Heikentää julkista taloutta / vuosi':'/ vuosi'))+'</small>':'');
+      const footnote=el.querySelector('.sp-amount-note');footnote.textContent=amountNote?'* '+amountNote:'';footnote.hidden=!amountNote||!Number.isFinite(d.amount);
       if(amountNote)amountElement.setAttribute('aria-describedby',footnote.id);else amountElement.removeAttribute('aria-describedby');
       el.querySelector('.sp-action-percent').textContent=d.amount===null?'Ei laskelmassa':pct(d.amount)+' % tavoitteesta';
       el.querySelector('.sp-consequence').textContent=d.impact;
@@ -932,7 +961,10 @@
     const top=root.getBoundingClientRect().top;
     return visibleFrame?{top:top+visibleFrame.top,height:visibleFrame.height}:{top:0,height:window.innerHeight};
   }});
-  stateIn(window.openai?.widgetState);render();
+  /*SHARE_IMAGE*/
+  /*SHARE_PNG*/
+  /*SHARE_UI*/
+  stateIn(readSharedState()||window.openai?.widgetState);render();
   // CSS handles an ordinary page. In the auto-height preview the parent frame
   // scrolls instead, so use the browser's clipped intersection rectangle.
   const bookmarkNav=q('.sp-bookmarks'),catalogue=q('.sp-actions');

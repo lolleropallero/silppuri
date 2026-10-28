@@ -1820,7 +1820,7 @@
       "methodKey": "student",
       "channel": "cash",
       "amountBasis": "public-total",
-      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
+      "note": "Lukion kouluruokamaksu kohdistuu lukiolaisiin ja heidän perheisiinsä. Palkka- ja veronalaisten tulojen jakaumat ovat karkeita vertailuja, koska maksajien tulotietoja ei ole. Lapsiperhe-etuuksien jakauma painottuisi pienten lasten perheisiin."
     },
     "cut-2-61": {
       "kind": "proxy",
@@ -1842,7 +1842,7 @@
       "methodKey": "student",
       "channel": "cash",
       "amountBasis": "public-total",
-      "note": "Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida."
+      "note": "Koulumatkatuen menetys kohdistuu toisen asteen opiskelijoihin ja heidän perheisiinsä, kun nykyisin tuettu koulumatka jää alle 15 kilometrin. Palkka- ja veronalaisten tulojen jakaumat ovat karkeita vertailuja, koska maksajien tulotietoja ei ole. Lapsiperhe-etuuksien jakauma painottuisi pienten lasten perheisiin."
     },
     "cut-2-51": {
       "kind": "proxy",

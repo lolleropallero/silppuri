@@ -186,8 +186,11 @@ def extend(model, actions):
     specs['cut-4-22']['method']='VM kohdistaa uusia maksuja ensisijaisesti hyvätuloisille vammaispalvelujen käyttäjille. Vammaisetuuksien yleinen jakauma osoittaisi maksun väärin myös pienituloisille. Maksutulot on arvioitu, mutta tuloraja ja maksupohja pitää määritellä ennen tulokymmenysjakoa.'
     specs['cut-3-49']['method']='Eläkeiän nosto vähentää eläkemenoja mutta lisää osalla palkkatuloa ja toisilla muita etuuksia. Julkisen talouden säästö ei siksi yksin kerro henkilön tulonmenetystä. Nykyisten eläkeläisten tuloprofiilia ei käytetä tulevien eläkeikäluokkien nettotuloarviona.'
     # Target population corrections, audited against the actual policy rules.
-    for id in ['cut-3-14','cut-2-41','cut-2-61','cut-2-62']:
+    for id in ['cut-3-14','cut-2-61']:
         specs[id].update(profiles=['wages','taxable-income'],note='Tuloraja koskee puolisoa tai perhettä. Koko etuuden saajien jakauma ei kuvaa menettäjiä. Palkka- ja veronalaisten tulojen jakaumat ovat vain vaihtoehtoisia sijaisjakaumia; perhekohtaisia tulorajoja ei simuloida.')
+    student_proxy='Palkka- ja veronalaisten tulojen jakaumat ovat karkeita vertailuja, koska maksajien tulotietoja ei ole. Lapsiperhe-etuuksien jakauma painottuisi pienten lasten perheisiin.'
+    specs['cut-2-41'].update(profiles=['wages','taxable-income'],note='Lukion kouluruokamaksu kohdistuu lukiolaisiin ja heidän perheisiinsä. '+student_proxy)
+    specs['cut-2-62'].update(profiles=['wages','taxable-income'],note='Koulumatkatuen menetys kohdistuu toisen asteen opiskelijoihin ja heidän perheisiinsä, kun nykyisin tuettu koulumatka jää alle 15 kilometrin. '+student_proxy)
     for id,share in [('cut-3-63',.4),('cut-3-64',.9)]:
         specs[id].update(householdShare=share,note=f'VM:n mukaan osa etuudesta maksetaan työnantajille. Kotitalouksille kohdennetaan tässä {share:.0%} julkistaloudellisesta summasta. Osuus on karkea sijaislaskelma, ei verojen ja korvaavien etuuksien jälkeen laskettu kotitalouden menetys. Työnantajan osuutta ei kirjata työntekijän suoraksi menetykseksi.')
     for id in ['cut-3-54','cut-3-56']: specs[id].update(profiles=['disability'],methodKey='benefit')

@@ -1337,7 +1337,7 @@
       "flow": "companies",
       "who": "Metsähallituksen valtiolle tulouttamasta voitosta. Kyse ei ole suoraan tuulivoimayhtiöiden vuokran korottamisesta.",
       "society": "Suurempi tuloutus jättää Metsähallitukselle vähemmän rahaa investointeihin, ellei liiketoiminnan tulos parane.",
-      "impact": "Valtion maita vuokraavilta tuulivoimayhtiöiltä.",
+      "impact": "Metsähallituksen valtiolle tulouttamasta voitosta. Kyse ei ole suoraan tuulivoimayhtiöiden vuokran korottamisesta.",
       "detail": "Tuulivoiman rakentamisesta saatavat tulot kasvattavat lähivuosina Metsähallituksen tuloja ja tuloutuskykyä. Yhtenä lisäysten arviointiperusteena voidaan pitää Metsähallitukselle maanomistajana tuulivoimalayksiköistä tulevaa vuokratuottoa, joka nykyisten markkina-arvojen mukaan on teollisen kokoluokan tuulivoimalasta n. 10 000-30 000 €/v. Kun Metsähallituksen hallinnoimilla valtion mailla toimii v. 2026 hiukan alle 200 asennettua tuulivoimalaa, eri kehitysvaiheissa olevaa maatuulivoimaa n. 6 000 MW ja merituulivoimaa n. 8 500 MW ja tavoitteena on kolminkertaistaa uusiutuvan energian määrä v. 2030 mennessä, lähiajan uuden tuulivoimakapasiteetin määrä arvioidaan n. 400 megawatiksi ja lähivuosien lisäyspotentiaali n. 900 megawatiksi. Voimaloiden lukumäärän ja tuulivoimaenergian lisäystavoitteiden perusteella lasketun, tässä vaiheessa hyvin yleistasoisen arvion mukaan tuulivoimatulojen lisäys mahdollistaisi ainakin 10-20 milj. euron asteittain nousevan lisätuloutuksen lähivuosina. Toimenpide vähentäisi velkaantumista, mutta sillä ei arvioida olevan olennaista nettomenovaikutusta. Tuloarvio on tässä vaiheessa ainostaan suuntaa antava.",
       "budget": [
         5,
@@ -2114,7 +2114,7 @@
       "flow": "students",
       "who": "Nuorilta, joiden velvollisuus opiskella päättyisi peruskoulun suorittamiseen tai viimeistään sen vuoden keväällä, jona he täyttävät 17.",
       "society": "Maksuttomuus ja ohjaus vähenisivät. Toisen asteen tutkinnon suorittaminen voi vähentyä, mikä heikentäisi nuorten myöhempää työllistymistä.",
-      "impact": "Toisen asteen opiskelijoilta ja heidän perheiltään sekä koulutuksen järjestäjiltä.",
+      "impact": "Nuorilta, joiden velvollisuus opiskella päättyisi peruskoulun suorittamiseen tai viimeistään sen vuoden keväällä, jona he täyttävät 17.",
       "detail": "Lyhennetään oppivelvollisuus päättymään kuten aikaisemmin (peruskoulun suorittaminen tai viimeistään sen vuoden kevät, jolloin nuori täyttää 17 vuotta). Vuonna 2021 voimaan tullut oppivelvollisuuslaki pidensi oppivelvollisuuden 18 vuoteen tai sitä ennen toisen asteen tutkinnon suorittamiseen. Samalla säädettiin, että koulutus on maksutonta sen kalenterivuoden loppuun saakka, jolloin opiskelija täyttää 20 vuotta.\nOppivelvollisuuden pidennyksen johdosta valtion talousarvioon tehtiin menolisäyksiä yhteensä 129 milj. euroa. Suurimmat lisäykset kohdentuvat lukiokoulutukseen (n. 63 milj. euroa), ammatillisen koulutukseen (n. 29 milj. euroa) ja koulumatkatukeen (n. 28 milj. euroa). Oppimateriaalilisän palauttaminen vähentäisi säästöä n. 11 milj. euroa.\nToisaalta oppivelvollisuuden lyhentäminen voisi vähentää toisen asteen tutkinnon suorittamista ja heikentää perusasteen varaan jäävien nuorten työllistymismahdollisuuksia pidemmällä aikavälillä. \nNykyrahoituksen taso (v. 2027-2030): 129 m€ /v. (ei sisällä kustannusten nousua) ",
       "budget": [
         118,
@@ -10942,7 +10942,7 @@
       "who": "Yrittäjävähennystä käyttäviltä toiminimi- ja henkilöyhtiöyrittäjiltä sekä maa- ja metsätalouden ja poronhoidon harjoittajilta.",
       "society": "Verotettava yritys- tai metsätulo kasvaisi. Osakeyhtiöiden yleinen yhteisöverokanta ei muutu tällä toimella.",
       "moneyNote": "",
-      "impact": "Toiminimiyrittäjiltä, henkilöyhtiöiden omistajilta ja metsätalouden harjoittajilta.",
+      "impact": "Yrittäjävähennystä käyttäviltä toiminimi- ja henkilöyhtiöyrittäjiltä sekä maa- ja metsätalouden ja poronhoidon harjoittajilta.",
       "detail": "Verotettava yritys- tai metsätulo kasvaisi. Osakeyhtiöiden yleinen yhteisöverokanta ei muutu tällä toimella.",
       "budget": [
         155.0,
@@ -12568,7 +12568,7 @@
       "who": "Pakettiautojen ja kevyiden kuorma-autojen omistajilta. Kustannuksia voi siirtyä yritysten asiakkaille.",
       "society": "Paketti- ja kuorma-auton pitäminen kallistuisi. Toimi kannustaisi sähköistämään kalustoa.",
       "moneyNote": "VM:n suora arvio on 110–140 miljoonaa euroa. Piirakassa käytetään alarajaa. Dieselin verotuen samanaikainen pienentäminen vähentäisi tämän toimen tuottoa.",
-      "impact": "Paketti- ja kuorma-autojen omistajilta ja kuljetusyrityksiltä.",
+      "impact": "Pakettiautojen ja kevyiden kuorma-autojen omistajilta. Kustannuksia voi siirtyä yritysten asiakkaille.",
       "detail": "VM:n suora arvio on 110–140 miljoonaa. Toimi korvaisi osin samaa energiaverotukea kuin dieselveron muutos. Piirakassa käytetään vaihteluvälin alarajaa.",
       "budget": [
         110.0,
@@ -12712,6 +12712,10 @@
       "conflicts": [],
       "earliest": 2028,
       "unquantifiedNet": true,
+      "referenceEstimate": {
+        "amount": 55,
+        "kind": "static"
+      },
       "research": {
         "sources": [
           "biomass"
@@ -14250,7 +14254,7 @@
       "title": "Suurten alustojen verkkomainonnalle 5 % vero",
       "flow": "companies",
       "who": "Vero peritään suurilta mainosalustoilta, mutta kustannus voi siirtyä mainoksia ostaville yrityksille. Google laskuttaa Itävallan 5 prosentin digiveron erillisenä lisämaksuna mainostajilta.",
-      "impact": "Suurilta mainosalustoilta.",
+      "impact": "Vero peritään suurilta mainosalustoilta, mutta kustannus voi siirtyä mainoksia ostaville yrityksille. Google laskuttaa Itävallan 5 prosentin digiveron erillisenä lisämaksuna mainostajilta.",
       "society": "Veron voisi periä Suomessa näytetystä verkkomainonnasta Itävallan mallin tapaan. Alustat voivat nostaa mainonnan hintaa tai muuttaa sopimuksia. Britanniaa koskevassa tutkimusmallissa digivero pienensi BKT:tä mutta kasvatti kotimaista kulutusta; verotuotto ja talouden kokonaishyöty eivät muutu aina samaan suuntaan.",
       "origin": "finnwatch",
       "source": "Finnwatch (2024): Veropohjan aukot",
@@ -14345,7 +14349,7 @@
       "title": "Rahoitusalalle lisävero ja pankeille palkkavero",
       "flow": "companies",
       "who": "Rahoitusalan voitollisilta yrityksiltä ja palkkaveron osalta pankeilta. Osa rasituksesta voi siirtyä omistajille, asiakkaille tai työntekijöille.",
-      "impact": "Pankeilta ja niiden omistajilta.",
+      "impact": "Rahoitusalan voitollisilta yrityksiltä ja palkkaveron osalta pankeilta. Osa rasituksesta voi siirtyä omistajille, asiakkaille tai työntekijöille.",
       "society": "Norjan mallissa rahoitusalaa verotetaan sekä palkoista että tavallista korkeammalla voittoverolla. Pankkiveroja koskeva eurooppalainen tutkimus osoittaa, että osa rasituksesta voi siirtyä lainanottajille, etenkin keskittyneillä markkinoilla.",
       "origin": "sorsa",
       "source": "Finér / Kalevi Sorsa -säätiö (2024): Mistä lisää verotuloja?",

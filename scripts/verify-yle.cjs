@@ -10,6 +10,8 @@ assert.equal(coverage.find(r=>r.key==='1-43').mergedInto,'cut-1-42');
 const ctx=vm.createContext({data:structuredClone(actions),selected:new Set(),scenario:{income:2,corporate:3,dividends:'vm'},units:{},conditions:{yle:'keep-tax',farm:'redirect'},year:2031,includeLater:false,
  maxPP:20,payerGroups:[],filter:'all',category:'all',search:'',sortOrder:'desc',activeFlow:null,limit:12,catalogueOrder:[],catalogueOrderKey:'',q:()=>({value:''}),moneyLabel:n=>String(n),esc:String,dividendStudyUrl:'https://www.sttinfo.fi/files/66784256/70136599/79254/fi'});
 const run=s=>vm.runInContext(s,ctx);
+ctx.packageName='';
+run(fs.readFileSync(path.join(root,'src/share-state.js'),'utf8'));
 run('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});');
 run(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')));
 run(source.slice(source.indexOf('  function capFor'),source.indexOf('  function effectFor')));

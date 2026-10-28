@@ -1,0 +1,26 @@
+#silppuri-demo .sp-top{padding-right:34px;flex-wrap:wrap}
+#silppuri-demo .sp-publish{margin-left:auto;display:flex;align-items:center;gap:8px;border:0;border-radius:9px;background:var(--sp-button);color:var(--sp-button-text);font-weight:700;padding:11px 16px;cursor:pointer}
+#silppuri-demo .sp-publish svg{width:19px;height:19px}
+#silppuri-demo .sp-tag{margin-left:auto}
+#silppuri-demo .sp-share{position:fixed;inset:0;margin:auto;width:min(760px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--sp-line);border-radius:16px;background:var(--sp-panel);color:var(--sp-ink);overflow:auto;font:inherit;box-shadow:0 22px 90px #0005}
+#silppuri-demo .sp-share::backdrop{background:#17201999;backdrop-filter:blur(4px)}
+#silppuri-demo .sp-share-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--sp-line)}
+#silppuri-demo .sp-share-head h2{margin:0;font-size:23px}
+#silppuri-demo .sp-share-close{border:0;background:transparent;font-size:30px;width:44px;height:44px;cursor:pointer}
+#silppuri-demo .sp-share-body{padding:20px 22px}
+#silppuri-demo .sp-share label{display:block;font-weight:700;margin-bottom:7px}
+#silppuri-demo .sp-share input{font:inherit;color:var(--sp-ink);background:var(--sp-paper);border:1px solid var(--sp-line);border-radius:8px;padding:12px;width:100%;min-width:0;font-size:16px}
+#silppuri-demo .sp-share-preview{margin:18px 0;background:#e4e7dc;max-height:42dvh;overflow:auto;border:1px solid var(--sp-line);border-radius:8px}
+#silppuri-demo .sp-share-preview img{display:block;width:100%;height:auto}
+#silppuri-demo .sp-share-preview:empty{display:none}
+#silppuri-demo .sp-share-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+#silppuri-demo .sp-share-buttons button{flex:1;min-height:46px;padding:10px 16px;border-radius:8px;border:1px solid var(--sp-line);background:var(--sp-paper);font-weight:700;cursor:pointer}
+#silppuri-demo .sp-share-buttons .sp-download{background:var(--sp-button);color:var(--sp-button-text)}
+#silppuri-demo .sp-share-buttons [hidden]{display:none}
+#silppuri-demo .sp-share-status{margin:8px 0;min-height:1.5em;color:var(--sp-muted)}
+#silppuri-demo .sp-share-local{font-size:13px;color:var(--sp-muted);margin:6px 0}
+#silppuri-demo .sp-share-link{font-size:13px!important}
+#silppuri-demo .sp-share-notice{padding:12px 20px;margin:0;border-bottom:1px solid var(--sp-line);background:var(--sp-lime)}
+#silppuri-demo .sp-package-name{font-size:20px;overflow-wrap:anywhere}
+@media(max-width:700px){#silppuri-demo .sp-top{padding-right:20px}#silppuri-demo .sp-share-body{padding:16px}#silppuri-demo .sp-share-head{padding:12px 16px}}
+@media(max-width:390px){#silppuri-demo .sp-top{padding:15px}#silppuri-demo .sp-publish{padding:10px 12px}#silppuri-demo .sp-share-buttons{gap:8px}}

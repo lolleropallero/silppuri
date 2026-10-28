@@ -7,6 +7,8 @@ const ctx=vm.createContext({data:structuredClone(actions),selected:new Set(),sce
   maxPP:20,payerGroups:[],filter:'all',category:'all',search:'',sortOrder:'asc',activeFlow:null,limit:32,catalogueOrder:[],catalogueOrderKey:'',q:()=>({value:''}),
   dividendStudyUrl:'https://www.sttinfo.fi/files/66784256/70136599/79254/fi'});
 const run=s=>vm.runInContext(s,ctx);
+ctx.packageName='';
+run(fs.readFileSync(path.join(root,'src/share-state.js'),'utf8'));
 run('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});');
 run(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')));
 run(source.slice(source.indexOf('  const moneyLabel='),source.indexOf("  q('#sp-category').insertAdjacentHTML")));

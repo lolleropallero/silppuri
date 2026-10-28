@@ -2,6 +2,14 @@
 
 Interaktiivinen konsepti VM:n vuoden 2026 meno- ja verokartoituksista.
 
+## Paketin jakaminen
+
+Julkaise-painikkeesta paketin voi nimetä, ladata PNG:nä ja kopioida muokattavan jakolinkin. PNG sisältää piirakan, maksajaryhmät, molemmat tuloryhmäkuvaajat ja kaikki valitut kortit. Kuva käyttää samoja laskelmia kuin käyttöliittymä; puuttuvat tuloryhmäarviot eivät muutu nolliksi. Tukevilla mobiiliselaimilla myös laitteen oma jakovalikko on käytettävissä.
+
+`src/share-state.js` määrittelee version 1 URL-muodon (`#s=`): UTF-8-JSON base64url-muodossa, korttien tunnukset, nimi, vero- ja yksikkösäädöt, Ylen prosentti, rahoitusvaihtoehdot, osinkomalli ja ajankohta. Linkin valinnat menevät selaimen tallennettujen valintojen edelle. Muokkaaminen päivittää vastaanottajan kopion, ei alkuperäistä linkkiä. Rahasummia ei lueta URL:sta vaan lasketaan käytössä olevalla aineistoversiolla. Tuntematon formaatti tai korttitunnus näyttää virheen eikä avaa huomaamatta vajaata pakettia. Tietoja ei lähetetä erilliseen palveluun eikä jakaminen itsessään julkaise mitään someen.
+
+`python scripts/build.py` päivittää myös tavallisen, ilman iframea toimivan sivun `tmp/local-site/index.html`. Sen voi tarjota komennolla `python -m http.server 8765 --bind 127.0.0.1 --directory tmp/local-site`. Paikallinen osoite toimii vain samalla koneella; muille jaettavat linkit edellyttävät sivun julkista HTTPS-osoitetta. Julkinen versio on tavallinen staattinen HTML-tiedosto eikä jakaminen vaadi taustapalvelua. `src/standalone.js` säilyttää valinnat selaimessa ja lukee myös aiemman paikallisen esikatselun tallennuksen. Tarkistus: `node scripts/verify-sharing.cjs`.
+
 `artifacts/silppuri-konsepti.html` on 27.10.2026 talteen otettu, tavuntarkka kopio toimivasta konseptista. Lähdekoodi ja laskennan aineistot ovat samassa commitissa, joten tähän versioon voi palata myös ilman uutta rakennusta. Rakennuskomento kirjoittaa edelleen keskustelun visualisointihakemistoon; arkistokopio ei päivity itsestään.
 
 Lisäys 27.10.2026: 12 uutta korttia (10 Finnwatchin raporttia täydentävää veromallia ja 2 Kalevi Sorsa -säätiön ehdotusta). `scripts/curate_additional_taxes.py` ylläpitää lähteitä, tiivistelmiä, rajauksia ja parametrien perusteluja. `data/additional-tax-actions.json` sisältää kortit; `data/additional-tax-inputs.json` laskennan syötteet; `scripts/additional_tax_models.py` tuottaa rakennuksessa `data/additional-tax-results.json`-tulokset. Kaikki 43 numeroitua Finnwatch-suositusta on jäljitetty `data/finnwatch-proposal-coverage.json`-tiedostoon. Sivulla lähteet ja laskelmien rajaukset ovat kyseisten korttien Lähteet ja laskentatapa -kohdassa. Osa suosituksista on valvontaa tai kansainvälistä päätöksentekoa, ei erillinen verotuotto. FASTER ja toteutetut osakevaihtokorjaukset eivät ole uusia säästöjä. BEFITin, lisäeläkkeiden sopimusmuutosten tai yksittäisten avoimuussääntöjen erillistä tuottoa ei väitetä lasketuksi.

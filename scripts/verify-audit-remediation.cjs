@@ -3,6 +3,23 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=path.join(__dirname,'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const {actions,meta}=read('data/catalogue.json'),model=read('data/incidence-model.json');
+const corrections=read('data/audit-corrections.json');
+// U02: check generated card-front copy, not only the corrected detail field.
+for(const d of actions){
+ const patch=corrections.actions[d.id];
+ if(patch?.who)assert.equal(d.impact,patch.impact??patch.who,d.id+': front must use the reviewed payer');
+}
+for(const id of ['cut-1-76','fw-digital','sorsa-bank','tax-van']){
+ const d=actions.find(d=>d.id===id);assert.equal(d.impact,d.who,id+': front and detail agree');
+}
+// U01: these are a meal fee and a distance threshold, not income limits.
+for(const id of ['cut-2-41','cut-2-62']){
+ assert.deepEqual(model.actions[id].profiles,['wages','taxable-income']);
+ assert.doesNotMatch(model.actions[id].note,/tuloraja|puoliso/i,id+': unrelated eligibility rule');
+ assert.match(model.actions[id].note,/perhei.*karkeita vertailuja/);
+}
+assert.match(model.actions['cut-2-41'].note,/Lukion kouluruokamaksu/);
+assert.match(model.actions['cut-2-62'].note,/koulumatka jää alle 15 kilometrin/);
 const app=fs.readFileSync(path.join(root,'src/app.js'),'utf8').replace(/\r\n/g,'\n');
 const ctx=vm.createContext({data:structuredClone(actions),selected:new Set(),year:2031,includeLater:false,
   scenario:{income:1,corporate:1,dividends:'vm'},conditions:{yle:'keep-tax',farm:'save'},units:{},model});

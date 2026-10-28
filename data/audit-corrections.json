@@ -150,6 +150,10 @@
       }
     },
     "tax-peat": {
+      "referenceEstimate": {
+        "amount": 55,
+        "kind": "static"
+      },
       "research": {
         "fiscal": "55 milj. € on staattinen verotuottoluku. VM arvioi nettotuoton vähäiseksi, koska turvetta korvataan biomassalla ja sähköllä. Euromääräistä nettoa ei anneta, joten 55 miljoonaa ei täytä piirakkaa."
       }

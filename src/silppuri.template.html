@@ -262,7 +262,8 @@
 @media(prefers-reduced-motion:reduce){#silppuri-demo .sp-action,#silppuri-demo .sp-money-fill,#silppuri-demo .sp-decile-bar span{transition:none}}
 </style>
 <div id="silppuri-demo" lang="fi" aria-label="Silppuri – verkkosivun konsepti">
-  <header class="sp-top"><div class="sp-wordmark"><!--SILPPURI_LOGO-->SILPPURI</div><span class="sp-tag">Julkinen talous. Oma valinta.</span></header>
+  <header class="sp-top"><div class="sp-wordmark"><!--SILPPURI_LOGO-->SILPPURI</div><span class="sp-tag">Julkinen talous. Oma valinta.</span><button type="button" class="sp-publish" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 14v6h14v-6"/></svg>Julkaise</button></header>
+  <p class="sp-share-notice" role="alert" hidden></p>
   <div class="sp-hero"><h1>Mistä Sinä ottaisit <em>10 miljardia?</em></h1><p class="sp-subtitle">Kuka maksaa, kun sinä päätät? Tutustu vaikutuksiin ja silppua Suomi kuntoon!</p></div>
   <div class="sp-workspace">
     <aside>
@@ -323,6 +324,17 @@
     <div class="sp-modal-footer"><button type="button" class="sp-modal-confirm cursor-interaction"><span class="sp-confirm-icon" aria-hidden="true"><!--SILPPURI_LOGO--></span><span class="sp-confirm-label">Silppuriin!</span></button></div>
   </dialog>
   <div class="sp-announcement" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="sp-share" aria-labelledby="sp-share-title">
+    <header class="sp-share-head"><h2 id="sp-share-title">Jaa oma silppurisi</h2><button type="button" class="sp-share-close" aria-label="Sulje jakaminen">×</button></header>
+    <div class="sp-share-body">
+      <label for="sp-share-name">Silppurisi nimi</label><input id="sp-share-name" maxlength="80" autocomplete="off" placeholder="Hessu Hopon silppuri">
+      <div class="sp-share-preview" aria-label="Jaettavan PNG-kuvan esikatselu"></div>
+      <div class="sp-share-buttons"><button type="button" class="sp-download" disabled>Lataa PNG</button><button type="button" class="sp-copy-link">Kopioi linkki</button><button type="button" class="sp-native-share" hidden>Jaa…</button></div>
+      <p class="sp-share-status" role="status" aria-live="polite"></p>
+      <label for="sp-share-link">Tutkittava ja muokattava paketti</label><input id="sp-share-link" class="sp-share-link" readonly type="url" spellcheck="false">
+      <p class="sp-share-local" hidden>Paikallinen testisivu: linkki toimii tällä koneella. Muille jakaminen tarvitsee sivulle julkisen osoitteen.</p>
+    </div>
+  </dialog>
 </div>
 <script>
 (()=>{

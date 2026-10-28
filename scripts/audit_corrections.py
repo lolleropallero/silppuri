@@ -31,6 +31,10 @@ def apply_actions(actions):
             if key in ['estimate','incidence']:
                 action.setdefault(key,{}).update(copy.deepcopy(value))
             else: action[key]=copy.deepcopy(value)
+        # The card front must follow a corrected payer description too. Keep
+        # an explicitly reviewed shorter front text if one is supplied.
+        if 'who' in patch and 'impact' not in patch:
+            action['impact'] = action['who']
         if 'research' in action:
             apply_research(action['id'], action['research'])
 

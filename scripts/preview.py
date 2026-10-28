@@ -34,7 +34,7 @@ if '--finnwatch-incidence' in sys.argv: prefix='qa-finnwatch-incidence'
 if '--yle' in sys.argv: prefix='qa-yle'
 if '--additional' in sys.argv: prefix='qa-additional'
 fixture=folder/'qa-fragment.html'
-fixture.write_text(source.replace('stateIn(window.openai?.widgetState);render();','stateIn('+json.dumps(state)+');render();'),encoding='utf8')
+fixture.write_text(source.replace('stateIn(readSharedState()||window.openai?.widgetState);render();','stateIn('+json.dumps(state)+');render();'),encoding='utf8')
 page=render.render(fixture,'Silppuri QA')
 for width in [320,390,1024]:
     (folder/f'{prefix}-{width}.html').write_text(page.replace('</head>',f'<style>body{{max-width:{width}px;padding:0;margin:0}}</style></head>',1),encoding='utf8')
