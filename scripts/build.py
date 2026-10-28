@@ -133,7 +133,7 @@ for proposal in finnwatch+additional:
     amount=proposal['estimate']['amount']
     origin=proposal.get('origin','finnwatch')
     kinds={'finnwatch':'Finnwatch · veromuutos','sorsa':'Kalevi Sorsa -säätiö · veromuutos','vm':'VM 2026:48 · oma skenaario',
-           'tpan':'Arviointineuvosto · veromuutos','eva':'EVA · asiakasmaksut'}
+           'tpan':'Arviointineuvosto · veromuutos','eva':'EVA · oma skenaario'}
     d.update(short=d['title'],kind=kinds[origin],origin=origin,
              budget=[amount]*8,funds=[0 if amount is not None else None]*8,
              detail='',moneyNote='',net=None)
@@ -252,6 +252,16 @@ for d in catalogue:
         assert o['id'] in by_id,(d['id'],o['id'])
         inverse=by_id[o['id']].setdefault('possibleOverlaps',[])
         if not any(x['id']==d['id'] for x in inverse):inverse.append({'id':d['id'],'note':o['note']})
+
+# Three ways to charge tuition are one card in the interface. They stay separate
+# actions so their sources, calculations, incidence and share IDs remain intact.
+tuition={'id':'tuition','label':'Ketkä maksavat?','default':'cut-2-45','options':[
+    {'id':'cut-2-43','label':'Toisen tutkinnon suorittajat','note':'VM · alkaen 2029'},
+    {'id':'cut-2-45','label':'Uudet opiskelijat','note':'VM · noin 100 milj. € maksuja syksystä 2028'},
+    {'id':'eva-tuition','label':'Kaikki, 2 600 € vuodessa','note':'EVA · tulosidonnainen laina'}]}
+for option in tuition['options']:
+    assert all(o['id'] in by_id[option['id']]['conflicts'] for o in tuition['options'] if o['id']!=option['id']),option['id']
+    by_id[option['id']]['variantGroup']=tuition
 
 research=json.loads((ROOT/'data/action-research.json').read_text(encoding='utf-8'))
 research_sources=json.loads((ROOT/'data/research-sources.json').read_text(encoding='utf-8'))

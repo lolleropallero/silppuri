@@ -9,7 +9,7 @@ const model=JSON.parse(read('data/incidence-model.json'));
 const app=read('src/app.js');
 const close=(a,b,message)=>assert.ok(Math.abs(a-b)<1e-9*Math.max(1,Math.abs(b)),`${message}: ${a} != ${b}`);
 assert.equal(Object.keys(model.actions).length,actions.length);
-assert.equal(model.coverage.numericalScenarios,202);
+assert.equal(model.coverage.numericalScenarios,203);
 // Official group boundaries, not group means or guessed salary bands.
 const bounds=JSON.parse(read('data/sources/income-bounds-2024.json'));
 const boundIndex=bounds.dimension.contentscode.category.index;

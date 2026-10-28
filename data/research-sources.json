@@ -818,5 +818,55 @@
     "label": "Kosonen, Jysmä & Savolainen (2024): Studying a Sin Tax Scheme with Multiple Reforms",
     "url": "https://www.doria.fi/handle/10024/188798",
     "kind": "Suomi · VATT:n työpaperi makeis-, jäätelö- ja virvoitusjuomaveron uudistuksista, ei vertaisarvioitu"
+  },
+  "tuition-england": {
+    "label": "Murphy, Scott-Clayton & Wyness (2019): The end of free college in England",
+    "url": "https://researchonline.lse.ac.uk/id/eprint/86593/",
+    "kind": "Englanti · vertaisarvioitu tutkimus, Economics of Education Review"
+  },
+  "tuition-germany": {
+    "label": "Bietenbeck, Leibing, Marcus & Weinhardt (2023): Tuition Fees and Educational Attainment",
+    "url": "https://lup.lub.lu.se/record/d52d2ac9-c82e-4f28-bb66-72b1eb9a27a2",
+    "kind": "Saksa · vertaisarvioitu tutkimus, European Economic Review"
+  },
+  "tuition-italy": {
+    "label": "Garibaldi, Giavazzi, Ichino & Rettore (2012): College Cost and Time to Complete a Degree",
+    "url": "https://igier.unibocconi.eu/publications/working-papers/college-cost-and-time-complete-degree-evidence-tuition-discontinuities",
+    "kind": "Italia · Bocconin yliopiston rekisteriaineisto, regressioepäjatkuvuus"
+  },
+  "okm-fees-2022": {
+    "label": "OKM:n työryhmä (2022): EU/ETA-ulkopuolisten lukuvuosimaksujen seuranta",
+    "url": "https://valtioneuvosto.fi/-/1410845/lukuvuosimaksujen-kayttoonotto-ei-pysayttanyt-korkeakoulujen-kansainvalistymiskehitysta-maksutuottoja-mahdollista-nostaa-edelleen",
+    "kind": "Suomi · ministeriön työryhmän arviointi 10.2.2022"
+  },
+  "constitution-16": {
+    "label": "Suomen perustuslaki 731/1999, 16 §",
+    "url": "https://www.finlex.fi/fi/lainsaadanto/1999/731",
+    "kind": "Suomi · perustuslaki"
+  },
+  "universities-act": {
+    "label": "Yliopistolaki 558/2009, 8 §",
+    "url": "https://www.finlex.fi/fi/lainsaadanto/2009/558",
+    "kind": "Suomi · voimassa oleva laki"
+  },
+  "polytechnics-act": {
+    "label": "Ammattikorkeakoululaki 932/2014",
+    "url": "https://www.finlex.fi/fi/lainsaadanto/2014/932",
+    "kind": "Suomi · voimassa oleva laki"
+  },
+  "statfin-universities-2024": {
+    "label": "Tilastokeskus (2025): Yliopistokoulutus 2024",
+    "url": "https://stat.fi/julkaisu/cm10f9y6f6crp07w1pcjywpyj",
+    "kind": "Suomi · virallinen tilasto 15.5.2025"
+  },
+  "statfin-amk-2024": {
+    "label": "Tilastokeskus (2025): Ammattikorkeakoulukoulutus 2024",
+    "url": "https://stat.fi/julkaisu/cm10dmmg360ku07w1vn9osgnu",
+    "kind": "Suomi · virallinen tilasto 24.4.2025"
+  },
+  "dfe-loans-2025": {
+    "label": "Department for Education (2025): Student loan forecasts for England 2024-25",
+    "url": "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2024-25",
+    "kind": "Englanti · viranomaisen opintolainaennuste"
   }
 }

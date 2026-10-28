@@ -1,9 +1,9 @@
 {
   "meta": {
     "thresholdMillion": 20,
-    "count": 260,
+    "count": 261,
     "cutRows": 192,
-    "taxRows": 68,
+    "taxRows": 69,
     "finnwatchRows": 14,
     "sorsaRows": 2,
     "netEstimates": 26,
@@ -32,11 +32,11 @@
     "unknown": 17,
     "scope": "Koko julkinen talous: valtio, kunnat, hyvinvointialueet ja sosiaaliturvarahastot. Verot vuoden 2028 tasossa.",
     "research": {
-      "reviewed": 260,
-      "sources": 157,
-      "withExternalResearch": 259,
+      "reviewed": 261,
+      "sources": 167,
+      "withExternalResearch": 260,
       "vmOnly": 1,
-      "contextOnly": 26,
+      "contextOnly": 27,
       "asOf": "2026-10-28"
     }
   },
@@ -2549,8 +2549,31 @@
       "conflicts": [
         "cut-2-44",
         "cut-2-45",
-        "education"
+        "education",
+        "eva-tuition"
       ],
+      "variantGroup": {
+        "id": "tuition",
+        "label": "Ketkä maksavat?",
+        "default": "cut-2-45",
+        "options": [
+          {
+            "id": "cut-2-43",
+            "label": "Toisen tutkinnon suorittajat",
+            "note": "VM · alkaen 2029"
+          },
+          {
+            "id": "cut-2-45",
+            "label": "Uudet opiskelijat",
+            "note": "VM · noin 100 milj. € maksuja syksystä 2028"
+          },
+          {
+            "id": "eva-tuition",
+            "label": "Kaikki, 2 600 € vuodessa",
+            "note": "EVA · tulosidonnainen laina"
+          }
+        ]
+      },
       "research": {
         "sources": [
           "aid",
@@ -2605,6 +2628,12 @@
         "cut-2-45",
         "education"
       ],
+      "possibleOverlaps": [
+        {
+          "id": "eva-tuition",
+          "note": "Molemmat pienentävät korkeakoulujen valtionrahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty."
+        }
+      ],
       "research": {
         "sources": [
           "aid",
@@ -2619,8 +2648,8 @@
     {
       "id": "cut-2-45",
       "type": "tax",
-      "title": "Lukuvuosimaksut korkeakouluihin",
-      "short": "Lukuvuosimaksut korkeakouluihin",
+      "title": "Lukuvuosimaksut uusille korkeakouluopiskelijoille",
+      "short": "Lukuvuosimaksut uusille korkeakouluopiskelijoille",
       "kind": "Maksukorotus",
       "flow": "students",
       "who": "Uusilta korkeakouluopiskelijoilta.",
@@ -2657,8 +2686,31 @@
       "conflicts": [
         "cut-2-43",
         "cut-2-44",
-        "education"
+        "education",
+        "eva-tuition"
       ],
+      "variantGroup": {
+        "id": "tuition",
+        "label": "Ketkä maksavat?",
+        "default": "cut-2-45",
+        "options": [
+          {
+            "id": "cut-2-43",
+            "label": "Toisen tutkinnon suorittajat",
+            "note": "VM · alkaen 2029"
+          },
+          {
+            "id": "cut-2-45",
+            "label": "Uudet opiskelijat",
+            "note": "VM · noin 100 milj. € maksuja syksystä 2028"
+          },
+          {
+            "id": "eva-tuition",
+            "label": "Kaikki, 2 600 € vuodessa",
+            "note": "EVA · tulosidonnainen laina"
+          }
+        ]
+      },
       "research": {
         "sources": [
           "aid",
@@ -2715,6 +2767,12 @@
         "cut-6-5",
         "cut-6-6",
         "cut-6-7"
+      ],
+      "possibleOverlaps": [
+        {
+          "id": "eva-tuition",
+          "note": "Molemmat pienentävät korkeakoulujen valtionrahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty."
+        }
       ],
       "research": {
         "sources": [
@@ -15306,7 +15364,7 @@
         }
       ],
       "short": "Erikoissairaanhoidon ja pitkäaikaishoidon asiakasmaksut kaksinkertaisiksi",
-      "kind": "EVA · asiakasmaksut",
+      "kind": "EVA · oma skenaario",
       "budget": [
         345,
         345,
@@ -15330,6 +15388,139 @@
       "detail": "",
       "moneyNote": "",
       "net": null
+    },
+    {
+      "id": "eva-tuition",
+      "type": "tax",
+      "report": "tax",
+      "unit": "",
+      "family": "",
+      "conflicts": [
+        "cut-2-45",
+        "cut-2-43"
+      ],
+      "title": "Lukuvuosimaksu kaikille korkeakouluopiskelijoille, 2 600 € vuodessa",
+      "flow": "students",
+      "who": "Noin 350 000 yliopistojen ja ammattikorkeakoulujen tutkinto-opiskelijalta. Lainalla maksavilla kustannus siirtyy valmistumisen jälkeisiin tuloihin.",
+      "impact": "Noin 350 000 yliopistojen ja ammattikorkeakoulujen tutkinto-opiskelijalta.",
+      "society": "Tutkintoon johtava opetus muuttuisi maksulliseksi. Perustuslaki edellyttää yhtäläistä mahdollisuutta koulutukseen varattomuuden sitä estämättä, ja yliopisto- ja ammattikorkeakoululaki säätävät opetuksen maksuttomaksi. Saksassa maksut vähensivät korkeakouluun hakeutumista mutta lisäsivät opiskelijoiden työpanosta ja valmistumista; koulutustaso muuttui vähän. Englannissa tulosidonnaisella lainalla rahoitetut maksut eivät vähentäneet opiskelijoita, ja tuloryhmien osallistumisero kapeni. Italiassa korkeampi maksu vähensi tutkinnon venymistä. Suomen EU/ETA-ulkopuolisten maksut vähensivät uusia ulkomaisia opiskelijoita aluksi, mutta määrä ylitti myöhemmin maksuja edeltäneen tason. Englannissa vain 56 % lainanottajista arvioidaan maksavan lainansa kokonaan.",
+      "origin": "eva",
+      "source": "Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 miljardin sopeutus tehdään",
+      "sourceUrl": "https://www.sttinfo.fi/files/3848/71958109/357210/fi",
+      "estimate": {
+        "caption": "oma tuottohaarukka",
+        "basis": "Oma ehdollinen vuosiarvio · lähdevuoden veropohja",
+        "money": "Valtio säästää vain, jos korkeakoulujen valtionrahoitusta leikataan maksutulojen verran. Laskelma vähentää maksun ulkopuolelle jäävät opiskelijat, hakeutumisen vähenemisen ja valtion vastuulle jäävät lainatappiot. Nopeamman valmistumisen ja koulutustason muutoksen verovaikutuksia ei ole laskettu.",
+        "calculation": [
+          "Tilastokeskus 2024: yliopistojen tutkintokoulutuksessa 173 600 ja ammattikorkeakoulujen 176 700 opiskelijaa, yhteensä 350 300. EVA:n esimerkkimaksu on 2 600 €/v (Alankomaiden malli): 350 300 × 2 600 € = 910,78 milj. €. EVA:n oma arvio on lähes 900 milj. €.",
+          "Maksu koskisi voimaantulosta alkaen kaikkia opiskelijoita, kuten Saksassa. VM:n lukuvuosimaksukortti on eri malli: se koskee vain syksystä 2028 aloittavia ja tavoittelee noin 100 milj. € tuottoa, mikä vastaa kaikille jaettuna alle 300 €/v (oma jakolasku 100 / 350 300). Kortit ovat toistensa vaihtoehtoja.",
+          "Maksun piiriin tulee 85–100 % opiskelijoista: osa on poissa, osa EU/ETA-ulkopuolisista maksaa jo ja pienituloisille voidaan myöntää vapautuksia. Oma herkkyysoletus.",
+          "Hakeutuminen: Saksassa maksut vähensivät aloittaneita, Englannissa opiskelijamäärät kasvoivat. Opiskelijoista säilyy 90–100 %; oma herkkyysoletus näiden tulosten väliltä.",
+          "Lainatappiot: EVA rahoittaisi maksun tulosidonnaisella, valtion takaamalla lainalla. Englannissa valtio arvioi tukevansa 29 % kokopäiväopiskelijoiden Plan 5 -lainoista jo myöntövuonna. Pienemmällä maksulla oletetaan 50–90 % lainanottajia ja 10–30 % tappio-osuus: valtiolle jää 5–27 %.",
+          "Netto = 910,78 × 85–100 % × 90–100 % × 73–95 % − 2–5 milj. € maksuhallintoon. Valmistuneiden myöhempiä verotuloja ja maksun vaikutusta alavalintoihin ei ole laskettu.",
+          "Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta."
+        ],
+        "amount": 500,
+        "range": [
+          500,
+          865
+        ],
+        "display": "500–865 milj. €",
+        "bounds": [
+          {
+            "label": "Alaraja",
+            "expression": "910,78 × 0,85 × 0,9 × 0,73 − 5",
+            "value": 503.625091
+          },
+          {
+            "label": "Yläraja",
+            "expression": "910,78 × 1 × 1 × 0,95 − 2",
+            "value": 863.241
+          }
+        ],
+        "roundTo": 5,
+        "footnote": "Oma skenaario; piirakkaan 500 milj. €."
+      },
+      "research": {
+        "sources": [
+          "eva-163",
+          "tuition-germany",
+          "tuition-england",
+          "tuition-italy",
+          "okm-fees-2022",
+          "constitution-16",
+          "universities-act",
+          "polytechnics-act",
+          "statfin-universities-2024",
+          "statfin-amk-2024",
+          "dfe-loans-2025",
+          "aid",
+          "statfin-wealth-incidence",
+          "statfin-income-incidence"
+        ],
+        "finding": "",
+        "fiscal": "Valtio säästää vain, jos korkeakoulujen valtionrahoitusta leikataan maksutulojen verran. Laskelma vähentää maksun ulkopuolelle jäävät opiskelijat, hakeutumisen vähenemisen ja valtion vastuulle jäävät lainatappiot. Nopeamman valmistumisen ja koulutustason muutoksen verovaikutuksia ei ole laskettu.",
+        "scope": "Ulkomaiset tutkimukset koskevat Saksan lukukausimaksuja, Englannin tulosidonnaisia lainoja ja yhden italialaisen yliopiston maksuportaita. Suomen omat kokemukset koskevat vain EU/ETA-ulkopuolisia opiskelijoita.",
+        "status": "context"
+      },
+      "possibleOverlaps": [
+        {
+          "id": "cut-2-44",
+          "note": "Molemmat pienentävät korkeakoulujen valtionrahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty."
+        },
+        {
+          "id": "education",
+          "note": "Molemmat pienentävät korkeakoulujen valtionrahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty."
+        }
+      ],
+      "searchTerms": "lukukausimaksu lukukausimaksut",
+      "short": "Lukuvuosimaksu kaikille korkeakouluopiskelijoille, 2 600 € vuodessa",
+      "kind": "EVA · oma skenaario",
+      "budget": [
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500,
+        500
+      ],
+      "funds": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "detail": "",
+      "moneyNote": "",
+      "net": null,
+      "variantGroup": {
+        "id": "tuition",
+        "label": "Ketkä maksavat?",
+        "default": "cut-2-45",
+        "options": [
+          {
+            "id": "cut-2-43",
+            "label": "Toisen tutkinnon suorittajat",
+            "note": "VM · alkaen 2029"
+          },
+          {
+            "id": "cut-2-45",
+            "label": "Uudet opiskelijat",
+            "note": "VM · noin 100 milj. € maksuja syksystä 2028"
+          },
+          {
+            "id": "eva-tuition",
+            "label": "Kaikki, 2 600 € vuodessa",
+            "note": "EVA · tulosidonnainen laina"
+          }
+        ]
+      }
     }
   ]
 }

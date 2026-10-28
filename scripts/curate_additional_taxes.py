@@ -119,8 +119,49 @@ source('tpan-2025', 'Talouspolitiikan arviointineuvosto (2026): Raportti 2025',
  'Staattinen arvio ei sisällä käyttäytymisvaikutuksia, ja itserahoitusaste on epävarma pitkän aikavälin laskelma. Raportti ei arvioi alennuksen perumisen tuottoa erikseen.')
 source('eva-163', 'Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 miljardin sopeutus tehdään',
  'https://www.sttinfo.fi/files/3848/71958109/357210/fi', 'Suomi · ajatuspajan sopeutusanalyysi 17.4.2026, ei vaikutustutkimus',
- 'Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.',
- 'Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty.')
+ 'Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Alankomaiden mallin lukukausimaksut, noin 2 600 euroa vuodessa, toisivat korkeakouluille lähes 900 miljoonaa euroa; opintolainan takaisinmaksu sidottaisiin tuloihin.',
+ 'Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön ja hakeutumisen muutoksia, maksukattoa, toimeentulotukea ja lainatappioita ei ole eritelty.')
+# Tuition for all degree students: enrolment, completion, equity, law and loans.
+source('tuition-england', 'Murphy, Scott-Clayton & Wyness (2019): The end of free college in England',
+ 'https://researchonline.lse.ac.uk/id/eprint/86593/', 'Englanti · vertaisarvioitu tutkimus, Economics of Education Review',
+ 'Englannin siirtyminen maksullisiin korkeakouluihin lisäsi rahoitusta opiskelijaa kohti, opiskelijamäärät kasvoivat ja hyvässä ja heikommassa asemassa olevien osallistumisero kapeni. Tutkijoiden mukaan tulosidonnainen laina pitää opiskelun alkaessa maksuttomana.',
+ 'Englannissa elinkustannuksiin saa suhteellisen anteliasta tukea, ja laatua mitataan sijaismittareilla. Tulos ei siirry suoraan järjestelmään, jossa maksu peritään heti.')
+source('tuition-germany', 'Bietenbeck, Leibing, Marcus & Weinhardt (2023): Tuition Fees and Educational Attainment',
+ 'https://lup.lub.lu.se/record/d52d2ac9-c82e-4f28-bb66-72b1eb9a27a2', 'Saksa · vertaisarvioitu tutkimus, European Economic Review',
+ 'Saksan yliopistojen lukukausimaksut lisäsivät jo opiskelevien opiskeluun käyttämää työtä ja valmistumista. Samalla ne vähensivät ylioppilaiden ensimmäistä hakeutumista yliopistoon. Yhteisvaikutus koulutustasoon jäi pieneksi.',
+ 'Tulos koskee maksuja lähellä nollahintaa. Se ei kerro suuremman maksun tai Suomen opintotukijärjestelmän vaikutuksia.')
+source('tuition-italy', 'Garibaldi, Giavazzi, Ichino & Rettore (2012): College Cost and Time to Complete a Degree',
+ 'https://igier.unibocconi.eu/publications/working-papers/college-cost-and-time-complete-degree-evidence-tuition-discontinuities', 'Italia · Bocconin yliopiston rekisteriaineisto, regressioepäjatkuvuus',
+ 'Jatkovuoden maksun 1 000 euron korotus pienensi tutkinnon venymisen todennäköisyyttä 9,9 prosenttiyksikköä, kun venymisen lähtötaso oli noin 80 %.',
+ 'Aineisto koskee yhtä yksityistä yliopistoa ja tuloihin sidottuja maksuportaita. Tulos ei kerro hakeutumisesta eikä kaikkia koskevan maksun vaikutuksesta.')
+source('okm-fees-2022', 'OKM:n työryhmä (2022): EU/ETA-ulkopuolisten lukuvuosimaksujen seuranta',
+ 'https://valtioneuvosto.fi/-/1410845/lukuvuosimaksujen-kayttoonotto-ei-pysayttanyt-korkeakoulujen-kansainvalistymiskehitysta-maksutuottoja-mahdollista-nostaa-edelleen', 'Suomi · ministeriön työryhmän arviointi 10.2.2022',
+ 'Lukuvuosimaksujen jälkeen uusien ulkomaisten opiskelijoiden määrä laski heti, mutta ylitti myöhemmin maksuja edeltäneen tason. Vuonna 2020 maksuvelvollisia oli 36 % ulkomaisista opiskelijoista. Maksutuotto oli 2019–2020 noin 42 milj. €, apurahojen jälkeen noin 14 milj. €.',
+ 'Seuranta koskee ulkomaisia opiskelijoita, joilla on muita maita vertailukohtana. Kotimaisten opiskelijoiden reaktiota se ei kerro.')
+source('constitution-16', 'Suomen perustuslaki 731/1999, 16 §',
+ 'https://www.finlex.fi/fi/lainsaadanto/1999/731', 'Suomi · perustuslaki',
+ 'Julkisen vallan on turvattava jokaiselle yhtäläinen mahdollisuus saada kykyjensä ja erityisten tarpeidensa mukaisesti myös muuta kuin perusopetusta sekä kehittää itseään varattomuuden sitä estämättä.',
+ 'Säännös ei suoraan kiellä maksuja, mutta varattomankin mahdollisuus opiskella on turvattava. Perustuslakivaliokunnan kantaa tähän malliin ei ole.')
+source('universities-act', 'Yliopistolaki 558/2009, 8 §',
+ 'https://www.finlex.fi/fi/lainsaadanto/2009/558', 'Suomi · voimassa oleva laki',
+ 'Korkeakoulututkintoon johtava opetus ja opiskelijavalintojen valintakokeet ovat opiskelijalle maksuttomia, jollei laissa toisin säädetä. EU/ETA-ulkopuolisten lukuvuosimaksuista säädetään erikseen.',
+ 'Kaikkia koskevat lukukausimaksut edellyttäisivät lain muuttamista.')
+source('polytechnics-act', 'Ammattikorkeakoululaki 932/2014',
+ 'https://www.finlex.fi/fi/lainsaadanto/2014/932', 'Suomi · voimassa oleva laki',
+ 'Ammattikorkeakoulututkintoon ja ylempään ammattikorkeakoulututkintoon johtava opetus sekä opiskelijavalintojen valintakokeet ovat opiskelijalle maksuttomia.',
+ 'Kaikkia koskevat lukukausimaksut edellyttäisivät lain muuttamista.')
+source('statfin-universities-2024', 'Tilastokeskus (2025): Yliopistokoulutus 2024',
+ 'https://stat.fi/julkaisu/cm10f9y6f6crp07w1pcjywpyj', 'Suomi · virallinen tilasto 15.5.2025',
+ 'Yliopistojen tutkintoon johtavassa koulutuksessa opiskeli 173 600 opiskelijaa vuonna 2024, 3,3 % enemmän kuin vuotta aiemmin.',
+ 'Opiskelijamäärä ei kerro, kuinka moni olisi maksuvelvollinen. Poissaolevia, maksusta vapautettavia ja jo lukuvuosimaksua maksavia ei ole eritelty.')
+source('statfin-amk-2024', 'Tilastokeskus (2025): Ammattikorkeakoulukoulutus 2024',
+ 'https://stat.fi/julkaisu/cm10dmmg360ku07w1vn9osgnu', 'Suomi · virallinen tilasto 24.4.2025',
+ 'Ammattikorkeakoulujen tutkintoon johtavassa koulutuksessa opiskeli 176 700 opiskelijaa vuonna 2024, ja opiskelijamäärä jatkoi kasvuaan.',
+ 'Opiskelijamäärä ei kerro, kuinka moni olisi maksuvelvollinen. Poissaolevia, maksusta vapautettavia ja jo lukuvuosimaksua maksavia ei ole eritelty.')
+source('dfe-loans-2025', 'Department for Education (2025): Student loan forecasts for England 2024-25',
+ 'https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2024-25', 'Englanti · viranomaisen opintolainaennuste',
+ 'Lukuvuonna 2024/25 aloittaneista kokopäiväisistä lainanottajista 56 % arvioidaan maksavan lainansa kokonaan. Valtio arvioi tukevansa 29 % vuonna 2024–25 myönnetyistä kokopäiväopiskelijoiden Plan 5 -lainoista.',
+ 'Englannin maksut ja lainat ovat paljon suurempia kuin 2 600 euron esimerkki, ja lainoihin sisältyy elinkustannuksia. Suomen tappio-osuus on tässä oma arvio.')
 
 # Cited by the VM soft drink tax card's research review.
 source('sin-tax-finland', 'Kosonen, Jysmä & Savolainen (2024): Studying a Sin Tax Scheme with Multiple Reforms',
@@ -383,10 +424,30 @@ add('eva-care-fees', 'Erikoissairaanhoidon ja pitkäaikaishoidon asiakasmaksut k
  conflicts=['cut-4-21','cut-4-16','cut-4-17','cut-4-18','cut-4-19','health'], origin='eva',
  scope='EVA:n luvut koskevat erikoissairaanhoidon ja iäkkäiden pitkäaikaishoidon maksuja. Suomalaiset maksututkimukset koskevat lähinnä perusterveydenhuollon käyntejä.')
 
+add('eva-tuition', 'Lukuvuosimaksu kaikille korkeakouluopiskelijoille, 2 600 € vuodessa', 'students',
+ 'Noin 350 000 yliopistojen ja ammattikorkeakoulujen tutkinto-opiskelijalta. Lainalla maksavilla kustannus siirtyy valmistumisen jälkeisiin tuloihin.',
+ 'Tutkintoon johtava opetus muuttuisi maksulliseksi. Perustuslaki edellyttää yhtäläistä mahdollisuutta koulutukseen varattomuuden sitä estämättä, ja yliopisto- ja ammattikorkeakoululaki säätävät opetuksen maksuttomaksi. Saksassa maksut vähensivät korkeakouluun hakeutumista mutta lisäsivät opiskelijoiden työpanosta ja valmistumista; koulutustaso muuttui vähän. Englannissa tulosidonnaisella lainalla rahoitetut maksut eivät vähentäneet opiskelijoita, ja tuloryhmien osallistumisero kapeni. Italiassa korkeampi maksu vähensi tutkinnon venymistä. Suomen EU/ETA-ulkopuolisten maksut vähensivät uusia ulkomaisia opiskelijoita aluksi, mutta määrä ylitti myöhemmin maksuja edeltäneen tason. Englannissa vain 56 % lainanottajista arvioidaan maksavan lainansa kokonaan.',
+ 'Valtio säästää vain, jos korkeakoulujen valtionrahoitusta leikataan maksutulojen verran. Laskelma vähentää maksun ulkopuolelle jäävät opiskelijat, hakeutumisen vähenemisen ja valtion vastuulle jäävät lainatappiot. Nopeamman valmistumisen ja koulutustason muutoksen verovaikutuksia ei ole laskettu.',
+ ['Tilastokeskus 2024: yliopistojen tutkintokoulutuksessa 173 600 ja ammattikorkeakoulujen 176 700 opiskelijaa, yhteensä 350 300. EVA:n esimerkkimaksu on 2 600 €/v (Alankomaiden malli): 350 300 × 2 600 € = 910,78 milj. €. EVA:n oma arvio on lähes 900 milj. €.',
+  'Maksu koskisi voimaantulosta alkaen kaikkia opiskelijoita, kuten Saksassa. VM:n lukuvuosimaksukortti on eri malli: se koskee vain syksystä 2028 aloittavia ja tavoittelee noin 100 milj. € tuottoa, mikä vastaa kaikille jaettuna alle 300 €/v (oma jakolasku 100 / 350 300). Kortit ovat toistensa vaihtoehtoja.',
+  'Maksun piiriin tulee 85–100 % opiskelijoista: osa on poissa, osa EU/ETA-ulkopuolisista maksaa jo ja pienituloisille voidaan myöntää vapautuksia. Oma herkkyysoletus.',
+  'Hakeutuminen: Saksassa maksut vähensivät aloittaneita, Englannissa opiskelijamäärät kasvoivat. Opiskelijoista säilyy 90–100 %; oma herkkyysoletus näiden tulosten väliltä.',
+  'Lainatappiot: EVA rahoittaisi maksun tulosidonnaisella, valtion takaamalla lainalla. Englannissa valtio arvioi tukevansa 29 % kokopäiväopiskelijoiden Plan 5 -lainoista jo myöntövuonna. Pienemmällä maksulla oletetaan 50–90 % lainanottajia ja 10–30 % tappio-osuus: valtiolle jää 5–27 %.',
+  'Netto = 910,78 × 85–100 % × 90–100 % × 73–95 % − 2–5 milj. € maksuhallintoon. Valmistuneiden myöhempiä verotuloja ja maksun vaikutusta alavalintoihin ei ole laskettu.'],
+ ['tuition-germany','tuition-england','tuition-italy','okm-fees-2022','constitution-16','universities-act','polytechnics-act',
+  'statfin-universities-2024','statfin-amk-2024','dfe-loans-2025','aid'],
+ dict(formula='product', anchor=910.78, factors=[[.85,1],[.9,1],[.73,.95]], cost=[2,5]),
+ [{'service-tertiary':1},{'students':1}],
+ 'Maksun maksavat korkeakouluopiskelijat. Jakaumina käytetään korkeakoulupalvelujen käyttöä ja opintoetuuksien saajia.',
+ 'Opiskelijoiden omat tulot ovat pieniä, joten vuositulojen suhteessa rasitus näyttää suurelta. Tulosidonnaisen lainan takaisinmaksu kohdistuisi myöhemmin valmistuneiden tuloihin, mitä tulokymmenyksittäinen laskelma ei mallinna.',
+ conflicts=['cut-2-45','cut-2-43','cut-2-44','education'], origin='eva',
+ scope='Ulkomaiset tutkimukset koskevat Saksan lukukausimaksuja, Englannin tulosidonnaisia lainoja ja yhden italialaisen yliopiston maksuportaita. Suomen omat kokemukset koskevat vain EU/ETA-ulkopuolisia opiskelijoita.')
+
 # Only genuinely nested alternatives replace one another. Distinct taxes can
 # coexist; flag their unresolved interaction instead of silently removing one.
 subset_pairs = {frozenset(('fw-corporate-gaps','fw-interest')),
-                frozenset(('fw-succession-abolish','tax-succession'))}
+                frozenset(('fw-succession-abolish','tax-succession')),
+                frozenset(('eva-tuition','cut-2-45')), frozenset(('eva-tuition','cut-2-43'))}
 for d in actions:
     if d['flow'] == 'business': d['flow'] = 'companies'
     overlaps = [other for other in d['conflicts'] if frozenset((d['id'],other)) not in subset_pairs]
@@ -394,6 +455,10 @@ for d in actions:
     d['possibleOverlaps'] = [dict(id=other, note='Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty.') for other in overlaps]
     if d['id'] == 'fw-exit-tax':
         d['estimate'].update(caption='VM:n vertailuhaarukka', basis='VM 2020 · kokonaisnettoa ei laskettu')
+    if d['id'] == 'eva-tuition':
+        d['searchTerms'] = 'lukukausimaksu lukukausimaksut'
+        for o in d['possibleOverlaps']:
+            o['note'] = 'Molemmat pienentävät korkeakoulujen valtionrahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty.'
     if d['id'] == 'eva-care-fees':
         for o in d['possibleOverlaps']:
             o['note'] = 'Molemmat muuttavat samoja asiakasmaksuja tai hyvinvointialueiden rahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty.'

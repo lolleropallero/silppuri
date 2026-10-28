@@ -51,6 +51,7 @@
   const units={};
   data.forEach(d=>{if(d.unit)units[d.id]=d.unitRange?.default??1;});
   const conditions={yle:'reduce-tax',farm:'redirect'};
+  const variantChoice={};
   let year=2031,includeLater=false,search='',category='all',sortOrder='desc',limit=12;
   let catalogueOrder=[],catalogueOrderKey='';
   let filter='all',expanded=false,activeAction=null,activeFlow=null,opener=null;
@@ -188,6 +189,10 @@
     return 3;
   }
   function unitMin(id){return data.find(d=>d.id===id)?.unitRange?.min??0;}
+  // Alternative designs of one policy share a card. Each keeps its own action,
+  // sources, calculation and share ID; the card shows the chosen one.
+  function variantFor(g){return (typeof variantChoice!=='undefined'&&variantChoice[g.id])||g.default;}
+  function groupVisible(d){return !d.variantGroup||variantFor(d.variantGroup)===d.id;}
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function sourceMarkup(s){
     const note=sourceNotes[s.url]||s;
@@ -207,6 +212,10 @@
 
   function controlsMarkup(id,place){
     const d=data.find(x=>x.id===id);
+    if(d?.variantGroup){
+      const g=d.variantGroup;
+      return `<span class="sp-control-label">${esc(g.label)}</span><div class="sp-variant-options" role="group" aria-label="${esc(g.label)}">`+g.options.map(o=>{const m=data.find(x=>x.id===o.id);return `<button type="button" id="sp-${place}-${g.id}-${o.id}" class="cursor-interaction" data-variant="${o.id}" aria-pressed="${o.id===d.id}"><strong>${esc(o.label)}</strong>${moneyLabel(m.amount)} / v<small>${esc(o.note)}</small></button>`;}).join('')+'</div>';
+    }
     if(d?.percentCut){
       const s=d.percentCut,n=d.cutPercent,min=Math.min(s.minPercent,s.referencePercent);
       return `<span class="sp-control-label">Leikkauksen suuruus</span><div class="sp-stepper" role="group" aria-label="Leikkauksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-cut-step="${id}" data-delta="-${s.step}" aria-label="Pienennä leikkausta" ${n===min?'disabled':''}>−</button><output>${n}<small>%</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-cut-step="${id}" data-delta="${s.step}" aria-label="Kasvata leikkausta" ${n===s.maxPercent?'disabled':''}>+</button></div>`;
@@ -946,6 +955,7 @@
     q('.sp-publish').disabled=selected.size===0;
     q('.sp-panel-heading h2').textContent=packageName||'Sinun pakettisi';
     q('.sp-panel-heading h2').classList.add('sp-package-name');
+    data.forEach(d=>{if(d.variantGroup&&selected.has(d.id))variantChoice[d.variantGroup.id]=d.id;});
     const chosen=data.filter(d=>selected.has(d.id));
     if(activeFlow&&!chosen.some(d=>d.flow===activeFlow))activeFlow=null;
     root.querySelectorAll('[data-horizon]').forEach(button=>button.setAttribute('aria-pressed',String((button.dataset.horizon==='later')===includeLater)));
@@ -967,10 +977,12 @@
     q('.sp-list-label h2').textContent=filter==='selected-cut'?'Valitut menoleikkaukset':filter==='selected-tax'?'Valitut verot ja maksut':filter==='selected'?'Valitut toimet':'Valitse mistä otetaan';
     q('.sp-list-label > span').textContent=data.length+' toimea ja vaihtoehtoa';
     const terms=searchWords(search);
-    const matches=orderCatalogue(data.filter(d=>matchesType(d)&&(category==='all'||d.flow===category)&&matchesSearch(d,terms)));
+    const matches=orderCatalogue(data.filter(d=>groupVisible(d)&&matchesType(d)&&(category==='all'||d.flow===category)&&matchesSearch(d,terms)));
     const visible=new Set(matches.slice(0,limit).map(d=>d.id));
     data.forEach(d=>{
-      const el=list.querySelector(`[data-id="${d.id}"]`);el.hidden=!visible.has(d.id);if(el.hidden)return;
+      const el=list.querySelector(`[data-id="${d.id}"]`);el.hidden=!visible.has(d.id);
+      // A hidden alternative must not keep duplicate control IDs in the page.
+      if(el.hidden){if(d.variantGroup)el.querySelector('[data-controls]').innerHTML='';return;}
       el.querySelector('.sp-card-open').textContent=d.title;
       el.querySelector('.sp-amount').innerHTML=actionAmountMarkup(d);
       el.querySelector('[data-controls]').innerHTML=controlsMarkup(d.id,'card');
@@ -1012,7 +1024,8 @@
     if(!terms.length)return true;
     const aliases=d.id==='corporate'?'yritysvero yritysverotus yhtiövero':'';
     const kind=d.type==='cut'?'säästö leikkaus menoleikkaus':'vero verotus korotus';
-    const words=searchWords([d.title,d.who,d.society,d.memo,d.origin,d.kind,d.searchTerms,aliases,kind].join(' '));
+    const members=d.variantGroup?data.filter(x=>x.variantGroup?.id===d.variantGroup.id):[d];
+    const words=searchWords([...members.flatMap(m=>[m.title,m.who,m.society,m.memo,m.origin,m.kind,m.searchTerms]),aliases,kind].join(' '));
     return terms.every(term=>words.some(word=>word.startsWith(term)));
   }
   function compareAmounts(a,b){
@@ -1041,6 +1054,17 @@
     if(modalShred.running)return;
     finishPacking?.();
     if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
+    else if(button.dataset.variant){
+      const d=data.find(x=>x.id===button.dataset.variant),g=d.variantGroup,previous=variantFor(g),focusId=button.id;
+      variantChoice[g.id]=d.id;
+      if(previous!==d.id&&selected.has(previous)){selected.delete(previous);d.conflicts.forEach(c=>selected.delete(c));selected.add(d.id);}
+      // Switching keeps the card in place in the frozen browsing order.
+      const i=catalogueOrder.indexOf(previous),j=catalogueOrder.indexOf(d.id);
+      if(i>=0){if(j>=0)catalogueOrder[j]=previous;catalogueOrder[i]=d.id;}
+      if(activeAction===previous)activeAction=d.id;
+      render(true);if(activeAction){renderImpact(activeAction);positionDialog();}save();
+      q('#'+focusId)?.focus({preventScroll:true});
+    }
     else if(button.dataset.step||button.dataset.yleStep||button.dataset.cutStep||button.dataset.dividendMode||button.dataset.condition){
       const focusId=button.id;
       if(button.dataset.step){const id=button.dataset.step,store=id==='income'||id==='corporate'?scenario:units;store[id]=Math.min(capFor(id),Math.max(unitMin(id),store[id]+Number(button.dataset.delta)));}

@@ -3,7 +3,7 @@ const root=path.join(__dirname,'..'),read=name=>JSON.parse(fs.readFileSync(path.
 const {actions,meta}=read('catalogue.json'),additional=read('additional-tax-actions.json'),results=read('additional-tax-results.json');
 const model=read('incidence-model.json'),refs=read('research-sources.json');
 const get=id=>actions.find(d=>d.id===id),close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),`${a} != ${b}`);
-assert.equal(additional.length,17);assert.equal(meta.finnwatchRows,14);assert.equal(meta.sorsaRows,2);
+assert.equal(additional.length,18);assert.equal(meta.finnwatchRows,14);assert.equal(meta.sorsaRows,2);
 const expected={
  'fw-corporate-gaps':[40,305],'fw-corporate-minimum':null,
  'fw-wealth-minimum':[55,280],'fw-exit-tax':[0,50],
@@ -12,7 +12,7 @@ const expected={
  'fw-succession-abolish':[150,205],'fw-digital':[10,30],
  'sorsa-bank':[55,185],'sorsa-million-inheritance':[95,170],
  'vm-home-property':[250,395],'tpan-top-rate':[0,420],'vm-machine-fuel':[155,175],
- 'vm-alcohol':[85,110],'eva-care-fees':[345,500]
+ 'vm-alcohol':[85,110],'eva-care-fees':[345,500],'eva-tuition':[500,865]
 };
 // Independently reproduce key domestic source bridges and existing-tax losses.
 close(results['fw-treaty-dividends'].raw[0],(1730+1300+1500+1650+480)/5*.15*.5*.6-8);
@@ -25,6 +25,7 @@ close(results['vm-home-property'].raw[0],903*.5*.8*.7-1);close(results['vm-home-
 close(results['tpan-top-rate'].raw[0],0);close(results['tpan-top-rate'].raw[1],550*.756);
 close(results['vm-machine-fuel'].raw[0],200*.8-2);close(results['vm-alcohol'].raw[1],11*10);
 close(results['eva-care-fees'].raw[0],(200+300)*.7-2);
+close(results['eva-tuition'].raw[0],350.3*2.6*.85*.9*.73-5);close(results['eva-tuition'].raw[1],350.3*2.6*.95-2);
 for(const [id,range] of Object.entries(expected)){
  const d=get(id),r=results[id]; if(range===null){assert.equal(d.estimate.amount,null);assert.equal(r.range,null);continue;}assert.deepEqual(r.range,range,id);assert.deepEqual(d.estimate.range,range,id);
  assert.equal(d.estimate.amount,range[0]);assert.ok(range[1]>=20);
@@ -38,6 +39,10 @@ for(const [id,range] of Object.entries(expected)){
 // remain selectable and expose the unresolved interaction.
 assert.deepEqual(get('fw-succession-abolish').conflicts,['tax-succession']);
 assert.deepEqual(get('fw-corporate-gaps').conflicts,['fw-interest']);
+assert.ok(['cut-2-45','cut-2-43'].every(id=>get('eva-tuition').conflicts.includes(id)),'tuition for all replaces the VM fee variants');
+// The three tuition designs are one interface card with separate actions.
+const tuitionIds=['cut-2-43','cut-2-45','eva-tuition'];
+for(const id of tuitionIds){assert.deepEqual(get(id).variantGroup.options.map(o=>o.id),tuitionIds,id);assert.equal(get(id).variantGroup.default,'cut-2-45');}
 assert.ok(!get('sorsa-bank').conflicts.includes('corporate'));
 assert.ok(get('sorsa-bank').possibleOverlaps.some(o=>o.id==='corporate'));
 const coverage=read('finnwatch-proposal-coverage.json').recommendations;
@@ -49,7 +54,7 @@ for(const n of [22,26])assert.equal(coverage.find(r=>r.number===n).action,null,'
 const ctx=vm.createContext({model,actions:additional.map(d=>get(d.id))});
 vm.runInContext(fs.readFileSync(path.join(root,'src/incidence.js'),'utf8'),ctx);
 const r=vm.runInContext('calculateIncidence(actions,model)',ctx);
-assert.equal(r.entries.length,14);assert.deepEqual(Array.from(r.missing,d=>d.id).sort(),['fw-corporate-minimum','fw-exit-tax','fw-treaty-dividends']);
+assert.equal(r.entries.length,15);assert.deepEqual(Array.from(r.missing,d=>d.id).sort(),['fw-corporate-minimum','fw-exit-tax','fw-treaty-dividends']);
 for(const e of r.entries){
  assert.ok(e.spec.partial);assert.ok(e.spec.calculation.length>=4);
  for(const s of e.spec.scenarios){assert.ok(Object.keys(s.shares).every(k=>model.profiles[k]));assert.ok(Object.values(s.shares).reduce((a,b)=>a+b,0)<=1+1e-9);}
@@ -65,4 +70,4 @@ assert.ok(Buffer.byteLength(fragment)<2000000);
 const app=fragment.slice(fragment.indexOf('  const researchSources='),fragment.indexOf('  const evidence='));
 const c=vm.createContext({});vm.runInContext(app+';globalThis.notes=sourceNotes;',c);
 assert.ok(Object.values(c.notes).every(s=>s.summary&&s.limit));
-console.log('PASS: 16 intervals and one explicitly unquantified proposal, domestic fiscal anchors, 43 recommendations, 14 household scenarios, foreign taxpayers excluded, overlap semantics, complete compact source notes.');
+console.log('PASS: 17 intervals and one explicitly unquantified proposal, domestic fiscal anchors, 43 recommendations, 15 household scenarios, foreign taxpayers excluded, overlap semantics, complete compact source notes.');

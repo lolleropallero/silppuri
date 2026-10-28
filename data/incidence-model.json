@@ -4470,6 +4470,69 @@
         350.0,
         500.0
       ]
+    },
+    "eva-tuition": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 508.625091,
+          "shares": {
+            "service-tertiary": 1
+          }
+        },
+        {
+          "million": 508.625091,
+          "shares": {
+            "students": 1
+          }
+        },
+        {
+          "million": 865.241,
+          "shares": {
+            "service-tertiary": 1
+          }
+        },
+        {
+          "million": 865.241,
+          "shares": {
+            "students": 1
+          }
+        }
+      ],
+      "profiles": [
+        "service-tertiary",
+        "students"
+      ],
+      "method": "Maksun maksavat korkeakouluopiskelijat. Jakaumina käytetään korkeakoulupalvelujen käyttöä ja opintoetuuksien saajia.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Opiskelijoiden omat tulot ovat pieniä, joten vuositulojen suhteessa rasitus näyttää suurelta. Tulosidonnaisen lainan takaisinmaksu kohdistuisi myöhemmin valmistuneiden tuloihin, mitä tulokymmenyksittäinen laskelma ei mallinna.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "eva-163",
+        "tuition-germany",
+        "tuition-england",
+        "tuition-italy",
+        "okm-fees-2022",
+        "constitution-16",
+        "universities-act",
+        "polytechnics-act",
+        "statfin-universities-2024",
+        "statfin-amk-2024",
+        "dfe-loans-2025",
+        "aid",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        508.625091,
+        865.241
+      ]
     }
   },
   "sources": {
@@ -4757,6 +4820,61 @@
       "label": "Haaga, Böckerman, Kortelainen & Tukiainen (2024): Does Abolishing a Copayment Increase Doctor Visits?",
       "url": "https://doi.org/10.1515/bejeap-2023-0056",
       "kind": "Suomi · Helsingin maksun poisto, vertaisarvioitu"
+    },
+    "tuition-germany": {
+      "label": "Bietenbeck, Leibing, Marcus & Weinhardt (2023): Tuition Fees and Educational Attainment",
+      "url": "https://lup.lub.lu.se/record/d52d2ac9-c82e-4f28-bb66-72b1eb9a27a2",
+      "kind": "Saksa · vertaisarvioitu tutkimus, European Economic Review"
+    },
+    "tuition-england": {
+      "label": "Murphy, Scott-Clayton & Wyness (2019): The end of free college in England",
+      "url": "https://researchonline.lse.ac.uk/id/eprint/86593/",
+      "kind": "Englanti · vertaisarvioitu tutkimus, Economics of Education Review"
+    },
+    "tuition-italy": {
+      "label": "Garibaldi, Giavazzi, Ichino & Rettore (2012): College Cost and Time to Complete a Degree",
+      "url": "https://igier.unibocconi.eu/publications/working-papers/college-cost-and-time-complete-degree-evidence-tuition-discontinuities",
+      "kind": "Italia · Bocconin yliopiston rekisteriaineisto, regressioepäjatkuvuus"
+    },
+    "okm-fees-2022": {
+      "label": "OKM:n työryhmä (2022): EU/ETA-ulkopuolisten lukuvuosimaksujen seuranta",
+      "url": "https://valtioneuvosto.fi/-/1410845/lukuvuosimaksujen-kayttoonotto-ei-pysayttanyt-korkeakoulujen-kansainvalistymiskehitysta-maksutuottoja-mahdollista-nostaa-edelleen",
+      "kind": "Suomi · ministeriön työryhmän arviointi 10.2.2022"
+    },
+    "constitution-16": {
+      "label": "Suomen perustuslaki 731/1999, 16 §",
+      "url": "https://www.finlex.fi/fi/lainsaadanto/1999/731",
+      "kind": "Suomi · perustuslaki"
+    },
+    "universities-act": {
+      "label": "Yliopistolaki 558/2009, 8 §",
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2009/558",
+      "kind": "Suomi · voimassa oleva laki"
+    },
+    "polytechnics-act": {
+      "label": "Ammattikorkeakoululaki 932/2014",
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2014/932",
+      "kind": "Suomi · voimassa oleva laki"
+    },
+    "statfin-universities-2024": {
+      "label": "Tilastokeskus (2025): Yliopistokoulutus 2024",
+      "url": "https://stat.fi/julkaisu/cm10f9y6f6crp07w1pcjywpyj",
+      "kind": "Suomi · virallinen tilasto 15.5.2025"
+    },
+    "statfin-amk-2024": {
+      "label": "Tilastokeskus (2025): Ammattikorkeakoulukoulutus 2024",
+      "url": "https://stat.fi/julkaisu/cm10dmmg360ku07w1vn9osgnu",
+      "kind": "Suomi · virallinen tilasto 24.4.2025"
+    },
+    "dfe-loans-2025": {
+      "label": "Department for Education (2025): Student loan forecasts for England 2024-25",
+      "url": "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2024-25",
+      "kind": "Englanti · viranomaisen opintolainaennuste"
+    },
+    "aid": {
+      "label": "Dynarski (2003): Does Aid Matter?",
+      "url": "https://pubs.aeaweb.org/doi/10.1257/000282803321455287",
+      "kind": "Yhdysvallat · opintotukiohjelman lakkautus"
     }
   },
   "international": [
@@ -5472,8 +5590,8 @@
     }
   },
   "coverage": {
-    "reviewed": 260,
-    "numericalScenarios": 202,
+    "reviewed": 261,
+    "numericalScenarios": 203,
     "separate": 58
   }
 }

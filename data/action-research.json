@@ -2558,5 +2558,27 @@
     "fiscal": "EVA:n arvio perustuu VM:n vuoden 2023 maksukertymätietoihin. Omassa haarukassa varataan osuus käytön vähenemiselle, maksukatolle, maksuvapautuksille ja toimeentulotuelle.",
     "scope": "EVA:n luvut koskevat erikoissairaanhoidon ja iäkkäiden pitkäaikaishoidon maksuja. Suomalaiset maksututkimukset koskevat lähinnä perusterveydenhuollon käyntejä.",
     "status": "context"
+  },
+  "eva-tuition": {
+    "sources": [
+      "eva-163",
+      "tuition-germany",
+      "tuition-england",
+      "tuition-italy",
+      "okm-fees-2022",
+      "constitution-16",
+      "universities-act",
+      "polytechnics-act",
+      "statfin-universities-2024",
+      "statfin-amk-2024",
+      "dfe-loans-2025",
+      "aid",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "Valtio säästää vain, jos korkeakoulujen valtionrahoitusta leikataan maksutulojen verran. Laskelma vähentää maksun ulkopuolelle jäävät opiskelijat, hakeutumisen vähenemisen ja valtion vastuulle jäävät lainatappiot. Nopeamman valmistumisen ja koulutustason muutoksen verovaikutuksia ei ole laskettu.",
+    "scope": "Ulkomaiset tutkimukset koskevat Saksan lukukausimaksuja, Englannin tulosidonnaisia lainoja ja yhden italialaisen yliopiston maksuportaita. Suomen omat kokemukset koskevat vain EU/ETA-ulkopuolisia opiskelijoita.",
+    "status": "context"
   }
 }

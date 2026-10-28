@@ -169,5 +169,35 @@
   },
   "https://www.doria.fi/handle/10024/188798": {
     "researchSummary": "sin-tax-finland"
+  },
+  "https://researchonline.lse.ac.uk/id/eprint/86593/": {
+    "researchSummary": "tuition-england"
+  },
+  "https://lup.lub.lu.se/record/d52d2ac9-c82e-4f28-bb66-72b1eb9a27a2": {
+    "researchSummary": "tuition-germany"
+  },
+  "https://igier.unibocconi.eu/publications/working-papers/college-cost-and-time-complete-degree-evidence-tuition-discontinuities": {
+    "researchSummary": "tuition-italy"
+  },
+  "https://valtioneuvosto.fi/-/1410845/lukuvuosimaksujen-kayttoonotto-ei-pysayttanyt-korkeakoulujen-kansainvalistymiskehitysta-maksutuottoja-mahdollista-nostaa-edelleen": {
+    "researchSummary": "okm-fees-2022"
+  },
+  "https://www.finlex.fi/fi/lainsaadanto/1999/731": {
+    "researchSummary": "constitution-16"
+  },
+  "https://www.finlex.fi/fi/lainsaadanto/2009/558": {
+    "researchSummary": "universities-act"
+  },
+  "https://www.finlex.fi/fi/lainsaadanto/2014/932": {
+    "researchSummary": "polytechnics-act"
+  },
+  "https://stat.fi/julkaisu/cm10f9y6f6crp07w1pcjywpyj": {
+    "researchSummary": "statfin-universities-2024"
+  },
+  "https://stat.fi/julkaisu/cm10dmmg360ku07w1vn9osgnu": {
+    "researchSummary": "statfin-amk-2024"
+  },
+  "https://explore-education-statistics.service.gov.uk/find-statistics/student-loan-forecasts-for-england/2024-25": {
+    "researchSummary": "dfe-loans-2025"
   }
 }

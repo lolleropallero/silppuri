@@ -439,5 +439,33 @@
       }
     ],
     "roundTo": 5
+  },
+  "eva-tuition": {
+    "raw": [
+      503.625091,
+      863.241
+    ],
+    "range": [
+      500,
+      865
+    ],
+    "taxRange": [
+      508.625091,
+      865.241
+    ],
+    "caseCount": 16,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "910,78 × 0,85 × 0,9 × 0,73 − 5",
+        "value": 503.625091
+      },
+      {
+        "label": "Yläraja",
+        "expression": "910,78 × 1 × 1 × 0,95 − 2",
+        "value": 863.241
+      }
+    ],
+    "roundTo": 5
   }
 }

@@ -632,11 +632,51 @@
     "limit": "Staattinen arvio ei sisällä käyttäytymisvaikutuksia, ja itserahoitusaste on epävarma pitkän aikavälin laskelma. Raportti ei arvioi alennuksen perumisen tuottoa erikseen."
   },
   "eva-163": {
-    "summary": "Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.",
-    "limit": "Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty."
+    "summary": "Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Alankomaiden mallin lukukausimaksut, noin 2 600 euroa vuodessa, toisivat korkeakouluille lähes 900 miljoonaa euroa; opintolainan takaisinmaksu sidottaisiin tuloihin.",
+    "limit": "Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön ja hakeutumisen muutoksia, maksukattoa, toimeentulotukea ja lainatappioita ei ole eritelty."
   },
   "sin-tax-finland": {
     "summary": "Makeisten ja jäätelön kulutusjousto oli lähellä nollaa, koska läheisiä verottomia korvikkeita oli vähän. Kun sokeripitoisten virvoitusjuomien vero kaksinkertaistui mutta sokerittomien ei, jousto oli lähellä yhtä: kulutus siirtyi sokerittomiin juomiin.",
     "limit": "Tulos koskee sokeripitoisten ja sokerittomien juomien veroeroa. Kaikkien juomien samansuuruinen korotus ei tarjoa samaa veron sisäistä korviketta, joten se ei suoraan kerro kokonaiskulutuksen joustoa."
+  },
+  "tuition-england": {
+    "summary": "Englannin siirtyminen maksullisiin korkeakouluihin lisäsi rahoitusta opiskelijaa kohti, opiskelijamäärät kasvoivat ja hyvässä ja heikommassa asemassa olevien osallistumisero kapeni. Tutkijoiden mukaan tulosidonnainen laina pitää opiskelun alkaessa maksuttomana.",
+    "limit": "Englannissa elinkustannuksiin saa suhteellisen anteliasta tukea, ja laatua mitataan sijaismittareilla. Tulos ei siirry suoraan järjestelmään, jossa maksu peritään heti."
+  },
+  "tuition-germany": {
+    "summary": "Saksan yliopistojen lukukausimaksut lisäsivät jo opiskelevien opiskeluun käyttämää työtä ja valmistumista. Samalla ne vähensivät ylioppilaiden ensimmäistä hakeutumista yliopistoon. Yhteisvaikutus koulutustasoon jäi pieneksi.",
+    "limit": "Tulos koskee maksuja lähellä nollahintaa. Se ei kerro suuremman maksun tai Suomen opintotukijärjestelmän vaikutuksia."
+  },
+  "tuition-italy": {
+    "summary": "Jatkovuoden maksun 1 000 euron korotus pienensi tutkinnon venymisen todennäköisyyttä 9,9 prosenttiyksikköä, kun venymisen lähtötaso oli noin 80 %.",
+    "limit": "Aineisto koskee yhtä yksityistä yliopistoa ja tuloihin sidottuja maksuportaita. Tulos ei kerro hakeutumisesta eikä kaikkia koskevan maksun vaikutuksesta."
+  },
+  "okm-fees-2022": {
+    "summary": "Lukuvuosimaksujen jälkeen uusien ulkomaisten opiskelijoiden määrä laski heti, mutta ylitti myöhemmin maksuja edeltäneen tason. Vuonna 2020 maksuvelvollisia oli 36 % ulkomaisista opiskelijoista. Maksutuotto oli 2019–2020 noin 42 milj. €, apurahojen jälkeen noin 14 milj. €.",
+    "limit": "Seuranta koskee ulkomaisia opiskelijoita, joilla on muita maita vertailukohtana. Kotimaisten opiskelijoiden reaktiota se ei kerro."
+  },
+  "constitution-16": {
+    "summary": "Julkisen vallan on turvattava jokaiselle yhtäläinen mahdollisuus saada kykyjensä ja erityisten tarpeidensa mukaisesti myös muuta kuin perusopetusta sekä kehittää itseään varattomuuden sitä estämättä.",
+    "limit": "Säännös ei suoraan kiellä maksuja, mutta varattomankin mahdollisuus opiskella on turvattava. Perustuslakivaliokunnan kantaa tähän malliin ei ole."
+  },
+  "universities-act": {
+    "summary": "Korkeakoulututkintoon johtava opetus ja opiskelijavalintojen valintakokeet ovat opiskelijalle maksuttomia, jollei laissa toisin säädetä. EU/ETA-ulkopuolisten lukuvuosimaksuista säädetään erikseen.",
+    "limit": "Kaikkia koskevat lukukausimaksut edellyttäisivät lain muuttamista."
+  },
+  "polytechnics-act": {
+    "summary": "Ammattikorkeakoulututkintoon ja ylempään ammattikorkeakoulututkintoon johtava opetus sekä opiskelijavalintojen valintakokeet ovat opiskelijalle maksuttomia.",
+    "limit": "Kaikkia koskevat lukukausimaksut edellyttäisivät lain muuttamista."
+  },
+  "statfin-universities-2024": {
+    "summary": "Yliopistojen tutkintoon johtavassa koulutuksessa opiskeli 173 600 opiskelijaa vuonna 2024, 3,3 % enemmän kuin vuotta aiemmin.",
+    "limit": "Opiskelijamäärä ei kerro, kuinka moni olisi maksuvelvollinen. Poissaolevia, maksusta vapautettavia ja jo lukuvuosimaksua maksavia ei ole eritelty."
+  },
+  "statfin-amk-2024": {
+    "summary": "Ammattikorkeakoulujen tutkintoon johtavassa koulutuksessa opiskeli 176 700 opiskelijaa vuonna 2024, ja opiskelijamäärä jatkoi kasvuaan.",
+    "limit": "Opiskelijamäärä ei kerro, kuinka moni olisi maksuvelvollinen. Poissaolevia, maksusta vapautettavia ja jo lukuvuosimaksua maksavia ei ole eritelty."
+  },
+  "dfe-loans-2025": {
+    "summary": "Lukuvuonna 2024/25 aloittaneista kokopäiväisistä lainanottajista 56 % arvioidaan maksavan lainansa kokonaan. Valtio arvioi tukevansa 29 % vuonna 2024–25 myönnetyistä kokopäiväopiskelijoiden Plan 5 -lainoista.",
+    "limit": "Englannin maksut ja lainat ovat paljon suurempia kuin 2 600 euron esimerkki, ja lainoihin sisältyy elinkustannuksia. Suomen tappio-osuus on tässä oma arvio."
   }
 }
