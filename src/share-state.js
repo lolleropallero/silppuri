@@ -1,5 +1,12 @@
 // Public URL format. Store choices, never calculated amounts or executable markup.
 const SHARE_VERSION=1;
+// A shared URL is a separate workspace. Its edits must never write the owner's
+// persisted package, including saves triggered only by search or sort controls.
+function createShareSession(host){
+  let active=false;
+  return {get active(){return active;},enter(){active=true;},leave(){active=false;},
+    save(state){if(!active)return host()?.setWidgetState?.(state);}};
+}
 const shareTitle=value=>String(value??'').replace(/[\u0000-\u001f\u007f]/g,' ').trim().slice(0,80)||'Minun silppurini';
 function encodeShare(model){
   const unitSteps=Object.fromEntries(Object.entries(model.unitSteps||{}).filter(([id,n])=>model.selectedIds.includes(id)&&n!==1));

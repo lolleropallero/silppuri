@@ -1,12 +1,16 @@
 """Build the self-contained Silppuri concept from reviewed VM source data."""
 import json
+import argparse
 from pathlib import Path
 from finnwatch_models import calculate as calculate_finnwatch, apply_estimates
 from additional_tax_models import calculate as calculate_additional, apply as apply_additional
 from audit_corrections import apply_actions, apply_inputs, apply_sources, apply_research
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html')
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--out', type=Path, default=ROOT/'tmp/silppuri-konsepti.html')
+OUT = parser.parse_args().out
+OUT.parent.mkdir(parents=True, exist_ok=True)
 ANNEX = 'https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/cc17f785-1f60-4239-bf43-adf73cfdbf2c/content'
 def read_psv(name, size):
     rows=[]

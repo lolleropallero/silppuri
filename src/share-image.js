@@ -3,7 +3,7 @@
 function shareCardAmount(d){
   return cardAmountDisplay(d).text;
 }
-function createShareImage(chosen,name,later){
+function createShareImage(chosen,name,later,href){
   const canvas=document.createElement('canvas');canvas.width=1200;
   let ctx=canvas.getContext('2d');
   const color={ink:'#202820',muted:'#62695f',paper:'#f5f3ed',panel:'#fffefa',track:'#e4e7dc',cut:'#ed2b36',tax:'#5068c8',small:'#9548c6',indirect:'#bf7816'};
@@ -26,10 +26,10 @@ function createShareImage(chosen,name,later){
   const result=calculateIncidence(chosen,incidenceModel),sum=chosen.reduce((n,d)=>n+valueOf(d),0);
   const groups=payerGroups.filter(g=>chosen.some(d=>d.flow===g.id)).map(g=>({...g,display:payerDisplay(chosen.filter(d=>d.flow===g.id))}));
   const titleLines=lines(shareTitle(name),1104,48,true);
-  const head=153+titleLines.length*56;
+  const head=180+titleLines.length*56;
   const groupHeight=groups.reduce((n,g)=>n+62+(g.display.marked?24:0),92);
   const topHeight=Math.max(560,groupHeight);
-  const chartsY=head+topHeight+28,chartHeight=760;
+  const chartsY=head+topHeight+28,chartHeight=790;
   const chartEntries=result.entries.filter(e=>['cash','indirect'].includes(e.channel));
   const cardsY=chartsY+chartHeight+82;
   const columns=chosen.length>40?3:2,gap=18,cardWidth=(1104-gap*(columns-1))/columns;
@@ -61,6 +61,17 @@ function createShareImage(chosen,name,later){
   text('SILPPURI',94,54,23,true);text('Silputaan Suomi kuntoon!',1152,54,22,true,color.ink,'right');
   rect(48,77,1104,2,color.ink);
   titleLines.forEach((line,i)=>text(line,600,144+i*56,48,true,color.ink,'center'));
+  if(href){
+    try{
+      const address=new URL(href);
+      if(['http:','https:'].includes(address.protocol)){
+        const local=['localhost','127.0.0.1','[::1]'].includes(address.hostname);
+        const label=(local?'Paikallinen esikatselu · ':'')+address.host+address.pathname;
+        let size=16;while(size>10&&(font(size),ctx.measureText(label).width>1104))size--;
+        text(label,600,head-20,size,false,color.muted,'center');
+      }
+    }catch{}
+  }
   panel(48,head,542,topHeight);panel(614,head,538,topHeight);
   text(later?'2031 + myöhemmät':'2031',566,head+43,17,true,color.muted,'right');
   const chart=piePresentation(chosen,sum,72,null),view=pieViewport(chart);
@@ -93,14 +104,15 @@ function createShareImage(chosen,name,later){
     const count=service?result.serviceEntries.length:chartEntries.length;
     panel(x,chartsY,542,chartHeight);
     text(service?'Julkiset palvelut':'Rahat ja ostovoima',x+24,chartsY+42,26,true);
-    text(service?'Osuus palveluleikkauksista':'Menetys suhteessa nettotuloihin',x+24,chartsY+73,18);
-    text(count+' / '+chosen.length+' toimea · yksin asuva · nettotulot 2024',x+24,chartsY+101,16,false,color.muted);
+    text(service?'Arvio palvelujen käytön perusteella':'Arvio menetyksestä suhteessa nettotuloihin',x+24,chartsY+73,18);
+    text(service?'Osuus leikkauksista · ei mitattu menetys':'Osin vastaavista toimista arvioitu jakauma',x+24,chartsY+98,16,false,color.muted);
+    text(count+' / '+chosen.length+' toimea · yksin asuva · nettotulot 2024',x+24,chartsY+126,16,false,color.muted);
     const values=rows.map((r,i)=>service?{mid:r.share,low:r.shareLow,high:r.shareHigh,parts:[[color.cut,r.share]]}:
       {mid:r.mid/incidenceModel.income[i]*100,low:r.percentLow,high:r.percentHigh,parts:[[color.cut,r.cut],[color.tax,r.tax],[color.indirect,r.indirect]].map(([c,v])=>[c,v/incidenceModel.income[i]*100])});
     const min=Math.min(0,...values.map(v=>v.low)),max=Math.max(1,...values.map(v=>v.high)),barWidth=275;
     const position=n=>(n-min)/(max-min)*barWidth;
     values.forEach((v,i)=>{
-      const y=chartsY+126+i*57;rect(x+12,y-3,518,57,i%2?'#ebece4':'#f7f7f1');
+      const y=chartsY+151+i*57;rect(x+12,y-3,518,57,i%2?'#ebece4':'#f7f7f1');
       text(decileName(i),x+24,y+19,16,true);text(decileIncomeRange(i),x+24,y+40,13,false,color.muted);
       const bx=x+200,by=y+8;rect(bx,by,barWidth,26,color.track);
       if(count){
@@ -109,7 +121,7 @@ function createShareImage(chosen,name,later){
       }
       text(!count?'—':service?shareLabel(v.mid):chartPercent(v.mid),x+514,y+50,14,true,color.ink,'right');
     });
-    if(!service){dot(x+30,chartsY+721,color.cut);text('Etuudet',x+43,chartsY+727,16);dot(x+150,chartsY+721,color.tax);text('Verot',x+163,chartsY+727,16);dot(x+253,chartsY+721,color.indirect);text('Yritysten kautta',x+266,chartsY+727,16);}
+    if(!service){dot(x+30,chartsY+751,color.cut);text('Etuudet',x+43,chartsY+757,16);dot(x+150,chartsY+751,color.tax);text('Verot',x+163,chartsY+757,16);dot(x+253,chartsY+751,color.indirect);text('Yritysten kautta',x+266,chartsY+757,16);}
   }
   drawDeciles(48,false);drawDeciles(614,true);
   for(const group of cardGroups){

@@ -45,6 +45,7 @@
   const selected=new Set();
   let packageName='';
   /*SHARE_STATE*/
+  const packageSession=createShareSession(()=>window.openai);
   const scenario={income:2,corporate:3,dividends:'vm',ylePercent:20};
   const maxPP=10;
   const units={};
@@ -280,9 +281,9 @@
   data.forEach(d=>{
     const article=document.createElement('article');
     article.className='sp-action';article.dataset.id=d.id;article.dataset.type=d.type;
-    article.innerHTML=`<div class="sp-action-top"><span><span class="sp-dot ${d.type==='cut'?'cut':''}"></span>${d.kind||(d.type==='tax'?'Veronkorotus':'Menoleikkaus')}</span><span class="sp-action-percent"></span></div><div class="sp-action-main"><h3><button type="button" class="sp-card-open cursor-interaction" data-open="${d.id}" aria-haspopup="dialog">${esc(d.title)}</button></h3><div class="sp-amount"></div></div><p class="sp-amount-note" id="sp-amount-note-${d.id}" hidden></p><p class="sp-consequence">${d.impact}</p>`;
+    article.innerHTML=`<div class="sp-action-main"><h3><button type="button" class="sp-card-open cursor-interaction" data-open="${d.id}" aria-haspopup="dialog">${esc(d.title)}</button></h3><div class="sp-amount"></div></div>`;
     const controls=document.createElement('div');controls.className='sp-scenario-controls';controls.dataset.controls=d.id;
-    article.querySelector('.sp-consequence').before(controls);
+    article.appendChild(controls);
     list.appendChild(article);
   });
   function stateIn(s){
@@ -324,10 +325,10 @@
       taxIncreasesPP:{income:scenario.income,corporate:scenario.corporate},unitSteps:{...units},dividendMode:scenario.dividends,fundingChoices:{...conditions}};
   }
   function save(){
-    const p=window.openai?.setWidgetState?.({modelContent:packageModel(),privateContent:{catalogueViewVersion:1,filter,category,search,sortOrder,activeFlow,visibleCount:limit,catalogueOrder,catalogueOrderKey}});
+    const p=packageSession.save({modelContent:packageModel(),privateContent:{catalogueViewVersion:1,filter,category,search,sortOrder,activeFlow,visibleCount:limit,catalogueOrder,catalogueOrderKey}});
     if(p?.catch)p.catch(()=>{});
     // Editing a shared package changes this browser's copy. The original link stays immutable.
-    if(globalThis.location?.hash.startsWith('#s='))try{history.replaceState(null,'',shareUrl(packageModel(),location.href));}catch{}
+    if(packageSession.active)try{history.replaceState(null,'',shareUrl(packageModel(),location.href));}catch{}
   }
 
   function slice(a,b,outer=148,inner=108){
@@ -473,10 +474,10 @@
     const excluded=!Number.isFinite(d.amount);
     if(excluded){
       const reference=d.estimate?.sensitivity?.find(row=>row.label==='2031');
-      if(validRange(reference?.range))return {text:rangeLabel(reference.range)+' *',excluded,hasAmount:true};
+      if(validRange(reference?.range))return {text:rangeLabel(reference.range),excluded,hasAmount:true};
       // Only an explicitly reviewed reference is eligible. A tax expenditure,
       // partial cost or unsupported scaled gross value is not a revenue estimate.
-      if(Number.isFinite(d.referenceEstimate?.amount))return {text:payerMoneyLabel(d.referenceEstimate.amount)+' *',excluded,hasAmount:true};
+      if(Number.isFinite(d.referenceEstimate?.amount))return {text:payerMoneyLabel(d.referenceEstimate.amount),excluded,hasAmount:true};
       return {text:'Tuotto avoin',excluded,hasAmount:false};
     }
     const future=d.laterApplied||d.amount>=0&&d.amount<20&&d.horizonEstimate?.amount>d.amount;
@@ -496,6 +497,7 @@
   function payerYearMarkup(display){return display.marked?'<small class="sp-flow-year">* '+esc(display.dates.join(' · '))+'</small>':'';}
   function amountFootnote(d){
     if(d.estimate)return d.estimate.footnote||'';
+    if(d.referenceEstimate?.kind==='static')return payerMoneyLabel(d.referenceEstimate.amount)+' on staattinen viiteluku. Nettotuottoa ei ole arvioitu euroina, eikä viitelukua lasketa piirakkaan.';
     if(d.fundingCut&&d.scaled&&d.amount>0)return d.laterApplied?'Oma laskelma · '+d.horizonEstimate.when+'.':d.amount<20?'Oma laskelma: '+moneyLabel(d.budget[7])+'/vuosi vuonna 2035.':'Oma laskelma VM:n rahoituspohjasta.';
     if(d.laterApplied)return 'VM:n vuosiarvio: '+[d.horizonEstimate.precision,moneyLabel(d.amount),d.horizonEstimate.when].filter(Boolean).join(' ')+'.';
     if(!Number.isFinite(d.amount)||d.amount>=20||d.amount<0)return '';
@@ -521,8 +523,7 @@
     return d.amount===0?'VM:n taulukossa vuodelle '+year+' on merkitty 0 €.':'';
   }
   function actionAmountMarkup(d){
-    if(!Number.isFinite(d.amount))return esc(cardAmountDisplay(d).text).replace(' *','<sup aria-hidden="true">*</sup>');
-    return esc(d.estimate?.display||moneyLabel(d.amount))+(amountFootnote(d)?'<sup aria-hidden="true">*</sup>':'');
+    return esc(cardAmountDisplay(d).text).replace(' *','<sup aria-hidden="true">*</sup>');
   }
   q('#sp-category').insertAdjacentHTML('beforeend',payerGroups.map(g=>`<option value="${g.id}">${g.name}</option>`).join(''));
   q('.sp-list-label').insertAdjacentHTML('afterend','<nav class="sp-bookmarks" aria-label="Paketin valitut toimet"><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="cut" aria-pressed="false" aria-label="Valitut menoleikkaukset" data-tooltip="Valitut menoleikkaukset"><span class="sp-bookmark-flag"><strong>0</strong></span></button><button type="button" class="sp-bookmark cursor-interaction" data-bookmark="tax" aria-pressed="false" aria-label="Valitut verot ja maksut" data-tooltip="Valitut verot ja maksut"><span class="sp-bookmark-flag"><strong>0</strong></span></button></nav>');
@@ -626,9 +627,9 @@
     const d=data.find(x=>x.id===id);if(!d)return;
     const e=effectFor(d);
     q('#sp-impact-title').textContent=d.title;
-    q('.sp-impact-amount').innerHTML=actionAmountMarkup(d)+(d.estimate?' <small>'+esc(d.estimate.caption)+'</small>':d.amount===null?'':' / vuosi');
+    q('.sp-impact-amount').innerHTML=actionAmountMarkup(d)+(Number.isFinite(d.amount)?' / vuosi':'');
     const amountNote=amountFootnote(d);
-    q('.sp-impact-amount-note').textContent=amountNote?'* '+amountNote:'';
+    q('.sp-impact-amount-note').textContent=amountNote?(cardAmountDisplay(d).text.endsWith(' *')?'* ':'')+amountNote:'';
     q('.sp-impact-amount-note').hidden=!amountNote;
     q('.sp-impact-basis').textContent=d.year;
     q('.sp-modal-controls').innerHTML=controlsMarkup(id,'modal');
@@ -868,12 +869,7 @@
     data.forEach(d=>{
       const el=list.querySelector(`[data-id="${d.id}"]`);el.hidden=!visible.has(d.id);if(el.hidden)return;
       el.querySelector('.sp-card-open').textContent=d.title;
-      const amountNote=amountFootnote(d),amountElement=el.querySelector('.sp-amount');
-      amountElement.innerHTML=actionAmountMarkup(d)+(Number.isFinite(d.amount)?'<small>'+esc(d.estimate?.caption||(d.amount<0?'Heikentää julkista taloutta / vuosi':'/ vuosi'))+'</small>':'');
-      const footnote=el.querySelector('.sp-amount-note');footnote.textContent=amountNote?'* '+amountNote:'';footnote.hidden=!amountNote||!Number.isFinite(d.amount);
-      if(amountNote)amountElement.setAttribute('aria-describedby',footnote.id);else amountElement.removeAttribute('aria-describedby');
-      el.querySelector('.sp-action-percent').textContent=d.amount===null?'Ei laskelmassa':pct(d.amount)+' % tavoitteesta';
-      el.querySelector('.sp-consequence').textContent=d.impact;
+      el.querySelector('.sp-amount').innerHTML=actionAmountMarkup(d);
       el.querySelector('[data-controls]').innerHTML=controlsMarkup(d.id,'card');
       el.classList.toggle('is-picked',selected.has(d.id));
     });
@@ -964,7 +960,7 @@
   /*SHARE_IMAGE*/
   /*SHARE_PNG*/
   /*SHARE_UI*/
-  stateIn(readSharedState()||window.openai?.widgetState);render();
+  loadSharedLocation();
   // CSS handles an ordinary page. In the auto-height preview the parent frame
   // scrolls instead, so use the browser's clipped intersection rectangle.
   const bookmarkNav=q('.sp-bookmarks'),catalogue=q('.sp-actions');
@@ -999,6 +995,6 @@
   let lastFlowWidth=q('.sp-flow-graph').clientWidth;
   if(globalThis.ResizeObserver)new ResizeObserver(syncPieScale).observe(q('.sp-chart'));
   if(globalThis.ResizeObserver)new ResizeObserver(()=>{const width=q('.sp-flow-graph').clientWidth;if(width!==lastFlowWidth){lastFlowWidth=width;drawFlows(data.filter(d=>selected.has(d.id)));}}).observe(q('.sp-flow-graph'));
-  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){modalShred.finish();finishPacking?.();stateIn(event.detail.globals.widgetState);render();if(activeAction){renderImpact(activeAction);positionDialog();}}});
+  window.addEventListener('openai:set_globals',event=>{if(!packageSession.active&&event.detail?.globals?.widgetState){modalShred.finish();finishPacking?.();stateIn(event.detail.globals.widgetState);render();if(activeAction){renderImpact(activeAction);positionDialog();}}});
   if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=>render()});tweak.addSlider(design,'radius',{label:'Korttien kulmat',min:0,max:24,unit:'px'});tweak.addSlider(design,'thickness',{label:'Piirakan renkaan leveys',min:40,max:90,unit:'px'});}
 })();

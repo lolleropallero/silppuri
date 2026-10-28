@@ -264,6 +264,7 @@
 <div id="silppuri-demo" lang="fi" aria-label="Silppuri – verkkosivun konsepti">
   <header class="sp-top"><div class="sp-wordmark"><!--SILPPURI_LOGO-->SILPPURI</div><span class="sp-tag">Julkinen talous. Oma valinta.</span><button type="button" class="sp-publish" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 14v6h14v-6"/></svg>Julkaise</button></header>
   <p class="sp-share-notice" role="alert" hidden></p>
+  <div class="sp-shared-session" hidden><strong>Jaettu paketti</strong><button type="button" class="sp-return-own cursor-interaction">Palaa omaan pakettiin</button></div>
   <div class="sp-hero"><h1>Mistä Sinä ottaisit <em>10 miljardia?</em></h1><p class="sp-subtitle">Kuka maksaa, kun sinä päätät? Tutustu vaikutuksiin ja silppua Suomi kuntoon!</p></div>
   <div class="sp-workspace">
     <aside>
@@ -313,13 +314,13 @@
   <footer class="sp-footer"><p class="sp-icon-credit">Kynnenjäljet: <a href="https://game-icons.net/1x1/lorc/claw-slashes.html" target="_blank" rel="noopener noreferrer">Lorc / Game-icons.net</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. Väri mukautettu.</p></footer>
   <div class="sp-modal-mask" hidden></div>
   <dialog class="sp-modal" aria-modal="true" aria-labelledby="sp-impact-title" aria-describedby="sp-impact-who">
-    <div class="sp-modal-header"><div class="sp-modal-heading"><h2 id="sp-impact-title"></h2><button type="button" class="sp-modal-close cursor-interaction" aria-label="Sulje vaikutusnäkymä" autofocus>×</button></div><div class="sp-modal-meta"><strong class="sp-impact-amount" aria-describedby="sp-impact-amount-note"></strong></div><p class="sp-impact-amount-note" id="sp-impact-amount-note" hidden></p></div>
+    <div class="sp-modal-header"><div class="sp-modal-heading"><h2 id="sp-impact-title"></h2><button type="button" class="sp-modal-close cursor-interaction" aria-label="Sulje vaikutusnäkymä" autofocus>×</button></div><div class="sp-modal-meta"><strong class="sp-impact-amount"></strong></div></div>
     <div class="sp-modal-body">
       <div class="sp-modal-controls sp-scenario-controls"></div>
       <section class="sp-impact-section sp-who"><h3>Keneltä raha tai palvelu vähenee?</h3><p id="sp-impact-who"></p><figure class="sp-benefit-concentration" hidden aria-labelledby="sp-benefit-title" aria-describedby="sp-benefit-source"><figcaption id="sp-benefit-title">Nykyinen veroetu kasautuu suurituloisille</figcaption><div class="sp-benefit-row"><div class="sp-benefit-label"><span>Suurituloisin 10 %</span><strong>71 %</strong></div><div class="sp-benefit-track" aria-hidden="true"><span style="width:71%"></span></div></div><div class="sp-benefit-row"><div class="sp-benefit-label"><span>Muut 90 %</span><strong>29 %</strong></div><div class="sp-benefit-track" aria-hidden="true"><span style="width:29%"></span></div></div><p id="sp-benefit-source" class="sp-benefit-source">Osuus huojennettujen osinkojen verovapaista euroista vuonna 2020, pyöristettynä. <a href="https://www.finnwatch.org/fi/julkaisut/osinkoverojaerjestelmaen-epaetasaisesti-jakautuvat-hyoedyt-seurantaraportti" target="_blank" rel="noopener noreferrer">Finnwatch 2022 · Verohallinnon tilastot ↗</a></p></figure></section>
       <section class="sp-impact-section"><h3>Mitä arjessa ja taloudessa voi tapahtua?</h3><ol class="sp-chain"></ol><p class="sp-impact-society"></p></section>
       <section class="sp-impact-section sp-money-box"><h3>Jääkö koko summa julkiselle taloudelle?</h3><p class="sp-impact-money"></p><p class="sp-impact-uncertainty"></p></section>
-      <details class="sp-impact-sources"><summary class="cursor-interaction">Lähteet ja laskentatapa</summary><p class="sp-impact-basis"></p><p class="sp-impact-tradeoff"></p><div class="sp-impact-links"></div></details>
+      <details class="sp-impact-sources"><summary class="cursor-interaction">Lähteet ja laskentatapa</summary><p class="sp-impact-basis"></p><p class="sp-impact-amount-note" id="sp-impact-amount-note" hidden></p><p class="sp-impact-tradeoff"></p><div class="sp-impact-links"></div></details>
     </div>
     <div class="sp-modal-footer"><button type="button" class="sp-modal-confirm cursor-interaction"><span class="sp-confirm-icon" aria-hidden="true"><!--SILPPURI_LOGO--></span><span class="sp-confirm-label">Silppuriin!</span></button></div>
   </dialog>

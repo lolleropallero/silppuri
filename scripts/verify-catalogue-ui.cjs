@@ -9,6 +9,7 @@ const ctx=vm.createContext({data:structuredClone(actions),selected:new Set(),sce
 const run=s=>vm.runInContext(s,ctx);
 ctx.packageName='';
 run(fs.readFileSync(path.join(root,'src/share-state.js'),'utf8'));
+run('const packageSession=createShareSession(()=>window.openai);');
 run('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});');
 run(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')));
 run(source.slice(source.indexOf('  const moneyLabel='),source.indexOf("  q('#sp-category').insertAdjacentHTML")));

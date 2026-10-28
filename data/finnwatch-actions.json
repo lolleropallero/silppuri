@@ -49,6 +49,7 @@
     "estimate": {
       "amount": 50,
       "display": "50–80 milj. €",
+      "range": [50, 80],
       "caption": "/ vuosi",
       "footnote": "Suora arvio; piirakkaan 50 milj. €.",
       "basis": "Oma laskelma VM:n vuosien 2016–2020 aineistosta · ei nettoennuste",

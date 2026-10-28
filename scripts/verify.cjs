@@ -46,6 +46,7 @@ assert.ok(catalogue.meta.excludedBelow20mNet.every(id=>!ids.has(id)));
 const ctx=vm.createContext({data:structuredClone(actions),selected:new Set(),scenario:{income:4,corporate:10,dividends:'vm'},units:{},conditions:{yle:'reduce-tax',farm:'redirect'},year:2031,includeLater:false,dividendStudyUrl:'https://www.sttinfo.fi/files/66784256/70136599/79254/fi'});
 ctx.packageName='';
 vm.runInContext(fs.readFileSync(path.join(root,'src/share-state.js'),'utf8'),ctx);
+vm.runInContext('const packageSession=createShareSession(()=>window.openai);',ctx);
 vm.runInContext('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});',ctx);
 vm.runInContext(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')),ctx);
 const calculate=()=>vm.runInContext('syncScenario();Object.fromEntries(data.map(d=>[d.id,{amount:d.amount,budget:d.budgetAmount,direct:d.directAmount,gross:d.gross,netUpper:d.netUpper,funds:d.fundAmount,title:d.title,year:d.year}]))',ctx);

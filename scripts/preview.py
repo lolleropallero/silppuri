@@ -6,7 +6,7 @@ folder=ROOT/'tmp/review';folder.mkdir(parents=True,exist_ok=True)
 runtime=Path('C:/Users/aleks/.codex/plugins/cache/openai-bundled/visualize/1.0.57/skills/visualize/scripts/render.py')
 spec=importlib.util.spec_from_file_location('visualize_render',runtime)
 render=importlib.util.module_from_spec(spec);sys.modules[spec.name]=render;spec.loader.exec_module(render)
-source=Path('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html').read_text(encoding='utf8')
+source=(ROOT/'tmp/silppuri-konsepti.html').read_text(encoding='utf8')
 state={'modelContent':{'selectedIds':['vat','health','income','income-index','cut-5-49','cut-5-52','benefits','dividends','corporate','cut-3-15','cut-3-62'],
        'year':2031,'taxIncreasesPP':{'income':2,'corporate':3},'dividendMode':'abolish'},'privateContent':{'catalogueViewVersion':1}}
 if '--horizon' in sys.argv:

@@ -7,8 +7,10 @@ const ctx=vm.createContext({TextEncoder,TextDecoder,Uint8Array,btoa,atob,URL,
   dividendStudyUrl:'https://www.sttinfo.fi/files/66784256/70136599/79254/fi'});
 const run=s=>vm.runInContext(s,ctx);
 run(read('src/share-state.js'));
+run('const packageSession=createShareSession(()=>window.openai);');
 run('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});');
 run(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')));
+run(source.slice(source.indexOf('  const esc='),source.indexOf('  function sourceMarkup')));
 run(source.slice(source.indexOf('  function stateIn'),source.indexOf('  function slice')));
 ctx.format=n=>(n/1000).toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2});
 run(source.slice(source.indexOf('  const moneyLabel='),source.indexOf("  q('#sp-category').insertAdjacentHTML")));
@@ -49,12 +51,48 @@ const host=vm.createContext({window:{},location:{pathname:'/',search:''},localSt
 assert.deepEqual(canonical(host.window.openai.widgetState.modelContent),seed);
 host.window.openai.setWidgetState({modelContent:seed});assert.ok(store.has('silppuri:state:v1:/'));
 const privateHost=vm.createContext({window:{},location:{pathname:'/',search:''},get localStorage(){throw new Error('blocked');}});vm.runInContext(read('src/standalone.js'),privateHost);privateHost.window.openai.setWidgetState({});
+// Use the real storage adapter, import handler, stateIn and save. Search and sort
+// must be just as harmless to the owner's package as editing a shared selection.
+const nodes=new Map(),listeners={};
+ctx.q=selector=>{if(!nodes.has(selector))nodes.set(selector,{hidden:true,value:'',addEventListener:(event,fn)=>listeners[selector+':'+event]=fn});return nodes.get(selector);};
+ctx.window=host.window;ctx.window.addEventListener=(event,fn)=>listeners[event]=fn;
+ctx.location=new URL('https://example.test/');
+ctx.history={replaceState:(_state,_unused,href)=>{ctx.location.href=href;}};
+ctx.shareDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
+run(read('src/share-ui.js').slice(read('src/share-ui.js').indexOf('function readSharedState()')));
+const own={...seed,name:'Oma paketti',selectedIds:['vat','health','cut-3-15']};
+ctx.stateIn({modelContent:own});ctx.save();
+const ownSaved=store.get('silppuri:state:v1:/');
+const originalSharedLink=ctx.shareUrl({...seed,name:'Jaettu paketti',selectedIds:['corporate','income']},ctx.location.href);
+ctx.location.href=originalSharedLink;ctx.loadSharedLocation();
+assert.equal(nodes.get('.sp-shared-session').hidden,false);
+for(const edit of [()=>ctx.search='yle',()=>ctx.sortOrder='asc',()=>ctx.includeLater=false,
+  ()=>ctx.selected.add('tax-peat'),()=>ctx.selected.delete('corporate'),()=>ctx.packageName='Muokattu jaettu paketti']){
+  edit();ctx.save();assert.equal(store.get('silppuri:state:v1:/'),ownSaved,'shared edits never replace own storage');
+}
+const edited=fingerprint();assert.notEqual(ctx.location.href,originalSharedLink);
+ctx.loadSharedLocation();assert.deepEqual(fingerprint(),edited,'reloading edited URL preserves its choices');
+// A delayed animation can save while changing sessions; it cannot restore the old hash.
+ctx.finishPacking=()=>ctx.save();listeners['.sp-return-own:click']();ctx.finishPacking=()=>{};
+assert.equal(ctx.location.hash,'');assert.equal(nodes.get('.sp-shared-session').hidden,true);
+assert.deepEqual(canonical(ctx.packageModel()),JSON.parse(ownSaved).modelContent);
+assert.equal(store.get('silppuri:state:v1:/'),ownSaved);
+ctx.selected.delete('health');ctx.save();assert.notEqual(store.get('silppuri:state:v1:/'),ownSaved,'own mode still saves');
+const latestOwn=store.get('silppuri:state:v1:/');
+ctx.location.href=originalSharedLink;ctx.loadSharedLocation();ctx.location.hash='#s=invalid';listeners.hashchange();
+assert.equal(nodes.get('.sp-share-notice').hidden,false);assert.equal(nodes.get('.sp-shared-session').hidden,true);
+assert.deepEqual(canonical(ctx.packageModel()),JSON.parse(latestOwn).modelContent);
+assert.equal(store.get('silppuri:state:v1:/'),latestOwn);
 // Create a normal URL fixture; browser tests exercise the production import path.
 const example=roundtrip({...seed,name:'Hessu Hopon silppuri',taxIncreasesPP:{income:2,corporate:3}});
 const wrappers=ctx.data.find(d=>d.id==='fw-wrappers');
-assert.equal(ctx.shareCardAmount(wrappers),'20–440 milj. € *');assert.equal(wrappers.amount,null,'the 2031 cash estimate does not become permanent revenue');
+assert.equal(ctx.shareCardAmount(wrappers),'20–440 milj. €');assert.equal(wrappers.amount,null,'the 2031 cash estimate does not become permanent revenue');
+assert.match(ctx.amountFootnote(wrappers),/ei pysyvä vuosituotto/);
 const peat=ctx.data.find(d=>d.id==='tax-peat');
-assert.equal(ctx.shareCardAmount(peat),'55 milj. € *');assert.equal(peat.amount,null,'a static reference must not enter the pie');
+assert.equal(ctx.shareCardAmount(peat),'55 milj. €');assert.equal(peat.amount,null,'a static reference must not enter the pie');
+assert.match(ctx.amountFootnote(peat),/staattinen viiteluku/);
+assert.equal(ctx.shareCardAmount(ctx.data.find(d=>d.id==='fw-dividend-withholding')),'50–80 milj. €');
+for(const d of ctx.data)assert.equal(ctx.actionAmountMarkup(d).replace(/<sup[^>]*>\*<\/sup>/,' *'),ctx.shareCardAmount(d),d.id+': same amount on page and image');
 for(const id of ['cut-3-62','cut-4-31','tax-rd','tax-ifrs','fw-corporate-minimum']){
   const d=ctx.data.find(d=>d.id===id),display=ctx.cardAmountDisplay(d);
   assert.equal(display.hasAmount,false,id+': do not turn a partial cost, tax expenditure or withdrawn estimate into revenue');
@@ -65,6 +103,21 @@ assert.equal(ctx.cardAmountDisplay({amount:0}).hasAmount,true,'a known zero rema
 assert.equal(ctx.cardAmountDisplay({amount:0}).excluded,false);
 assert.equal(ctx.shareCardAmount(ctx.data.find(d=>d.id==='cut-1-42')),'445,3 milj. € *');
 assert.equal(ctx.shareCardAmount(ctx.data.find(d=>d.id==='cut-1-72')),'100 milj. €');
+// Inspect actual Canvas text calls, rather than searching source strings alone.
+const drawn=[];
+const drawing=new Proxy({measureText:value=>({width:String(value).length*11}),fillText:value=>drawn.push(String(value))},{get:(target,key)=>target[key]||(()=>{})});
+const bitmap={getContext:()=>drawing};ctx.document={createElement:()=>bitmap};
+ctx.root={querySelector:()=>({querySelectorAll:()=>[]})};ctx.Path2D=function(){};
+ctx.calculateIncidence=()=>({entries:[],serviceEntries:[],serviceRows:Array.from({length:10},()=>({share:0,shareLow:0,shareHigh:0})),householdRows:Array.from({length:10},()=>({mid:0,percentLow:0,percentHigh:0,cut:0,tax:0,indirect:0}))});
+ctx.incidenceModel={income:Array(10).fill(10000)};ctx.decileName=i=>'Ryhmä '+i;ctx.decileIncomeRange=()=>'';
+ctx.piePresentation=()=>({parts:[],rings:[]});ctx.pieViewport=()=>({width:320,height:320,x:0,y:0});ctx.smallSliceLabel=()=>'';
+ctx.stateIn({modelContent:{...seed,includeLater:true,selectedIds:[],fundingChoices:{yle:'reduce-tax',farm:'redirect'}}});
+ctx.createShareImage(ctx.data,'Testi',true,'https://example.test/silppuri/#s=secret');
+const imageText=drawn.join(' ');
+for(const required of ['50–80 milj. €','Arvio palvelujen käytön perusteella',
+  'ei mitattu menetys','Osin vastaavista toimista arvioitu jakauma','example.test/silppuri/'])assert.ok(imageText.includes(required),required);
+assert.ok(!imageText.includes('#s='),'do not print a giant share token');
+for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
 const qa=new URL(example);qa.host='127.0.0.1:8765';qa.protocol='http:';qa.pathname='/share-qa.html';qa.search='';
 fs.mkdirSync(path.join(root,'tmp/share-qa'),{recursive:true});fs.writeFileSync(path.join(root,'tmp/share-qa/url.txt'),qa.href);
 const large=new URL(full);large.host=qa.host;large.protocol='http:';large.pathname=qa.pathname;large.search='';

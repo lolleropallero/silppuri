@@ -11,7 +11,7 @@ async function refreshShareImage(){
     // Yield once so the dialog and busy state paint before generating a long image.
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if(generation!==shareGeneration||!shareDialog.open)return;
-    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater);
+    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater,location.href);
     const rendered=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Kuvan luonti epäonnistui.')),'image/png'));
     const blob=await creditSharePng(rendered);
     if(generation!==shareGeneration||!shareDialog.open)return;
@@ -57,12 +57,24 @@ q('.sp-native-share').addEventListener('click',async()=>{
   catch(error){if(error.name!=='AbortError')shareStatus.textContent='Jakaminen ei onnistunut. Lataa PNG ja kopioi linkki.';}
 });
 function readSharedState(){
+  q('.sp-share-notice').hidden=true;
   if(!location.hash.startsWith('#s='))return null;
   try{return {modelContent:decodeShare(location.hash.slice(3),new Set(data.map(d=>d.id)))};}
   catch(error){const notice=q('.sp-share-notice');notice.hidden=false;notice.textContent=(error.message==='Linkissä on toimi, jota tämä versio ei tunne.'?error.message:'Jakolinkkiä ei voitu avata.')+' Omat valintasi säilyivät.';return null;}
 }
-window.addEventListener('hashchange',()=>{
-  const state=readSharedState();if(!state)return;
+function loadSharedLocation(){
+  const incomingUrl=location.href;
+  const state=readSharedState();
+  // Finish pending callbacks under the old session before switching persistence.
   if(shareDialog.open){skipShareNameSave=true;shareDialog.close();}if(activeAction)closeImpact();
-  modalShred.finish();finishPacking?.();stateIn(state);render();
+  modalShred.finish();finishPacking?.();
+  if(location.href!==incomingUrl)history.replaceState(null,'',incomingUrl);
+  if(state)packageSession.enter();else packageSession.leave();
+  q('.sp-shared-session').hidden=!packageSession.active;
+  stateIn(state||window.openai?.widgetState);render();
+}
+q('.sp-return-own').addEventListener('click',()=>{
+  const url=new URL(location.href);url.hash='';history.replaceState(null,'',url.href);
+  loadSharedLocation();
 });
+window.addEventListener('hashchange',loadSharedLocation);

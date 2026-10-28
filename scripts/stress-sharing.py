@@ -55,7 +55,7 @@ for count in [200, 254]:
                              'includeLater': True, 'fundingChoices': {'yle': 'keep-tax', 'farm': 'save'},
                              'taxIncreasesPP': {'income': 3, 'corporate': 3}},
              'privateContent': {'catalogueViewVersion': 1, 'filter': 'selected', 'visibleCount': count}}
-    start = 'stateIn(readSharedState()||window.openai?.widgetState);render();'
+    start = '  loadSharedLocation();'
     assert start in page
     fixture = page.replace(start, instrumentation.replace('STRESS_COUNT', str(count)) +
         'stateIn('+json.dumps(state, ensure_ascii=False)+');\n' +
