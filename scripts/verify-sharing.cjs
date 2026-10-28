@@ -37,7 +37,7 @@ assert.equal(ctx.packageSummary([measure('services',-50)]).tone.id,'reverse');
 const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
 ctx.expectedNames=names;assert.ok(run('expectedNames.every(name=>Object.values(packageProfiles).some(p=>p.name===name))'));
 const summaryText=ctx.shareCaption([measure('capital',30000)],'Hessu & ystävät 🐾');
-assert.equal(summaryText,'Hessu & ystävät 🐾: 30 mrd. €, Kansankomissaari.\n'+ctx.packageSummary([measure('capital',30000)]).tone.text);
+assert.equal(summaryText,'Hessu & ystävät 🐾\n\n30 miljardia kasassa. '+ctx.packageSummary([measure('capital',30000)]).tone.text);
 // Descriptions follow priced selections, not a generic cuts-and-taxes script.
 const companyCut=measure('companies',600,{type:'cut',title:'Yritystukia −30 %'});
 const companyTax=measure('companies',700,{title:'Yhteisöveroa +3 prosenttiyksikköä'});
@@ -46,13 +46,19 @@ assert.equal(withReferences.largest,'Suurin siivu: Yhteisöveroa +3 prosenttiyks
 assert.equal(ctx.packageSummary([]).description,'');
 assert.equal(ctx.packageSummary([measure('capital',null)]).largest,'');
 const compactCaption=ctx.shareCaption([companyTax],'Testi');
-assert.equal(compactCaption,'Testi: 700 milj. €, Näkymätön käsi.\n'+withReferences.tone.text);
-assert.equal(compactCaption.split('\n').length,2,'link captions contain only the title/amount/profile and subtitle');
+assert.equal(compactCaption,'Testi\n\n700 miljoonaa kasassa. '+withReferences.tone.text);
+assert.equal(compactCaption.split('\n\n').length,2,'caption separates the title from the amount and subtitle');
+assert.equal(ctx.shareCaption([measure('capital',9670)],'Suomi Silppuriin!'),'Suomi Silppuriin!\n\n9,67 miljardia kasassa. Kympin tuntumassa. Sormet tallella.');
+for(const [amount,text] of [[0,'0 miljoonaa'],[1,'1 miljoona'],[1000,'1 miljardi'],[2000,'2 miljardia']])assert.equal(ctx.shareTotal(amount,true),text);
+assert.ok(!compactCaption.includes(withReferences.profile.name),'profile names stay in the image');
 assert.ok(!compactCaption.includes('Suurin siivu'),'long description stays in the image');
 const testUrl='https://example.test/?lang=fi#s=abc_123-xyz',social=ctx.socialShareLinks(summaryText,testUrl);
 assert.equal(new URL(social.facebook).searchParams.get('u'),testUrl);
-for(const key of ['threads','x']){const url=new URL(social[key]);assert.equal(url.searchParams.get('text'),summaryText);assert.equal(url.searchParams.get('url'),testUrl);}
-assert.equal(new URL(social.whatsapp).searchParams.get('text'),summaryText+'\n'+testUrl);
+for(const key of ['threads','x','whatsapp']){
+  const url=new URL(social[key]);
+  assert.equal(url.searchParams.get('text'),summaryText+'\n\n'+testUrl,'preserve paragraphs and put the link on its own line');
+  assert.equal(url.searchParams.has('url'),false,'do not append the link twice');
+}
 const seed={name:'Hessu Hopon silppuri 🐾 Ää <img onerror=alert(1)>',selectedIds:['vat','health','income','corporate','dividends','benefits','cut-1-42','cut-1-72','cut-2-51','tax-vehicle','fw-wrappers','cut-3-15'],
   year:2031,includeLater:true,taxIncreasesPP:{income:4,corporate:10},yleCutPercent:75,dividendMode:'abolish',unitSteps:{'tax-vehicle':2},fundingChoices:{yle:'keep-tax',farm:'save'}};
 function roundtrip(model){

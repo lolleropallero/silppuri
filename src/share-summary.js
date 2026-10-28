@@ -116,10 +116,14 @@ function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),
   const largest=title?'Suurin siivu: '+title+' ('+shareTotal(biggest.amount)+').':'';
   return {total,weights,profile:{id,...packageProfiles[id]},tone,story,distribution,description:story.body,largest};
 }
-function shareTotal(amount){
-  return (Math.abs(amount)>=1000?amount/1000:amount).toLocaleString('fi-FI',{maximumFractionDigits:Math.abs(amount)>=1000?2:1})+(Math.abs(amount)>=1000?' mrd. €':' milj. €');
+function shareTotal(amount,words=false){
+  const billions=Math.abs(amount)>=1000,value=billions?amount/1000:amount;
+  const options={maximumFractionDigits:billions?2:1};
+  const singular=new Intl.PluralRules('fi-FI',options).select(value)==='one';
+  const unit=words?(billions?(singular?'miljardi':'miljardia'):(singular?'miljoona':'miljoonaa')):(billions?'mrd. €':'milj. €');
+  return value.toLocaleString('fi-FI',options)+' '+unit;
 }
 function shareCaption(chosen,name){
   const s=packageSummary(chosen);
-  return shareTitle(name)+': '+shareTotal(s.total)+', '+s.profile.name+'.\n'+s.tone.text;
+  return shareTitle(name)+'\n\n'+shareTotal(s.total,true)+' kasassa. '+s.tone.text;
 }

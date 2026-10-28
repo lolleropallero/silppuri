@@ -4,7 +4,7 @@ function refreshShareLink(){
   const text=shareCaption(data.filter(d=>selected.has(d.id)),shareName.value);
   try{
     const url=shareUrl({...packageModel(),name:shareName.value},location.href);
-    shareLink=url;shareCopyText=text+'\n'+url;q('.sp-copy-link').disabled=false;
+    shareLink=url;shareCopyText=text+'\n\n'+url;q('.sp-copy-link').disabled=false;
     const links=socialShareLinks(text,url);
     root.querySelectorAll('[data-share-social]').forEach(a=>{a.href=links[a.dataset.shareSocial];a.removeAttribute('aria-disabled');});
   }
