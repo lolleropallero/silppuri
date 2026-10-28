@@ -634,5 +634,9 @@
   "eva-163": {
     "summary": "Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.",
     "limit": "Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty."
+  },
+  "sin-tax-finland": {
+    "summary": "Makeisten ja jäätelön kulutusjousto oli lähellä nollaa, koska läheisiä verottomia korvikkeita oli vähän. Kun sokeripitoisten virvoitusjuomien vero kaksinkertaistui mutta sokerittomien ei, jousto oli lähellä yhtä: kulutus siirtyi sokerittomiin juomiin.",
+    "limit": "Tulos koskee sokeripitoisten ja sokerittomien juomien veroeroa. Kaikkien juomien samansuuruinen korotus ei tarjoa samaa veron sisäistä korviketta, joten se ei suoraan kerro kokonaiskulutuksen joustoa."
   }
 }

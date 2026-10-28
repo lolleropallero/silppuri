@@ -65,6 +65,10 @@ def extend(model, actions):
     transit=[sum(cell(consumption,coicop_46_20231201=c,tuloviidennes_2_20140501=str(i)) for c in ['0731','0732'])*quintile_units[i-1] for i in range(1,6)]
     profiles['consumption-transit']=regroup(transit,counts)
     model['regroupingInputs']['consumption-transit']={'totals':transit,'households':counts}
+    # The soft drink tax base: packaged juices, waters, soft drinks and other non-alcoholic drinks.
+    softdrinks=[sum(cell(consumption,coicop_46_20231201=c,tuloviidennes_2_20140501=str(i)) for c in ['0121','0125','0126','0129'])*quintile_units[i-1] for i in range(1,6)]
+    profiles['consumption-softdrinks']=regroup(softdrinks,counts)
+    model['regroupingInputs']['consumption-softdrinks']={'totals':softdrinks,'households':counts}
     services=read('services-finland-2007.json')
     for name,p in services['profiles'].items():profiles['service-'+name]=split_quintiles(p['quintiles'])
     wealth=read('wealth-2023.json')
@@ -135,7 +139,7 @@ def extend(model, actions):
     add(cut('2-11 2-13 2-14'),'family wages','benefit',note='Varhaiskasvatusmaksut riippuvat tuloista. Perhe-etuuksien ja palkkatulojen jakaumat ovat kaksi karkeaa vertailua; nykyisiä maksuvapautuksia ja maksukattoja ei ratkaista uudelleen, joten pienituloisten maksu voi ylittyä.')
     for ids,profile in [
         ('tax-food18','food'),('tax-vat-services','culture'),('tax-vat-news135 tax-vat-news255','news'),
-        ('tax-insurance','insurance'),('tax-excise-index','total'),('tax-tobacco','tobacco'),
+        ('tax-insurance','insurance'),('tax-excise-index','total'),('tax-tobacco','tobacco'),('tax-softdrink','softdrinks'),
         ('tax-heat','heating'),('tax-fuel','fuel'),('tax-electric1','electricity'),
         ('tax-tickets','flights'),('tax-car-all tax-car-combustion','cars')]:
         add(ids,'consumption-'+profile,'consumption',basis='gross')

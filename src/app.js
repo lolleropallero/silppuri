@@ -49,7 +49,7 @@
   const scenario={income:2,corporate:3,dividends:'vm',ylePercent:20};
   const maxPP=10;
   const units={};
-  data.forEach(d=>{if(d.unit)units[d.id]=1;});
+  data.forEach(d=>{if(d.unit)units[d.id]=d.unitRange?.default??1;});
   const conditions={yle:'reduce-tax',farm:'redirect'};
   let year=2031,includeLater=false,search='',category='all',sortOrder='desc',limit=12;
   let catalogueOrder=[],catalogueOrderKey='';
@@ -111,7 +111,7 @@
       if(d.estimate){d.amount=d.estimate.amount;d.year=d.estimate.basis;}
       if(d.unit){
         const requested=d.id==='income'||d.id==='corporate'?scenario[d.id]:(units[d.id]??1);
-        const n=Math.min(capFor(d.id),Math.max(0,Number.isFinite(requested)?requested:1));
+        const n=Math.min(capFor(d.id),Math.max(unitMin(d.id),Number.isFinite(requested)?requested:1));
         if(d.id==='income'||d.id==='corporate')scenario[d.id]=n;else units[d.id]=n;
         let perUnit=base.budget[0];
         if(d.id==='tax-land-min'&&selected.has('tax-land-values'))perUnit=100;
@@ -120,11 +120,11 @@
         d.netUpper=d.net?(d.net.high??d.net.low)*n:null;
         d.scaled=n!==1;
         const value=d.unit==='0.1pp'?(n/10).toLocaleString('fi-FI'):d.unit==='100 euroa'?n*100:n;
-        d.title=base.title.replace('+1 prosenttiyksikkö','+'+value+' prosenttiyksikkö').replace('−1 prosenttiyksikkö','−'+value+' prosenttiyksikkö').replace('+0,1 prosenttiyksikköä','+'+value+' prosenttiyksikköä').replace('+100 euroa','+'+value+' euroa').replace('+1 €/MWh','+'+value+' €/MWh');
+        d.title=base.title.replace('+1 prosenttiyksikkö','+'+value+' prosenttiyksikkö').replace('−1 prosenttiyksikkö','−'+value+' prosenttiyksikkö').replace('+0,1 prosenttiyksikköä','+'+value+' prosenttiyksikköä').replace('+100 euroa','+'+value+' euroa').replace('+1 €/MWh','+'+value+' €/MWh').replace('+1 snt/l','+'+value+' snt/l');
         if(n!==1)d.title=d.title.replace(/prosenttiyksikkö(?!ä)/g,'prosenttiyksikköä');
         d.short=d.title;
         d.year+=(n!==1?' · yksikköarviosta kerrottu':'');
-        if(n>3&&!['tax-entrepreneur-step','tax-dividend-return'].includes(d.id)){
+        if(n>3&&!d.unitRange&&!['tax-entrepreneur-step','tax-dividend-return'].includes(d.id)){
           d.scaleNetOpen=true;d.amount=null;d.netUpper=null;
           d.year='Suuri muutos · nettoa ei ole arvioitu';
         }
@@ -176,7 +176,10 @@
       d.incidenceHorizonGap=e.longRun;
     }
   }
+  // A card's own source-backed range replaces the generic three-step limit.
   function capFor(id){
+    const range=data.find(d=>d.id===id)?.unitRange;
+    if(range)return range.max;
     if(id==='tax-dividend-return')return 7;
     if(id==='tax-entrepreneur-step')return 4;
     if(id==='income')return 5;
@@ -184,6 +187,7 @@
     if(id==='tax-vat-reduced')return Math.min(3,Math.floor(25.5-13.5));
     return 3;
   }
+  function unitMin(id){return data.find(d=>d.id===id)?.unitRange?.min??0;}
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function sourceMarkup(s){
     const note=sourceNotes[s.url]||s;
@@ -215,9 +219,9 @@
     if(d?.unit){
       const n=id==='income'||id==='corporate'?scenario[id]:units[id],max=capFor(id);
       const value=d.unit==='0.1pp'?(n/10).toLocaleString('fi-FI'):d.unit==='100 euroa'?n*100:n;
-      const label=d.unit==='100 euroa'?'euroa':d.unit==='€/MWh'?'€/MWh':'prosenttiyksikköä';
+      const label=d.unit==='100 euroa'?'euroa':d.unit==='€/MWh'||d.unit==='snt/l'?d.unit:'prosenttiyksikköä';
       const scope=place==='modal'?(id==='corporate'?'18 % → '+(18+n)+' %.':id==='income'?'Muutos jokaiseen valtion tuloveroportaan marginaaliprosenttiin.':''):'';
-      return `<span class="sp-control-label">Muutoksen suuruus</span><div class="sp-stepper" role="group" aria-label="Muutoksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-step="${id}" data-delta="-1" aria-label="Pienennä muutosta" ${n===0?'disabled':''}>−</button><output>${d.unit==='pp-down'?'−':'+'}${value}<small>${label}</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-step="${id}" data-delta="1" aria-label="Kasvata muutosta" ${n===max?'disabled':''}>+</button></div>${scope?'<p class="sp-control-note">'+scope+'</p>':''}`;
+      return `<span class="sp-control-label">Muutoksen suuruus</span><div class="sp-stepper" role="group" aria-label="Muutoksen suuruus"><button type="button" id="sp-${place}-${id}-minus" class="cursor-interaction" data-step="${id}" data-delta="-1" aria-label="Pienennä muutosta" ${n===unitMin(id)?'disabled':''}>−</button><output>${d.unit==='pp-down'?'−':'+'}${value}<small>${label}</small></output><button type="button" id="sp-${place}-${id}-plus" class="cursor-interaction" data-step="${id}" data-delta="1" aria-label="Kasvata muutosta" ${n===max?'disabled':''}>+</button></div>${scope?'<p class="sp-control-note">'+scope+'</p>':''}`;
     }
 
     if(id==='dividends')return `<span class="sp-control-label">Miten osinkoverotusta muutetaan?</span><div class="sp-variant-options" role="group" aria-label="Osinkoverotuksen vaihtoehto"><button type="button" id="sp-${place}-dividends-vm" class="cursor-interaction" data-dividend-mode="vm" aria-pressed="${scenario.dividends==='vm'}"><strong>VM:n uudistus</strong>+370 milj. € / v<small>VM · arvio vuodelle 2028</small></button><button type="button" id="sp-${place}-dividends-abolish" class="cursor-interaction" data-dividend-mode="abolish" aria-pressed="${scenario.dividends==='abolish'}"><strong>Erityishuojennus kokonaan pois</strong>+459 milj. € / v<small>Labore 2024 · suora arvio, netto avoin</small></button></div>`;
@@ -319,7 +323,7 @@
     scenario.ylePercent=ylePercent(Number.isFinite(model?.yleCutPercent)?model.yleCutPercent:legacyYle==='cut-1-43'?10:20);
     year=2031;includeLater=model?.includeLater===true;
     ['income','corporate'].forEach(id=>{const n=model?.taxIncreasesPP?.[id];scenario[id]=Number.isFinite(n)?Math.min(maxPP,Math.max(0,Math.round(n))):(id==='income'?2:3);});
-    Object.keys(units).forEach(id=>{const n=model?.unitSteps?.[id];units[id]=Number.isFinite(n)?Math.min(capFor(id),Math.max(0,Math.round(n))):1;});
+    Object.keys(units).forEach(id=>{const n=model?.unitSteps?.[id];units[id]=Number.isFinite(n)?Math.min(capFor(id),Math.max(unitMin(id),Math.round(n))):data.find(d=>d.id===id).unitRange?.default??1;});
     scenario.cutPercents=Object.fromEntries(data.filter(d=>d.percentCut).map(d=>[d.id,cutPercentValue(d,model?.cutPercents?.[d.id])]));
     scenario.dividends=model?.dividendMode==='abolish'?'abolish':'vm';
     conditions.yle=model?.fundingChoices?.yle==='keep-tax'?'keep-tax':'reduce-tax';
@@ -1039,7 +1043,7 @@
     if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
     else if(button.dataset.step||button.dataset.yleStep||button.dataset.cutStep||button.dataset.dividendMode||button.dataset.condition){
       const focusId=button.id;
-      if(button.dataset.step){const id=button.dataset.step,store=id==='income'||id==='corporate'?scenario:units;store[id]=Math.min(capFor(id),Math.max(0,store[id]+Number(button.dataset.delta)));}
+      if(button.dataset.step){const id=button.dataset.step,store=id==='income'||id==='corporate'?scenario:units;store[id]=Math.min(capFor(id),Math.max(unitMin(id),store[id]+Number(button.dataset.delta)));}
       else if(button.dataset.yleStep)scenario.ylePercent=ylePercent(ylePercent(scenario.ylePercent)+Number(button.dataset.yleStep));
       else if(button.dataset.cutStep){
         const id=button.dataset.cutStep,d=data.find(x=>x.id===id),s=d.percentCut,delta=Number(button.dataset.delta);

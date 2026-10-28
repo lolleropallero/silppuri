@@ -123,7 +123,7 @@ for(const id of ['cut-4-9','cut-4-11'])assert.ok(!research[id].sources.includes(
 assert.ok(research.corporate.sources.includes('corporate-wages-meta'));
 assert.ok(research['fw-digital'].sources.includes('google-dst'));
 // Production coverage must be complete without local audit reports.
-assert.equal(actions.length,259);
+assert.equal(actions.length,260);
 assert.deepEqual(Object.keys(research).sort(),actions.map(d=>d.id).sort());
 assert.deepEqual(Object.keys(model.actions).sort(),actions.map(d=>d.id).sort());
 console.log('PASS: payroll netting, withdrawn fiscal anchors, scale limits, compatible VAT choices, horizon separation, employer shares, target groups, source-based decile conversion and complete catalogue coverage.');

@@ -1,12 +1,12 @@
 {
   "meta": {
     "thresholdMillion": 20,
-    "count": 259,
+    "count": 260,
     "cutRows": 192,
-    "taxRows": 67,
+    "taxRows": 68,
     "finnwatchRows": 14,
     "sorsaRows": 2,
-    "netEstimates": 25,
+    "netEstimates": 26,
     "excludedBelow20mNet": [
       "cut-1-15",
       "cut-5-40",
@@ -32,9 +32,9 @@
     "unknown": 17,
     "scope": "Koko julkinen talous: valtio, kunnat, hyvinvointialueet ja sosiaaliturvarahastot. Verot vuoden 2028 tasossa.",
     "research": {
-      "reviewed": 259,
-      "sources": 156,
-      "withExternalResearch": 258,
+      "reviewed": 260,
+      "sources": 157,
+      "withExternalResearch": 259,
       "vmOnly": 1,
       "contextOnly": 26,
       "asOf": "2026-10-28"
@@ -12578,6 +12578,67 @@
         "finding": "Hintojen korottaminen vähentää tupakointia; nuoret ja pienituloiset reagoivat usein muita enemmän. Jatkaville käyttäjille rahallinen rasitus kasvaa.",
         "fiscal": "Pitkän ajan terveysmenoja, työkykyä ja kuolleisuuden muita julkistaloudellisia seurauksia ei ole laskettu tähän.",
         "scope": "Laaja kansainvälinen tutkimuskatsaus tukee kysyntä- ja terveyskanavaa; Suomen tuotto perustuu VM:n omaan laskelmaan.",
+        "status": "mechanism"
+      }
+    },
+    {
+      "id": "tax-softdrink",
+      "type": "tax",
+      "title": "Virvoitusjuomaveroa +1 snt/l",
+      "short": "Virvoitusjuomaveroa +1 snt/l",
+      "flow": "consumption",
+      "who": "Virvoitusjuomien, pullovesien ja mehujen ostajilta. Euroissa eniten maksavat runsaimmin juomia ostavat taloudet.",
+      "society": "Juomien hinnat nousisivat, jos korotus siirtyy hintoihin. Suomalaisessa tutkimuksessa sokeripitoisten juomien veron kaksinkertaistus siirsi kulutusta sokerittomiin; tasakorotuksessa tällaista veron sisäistä korviketta ei ole. Osa ostoista voi siirtyä matkustajatuontiin, koska lähialueilla ei ole vastaavaa veroa.",
+      "moneyNote": "VM:n mukaan sentin korotus tuo noin 10 milj. € verotuottoa. Muiden verojen, etuuksien ja ostovoiman vaikutusten jälkeen julkiselle taloudelle jää 7,5–9 milj. €. Suuren korotuksen lisäreaktiota ei ole arvioitu.",
+      "impact": "Virvoitusjuomien, pullovesien ja mehujen ostajilta. Euroissa eniten maksavat runsaimmin juomia ostavat taloudet.",
+      "detail": "Juomat kallistuisivat, jos korotus siirtyy hintoihin. VM ei pidä tuottoa hakevia korotuksia perusteltuina: vero on jo 20–59 senttiä litralta, ja sitä korotettiin 11 sentillä huhtikuussa 2026.",
+      "budget": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "funds": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "source": "VM 2026:48, liite 1, s. 273",
+      "report": "tax",
+      "sourceUrl": "https://urn.fi/URN:ISBN:978-952-367-619-0",
+      "unit": "snt/l",
+      "family": "",
+      "net": {
+        "low": 7.5,
+        "high": 9,
+        "source": "VM 2026:48, s. 189 ja 273",
+        "explanation": "Liitteen 9 milj. € sisältää kysynnän hintajouston sekä vaikutukset muihin veroihin ja indeksisidonnaisiin etuuksiin. Pääteksti arvioi vahvistuksen noin kolmeksi neljäsosaksi, kun myös ostovoiman vaikutus ALV-kertymään huomioidaan.",
+        "limit": "Yksikköarvio koskee yhden sentin muutosta. Suuren korotuksen matkustajatuontia ja kysyntäreaktiota ei ole arvioitu erikseen."
+      },
+      "conflicts": [],
+      "earliest": 2028,
+      "unitRange": {
+        "min": 5,
+        "max": 20,
+        "default": 5
+      },
+      "research": {
+        "sources": [
+          "sin-tax-finland",
+          "vm-tax-survey-2026"
+        ],
+        "finding": "Suomen virvoitusjuomaveron uudistuksessa kulutus siirtyi sokerittomiin juomiin, kun sokeripitoisten juomien vero kaksinkertaistui. Läheinen kevyemmin verotettu korvike voimisti reaktiota.",
+        "fiscal": "VM:n mukaan sentin korotuksesta jää julkiselle taloudelle 7,5–9 milj. €. Matkustajatuonti voi kasvaa, koska lähialueilla ei ole vastaavaa veroa. Suuren korotuksen kysyntäreaktiota ei ole arvioitu erikseen.",
+        "scope": "Suomen tutkimus koskee sokeripitoisten ja sokerittomien juomien veroeroa, ei kaikkien juomien yhtäläistä korotusta. VM:n yksikkötuotto koskee yhden sentin muutosta.",
         "status": "mechanism"
       }
     },

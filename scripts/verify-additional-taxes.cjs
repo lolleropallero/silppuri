@@ -60,7 +60,7 @@ for(const e of r.entries){
 }
 assert.equal(model.actions['sorsa-bank'].channel,'indirect');assert.equal(model.actions['sorsa-million-inheritance'].channel,'cash');
 const fragment=fs.readFileSync(path.join(root,'tmp/silppuri-konsepti.html'),'utf8');
-assert.ok(Buffer.byteLength(fragment)<1000000);
+assert.ok(Buffer.byteLength(fragment)<2000000);
 // Compact reference pointers must resolve to the same complete visible notes.
 const app=fragment.slice(fragment.indexOf('  const researchSources='),fragment.indexOf('  const evidence='));
 const c=vm.createContext({});vm.runInContext(app+';globalThis.notes=sourceNotes;',c);

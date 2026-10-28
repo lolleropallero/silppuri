@@ -2192,6 +2192,16 @@
     "scope": "Laaja kansainvälinen tutkimuskatsaus tukee kysyntä- ja terveyskanavaa; Suomen tuotto perustuu VM:n omaan laskelmaan.",
     "status": "mechanism"
   },
+  "tax-softdrink": {
+    "sources": [
+      "sin-tax-finland",
+      "vm-tax-survey-2026"
+    ],
+    "finding": "Suomen virvoitusjuomaveron uudistuksessa kulutus siirtyi sokerittomiin juomiin, kun sokeripitoisten juomien vero kaksinkertaistui. Läheinen kevyemmin verotettu korvike voimisti reaktiota.",
+    "fiscal": "VM:n mukaan sentin korotuksesta jää julkiselle taloudelle 7,5–9 milj. €. Matkustajatuonti voi kasvaa, koska lähialueilla ei ole vastaavaa veroa. Suuren korotuksen kysyntäreaktiota ei ole arvioitu erikseen.",
+    "scope": "Suomen tutkimus koskee sokeripitoisten ja sokerittomien juomien veroeroa, ei kaikkien juomien yhtäläistä korotusta. VM:n yksikkötuotto koskee yhden sentin muutosta.",
+    "status": "mechanism"
+  },
   "tax-peat": {
     "sources": [
       "biomass"

@@ -219,5 +219,12 @@
     "source": "VM 2026:48, s. 274",
     "explanation": "Oma vertailu: polttomoottoriautojen 20 miljoonan suoraan arvioon sovelletaan kaikkien autojen veronkorotuksen nettosuhdetta 50/60.",
     "limit": "Ei polttomoottoriautoille erikseen simuloitu netto. Vertailuluku 16,7 milj. euroa jää mukaanottorajan alle."
+  },
+  "tax-softdrink": {
+    "low": 7.5,
+    "high": 9,
+    "source": "VM 2026:48, s. 189 ja 273",
+    "explanation": "Liitteen 9 milj. € sisältää kysynnän hintajouston sekä vaikutukset muihin veroihin ja indeksisidonnaisiin etuuksiin. Pääteksti arvioi vahvistuksen noin kolmeksi neljäsosaksi, kun myös ostovoiman vaikutus ALV-kertymään huomioidaan.",
+    "limit": "Yksikköarvio koskee yhden sentin muutosta. Suuren korotuksen matkustajatuontia ja kysyntäreaktiota ei ole arvioitu erikseen."
   }
 }

@@ -386,6 +386,10 @@ review('tax-tobacco', 'tobacco',
        'Hintojen korottaminen vähentää tupakointia; nuoret ja pienituloiset reagoivat usein muita enemmän. Jatkaville käyttäjille rahallinen rasitus kasvaa.',
        'VM:n nettoluku sisältää jo kulutuksen vähenemisen ja mekaanisia verovaikutuksia. Pitkän ajan terveysmenoja ja kuolleisuuden muita julkistaloudellisia seurauksia ei ole laskettu tähän.',
        'Laaja kansainvälinen tutkimuskatsaus tukee kysyntä- ja terveyskanavaa; Suomen tuotto perustuu VM:n omaan laskelmaan.')
+review('tax-softdrink', 'sin-tax-finland vm-tax-survey-2026',
+       'Suomen virvoitusjuomaveron uudistuksessa kulutus siirtyi sokerittomiin juomiin, kun sokeripitoisten juomien vero kaksinkertaistui. Läheinen kevyemmin verotettu korvike voimisti reaktiota.',
+       'VM:n mukaan sentin korotuksesta jää julkiselle taloudelle 7,5–9 milj. €. Matkustajatuonti voi kasvaa, koska lähialueilla ei ole vastaavaa veroa. Suuren korotuksen kysyntäreaktiota ei ole arvioitu erikseen.',
+       'Suomen tutkimus koskee sokeripitoisten ja sokerittomien juomien veroeroa, ei kaikkien juomien yhtäläistä korotusta. VM:n yksikkötuotto koskee yhden sentin muutosta.')
 review('tax-peat tax-heat tax-biomass', 'biomass',
        'Suomen energiamallissa verotus ohjaa lämmöntuotantoa polttoaineiden, lämpöpumppujen ja sähkökattiloiden välillä.',
        'Korvaavan energian verotus vaikuttaa nettoon. Biomassatutkimus arvioi energiaveroja, mutta ei kaikkia teollisuuden, työllisyyden tai muiden verojen muutoksia.',

@@ -90,7 +90,7 @@ ctx.scenario.dividends='vm';r=calculate();assert.equal(r.dividends.amount,370);
 // the pie, sum, ranking and payer diagram must use the same reviewed value.
 Object.assign(ctx.scenario,{income:1,corporate:1});ctx.year=2031;
 r=calculate();
-const netAmounts={income:900,'income-index':489,corporate:259.5,'tax-transfer-land':95,'tax-transfer-homes':140.65,'tax-transfer-shares':103.75,'tax-vat15':300,'tax-vat16':492,'tax-food18':708,'tax-vat-services':480,vat:2322,'tax-vat-standard':416.4,'tax-vat-reduced':188.4,'tax-excise-index':80,'tax-tobacco':41,'tax-diesel':150,'tax-commercial-diesel':33,'tax-van':90,'tax-vehicle':230,'tax-heat':116.8,'tax-fuel':31,'tax-electric1':36,'tax-electric2':36,'tax-car-all':50,'tax-land-values':676.2};
+const netAmounts={income:900,'income-index':489,corporate:259.5,'tax-transfer-land':95,'tax-transfer-homes':140.65,'tax-transfer-shares':103.75,'tax-vat15':300,'tax-vat16':492,'tax-food18':708,'tax-vat-services':480,vat:2322,'tax-vat-standard':416.4,'tax-vat-reduced':188.4,'tax-excise-index':80,'tax-tobacco':41,'tax-diesel':150,'tax-commercial-diesel':33,'tax-van':90,'tax-vehicle':230,'tax-heat':116.8,'tax-fuel':31,'tax-electric1':36,'tax-electric2':36,'tax-car-all':50,'tax-land-values':676.2,'tax-softdrink':37.5};
 assert.equal(Object.keys(netAmounts).length,catalogue.meta.netEstimates);
 for(const [id,amount] of Object.entries(netAmounts))assert.equal(r[id].amount,amount,id);
 assert.equal(r.vat.gross,3870);
@@ -107,6 +107,11 @@ assert.equal(calculate()['tax-vat-standard'].amount,832.8); // Re-render must no
 ctx.units['tax-vat-standard']=0;r=calculate();assert.equal(r['tax-vat-standard'].amount,0);
 ctx.year=2028;r=calculate();assert.equal(r['tax-vehicle'].amount,0);assert.equal(r['tax-vehicle'].gross,0);
 ctx.year=2031;ctx.units['tax-vat-standard']=1;ctx.units['tax-vehicle']=1;
+// VM prices one cent of soft drink tax; the card allows 5–20 cents without the generic three-step cutoff.
+ctx.units['tax-softdrink']=20;r=calculate();assert.equal(r['tax-softdrink'].amount,150);assert.equal(r['tax-softdrink'].netUpper,180);
+assert.ok(!r['tax-softdrink'].scaleNetOpen);assert.equal(r['tax-softdrink'].title,'Virvoitusjuomaveroa +20 snt/l');
+ctx.units['tax-softdrink']=2;r=calculate();assert.equal(ctx.units['tax-softdrink'],5);assert.equal(r['tax-softdrink'].amount,37.5);
+ctx.units['tax-softdrink']=30;r=calculate();assert.equal(ctx.units['tax-softdrink'],20);ctx.units['tax-softdrink']=5;
 r=calculate();assert.equal(r['tax-vat-standard'].amount,416.4);
 assert.equal(r.vat.amount+r['tax-tobacco'].amount,2363);
 assert.deepEqual(actions.find(d=>d.id==='cut-1-42').mergedIds,['cut-1-43']);

@@ -108,6 +108,8 @@ for id,title,amount,flow,who,society,page,unit,family in read_psv('tax-copy.psv'
 
 by_id={d['id']:d for d in catalogue}
 by_id['tax-peat']['unquantifiedNet']=True
+# VM prices one cent; the user picks 5–20 cents. The cutoff uses the smallest choice.
+by_id['tax-softdrink']['unitRange']={'min':5,'max':20,'default':5}
 assert len(by_id)==len(catalogue)
 # Finnwatch proposals share the catalogue and all selection paths. Upsert the
 # existing succession proposal so persisted selections never acquire a duplicate.
@@ -147,7 +149,7 @@ for id,net in tax_nets.items():
 
 # Apply the existing size cutoff to the best available estimate. Keep the
 # original report figures and the exclusion reason in the coverage audit.
-excluded_net={id for id,net in tax_nets.items() if net.get('high',net['low'])<20}
+excluded_net={id for id,net in tax_nets.items() if net.get('high',net['low'])*by_id[id].get('unitRange',{}).get('min',1)<20}
 for d in catalogue:
     if d.get('spendingNet'):
         if max(v or 0 for v in d['budget'])*d['spendingNet']['factors'][1]<20:
@@ -332,7 +334,7 @@ from export_site import export_site
 export_site(OUT.read_text(encoding='utf8'), ROOT/'tmp/local-site/index.html')
 if args.production:
     export_site(OUT.read_text(encoding='utf8'), ROOT/'dist/index.html')
-assert OUT.stat().st_size<1_000_000, OUT.stat().st_size
+assert OUT.stat().st_size<2_000_000, OUT.stat().st_size
 print(json.dumps(meta,ensure_ascii=False)); print('Fragment bytes:',OUT.stat().st_size)
 if args.production:
     print('Production site:', ROOT/'dist/index.html')

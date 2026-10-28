@@ -122,6 +122,12 @@ source('eva-163', 'Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 mi
  'Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.',
  'Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty.')
 
+# Cited by the VM soft drink tax card's research review.
+source('sin-tax-finland', 'Kosonen, Jysmä & Savolainen (2024): Studying a Sin Tax Scheme with Multiple Reforms',
+ 'https://www.doria.fi/handle/10024/188798', 'Suomi · VATT:n työpaperi makeis-, jäätelö- ja virvoitusjuomaveron uudistuksista, ei vertaisarvioitu',
+ 'Makeisten ja jäätelön kulutusjousto oli lähellä nollaa, koska läheisiä verottomia korvikkeita oli vähän. Kun sokeripitoisten virvoitusjuomien vero kaksinkertaistui mutta sokerittomien ei, jousto oli lähellä yhtä: kulutus siirtyi sokerittomiin juomiin.',
+ 'Tulos koskee sokeripitoisten ja sokerittomien juomien veroeroa. Kaikkien juomien samansuuruinen korotus ei tarjoa samaa veron sisäistä korviketta, joten se ei suoraan kerro kokonaiskulutuksen joustoa.')
+
 actions, models = [], {}
 origin_sources = {'finnwatch': 'fw-tax-gaps', 'sorsa': 'sorsa-ten', 'vm': 'vm-tax-survey-2026', 'tpan': 'tpan-2025', 'eva': 'eva-163'}
 def add(id, title, flow, who, society, money, calc, sources, model, allocations,

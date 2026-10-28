@@ -560,6 +560,18 @@
       0.10422761176280759,
       0.10451834778773184
     ],
+    "consumption-softdrinks": [
+      0.09781843299178765,
+      0.08984042943581064,
+      0.07753790550266398,
+      0.09385891304173344,
+      0.10342801596999651,
+      0.1063038762608674,
+      0.10895525758896835,
+      0.10752836939727398,
+      0.10721486551966213,
+      0.10751393429123594
+    ],
     "service-education": [
       0.0864642554914267,
       0.08349191446474324,
@@ -2261,6 +2273,15 @@
       "kind": "proxy",
       "profiles": [
         "consumption-tobacco"
+      ],
+      "methodKey": "consumption",
+      "channel": "cash",
+      "amountBasis": "gross"
+    },
+    "tax-softdrink": {
+      "kind": "proxy",
+      "profiles": [
+        "consumption-softdrinks"
       ],
       "methodKey": "consumption",
       "channel": "cash",
@@ -5085,6 +5106,22 @@
         583068
       ]
     },
+    "consumption-softdrinks": {
+      "totals": [
+        124122524.39999999,
+        119215968.00000001,
+        179988700.32,
+        202755659.4,
+        203782266.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
     "wealth-housing": {
       "totals": [
         10962294000,
@@ -5435,8 +5472,8 @@
     }
   },
   "coverage": {
-    "reviewed": 259,
-    "numericalScenarios": 201,
+    "reviewed": 260,
+    "numericalScenarios": 202,
     "separate": 58
   }
 }

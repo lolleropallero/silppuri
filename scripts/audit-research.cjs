@@ -6,7 +6,7 @@ const read=name=>JSON.parse(fs.readFileSync(path.join(root,'data',name),'utf8'))
 const {actions,meta}=read('catalogue.json');
 const sources=read('research-sources.json');
 const reviewed=actions.filter(d=>!d.cashOnly);
-assert.equal(reviewed.length,259);
+assert.equal(reviewed.length,260);
 for(const d of reviewed){
   const r=d.research;
   assert.ok(r&&r.fiscal&&r.scope,d.id+': missing review');
