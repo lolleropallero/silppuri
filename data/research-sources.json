@@ -798,5 +798,20 @@
     "label": "VM 2021:31, s. 78, taulukko 7: verosopimusten vuoksi verovapaat osingot",
     "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content#page=79",
     "kind": "Suomi · Verohallinnon vuosi-ilmoitukset 2016–2020"
+  },
+  "vm-tax-survey-2026": {
+    "label": "VM 2026:48: Verokartoitus 2026, liitteet 1 ja 2",
+    "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content",
+    "kind": "Suomi · valtiovarainministeriön verokartoitus 26.10.2026"
+  },
+  "tpan-2025": {
+    "label": "Talouspolitiikan arviointineuvosto (2026): Raportti 2025",
+    "url": "https://doria.fi/handle/10024/193889",
+    "kind": "Suomi · riippumattoman arviointineuvoston vuosiraportti 2.2.2026"
+  },
+  "eva-163": {
+    "label": "Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 miljardin sopeutus tehdään",
+    "url": "https://www.sttinfo.fi/files/3848/71958109/357210/fi",
+    "kind": "Suomi · ajatuspajan sopeutusanalyysi 17.4.2026, ei vaikutustutkimus"
   }
 }

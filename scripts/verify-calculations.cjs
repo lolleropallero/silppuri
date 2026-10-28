@@ -49,7 +49,7 @@ for(const d of actions.filter(d=>d.estimate?.bounds)){
   assert.equal(Math.ceil((e.bounds[1].value-1e-10)/e.roundTo)*e.roundTo,e.range[1]);
   const markup=ctx.estimateBoundsMarkup(e);assert.ok(markup.includes('Piirakkaan')&&!markup.includes('undefined'));
 }
-assert.equal(boundCount,10,'all product and realizations scenarios expose their endpoint arithmetic');
+assert.equal(boundCount,15,'all product and realizations scenarios expose their endpoint arithmetic');
 const treaty=actions.find(d=>d.id==='fw-treaty-dividends');
 assert.ok(treaty.estimate.calculation.some(line=>line.includes('(1 730 + 1 300 + 1 500 + 1 650 + 480) / 5 = 1 332')));
 assert.ok(treaty.estimate.calculation.some(line=>line.includes('niitä ei ole mitattu')));

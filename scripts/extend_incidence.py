@@ -52,7 +52,7 @@ def extend(model, actions):
     consumption=read('consumption-2022.json'); households=read('consumption-households-2022.json')
     quintile_units=[cell(households,tuloviidennes_2_20140501=str(i),contentscode='pklkm_sum')*
                     cell(households,tuloviidennes_2_20140501=str(i),contentscode='oecdmod_mean') for i in range(1,6)]
-    categories={'total':'0','food':'01','tobacco':'023','electricity':'0451','heating':'045',
+    categories={'total':'0','food':'01','alcohol':'021','tobacco':'023','electricity':'0451','heating':'045',
                 'drugs':'0611','health':'06','dental':'0622','aids':'0613','cars':'0711',
                 'fuel':'0722','diesel':'07221','travel':'073','flights':'0733',
                 'culture':'09','news':'0972','insurance':'121'}

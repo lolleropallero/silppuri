@@ -181,7 +181,7 @@ const large=new URL(full);large.host=qa.host;large.protocol='http:';large.pathna
 const plain='http://127.0.0.1:8765/share-qa.html';
 fs.writeFileSync(path.join(root,'tmp/local-site/share-fixtures.html'),'<!doctype html><html lang="fi"><meta charset="utf-8"><title>Jakamisen testipaketit</title><p><a href="'+qa.href+'">Tavallinen testipaketti</a></p><p><a href="'+large.href+'">Suuri testipaketti</a></p><p><a href="'+plain+'#s=invalid">Virheellinen linkki</a></p></html>');
 for(const removed of ['Palkit: skenaarioiden keskiarvo.','Tutkimukset ja laskentatavat: avaa','Palvelurahoituksen jakautuminen, ei menetys','const notes='])assert.ok(!read('src/share-image.js').includes(removed),'export stays visual: '+removed);
-console.log('PASS: all 254 cards × both horizons, all funding/dividend modes, selected units, Unicode names, malformed/unknown links, immutable originals, private storage, legacy migration; largest URL '+full.length+' characters.');
+console.log('PASS: all '+actions.length+' cards × both horizons, all funding/dividend modes, selected units, Unicode names, malformed/unknown links, immutable originals, private storage, legacy migration; largest URL '+full.length+' characters.');
 console.log('Browser fixture: tmp/share-qa/url.txt');
 console.log('PASS: profile names, euro weighting, missing estimates, compact captions, incidence-based image copy and encoded social compose links.');
 (async()=>{

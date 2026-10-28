@@ -236,6 +236,18 @@
       0.17633973335510394,
       0.25608248974848313
     ],
+    "income-tax-top": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.32058560358159593,
+      0.6794143964184041
+    ],
     "vat-standard": [
       0.042548038122912815,
       0.04585724517352267,
@@ -343,6 +355,18 @@
       0.10545005132526483,
       0.11853790471116206,
       0.11886855835116872
+    ],
+    "consumption-alcohol": [
+      0.07698454382588324,
+      0.07366120436036991,
+      0.06703986927298392,
+      0.08124235000507529,
+      0.08956796659411694,
+      0.09209288938122404,
+      0.09441848984897876,
+      0.11147954166480131,
+      0.15653824598477542,
+      0.15697489906179116
     ],
     "consumption-tobacco": [
       0.19876352933316208,
@@ -4172,6 +4196,259 @@
         100.0,
         170.0
       ]
+    },
+    "vm-home-property": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 252.84,
+          "shares": {
+            "wealth-home": 0.75
+          }
+        },
+        {
+          "million": 252.84,
+          "shares": {
+            "wealth-housing": 0.6,
+            "consumption-total": 0.15
+          }
+        },
+        {
+          "million": 392.805,
+          "shares": {
+            "wealth-home": 0.75
+          }
+        },
+        {
+          "million": 392.805,
+          "shares": {
+            "wealth-housing": 0.6,
+            "consumption-total": 0.15
+          }
+        }
+      ],
+      "profiles": [
+        "consumption-total",
+        "wealth-home",
+        "wealth-housing"
+      ],
+      "method": "Omistusasuntojen kiinteistövero jaetaan oman asunnon arvon mukaan. Vuokrataloyhtiöiden osuus voi siirtyä vuokriin tai jäädä omistajille.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vaihtoehdot: 75 % kotitalouksien oman asunnon arvon mukaan; tai 60 % kaiken asuntovarallisuuden mukaan ja 15 % kulutuksen mukaan vuokriin siirtyvänä. Loput jäävät julkisille ja yritysomistajille. Vakituisten asuinrakennusten omistusjakaumaa ei ole mitattu.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "vm-tax-survey-2026",
+        "land",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        189.63,
+        294.60375
+      ]
+    },
+    "tpan-top-rate": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 0,
+          "shares": {
+            "income-tax-top": 1
+          }
+        },
+        {
+          "million": 415.8,
+          "shares": {
+            "income-tax-top": 1
+          }
+        }
+      ],
+      "profiles": [
+        "income-tax-top"
+      ],
+      "method": "Lisävero kohdistuu ylimpiin tuloihin. Jakaumana käytetään kahden ylimmän tulokymmenyksen ansiotuloveroja.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Oma rajaus: koko lisävero jaetaan 9. ja 10. tulokymmenyksen ansiotuloverojen suhteessa. Kymmenykset ovat kotitalouksien ekvivalentteja tuloja, eivät henkilöiden palkkoja, joten osa maksajista voi kuulua alempiin kymmenyksiin.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "tpan-2025",
+        "income-top-2025",
+        "incomeelastic",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        0,
+        415.8
+      ]
+    },
+    "vm-machine-fuel": {
+      "kind": "scenarios",
+      "channel": "indirect",
+      "scenarios": [
+        {
+          "million": 160.0,
+          "shares": {
+            "consumption-total": 0.6
+          }
+        },
+        {
+          "million": 160.0,
+          "shares": {
+            "capital-income": 0.2,
+            "wages": 0.175,
+            "consumption-total": 0.3
+          }
+        },
+        {
+          "million": 172.0,
+          "shares": {
+            "consumption-total": 0.6
+          }
+        },
+        {
+          "million": 172.0,
+          "shares": {
+            "capital-income": 0.2,
+            "wages": 0.175,
+            "consumption-total": 0.3
+          }
+        }
+      ],
+      "profiles": [
+        "capital-income",
+        "consumption-total",
+        "wages"
+      ],
+      "method": "Yritysten polttoainekustannus jaetaan joko kokonaan hintoihin siirtyvänä tai omistajien, työntekijöiden ja asiakkaiden kesken.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Omat vaihtoehdot: 60 % kuluttajahintoihin; tai 20 % pääomatuloihin, 17,5 % nettopalkkoihin ja 30 % kuluttajahintoihin. Loput kohdistuvat vientiin, julkisiin hankintoihin ja ulkomaisiin omistajiin. Työkoneiden käyttäjien asiakasjakaumaa ei ole mitattu.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "vm-tax-survey-2026",
+        "energydemand",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        96.0,
+        116.10000000000001
+      ]
+    },
+    "vm-alcohol": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 88.0,
+          "shares": {
+            "consumption-alcohol": 1
+          }
+        },
+        {
+          "million": 110,
+          "shares": {
+            "consumption-alcohol": 1
+          }
+        }
+      ],
+      "profiles": [
+        "consumption-alcohol"
+      ],
+      "method": "Lisävero jaetaan kotitalouksien alkoholijuomien kulutuksen mukaan.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Koko korotus oletetaan hintoihin. Kulutustutkimus aliarvioi usein alkoholin kulutusta, ja ravintoloissa nautittu alkoholi sisältyy ravintolapalveluihin, joten jakauma on suuntaa antava.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "vm-tax-survey-2026",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        88.0,
+        110
+      ]
+    },
+    "eva-care-fees": {
+      "kind": "scenarios",
+      "channel": "cash",
+      "scenarios": [
+        {
+          "million": 350.0,
+          "shares": {
+            "consumption-health": 0.4,
+            "service-eldercare": 0.6
+          }
+        },
+        {
+          "million": 350.0,
+          "shares": {
+            "service-health": 0.4,
+            "service-eldercare": 0.6
+          }
+        },
+        {
+          "million": 500,
+          "shares": {
+            "consumption-health": 0.4,
+            "service-eldercare": 0.6
+          }
+        },
+        {
+          "million": 500,
+          "shares": {
+            "service-health": 0.4,
+            "service-eldercare": 0.6
+          }
+        }
+      ],
+      "profiles": [
+        "consumption-health",
+        "service-eldercare",
+        "service-health"
+      ],
+      "method": "Maksut jaetaan terveydenhuollon ja iäkkäiden hoivan käytön mukaan EVA:n osuuksilla: 40 % erikoissairaanhoitoon, 60 % pitkäaikaishoitoon.",
+      "calculation": [
+        "Laskelman verotulon muutos ennen hallintokuluja toimii rasituksen suuruusluokan sijaismittarina. Siinä on jo veropohjan ja joidenkin muiden verojen muutoksia: se ei ole kotitalouksien havaittu verolasku. Alla olevat osuudet ovat tämän nettomuutoksen vaihtoehtoisia kohdentumisia, eivät erillinen lisävähennys piirakan summasta.",
+        "Kaksi omaa sijaisjakaumaa erikoissairaanhoidolle: terveysmenot ja julkisten terveyspalvelujen käyttö. Hoivan jakauma on vanha palvelujakauma, eikä maksukattoa, maksuvapautuksia tai varallisuutta ratkaista uudelleen.",
+        "Omistusjakaumat ovat Tilastokeskuksen tulokymmenyksittäin ryhmitellystä vuoden 2023 varallisuustilastosta; palkka-, pääomatulo- ja kulutusjakaumat mallin lähdetaulukoista. Ne ovat sijaisjakaumia, eivät tämän lain verovelvollisten rekisterisimulaatio.",
+        "Ryhmäosuus kerrotaan verorasituksella, jaetaan ryhmän vuoden 2024 kulutusyksiköillä ja suhteutetaan nettovuosituloihin. Täysi palkki on kokonaisten vaihtoehtojen keskiarvo, viivoitus niiden vaihteluväli. Vaihtoehdoille ei ole annettu todennäköisyyksiä."
+      ],
+      "note": "Suhde vuosituloihin ei ennusta vastaavaa kulutuksen vähenemistä. Veroa voidaan maksaa myös varallisuudesta.",
+      "sources": [
+        "eva-163",
+        "carefees",
+        "helsinki-fees",
+        "statfin-wealth-incidence",
+        "statfin-income-incidence"
+      ],
+      "partial": true,
+      "householdMillion": [
+        350.0,
+        500.0
+      ]
     }
   },
   "sources": {
@@ -4414,6 +4691,51 @@
       "label": "Kogler (2019): On the Incidence of Bank Levies",
       "url": "https://alexandria.unisg.ch/entities/publication/c7101a22-f025-4de3-80f2-1e202fac7a5c",
       "kind": "23 EU-maata · vertaisarvioitu pankkiaineistotutkimus 2007–2013"
+    },
+    "vm-tax-survey-2026": {
+      "label": "VM 2026:48: Verokartoitus 2026, liitteet 1 ja 2",
+      "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content",
+      "kind": "Suomi · valtiovarainministeriön verokartoitus 26.10.2026"
+    },
+    "land": {
+      "label": "Høj, Jørgensen & Schou (2018): Land Tax Changes and Full Capitalisation",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12163",
+      "kind": "Tanska · kuntauudistuksen aiheuttamat maaveromuutokset"
+    },
+    "tpan-2025": {
+      "label": "Talouspolitiikan arviointineuvosto (2026): Raportti 2025",
+      "url": "https://doria.fi/handle/10024/193889",
+      "kind": "Suomi · riippumattoman arviointineuvoston vuosiraportti 2.2.2026"
+    },
+    "income-top-2025": {
+      "label": "Varjonen-Ollus (2025): Behavioural Effects of a Top Marginal Income Tax Rate Increase",
+      "url": "https://www.doria.fi/handle/10024/193607",
+      "kind": "Suomi · VATT Working Papers 180, ei vertaisarvioitu"
+    },
+    "incomeelastic": {
+      "label": "Saez, Slemrod & Giertz (2012): The Elasticity of Taxable Income",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/jel.50.1.3",
+      "kind": "Kansainvälinen tutkimuskatsaus"
+    },
+    "energydemand": {
+      "label": "Labandeira, Labeaga & López-Otero (2017): A meta-analysis on the price elasticity of energy demand",
+      "url": "https://doi.org/10.1016/j.enpol.2017.01.002",
+      "kind": "Kansainvälinen meta-analyysi · lyhyen ja pitkän ajan energiakysyntä"
+    },
+    "eva-163": {
+      "label": "Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 miljardin sopeutus tehdään",
+      "url": "https://www.sttinfo.fi/files/3848/71958109/357210/fi",
+      "kind": "Suomi · ajatuspajan sopeutusanalyysi 17.4.2026, ei vaikutustutkimus"
+    },
+    "carefees": {
+      "label": "Haaga, Sääksvuori & Tervola (2024): Asiakasmaksujen ja lääkkeiden omavastuiden vaikutukset",
+      "url": "https://www.julkari.fi/bitstreams/49b78e1b-35bd-40a6-ad14-b70936fe808b/download",
+      "kind": "Suomi ja Pohjoismaat · tutkimuksia kokoava loppuraportti"
+    },
+    "helsinki-fees": {
+      "label": "Haaga, Böckerman, Kortelainen & Tukiainen (2024): Does Abolishing a Copayment Increase Doctor Visits?",
+      "url": "https://doi.org/10.1515/bejeap-2023-0056",
+      "kind": "Suomi · Helsingin maksun poisto, vertaisarvioitu"
     }
   },
   "international": [
@@ -4482,6 +4804,22 @@
         3354789386.52,
         3686544637.65,
         4402746468.0
+      ],
+      "households": [
+        584381,
+        584392,
+        582714,
+        584445,
+        583068
+      ]
+    },
+    "consumption-alcohol": {
+      "totals": [
+        195837760.72,
+        206641011.20000002,
+        312480382.5,
+        352245001.5,
+        596478564.0
       ],
       "households": [
         584381,
@@ -5097,8 +5435,8 @@
     }
   },
   "coverage": {
-    "reviewed": 254,
-    "numericalScenarios": 196,
+    "reviewed": 259,
+    "numericalScenarios": 201,
     "separate": 58
   }
 }

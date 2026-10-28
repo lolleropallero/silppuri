@@ -299,5 +299,145 @@
       }
     ],
     "roundTo": 5
+  },
+  "vm-home-property": {
+    "raw": [
+      251.84,
+      392.805
+    ],
+    "range": [
+      250,
+      395
+    ],
+    "taxRange": [
+      252.84,
+      392.805
+    ],
+    "caseCount": 8,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "903 × 0,5 × 0,8 × 0,7 − 1",
+        "value": 251.84
+      },
+      {
+        "label": "Yläraja",
+        "expression": "903 × 0,5 × 0,87 × 1 − 0",
+        "value": 392.805
+      }
+    ],
+    "roundTo": 5
+  },
+  "tpan-top-rate": {
+    "raw": [
+      0,
+      415.8
+    ],
+    "range": [
+      0,
+      420
+    ],
+    "taxRange": [
+      0,
+      415.8
+    ],
+    "caseCount": 2,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "550 × 0 − 0",
+        "value": 0
+      },
+      {
+        "label": "Yläraja",
+        "expression": "550 × 0,756 − 0",
+        "value": 415.8
+      }
+    ],
+    "roundTo": 5
+  },
+  "vm-machine-fuel": {
+    "raw": [
+      158.0,
+      172.0
+    ],
+    "range": [
+      155,
+      175
+    ],
+    "taxRange": [
+      160.0,
+      172.0
+    ],
+    "caseCount": 4,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "200 × 0,8 − 2",
+        "value": 158.0
+      },
+      {
+        "label": "Yläraja",
+        "expression": "200 × 0,86 − 0",
+        "value": 172.0
+      }
+    ],
+    "roundTo": 5
+  },
+  "vm-alcohol": {
+    "raw": [
+      88.0,
+      110
+    ],
+    "range": [
+      85,
+      110
+    ],
+    "taxRange": [
+      88.0,
+      110
+    ],
+    "caseCount": 2,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "11 × 10 × 0,8 − 0",
+        "value": 88.0
+      },
+      {
+        "label": "Yläraja",
+        "expression": "11 × 10 × 1 − 0",
+        "value": 110
+      }
+    ],
+    "roundTo": 5
+  },
+  "eva-care-fees": {
+    "raw": [
+      348.0,
+      500
+    ],
+    "range": [
+      345,
+      500
+    ],
+    "taxRange": [
+      350.0,
+      500
+    ],
+    "caseCount": 4,
+    "bounds": [
+      {
+        "label": "Alaraja",
+        "expression": "500 × 0,7 − 2",
+        "value": 348.0
+      },
+      {
+        "label": "Yläraja",
+        "expression": "500 × 1 − 0",
+        "value": 500
+      }
+    ],
+    "roundTo": 5
   }
 }

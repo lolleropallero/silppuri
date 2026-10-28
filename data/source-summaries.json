@@ -622,5 +622,17 @@
   "vm-treaty-dividends": {
     "summary": "Verosopimuksen vuoksi verovapaana maksettujen osinkojen rivi on 1 730, 1 300, 1 500, 1 650 ja 480 miljoonaa euroa vuosina 2016–2020. Suorasijoitusosingot on erotettu omalle rivilleen. Näiden viiden vuoden keskiarvo on 1 332 miljoonaa euroa.",
     "limit": "Taulukko kuvaa maksettuja osinkoja, ei verouudistuksen tuottoa. Raportin mukaan saajaluokitteluun liittyy epävarmuutta. Silppurin 15 prosentin vero, veropohjan säilyminen, kertymän vähennykset ja valvontakulut eivät ole tästä taulukosta saatu nettoarvio."
+  },
+  "vm-tax-survey-2026": {
+    "summary": "Liite 1 esittää veronkorotusten staattiset tuotot vuoden 2028 tasossa, osalle valmisteveroista myös kysynnän joustot ja vaikutukset muihin veroihin ja etuuksiin huomioivan arvion. Liite 2 esittää verotukien arvot vuoden 2027 tasossa.",
+    "limit": "Verotuen arvo ei ole tuen poistamisesta odotettava verotuotto. Yksikkötuotot koskevat pieniä muutoksia, eikä taulukon lukuja ole tarkoitettu laskettaviksi yhteen."
+  },
+  "tpan-2025": {
+    "summary": "Raportin mukaan korkeimpien marginaaliveroasteiden alentaminen noin 52 prosenttiin vähentää verotuloja staattisesti noin 550 miljoonaa euroa vuodessa (HE 98/2025). VM arvioi alennuksen pitkän aikavälin itserahoitusasteeksi 100 prosenttia; neuvoston mukaan eri tutkimuksiin perustuvat laskelmat poikkeavat toisistaan merkittävästi.",
+    "limit": "Staattinen arvio ei sisällä käyttäytymisvaikutuksia, ja itserahoitusaste on epävarma pitkän aikavälin laskelma. Raportti ei arvioi alennuksen perumisen tuottoa erikseen."
+  },
+  "eva-163": {
+    "summary": "Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.",
+    "limit": "Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty."
   }
 }

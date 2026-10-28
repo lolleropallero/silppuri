@@ -1,4 +1,4 @@
-"""Build isolated browser fixtures with 200/254 cards, including conflicting options.
+"""Build isolated browser fixtures with 200 and all cards, including conflicting options.
 
 Run after build.py. Fixtures are for layout/load testing, not fiscal proposals.
 They never change production selection rules or the user's saved package.
@@ -47,8 +47,8 @@ stressObserver.observe(q('.sp-share-preview'),{childList:true});
 '''
 
 links = []
-for count in [200, 254]:
-    # Longest titles exercise wrapping. The 254 case also covers every action.
+for count in [200, len(actions)]:
+    # Longest titles exercise wrapping. The full case also covers every action.
     chosen = sorted(actions, key=lambda d: len(d['title']), reverse=True)[:count]
     ids = [d['id'] for d in chosen]
     state = {'modelContent': {'selectedIds': ids, 'name': f'Rasitustesti · {count} korttia',

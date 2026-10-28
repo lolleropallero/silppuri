@@ -107,19 +107,34 @@ source('vm-treaty-dividends', 'VM 2021:31, s. 78, taulukko 7: verosopimusten vuo
  'Suomi · Verohallinnon vuosi-ilmoitukset 2016–2020',
  'Verosopimuksen vuoksi verovapaana maksettujen osinkojen rivi on 1 730, 1 300, 1 500, 1 650 ja 480 miljoonaa euroa vuosina 2016–2020. Suorasijoitusosingot on erotettu omalle rivilleen. Näiden viiden vuoden keskiarvo on 1 332 miljoonaa euroa.',
  'Taulukko kuvaa maksettuja osinkoja, ei verouudistuksen tuottoa. Raportin mukaan saajaluokitteluun liittyy epävarmuutta. Silppurin 15 prosentin vero, veropohjan säilyminen, kertymän vähennykset ja valvontakulut eivät ole tästä taulukosta saatu nettoarvio.')
+# Audit of measures still missing after the VM annexes, Finnwatch and Sorsa.
+# The VM card URL already carries the annex-1 note, so cite the PDF itself.
+source('vm-tax-survey-2026', 'VM 2026:48: Verokartoitus 2026, liitteet 1 ja 2',
+ 'https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content', 'Suomi · valtiovarainministeriön verokartoitus 26.10.2026',
+ 'Liite 1 esittää veronkorotusten staattiset tuotot vuoden 2028 tasossa, osalle valmisteveroista myös kysynnän joustot ja vaikutukset muihin veroihin ja etuuksiin huomioivan arvion. Liite 2 esittää verotukien arvot vuoden 2027 tasossa.',
+ 'Verotuen arvo ei ole tuen poistamisesta odotettava verotuotto. Yksikkötuotot koskevat pieniä muutoksia, eikä taulukon lukuja ole tarkoitettu laskettaviksi yhteen.')
+source('tpan-2025', 'Talouspolitiikan arviointineuvosto (2026): Raportti 2025',
+ 'https://doria.fi/handle/10024/193889', 'Suomi · riippumattoman arviointineuvoston vuosiraportti 2.2.2026',
+ 'Raportin mukaan korkeimpien marginaaliveroasteiden alentaminen noin 52 prosenttiin vähentää verotuloja staattisesti noin 550 miljoonaa euroa vuodessa (HE 98/2025). VM arvioi alennuksen pitkän aikavälin itserahoitusasteeksi 100 prosenttia; neuvoston mukaan eri tutkimuksiin perustuvat laskelmat poikkeavat toisistaan merkittävästi.',
+ 'Staattinen arvio ei sisällä käyttäytymisvaikutuksia, ja itserahoitusaste on epävarma pitkän aikavälin laskelma. Raportti ei arvioi alennuksen perumisen tuottoa erikseen.')
+source('eva-163', 'Pyykkönen / EVA (2026): Keskiluokan lompakko – näin 13 miljardin sopeutus tehdään',
+ 'https://www.sttinfo.fi/files/3848/71958109/357210/fi', 'Suomi · ajatuspajan sopeutusanalyysi 17.4.2026, ei vaikutustutkimus',
+ 'Analyysin mukaan erikoissairaanhoidon asiakasmaksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 miljoonaa euroa. Iäkkäiden pitkäaikaishoidon maksujen kaksinkertaistaminen tuottaisi nettona noin 300 miljoonaa, kun varattomien maksut eivät nouse. Luvut perustuvat VM:n vuoden 2023 maksukertymätietoihin.',
+ 'Arviot ovat suuruusluokkia ilman julkaistua laskentamallia. Käytön vähenemistä, maksukaton tarkkaa vaikutusta ja toimeentulotukea ei ole eritelty.')
 
 actions, models = [], {}
+origin_sources = {'finnwatch': 'fw-tax-gaps', 'sorsa': 'sorsa-ten', 'vm': 'vm-tax-survey-2026', 'tpan': 'tpan-2025', 'eva': 'eva-163'}
 def add(id, title, flow, who, society, money, calc, sources, model, allocations,
-        incidence_method, incidence_assumptions, *, channel='cash', conflicts=(), condition=None, outside=False, origin='finnwatch'):
+        incidence_method, incidence_assumptions, *, channel='cash', conflicts=(), condition=None, outside=False, origin='finnwatch', scope=''):
     calc = list(calc) + ['Haarukka on oletusten herkkyysväli. Se ei ole tilastollinen luottamusväli tai varmistettu vähimmäistuotto. Laskenta pitää lähdevuoden pohjan vakiona; inflaatiota, kasvua tai koko paketin yleisen tasapainon vaikutuksia ei ennusteta.']
-    source_key = 'fw-tax-gaps' if origin == 'finnwatch' else 'sorsa-ten'
+    source_key = origin_sources[origin]
     sources = list(dict.fromkeys([source_key] + list(sources) + ['statfin-wealth-incidence','statfin-income-incidence']))
     e = dict(caption='oma tuottohaarukka', basis='Oma ehdollinen vuosiarvio · lähdevuoden veropohja', money=money, calculation=calc)
     if condition: e['condition'] = condition
     d = dict(id=id, title=title, flow=flow, who=who, impact=who.split('. ')[0].rstrip('.')+'.', society=society,
         origin=origin, source=refs[source_key]['label'], sourceUrl=refs[source_key]['url'], conflicts=list(conflicts),
         estimate=e, research=dict(sources=sources, finding='', fiscal=money,
-        scope='', status='context'),
+        scope=scope, status='context'),
         incidence=dict(channel=channel, allocations=allocations, method=incidence_method, assumptions=incidence_assumptions, outsideResidents=outside))
     actions.append(d); models[id] = model
 
@@ -283,6 +298,85 @@ add('sorsa-million-inheritance', 'Miljoonaperintöjen ja -lahjojen veroa +10 pro
  'Kaksi omaa sijaisjakaumaa ovat listaamattomien osakkeiden ja rahoitusvarallisuuden omistus. Saajien todelliset vuositulot ja ikä poikkeavat luovuttajien tuloista.',
  conflicts=['tax-inheritance','fw-succession-abolish'], origin='sorsa')
 
+add('vm-home-property', 'Vakituisten asuntojen kiinteistöveroetu puoleen', 'capital',
+ 'Vakituisten asuinrakennusten omistajilta, myös vuokrataloyhtiöiltä. Vuokra-asunnoissa osa verosta voi siirtyä vuokriin.',
+ 'Vakituisen asuinrakennuksen kiinteistöveroprosentti on selvästi yleistä prosenttia alempi. Kiristys nostaisi asumiskustannuksia rakennuksen verotusarvon mukaan, ei asukkaan tulojen mukaan. Tanskan tutkimuksessa pysyvä kiinteistöveron korotus näkyi hinnoissa, joten rasitus kohdistuu osin muutoshetken omistajiin. VM kiristäisi ensin maapohjien veroa.',
+ 'Laskelma vähentää ALV-kertymän ja yhteisöveron muutokset sekä varaa kunnille mahdollisuuden kompensoida osan kiristyksestä. Asumistukimenojen kasvu sisältyy jälkimmäiseen väljästi, ei erillisenä laskelmana.',
+ ['VM 2026:48, liite 2: vakituisten asuinrakennusten alemman kiinteistöveroprosentin verotuki on 903 milj. € vuoden 2027 tasossa. Se on ero yleiseen kiinteistöveroprosenttiin, ei valmis tuottoarvio.',
+  'Oma rajaus: vakituisten asuinrakennusten veroprosentin vaihteluväliä nostetaan niin, että ero yleiseen veroprosenttiin puolittuu. Staattinen lisävero 903 × 50 % = 451,5 milj. €.',
+  'VM:n kiinteistöveroarvion mukaan ALV-kertymä pienenee noin 13 % ja yhteisövero noin 2 % staattisesta lisäyksestä. Kun asumistuki voi kasvaa, säilyy 80–87 %. Kunnat jättävät kiristyksestä voimaan 70–100 %. Molemmat ovat omia herkkyysoletuksia.',
+  'Netto = 903 × 50 % × 80–87 % × 70–100 % − 0–1 milj. € hallintoa. Maapohjan veron kortit ovat eri veropohja; kuntien yhteinen kompensaatio on merkitty mahdolliseksi päällekkäisyydeksi.'],
+ ['vm-tax-survey-2026','land'],
+ dict(formula='product', anchor=903, factors=[[.5],[.8,.87],[.7,1]], cost=[0,1]),
+ [{'wealth-home':.75},{'wealth-housing':.6,'consumption-total':.15}],
+ 'Omistusasuntojen kiinteistövero jaetaan oman asunnon arvon mukaan. Vuokrataloyhtiöiden osuus voi siirtyä vuokriin tai jäädä omistajille.',
+ 'Omat vaihtoehdot: 75 % kotitalouksien oman asunnon arvon mukaan; tai 60 % kaiken asuntovarallisuuden mukaan ja 15 % kulutuksen mukaan vuokriin siirtyvänä. Loput jäävät julkisille ja yritysomistajille. Vakituisten asuinrakennusten omistusjakaumaa ei ole mitattu.',
+ conflicts=['tax-land-values','tax-land-min'], origin='vm',
+ scope='Verotuki koskee vakituisia asuinrakennuksia koko maassa. Tanskan maaveron tutkimus tukee veron siirtymistä hintoihin, mutta ei anna Suomen rakennusveron tuottoa. Kuntien reaktiota ei ole tutkittu.')
+
+add('tpan-top-rate', 'Vuoden 2026 ylimpien marginaaliverojen alennus perutaan', 'earned',
+ 'Suurituloisilta palkansaajilta ja muilta ansiotulon saajilta, joiden ylin marginaalivero laski vuonna 2026 noin 59 prosentista 52 prosenttiin.',
+ 'Ylin marginaaliveroaste palaisi noin 59 prosenttiin. Suomessa ylimmän prosentin verotettavien tulojen joustoksi on arvioitu noin 0,5, joten osa lisäverosta katoaa tulojen pienenemisen, ajoituksen ja verosuunnittelun vuoksi. VM arvioi alennuksen pitkän aikavälin itserahoitusasteeksi 100 prosenttia.',
+ 'Piirakkaan lasketaan haarukan alaraja, nolla. Se vastaa VM:n arviota, jonka mukaan alennus rahoittaa pitkällä aikavälillä itsensä. Yläraja olettaa pienen käyttäytymisreaktion.',
+ ['Arviointineuvoston raportti 2025 ja HE 98/2025: korkeimpien marginaaliveroasteiden alentaminen noin 52 prosenttiin vähentää verotuloja staattisesti noin 550 milj. € vuodessa. Samalla tehty indeksitarkistuksen jättäminen näillä tulotasoilla jää voimaan.',
+  'Alaraja: VM:n arvio alennuksen 100 prosentin pitkän aikavälin itserahoitusasteesta. Perumisen nettotuotto on tällöin 0 milj. €.',
+  'Yläraja on oma laskelma: verotettavien tulojen jousto 0,1, Pareto-parametri 2 ja keskimääräinen marginaalivero 55 %. Säilyvä osuus = 1 − 0,1 × 2 × 0,55 / 0,45 ≈ 75,6 %. Joustolla 0,5 tuotto olisi negatiivinen.',
+  'Netto = 550 × 0–75,6 % = 0–416 milj. €. Työllisyyden ja muuttoliikkeen vaikutuksia ei ole laskettu erikseen; ne sisältyvät joustoon vain osittain.'],
+ ['tpan-2025','income-top-2025','incomeelastic'],
+ dict(formula='product', anchor=550, factors=[[0,.756]], cost=[0]),
+ [{'income-tax-top':1}],
+ 'Lisävero kohdistuu ylimpiin tuloihin. Jakaumana käytetään kahden ylimmän tulokymmenyksen ansiotuloveroja.',
+ 'Oma rajaus: koko lisävero jaetaan 9. ja 10. tulokymmenyksen ansiotuloverojen suhteessa. Kymmenykset ovat kotitalouksien ekvivalentteja tuloja, eivät henkilöiden palkkoja, joten osa maksajista voi kuulua alempiin kymmenyksiin.',
+ condition='Pitkän aikavälin netto voi olla nolla', conflicts=['income','income-index'], origin='tpan',
+ scope='Staattinen 550 miljoonaa koskee vuoden 2026 alennusta. Suomen joustotutkimus koskee vuoden 2013 ylintä veroporrasta; jousto ei siirry sellaisenaan toiselle tulotasolle tai pitkälle aikavälille.')
+
+add('vm-machine-fuel', 'Työkoneiden kevyt polttoöljy dieselin verotasolle', 'companies',
+ 'Rakentamisen, maa- ja metsätalouden, kaivosten ja muiden työkoneita käyttävien yritysten kautta niiden asiakkailta, työntekijöiltä ja omistajilta.',
+ 'Työkoneiden polttoaine kallistuisi dieselin verotasolle. Kustannus voi siirtyä rakentamisen, ruoantuotannon ja kuljetusten hintoihin. Hinta kannustaa sähköistämään ja vähentämään polttoaineen käyttöä; energian kysyntä reagoi pitkällä aikavälillä lyhyttä enemmän.',
+ 'VM:n 200 miljoonan staattisesta lisäyksestä vähennetään kysynnän jousto sekä vaikutukset muihin veroihin ja etuuksiin VM:n vastaavien energiaverolaskelmien suhteilla. Maatalouden energiaveron palautuksen kasvua ei ole vähennetty.',
+ ['VM 2026:48, liite 2: työkoneissa käytetyn kevyen polttoöljyn normia alemman verokannan verotuki on 407 milj. €. VM:n mukaan siirto nykyiselle dieselin verokannalle tarkoittaisi noin 200 milj. € verotuottolisäystä.',
+  'VM:n samankaltaisissa energiaverolaskelmissa julkiseen talouteen jää 80–86 % staattisesta tuotosta: liikennepolttoaineiden +1 €/MWh 36 → 31 milj. €, lämmön ja kiinteän polttoaineen verotuessa noin 80 %. Tässä käytetään samaa väliä.',
+  'Netto = 200 × 80–86 % − 0–2 milj. € valvontaan. Lämmitysöljyn verotasoa ei muuteta.',
+  'Jos maatalouden energiaveron palautusta ei rajata, palautus kasvaa ja tuotto pienenee. Dieselin verotuen pienentäminen nostaisi kohdetasoa; yhdistelmää ei ole laskettu.'],
+ ['vm-tax-survey-2026','energydemand'],
+ dict(formula='product', anchor=200, factors=[[.8,.86]], cost=[0,2]),
+ [{'consumption-total':.6},{'capital-income':.2,'wages':.175,'consumption-total':.3}],
+ 'Yritysten polttoainekustannus jaetaan joko kokonaan hintoihin siirtyvänä tai omistajien, työntekijöiden ja asiakkaiden kesken.',
+ 'Omat vaihtoehdot: 60 % kuluttajahintoihin; tai 20 % pääomatuloihin, 17,5 % nettopalkkoihin ja 30 % kuluttajahintoihin. Loput kohdistuvat vientiin, julkisiin hankintoihin ja ulkomaisiin omistajiin. Työkoneiden käyttäjien asiakasjakaumaa ei ole mitattu.',
+ channel='indirect', conflicts=['tax-diesel','cut-1-16'], origin='vm',
+ scope='VM:n 200 miljoonaa koskee työkoneiden kevyttä polttoöljyä. Energian hintajoustojen meta-analyysi ei koske Suomen työkoneita erikseen.')
+
+add('vm-alcohol', 'Alkoholiveroa +10 %', 'consumption',
+ 'Alkoholijuomien ostajilta. Euroissa eniten maksavat runsaimmin ostavat; matkustajatuonti ja ulkomaiset verkkokaupat vievät osan ostoista veron ulkopuolelle.',
+ 'Alkoholijuomien hinnat nousisivat, jos korotus siirtyy hintoihin. Hinnan nousu vähentää kulutusta ja sen haittoja, mutta osa ostoista siirtyy matkustajatuontiin. Alkoholivero on indeksoitu vuodesta 2026, joten tämä on reaalinen korotus indeksin päälle.',
+ 'VM:n yksikkötuotto sisältää kysynnän hintajouston sekä vaikutukset muihin veroihin ja indeksisidonnaisiin etuuksiin. Kymmenen prosentin korotus on lineaarinen jatko, josta varataan lisäksi osuus kasvavalle matkustajatuonnille.',
+ ['VM 2026:48, liite 1: alkoholiveron keskimäärin noin 1 prosentin korotus tuottaa staattisesti 15 milj. €, kysynnän hintajousto huomioiden 12 milj. € ja julkiseen talouteen 11 milj. €.',
+  'Oma rajaus: korotus +10 %. Lineaarisesti 10 × 11 = 110 milj. €.',
+  'Matkustajatuonnin ja verkkokaupan kasvu voi pienentää suuren korotuksen tuottoa enemmän kuin yhden prosentin yksikkötuotto kertoo. Säilyy 80–100 %; oma herkkyysoletus.',
+  'Netto = 11 × 10 × 80–100 % − 0 milj. €. Alkoholihaittojen hoito- ja työkykykustannusten muutosta ei ole laskettu.'],
+ ['vm-tax-survey-2026'],
+ dict(formula='product', anchor=11, factors=[[10],[.8,1]], cost=[0]),
+ [{'consumption-alcohol':1}],
+ 'Lisävero jaetaan kotitalouksien alkoholijuomien kulutuksen mukaan.',
+ 'Koko korotus oletetaan hintoihin. Kulutustutkimus aliarvioi usein alkoholin kulutusta, ja ravintoloissa nautittu alkoholi sisältyy ravintolapalveluihin, joten jakauma on suuntaa antava.',
+ origin='vm', scope='VM:n yksikkötuotto koskee noin yhden prosentin korotusta. Kymmenen prosentin korotukselle ei ole erillistä VM:n laskelmaa.')
+
+add('eva-care-fees', 'Erikoissairaanhoidon ja pitkäaikaishoidon asiakasmaksut kaksinkertaisiksi', 'consumption',
+ 'Erikoissairaanhoidon potilailta ja iäkkäiden pitkäaikaisen hoidon asukkailta. Maksukatto rajaa runsaasti hoitoa käyttävien lisämaksua; varattomien pitkäaikaishoidon maksut eivät nousisi.',
+ 'Asiakasmaksut kattaisivat nykyistä suuremman osan hoidon kustannuksista. Suomalaisissa tutkimuksissa alemmat maksut lisäsivät hoidon käyttöä, joten korotus voi vähentää myös tarpeellisia käyntejä. Valtio säästää, kun hyvinvointialueiden rahoitusta pienennetään maksutulojen verran.',
+ 'EVA:n arvio perustuu VM:n vuoden 2023 maksukertymätietoihin. Omassa haarukassa varataan osuus käytön vähenemiselle, maksukatolle, maksuvapautuksille ja toimeentulotuelle.',
+ ['EVA Analyysi 163: erikoissairaanhoidon asiakasmaksukertymä on yli 300 milj. € vuodessa. Maksujen kaksinkertaistaminen kasvattaisi kertymää arviolta 200 milj. €, maksukattojärjestelmästä riippuen.',
+  'EVA Analyysi 163: iäkkäiden pitkäaikaishoidon maksukertymä on yli 500 milj. € vuodessa. Kun varattomien ja kansaneläkkeen varassa olevien maksut eivät nouse, kaksinkertaistus tuottaisi nettona noin 300 milj. €.',
+  'Oma herkkyysoletus: käytön väheneminen, perintä ja toimeentulotuen kasvu jättävät EVA:n 500 miljoonan yhteissummasta voimaan 70–100 %. Hallinto 0–2 milj. €.',
+  'Netto = (200 + 300) × 70–100 % − 0–2. Hoidon viivästymisestä myöhemmin syntyviä kustannuksia ei ole laskettu.'],
+ ['eva-163','carefees','helsinki-fees'],
+ dict(formula='product', anchor=500, factors=[[.7,1]], cost=[0,2]),
+ [{'consumption-health':.4,'service-eldercare':.6},{'service-health':.4,'service-eldercare':.6}],
+ 'Maksut jaetaan terveydenhuollon ja iäkkäiden hoivan käytön mukaan EVA:n osuuksilla: 40 % erikoissairaanhoitoon, 60 % pitkäaikaishoitoon.',
+ 'Kaksi omaa sijaisjakaumaa erikoissairaanhoidolle: terveysmenot ja julkisten terveyspalvelujen käyttö. Hoivan jakauma on vanha palvelujakauma, eikä maksukattoa, maksuvapautuksia tai varallisuutta ratkaista uudelleen.',
+ conflicts=['cut-4-21','cut-4-16','cut-4-17','cut-4-18','cut-4-19','health'], origin='eva',
+ scope='EVA:n luvut koskevat erikoissairaanhoidon ja iäkkäiden pitkäaikaishoidon maksuja. Suomalaiset maksututkimukset koskevat lähinnä perusterveydenhuollon käyntejä.')
+
 # Only genuinely nested alternatives replace one another. Distinct taxes can
 # coexist; flag their unresolved interaction instead of silently removing one.
 subset_pairs = {frozenset(('fw-corporate-gaps','fw-interest')),
@@ -294,6 +388,9 @@ for d in actions:
     d['possibleOverlaps'] = [dict(id=other, note='Molemmat muuttavat osin samaa veropohjaa tai veron hyvityksiä. Erillisarvioiden summa voi ylittää yhteisen tuoton; yhteislaskelmaa ei ole tehty.') for other in overlaps]
     if d['id'] == 'fw-exit-tax':
         d['estimate'].update(caption='VM:n vertailuhaarukka', basis='VM 2020 · kokonaisnettoa ei laskettu')
+    if d['id'] == 'eva-care-fees':
+        for o in d['possibleOverlaps']:
+            o['note'] = 'Molemmat muuttavat samoja asiakasmaksuja tai hyvinvointialueiden rahoitusta. Erillisarvioiden summa voi ylittää yhteisen säästön; yhteislaskelmaa ei ole tehty.'
 from audit_corrections import apply_actions, apply_sources, apply_inputs
 apply_actions(actions)
 apply_sources(refs, summaries)

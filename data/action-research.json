@@ -2487,5 +2487,66 @@
     "fiscal": "Vanhan suomalaisen ehdotuksen 200 miljoonan vertailutuotosta jätetään omassa laskelmassa 15–50 % kertymättä ajoituksen, verosuunnittelun ja muuttuneen veropohjan vuoksi. Tämä ei ole vuoden 2026 säännöillä ajettu mikrosimulaatio.",
     "scope": "",
     "status": "context"
+  },
+  "vm-home-property": {
+    "sources": [
+      "vm-tax-survey-2026",
+      "land",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "Laskelma vähentää ALV-kertymän ja yhteisöveron muutokset sekä varaa kunnille mahdollisuuden kompensoida osan kiristyksestä. Asumistukimenojen kasvu sisältyy jälkimmäiseen väljästi, ei erillisenä laskelmana.",
+    "scope": "Verotuki koskee vakituisia asuinrakennuksia koko maassa. Tanskan maaveron tutkimus tukee veron siirtymistä hintoihin, mutta ei anna Suomen rakennusveron tuottoa. Kuntien reaktiota ei ole tutkittu.",
+    "status": "context"
+  },
+  "tpan-top-rate": {
+    "sources": [
+      "tpan-2025",
+      "income-top-2025",
+      "incomeelastic",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "Piirakkaan lasketaan haarukan alaraja, nolla. Se vastaa VM:n arviota, jonka mukaan alennus rahoittaa pitkällä aikavälillä itsensä. Yläraja olettaa pienen käyttäytymisreaktion.",
+    "scope": "Staattinen 550 miljoonaa koskee vuoden 2026 alennusta. Suomen joustotutkimus koskee vuoden 2013 ylintä veroporrasta; jousto ei siirry sellaisenaan toiselle tulotasolle tai pitkälle aikavälille.",
+    "status": "context"
+  },
+  "vm-machine-fuel": {
+    "sources": [
+      "vm-tax-survey-2026",
+      "energydemand",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "VM:n 200 miljoonan staattisesta lisäyksestä vähennetään kysynnän jousto sekä vaikutukset muihin veroihin ja etuuksiin VM:n vastaavien energiaverolaskelmien suhteilla. Maatalouden energiaveron palautuksen kasvua ei ole vähennetty.",
+    "scope": "VM:n 200 miljoonaa koskee työkoneiden kevyttä polttoöljyä. Energian hintajoustojen meta-analyysi ei koske Suomen työkoneita erikseen.",
+    "status": "context"
+  },
+  "vm-alcohol": {
+    "sources": [
+      "vm-tax-survey-2026",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "VM:n yksikkötuotto sisältää kysynnän hintajouston sekä vaikutukset muihin veroihin ja indeksisidonnaisiin etuuksiin. Kymmenen prosentin korotus on lineaarinen jatko, josta varataan lisäksi osuus kasvavalle matkustajatuonnille.",
+    "scope": "VM:n yksikkötuotto koskee noin yhden prosentin korotusta. Kymmenen prosentin korotukselle ei ole erillistä VM:n laskelmaa.",
+    "status": "context"
+  },
+  "eva-care-fees": {
+    "sources": [
+      "eva-163",
+      "carefees",
+      "helsinki-fees",
+      "statfin-wealth-incidence",
+      "statfin-income-incidence"
+    ],
+    "finding": "",
+    "fiscal": "EVA:n arvio perustuu VM:n vuoden 2023 maksukertymätietoihin. Omassa haarukassa varataan osuus käytön vähenemiselle, maksukatolle, maksuvapautuksille ja toimeentulotuelle.",
+    "scope": "EVA:n luvut koskevat erikoissairaanhoidon ja iäkkäiden pitkäaikaishoidon maksuja. Suomalaiset maksututkimukset koskevat lähinnä perusterveydenhuollon käyntejä.",
+    "status": "context"
   }
 }

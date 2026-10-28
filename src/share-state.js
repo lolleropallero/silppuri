@@ -32,7 +32,8 @@ const SHARE_ACTION_IDS=Object.freeze([
   'tax-electric1','tax-electric2','tax-car-all','tax-land-values','tax-land-min','fw-wrappers',
   'fw-dividend-withholding','fw-interest','fw-corporate-gaps','fw-corporate-minimum','fw-wealth-minimum',
   'fw-exit-tax','fw-property-funds','fw-treaty-dividends','fw-portfolio','fw-deemed-cost',
-  'fw-succession-abolish','fw-digital','sorsa-bank','sorsa-million-inheritance'
+  'fw-succession-abolish','fw-digital','sorsa-bank','sorsa-million-inheritance','vm-home-property',
+  'tpan-top-rate','vm-machine-fuel','vm-alcohol','eva-care-fees'
 ]);
 const shareActionIndex=new Map(SHARE_ACTION_IDS.map((id,index)=>[id,index]));
 // A shared URL is a separate workspace. Its edits must never write the owner's

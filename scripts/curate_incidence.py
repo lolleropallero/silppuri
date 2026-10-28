@@ -31,6 +31,8 @@ def build_incidence(actions):
         'family':profile('tjt-perav'), 'unemployment':profile('tjt-tyoel'),
         'wages':profile('tjt-palk'),
     }
+    # Top-bracket changes: earned-income taxes of the two highest deciles only.
+    profiles['income-tax-top']=normalize([v if i>=8 else 0 for i,v in enumerate(profiles['income-tax'])])
     for key in ['vat-standard','vat-reduced']:
         profiles[key]=normalize([v*u for v,u in zip(figures[key]['values'],units)])
     by_id={a['id']:a for a in actions}; models={}

@@ -49,7 +49,7 @@ const header=Array.from(bytes.subarray(0,12));
 for(const tail of [
   [245,3], // more than 500 selected cards
   [129,0,0,0,0], // noncanonical count
-  [1,254,1,0,0], // unknown numeric card ID
+  [1,232,7,0,0], // unknown numeric card ID 1000
   [2,0,0,0,0], // duplicate card
   [1,0,1,1,3,0], // adjustment outside the selected cards
   [2,0,1,2,0,3,0,4,0], // duplicate adjustment

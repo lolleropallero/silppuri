@@ -157,5 +157,14 @@
   },
   "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/4a67552f-78a3-498f-aeea-5aa515449735/content#page=79": {
     "researchSummary": "vm-treaty-dividends"
+  },
+  "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content": {
+    "researchSummary": "vm-tax-survey-2026"
+  },
+  "https://doria.fi/handle/10024/193889": {
+    "researchSummary": "tpan-2025"
+  },
+  "https://www.sttinfo.fi/files/3848/71958109/357210/fi": {
+    "researchSummary": "eva-163"
   }
 }

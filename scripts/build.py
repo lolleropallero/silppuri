@@ -130,7 +130,9 @@ for proposal in finnwatch+additional:
     d.update({k:v for k,v in proposal.items() if k!='incidence'})
     amount=proposal['estimate']['amount']
     origin=proposal.get('origin','finnwatch')
-    d.update(short=d['title'],kind=('Kalevi Sorsa -säätiö' if origin=='sorsa' else 'Finnwatch')+' · veromuutos',origin=origin,
+    kinds={'finnwatch':'Finnwatch · veromuutos','sorsa':'Kalevi Sorsa -säätiö · veromuutos','vm':'VM 2026:48 · oma skenaario',
+           'tpan':'Arviointineuvosto · veromuutos','eva':'EVA · asiakasmaksut'}
+    d.update(short=d['title'],kind=kinds[origin],origin=origin,
              budget=[amount]*8,funds=[0 if amount is not None else None]*8,
              detail='',moneyNote='',net=None)
 # The working group's narrower tax base yields 30m, not the annex's 60m
