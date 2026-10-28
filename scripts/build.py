@@ -9,7 +9,9 @@ from audit_corrections import apply_actions, apply_inputs, apply_sources, apply_
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--out', type=Path, default=ROOT/'tmp/silppuri-konsepti.html')
-OUT = parser.parse_args().out
+parser.add_argument('--production', action='store_true', help='Also export the deployable website to dist/index.html')
+args = parser.parse_args()
+OUT = args.out
 OUT.parent.mkdir(parents=True, exist_ok=True)
 ANNEX = 'https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/cc17f785-1f60-4239-bf43-adf73cfdbf2c/content'
 def read_psv(name, size):
@@ -323,5 +325,9 @@ for part in ['state','summary','social','image','png','ui']:
 OUT.write_text(markup+'<script>\n'+script+'\n</script>\n',encoding='utf-8')
 from export_site import export_site
 export_site(OUT.read_text(encoding='utf8'), ROOT/'tmp/local-site/index.html')
+if args.production:
+    export_site(OUT.read_text(encoding='utf8'), ROOT/'dist/index.html')
 assert OUT.stat().st_size<1_000_000, OUT.stat().st_size
 print(json.dumps(meta,ensure_ascii=False)); print('Fragment bytes:',OUT.stat().st_size)
+if args.production:
+    print('Production site:', ROOT/'dist/index.html')

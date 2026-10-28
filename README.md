@@ -2,6 +2,40 @@
 
 Interaktiivinen konsepti VM:n vuoden 2026 meno- ja verokartoituksista.
 
+## Build ja Cloudflare-julkaisu
+
+Tuotantobuild tarvitsee Python 3.10+:n ja sen vakiokirjaston. Aja repositorion juuressa:
+
+```sh
+python scripts/build.py --production
+```
+
+Julkaistava sivu syntyy tiedostoon `dist/index.html`. HTML sisältää sovelluksen, tyylit, kuvakkeen ja tarkistetut aineistot. Rakennus käyttää repositorion lähteitä; se ei tarvitse PDF-tiedostoja, audit-kansiota, Codexia tai verkkolatauksia. Julkaise vain `dist`, jotta paikalliset testisivut ja auditointitiedostot eivät päädy verkkoon. Tavallinen `python scripts/build.py` päivittää edelleen vain paikallisen esikatselun ja HTML-fragmentin.
+
+Cloudflare Workers palvelee sivun staattisina tiedostoina. `wrangler.jsonc` määrittää palvelun nimeksi `silppuri` ja julkaistavaksi hakemistoksi `dist`. Kun yhdistät repon Cloudflare Workersin Git-integraatioon, käytä seuraavia asetuksia:
+
+| Asetus | Arvo |
+| --- | --- |
+| Worker name | `silppuri` |
+| Production branch | `main` |
+| Root directory | Repositorion juuri |
+| Build command | `python scripts/build.py --production` |
+| Deploy command | `npx wrangler@4 deploy` |
+
+Workersin julkaisu lukee tuloshakemiston Wrangler-asetuksista. Jos nimeät palvelun toisin Cloudflaressa, muuta myös `wrangler.jsonc`:n `name`. Cloudflaren rakennusympäristössä on Python ja Node.js valmiina. [Build-asetukset](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/), [rakennusympäristö](https://developers.cloudflare.com/workers/ci-cd/builds/build-image/).
+
+Ensimmäisen julkaisun jälkeen liitä Cloudflaressa jo oleva domain: **Workers & Pages → silppuri → Settings → Domains & Routes → Add → Custom Domain**. Anna haluamasi domain tai alidomain. Jakolinkit käyttävät automaattisesti sivun osoitetta. [Cloudflaren domain-ohje](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/).
+
+Voit julkaista myös omalta koneelta (Python ja Node.js/npm asennettuina):
+
+```sh
+python scripts/build.py --production
+npx wrangler@4 login
+npx wrangler@4 deploy
+```
+
+`login` tarvitaan ensimmäisellä kerralla. Pelkkä `deploy` julkaisee viimeksi rakennetun `dist`-hakemiston, joten aja build aina muutosten jälkeen. Julkaisupaketin tarkistus ilman lähetystä: `npx wrangler@4 deploy --dry-run`. Paikallinen esikatselu: `python -m http.server 8765 --bind 127.0.0.1 --directory dist`.
+
 ## Paketin jakaminen
 
 PNG:n nimen alla näkyvät summa, käyttäjän nimeämistä kahdeksasta profiilista valittu nimi, summan mukainen kommentti ja lyhyt kuvaus paketin painotuksesta sekä suurimmasta toimesta. Kuvaus erottaa esimerkiksi yritysverot yrityksille maksettavan rahan leikkauksista. Suurin toimi valitaan piirakan nykyisistä euromääristä; avoin nettoarvio, myöhempi viiteluku tai bruttosumma ei ohita laskuriin kuuluvaa arviota. Sama tiivistelmä tulee kopioitavaan jakotekstiin, Threads-, X- ja WhatsApp-luonnoksiin sekä laitteen omaan kuva- ja linkkijakoon. Facebook-painike avaa linkin jakamisikkunan ja yrittää kopioida tiivistelmän leikepöydälle käyttäjän liitettäväksi; henkilökohtaista julkaisutekstiä ei esitäytetä. Painikkeet eivät julkaise käyttäjän puolesta.
@@ -22,7 +56,7 @@ Korttien tiivistelmissä ja PNG:n korteissa näkyvät vain nimi ja summa, myöhe
 
 `python scripts/build.py` päivittää myös tavallisen, ilman iframea toimivan sivun `tmp/local-site/index.html`. Sen voi tarjota komennolla `python -m http.server 8765 --bind 127.0.0.1 --directory tmp/local-site`. Paikallinen osoite toimii vain samalla koneella; muille jaettavat linkit edellyttävät sivun julkista HTTPS-osoitetta. Julkinen versio on tavallinen staattinen HTML-tiedosto eikä jakaminen vaadi taustapalvelua. `src/standalone.js` säilyttää valinnat selaimessa ja lukee myös aiemman paikallisen esikatselun tallennuksen. Tarkistus: `node scripts/verify-sharing.cjs`.
 
-`artifacts/silppuri-konsepti.html` on 27.10.2026 talteen otettu, tavuntarkka kopio toimivasta konseptista. Lähdekoodi ja laskennan aineistot ovat samassa commitissa, joten tähän versioon voi palata myös ilman uutta rakennusta. Rakennuskomento kirjoittaa edelleen keskustelun visualisointihakemistoon; arkistokopio ei päivity itsestään.
+`artifacts/silppuri-konsepti.html` on 27.10.2026 talteen otettu, tavuntarkka kopio toimivasta konseptista. Lähdekoodi ja laskennan aineistot ovat samassa commitissa, joten tähän versioon voi palata myös ilman uutta rakennusta. Nykyinen rakennus kirjoittaa `tmp`-hakemistoon ja `--production` lisäksi `dist`-hakemistoon; arkistokopio ei päivity itsestään.
 
 Lisäys 27.10.2026: 12 uutta korttia (10 Finnwatchin raporttia täydentävää veromallia ja 2 Kalevi Sorsa -säätiön ehdotusta). `scripts/curate_additional_taxes.py` ylläpitää lähteitä, tiivistelmiä, rajauksia ja parametrien perusteluja. `data/additional-tax-actions.json` sisältää kortit; `data/additional-tax-inputs.json` laskennan syötteet; `scripts/additional_tax_models.py` tuottaa rakennuksessa `data/additional-tax-results.json`-tulokset. Kaikki 43 numeroitua Finnwatch-suositusta on jäljitetty `data/finnwatch-proposal-coverage.json`-tiedostoon. Sivulla lähteet ja laskelmien rajaukset ovat kyseisten korttien Lähteet ja laskentatapa -kohdassa. Osa suosituksista on valvontaa tai kansainvälistä päätöksentekoa, ei erillinen verotuotto. FASTER ja toteutetut osakevaihtokorjaukset eivät ole uusia säästöjä. BEFITin, lisäeläkkeiden sopimusmuutosten tai yksittäisten avoimuussääntöjen erillistä tuottoa ei väitetä lasketuksi.
 

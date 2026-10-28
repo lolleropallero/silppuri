@@ -24,7 +24,7 @@ with tempfile.TemporaryDirectory(prefix='rebuild-', dir=scratch) as temporary:
     for script in ['curate_additional_taxes.py', 'curate_research.py', 'build.py']:
         command = [sys.executable, '-X', 'utf8', str(copy/'scripts'/script)]
         if script == 'build.py':
-            command += ['--out', str(copy/'tmp/fragment.html')]
+            command += ['--out', str(copy/'tmp/fragment.html'), '--production']
         result = subprocess.run(command, cwd=copy, capture_output=True, text=True,
                                 encoding='utf8', env={**os.environ, 'PYTHONUTF8': '1'})
         if result.returncode:
@@ -33,4 +33,12 @@ with tempfile.TemporaryDirectory(prefix='rebuild-', dir=scratch) as temporary:
                != (copy/p).read_bytes().replace(b'\r\n', b'\n')]
     if changed:
         raise SystemExit('Stale generated files:\n' + '\n'.join(changed))
+    published = sorted(p.relative_to(copy/'dist').as_posix() for p in (copy/'dist').rglob('*') if p.is_file())
+    assert published == ['index.html'], f'Unexpected deployment files: {published}'
+    html = (copy/'dist/index.html').read_text(encoding='utf8')
+    assert html.startswith('<!doctype html>'), 'Deploy a complete document, not the embedded fragment'
+    assert 'silppuri:state:v1:' in html, 'Standalone storage host missing'
+    assert 'function createShareImage(' in html and 'function decodeShare(' in html, 'Sharing runtime missing'
+    assert html == (copy/'tmp/local-site/index.html').read_text(encoding='utf8'), 'Production differs from the local website'
 print('PASS: clean rebuild reproduces all repository data, sources and scripts.')
+print('PASS: production exports only the self-contained website with package sharing and local storage.')
