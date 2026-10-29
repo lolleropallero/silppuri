@@ -14,11 +14,17 @@
 #silppuri-demo .sp-reset-dialog p{margin:12px 0 24px;font-size:15px;line-height:1.5}
 #silppuri-demo .sp-reset-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
 #silppuri-demo .sp-reset-actions button{min-height:44px;padding:10px 16px;border:1px solid var(--sp-line);border-radius:8px;background:var(--sp-paper);color:var(--sp-ink);font:inherit;font-weight:600;cursor:pointer}
-#silppuri-demo .sp-reset-actions .sp-reset-confirm{background:var(--sp-button);color:var(--sp-button-text);border-color:var(--sp-button)}
+#silppuri-demo .sp-reset-actions :is(.sp-reset-confirm,.sp-preset-confirm){background:var(--sp-button);color:var(--sp-button-text);border-color:var(--sp-button)}
 #silppuri-demo .sp-reset-actions button:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
 #silppuri-demo select,#silppuri-demo input{font:inherit;color:var(--sp-ink);background:var(--sp-paper);border:1px solid var(--sp-line);border-radius:6px;min-height:42px;padding:8px;max-width:100%}
 #silppuri-demo .sp-catalogue-tools{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,.8fr);gap:16px;margin:18px 0 8px;align-items:end}
 #silppuri-demo .sp-catalogue-tools label{display:grid;gap:6px;font-size:12px;min-width:0}
+#silppuri-demo .sp-presets{margin:24px 0}
+#silppuri-demo .sp-presets h3{margin:0 0 12px;font-size:18px}
+#silppuri-demo .sp-presets-list{display:flex;flex-wrap:wrap;gap:8px}
+#silppuri-demo .sp-presets-list button{min-height:44px;padding:10px 14px;max-width:100%;border:1px solid var(--sp-line);border-radius:8px;background:var(--sp-paper);color:var(--sp-ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+#silppuri-demo .sp-presets-list button:hover{background:var(--sp-lime)}
+#silppuri-demo .sp-presets-list button:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
 #silppuri-demo .sp-catalogue-tools input{width:100%;box-sizing:border-box}
 #silppuri-demo .sp-catalogue-tools select{min-width:0;width:100%}
 @media(max-width:700px){#silppuri-demo .sp-catalogue-tools{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#silppuri-demo .sp-catalogue-tools label:first-child{grid-column:1/-1}}
@@ -61,7 +67,8 @@
 #silppuri-demo .sp-card-open{display:block;width:100%;padding:0;border:0;border-radius:inherit;background:transparent;color:inherit;text-align:inherit;font:inherit;letter-spacing:inherit;line-height:inherit;overflow-wrap:anywhere}
 #silppuri-demo .sp-card-open::after{content:"";position:absolute;inset:0;border-radius:var(--sp-radius,12px)}
 #silppuri-demo .sp-card-open:focus-visible::after{outline:2px solid var(--sp-ink);outline-offset:2px}
-#silppuri-demo .sp-action .sp-scenario-controls{position:relative;z-index:1}
+#silppuri-demo .sp-action .sp-scenario-controls{position:relative;z-index:1;pointer-events:none}
+#silppuri-demo .sp-action .sp-scenario-controls button{pointer-events:auto}
 #silppuri-demo .sp-action:hover{background:color-mix(in srgb,var(--sp-action-color) 8%,var(--sp-paper))}
 #silppuri-demo .sp-action[data-type=cut]{--sp-action-color:var(--sp-cut);border-left:6px solid var(--sp-cut);background:color-mix(in srgb,var(--sp-cut) 4%,var(--sp-paper))}
 #silppuri-demo .sp-action[data-type=tax]{--sp-action-color:var(--sp-tax);border-left:6px solid var(--sp-tax);background:color-mix(in srgb,var(--sp-tax) 4%,var(--sp-paper))}

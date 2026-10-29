@@ -29,8 +29,9 @@ function createShareImage(chosen,name,later,link){
   const groups=payerGroups.filter(g=>chosen.some(d=>d.flow===g.id)).map(g=>({...g,display:payerDisplay(chosen.filter(d=>d.flow===g.id))}));
   const titleLines=lines(shareTitle(name),680,42,true);
   const totalY=126+(titleLines.length-1)*48+70,profileY=totalY+38;
+  const profileLines=lines(summary.profile.name,680,28,true);
   const captionLines=lines(summary.tone.text,680,23);
-  const captionY=profileY+32;
+  const captionY=profileY+(profileLines.length-1)*32+32;
   const summaryLines=lines(summary.description,680,21);
   const summaryY=captionY+captionLines.length*28+18;
   const largestLines=lines(summary.largest,680,18,true),largestY=summaryY+summaryLines.length*26+12;
@@ -54,7 +55,7 @@ function createShareImage(chosen,name,later,link){
   rect(48,77,1104,2,color.ink);
   titleLines.forEach((line,i)=>text(line,48,126+i*48,42,true));
   text(shareTotal(sum),48,totalY,64,true);
-  text(summary.profile.name,48,profileY,28,true);
+  profileLines.forEach((line,i)=>text(line,48,profileY+i*32,28,true));
   captionLines.forEach((line,i)=>text(line,48,captionY+i*28,23));
   summaryLines.forEach((line,i)=>text(line,48,summaryY+i*26,21));
   largestLines.forEach((line,i)=>text(line,48,largestY+i*24,18,true));

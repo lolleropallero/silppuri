@@ -11,59 +11,60 @@ const shareGoalEditorial={
   extreme:'Sammutusnappi meni mukana.',
   demolition:'Budjetti loppui. Jumala armahtaa, Silppuri ei.'
 };
-// Satirical readings of modeled distributions. No entry promises a gain to a
-// group merely because another group bears more of the cost.
-const shareEditorial={
-  lower:{
-    fees:['Maksukyvyn arviointi tapahtuu kassalla.','Julkisen palvelun maksu on yhteinen, mutta suhteellinen rasitus painottuu pienituloisiin. Palvelulupaus pitää edelleen — sen käyttäminen vain vaatii entistä tarkempaa harkintaa ennen ajanvarausta.'],
-    services:['Omahoitoa niille, joilla ei ole omaa lääkäriä.','Hyvinvointivaltio vaihtuu itsepalveluvaltioon. Palvelurahan vähennys painottuu tulotaulukon alapäähän; jos hoidon pystyy ostamaan itse, uudistusta on huomattavasti mukavampi kannattaa.'],
-    benefits:['Kannustimet alas, kannustus ylhäältä.','Pienituloiset joustavat. Parempiosaiset kannustavat. Näin jokaiselle löytyy oma tehtävä yhteisissä säästötalkoissa ilman, että tulisi ikävästi samoja velvollisuuksia.'],
-    work:['Pienemmät tulot, suurempi joustovara — paperilla.','Henkilöstösäästöjen kohdennus painottuu alempiin tuloryhmiin, joissa organisaation tehostamista on tarkoitus harjoitella omassa arjessa. Johtoryhmä seuraa harjoituksen etenemistä.'],
-    income:['Progressio jäi juhlapuheeseen.','Ansiotuloverotus antaa paketille ryhdikkään nimen, mutta kokonaisuuden suhteellinen raharasitus painottuu pienituloisiin. Maksukyky käy puheenvuoron aiheeksi; maksajaksi kelpaa vähemmälläkin.'],
-    consumption:['Sama kassakuitti, eri mittainen loppukuu.','Kaupan kassalla ei kysytä tulodesiiliä. Siksi tätä voi kutsua tasapuoliseksi siihen asti, kunnes joku jakaa laskun tuloillaan. Silloin pienituloisten osuus yhteisistä talkoista näyttääkin kovin henkilökohtaiselta.'],
-    wealth:['Pääomavero otsikossa ei vielä pelasta pienituloista.','Pääomalle on tässä paketissa oma laskunsa, mutta kokonaisuuden suhteellinen rasitus kallistuu alaspäin. Robin Hoodin nimelläkin voi myydä varsin toisenlaisen tulonsiirron.'],
-    companies:['Yritys on laskun osoite, ihminen sen maksaja.','Yrityksiin kohdistuva paketti näyttää kotitalousarviossa raskaimmalta alemmissa tuloryhmissä. Näkymätön käsi on löytänyt näkyvän lompakon — eikä se tällä kertaa ollut tulotaulukon yläpäässä.'],
-    mixed:['Yhteinen vastuu, pienituloisten maksuosuus.','Suomea pelastetaan alhaalta ylöspäin: pienituloisilta pyydetään suhteessa eniten, ylempänä selvitään kevyemmällä osuudella. Yhteiseen hiileen saa silti puhaltaa tasapuolisesti.']
-  },
-  middle:{
-    fees:['Keskiluokalle tuli toinen lasku samasta yhteiskunnasta.','Ensin verot, sitten palvelumaksut. Maksuihin painottuvan paketin suhteellinen raharasitus osuu keskelle tulotaulukkoa, missä vastineeksi luvattiin aikoinaan toimivat julkiset palvelut.'],
-    services:['Keskiluokka löysi palvelulupauksen pienellä präntillä.','Palvelurahan leikkaus painottuu keskimmäisiin tuloryhmiin. Veronmaksajan vastine veroille saapuu tällä kertaa ohjeena järjestää asia itse.'],
-    benefits:['Turvaverkosta tuli keskituloisten omavastuu.','Etuuksiin painottuvan paketin suurin suhteellinen puristus löytyy keskeltä tulotaulukkoa — sieltä, missä piti jo pärjätä omillaan, mutta ei vielä ole varaa pärjätä ilman yhteiskuntaa.'],
-    work:['Keskiluokka tehostaa itse itsensä.','Julkisen työn säästöissä keskimmäiset tuloryhmät saavat pääosan harjoituksesta. Työt pitää edelleen tehdä; tehokkuus syntyy siitä, ettei niiden tekemisestä makseta entiseen tapaan.'],
-    income:['Selkärangasta löytyi vielä verotettavaa.','Keskiluokka on yhteiskunnan selkäranka. Tässä paketissa se on myös kohta, jota puristetaan suhteessa kovimmin. Ylä- ja alapää saavat seurata, kuinka paljon selkäranka vielä joustaa.'],
-    consumption:['Tavallinen arki sai erikoisverokohtelun.','Kulutusverojen ympärille koottu paketti löytää maksajansa erityisesti tulotaulukon keskeltä: ei niin vähän, ettei olisi mistä ottaa, eikä niin paljon, ettei se tuntuisi.'],
-    wealth:['Miljonäärijahti pysähtyi keskimmäisiin tuloryhmiin.','Pääomaa lähdettiin verottamaan, mutta tämän kokonaisuuden suhteellinen lasku painottuu keskelle. Rikkaus on näköjään venyvä käsite silloin, kun kassaan tarvitaan rahaa.'],
-    companies:['Näkymätön käsi löysi keskiluokan.','Yrityksiin kohdistuvien toimien kotitalousrasitus painottuu keskimmäisiin tuloryhmiin. Tuloslaskelman ja palkkapussin välissä on monta ovea; lasku osasi niistä läpi.'],
-    mixed:['Liian hyvin pärjäävä säästettäväksi, liian tavallinen säästyäkseen.','Keskimmäisille tuloryhmille on löytynyt tuttu tehtävä: pitää kokonaisuus pystyssä. Pakettisi suurin suhteellinen rasitus osuu keskelle, missä yhteiskuntasopimus luetaan tavallisesti maksumääräyksenä.']
-  },
-  upper:{
-    fees:['Maksukyky huomattiin myös palvelun kassalla.','Maksuihin painottuva paketti rasittaa suhteessa eniten ylempiä tuloryhmiä. Yhteisen palvelun rahoituksessa on siis tällä kertaa huomattu muutakin kuin se, että jokaisella asiakkaalla on lompakko.'],
-    services:['Palveluleikkaus löysi myös paremman väen.','Palvelurahan kohdennus painottuu tässä ylempiin tuloryhmiin. Yhteisillä varoilla on siis rahoitettu muutakin kuin aina jonkun muun elämää — harmillinen havainto juuri säästöpäätöksen kohdalla.'],
-    benefits:['Kannustimia myös tulotaulukon yläpäähän.','Tässä etuuksiin painottuvassa paketissa suhteellinen raharasitus osuu vahvimmin ylempiin tuloryhmiin. Oman toimeentulon varaan jättäytyminen ei kuulostakaan aivan yhtä vapauttavalta, kun kokeilu tulee lähelle.'],
-    work:['Henkilöstösäästöjen katse nousi ylemmäs.','Julkisen työn kustannusten kohdennuksessa suuremmat tulot saavat tällä kertaa suurimman suhteellisen osuuden. Tehostaminen kuulostaa vähemmän abstraktilta, kun se ei ala automaattisesti tulotaulukon pohjalta.'],
-    income:['Maksukyky löytyi tällä kertaa maksajaluettelosta.','Suurituloisille suhteessa raskaampi lasku. Tätä voi kutsua progressioksi tai menestyksen rankaisemiseksi riippuen siitä, kummalla puolella oma nimi on tulotaulukossa.'],
-    consumption:['Kulutusjuhlan lasku meni ylempiin pöytiin.','Kulutusverot eivät tässä kokonaisuudessa käännä suhteellista rasitusta pienituloisten niskaan, vaan paino on tulotaulukon yläpäässä. Yhteiset talkoot ovat helpommat kannattaa ennen kuin oma lasku saapuu.'],
-    wealth:['Pääoma kutsuttiin viimein talkoisiin.','Veroparatiisin sääennusteessa on paikallista luokkataistelua. Omaisuuteen ja pääomatuloihin painottuvan paketin suhteellinen lasku kasautuu ylempiin tuloryhmiin; alempana voi tällä kertaa seurata, kuinka kannustimet kestävät verolomakkeen.'],
-    companies:['Omistamisen riskeihin lisättiin yhteinen vastuu.','Yrityksiin kohdistuvan paketin kotitalousrasitus painottuu ylempiin tuloryhmiin. Kun valtio osallistuu tappioihin, se on vakautta. Kun se lähettää laskun, keskustelu markkinatalouden tulevaisuudesta alkaa heti.'],
-    mixed:['Yhteiset talkoot, tavallista paremmat osallistumisedellytykset.','Tulotaulukon yläpää kantaa suhteessa raskaimman osuuden. Keskuskomiteaa ei vielä ole perustettu, mutta maksukyvyn huomioiminen saattaa jo näyttää siltä sen omasta ikkunasta.']
-  }
+// A mixed package can have a recognizable name without inventing a majority.
+const shareProfilePairs={
+  'benefits+services':'Turvaverkon purkaja',
+  'consumption+services':'Omavastuun arkkitehti',
+  'income+services':'Hyvinvointivaltion saneeraaja',
+  'services+wealth':'Hyvinvointivaltion pesänjakaja',
+  'income+wealth':'Verokomissaari',
+  'companies+wealth':'Pääoman aktivointimalli',
+  'benefits+consumption':'Arjen ankeuttaja',
+  'consumption+income':'Palkansaajan painajainen'
 };
+// Every entry is one situation, with subjects/clauses filled from the selected
+// measures. The reachability test requires a real EUR 8–12bn witness per entry.
+const shareNarratives={
+  'services-consumption-counter':f=>`${f.lowBenefits?'Etuudet ja palvelut kutistuvat samalla kun ostokset kallistuvat. Pienituloisen vapaus valita kasvaa: mistä välttämättömästä luovutaan ensin?':'Kun palveluista katoaa apu ja kulutusveroihin ostovoima, pienituloiselle jää vapaus valita, kumman puutteesta valittaa ensin.'} ${f.upper} avaavat luokkataistelun toisen rintaman suurituloisten lompakoilla${f.otherClause?', ja '+f.otherClause:''}. ${f.netLower?'Punainen lippu ei muuta laskujärjestystä: pienituloiset maksavat silti tuloihinsa nähden eniten.':'Yläkerrassa sovitellaan jo marttyyrinviittaa, alakerrassa vertaillaan ruoan ja lääkkeiden hintoja.'}`,
+  'services-consumption-benefits':f=>`Etuudet pienenevät, palvelut kutistuvat ja kassalla maksetaan enemmän. Pienituloisen vapaus valita on nyt täydellinen: hän saa itse päättää, mistä välttämättömästä luopuu ensin.${f.otherClause?" Samaan aikaan "+f.otherClause+".":""}`,
+  'services-consumption':f=>`Pienituloiselta säästetään sekä palvelut että ostovoima: apu vähenee ja ostokset kallistuvat${f.otherClause?', samalla kun '+f.otherClause:''}. Valinnanvapaudeksi jää päättää, kummasta valittaa ensin.`,
+  'services-benefits-counter':f=>`Pienituloisen turvaverkosta leikataan sekä rahat että palvelut, mutta yläkerran samppanjat jäävät avaamatta: ${f.upperLower} marssivat punalippujen alla suurituloisten kukkarolle${f.otherClause?', ja '+f.otherClause:''}. ${f.netLower?'Internationaali soi, mutta tuloihin suhteutettu rahalasku jää silti raskaimmaksi pienituloisille.':'Keskuskomitea löysi porvarin maksukyvyn, mutta unohti matkalla, kenen turvaverkkoa sen piti puolustaa.'}`,
+  'services-benefits':f=>`Kun etuuksia ja palveluja leikataan yhtä aikaa pienituloisilta, valtio voi luvata kerrankin johdonmukaisen asiakaskokemuksen: rahaa ei ole, apua ei tule.${f.otherClause?' Vaikka myös '+f.otherClause+', pienituloisen osalta ohje on jo selvä: pärjää omillasi.':' Omillaan pärjääminen alkaa siitä, ettei muuta vaihtoehtoa jätetä.'}`,
+  'benefits-consumption-counter':f=>`Pienituloiselta viedään ostovoimaa sekä etuuspäätöksessä että kassakuitissa. ${f.upper} lähettävät suurituloisille oman kutsunsa luokkataisteluun${f.otherClause?', ja '+f.otherClause:''}. ${f.netLower?'Vallankumouksen rahoituspohja on silti vanha tuttu: suhteessa raskain rahalasku jää pienituloisille.':'Ostovoimaa sosialisoidaan nyt useammasta kerroksesta. Näkemyserot koskevat lähinnä sitä, kenen kulutus oli välttämätöntä ja kenen moraalinen ongelma.'}`,
+  'benefits-consumption':f=>`Etuuksista leikataan ja kulutusveroja nostetaan niin, että pienituloiselta loppuvat sekä rahat että halvat vaihtoehdot${f.otherClause?'; '+f.otherClause:''}. Köyhyys ei poistunut, mutta ainakin sen ylläpitämisestä tuli kalliimpaa.`,
+  'indices-counter':f=>`Indeksit pakkaseen, punaliput salkoon. ${f.upper} ottavat suurituloisten kukkarot viisivuotissuunnitelman palvelukseen${f.rest(['indices'],['upper'])?', samalla kun '+f.rest(['indices'],['upper']):''}. Inflaatio hoitaa hiljaisen leikkaustyön; yläkerran lasku saa näkyvämmän vastaanoton. Jäädytysten koko tuloryhmäjako on vielä selvittämättä, mutta luokkataistelun lehdistötilaisuus voi jo alkaa.`,
+  'indices':f=>`Indeksit jäihin, hinnat vapaaksi. Valtio säästää sillä, ettei sama raha enää riitä samaan elämään${f.rest(['indices'])?', ja '+f.rest(['indices']):''}. Inflaatio saa tehdä likaisen työn, hallitus voi esitellä muuttumattomia euromääriä.`,
+  'business-research':f=>`Tulevan kasvun siemenrahat tarvitaan tämän päivän laskuun: tutkimusrahoituksesta säästetään samalla kun ${f.businessClause}${f.rest(['research','companies'])?'; '+f.rest(['research','companies']):''}. Suomen seuraavan menestystarinan kannattaa syntyä valmiiksi kannattavana.`,
+  'services-upper':f=>`Suurituloisten kukkarolle vyöryvät ${f.upperLower}${f.otherClause?'; '+f.otherClause:''}. Keskuskomitean riemua varjostaa vain se, että palveluista leikataan samalla pienituloisilta. Porvarin pienempi lompakko ei lyhennä terveyskeskuksen jonoa.`,
+  'upper':f=>`Keskuskomitea on löytänyt maksukyvyn. ${f.upper} käyvät suurituloisten kukkarolle${f.otherClause?'; '+f.otherClause:''}. ${f.business?'Markkinoiden näkymätön käsi hamuaa jo matkalaukkua: kauppakamarilla etsitään kartasta viimeistä kapitalistista rajanylityspaikkaa.':'Porvaristo näkee jo lyhtypylväissä lisävarusteita, vaikka vallankumous saapui tällä kertaa budjettipäätöksenä.'}`,
+  'split':f=>`${f.lower} kiristävät pienituloisten arkea; ${f.upperLower} vievät luokkataistelun suurituloisten lompakoille${f.otherClause?', ja '+f.otherClause:''}. ${f.netLower?'Yläkertakaan ei siis pääse ilmaiseksi, mutta tuloihin suhteutettu rahalasku jää raskaimmaksi pienituloisille. Samaan hiileen puhalletaan, palovammat jaetaan eri perusteella.':f.netUpper?'Pienituloisetkin maksavat, mutta suhteessa raskain rahalasku jää suurituloisille. Keskuskomitea julistaa maksukyvyn yhteiseksi luonnonvaraksi.':'Barrikadin molemmin puolin on maksajia. Yhteisymmärrys saavutetaan siitä, että vastapuolen uhraukset ovat pelkkää teatteria.'}`,
+  'lower':f=>`${f.lower} osuvat painavimmin alempiin tuloryhmiin${f.otherClause?', samalla kun '+f.otherClause:''}. Suomea nostetaan jaloilleen aloittamalla niistä, jotka olivat jo polvillaan. Yhteinen vastuu on hieno periaate, kun sen oman osuuden saa määritellä kauempaa.`,
+  'middle':f=>`${f.middle} löytävät maksajansa erityisesti tulotaulukon keskeltä${f.rest([],['middle'])?', ja '+f.rest([],['middle']):''}. Keskiluokka pitää taas yhteiskuntaa pystyssä. Selkärangan kulumista kutsutaan tässä harjoituksessa kantokyvyksi.`,
+  'all-pay':f=>`Kukaan ei pakene Silppurilta. ${f.all} hakevat rahaa eri suunnista, ja jokaiselle tuloryhmälle jää maksettavaa. ${f.business?'Markkinoiden näkymätön käsi ja tavallinen palkansaaja löytävät yhteisen sävelen: kummankin mielestä jonkun muun pitäisi maksaa.':'Yhteisymmärrys Suomen pelastamisesta löytyy viimeistään siinä vaiheessa, kun kaikki pitävät omaa osuuttaan liian suurena.'}`,
+  'research':f=>`Tulevaisuuden kasvulle toivotaan kaikkea hyvää, mutta tutkimusrahoituksesta haetaan rahat tämän päivän laskuun${f.rest(['research'])?', ja '+f.rest(['research']):''}. Suomen seuraavan menestystarinan kannattaa siis ottaa oma rahoitus mukaan.`,
+  'grants':f=>`Avustusten saajat saavat jatkaa yhteiskunnallisesti tärkeää työtään, kunhan yhteiskunnan ei tarvitse osallistua laskuun.${f.rest(['grants'])?' Säästöjä haetaan muualtakin: '+f.rest(['grants'])+'.':''} Omatoimisuus alkaa omasta rahoituksesta.`,
+  'mixed':f=>`${f.all} keräävät rahat eri puolilta yhteiskuntaa. ${f.business?'Markkinoiden näkymätön käsi on jo varaamassa aikaa ministerille. Maksajien lopullinen työnjako jää epäselväksi, mutta jokaisen mielestä naapurin osuus on liian pieni.':'Tuloryhmistä ei löydy yhtä varmaa päämaksajaa, mutta budjettineuvotteluun riittää loukkaantuneita joka lähtöön. Konsensus syntyy siitä, että jokaisen mielestä naapurin osuus jäi liian pieneksi.'}`
+};
+function shareNarrativeKey(f){
+  if(f.lowServices&&f.lowConsumption)return f.upper?'services-consumption-counter':f.lowBenefits?'services-consumption-benefits':'services-consumption';
+  if(f.lowServices&&f.lowBenefits)return f.upper?'services-benefits-counter':'services-benefits';
+  if(f.lowBenefits&&f.lowConsumption)return f.upper?'benefits-consumption-counter':'benefits-consumption';
+  if(f.indices)return f.upper?'indices-counter':'indices';
+  if(f.research&&f.business)return 'business-research';
+  if(f.lowServices&&f.upper&&f.lowerCount===1)return 'services-upper';
+  if(f.balanced)return 'all-pay';
+  if(f.upper&&!f.lower)return 'upper';
+  if(f.lower&&f.upper)return 'split';
+  if(f.lower)return 'lower';
+  if(f.middle)return 'middle';
+  if(f.research)return 'research';
+  if(f.grants)return 'grants';
+  return 'mixed';
+}
+// These describe exceptional empty, unpriced, zero and negative packages.
 const shareSpecialEditorial={
-  'lower-spared-upper':['Kova köyhille, armas rikkaille.','Silppuri on kova köyhille ja armas rikkaille. Samaan hiileen puhaltaminen loppui aikoja sitten: alemmat tuloryhmät kantavat suhteellisesti raskaimman laskun, ylin 30 prosenttia seuraa tätä arvioitua raharasitusta katsomosta.'],
-  'upper-only':['Eat the rich, budjettiteknisesti.','Ylimmät tuloryhmät on nimetty kansalliseksi energiavaraksi. Muu tulotaulukko säästyy tässä arvioidulta raharasitukselta; Silppuri käy nyt paremman väen maksuilla. Neuvostoliitto soitti: rahoituspohja kelpaa, omistussuhteista neuvotellaan vielä.'],
-  'upper-spared-lower':['Talkookutsu toimitettiin tällä kertaa yläkertaan.','Alimmat tuloryhmät säästyvät tässä arvioidulta raharasitukselta, ja suhteellinen paino on ylimmissä. Yhteiskuntarauhan rahoitukseen löytyi muitakin keinoja kuin pienituloisten sopeutumiskyvyn testaaminen.'],
-  even:['Kukaan ei pakene Silppurilta.','Kukaan ei pakene Silppurilta, kun hihat kääritään Suomen pelastamiseksi. Suhteessa tuloihin leikkuri kulkee lähes samalla korkeudella koko tulotaulukon läpi. Prosentti on yhteinen; euroja siitä lähtee enemmän sieltä, missä niitä on enemmän.'],
-  'even-services':['Palvelurahan leikkuri kiertää koko tulotaulukon.','Palvelurahan vähennys jakautuu arviossa lähes yhtä suuriin osuuksiin kaikkiin kymmeneen tuloryhmään. Yhteinen palvelulupaus on saanut yhteisen säästöversion — vaikka oma mahdollisuus korvata palvelu rahalla ei jakaudu yhtä tasan.'],
-  'even-work':['Tehostaminen kutsuu koko palkkataulukon.','Henkilöstömenojen arvioitu kohdennus kulkee suhteessa tuloihin lähes samalla tasolla läpi tulotaulukon. Organisaatiokaaviossa ei tällä kertaa näy erityistä suojakerrosta.'],
-  'cash-upper-services-lower':['Raharasitus ylhäältä, palvelusäästöt alhaalta.','Raharasitus painottuu ylempiin tuloryhmiin, palvelurahan leikkaus alempiin. Paketti tarjoaa kummallekin leirille oman voittokuvan, kunhan kuvan rajaa sopivasti. Palvelurahan leikkausta ei silti kuitata sillä, että toisessa tuloryhmässä maksetaan suurempi osuus rahatuloista.'],
-  'cash-lower-services-upper':['Rahat alhaalta, palveluraha ylempää.','Raharasitus painottuu pienituloisiin, palvelurahan leikkaus ylempiin tuloryhmiin. Kumpikin saa oman perustelunsa sille, miksi juuri hänen osuutensa pitäisi laskea ensin. Näitä menetyksiä ei voi vaihtaa keskenään yksi yhteen.'],
-  'cash-uncertain-services-lower':['Pärjää ilman tai maksa itse.','Palveluleikkausten paino jää pienituloisille. Parempiosainen voi vaihtaa yksityiselle; pienituloiselle jää valinnanvapaus sen suhteen, mistä muusta hän maksaa vähemmän. Vastuu omasta hyvinvoinnista on ainoa asia, jota ei leikata.'],
-  'double-lower':['Sama tulopää maksaa sekä kassalla että palveluissa.','Alempiin tuloryhmiin painottuvat sekä suhteellinen raharasitus että palvelurahan leikkaus. Omatoimisuutta tarjotaan siis kahdesta suunnasta: vähemmän rahaa ostaa vaihtoehtoja ja pienempi yhteinen palvelulupaus. Ylempänä jää enemmän tilaa valita, miltä talkoisiin osallistuminen näyttää.'],
-  mixed:['Yhtenäinen kansa, mutkikas lasku.','Rasitus tekee tulotaulukossa mutkia, joita iskulause kaikilta tasapuolisesti ei suorista. Yksi tuloryhmä jää lähemmäs reunaa, toinen osuu keskelle leikkuria; pelkkä jako köyhiin ja rikkaisiin ei kerro tämän paketin koko tarinaa.'],
-  uncertain:['Maksaja vaihtuu oletuksia vaihtamalla.','Talkookutsut on painettu, mutta istumajärjestys on vielä auki. Tuloryhmien järjestys riippuu laskentaoletuksista, joten tästä paketista ei saa rehellisesti yhtä varmaa kertomusta kansan pelastajista ja maksumiehistä.'],
-  'uncertain-companies':['Näkymätön käsi ei jätä nimikirjoitusta laskuun.','Yritys maksaa ensin. Se, kuinka paljon laskua jää omistajille, siirtyy palkkoihin tai päätyy Suomen ulkopuolelle, muuttaa tuloryhmäkuvaa. Sekä kapitalistin että duunarin pelastajaksi julistautuminen onnistuisi tässä lähinnä valitsemalla mieluisan oletuksen.'],
-  unknown:['Säästö näkyy. Maksajan osoite puuttuu.','Budjettirivi on täsmällinen, tuloryhmien työnjako ei. Näillä tiedoilla pakettia ei voi nimetä köyhien kurittajaksi eikä rikkaiden kompostoriksi, vaikka kumpikin mahtuisi kampanjajulisteeseen.'],
-  zero:['Toimia on, laskettu raharasitus ei liiku.','Päätöksiä mahtuu pakettiin ilman näkyvää liikettä tuloryhmäarviossa. Se ei vielä ole todiste siitä, että kaikki saivat jotain ilmaiseksi.'],
   empty:['Talkookutsu on vielä luonnoksena.',''],
-  reverse:['Valtion kassa osallistuu talkoisiin maksajana.','Paketti heikentää julkisen talouden laskettua saldoa. Tuloryhmien hyötyjiä ei kuitenkaan voi päätellä kääntämällä budjetin miinusmerkkiä plusmerkiksi.']
+  zero:['Terät pyörivät. Laskuri ei.','Päätöksiä mahtuu pakettiin ilman näkyvää liikettä tuloryhmäarviossa. Se ei vielä ole todiste siitä, että kaikki saivat jotain ilmaiseksi.'],
+  unknown:['Lasku on vielä auki.','Pakettiin on valittu toimia, joiden euroarvio puuttuu. Poliittista tahtoa löytyy; valtiovarainministeriö odottaa vielä numeroita.'],
+  reverse:['Silppuri kävi takaperin.','Paketti heikentää julkisen talouden laskettua saldoa. Tuloryhmien hyötyjiä ei kuitenkaan voi päätellä kääntämällä budjetin miinusmerkkiä plusmerkiksi.']
 };

@@ -45,6 +45,7 @@
   const selected=new Set();
   let packageName='';
   /*SHARE_STATE*/
+  /*PRESETS*/
   const packageSession=createShareSession(()=>window.openai);
   const scenario={income:2,corporate:3,dividends:'vm',ylePercent:20};
   const maxPP=10;
@@ -61,7 +62,10 @@
   const q=s=>root.querySelector(s);
   const list=q('.sp-action-list');
   const dialog=q('.sp-modal');
-  const resetDialog=q('.sp-reset-dialog');
+  const resetDialog=q('#sp-reset-dialog');
+  const presetDialog=q('.sp-preset-dialog');
+  let pendingPreset=null,presetOpener=null;
+  q('.sp-presets-list').innerHTML=packagePresets.map(p=>`<button type="button" class="cursor-interaction" data-preset="${p.id}">${p.name}</button>`).join('');
   /*MODAL_SHRED*/
   const modalShred=createModalShred(root,dialog);
   const zoomIcon=expanded=>'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M6 10h8'+(expanded?'':'M10 6v8')+'"/></svg>';
@@ -1016,6 +1020,13 @@
     q('.sp-announcement').textContent='Silppuri nollattu. Ei valittuja toimia.';
     q('.sp-clear').focus({preventScroll:true});
   }
+  function applyPreset(preset){
+    stateIn({modelContent:preset.model});
+    activeDecile=null;q('.sp-selected').open=false;
+    render();save();
+    q('.sp-announcement').textContent=preset.name+' valittu. Pakettia voi muokata korteista.';
+    presetOpener?.focus({preventScroll:true});
+  }
   function searchWords(text){return String(text??'').toLocaleLowerCase('fi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean);}
   function matchesType(d){
     if(filter==='selected')return selected.has(d.id);
@@ -1049,13 +1060,23 @@
   q('#sp-sort').addEventListener('change',event=>{sortOrder=event.target.value==='asc'?'asc':'desc';limit=12;render();save();});
   q('#sp-decile-picker').addEventListener('change',event=>{activeDecile=event.target.value===''?null:Number(event.target.value);renderIncidence(data.filter(d=>selected.has(d.id)));});
   resetDialog.addEventListener('close',()=>q('.sp-clear').focus({preventScroll:true}));
+  presetDialog.addEventListener('close',()=>{pendingPreset=null;presetOpener?.focus({preventScroll:true});});
+  presetDialog.addEventListener('click',event=>{if(event.target===presetDialog){const r=presetDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)presetDialog.close();}});
   resetDialog.addEventListener('click',event=>{if(event.target===resetDialog){const r=resetDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)resetDialog.close();}});
 
   root.addEventListener('click',event=>{
     const button=event.target.closest('button');if(!button)return;
     if(modalShred.running)return;
     finishPacking?.();
-    if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
+    if(button.dataset.preset){
+      const preset=packagePresets.find(p=>p.id===button.dataset.preset);if(!preset)return;
+      presetOpener=button;
+      if(selected.size){pendingPreset=preset;q('#sp-preset-description').textContent='Nykyiset valinnat ja säädöt korvataan paketilla ”'+preset.name+'”.';presetDialog.showModal();q('.sp-preset-cancel').focus();}
+      else applyPreset(preset);
+    }
+    else if(button.classList.contains('sp-preset-cancel')){presetDialog.close();}
+    else if(button.classList.contains('sp-preset-confirm')){const preset=pendingPreset;pendingPreset=null;presetDialog.close();if(preset)applyPreset(preset);}
+    else if(button.dataset.horizon){includeLater=button.dataset.horizon==='later';year=2031;render(true);save();}
     else if(button.dataset.variant){
       const d=data.find(x=>x.id===button.dataset.variant),g=d.variantGroup,previous=variantFor(g),focusId=button.id;
       variantChoice[g.id]=d.id;

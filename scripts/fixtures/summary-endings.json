@@ -1,0 +1,274 @@
+{
+  "services-consumption-counter:other": {
+    "selectedIds": [
+      "income",
+      "tax-van",
+      "health",
+      "vat",
+      "tax-capital-high",
+      "tax-pension",
+      "tax-land-values"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 100,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 3
+    },
+    "unitSteps": {
+      "income": 3,
+      "tax-capital-high": 2
+    },
+    "cutPercents": {},
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "split:lower": {
+    "selectedIds": [
+      "cut-7-52",
+      "cut-3-51"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 50,
+    "taxIncreasesPP": {
+      "income": 1,
+      "corporate": 2
+    },
+    "unitSteps": {},
+    "cutPercents": {
+      "cut-7-52": 50
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "benefits-consumption-counter:lower": {
+    "selectedIds": [
+      "vat",
+      "tax-vehicle",
+      "tax-tickets",
+      "vm-alcohol",
+      "cut-7-52",
+      "tax-insurance",
+      "tax-softdrink",
+      "cut-3-51"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 50,
+    "taxIncreasesPP": {
+      "income": 2,
+      "corporate": 1
+    },
+    "unitSteps": {
+      "tax-insurance": 3,
+      "tax-softdrink": 5,
+      "tax-vehicle": 3
+    },
+    "cutPercents": {
+      "cut-7-52": 30
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "services-benefits-counter:other": {
+    "selectedIds": [
+      "health",
+      "cut-6-5",
+      "cut-7-45",
+      "cut-7-51",
+      "cut-2-57",
+      "eva-tuition",
+      "cut-7-44",
+      "cut-7-49",
+      "tax-vat16"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 100,
+    "taxIncreasesPP": {
+      "income": 2,
+      "corporate": 1
+    },
+    "unitSteps": {},
+    "cutPercents": {},
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "benefits-consumption-counter:other": {
+    "selectedIds": [
+      "vat",
+      "tax-vat-standard",
+      "tax-vehicle",
+      "tax-tickets",
+      "tax-car-all",
+      "tax-insurance",
+      "tax-electric1",
+      "tax-fuel",
+      "vm-alcohol",
+      "tax-excise-index",
+      "tax-tobacco",
+      "tax-softdrink",
+      "income",
+      "cut-3-51"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 3
+    },
+    "unitSteps": {
+      "income": 3,
+      "tax-vat-standard": 3,
+      "tax-insurance": 3,
+      "tax-softdrink": 15,
+      "tax-vehicle": 3,
+      "tax-fuel": 3,
+      "tax-electric1": 3,
+      "tax-car-all": 3
+    },
+    "cutPercents": {},
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "services-consumption-counter:lower": {
+    "selectedIds": [
+      "health",
+      "benefits",
+      "vat",
+      "income"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 2,
+      "corporate": 3
+    },
+    "unitSteps": {
+      "income": 1
+    },
+    "cutPercents": {},
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "reduce-tax",
+      "farm": "redirect"
+    }
+  },
+  "split:other": {
+    "selectedIds": [
+      "cut-3-34",
+      "cut-7-24",
+      "cut-7-12",
+      "cut-3-39",
+      "cut-3-7",
+      "cut-3-10",
+      "cut-7-52"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 2,
+      "corporate": 2
+    },
+    "unitSteps": {},
+    "cutPercents": {
+      "cut-7-24": 50,
+      "cut-7-52": 50
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "services-benefits-counter:lower": {
+    "selectedIds": [
+      "cut-3-36",
+      "cut-7-52",
+      "tax-land-values",
+      "cut-3-34",
+      "cut-2-54",
+      "cut-3-61",
+      "cut-3-49",
+      "cut-5-16",
+      "cut-2-53",
+      "cut-3-8",
+      "cut-3-10",
+      "cut-3-12",
+      "health"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 50,
+    "taxIncreasesPP": {
+      "income": 1,
+      "corporate": 1
+    },
+    "unitSteps": {},
+    "cutPercents": {
+      "cut-7-52": 30
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "split:upper": {
+    "selectedIds": [
+      "dividends",
+      "tax-pension",
+      "income",
+      "income-index",
+      "tax-transfer-land",
+      "vm-home-property",
+      "tax-land-values",
+      "cut-7-52",
+      "tax-transfer-shares",
+      "tax-transfer-homes",
+      "tax-inheritance",
+      "fw-deemed-cost",
+      "tax-donation",
+      "education",
+      "tax-food18",
+      "tax-capital-high",
+      "tax-forest",
+      "tax-vat-standard"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 2
+    },
+    "unitSteps": {
+      "income": 3,
+      "tax-capital-high": 2,
+      "tax-transfer-land": 3,
+      "tax-transfer-homes": 2,
+      "tax-transfer-shares": 1,
+      "tax-inheritance": 3,
+      "tax-vat-standard": 3
+    },
+    "cutPercents": {
+      "cut-7-52": 20
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  }
+}

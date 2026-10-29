@@ -14,6 +14,10 @@ Jakolinkkien tarkistukset: `node scripts/verify-share-codec.cjs`, `node scripts/
 
 Jaettava PNG sisältää yhteenvedon ja kuvaajat. Toimenpidelistan sijaan kuvassa on QR-koodi, joka sisältää saman paketin jakolinkin kuin kopiointi ja somepainikkeet. QR-koodi luodaan selaimessa paikallisella, MIT-lisensoidulla Nayuki-kirjastolla (`src/vendor/`); palvelintallennusta tai ulkoista QR-palvelua ei tarvita. Esikatselu sovittaa koko kuvan näkyviin ilman kuvan sisäistä vieritystä.
 
+Tiivistelmä valitaan koko paketin tilanteesta. Samaan tuloryhmään osuvat palvelu-, etuus- ja kulutustoimet käsitellään yhdessä; merkittävät vastakkaiseen suuntaan painottuvat verot ja yritystoimet huomioidaan samassa tekstissä. Euromäärät valitsevat aiheet, ja kunkin ryhmän kohdentuminen perustuu sen omaan tulokymmenysarvioon. Palvelurahoitusta, rahavaikutuksia ja työnantajakustannuksia ei lasketa yhdeksi rasitukseksi. Laaja indeksijäädytys saa oman nimen, ja kaksi vahvaa teemaa voi saada yhdistelmänimen. Logiikka on tiedostossa `src/share-summary.js`, tekstit tiedostossa `src/share-editorial.js`; tarkistus: `node scripts/verify-share-summary.cjs`.
+
+Viisi valmispakettia ovat tiedostossa `src/presets.js`. `node scripts/verify-summary-reachability.cjs` tarkistaa oikeilla korteilla ja sallituilla säädöillä kaikkien 19 tiivistelmätyypin ja niiden vaihtoehtoisten loppujen saavutettavuuden 8–12 miljardin välillä, valmispaketit noin 10 miljardissa sekä jakolinkkien palautumisen. Esimerkkivalinnat ovat hakemistossa `scripts/fixtures/`. Koko tekstiluettelo esimerkkipaketteineen: [docs/share-copy.md](docs/share-copy.md). Luettelon päivittää `node scripts/list-share-copy.cjs`.
+
 ## Korttien laskelmat
 
 Kortin laskenta näkyy omassa, oletuksena suljetussa osiossaan ennen lähdeluetteloa. Haarukoiden päätepisteet tuotetaan samasta laskentamallista kuin kortin euromäärä; lähtötiedot ja oletukset ovat niiden alla. VM:n valmiissa nettoarvioissa erotetaan lähteen ilmoittamat luvut laskurin omista skaalauksista.

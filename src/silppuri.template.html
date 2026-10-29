@@ -306,6 +306,10 @@
     <section class="sp-actions" aria-label="Valitse sopeutustoimia">
       <div class="sp-list-label"><h2>Isoista paloista alkuun</h2><span>9 esimerkkitoimea · säädä ja vertaile</span></div>
       <div class="sp-filters" role="group" aria-label="Toimien tyyppi"><button type="button" class="sp-filter cursor-interaction" data-filter="all" aria-pressed="true">Kaikki</button><button type="button" class="sp-filter cursor-interaction" data-filter="cut" aria-pressed="false">Menoleikkaukset</button><button type="button" class="sp-filter cursor-interaction" data-filter="tax" aria-pressed="false">Veronkorotukset</button></div>
+      <section class="sp-presets" aria-labelledby="sp-presets-title">
+        <h3 id="sp-presets-title">Valmiit paketit</h3>
+        <div class="sp-presets-list"></div>
+      </section>
       <div class="sp-action-list"></div>
       <button class="sp-more cursor-interaction" type="button">Näytä loput 4 esimerkkitoimea ↓</button>
     </section>
@@ -325,6 +329,14 @@
     <div class="sp-modal-footer"><button type="button" class="sp-modal-confirm cursor-interaction"><span class="sp-confirm-icon" aria-hidden="true"><!--SILPPURI_LOGO--></span><span class="sp-confirm-label">Silppuriin!</span></button></div>
   </dialog>
   <div class="sp-announcement" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="sp-preset-dialog" class="sp-reset-dialog sp-preset-dialog" aria-labelledby="sp-preset-title" aria-describedby="sp-preset-description">
+    <h2 id="sp-preset-title">Vaihda valmis paketti?</h2>
+    <p id="sp-preset-description"></p>
+    <div class="sp-reset-actions">
+      <button type="button" class="sp-preset-cancel cursor-interaction" autofocus>Peruuta</button>
+      <button type="button" class="sp-preset-confirm cursor-interaction">Vaihda paketti</button>
+    </div>
+  </dialog>
   <dialog id="sp-reset-dialog" class="sp-reset-dialog" aria-labelledby="sp-reset-title" aria-describedby="sp-reset-description">
     <h2 id="sp-reset-title">Nollataanko silppuri?</h2>
     <p id="sp-reset-description">Kaikki valitut toimet poistetaan ja säädöt palautetaan oletuksiin.</p>

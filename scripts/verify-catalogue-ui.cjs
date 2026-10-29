@@ -68,7 +68,7 @@ for(let i=1;i<descending.length;i++){
 }
 ctx.search='maatalous';ordered();ctx.search='';assert.deepEqual(ordered(),descending,'search resets ranking using current values');
 ctx.filter='tax';assert.ok(ordered().every(id=>ctx.data.find(d=>d.id===id).type==='tax'||ctx.data.find(d=>d.id===id).filterTypes?.includes('tax')));
-const fragment=fs.readFileSync('C:/Users/aleks/.codex/visualizations/2026/10/26/01a17813-fc63-7ab3-a7a1-468c076b25bd/silppuri-konsepti.html','utf8');
+const fragment=fs.readFileSync(path.join(root,'tmp/silppuri-konsepti.html'),'utf8');
 assert.ok(!fragment.includes('Takaisin valintoihin')&&!fragment.includes('class="sp-add '));
 assert.ok(fragment.includes('class="sp-card-open cursor-interaction"'));
 assert.ok(fragment.includes("selected.has(id)?'Poista paketista':'Silppuriin!'"));

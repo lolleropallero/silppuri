@@ -321,7 +321,7 @@ markup=markup.replace('<div class="sp-filters"','<p class="sp-threshold-note">Al
 markup=markup.replace('Sektorien osuudet näkyvät toimien lähdetiedoissa.', 'Sektorien osuudet näkyvät toimien lähdetiedoissa.</p><p>Määräaikaisten menojen aikaistetut lopetukset, pelkät menojen lykkäykset ja kertaluonteiset omaisuus- ja rahoitusvarasiirrot on rajattu pois. Indeksijäädytyksiä ei poisteta määräaikaisuuden perusteella: ne voivat jättää myöhempien maksujen pohjan alemmaksi. Työeläkejäädytyksen vaikutus kuitenkin hiipuu ajan myötä, ja puolustusmenojen myöhempi kasvutavoite voi kumota indeksisäästöä. Toimikohtaiset rajoitukset ovat lähdetiedoissa.')
 markup=markup.replace('<div class="sp-flow-graph">','<p class="sp-flow-empty" hidden>Ei vielä valittuja toimia.</p><div class="sp-flow-graph">',1)
 markup=markup.replace('Alle 20 milj. €/vuosi jäävät toimet on karsittu; avoimet arviot on merkitty.',
-                      'Mukana toimet, joiden arvio yltää 20 milj. euroon vuodessa; avoimet arviot on merkitty.')
+                      'Mukana toimet, joiden arvio yltää 20 milj. euroon vuodessa.')
 # Original annex prose remains in catalogue.json. The interface exclusively uses
 # the reviewed who/society/research fields, so do not embed unused duplicate text.
 runtime_catalogue=[{k:v for k,v in d.items() if k!='detail'} for d in catalogue]
@@ -333,6 +333,7 @@ script=script.replace('{}/*SOURCE_NOTES*/',json.dumps(compact_notes,ensure_ascii
 from curate_incidence import build_incidence
 incidence=build_incidence(catalogue)
 script=script.replace('{}/*INCIDENCE_DATA*/',json.dumps(incidence,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
+script=script.replace('/*PRESETS*/',(ROOT/'src/presets.js').read_text(encoding='utf8'))
 script=script.replace('/*INCIDENCE_ENGINE*/',(ROOT/'src/incidence.js').read_text(encoding='utf8'))
 script=script.replace('/*INCIDENCE_VIEW*/',(ROOT/'src/incidence-view.js').read_text(encoding='utf8'))
 script=script.replace('/*PIE_INTERACTION*/',(ROOT/'src/pie-interaction.js').read_text(encoding='utf8'))

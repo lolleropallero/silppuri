@@ -26,17 +26,17 @@ const fingerprint=()=>canonical(ctx.data.filter(d=>ctx.selected.has(d.id)).map(d
 const ids=new Set(actions.map(d=>d.id));ctx.knownIds=ids;
 // Classifications describe the chosen measures, not the payer/income incidence.
 const classification={health:'services',benefits:'benefits','cut-7-52':'work',income:'income',vat:'consumption',dividends:'wealth',corporate:'companies',
-  'cut-6-5':'mixed','cut-2-51':'benefits','cut-2-35':'services','cut-2-45':'services','tax-pension':'income','cut-4-16':'services','tax-household':'income','cut-3-18':'benefits'};
+  'cut-6-5':'indices','cut-1-6':'research','cut-7-24':'grants','cut-2-51':'benefits','cut-2-35':'services','cut-2-45':'services','tax-pension':'income','cut-4-16':'services','tax-household':'income','cut-3-18':'benefits'};
 for(const [id,profile] of Object.entries(classification))assert.equal(ctx.actionProfile(actions.find(d=>d.id===id)),profile,id);
 const measure=(flow,amount,extra={})=>({id:flow,type:'tax',report:'tax',flow,amount,...extra});
 assert.equal(ctx.packageSummary([measure('services',6000),...Array.from({length:60},()=>measure('earned',20))]).profile.name,'Omahoidon apostoli','euros beat card counts');
-assert.equal(ctx.packageSummary([measure('services',5000),measure('earned',5000)]).profile.name,'SILPPURI','ties have no forced winner');
-assert.equal(ctx.packageSummary([measure('services',5100),measure('earned',4900)]).profile.name,'SILPPURI','a narrow lead is mixed');
+assert.equal(ctx.packageSummary([measure('services',5000),measure('earned',5000)]).profile.name,'Hyvinvointivaltion saneeraaja','ties get a name for both themes');
+assert.equal(ctx.packageSummary([measure('services',5100),measure('earned',4900)]).profile.name,'Hyvinvointivaltion saneeraaja','a narrow lead keeps the same combined name');
 assert.equal(ctx.packageSummary([measure('services',100),measure('earned',null),measure('capital',0)]).profile.name,'Omahoidon apostoli','unpriced/zero options have no scoring weight');
 assert.equal(ctx.packageSummary([]).tone.id,'empty');
 assert.equal(ctx.packageSummary([measure('capital',null)]).story.id,'unknown');
 assert.equal(ctx.packageSummary([measure('services',-50)]).tone.id,'reverse');
-const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','SILPPURI'];
+const names=['Omahoidon apostoli','Leipäjonokummi','Muutosneuvottelija','Verokarhu','Vyönkiristäjä','Kansankomissaari','Näkymätön käsi','Indeksipakastaja','Tulevaisuuden panttaaja','Tukiviidakon raivaaja','SILPPURI'];
 ctx.expectedNames=names;assert.ok(run('expectedNames.every(name=>Object.values(packageProfiles).some(p=>p.name===name))'));
 const summaryText=ctx.shareCaption([measure('capital',30000)],'Porukan silppuri 🐾');
 assert.equal(summaryText,'Porukan silppuri 🐾\n\n30 miljardia kasassa. '+ctx.packageSummary([measure('capital',30000)]).tone.text);
@@ -99,6 +99,7 @@ ctx.window=host.window;ctx.window.addEventListener=(event,fn)=>listeners[event]=
 ctx.location=new URL('https://example.test/');
 ctx.history={replaceState:(_state,_unused,href)=>{ctx.location.href=href;}};
 ctx.shareDialog={open:false};ctx.nameDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
+ctx.presetDialog={open:true,close(){this.open=false;}};ctx.pendingPreset={id:'rich'};
 ctx.resetDialog={open:true,close(){this.open=false;}};
 run(read('src/share-ui.js').slice(read('src/share-ui.js').indexOf('function readSharedState()')));
 const own={...seed,name:'Oma paketti',selectedIds:['vat','health','cut-3-15']};
@@ -107,6 +108,8 @@ const ownSaved=store.get('silppuri:state:v1:/');
 const originalSharedLink=ctx.shareUrl({...seed,name:'Jaettu paketti',selectedIds:['corporate','income']},ctx.location.href);
 ctx.location.href=originalSharedLink;ctx.loadSharedLocation();
 assert.equal(ctx.resetDialog.open,false,'changing packages dismisses pending reset confirmation');
+assert.equal(ctx.presetDialog.open,false,'changing packages dismisses pending preset confirmation');
+assert.equal(ctx.pendingPreset,null,'a pending preset must not survive opening a different package');
 assert.equal(nodes.get('.sp-shared-session').hidden,false);
 for(const edit of [()=>ctx.search='yle',()=>ctx.sortOrder='asc',()=>ctx.includeLater=false,
   ()=>ctx.selected.add('tax-peat'),()=>ctx.selected.delete('corporate'),()=>ctx.packageName='Muokattu jaettu paketti']){

@@ -1,0 +1,239 @@
+{
+  "upper:other": {
+    "selectedIds": [
+      "cut-7-52"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 100,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 3
+    },
+    "unitSteps": {},
+    "cutPercents": {
+      "cut-7-52": 75
+    },
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "all-pay:other": {
+    "selectedIds": [
+      "cut-7-41",
+      "vat",
+      "income-index",
+      "income"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 3
+    },
+    "unitSteps": {
+      "income": 3
+    },
+    "cutPercents": {
+      "cut-7-41": 75
+    },
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "mixed:business": {
+    "selectedIds": [
+      "corporate",
+      "cut-7-41",
+      "cut-1-26",
+      "tax-diesel",
+      "cut-3-28",
+      "cut-1-42"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 50,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 2
+    },
+    "unitSteps": {
+      "corporate": 1
+    },
+    "cutPercents": {
+      "cut-1-26": 100,
+      "cut-7-41": 100
+    },
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "upper:business": {
+    "selectedIds": [
+      "income",
+      "income-index",
+      "dividends",
+      "tax-capital-low",
+      "tax-capital-high",
+      "tax-land-values",
+      "tax-land-min",
+      "tax-transfer-shares",
+      "tax-inheritance",
+      "fw-succession-abolish",
+      "sorsa-million-inheritance",
+      "fw-wealth-minimum",
+      "fw-dividend-withholding",
+      "fw-treaty-dividends",
+      "tax-forest",
+      "fw-property-funds",
+      "fw-deemed-cost",
+      "corporate",
+      "tax-entrepreneur-remove",
+      "cut-7-52",
+      "cut-1-55",
+      "cut-1-58"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 20,
+    "taxIncreasesPP": {
+      "income": 3,
+      "corporate": 3
+    },
+    "unitSteps": {
+      "income": 3,
+      "tax-capital-low": 3,
+      "tax-capital-high": 3,
+      "corporate": 3,
+      "tax-transfer-shares": 3,
+      "tax-inheritance": 3,
+      "tax-land-min": 3
+    },
+    "cutPercents": {
+      "cut-7-52": 15
+    },
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "mixed:other": {
+    "selectedIds": [
+      "cut-5-49",
+      "cut-5-56",
+      "cut-5-58",
+      "cut-2-20",
+      "cut-4-37",
+      "cut-2-26",
+      "cut-4-27",
+      "health",
+      "education",
+      "cut-2-70",
+      "cut-2-25",
+      "cut-4-34",
+      "cut-4-30",
+      "cut-2-74",
+      "cut-1-42",
+      "cut-2-77",
+      "cut-1-33",
+      "cut-7-41"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 50,
+    "taxIncreasesPP": {
+      "income": 1,
+      "corporate": 3
+    },
+    "unitSteps": {},
+    "cutPercents": {
+      "cut-2-26": 75,
+      "cut-2-70": 75,
+      "cut-2-77": 75,
+      "cut-5-58": 75,
+      "cut-7-41": 75
+    },
+    "dividendMode": "vm",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  },
+  "all-pay:business": {
+    "selectedIds": [
+      "cut-7-21",
+      "cut-3-68",
+      "cut-7-24",
+      "cut-1-69",
+      "vm-machine-fuel",
+      "cut-1-76",
+      "cut-3-27",
+      "corporate",
+      "cut-1-42",
+      "cut-4-19",
+      "tax-van",
+      "cut-4-26",
+      "cut-3-65",
+      "vat",
+      "cut-5-64",
+      "cut-4-24",
+      "cut-4-36",
+      "cut-1-30",
+      "tax-entrepreneur-remove",
+      "cut-2-9",
+      "cut-1-75",
+      "cut-3-28",
+      "cut-2-15",
+      "cut-5-67",
+      "cut-7-28",
+      "cut-1-33",
+      "cut-1-16",
+      "fw-interest",
+      "cut-2-65",
+      "cut-1-32",
+      "cut-1-41",
+      "tax-electric2",
+      "cut-5-49",
+      "cut-4-30",
+      "cut-2-34",
+      "cut-1-29",
+      "cut-2-27",
+      "tax-heat",
+      "cut-5-55",
+      "cut-2-13",
+      "cut-2-43",
+      "cut-4-35",
+      "income",
+      "sorsa-bank",
+      "cut-2-74",
+      "cut-5-52",
+      "cut-3-17",
+      "cut-7-52"
+    ],
+    "includeLater": false,
+    "yleCutPercent": 100,
+    "taxIncreasesPP": {
+      "income": 1,
+      "corporate": 1
+    },
+    "unitSteps": {
+      "income": 2,
+      "corporate": 2,
+      "tax-electric2": 1
+    },
+    "cutPercents": {
+      "cut-1-69": 15,
+      "cut-2-65": 15,
+      "cut-7-24": 15,
+      "cut-7-52": 15
+    },
+    "dividendMode": "abolish",
+    "fundingChoices": {
+      "yle": "keep-tax",
+      "farm": "save"
+    }
+  }
+}

@@ -7,12 +7,17 @@ const packageProfiles={
   consumption:{name:'Vyönkiristäjä',label:'Kulutusverotus'},
   wealth:{name:'Kansankomissaari',label:'Varallisuuden verotus'},
   companies:{name:'Näkymätön käsi',label:'Yritysten verot ja tuet'},
+  indices:{name:'Indeksipakastaja',label:'Laajat indeksijäädytykset'},
+  research:{name:'Tulevaisuuden panttaaja',label:'Tutkimusrahoitus'},
+  grants:{name:'Tukiviidakon raivaaja',label:'Avustukset'},
   mixed:{name:'SILPPURI',label:'Yhdistelmä'}
 };
 function actionProfile(d){
   // A payer group alone cannot distinguish, for example, student benefits from
   // university funding, or pension taxes from pension cuts and care charges.
-  if(['cut-6-5','cut-6-6','cut-6-7','cut-7-24','cut-7-12','cut-7-16','cut-1-5','cut-1-6','cut-1-7'].includes(d.id))return 'mixed';
+  if(['cut-6-5','cut-6-6','cut-6-7'].includes(d.id))return 'indices';
+  if(['cut-1-5','cut-1-6','cut-1-7'].includes(d.id))return 'research';
+  if(['cut-7-24','cut-7-12','cut-7-16'].includes(d.id))return 'grants';
   if(d.id==='tax-pension'||d.id==='tax-household')return 'income';
   if(d.id==='cut-1-75')return 'companies';
   if(d.flow==='students')return d.type==='tax'||['cut-2-32','cut-2-34','cut-2-35','cut-2-38','cut-2-39','cut-2-42'].includes(d.id)?'services':'benefits';
@@ -65,27 +70,78 @@ function packageDistribution(chosen,result,model){
   const missing=chosen.filter(d=>!covered.has(d.id));
   return {money,services,work,missing};
 }
-function packageStory(profile,distribution,total,chosen){
-  const {money,services,work}=distribution;
-  const active=s=>!['none','zero'].includes(s.state);
-  let primary=profile==='services'&&active(services)?services:profile==='work'&&active(work)?work:
-    active(money)?money:active(services)?services:active(work)?work:money;
-  let key=primary.state,copy;
-  if(!chosen.length)key='empty';
-  else if(total<0)key='reverse';
-  else if(!active(primary))key=distribution.missing.length?'unknown':'zero';
-  else if(money.state==='upper'&&services.state==='lower')key='cash-upper-services-lower';
-  else if(money.state==='lower'&&services.state==='upper')key='cash-lower-services-upper';
-  else if(money.state==='uncertain'&&services.state==='lower')key='cash-uncertain-services-lower';
-  else if(money.state==='lower'&&services.state==='lower')key='double-lower';
-  else if(primary===money&&money.state==='lower'&&money.upperSpared)key='lower-spared-upper';
-  else if(primary===money&&money.state==='upper'&&money.onlyUpper)key='upper-only';
-  else if(primary===money&&money.state==='upper'&&money.lowerSpared)key='upper-spared-lower';
-  else if(key==='even'&&primary.channel!=='money')key='even-'+primary.channel;
-  else if(key==='uncertain'&&profile==='companies')key='uncertain-companies';
-  const voice=profile==='services'&&primary.channel==='money'?'fees':profile;
-  copy=shareEditorial[key]?.[voice]||shareSpecialEditorial[key]||shareSpecialEditorial.unknown;
-  return {id:key,channel:primary.channel,text:copy[0],body:copy[1]};
+function packageComponents(chosen,result,model){
+  const entries=new Map((result.entries||[]).map(e=>[e.id,e])),groups=new Map();
+  for(const d of chosen){
+    if(!Number.isFinite(d.amount)||d.amount<=0)continue;
+    const entry=entries.get(d.id),profile=actionProfile(d);
+    const channel=entry?(['cash','indirect'].includes(entry.channel)?'money':entry.channel):'unknown';
+    const id=profile+'-'+channel;
+    if(!groups.has(id))groups.set(id,{id,profile,channel,amount:0,chosen:[],entries:[]});
+    const group=groups.get(id);group.amount+=d.amount;group.chosen.push(d);if(entry)group.entries.push(entry);
+  }
+  const components=[...groups.values()].sort((a,b)=>b.amount-a.amount||a.id.localeCompare(b.id));
+  const positive=components.reduce((n,c)=>n+c.amount,0),channelTotals={};
+  for(const c of components)channelTotals[c.channel]=(channelTotals[c.channel]||0)+c.amount;
+  for(const c of components){
+    const serviceTotal=c.channel==='services'?c.entries.reduce((n,e)=>n+e.mid.reduce((sum,v,i)=>sum+v*model.consumptionUnits[i]/1e6,0),0):0;
+    c.burden=shareBurden(c.entries,c.channel,model,serviceTotal);
+    c.share=c.amount/positive;
+    // Fiscal weights select topics, never add service losses to cash burdens.
+    // A small token measure cannot recast a large package. A substantial part
+    // of the cash/work/service channel can still speak beside a large freeze.
+    c.material=c===components[0]||c.share>=.1||
+      (c.channel!=='unknown'&&c.share>=.05&&c.amount>=channelTotals[c.channel]*.25);
+  }
+  return components;
+}
+function packageProfile(weights){
+  const ranked=Object.entries(weights).filter(([,n])=>n>0).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  if(!ranked.length)return {id:'mixed',voice:'mixed',...packageProfiles.mixed};
+  const positive=ranked.reduce((n,[,amount])=>n+amount,0),[leader,amount]=ranked[0],runner=ranked[1];
+  if(!runner||amount>=positive*.65||runner[1]<positive*.2)return {id:leader,voice:leader,...packageProfiles[leader]};
+  const pair=[leader,runner[0]],id=[...pair].sort().join('+');
+  return {id,voice:'mixed',name:shareProfilePairs[id]||packageProfiles[leader].name,
+    label:pair.map(key=>packageProfiles[key].label).join(' ja ')};
+}
+function compositionFacts(material,distribution,components){
+  const parts=material.map(c=>({profile:c.profile,channel:c.channel,state:c.burden.state}));
+  const business=material.filter(c=>c.profile==='companies').flatMap(c=>c.chosen);
+  const taxes=business.some(d=>d.type==='tax'),cuts=business.some(d=>d.type==='cut');
+  const businessClause=taxes&&cuts?'markkinoiden näkymätön käsi saa vähemmän tukirahaa ja suuremman verolaskun':taxes?'markkinoiden näkymättömälle kädelle ojennetaan näkyvä verolasku':'markkinoiden näkymätön käsi saa vähemmän taskurahaa valtiolta';
+  const labels={services:'palveluleikkaukset',benefits:'etuusleikkaukset',work:'julkisen alan henkilöstösäästöt',income:'ansiotuloverot',consumption:'kulutusverot',wealth:'omaisuus- ja pääomaverot',
+    companies:taxes&&cuts?'yritysverot ja tukileikkaukset':taxes?'yritysverot':'yritystukien leikkaukset',indices:'indeksijäädytykset',research:'tutkimusrahoituksen järjestelyt',grants:'avustusleikkaukset',mixed:'muut sopeutustoimet'};
+  const join=words=>words.length<2?words[0]||'':words.slice(0,-1).join(', ')+' sekä '+words.at(-1);
+  const subject=items=>join([...new Set(items.map(p=>p.profile==='services'&&p.channel==='money'?'palvelumaksujen korotukset':labels[p.profile]))]);
+  const upperFirst=s=>s?s[0].toLocaleUpperCase('fi')+s.slice(1):'';
+  const has=(profile,state)=>parts.some(p=>p.profile===profile&&p.state===state);
+  const rest=(profiles=[],states=[])=>{
+    const items=parts.filter(p=>!profiles.includes(p.profile)&&!states.includes(p.state)),clauses=[];
+    if(items.some(p=>p.profile==='companies'))clauses.push(businessClause);
+    const rest=items.filter(p=>p.profile!=='companies');
+    for(const state of ['lower','middle','upper','other']){
+      const group=rest.filter(p=>state==='other'?!['lower','middle','upper'].includes(p.state):p.state===state);
+      if(group.length)clauses.push(subject(group)+(state==='lower'?' kiristävät alempien tuloryhmien arkea':state==='middle'?' osuvat tulotaulukon keskelle':state==='upper'?' marssivat suurituloisten kukkarolle':' kasvattavat säästöpottia'));
+    }
+    return join(clauses);
+  };
+  const lower=parts.filter(p=>p.state==='lower'),upper=parts.filter(p=>p.state==='upper'),middle=parts.filter(p=>p.state==='middle');
+  const positive=components.reduce((n,c)=>n+c.amount,0);
+  const missingWeight=distribution.missing.reduce((n,d)=>n+(Number.isFinite(d.amount)?Math.max(0,d.amount):0),0);
+  return {parts,rest,businessClause,business:business.length>0,indices:material.some(c=>c.profile==='indices'),research:material.some(c=>c.profile==='research'),grants:material.some(c=>c.profile==='grants'),
+    lowServices:has('services','lower')&&parts.some(p=>p.profile==='services'&&p.channel==='services'&&p.state==='lower'),lowConsumption:has('consumption','lower'),lowBenefits:has('benefits','lower'),
+    lower:upperFirst(subject(lower)),lowerCount:lower.length,upper:upperFirst(subject(upper)),upperLower:subject(upper),middle:upperFirst(subject(middle)),
+    balanced:distribution.money.deciles.length===10&&distribution.money.deciles.every(r=>r.low>1e-9)&&Math.max(...distribution.money.deciles.map(r=>r.mid))-Math.min(...distribution.money.deciles.map(r=>r.mid))<=Math.max(...distribution.money.deciles.map(r=>r.mid))*.35,all:upperFirst(subject(parts)),otherClause:rest([],['lower','upper']),
+    netLower:missingWeight<positive*.1&&distribution.money.state==='lower',netUpper:missingWeight<positive*.1&&distribution.money.state==='upper'};
+}
+function packageStory(profile,distribution,total,chosen,components=[]){
+  const material=components.filter(c=>c.material);
+  const primary=distribution[profile==='services'?'services':profile==='work'?'work':'money'];
+  const special=!chosen.length?'empty':total<0?'reverse':!components.length?(chosen.some(d=>!Number.isFinite(d.amount))?'unknown':'zero'):null;
+  if(special){const copy=shareSpecialEditorial[special];return {id:special,channel:primary.channel,text:copy[0],body:copy[1],parts:[]};}
+  const facts=compositionFacts(material,distribution,components),id=shareNarrativeKey(facts);
+  const body=shareNarratives[id](facts);
+  return {id,channel:primary.channel,text:body.split('. ')[0],body,parts:facts.parts};
 }
 function packageTone(total,hasChoices=true){
   // Amounts are in millions. Keep both escalating subtitles below the
@@ -103,18 +159,15 @@ function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),
     total+=d.amount;
     if(d.amount>0)weights[actionProfile(d)]+=d.amount;
   }
-  const ranked=Object.entries(weights).sort((a,b)=>b[1]-a[1]),positive=ranked.reduce((sum,[,n])=>sum+n,0);
-  // Require a majority of the positive euros and a clear lead. Small cards do
-  // not outvote a large measure; zero and unquantified options earn no weight.
-  const [leader,leadingAmount]=ranked[0],second=ranked[1][1];
-  const id=positive>0&&leadingAmount>=positive*.5&&leadingAmount-second>=positive*.1?leader:'mixed';
+  const profile=packageProfile(weights);
   const distribution=packageDistribution(chosen,result,model);
-  const story=packageStory(id,distribution,total,chosen);
+  const components=packageComponents(chosen,result,model);
+  const story=packageStory(profile.voice,distribution,total,chosen,components);
   const tone=packageTone(total,chosen.length>0);
   const biggest=chosen.filter(d=>Number.isFinite(d.amount)&&d.amount>0).sort((a,b)=>b.amount-a.amount||a.id.localeCompare(b.id))[0];
   const title=biggest?.title?.trim().replace(/[.!?]+$/,'');
   const largest=title?'Suurin siivu: '+title+' ('+shareTotal(biggest.amount)+').':'';
-  return {total,weights,profile:{id,...packageProfiles[id]},tone,story,distribution,description:story.body,largest};
+  return {total,weights,profile,tone,story,distribution,components,description:story.body,largest};
 }
 function shareTotal(amount,words=false){
   const billions=Math.abs(amount)>=1000,value=billions?amount/1000:amount;
