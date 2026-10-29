@@ -794,10 +794,12 @@
     if(d.report==='cut')links.splice(1,0,{url:urls.cut,label:d.memo&&d.memo!=='Ei taustamuistiota'?'VM 2026:44 · muistio: '+d.memo:'VM 2026:44 · menokartoitus'});
     const seenUrls=new Set();
     q('.sp-impact-links').innerHTML=(e.scope?'<p class="sp-research-scope">'+esc(e.scope)+'</p>':'')+links.filter(s=>{if(seenUrls.has(s.url))return false;seenUrls.add(s.url);return true;}).map(sourceMarkup).join('');
-    const conflicts=conflictsFor(d);let warning=q('.sp-overlap');if(!warning){warning=document.createElement('p');warning.className='sp-overlap';q('.sp-impact-sources').before(warning);}
+    const conflicts=conflictsFor(d),replacement=q('.sp-replacement');
+    replacement.hidden=selected.has(id)||!conflicts.length;
+    replacement.innerHTML=replacement.hidden?'':'<strong>Korvaa paketissa:</strong><ul>'+conflicts.map(x=>'<li>'+esc(x.title)+'</li>').join('')+'</ul><p>Näiden arvioissa on samoja menoja tai veropohjaa.</p>';
+    let warning=q('.sp-overlap');if(!warning){warning=document.createElement('p');warning.className='sp-overlap';q('.sp-impact-sources').before(warning);}
     const possible=possibleOverlapsFor(d);
-    const replacement=!selected.has(id)&&conflicts.length?'Korvaa paketissa: '+conflicts.map(x=>x.title).join('; ')+'. Näiden arvioissa on samoja menoja tai veropohjaa. ':'';
-    warning.textContent=replacement+possible.map(o=>'Päällekkäisyys: '+data.find(x=>x.id===o.id).title+'. '+o.note).join(' ');
+    warning.textContent=possible.map(o=>'Päällekkäisyys: '+data.find(x=>x.id===o.id).title+'. '+o.note).join(' ');
     warning.hidden=!warning.textContent;
     q('.sp-confirm-label').textContent=selected.has(id)?'Poista paketista':'Silppuriin!';
     q('.sp-confirm-icon').hidden=selected.has(id);

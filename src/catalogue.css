@@ -129,6 +129,11 @@
 #silppuri-demo .sp-calculation-bounds{background:var(--sp-paper);padding:2px 12px;border-radius:6px;font-variant-numeric:tabular-nums;white-space:normal}
 #silppuri-demo .sp-stepper + .sp-control-label{margin-top:14px}
 #silppuri-demo .sp-overlap{font-size:12px;background:var(--sp-lime);padding:12px;border-radius:6px;margin-top:16px}
+#silppuri-demo .sp-replacement{font-size:18px;font-weight:700;line-height:1.4;color:light-dark(#632b00,#ffe3b3);background:light-dark(#ffe0a3,#50320d);border-left:5px solid light-dark(#bd5700,#ffb347);padding:16px;border-radius:8px;margin:0 0 20px;overflow-wrap:anywhere}
+#silppuri-demo .sp-replacement[hidden]{display:none}
+#silppuri-demo .sp-replacement ul{margin:8px 0 12px;padding-left:22px}
+#silppuri-demo .sp-replacement li+li{margin-top:6px}
+#silppuri-demo .sp-replacement p{margin:0;font-size:14px;font-weight:400}
 #silppuri-demo .sp-package-overlap{font-size:12px;line-height:1.5;margin-top:12px}
 #silppuri-demo .sp-package-overlap p{margin:10px 0}
 #silppuri-demo .sp-flow-money{white-space:normal;overflow-wrap:normal}
