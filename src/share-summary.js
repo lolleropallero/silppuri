@@ -134,12 +134,32 @@ function compositionFacts(material,distribution,components){
     balanced:distribution.money.deciles.length===10&&distribution.money.deciles.every(r=>r.low>1e-9)&&Math.max(...distribution.money.deciles.map(r=>r.mid))-Math.min(...distribution.money.deciles.map(r=>r.mid))<=Math.max(...distribution.money.deciles.map(r=>r.mid))*.35,all:upperFirst(subject(parts)),otherClause:rest([],['lower','upper']),
     netLower:missingWeight<positive*.1&&distribution.money.state==='lower',netUpper:missingWeight<positive*.1&&distribution.money.state==='upper'};
 }
+function packageScenario(chosen,total,distribution,components){
+  const ids=new Set(chosen.filter(d=>Number.isFinite(d.amount)&&d.amount>0).map(d=>d.id));
+  const amount=profile=>components.filter(c=>c.profile===profile).reduce((n,c)=>n+c.amount,0);
+  const priced=chosen.every(d=>Number.isFinite(d.amount)&&d.amount>0);
+  // An owner-friendly package must actually leave capital and company measures
+  // alone; a token omission or an unpriced tax is not enough.
+  if(priced&&total>20000&&distribution.money.state==='lower'&&
+    chosen.every(d=>['services','benefits','work','consumption','mixed'].includes(actionProfile(d)))&&
+    amount('work')>=total*.3&&amount('services')+amount('benefits')>=total*.25&&
+    amount('consumption')>=total*.1&&chosen.filter(d=>d.type==='cut').reduce((n,d)=>n+d.amount,0)>=total*.65)return 'nightwatch';
+  // These anchors support the specific promises in the pension paragraph.
+  // The catalogue has no age-based incidence model: the text does not turn
+  // all sote costs or all income taxes into pensioners' losses.
+  if(priced&&total>=9500&&total<=10500&&
+    ['cut-3-34','cut-3-36','cut-3-40','cut-3-51','tax-pension','health','income','cut-3-22','cut-3-23'].every(id=>ids.has(id))&&
+    chosen.every(d=>['services','benefits','income'].includes(actionProfile(d)))&&
+    chosen.filter(d=>d.flow==='pension').reduce((n,d)=>n+d.amount,0)>=total*.3&&
+    amount('services')>=total*.25&&amount('income')>=total*.2)return 'pension';
+  return null;
+}
 function packageStory(profile,distribution,total,chosen,components=[]){
   const material=components.filter(c=>c.material);
   const primary=distribution[profile==='services'?'services':profile==='work'?'work':'money'];
   const special=!chosen.length?'empty':total<0?'reverse':!components.length?(chosen.some(d=>!Number.isFinite(d.amount))?'unknown':'zero'):null;
   if(special){const copy=shareSpecialEditorial[special];return {id:special,channel:primary.channel,text:copy[0],body:copy[1],parts:[]};}
-  const facts=compositionFacts(material,distribution,components),id=shareNarrativeKey(facts);
+  const facts=compositionFacts(material,distribution,components),id=packageScenario(chosen,total,distribution,components)||shareNarrativeKey(facts);
   const body=shareNarratives[id](facts);
   return {id,channel:primary.channel,text:body.split('. ')[0],body,parts:facts.parts};
 }
@@ -159,11 +179,13 @@ function packageSummary(chosen,result=calculateIncidence(chosen,incidenceModel),
     total+=d.amount;
     if(d.amount>0)weights[actionProfile(d)]+=d.amount;
   }
-  const profile=packageProfile(weights);
+  let profile=packageProfile(weights);
   const distribution=packageDistribution(chosen,result,model);
   const components=packageComponents(chosen,result,model);
   const story=packageStory(profile.voice,distribution,total,chosen,components);
-  const tone=packageTone(total,chosen.length>0);
+  let tone=packageTone(total,chosen.length>0);
+  const scenario=shareScenarioEditorial[story.id];
+  if(scenario){profile={id:story.id,voice:profile.voice,name:scenario.name,label:scenario.label};tone={id:story.id,text:scenario.subtitle};}
   const biggest=chosen.filter(d=>Number.isFinite(d.amount)&&d.amount>0).sort((a,b)=>b.amount-a.amount||a.id.localeCompare(b.id))[0];
   const title=biggest?.title?.trim().replace(/[.!?]+$/,'');
   const largest=title?'Suurin siivu: '+title+' ('+shareTotal(biggest.amount)+').':'';

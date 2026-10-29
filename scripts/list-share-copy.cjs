@@ -3,6 +3,8 @@ const {ctx,evaluate,run}=require('./summary-runtime.cjs');
 const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
 run(read('src/presets.js'));
 const titles={
+ nightwatch:'Yli 20 miljardin yövartijavaltio, omistajien edut suojassa',
+ pension:'Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot',
  'services-consumption-counter':'Palvelut ja kulutus osuvat pienituloisiin; myös ylempiä tuloryhmiä kuormitetaan',
  'services-consumption-benefits':'Palvelut, etuudet ja kulutus osuvat samaan pienituloiseen ryhmään',
  'services-consumption':'Palvelut ja kulutus osuvat pienituloisiin',
@@ -21,15 +23,18 @@ const titles={
 };
 const money=n=>(n/1000).toLocaleString('fi-FI',{minimumFractionDigits:2,maximumFractionDigits:2})+' mrd. €';
 const out=['# Silppurin nimet, alaotsikot ja tiivistelmät','',
- 'Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-share-copy.cjs`. Hakasulut ovat alla tekstipohjien muuttuvia kohtia; ne eivät näy käyttäjälle. Toimien nimet ja yhdistävät sivulauseet määräytyvät valituista korteista ja tulokymmenysarvioista. Jokaiselle 19 tavalliselle tiivistelmätyypille sekä yhdeksälle vaihtoehtoiselle lopulle ja kuudelle yritystoimien mukaiselle tekstiversiolle on testattu 8–12 miljardin paketti oikeista korteista. Tyhjä, nolla, puuttuva euroarvio ja negatiivinen kokonaismäärä ovat erikoistapauksia.','',
+ 'Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-share-copy.cjs`. Hakasulut ovat alla tekstipohjien muuttuvia kohtia; ne eivät näy käyttäjälle. Toimien nimet ja yhdistävät sivulauseet määräytyvät valituista korteista ja tulokymmenysarvioista. Kaikille 20 alle 20 miljardin tiivistelmätyypille sekä yhdeksälle vaihtoehtoiselle lopulle ja kuudelle yritystoimien mukaiselle tekstiversiolle on testattu 8–12 miljardin paketti oikeista korteista. Yövartijavaltio testataan erikseen yli 20 miljardissa. Tyhjä, nolla, puuttuva euroarvio ja negatiivinen kokonaismäärä ovat erikoistapauksia.','',
  '## Valmiit paketit','', '| Nimi | Nykyinen summa | Julkaisun luonnehdinta |','|---|---:|---|'];
 for(const p of run('packagePresets')){const s=evaluate(p.model).summary;out.push('| '+[p.name,money(s.total),s.profile.name].join(' | ')+' |');}
 out.push('','## Julkaisun nimet','','Paketin oma otsikko on käyttäjän kirjoittama nimi. Alla ovat sen alle valittavat luonnehdinnat.','','| Nimi | Painotus |','|---|---|');
 for(const p of Object.values(run('packageProfiles')))out.push('| '+p.name+' | '+p.label+' |');
 for(const [key,value] of Object.entries(run('shareProfilePairs')))out.push('| '+value+' | '+key.split('+').map(k=>run('packageProfiles')[k].label).join(' + ')+' |');
+for(const p of Object.values(run('shareScenarioEditorial')))out.push('| '+p.name+' | '+p.label+' |');
 out.push('','Suurin teema antaa nimen, jos sen osuus on vähintään 65 % tai toiseksi suurin jää alle 20 %:iin. Muuten käytetään kahden suurimman teeman yhdistelmänimeä, jos sellainen on yllä; muissa yhdistelmissä suurimman teeman nimeä. Nollan ja puuttuvan euroarvion toimet eivät kasvata painoja.','','## Alaotsikot','','| Tilanne | Alaotsikko |','|---|---|');
 const thresholds={empty:'Ei valittuja toimia',zero:'0 €',reverse:'Alle 0 €',rookie:'Yli 0 mutta alle 5 mrd. €',under:'5 – alle 9,5 mrd. €',target:'9,5–10,5 mrd. €',over:'Yli 10,5 – 15 mrd. €',heavy:'Yli 15 – alle 17,5 mrd. €',extreme:'17,5 – alle 20 mrd. €',demolition:'Vähintään 20 mrd. €'};
 for(const [id,text] of Object.entries(run('shareGoalEditorial')))out.push('| '+thresholds[id]+' | '+text+' |');
+for(const p of Object.values(run('shareScenarioEditorial')))out.push('| '+p.label+' | '+p.subtitle+' |');
+out.push('','Tilannekohtaiset nimet ja alaotsikot valitaan korteista, eivät valmispaketin nimestä. Yövartijavaltio edellyttää yli 20 miljardia, vähintään 65 % menoleikkauksia, vähintään 30 % henkilöstötoimia, vähintään 25 % palvelu- ja etuustoimia sekä vähintään 10 % kulutusveroja. Rahavaikutuksen pitää painottua pienituloisiin, eikä mukana saa olla pääoma-, yritys- tai ansiotuloverotoimia tai laajoja yrityksiinkin ulottuvia indeksijäädytyksiä.','','Eläketeksti edellyttää 9,5–10,5 miljardia sekä työeläkkeiden ja kansaneläkkeiden jäädytyksiä, takuueläkkeen poistamista, eläkeläisten asumistukimuutosta, eläke- ja ansiotuloveroja, lääkeomavastuun ja peruskorvauksen muutoksia sekä hyvinvointialueiden indeksijäädytystä. Eläketoimien osuus on vähintään 30 %, palvelujen 25 % ja ansiotuloverojen 20 %. Muut merkittävät painotukset palauttavat tavallisen tiivistelmän. Ikäryhmittäistä eurolaskelmaa ei ole: koko sote- tai tuloverosummaa ei lueta eläkeläisten maksettavaksi.');
 const base={upper:'[ylempiin tuloryhmiin painottuvat toimet]',upperLower:'[ylempiin tuloryhmiin painottuvat toimet]',lower:'[alempiin tuloryhmiin painottuvat toimet]',middle:'[keskimmäisiin tuloryhmiin painottuvat toimet]',all:'[paketin keskeiset toimet]',otherClause:'',rest:()=>'',businessClause:'[yritystoimien kuvaus]',netLower:false,netUpper:false,lowBenefits:false};
 const fixtures=JSON.parse(read('scripts/fixtures/summary-packages.json'));
 out.push('','## Kaikki tiivistelmäpohjat','','Näissä pohjissa ei ole muita merkittäviä teemoja kuvaavaa sivulausetta. Alempana on myös kunkin pohjan versio, jossa sellainen on mukana. Tavallinen tiivistelmä on yksi tilanteeseen kirjoitettu kappale; erillisiä toimikohtaisia vitsikappaleita ei yhdistetä.');

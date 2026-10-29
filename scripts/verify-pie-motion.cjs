@@ -43,8 +43,9 @@ assert.equal(q('.sp-chart').style.aspectRatio,normalAspect,'focusing does not ch
 const inFlight=outer('large-a');assert.ok(inFlight>normalA);assert.ok(outer('large-b')<normalB);
 const normalRing=normal.find(p=>p.ring===1).inner;
 const movingRing=pose().find(p=>p.ring===1).inner;
-assert.ok(movingRing>normalRing,'the outer ring moves out during focus');
-assert.equal(q('.sp-tracks').paths[1].attrs.d,ctx.slice(0,1,movingRing+10,movingRing),'track and slices move together');
+assert.equal(movingRing,normalRing,'focus keeps turns on the same hole');
+assert.equal(q('.sp-tracks').paths.length,1,'only one background track, even above 10bn');
+assert.equal(q('.sp-tracks').paths[0].attrs.d,ctx.slice(0,1,movingRing+10,movingRing));
 assert.equal(frames.size,1);
 const sameNode=pose()[0].path;
 ctx.drawPie(chosen); // Equivalent to the saved-state echo's draw during render().

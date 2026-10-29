@@ -1,16 +1,19 @@
 # Silppurin nimet, alaotsikot ja tiivistelmät
 
-Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-share-copy.cjs`. Hakasulut ovat alla tekstipohjien muuttuvia kohtia; ne eivät näy käyttäjälle. Toimien nimet ja yhdistävät sivulauseet määräytyvät valituista korteista ja tulokymmenysarvioista. Jokaiselle 19 tavalliselle tiivistelmätyypille sekä yhdeksälle vaihtoehtoiselle lopulle ja kuudelle yritystoimien mukaiselle tekstiversiolle on testattu 8–12 miljardin paketti oikeista korteista. Tyhjä, nolla, puuttuva euroarvio ja negatiivinen kokonaismäärä ovat erikoistapauksia.
+Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-share-copy.cjs`. Hakasulut ovat alla tekstipohjien muuttuvia kohtia; ne eivät näy käyttäjälle. Toimien nimet ja yhdistävät sivulauseet määräytyvät valituista korteista ja tulokymmenysarvioista. Kaikille 20 alle 20 miljardin tiivistelmätyypille sekä yhdeksälle vaihtoehtoiselle lopulle ja kuudelle yritystoimien mukaiselle tekstiversiolle on testattu 8–12 miljardin paketti oikeista korteista. Yövartijavaltio testataan erikseen yli 20 miljardissa. Tyhjä, nolla, puuttuva euroarvio ja negatiivinen kokonaismäärä ovat erikoistapauksia.
 
 ## Valmiit paketit
 
 | Nimi | Nykyinen summa | Julkaisun luonnehdinta |
 |---|---:|---|
 | Rikkaat talkoisiin | 9,99 mrd. € | Verokomissaari |
+| Keskuskomitea | 9,95 mrd. € | Muutosneuvottelija |
 | Kannustinpaketti | 10,01 mrd. € | Turvaverkon purkaja |
 | Kaikille paha mieli | 10,00 mrd. € | Omavastuun arkkitehti |
 | Yritykset silppuriin | 10,00 mrd. € | Pääoman aktivointimalli |
 | Elintaso silppuriin | 10,01 mrd. € | Palkansaajan painajainen |
+| Yövartijavaltio | 20,25 mrd. € | Pääoman henkivartija |
+| Eläkepäivät pilalla | 9,94 mrd. € | Eläkepommin purkaja |
 
 ## Julkaisun nimet
 
@@ -37,6 +40,8 @@ Paketin oma otsikko on käyttäjän kirjoittama nimi. Alla ovat sen alle valitta
 | Pääoman aktivointimalli | Yritysten verot ja tuet + Varallisuuden verotus |
 | Arjen ankeuttaja | Etuusleikkaukset + Kulutusverotus |
 | Palkansaajan painajainen | Kulutusverotus + Ansiotuloverotus |
+| Pääoman henkivartija | Yli 20 miljardia omistajien etuihin koskematta |
+| Eläkepommin purkaja | Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot |
 
 Suurin teema antaa nimen, jos sen osuus on vähintään 65 % tai toiseksi suurin jää alle 20 %:iin. Muuten käytetään kahden suurimman teeman yhdistelmänimeä, jos sellainen on yllä; muissa yhdistelmissä suurimman teeman nimeä. Nollan ja puuttuvan euroarvion toimet eivät kasvata painoja.
 
@@ -54,12 +59,91 @@ Suurin teema antaa nimen, jos sen osuus on vähintään 65 % tai toiseksi suurin
 | Yli 15 – alle 17,5 mrd. € | Lähti vähän kantavaa seinää. |
 | 17,5 – alle 20 mrd. € | Sammutusnappi meni mukana. |
 | Vähintään 20 mrd. € | Budjetti loppui. Jumala armahtaa, Silppuri ei. |
+| Yli 20 miljardia omistajien etuihin koskematta | Budjetti loppui. Jumala armahtaa, Silppuri ei. |
+| Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot | Kymppi kasassa. Ansaitut eläkepäivät peruttu. |
+
+Tilannekohtaiset nimet ja alaotsikot valitaan korteista, eivät valmispaketin nimestä. Yövartijavaltio edellyttää yli 20 miljardia, vähintään 65 % menoleikkauksia, vähintään 30 % henkilöstötoimia, vähintään 25 % palvelu- ja etuustoimia sekä vähintään 10 % kulutusveroja. Rahavaikutuksen pitää painottua pienituloisiin, eikä mukana saa olla pääoma-, yritys- tai ansiotuloverotoimia tai laajoja yrityksiinkin ulottuvia indeksijäädytyksiä.
+
+Eläketeksti edellyttää 9,5–10,5 miljardia sekä työeläkkeiden ja kansaneläkkeiden jäädytyksiä, takuueläkkeen poistamista, eläkeläisten asumistukimuutosta, eläke- ja ansiotuloveroja, lääkeomavastuun ja peruskorvauksen muutoksia sekä hyvinvointialueiden indeksijäädytystä. Eläketoimien osuus on vähintään 30 %, palvelujen 25 % ja ansiotuloverojen 20 %. Muut merkittävät painotukset palauttavat tavallisen tiivistelmän. Ikäryhmittäistä eurolaskelmaa ei ole: koko sote- tai tuloverosummaa ei lueta eläkeläisten maksettavaksi.
 
 ## Kaikki tiivistelmäpohjat
 
 Näissä pohjissa ei ole muita merkittäviä teemoja kuvaavaa sivulausetta. Alempana on myös kunkin pohjan versio, jossa sellainen on mukana. Tavallinen tiivistelmä on yksi tilanteeseen kirjoitettu kappale; erillisiä toimikohtaisia vitsikappaleita ei yhdistetä.
 
-### 1. Palvelut ja kulutus osuvat pienituloisiin; myös ylempiä tuloryhmiä kuormitetaan
+### 1. Yli 20 miljardin yövartijavaltio, omistajien edut suojassa
+
+`nightwatch`
+
+> Hyvinvointivaltio päätyi silppuriin, mutta omistamisen ilo säilyi koskemattomana. Julkisen alan palkoista ja etuuksista leikataan, palveluista vetäydytään ja kuluttajalta kerätään loppurahat. Pääomat ja yritystuet saavat valtiolta sen ainoan jäljelle jääneen lämpimän halauksen. Pienituloiselle jää suhteessa raskain rahalasku; omistava luokka saa viimein valtion, joka tietää paikkansa.
+
+<details>
+<summary>Oikeista korteista koottu testipaketti: 20,25 mrd. €</summary>
+
+**Pääoman henkivartija** — Budjetti loppui. Jumala armahtaa, Silppuri ei.
+
+> Hyvinvointivaltio päätyi silppuriin, mutta omistamisen ilo säilyi koskemattomana. Julkisen alan palkoista ja etuuksista leikataan, palveluista vetäydytään ja kuluttajalta kerätään loppurahat. Pääomat ja yritystuet saavat valtiolta sen ainoan jäljelle jääneen lämpimän halauksen. Pienituloiselle jää suhteessa raskain rahalasku; omistava luokka saa viimein valtion, joka tietää paikkansa.
+
+| Valittu kortti säädöillä | Milj. € |
+|---|---:|
+| Vapaan sivistystyön valtionrahoitus pois | 204 |
+| Aikuisten ammattikoulutuksesta −300 miljoonaa | 300 |
+| Korkeakoulujen indeksikorotukset pois | 348 |
+| Korkeakoulujen opintotuki kokonaan lainaksi | 536,87 |
+| Lapsilisä kokonaan pois | 1 165,05 |
+| Eläkeläiset yleisen asumistuen piiriin | 280,86 |
+| Työeläkkeiden indeksit jäihin 2028–2031 | 2 039,71 |
+| Perusturvaetuuksien indeksit jäihin 2028–2031 | 992,83 |
+| Varsinainen kehitysyhteistyö asteittain pois | 220 |
+| Kuntien peruspalvelujen indeksikorotukset pois | 390 |
+| Julkisen sektorin palkoista −65 % | 10 140,54 |
+| Kaikki ALV-kannat 25,5 prosenttiin | 2 322 |
+| Vakuutusmaksuveroa +3 prosenttiyksikköä | 141 |
+| Tupakkaveroa lisää asteittain | 41 |
+| Ajoneuvon perusveroa +300 euroa vuodessa | 690 |
+| Liikennepolttoaineiden veroa +3 €/MWh | 93 |
+| Yleistä sähköveroa +3 €/MWh | 108 |
+| Autoveroa +3 prosenttiyksikköä, myös sähköautoille | 150 |
+| Alkoholiveroa +10 % | 85 |
+
+Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `nightwatch`.
+
+</details>
+
+### 2. Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot
+
+`pension`
+
+> Ansaitut eläkepäivät vaihtuivat valtion säästöpäiviksi. Indeksit jäädytetään, takuueläke katoaa ja asumistuki kutistuu. Lääkkeistä ja hoidosta säästetään juuri kun niitä alkaa tarvita. Pienellä eläkkeellä pärjäämisestä tehdään kannustinloukku ilman ulospääsyä; suuremmista eläkkeistä ja palkoista otetaan lisää veroa. Sukupolvisopimuksen pienellä präntätty ehto löytyi: voimassa vain niin kauan kuin et ehdi eläkkeelle.
+
+<details>
+<summary>Oikeista korteista koottu testipaketti: 9,94 mrd. €</summary>
+
+**Eläkepommin purkaja** — Kymppi kasassa. Ansaitut eläkepäivät peruttu.
+
+> Ansaitut eläkepäivät vaihtuivat valtion säästöpäiviksi. Indeksit jäädytetään, takuueläke katoaa ja asumistuki kutistuu. Lääkkeistä ja hoidosta säästetään juuri kun niitä alkaa tarvita. Pienellä eläkkeellä pärjäämisestä tehdään kannustinloukku ilman ulospääsyä; suuremmista eläkkeistä ja palkoista otetaan lisää veroa. Sukupolvisopimuksen pienellä präntätty ehto löytyi: voimassa vain niin kauan kuin et ehdi eläkkeelle.
+
+| Valittu kortti säädöillä | Milj. € |
+|---|---:|
+| Yksityisen sairaanhoidon Kela-korvaukset pois | 91,1 |
+| Itsehoitolääkkeiden reseptikorvaukset pois | 43,65 |
+| Lääkkeiden alkuomavastuu 70 → 100 euroa | 35,9 |
+| Lääkkeiden peruskorvaus 40 → 30 % | 48,4 |
+| Kansan- ja takuueläkkeen indeksikorotukset pois | 584,95 |
+| Takuueläke pois | 157 |
+| Eläkeläiset yleisen asumistuen piiriin | 280,86 |
+| Työeläkkeiden indeksit jäihin 2028–2031 | 2 039,71 |
+| Yli 60-vuotiaiden työkyvyttömyyseläkkeen ehtoja tiukemmiksi | 48,63 |
+| Nuorten työkyvyttömyyseläkkeen kertakorotus pois | 7,37 |
+| Hyvinvointialueiden indeksijäädytys | 3 310 |
+| Valtion tuloveroasteikkoa +3 prosenttiyksikköä | 2 700 |
+| Tuloverotuksen indeksitarkistus tekemättä | 489 |
+| Eläketuloverotusta kiristetään, VM:n 100 miljoonan esimerkki | 100 |
+
+Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `pension`.
+
+</details>
+
+### 3. Palvelut ja kulutus osuvat pienituloisiin; myös ylempiä tuloryhmiä kuormitetaan
 
 `services-consumption-counter`
 
@@ -94,7 +178,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 2. Palvelut, etuudet ja kulutus osuvat samaan pienituloiseen ryhmään
+### 4. Palvelut, etuudet ja kulutus osuvat samaan pienituloiseen ryhmään
 
 `services-consumption-benefits`
 
@@ -125,7 +209,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 3. Palvelut ja kulutus osuvat pienituloisiin
+### 5. Palvelut ja kulutus osuvat pienituloisiin
 
 `services-consumption`
 
@@ -152,7 +236,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 4. Palvelut ja etuudet osuvat pienituloisiin; myös ylemmät tuloryhmät maksavat
+### 6. Palvelut ja etuudet osuvat pienituloisiin; myös ylemmät tuloryhmät maksavat
 
 `services-benefits-counter`
 
@@ -185,7 +269,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 5. Palvelut ja etuudet osuvat pienituloisiin
+### 7. Palvelut ja etuudet osuvat pienituloisiin
 
 `services-benefits`
 
@@ -218,7 +302,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 6. Etuudet ja kulutus osuvat pienituloisiin; myös ylemmät tuloryhmät maksavat
+### 8. Etuudet ja kulutus osuvat pienituloisiin; myös ylemmät tuloryhmät maksavat
 
 `benefits-consumption-counter`
 
@@ -250,7 +334,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `b
 
 </details>
 
-### 7. Etuudet ja kulutus osuvat pienituloisiin
+### 9. Etuudet ja kulutus osuvat pienituloisiin
 
 `benefits-consumption`
 
@@ -280,7 +364,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `b
 
 </details>
 
-### 8. Laaja indeksijäädytys ja ylempiin tuloryhmiin painottuvia toimia
+### 10. Laaja indeksijäädytys ja ylempiin tuloryhmiin painottuvia toimia
 
 `indices-counter`
 
@@ -307,7 +391,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `i
 
 </details>
 
-### 9. Laaja indeksijäädytys
+### 11. Laaja indeksijäädytys
 
 `indices`
 
@@ -333,7 +417,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `i
 
 </details>
 
-### 10. Yritykset ja tutkimusrahoitus
+### 12. Yritykset ja tutkimusrahoitus
 
 `business-research`
 
@@ -375,7 +459,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `b
 
 </details>
 
-### 11. Palveluleikkausten rinnalla ylempiin tuloryhmiin painottuvia toimia
+### 13. Palveluleikkausten rinnalla ylempiin tuloryhmiin painottuvia toimia
 
 `services-upper`
 
@@ -403,7 +487,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 12. Ylempiin tuloryhmiin painottuvat toimet
+### 14. Ylempiin tuloryhmiin painottuvat toimet
 
 `upper`
 
@@ -432,7 +516,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `u
 
 </details>
 
-### 13. Eri toimet painottuvat eri tuloryhmiin
+### 15. Eri toimet painottuvat eri tuloryhmiin
 
 `split`
 
@@ -458,7 +542,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `s
 
 </details>
 
-### 14. Alempiin tuloryhmiin painottuvat toimet
+### 16. Alempiin tuloryhmiin painottuvat toimet
 
 `lower`
 
@@ -484,7 +568,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `l
 
 </details>
 
-### 15. Keskimmäisiin tuloryhmiin painottuvat toimet
+### 17. Keskimmäisiin tuloryhmiin painottuvat toimet
 
 `middle`
 
@@ -536,7 +620,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `m
 
 </details>
 
-### 16. Kaikki tuloryhmät maksavat, suhteelliset rahavaikutukset lähellä toisiaan
+### 18. Kaikki tuloryhmät maksavat, suhteelliset rahavaikutukset lähellä toisiaan
 
 `all-pay`
 
@@ -564,7 +648,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `a
 
 </details>
 
-### 17. Tutkimusrahoitus
+### 19. Tutkimusrahoitus
 
 `research`
 
@@ -593,7 +677,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `r
 
 </details>
 
-### 18. Avustukset
+### 20. Avustukset
 
 `grants`
 
@@ -619,7 +703,7 @@ Tarkat valinnat ja säädöt: `scripts/fixtures/summary-packages.json`, avain `g
 
 </details>
 
-### 19. Ei yhtä varmaa päämaksajaa
+### 21. Ei yhtä varmaa päämaksajaa
 
 `mixed`
 

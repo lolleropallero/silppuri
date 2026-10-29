@@ -55,6 +55,55 @@ const packagePresets=[
     }
   },
   {
+    "id": "committee",
+    "name": "Keskuskomitea",
+    "model": {
+      "selectedIds": [
+        "cut-7-52",
+        "income",
+        "income-index",
+        "tax-capital-low",
+        "tax-capital-high",
+        "dividends",
+        "tax-forest",
+        "tax-transfer-shares",
+        "tax-inheritance",
+        "tax-land-values",
+        "tax-land-min",
+        "fw-dividend-withholding",
+        "fw-wealth-minimum",
+        "fw-property-funds",
+        "fw-treaty-dividends",
+        "fw-deemed-cost",
+        "fw-succession-abolish",
+        "sorsa-million-inheritance"
+      ],
+      "name": "Keskuskomitea",
+      "includeLater": false,
+      "yleCutPercent": 20,
+      "taxIncreasesPP": {
+        "income": 3,
+        "corporate": 3
+      },
+      "unitSteps": {
+        "income": 3,
+        "tax-capital-low": 3,
+        "tax-capital-high": 3,
+        "tax-transfer-shares": 3,
+        "tax-inheritance": 3,
+        "tax-land-min": 3
+      },
+      "cutPercents": {
+        "cut-7-52": 25
+      },
+      "dividendMode": "abolish",
+      "fundingChoices": {
+        "yle": "keep-tax",
+        "farm": "save"
+      }
+    }
+  },
+  {
     "id": "poor",
     "name": "Kannustinpaketti",
     "model": {
@@ -223,6 +272,95 @@ const packagePresets=[
         "tax-fuel": 3,
         "tax-electric1": 3,
         "tax-car-all": 3
+      },
+      "cutPercents": {},
+      "dividendMode": "abolish",
+      "fundingChoices": {
+        "yle": "keep-tax",
+        "farm": "save"
+      }
+    }
+  },
+  {
+    "id": "nightwatch",
+    "name": "Yövartijavaltio",
+    "model": {
+      "selectedIds": [
+        "cut-7-52",
+        "cut-3-51",
+        "benefits",
+        "cut-3-8",
+        "cut-2-57",
+        "cut-7-21",
+        "education",
+        "cut-2-34",
+        "cut-2-27",
+        "cut-3-40",
+        "vat",
+        "tax-vehicle",
+        "tax-electric1",
+        "tax-insurance",
+        "tax-fuel",
+        "tax-car-all",
+        "tax-tobacco",
+        "vm-alcohol",
+        "cut-5-16"
+      ],
+      "name": "Yövartijavaltio",
+      "year": 2031,
+      "includeLater": false,
+      "yleCutPercent": 20,
+      "taxIncreasesPP": {
+        "income": 3,
+        "corporate": 3
+      },
+      "unitSteps": {
+        "tax-insurance": 3,
+        "tax-vehicle": 3,
+        "tax-fuel": 3,
+        "tax-electric1": 3,
+        "tax-car-all": 3
+      },
+      "cutPercents": {
+        "cut-7-52": 65
+      },
+      "dividendMode": "abolish",
+      "fundingChoices": {
+        "yle": "keep-tax",
+        "farm": "save"
+      }
+    }
+  },
+  {
+    "id": "pension",
+    "name": "Eläkepäivät pilalla",
+    "model": {
+      "selectedIds": [
+        "cut-3-34",
+        "cut-3-36",
+        "cut-3-40",
+        "cut-3-51",
+        "cut-3-54",
+        "cut-3-56",
+        "tax-pension",
+        "health",
+        "cut-3-18",
+        "cut-3-21",
+        "cut-3-22",
+        "cut-3-23",
+        "income",
+        "income-index"
+      ],
+      "name": "Eläkepäivät pilalla",
+      "year": 2031,
+      "includeLater": false,
+      "yleCutPercent": 20,
+      "taxIncreasesPP": {
+        "income": 3,
+        "corporate": 3
+      },
+      "unitSteps": {
+        "income": 1
       },
       "cutPercents": {},
       "dividendMode": "abolish",

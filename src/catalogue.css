@@ -22,8 +22,19 @@
 #silppuri-demo .sp-presets{margin:24px 0}
 #silppuri-demo .sp-presets h3{margin:0 0 12px;font-size:18px}
 #silppuri-demo .sp-presets-list{display:flex;flex-wrap:wrap;gap:8px}
-#silppuri-demo .sp-presets-list button{min-height:44px;padding:10px 14px;max-width:100%;border:1px solid var(--sp-line);border-radius:8px;background:var(--sp-paper);color:var(--sp-ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
-#silppuri-demo .sp-presets-list button:hover{background:var(--sp-lime)}
+#silppuri-demo .sp-presets-list button{--sp-preset-color:var(--sp-muted);min-height:44px;padding:10px 14px;max-width:100%;border:1px solid color-mix(in srgb,var(--sp-preset-color) 55%,var(--sp-line));border-left:4px solid var(--sp-preset-color);border-radius:8px;background:color-mix(in srgb,var(--sp-preset-color) 14%,var(--sp-paper));color:var(--sp-ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+#silppuri-demo .sp-presets-list [data-preset=rich]{--sp-preset-color:light-dark(#b82444,#ff7c94)}
+#silppuri-demo .sp-presets-list [data-preset=poor]{--sp-preset-color:light-dark(#245db1,#79a8ff)}
+#silppuri-demo .sp-presets-list [data-preset=all]{--sp-preset-color:light-dark(#7543a8,#c09aef)}
+#silppuri-demo .sp-presets-list [data-preset=companies]{--sp-preset-color:light-dark(#a65a08,#f4b65d)}
+#silppuri-demo .sp-presets-list [data-preset=consumption]{--sp-preset-color:light-dark(#007b71,#65d2bd)}
+#silppuri-demo .sp-presets-list [data-preset=committee]{--sp-preset-color:light-dark(#a31b13,#ff9580)}
+#silppuri-demo .sp-presets-list [data-preset=nightwatch]{--sp-preset-color:light-dark(#39433c,#a2b8ab)}
+#silppuri-demo .sp-presets-list [data-preset=pension]{--sp-preset-color:light-dark(#8f4774,#eca5d0)}
+#silppuri-demo .sp-remaining[data-goal=target]{background:light-dark(#d8efcf,#29452b);color:light-dark(#245b2a,#c5efbd)}
+#silppuri-demo .sp-remaining[data-goal=under]{background:light-dark(#fff0c2,#51401b);color:light-dark(#715000,#ffe09a)}
+#silppuri-demo .sp-remaining[data-goal=over]{background:light-dark(#e1e7f4,#2b354c);color:light-dark(#314e80,#c9d9ff)}
+#silppuri-demo .sp-presets-list button:hover{background:color-mix(in srgb,var(--sp-preset-color) 24%,var(--sp-paper))}
 #silppuri-demo .sp-presets-list button:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
 #silppuri-demo .sp-catalogue-tools input{width:100%;box-sizing:border-box}
 #silppuri-demo .sp-catalogue-tools select{min-width:0;width:100%}

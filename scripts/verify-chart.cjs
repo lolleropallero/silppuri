@@ -81,10 +81,10 @@ const focus=ctx.piePresentation(focusActions,net,72,'companies');
 assert.equal(ctx.smallSliceLabel(focus,net),ctx.smallSliceLabel(base,net),'focus does not change the whole small-slice percentage');
 assert.equal(focus.rings.length,base.rings.length);
 for(let i=1;i<base.rings.length;i++){
-  const edge=Math.max(...base.parts.filter(p=>p.ring===i-1).map(p=>p.outer));
-  assert.ok(Math.abs(base.rings[i].inner-edge-8)<1e-8,'normal rings leave only an 8-unit gap');
+  assert.equal(base.rings[i].inner,base.inner,'all turns share the hole');
+  for(const p of base.parts.filter(p=>p.ring===i))for(const front of base.parts.filter(f=>f.ring<i&&f.start<p.end&&f.end>p.start))assert.ok(p.outer>=front.outer+14,'back turn protrudes beyond every overlapping front slice');
 }
-assert.ok(focus.rings[1].inner>base.rings[1].inner,'outer rings move only when highlighting needs more room');
+assert.equal(focus.rings[1].inner,base.rings[1].inner,'focus retains the shared hole');
 const baseViewport=ctx.pieViewport(base),focusViewport=ctx.pieViewport(focus);
 const fitted=ctx.fitPieViewport(focusViewport,baseViewport.width/baseViewport.height);
 assert.ok(Math.abs(fitted.width/fitted.height-baseViewport.width/baseViewport.height)<1e-8,'focusing preserves the card aspect ratio');
@@ -109,9 +109,26 @@ assert.equal(ctx.piePresentation(focusActions,net,72,'families').focused,false,'
 assert.equal(ctx.piePresentation(focusActions,net,72,'missing').focused,false);
 for(const p of focus.parts){
   assert.ok(p.outer<focus.extent);
-  if(p.ring+1<focus.rings.length)assert.ok(p.outer<focus.rings[p.ring+1].inner,'expanded rings do not overlap');
+  assert.equal(p.inner,focus.inner,'focus uses the same centre on all turns');
   assert.doesNotMatch(ctx.slice(p.start,p.end,p.outer,p.inner),/NaN|Infinity/);
 }
 console.log('PASS: group focus preserves sums and angles, isolates mixed small actions, expands across rings and resets.');
 assert.equal((ctx.slice(0,1).match(/A/g)||[]).length,4); // Full annulus must not vanish at equal endpoints.
 console.log('PASS: pie boundaries, multiple rings, split actions, removals, negative/unknown values and proportional widths.');
+
+// A tiny overflow must not reserve space for a new full annulus.
+const nearly=n=>ctx.piePresentation([{id:'a',amount:5000,type:'cut'},{id:'b',amount:n-5000,type:'tax'}],n,72,null);
+const v10=ctx.pieViewport(nearly(10000)),vOver=ctx.pieViewport(nearly(10010));
+assert.ok(vOver.width/v10.width<1.04&&vOver.height/v10.height<1.04,'10m overflow barely changes the crop');
+for(let i=1;i<base.parts.length;i++)assert.ok(base.parts[i].ring<=base.parts[i-1].ring,'back turns paint first');
+for(const kind of ['cut','tax'])assert.equal(new Set([0,1,2].map(r=>ctx.piePalette(kind,r).fill)).size,3,'each turn has its own '+kind+' shade');
+const giantActions=[1000,1000,10140,5000,3100].map((amount,i)=>({id:String(i),amount,type:i<3?'cut':'tax'}));
+const giant=ctx.piePresentation(giantActions,20240,72,null);
+assert.equal(new Set(giant.parts.map(p=>p.key)).size,giant.parts.length,'contour fragments have unique animation keys');
+assert.ok(giant.parts.filter(p=>p.ring===0).every(p=>p.outer-p.inner<=144),'a multi-turn action cannot dwarf the hole');
+for(const p of giant.parts.filter(p=>p.ring>0)){
+  const mid=(p.start+p.end)/2,front=giant.parts.filter(f=>f.ring<p.ring&&f.start<mid&&f.end>mid);
+  const rim=p.outer-Math.max(...front.map(f=>f.outer));
+  assert.ok(rim>=14-1e-8&&rim<=32+1e-8,'each exposed rim stays readable without swallowing the front turn');
+}
+for(const kind of ['cut','tax'])assert.equal(new Set(Array.from({length:15},(_,r)=>ctx.piePalette(kind,r).fill)).size,15,'later turns do not cycle back to the first shade');

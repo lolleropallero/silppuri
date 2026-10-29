@@ -2,7 +2,9 @@ function nearestPiePart(parts,x,y,tolerance){
   const dx=x-160,dy=y-160,radius=Math.hypot(dx,dy);
   const angle=(Math.atan2(dx,-dy)/(2*Math.PI)+1)%1;
   let nearest=null,best=tolerance;
-  for(const part of parts){
+  // Parts arrive in paint order. Hit the visible front slice first when
+  // successive turns overlap; the protruding back rim remains selectable.
+  for(const part of [...parts].reverse()){
     let distance;
     if(part.end-part.start>=.999999||(angle>=part.start&&angle<=part.end)){
       distance=Math.max(part.inner-radius,radius-part.outer,0);

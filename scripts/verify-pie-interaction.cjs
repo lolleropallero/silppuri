@@ -37,3 +37,7 @@ document.handlers.keydown({key:'Escape'});assert.equal(tip.hidden,true);
 hit.handlers.click({detail:0});assert.equal(tip.hidden,false,'Enter opens the first slice');
 interaction.setParts([]);assert.equal(tip.hidden,true);assert.equal(hit.disabled,true);
 console.log('PASS: persistent tap labels, nearest narrow slice, outside/toggle/Escape dismissal, mouse hover, touch scrolling and keyboard navigation.');
+
+const back={...a,id:'back',outer:160,ring:1},front={...a,ring:0};
+assert.equal(ctx.nearestPiePart([back,front],260,160,0),front,'visible front wins in shared area');
+assert.equal(ctx.nearestPiePart([back,front],310,160,0),back,'exposed rim selects back turn');

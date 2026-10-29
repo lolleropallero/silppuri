@@ -387,7 +387,7 @@
     if(small.length)segments.push({id:'small-actions',amount:small.reduce((n,d)=>n+valueOf(d),0)});
     const positive=segments.reduce((n,d)=>n+Math.max(0,valueOf(d)),0);
     const net=Math.max(0,sum),count=Math.max(1,Math.ceil(net/target)),inner=108;
-    const widthFor=d=>{const ratio=Math.max(0,valueOf(d))/(target/4);return 8+(thickness-8)*(ratio<=1?Math.pow(ratio,.65):ratio);};
+    const widthFor=d=>{const ratio=Math.max(0,valueOf(d))/(target/4);return Math.min(thickness*2,8+(thickness-8)*(ratio<=1?Math.pow(ratio,.65):ratio));};
     const normalWidths=segments.filter(d=>d.id!=='small-actions'&&valueOf(d)>0).map(widthFor);
     const smallWidth=2*(normalWidths.length?Math.max(...normalWidths):thickness);
     const rings=Array.from({length:count},()=>({inner}));
@@ -404,15 +404,22 @@
         offset+=amount;remaining-=amount;
       }
     }
-    let nextInner=inner;
-    for(const [i,ring] of rings.entries()){
-      ring.inner=nextInner;
-      const pieces=parts.filter(p=>p.ring===i);
-      const capacity=Math.max(10,...pieces.map(p=>p.outer-p.inner));
-      for(const part of pieces){const width=part.outer-part.inner;part.inner=ring.inner;part.outer=ring.inner+width;}
-      nextInner+=capacity+8;
+    // Trace the visible front contour: a later slice is a readable rim behind
+    // it, not a huge wedge sized from the full value of a multi-turn action.
+    // Split only at front boundaries; the angular money shares stay exact.
+    const layered=[];
+    for(const part of parts){
+      if(part.ring===0){layered.push(part);continue;}
+      const front=layered.filter(p=>p.ring<part.ring&&p.start<part.end&&p.end>part.start);
+      const edges=[...new Set([part.start,part.end,...front.flatMap(p=>[Math.max(part.start,p.start),Math.min(part.end,p.end)])])].sort((a,b)=>a-b);
+      const rim=Math.max(14,Math.min(32,thickness*.45*Math.sqrt(part.amount/500)));
+      for(let i=0;i<edges.length-1;i++){
+        const start=edges[i],end=edges[i+1],mid=(start+end)/2;
+        const outer=Math.max(inner+10,...front.filter(p=>p.start<mid&&p.end>mid).map(p=>p.outer))+rim;
+        layered.push({...part,start,end,amount:(end-start)*target,outer});
+      }
     }
-    return {rings,parts,small,inner,thickness,extent:nextInner+24};
+    return {rings,parts:layered,small,inner,thickness,extent:Math.max(inner+10,...layered.map(p=>p.outer))+32};
   }
   function piePresentation(chosen,sum,thickness,flow){
     const chart=ringLayout(chosen,sum,thickness);
@@ -423,22 +430,19 @@
     const selectedSmall=smallPositive.filter(d=>d.flow===flow);
     const share=smallTotal?selectedSmall.reduce((n,d)=>n+valueOf(d),0)/smallTotal:0;
     const parts=chart.parts.flatMap(part=>{
-      if(part.id!=='small-actions')return [{...part,items:[byId.get(part.id)],highlighted:focused&&byId.get(part.id).flow===flow,key:part.id+':'+part.ring}];
+      const key=part.id+':'+part.ring+':'+part.start;
+      if(part.id!=='small-actions')return [{...part,items:[byId.get(part.id)],highlighted:focused&&byId.get(part.id).flow===flow,key}];
       // The purple group stays in its original angular span. Only the chosen
       // group's share changes colour; unrelated small actions stay purple.
       const groups=focused&&share>0&&share<1?[
         {start:part.start,end:part.start+(part.end-part.start)*share,items:selectedSmall,highlighted:true,suffix:':focus'},
         {start:part.start+(part.end-part.start)*share,end:part.end,items:chart.small.filter(d=>d.flow!==flow),highlighted:false,suffix:':rest'}
       ]:[{start:part.start,end:part.end,items:chart.small,highlighted:focused&&share===1,suffix:''}];
-      return groups.map(g=>({...part,...g,amount:(g.end-g.start)*target,key:part.id+':'+part.ring+g.suffix}));
+      return groups.map(g=>({...part,...g,amount:(g.end-g.start)*target,key:key+g.suffix}));
     });
     const highlightedWidth=part=>Math.max(36,(part.outer-part.inner)*(part.id==='small-actions'?1.15:1.7));
     const widths=parts.map(part=>focused?(part.highlighted?highlightedWidth(part):Math.max(3,(part.outer-part.inner)*.25)):part.outer-part.inner);
-    // Keep only an 8-unit gap after the actual slices. Move outer rings when
-    // highlighting needs more room.
-    const capacities=chart.rings.map((_,i)=>Math.max(10,...parts.flatMap((p,j)=>p.ring===i?[p.outer-p.inner,widths[j]]:[])));
-    const arrange=capacities=>{let inner=chart.inner;return capacities.map(capacity=>{const ring={inner};inner+=capacity+8;return ring;});};
-    const rings=arrange(capacities);
+    const rings=chart.rings;
     for(const [index,part] of parts.entries()){
       const normalWidth=part.outer-part.inner;
       part.inner=rings[part.ring].inner;
@@ -447,7 +451,22 @@
       part.kind=part.highlighted?'focus':part.id==='small-actions'?'small':part.items[0].type;
       part.dimmed=focused&&!part.highlighted;
     }
-    return {...chart,parts,rings,focused,extent:rings.at(-1).inner+capacities.at(-1)+32};
+    // SVG and canvas both paint back to front; the first turn stays on top.
+    parts.sort((a,b)=>b.ring-a.ring||a.start-b.start);
+    return {...chart,parts,rings,focused,extent:Math.max(chart.inner+10,...parts.map(p=>p.outer))+32};
+  }
+  function piePalette(kind,ring=0,css=false){
+    const shades={
+      cut:[['#ed2b36','#ad1121'],['#b51c47','#7f1332'],['#ff806b','#b83a2c'],['#801f3c','#541328']],
+      tax:[['#5068c8','#293d94'],['#28459a','#182d70'],['#8caef0','#486cab'],['#213059','#101b38']],
+      small:[['#9548c6','#5e237f'],['#672e91','#40195c'],['#c087e5','#864bb0']],
+      focus:[['#20974b','#105d2d'],['#137137','#094421'],['#65bf7a','#327c43']]
+    };
+    const palette=shades[kind]||shades.small;
+    const hue={cut:350,tax:225,small:280,focus:140}[kind]??280;
+    const lightness=18+40*(1-1/(Math.max(0,ring-palette.length)+2));
+    const [fill,edge]=palette[ring]||[`hsl(${hue} 65% ${lightness}%)`,`hsl(${hue} 65% ${lightness*.65}%)`];
+    return css&&ring===0?{fill:'var(--sp-'+kind+')',edge:'var(--sp-'+kind+'-edge)'}:{fill,edge};
   }
   function smallSliceLabel(chart,sum){
     const amount=chart.parts.filter(p=>p.id==='small-actions').reduce((n,p)=>n+p.amount,0);
@@ -871,7 +890,7 @@
     cancelAnimationFrame(pieFrame);pieFrame=0;
     pieColourAnimations.forEach(a=>a.cancel());pieColourAnimations=[];
     svg.setAttribute('id','sp-pie-chart');
-    svg.setAttribute('aria-label',`Arvioiden summa ${moneyLabel(sum)}.${overlaps.length?' Summassa voi olla samoja säästöjä kahdesti.':''} Kehiä: ${chart.rings.length}, jokainen 10 miljardia euroa.${chart.focused?' '+group.name+' korostettu vihreällä.':''} ${chosen.map(d=>d.short+': '+moneyLabel(d.amount)).join('; ')}.`);
+    svg.setAttribute('aria-label',`Arvioiden summa ${moneyLabel(sum)}.${overlaps.length?' Summassa voi olla samoja säästöjä kahdesti.':''} Päällekkäisiä kierroksia: ${chart.rings.length}, täysi kierros 10 miljardia euroa.${chart.focused?' '+group.name+' korostettu vihreällä.':''} ${chosen.map(d=>d.short+': '+moneyLabel(d.amount)).join('; ')}.`);
     const baseViewport=pieViewport(chart.focused?piePresentation(chosen,sum,design.thickness,null):chart);
     const targetViewport=fitPieViewport(pieViewport(chart),baseViewport.width/baseViewport.height);
     const fromValues=motion?svg.getAttribute('viewBox').split(/\s+/).map(Number):Object.values(targetViewport);
@@ -886,12 +905,12 @@
       syncPieScale();
     };
     positionViewport();
-    q('.sp-tracks').innerHTML=chart.rings.map(r=>`<path d="${slice(0,1,r.inner+10,r.inner)}" fill="var(--sp-track)"></path>`).join('');
+    q('.sp-tracks').innerHTML=`<path d="${slice(0,1,chart.inner+10,chart.inner)}" fill="var(--sp-track)"></path>`;
     const trackTweens=[...q('.sp-tracks').querySelectorAll('path')].map((path,i)=>({path,to:chart.rings[i].inner,from:previous.find(p=>p.ring===i)?.inner??chart.rings[i].inner}));
     const mountSlices=parts=>{
       q('.sp-slices').innerHTML=parts.map(part=>{
-      const small=part.id==='small-actions';
-      return `<path data-piece="${esc(part.key)}" data-action="${part.id}" data-pie-focus="${part.highlighted}" d="${slice(part.start,part.end,part.outer,part.inner)}" fill="var(--sp-${part.kind})" stroke="var(--sp-${part.kind}-edge)" stroke-width="${small||part.dimmed?1:4}" stroke-linejoin="round" opacity="${part.dimmed?.4:1}"></path>`;
+      const small=part.id==='small-actions',paint=piePalette(part.kind,part.ring,true);
+      return `<path data-piece="${esc(part.key)}" data-action="${part.id}" data-ring="${part.ring}" data-pie-focus="${part.highlighted}" d="${slice(part.start,part.end,part.outer,part.inner)}" fill="${paint.fill}" stroke="${paint.edge}" stroke-width="${small||part.dimmed?1:4}" stroke-linejoin="round" opacity="${part.dimmed?.4:1}"></path>`;
       }).join('');
       const paths=[...q('.sp-slices').querySelectorAll('path[data-piece]')];
       piePainted=parts.map((part,i)=>({...part,path:paths[i],opacity:part.dimmed?.4:1,strokeWidth:part.id==='small-actions'||part.dimmed?1:4}));
@@ -909,7 +928,8 @@
     if(!callout){callout=document.createElement('span');callout.className='sp-pie-callout';q('.sp-chart').appendChild(callout);}
     callout.textContent=smallSliceLabel(chart,sum);callout.hidden=!callout.textContent;
     const positionCallout=()=>{
-      const smallParts=piePainted.filter(p=>p.id==='small-actions'),tip=smallParts.at(-1);
+      const smallParts=piePainted.filter(p=>p.id==='small-actions');
+      const tip=smallParts.filter(p=>p.ring===Math.max(...smallParts.map(p=>p.ring))).at(-1);
       if(!tip)return;
       const angle=((smallParts.filter(p=>p.ring===tip.ring)[0].start+tip.end)/2)*2*Math.PI-Math.PI/2;
       const radius=Math.max(...smallParts.filter(p=>p.ring===tip.ring).map(p=>p.outer))+12;
@@ -956,6 +976,13 @@
     const chart=q('.sp-chart'),width=Number(chart.dataset.viewWidth);
     if(width>0&&chart.clientWidth>0)chart.style.setProperty('--sp-pixel-scale',String(chart.clientWidth/width));
   }
+  function renderGoal(sum){
+    const reached=packageTone(sum).id==='target';
+    q('.sp-remaining').dataset.goal=reached?'target':sum<target?'under':'over';
+    q('.sp-remaining-label').textContent=reached?'Tavoite kasassa':sum<target?'Vielä puuttuu':'Yli tavoitteen';
+    q('.sp-remaining-value').textContent=reached?'✓':moneyLabel(Math.abs(target-sum));
+    q('.sp-remaining-value').setAttribute('aria-hidden',String(reached));
+  }
   function render(announce=false){
     syncScenario();
     q('.sp-publish').disabled=selected.size===0;
@@ -967,8 +994,7 @@
     root.querySelectorAll('[data-horizon]').forEach(button=>button.setAttribute('aria-pressed',String((button.dataset.horizon==='later')===includeLater)));
     const sum=chosen.reduce((s,d)=>s+valueOf(d),0),cuts=chosen.filter(d=>d.type==='cut').reduce((s,d)=>s+valueOf(d),0);
     q('.sp-total').textContent=format(sum);
-    q('.sp-remaining-label').textContent=sum<=target?'Vielä puuttuu':'Yli tavoitteen';
-    q('.sp-remaining-value').textContent=moneyLabel(Math.abs(target-sum));
+    renderGoal(sum);
     q('.sp-tax-total').textContent=moneyLabel(sum-cuts);q('.sp-cut-total').textContent=moneyLabel(cuts);
     q('.sp-count').textContent=chosen.length+' valittua toimea';q('.sp-empty').hidden=!!chosen.length;
     const overlaps=selectedOverlaps(chosen);

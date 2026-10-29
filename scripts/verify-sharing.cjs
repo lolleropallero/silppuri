@@ -154,7 +154,8 @@ const drawing=new Proxy({measureText:value=>({width:String(value).length*11}),fi
 const bitmap={getContext:()=>drawing};ctx.document={createElement:()=>bitmap};
 ctx.root={querySelector:()=>({querySelectorAll:()=>[]})};ctx.Path2D=function(){};
 ctx.decileName=i=>'Ryhmä '+i;ctx.decileIncomeRange=()=>'';ctx.shareLabel=n=>n+' %';ctx.chartPercent=n=>n+' %';
-ctx.piePresentation=()=>({parts:[],rings:[]});ctx.pieViewport=()=>({width:320,height:320,x:0,y:0});ctx.smallSliceLabel=()=>'';
+ctx.target=10000;
+run(source.slice(source.indexOf('  function slice('),source.indexOf('  const payerGroups=')));
 ctx.stateIn({modelContent:{...seed,includeLater:true,selectedIds:[],fundingChoices:{yle:'reduce-tax',farm:'redirect'}}});
 ctx.createShareImage(ctx.data,'Testi',true,testUrl);
 const imageText=drawn.join(' ');

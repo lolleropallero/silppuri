@@ -65,8 +65,8 @@ function createShareImage(chosen,name,later,link){
   const chart=piePresentation(chosen,sum,72,null),view=pieViewport(chart);
   const px=64,py=head+60,pw=510,ph=Math.min(topHeight-130,440),scale=Math.min(pw/view.width,ph/view.height);
   ctx.save();ctx.translate(px+(pw-view.width*scale)/2-view.x*scale,py+(ph-view.height*scale)/2-view.y*scale);ctx.scale(scale,scale);
-  for(const ring of chart.rings){ctx.fillStyle=color.track;ctx.fill(new Path2D(slice(0,1,ring.inner+10,ring.inner)));}
-  for(const p of chart.parts){ctx.fillStyle=color[p.kind];ctx.strokeStyle=p.kind==='cut'?'#9c1b27':p.kind==='tax'?'#2e4089':'#60358b';ctx.lineWidth=p.kind==='small'?1:4;const path=new Path2D(slice(p.start,p.end,p.outer,p.inner));ctx.fill(path);ctx.stroke(path);}
+  ctx.fillStyle=color.track;ctx.fill(new Path2D(slice(0,1,chart.inner+10,chart.inner)));
+  for(const p of chart.parts){const paint=piePalette(p.kind,p.ring);ctx.fillStyle=paint.fill;ctx.strokeStyle=paint.edge;ctx.lineWidth=p.kind==='small'?1:4;const path=new Path2D(slice(p.start,p.end,p.outer,p.inner));ctx.fill(path);ctx.stroke(path);}
   const cx=160,cy=160;font(34,true);ctx.fillStyle=color.ink;ctx.textAlign='center';ctx.fillText(format(sum),cx,cy+3);font(17);ctx.fillText('mrd. €',cx,cy+27);ctx.restore();
   dot(78,head+topHeight-32,color.cut);text('Menoleikkaukset',92,head+topHeight-26,16);
   dot(252,head+topHeight-32,color.tax);text('Verot ja maksut',266,head+topHeight-26,16);

@@ -3,7 +3,7 @@ process.chdir(path.join(__dirname,'..'));
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const original=fs.readFileSync('dist/index.html','utf8'),origin='https://silppuri.test/';
 const at=original.lastIndexOf('  loadSharedLocation();');
-const html=original.slice(0,at)+'window.audit={stateIn,render,packageModel,packageSummary,packagePresets,data,shareUrl};'+original.slice(at);
+const html=original.slice(0,at)+'window.audit={stateIn,render,renderGoal,packageModel,packageSummary,packagePresets,data,shareUrl,createShareImage,piePresentation,pieViewport};'+original.slice(at);
 (async()=>{
  const browser=await chromium.launch({headless:true,...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{})});
  try{
@@ -12,7 +12,13 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,packageModel,packa
    page.on('pageerror',e=>errors.push(e.message));
    await page.route('**/*',r=>r.request().url().startsWith(origin)?r.fulfill({contentType:'text/html; charset=utf-8',body:html}):r.abort());
    await page.goto(origin);
-   assert.equal(await page.locator('[data-preset]').count(),5);
+   assert.equal(await page.locator('[data-preset]').count(),8);
+   for(const [sum,state] of [[0,'under'],[9499.99,'under'],[9500,'target'],[10000,'target'],[10500,'target'],[10500.01,'over'],[20200,'over']]){
+    await page.evaluate(sum=>audit.renderGoal(sum),sum);
+    assert.equal(await page.locator('.sp-remaining').getAttribute('data-goal'),state,'goal boundary '+sum);
+    assert.equal(await page.locator('.sp-remaining-label').textContent(),state==='target'?'Tavoite kasassa':state==='under'?'Vielä puuttuu':'Yli tavoitteen');
+   }
+   await page.evaluate(()=>audit.render());
    assert.equal(await page.locator('#sp-presets-title').textContent(),'Valmiit paketit');
    assert.ok(!(await page.locator('.sp-threshold-note').textContent()).includes('avoimet arviot'));
    assert.ok(await page.evaluate(()=>document.querySelector('.sp-presets').compareDocumentPosition(document.querySelector('#sp-search'))&Node.DOCUMENT_POSITION_FOLLOWING));
@@ -45,10 +51,11 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,packageModel,packa
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),poor,'cancel preserves package');
    await page.locator('[data-preset="rich"]').click();await page.keyboard.press('Escape');
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),poor,'Escape preserves package');
-   for(const id of ['rich','all','companies','consumption']){
+   for(const id of ['rich','all','companies','consumption','committee','nightwatch','pension']){
     await page.locator('[data-preset="'+id+'"]').click();await page.locator('.sp-preset-confirm').click();
     const r=await page.evaluate(()=>{const state=audit.packageModel(),s=audit.packageSummary(audit.data.filter(d=>state.selectedIds.includes(d.id)));return {total:s.total,name:state.name};});
-    assert.ok(Math.abs(r.total-10000)<25,id+' real total');
+    assert.ok(id==='nightwatch'?r.total>20000:r.total>=9500&&r.total<=10500,id+' real total');
+    assert.equal(await page.locator('.sp-remaining').getAttribute('data-goal'),id==='nightwatch'?'over':'target');
     assert.ok(r.name.length);
    }
    const saved=await page.evaluate(()=>JSON.stringify(audit.packageModel()));await page.reload();
@@ -64,7 +71,7 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,packageModel,packa
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),saved,'reset still cancels');
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'no horizontal overflow');
    await page.locator('.sp-presets').scrollIntoViewIfNeeded();await page.screenshot({path:'tmp/presets-'+width+'.png'});
-   assert.deepEqual(errors,[]);console.log('PASS '+width+': card click areas, controls, 5 presets, cancel/Escape, reset, local/share persistence and layout');
+   assert.deepEqual(errors,[]);console.log('PASS '+width+': goal boundaries, card click areas, controls, 8 presets, cancel/Escape, reset, local/share persistence and layout');
    await page.close();
   }
  }finally{await browser.close();}

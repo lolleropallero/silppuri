@@ -22,9 +22,15 @@ const shareProfilePairs={
   'benefits+consumption':'Arjen ankeuttaja',
   'consumption+income':'Palkansaajan painajainen'
 };
-// Every entry is one situation, with subjects/clauses filled from the selected
-// measures. The reachability test requires a real EUR 8–12bn witness per entry.
+const shareScenarioEditorial={
+  nightwatch:{name:'Pääoman henkivartija',label:'Yli 20 miljardia omistajien etuihin koskematta',subtitle:shareGoalEditorial.demolition},
+  pension:{name:'Eläkepommin purkaja',label:'Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot',subtitle:'Kymppi kasassa. Ansaitut eläkepäivät peruttu.'}
+};
+// Each situation has a real-card witness: EUR 8–12bn, except the explicitly
+// over-EUR-20bn night-watch state. Scenario names never depend on a preset ID.
 const shareNarratives={
+  nightwatch:()=>`Hyvinvointivaltio päätyi silppuriin, mutta omistamisen ilo säilyi koskemattomana. Julkisen alan palkoista ja etuuksista leikataan, palveluista vetäydytään ja kuluttajalta kerätään loppurahat. Pääomat ja yritystuet saavat valtiolta sen ainoan jäljelle jääneen lämpimän halauksen. Pienituloiselle jää suhteessa raskain rahalasku; omistava luokka saa viimein valtion, joka tietää paikkansa.`,
+  pension:()=>`Ansaitut eläkepäivät vaihtuivat valtion säästöpäiviksi. Indeksit jäädytetään, takuueläke katoaa ja asumistuki kutistuu. Lääkkeistä ja hoidosta säästetään juuri kun niitä alkaa tarvita. Pienellä eläkkeellä pärjäämisestä tehdään kannustinloukku ilman ulospääsyä; suuremmista eläkkeistä ja palkoista otetaan lisää veroa. Sukupolvisopimuksen pienellä präntätty ehto löytyi: voimassa vain niin kauan kuin et ehdi eläkkeelle.`,
   'services-consumption-counter':f=>`${f.lowBenefits?'Etuudet ja palvelut kutistuvat samalla kun ostokset kallistuvat. Pienituloisen vapaus valita kasvaa: mistä välttämättömästä luovutaan ensin?':'Kun palveluista katoaa apu ja kulutusveroihin ostovoima, pienituloiselle jää vapaus valita, kumman puutteesta valittaa ensin.'} ${f.upper} avaavat luokkataistelun toisen rintaman suurituloisten lompakoilla${f.otherClause?', ja '+f.otherClause:''}. ${f.netLower?'Punainen lippu ei muuta laskujärjestystä: pienituloiset maksavat silti tuloihinsa nähden eniten.':'Yläkerrassa sovitellaan jo marttyyrinviittaa, alakerrassa vertaillaan ruoan ja lääkkeiden hintoja.'}`,
   'services-consumption-benefits':f=>`Etuudet pienenevät, palvelut kutistuvat ja kassalla maksetaan enemmän. Pienituloisen vapaus valita on nyt täydellinen: hän saa itse päättää, mistä välttämättömästä luopuu ensin.${f.otherClause?" Samaan aikaan "+f.otherClause+".":""}`,
   'services-consumption':f=>`Pienituloiselta säästetään sekä palvelut että ostovoima: apu vähenee ja ostokset kallistuvat${f.otherClause?', samalla kun '+f.otherClause:''}. Valinnanvapaudeksi jää päättää, kummasta valittaa ensin.`,
