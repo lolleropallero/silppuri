@@ -12,6 +12,8 @@ Paketin nimi, valinnat ja säädöt pakataan selaimessa osoitteen `#s=`-osaan. J
 
 Jakolinkkien tarkistukset: `node scripts/verify-share-codec.cjs`, `node scripts/verify-sharing.cjs` ja `node scripts/verify-percent-cuts.cjs`.
 
+Jaettava PNG sisältää yhteenvedon ja kuvaajat. Toimenpidelistan sijaan kuvassa on QR-koodi, joka sisältää saman paketin jakolinkin kuin kopiointi ja somepainikkeet. QR-koodi luodaan selaimessa paikallisella, MIT-lisensoidulla Nayuki-kirjastolla (`src/vendor/`); palvelintallennusta tai ulkoista QR-palvelua ei tarvita. Esikatselu sovittaa koko kuvan näkyviin ilman kuvan sisäistä vieritystä.
+
 ## Korttien laskelmat
 
 Kortin laskenta näkyy omassa, oletuksena suljetussa osiossaan ennen lähdeluetteloa. Haarukoiden päätepisteet tuotetaan samasta laskentamallista kuin kortin euromäärä; lähtötiedot ja oletukset ovat niiden alla. VM:n valmiissa nettoarvioissa erotetaan lähteen ilmoittamat luvut laskurin omista skaalauksista.

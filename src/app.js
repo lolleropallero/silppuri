@@ -1104,6 +1104,8 @@
   /*SHARE_SUMMARY*/
   /*SHARE_SOCIAL*/
   /*SHARE_IMAGE*/
+  /*QR_ENCODER*/
+  /*SHARE_QR*/
   /*SHARE_PNG*/
   /*SHARE_UI*/
   loadSharedLocation();

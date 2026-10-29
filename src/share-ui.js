@@ -21,16 +21,16 @@ async function refreshShareImage(){
   const generation=++shareGeneration;q('.sp-download').disabled=true;q('.sp-native-share').hidden=true;shareBlob=null;
   shareStatus.textContent='Kuva valmistuu…';refreshShareLink();
   try{
-    // Yield once so the dialog and busy state paint before generating a long image.
+    // Yield once so the dialog and busy state paint before drawing the image.
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if(generation!==shareGeneration||!shareDialog.open)return;
-    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater);
+    const canvas=createShareImage(data.filter(d=>selected.has(d.id)),shareName.value,includeLater,shareLink);
     const rendered=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Kuvan luonti epäonnistui.')),'image/png'));
     const blob=await creditSharePng(rendered);
     if(generation!==shareGeneration||!shareDialog.open)return;
     if(shareObjectUrl)URL.revokeObjectURL(shareObjectUrl);
     shareBlob=blob;shareObjectUrl=URL.createObjectURL(blob);
-    const img=document.createElement('img');img.src=shareObjectUrl;img.alt=shareTitle(shareName.value)+' – piirakka, maksajat, tuloryhmät ja valitut toimet';
+    const img=document.createElement('img');img.src=shareObjectUrl;img.alt=shareTitle(shareName.value)+' – yhteenveto, kuvaajat ja QR-koodi paketin toimenpiteisiin';
     img.width=canvas.width;img.height=canvas.height;q('.sp-share-preview').replaceChildren(img);
     q('.sp-download').disabled=false;shareStatus.textContent='';
     q('.sp-native-share').hidden=!(navigator.canShare?.(nativeShareData())&&shareLink);

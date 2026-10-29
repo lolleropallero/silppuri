@@ -337,7 +337,8 @@ script=script.replace('/*INCIDENCE_ENGINE*/',(ROOT/'src/incidence.js').read_text
 script=script.replace('/*INCIDENCE_VIEW*/',(ROOT/'src/incidence-view.js').read_text(encoding='utf8'))
 script=script.replace('/*PIE_INTERACTION*/',(ROOT/'src/pie-interaction.js').read_text(encoding='utf8'))
 script=script.replace('/*MODAL_SHRED*/',(ROOT/'src/modal-shred.js').read_text(encoding='utf8'))
-for part in ['state','editorial','summary','social','image','png','ui']:
+script=script.replace('/*QR_ENCODER*/',(ROOT/'src/vendor/qrcodegen.js').read_text(encoding='utf8'))
+for part in ['state','editorial','summary','social','image','qr','png','ui']:
     script=script.replace('/*SHARE_'+part.upper()+'*/',(ROOT/f'src/share-{part}.js').read_text(encoding='utf8'))
 OUT.write_text(markup+'<script>\n'+script+'\n</script>\n',encoding='utf-8')
 from export_site import export_site
