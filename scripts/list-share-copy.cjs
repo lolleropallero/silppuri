@@ -26,7 +26,7 @@ const out=['# Silppurin nimet, alaotsikot ja tiivistelmät','',
  'Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-share-copy.cjs`. Hakasulut ovat alla tekstipohjien muuttuvia kohtia; ne eivät näy käyttäjälle. Toimien nimet ja yhdistävät sivulauseet määräytyvät valituista korteista ja tulokymmenysarvioista. Kaikille 20 alle 20 miljardin tiivistelmätyypille sekä yhdeksälle vaihtoehtoiselle lopulle ja kuudelle yritystoimien mukaiselle tekstiversiolle on testattu 8–12 miljardin paketti oikeista korteista. Yövartijavaltio testataan erikseen yli 20 miljardissa. Tyhjä, nolla, puuttuva euroarvio ja negatiivinen kokonaismäärä ovat erikoistapauksia.','',
  '## Valmiit paketit','', '| Nimi | Nykyinen summa | Julkaisun luonnehdinta |','|---|---:|---|'];
 for(const p of run('packagePresets')){const s=evaluate(p.model).summary;out.push('| '+[p.name,money(s.total),s.profile.name].join(' | ')+' |');}
-out.push('','## Julkaisun nimet','','Paketin oma otsikko on käyttäjän kirjoittama nimi. Alla ovat sen alle valittavat luonnehdinnat.','','| Nimi | Painotus |','|---|---|');
+out.push('','## Julkaisun nimet','','Otsikkona on valmispaketin nimi tai oletuksena ”Minun silppurini”. Erillistä nimeämisvaihetta ei ole. Alla ovat otsikon alle sisällöstä valittavat luonnehdinnat.','','| Nimi | Painotus |','|---|---|');
 for(const p of Object.values(run('packageProfiles')))out.push('| '+p.name+' | '+p.label+' |');
 for(const [key,value] of Object.entries(run('shareProfilePairs')))out.push('| '+value+' | '+key.split('+').map(k=>run('packageProfiles')[k].label).join(' + ')+' |');
 for(const p of Object.values(run('shareScenarioEditorial')))out.push('| '+p.name+' | '+p.label+' |');

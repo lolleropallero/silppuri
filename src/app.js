@@ -1052,6 +1052,7 @@
     render();save();
     q('.sp-announcement').textContent=preset.name+' valittu. Pakettia voi muokata korteista.';
     presetOpener?.focus({preventScroll:true});
+    q('.sp-chart').scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   }
   function searchWords(text){return String(text??'').toLocaleLowerCase('fi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean);}
   function matchesType(d){

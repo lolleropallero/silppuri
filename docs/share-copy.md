@@ -17,7 +17,7 @@ Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-sh
 
 ## Julkaisun nimet
 
-Paketin oma otsikko on käyttäjän kirjoittama nimi. Alla ovat sen alle valittavat luonnehdinnat.
+Otsikkona on valmispaketin nimi tai oletuksena ”Minun silppurini”. Erillistä nimeämisvaihetta ei ole. Alla ovat otsikon alle sisällöstä valittavat luonnehdinnat.
 
 | Nimi | Painotus |
 |---|---|
@@ -74,14 +74,14 @@ Näissä pohjissa ei ole muita merkittäviä teemoja kuvaavaa sivulausetta. Alem
 
 `nightwatch`
 
-> Hyvinvointivaltio päätyi silppuriin, mutta omistamisen ilo säilyi koskemattomana. Julkisen alan palkoista ja etuuksista leikataan, palveluista vetäydytään ja kuluttajalta kerätään loppurahat. Pääomat ja yritystuet saavat valtiolta sen ainoan jäljelle jääneen lämpimän halauksen. Pienituloiselle jää suhteessa raskain rahalasku; omistava luokka saa viimein valtion, joka tietää paikkansa.
+> Hyvinvointivaltio puretaan, mutta murtohälytin jätetään päälle. Etuudet, palvelut ja julkisen alan palkat silputaan, kulutusveroja kiristetään. Pienituloiselle vapaus käy suhteessa kalleimmaksi, omistajalle jäävät veroedut ja yritystuet. Markkinoiden näkymätön käsi saa pitää taskurahansa; jos leipäjonossa aletaan vaatia osuutta siitä, paikalle saapuu valtion hyvinkin näkyvä käsi.
 
 <details>
 <summary>Oikeista korteista koottu testipaketti: 20,25 mrd. €</summary>
 
 **Pääoman henkivartija** — Budjetti loppui. Jumala armahtaa, Silppuri ei.
 
-> Hyvinvointivaltio päätyi silppuriin, mutta omistamisen ilo säilyi koskemattomana. Julkisen alan palkoista ja etuuksista leikataan, palveluista vetäydytään ja kuluttajalta kerätään loppurahat. Pääomat ja yritystuet saavat valtiolta sen ainoan jäljelle jääneen lämpimän halauksen. Pienituloiselle jää suhteessa raskain rahalasku; omistava luokka saa viimein valtion, joka tietää paikkansa.
+> Hyvinvointivaltio puretaan, mutta murtohälytin jätetään päälle. Etuudet, palvelut ja julkisen alan palkat silputaan, kulutusveroja kiristetään. Pienituloiselle vapaus käy suhteessa kalleimmaksi, omistajalle jäävät veroedut ja yritystuet. Markkinoiden näkymätön käsi saa pitää taskurahansa; jos leipäjonossa aletaan vaatia osuutta siitä, paikalle saapuu valtion hyvinkin näkyvä käsi.
 
 | Valittu kortti säädöillä | Milj. € |
 |---|---:|
