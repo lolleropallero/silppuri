@@ -1,7 +1,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const {ctx,evaluate,run}=require('./summary-runtime.cjs');
 const root=path.join(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f),'utf8');
-run(read('src/presets.js'));
 const titles={
  nightwatch:'Yli 20 miljardin yövartijavaltio, omistajien edut suojassa',
  pension:'Eläkkeet, lääkkeet, sote ja eläketuloihinkin osuvat verot',

@@ -1,0 +1,284 @@
+[
+  {
+    "id": "rich",
+    "name": "Rikkaat talkoisiin",
+    "model": {
+      "selectedIds": [
+        "income",
+        "income-index",
+        "dividends",
+        "tax-capital-low",
+        "tax-capital-high",
+        "tax-land-values",
+        "tax-land-min",
+        "tax-transfer-shares",
+        "tax-inheritance",
+        "fw-succession-abolish",
+        "sorsa-million-inheritance",
+        "fw-wealth-minimum",
+        "fw-dividend-withholding",
+        "fw-treaty-dividends",
+        "tax-forest",
+        "fw-property-funds",
+        "fw-deemed-cost",
+        "corporate",
+        "tax-entrepreneur-remove",
+        "cut-7-52",
+        "cut-1-55",
+        "cut-1-58"
+      ],
+      "unitSteps": {
+        "income": 3,
+        "tax-capital-low": 3,
+        "tax-capital-high": 3,
+        "corporate": 3,
+        "tax-transfer-shares": 3,
+        "tax-inheritance": 3,
+        "tax-land-min": 3
+      },
+      "cutPercents": {
+        "cut-7-52": 15
+      }
+    }
+  },
+  {
+    "id": "committee",
+    "name": "Keskuskomitea",
+    "model": {
+      "selectedIds": [
+        "cut-7-52",
+        "income",
+        "income-index",
+        "tax-capital-low",
+        "tax-capital-high",
+        "dividends",
+        "tax-forest",
+        "tax-transfer-shares",
+        "tax-inheritance",
+        "tax-land-values",
+        "tax-land-min",
+        "fw-dividend-withholding",
+        "fw-wealth-minimum",
+        "fw-property-funds",
+        "fw-treaty-dividends",
+        "fw-deemed-cost",
+        "fw-succession-abolish",
+        "sorsa-million-inheritance"
+      ],
+      "unitSteps": {
+        "income": 3,
+        "tax-capital-low": 3,
+        "tax-capital-high": 3,
+        "tax-transfer-shares": 3,
+        "tax-inheritance": 3,
+        "tax-land-min": 3
+      },
+      "cutPercents": {
+        "cut-7-52": 25
+      }
+    }
+  },
+  {
+    "id": "poor",
+    "name": "Kannustinpaketti",
+    "model": {
+      "selectedIds": [
+        "health",
+        "benefits",
+        "cut-3-51",
+        "vat",
+        "cut-3-8",
+        "cut-3-10"
+      ],
+      "unitSteps": {},
+      "cutPercents": {}
+    }
+  },
+  {
+    "id": "all",
+    "name": "Kaikille paha mieli",
+    "model": {
+      "selectedIds": [
+        "health",
+        "benefits",
+        "income",
+        "corporate",
+        "dividends",
+        "vat",
+        "cut-1-25",
+        "tax-tobacco"
+      ],
+      "taxIncreasesPP": {
+        "income": 2,
+        "corporate": 3
+      },
+      "unitSteps": {
+        "income": 3,
+        "corporate": 3
+      },
+      "cutPercents": {
+        "cut-1-25": 100
+      }
+    }
+  },
+  {
+    "id": "companies",
+    "name": "Yritykset silppuriin",
+    "model": {
+      "selectedIds": [
+        "corporate",
+        "cut-1-6",
+        "cut-1-69",
+        "cut-3-68",
+        "cut-3-28",
+        "tax-entrepreneur-remove",
+        "tax-electric2",
+        "tax-van",
+        "tax-heat",
+        "vm-machine-fuel",
+        "sorsa-bank",
+        "fw-corporate-gaps",
+        "cut-5-64",
+        "cut-1-30",
+        "cut-1-75",
+        "cut-3-27",
+        "cut-1-16",
+        "dividends",
+        "tax-capital-low",
+        "tax-capital-high",
+        "tax-land-values",
+        "tax-land-min",
+        "tax-transfer-shares",
+        "tax-inheritance",
+        "fw-succession-abolish",
+        "sorsa-million-inheritance",
+        "fw-wealth-minimum",
+        "fw-dividend-withholding",
+        "fw-treaty-dividends",
+        "tax-forest",
+        "fw-property-funds",
+        "fw-deemed-cost",
+        "income-index",
+        "income",
+        "tax-transfer-land",
+        "tax-donation"
+      ],
+      "taxIncreasesPP": {
+        "income": 2,
+        "corporate": 3
+      },
+      "unitSteps": {
+        "income": 3,
+        "tax-capital-low": 3,
+        "tax-capital-high": 3,
+        "corporate": 3,
+        "tax-transfer-land": 3,
+        "tax-transfer-shares": 3,
+        "tax-inheritance": 3,
+        "tax-electric2": 3,
+        "tax-land-min": 3
+      },
+      "cutPercents": {
+        "cut-1-69": 100
+      }
+    }
+  },
+  {
+    "id": "consumption",
+    "name": "Elintaso silppuriin",
+    "model": {
+      "selectedIds": [
+        "vat",
+        "tax-vat-standard",
+        "tax-vehicle",
+        "tax-tickets",
+        "tax-car-all",
+        "tax-insurance",
+        "tax-electric1",
+        "tax-fuel",
+        "vm-alcohol",
+        "tax-excise-index",
+        "tax-tobacco",
+        "tax-softdrink",
+        "income",
+        "cut-3-51"
+      ],
+      "unitSteps": {
+        "income": 3,
+        "tax-vat-standard": 3,
+        "tax-insurance": 3,
+        "tax-softdrink": 15,
+        "tax-vehicle": 3,
+        "tax-fuel": 3,
+        "tax-electric1": 3,
+        "tax-car-all": 3
+      },
+      "cutPercents": {}
+    }
+  },
+  {
+    "id": "nightwatch",
+    "name": "Yövartijavaltio",
+    "model": {
+      "selectedIds": [
+        "cut-7-52",
+        "cut-3-51",
+        "benefits",
+        "cut-3-8",
+        "cut-2-57",
+        "cut-7-21",
+        "education",
+        "cut-2-34",
+        "cut-2-27",
+        "cut-3-40",
+        "vat",
+        "tax-vehicle",
+        "tax-electric1",
+        "tax-insurance",
+        "tax-fuel",
+        "tax-car-all",
+        "tax-tobacco",
+        "vm-alcohol",
+        "cut-5-16"
+      ],
+      "year": 2031,
+      "unitSteps": {
+        "tax-insurance": 3,
+        "tax-vehicle": 3,
+        "tax-fuel": 3,
+        "tax-electric1": 3,
+        "tax-car-all": 3
+      },
+      "cutPercents": {
+        "cut-7-52": 65
+      }
+    }
+  },
+  {
+    "id": "pension",
+    "name": "Eläkepäivät pilalla",
+    "model": {
+      "selectedIds": [
+        "cut-3-34",
+        "cut-3-36",
+        "cut-3-40",
+        "cut-3-51",
+        "cut-3-54",
+        "cut-3-56",
+        "tax-pension",
+        "health",
+        "cut-3-18",
+        "cut-3-21",
+        "cut-3-22",
+        "cut-3-23",
+        "income",
+        "income-index"
+      ],
+      "year": 2031,
+      "unitSteps": {
+        "income": 1
+      },
+      "cutPercents": {}
+    }
+  }
+]

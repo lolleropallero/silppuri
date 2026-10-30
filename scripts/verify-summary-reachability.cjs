@@ -1,8 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {ctx,evaluate,run,actions}=require('./summary-runtime.cjs');
-const root=path.join(__dirname,'..');
 const fixtures=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/summary-packages.json'),'utf8'));
-run(fs.readFileSync(path.join(root,'src/presets.js'),'utf8'));
 const presets=run('packagePresets'),ids=new Set(actions.map(d=>d.id));
 assert.deepEqual(Object.keys(fixtures).sort((a,b)=>a.localeCompare(b,'en')),Array.from(run('Object.keys(shareNarratives)')).sort((a,b)=>a.localeCompare(b,'en')),'every narrative must have a real package');
 function check(state,label,nightwatch=false){

@@ -333,7 +333,9 @@ script=script.replace('{}/*SOURCE_NOTES*/',json.dumps(compact_notes,ensure_ascii
 from curate_incidence import build_incidence
 incidence=build_incidence(catalogue)
 script=script.replace('{}/*INCIDENCE_DATA*/',json.dumps(incidence,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
-script=script.replace('/*PRESETS*/',(ROOT/'src/presets.js').read_text(encoding='utf8'))
+presets=json.loads((ROOT/'data/package-presets.json').read_text(encoding='utf8'))
+preset_script=(ROOT/'src/presets.js').read_text(encoding='utf8').replace('[]/*PRESET_DATA*/',json.dumps(presets,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
+script=script.replace('/*PRESETS*/',preset_script)
 script=script.replace('/*AI_SEARCH*/',(ROOT/'src/ai-search.js').read_text(encoding='utf8'))
 # The Worker uses the same reviewed cards as the page. No vector database or
 # uploaded user data; this small catalogue is bundled as code at deployment.

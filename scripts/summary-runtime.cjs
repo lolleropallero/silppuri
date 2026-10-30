@@ -5,6 +5,7 @@ const ctx=vm.createContext({incidenceModel:JSON.parse(read('data/incidence-model
  maxPP:10,payerGroups:[],q:()=>({value:''}),dividendStudyUrl:'https://example.test',packageName:'',filter:'all',category:'all',search:'',sortOrder:'desc',activeFlow:null,limit:12,catalogueOrder:[],catalogueOrderKey:''});
 const run=s=>vm.runInContext(s,ctx);
 for(const file of ['incidence','share-state','share-editorial','share-summary'])run(read('src/'+file+'.js'));
+run(read('src/presets.js').replace('[]/*PRESET_DATA*/',read('data/package-presets.json')));
 run('const baseData=new Map(data.map(d=>[d.id,{...d}]));data.forEach(d=>{if(d.unit)units[d.id]=1;});');
 const source=read('src/app.js');
 run(source.slice(source.indexOf('  function syncScenario(){'),source.indexOf('  const esc=')));
