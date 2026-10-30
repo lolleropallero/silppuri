@@ -307,9 +307,8 @@ logo=logo.replace('fill="#000"','fill="currentColor"')
 logo=logo.replace('<svg ', '<svg class="sp-logo" width="30" height="30" aria-hidden="true" focusable="false" ', 1)
 markup=markup.replace('<!--SILPPURI_LOGO-->',logo)
 markup=markup.replace('<!--INCIDENCE_METHOD-->',(ROOT/'src/incidence-method.html').read_text(encoding='utf-8'))
-markup=markup.replace('</style>',(ROOT/'src/catalogue.css').read_text(encoding='utf-8')+'\n</style>')
-markup=markup.replace('</style>',(ROOT/'src/ai-search.css').read_text(encoding='utf-8')+'\n</style>')
-markup=markup.replace('</style>',(ROOT/'src/share.css').read_text(encoding='utf-8')+'\n</style>')
+for stylesheet in ['catalogue','ai-search','share']:
+    markup=markup.replace('</style>',(ROOT/f'src/{stylesheet}.css').read_text(encoding='utf-8')+'\n</style>')
 markup=markup.replace('<div class="sp-chart">','<div class="sp-horizon" role="group" aria-label="Säästöjen ajankohta"><button type="button" class="cursor-interaction" data-horizon="2031" aria-pressed="true">2031</button><button type="button" class="cursor-interaction" data-horizon="later" aria-pressed="false">Myös myöhemmät</button></div><div class="sp-chart">',1)
 markup=markup.replace('Laskuri laskee valittujen toimien arviot yhteen. Arviot ovat eri vuosilta. Lopullinen säästö riippuu myös siitä, miten toimet muuttavat kulutusta, työntekoa ja yritysten toimintaa.',
  'Piirakka laskee koko julkisen talouden vaikutuksen: valtio, kunnat, hyvinvointialueet sekä eläke- ja muut sosiaaliturvarahastot. Nettoarvio on käytössä aina, kun se on saatavilla; vaihteluvälistä käytetään alarajaa. Muuten mukana on suora arvio. Kaikkia käyttäytymisvaikutuksia ja toimien yhteisvaikutuksia ei ole laskettu. 2031 näyttää kyseisen vuoden menosäästöt. Myös myöhemmät käyttää niiden tilalla suurempia vuosien 2032–2035 vuosiarvioita. Tätä kauemmas ulottuvat arviot näytetään kortilla, mutta niitä ei summata piirakkaan. Ne merkitään tähdellä ja ajankohdalla: summa yhdistää eri ajankohtien vuosivaikutuksia, ei vuosien aikana kertynyttä säästöä eikä yhden tulevan vuoden ennustetta. Verot ovat pääosin vuoden 2028 tasossa. Jos maksajaryhmän säästö on vuonna 2031 nolla, sen tuleva vuosiarvio näkyy tähdellä myös 2031-näkymässä. Vain vuosien 2032–2035 arviot tulevat mukaan Myös myöhemmät -valinnalla. Sektorien osuudet näkyvät toimien lähdetiedoissa.')

@@ -12,8 +12,9 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
     for(const width of [1200,390,320]){
       const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'}),errors=[],sent=[];
       let responseIds=['income','corporate','cut-3-7'],providerFails=false,allow=true,delay=false,release,invalidResponse=false;
+      const inferenceReady=Promise.withResolvers();
       const env={AI_SEARCH_MODE:'workers-free',AI_SEARCH_LIMITER:{limit:async()=>({success:allow})},AI:{run:async()=>{
-        if(delay)await new Promise(resolve=>{release=resolve;});
+        if(delay)await new Promise(resolve=>{release=resolve;inferenceReady.resolve();});
         if(providerFails)throw new Error('quota exhausted');
         return {choices:[{message:{content:JSON.stringify({ids:responseIds})},finish_reason:'stop'}]};
       }}};
@@ -77,7 +78,10 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       delay=true;responseIds=['corporate'];
       await page.locator('#sp-ai-query').fill('Uusi hidas haku');
       const waiting=page.waitForRequest(origin+'api/ai-search');await page.locator('.sp-ai-submit').click();await waiting;
-      while(!release)await new Promise(resolve=>setTimeout(resolve,10));
+      let inferenceTimeout;
+      await Promise.race([inferenceReady.promise,new Promise((_,reject)=>{
+        inferenceTimeout=setTimeout(()=>reject(new Error('Mock inference did not start within five seconds')),5000);
+      })]).finally(()=>clearTimeout(inferenceTimeout));
       assert.equal(await page.locator('.sp-ai-submit').isDisabled(),true);
       await page.locator('.sp-ai-reset').click();release();delay=false;
       await page.locator('#sp-ai-query').fill('<img src=x onerror=alert(1)>');await page.locator('.sp-ai-submit').click();

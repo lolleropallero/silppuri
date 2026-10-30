@@ -1,7 +1,7 @@
   // Search state stays in this tab's memory; it is not part of shared packages.
   const aiSearch={ids:[],history:[],pending:false,request:0,controller:null};
   const aiQuery=q('#sp-ai-query'),aiStatus=q('.sp-ai-status'),aiResults=q('.sp-ai-results');
-  function aiSearchError(message){const error=new Error();error.searchMessage=message;return error;}
+  function aiSearchError(message){const error=new Error(message);error.searchMessage=message;return error;}
   function renderAiResults(){
     // Keep existing buttons mounted so popup close restores keyboard focus.
     const current=[...aiResults.children].map(b=>b.dataset.open);
@@ -50,7 +50,7 @@
       if(ticket!==aiSearch.request)return;
       aiSearch.ids=[...new Set(result.ids)];
       aiSearch.history=[...aiSearch.history,{query,ids:aiSearch.ids}].slice(-3);
-      aiQuery.value='';aiQuery.placeholder='Tarkenna hakua, esim. Entä yritystuista?';
+      aiQuery.value='';aiQuery.placeholder='Tarkenna hakua…';
       aiStatus.textContent=aiSearch.ids.length?'Hakuehdotukset':'Näillä ehdoilla ei löytynyt toimia. Kokeile toista hakua.';
       renderAiResults();renderAiHistory();
     }catch(error){
@@ -66,7 +66,7 @@
   });
   q('.sp-ai-reset').addEventListener('click',()=>{
     aiSearch.request++;aiSearch.controller?.abort();Object.assign(aiSearch,{ids:[],history:[],pending:false,controller:null});
-    aiQuery.value='';aiQuery.readOnly=false;aiQuery.placeholder='Esim. Leikkaa suuria eläkkeitä, mutta jätä pienimmät rauhaan.';
+    aiQuery.value='';aiQuery.readOnly=false;aiQuery.placeholder='Esim. Yritystuista pois, mutta tutkimusrahoitus ennallaan.';
     aiStatus.textContent='';q('.sp-ai-submit').disabled=false;q('.sp-ai-form').removeAttribute('aria-busy');
     renderAiResults();renderAiHistory();aiQuery.focus();
   });

@@ -88,7 +88,10 @@ AI Gatewayta, automaattisia uusintayrityksiä, Vectorizea, KV:ta tai tietokantaa
 Staattiset sivupyynnöt ohittavat Worker-koodin; ainoastaan `/api/*` reititetään ensin siihen.
 
 Haku tehdään vain painikkeesta. Worker rajaa pyynnön 12 000 tavuun, kysymyksen
-600 merkkiin ja vastauksen 256 tokeniin. Rate Limiting -binding hillitsee hakuja
+600 merkkiin ja kummankin mallivastauksen 256 tokeniin. Haku tekee ensin yhden kutsun
+korttien löytämiseksi ja sitten yhden ehdotusten tarkistamiseksi samoja hakuehtoja vasten.
+Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
+kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee hakuja
 (3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
 Nollakulut perustuvat Workers Free -tilauksen pakotettuun kiintiöön. Kiintiön tai palvelun
 pettäessä tavallinen paikallinen haku toimii edelleen.
