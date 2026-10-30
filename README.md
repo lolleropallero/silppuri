@@ -36,6 +36,13 @@ python scripts/build.py --production
 
 Valmis sivu on `dist/index.html`. Julkaistava kansio on `dist`.
 
+Linkkien esikatselukuva on `src/assets/social-preview.png`. Sen taitto on
+`src/assets/social-preview.html`, ja kuvan voi tehdä uudelleen Playwrightilla:
+`node scripts/render-social-preview.cjs` (samat `PLAYWRIGHT_MODULE`- ja
+`BROWSER_CHANNEL`-asetukset kuin selainkokeissa). Tavallinen build kopioi valmiin
+PNG:n julkaisuun ja lisää sen Open Graph- ja Twitter-metatietoihin. Kuvatiedoston
+nimi sisältää sisällön tiivisteen, joten kuvan muutos saa uuden osoitteen.
+
 ## Paikallinen esikatselu
 
 Buildin jälkeen:

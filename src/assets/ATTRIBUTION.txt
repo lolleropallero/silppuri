@@ -6,3 +6,6 @@ https://creativecommons.org/licenses/by/3.0/
 claw-slashes.svg is the downloaded black-on-white original.
 The build removes the background and changes the foreground to currentColor
 for light/dark appearance. The icon's geometry is unchanged.
+
+social-preview.png uses the same icon without its white background, in the
+site's dark green, alongside the Silppuri wordmark and Finnish headline.
