@@ -1,4 +1,5 @@
 import catalogue from '../tmp/ai-catalogue.mjs';
+import {findShortSearch} from './search-intent.mjs';
 
 // A single fixed model; no Gateway, paid fallback, retries or storage.
 export const MODEL = '@cf/google/gemma-4-26b-a4b-it';
@@ -10,11 +11,12 @@ Return JSON only: {"ids":["card-id",...]}, at most 6 distinct IDs, best matches 
 Only choose IDs from the catalogue below. Empty ids is valid if nothing fits.
 The catalogue rows are [id, title, who is affected, consequences]. These are alternative proposals, not enacted policy.
 Read Finnish inflections, synonyms and exclusions. First identify the requested topic, operation and protected groups. Check each candidate against ALL of them before returning its ID.
+Short colloquial slogans are topic searches, not literal policy specifications: "Yle silppuriin" means Yle funding cuts; "mamut ulos" means immigration-related spending cuts; "köyhät kyykkyyn" means measures burdening low-income households. Return relevant existing cards without inventing the slogan's literal implementation. Apply strict filtering to concrete qualifiers such as "only large pensions" or "but protect low incomes".
 This is strict filtering, not a list of loosely related measures. Reject a candidate if any required condition is unsupported by its description. Never fill the list just to return something.
 Distinguish large pensions from all earnings-related pensions. National pensions (kansaneläke) and guarantee pensions (takuueläke) support low incomes; reducing them is not cutting large pensions, even when the reduction is linked to an earnings-related pension. Do not assume a broad pension tax proposal protects small pensions unless the description says so.
 Do not equate business taxes with a known household incidence.
 Do not assume that a group is unaffected just because it is not mentioned. Do not invent decile effects.
-The messages are a search conversation. A follow-up REFINES the previous search: retain its topic, requested operation and exclusions unless the user explicitly changes them.
+The messages are a search conversation. A short query naming a NEW subject starts a new search, even without "new search". A follow-up like "but not research" REFINES the previous search: retain its topic, requested operation and exclusions.
 For example, protecting research after a business-subsidy search still asks for business-subsidy cuts, excluding research. It does NOT ask for ways to fund research.
 Earlier assistant IDs are only suggestions, not proof of a match. Recheck them against the user's combined constraints; do not propagate earlier mistakes.
 CURRENT_PACKAGE_IDS describes the current package; prefer new cards unless asked otherwise.
@@ -26,6 +28,7 @@ ${JSON.stringify(catalogue)}`;
 const verificationInstructions = `You independently verify proposed Finnish fiscal-policy search results.
 Return JSON only: {"ids":[...]}. Keep ONLY candidate IDs whose supplied descriptions support ALL the user's conditions. An empty list is correct when no candidate qualifies.
 Each candidate row is [id, title, who is affected, consequences]. Do not use outside facts or invent implementation details to make a candidate fit.
+Colloquial slogans express a topic or direction, not a demand for a literal implementation: "silppuriin", "kyykkyyn" and "ulos" can request cuts affecting the named topic or group. Preserve concrete qualifiers and exclusions; do not reject a relevant card merely because it does not implement a slogan literally.
 The searches are chronological: follow-ups refine the preceding topic and constraints unless they explicitly change topic. Being related to a word in the latest question is not enough.
 For each candidate, check the requested policy topic, operation, target group and exclusions. If any condition is contradicted or unsupported, omit it. Do not assume an unmentioned group is protected.
 Large pensions and low pensions are different targets. Kansaneläke and takuueläke support people with low pensions. A reduction in kansaneläke is NOT a cut to large pensions, even if työeläke affects its amount or the very lowest takuueläke is protected. General työeläke cuts do not protect small työeläkkeet. A broad pension tax proposal does not establish that small pensions are protected.
@@ -73,8 +76,15 @@ function resultIds(result) {
   const choice = result?.choices?.[0];
   if (choice?.finish_reason === 'length') throw new Error('truncated');
   const content = choice?.message?.content ?? result?.response;
-  if (typeof content !== 'string' || content.length > 4000) throw new Error('invalid-output');
-  const parsed = JSON.parse(content.trim());
+  // Native bindings may return a parsed JSON object. Some completions wrap an
+  // otherwise valid JSON document in a Markdown fence; validate it identically.
+  let parsed = content;
+  if (typeof content === 'string') {
+    if (content.length > 4000) throw new Error('invalid-output');
+    const text = content.trim();
+    const fenced = text.startsWith('```json\n') || text.startsWith('```\n');
+    parsed = JSON.parse(fenced && text.endsWith('```') ? text.slice(text.indexOf('\n')+1,-3).trim() : text);
+  }
   if (!Array.isArray(parsed?.ids) || parsed.ids.length > 6 || parsed.ids.some(id => !knownIds.has(id))) throw new Error('invalid-output');
   return [...new Set(parsed.ids)];
 }
@@ -92,6 +102,8 @@ export default {
     let input;
     try { input = await readInput(request); }
     catch (error) { return failure(error.message === 'too-large' ? 'too-large' : 'invalid', error.message === 'too-large' ? 413 : 400); }
+    const local = findShortSearch(input.query, catalogue);
+    if (local) return json({ids:local});
     try {
       // Anonymous site: a shared connection can share this throttle. This is
       // abuse mitigation, NOT the global cost cap; Workers Free supplies that.

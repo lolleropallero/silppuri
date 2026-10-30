@@ -61,6 +61,20 @@ for (const value of [new Error('quota exhausted: secret provider detail'), {resp
 output = {response: '{"ids":["income","income"],"text":"<script>bad</script>"}'};
 assert.deepEqual(await (await worker.fetch(request(), env)).json(), {ids: ['income']}, 'only allowlisted IDs escape the model boundary');
 output = {response: '{"ids":[]}'};assert.deepEqual(await (await worker.fetch(request(), env)).json(), {ids: []});
+for(const response of [{ids:['income']},'```json\n{"ids":["income"]}\n```','```\n{"ids":["income"]}\n```']){
+  output={response};assert.deepEqual(await (await worker.fetch(request(),env)).json(),{ids:['income']});
+}
+for(const response of [{ids:['invented']},'```json\n{"ids":["invented"]}\n```',null,42]){
+  output={response};assert.equal((await worker.fetch(request(),env)).status,502,'alternate JSON envelopes retain ID validation');
+}
+output = new Error('AI offline');allowed=false;
+for(const [query,expected] of [['yle silppuriin','cut-1-42'],['mamut ulos','cut-5-45'],['köyhät kyykkyyn','cut-3-13']]){
+  const beforeLocal=calls.length,beforeThrottle=throttles.length;
+  const result=await worker.fetch(request({query}),env);
+  assert.equal(result.status,200);assert.ok((await result.json()).ids.includes(expected));
+  assert.equal(calls.length,beforeLocal);assert.equal(throttles.length,beforeThrottle,'short searches consume no AI quota');
+}
+allowed=true;
 for(const [verified,expectedStatus,expected] of [
   [{response:'{"ids":[]}'},200,{ids:[]}],
   [{response:'{"ids":["corporate"]}'},502,{error:'model-output'}],

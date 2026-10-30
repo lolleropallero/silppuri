@@ -34,6 +34,15 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.equal(await page.locator('.sp-ai-search').evaluate(e=>e.open),false);
       await page.locator('.sp-ai-search summary').click();
       const before=await page.evaluate(()=>JSON.stringify(audit.packageModel()));
+      providerFails=true;allow=false;
+      for(const [query,expected] of [['mamut ulos','cut-5-45'],['yle silppuriin','cut-1-42'],['Köyhät kyykkyyn','cut-3-13']]){
+        await page.locator('#sp-ai-query').fill(query);await page.locator('.sp-ai-submit').click();
+        await page.locator('.sp-ai-results [data-open="'+expected+'"]').waitFor({state:'visible'});
+        assert.equal(sent.length,0,'short searches work offline, with AI disabled or its quota exhausted');
+        assert.equal(await page.locator('.sp-ai-history li').count(),1,'a new explicit subject resets earlier constraints');
+        assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),before);
+      }
+      await page.locator('.sp-ai-reset').click();providerFails=false;allow=true;
       await page.locator('#sp-ai-query').fill('Veroja lisää yrityksille');
       await page.locator('.sp-ai-submit').click();
       await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent==='Hakuehdotukset');

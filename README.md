@@ -87,11 +87,18 @@ Malli on kiinteä `@cf/google/gemma-4-26b-a4b-it`; käytössä ei ole maksullisi
 AI Gatewayta, automaattisia uusintayrityksiä, Vectorizea, KV:ta tai tietokantaa.
 Staattiset sivupyynnöt ohittavat Worker-koodin; ainoastaan `/api/*` reititetään ensin siihen.
 
-Haku tehdään vain painikkeesta. Worker rajaa pyynnön 12 000 tavuun, kysymyksen
+Haku tehdään vain painikkeesta. Lyhyet aiheet ja puhekieliset haut (esimerkiksi
+"Yle silppuriin", "mamut ulos" ja "köyhät kyykkyyn") tunnistetaan selaimessa
+`src/search-intent.mjs`:n avulla. Ne toimivat myös AI-palvelun ollessa poissa käytöstä
+eivätkä kuluta hakurajaa tai AI-kiintiötä. Worker käyttää samaa tunnistusta suorille
+rajapintapyynnöille. Rajaukset, kielteiset ehdot, määrät ja jatkokysymykset jätetään
+AI:n tulkittaviksi. Uusi selvä aihe aloittaa uuden haun.
+
+Worker rajaa pyynnön 12 000 tavuun, kysymyksen
 600 merkkiin ja kummankin mallivastauksen 256 tokeniin. Haku tekee ensin yhden kutsun
 korttien löytämiseksi ja sitten yhden ehdotusten tarkistamiseksi samoja hakuehtoja vasten.
 Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
-kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee hakuja
+kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee AI-kutsuja
 (3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
 Nollakulut perustuvat Workers Free -tilauksen pakotettuun kiintiöön. Kiintiön tai palvelun
 pettäessä tavallinen paikallinen haku toimii edelleen.
@@ -107,6 +114,7 @@ Paikalliset tarkistukset (eivät kutsu AI-palvelua):
 
 ```sh
 python scripts/build.py --production
+node scripts/verify-search-intent.mjs
 node scripts/verify-ai-search.mjs
 node scripts/verify-ai-search-browser.cjs
 npx wrangler@4 deploy --dry-run --outdir tmp/worker-check
