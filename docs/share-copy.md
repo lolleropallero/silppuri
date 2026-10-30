@@ -17,7 +17,7 @@ Luettelo tuotetaan suoraan nykyisestä koodista komennolla `node scripts/list-sh
 
 ## Julkaisun nimet
 
-Otsikkona on valmispaketin nimi tai oletuksena ”Minun silppurini”. Erillistä nimeämisvaihetta ei ole. Alla ovat otsikon alle sisällöstä valittavat luonnehdinnat.
+Paketin otsikon voi nimetä ennen jakamista ja muuttaa jakamisikkunasta. Valmispaketin nimi tulee nimeämiskenttään valmiiksi. Alla ovat otsikon alle sisällöstä valittavat luonnehdinnat.
 
 | Nimi | Painotus |
 |---|---|

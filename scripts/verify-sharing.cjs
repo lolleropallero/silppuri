@@ -98,7 +98,7 @@ ctx.q=selector=>{if(!nodes.has(selector))nodes.set(selector,{hidden:true,value:'
 ctx.window=host.window;ctx.window.addEventListener=(event,fn)=>listeners[event]=fn;
 ctx.location=new URL('https://example.test/');
 ctx.history={replaceState:(_state,_unused,href)=>{ctx.location.href=href;}};
-ctx.shareDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
+ctx.shareDialog={open:false};ctx.nameDialog={open:false};ctx.activeAction=null;ctx.modalShred={finish(){}};ctx.finishPacking=()=>{};ctx.render=()=>{};
 ctx.presetDialog={open:true,close(){this.open=false;}};ctx.pendingPreset={id:'rich'};
 ctx.resetDialog={open:true,close(){this.open=false;}};
 run(read('src/share-ui.js').slice(read('src/share-ui.js').indexOf('function readSharedState()')));
@@ -179,12 +179,12 @@ for(const [selectedIds,money,services] of [[['vat'],true,false],[['health'],fals
   assert.equal(panels.some(p=>p.width===1104),money!==services,selectedIds+': a single populated chart uses the whole width');
 }
 // File share carries the same summary as the compose/copy actions.
-ctx.File=File;ctx.shareBlob=new Blob(['test image'],{type:'image/png'});ctx.packageName='Kuvan jakotesti';
-ctx.shareFilename=()=>ctx.packageName+'.png';ctx.shareLink=testUrl;
+ctx.File=File;ctx.shareBlob=new Blob(['test image'],{type:'image/png'});ctx.shareName={value:'Kuvan jakotesti'};
+ctx.shareFilename=()=>ctx.shareName.value+'.png';ctx.shareLink=testUrl;
 const shareUi=read('src/share-ui.js');run(shareUi.slice(shareUi.indexOf('function nativeShareData()'),shareUi.indexOf('async function refreshShareImage()')));
 const nativePayload=ctx.nativeShareData();
 assert.equal(nativePayload.url,testUrl);assert.equal(nativePayload.files[0].type,'image/png');
-assert.equal(nativePayload.text,ctx.shareCaption(ctx.data.filter(d=>ctx.selected.has(d.id)),ctx.packageName));
+assert.equal(nativePayload.text,ctx.shareCaption(ctx.data.filter(d=>ctx.selected.has(d.id)),ctx.shareName.value));
 const qa=new URL(example);qa.host='127.0.0.1:8765';qa.protocol='http:';qa.pathname='/share-qa.html';qa.search='';
 fs.mkdirSync(path.join(root,'tmp/share-qa'),{recursive:true});fs.writeFileSync(path.join(root,'tmp/share-qa/url.txt'),qa.href);
 const large=new URL(full);large.host=qa.host;large.protocol='http:';large.pathname=qa.pathname;large.search='';
