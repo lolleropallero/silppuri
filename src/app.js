@@ -1033,7 +1033,6 @@
     if(pieExpanded)renderZoom();
     if(announce)q('.sp-announcement').textContent=`${chosen.length} valittua toimea. Koko julkisen talouden vaikutus ${moneyLabel(sum)}.`;
   }
-  /*SEARCH_INTENT*/
   /*AI_SEARCH*/
   q('#sp-search').addEventListener('input',event=>{search=event.target.value;limit=12;render();save();});
   q('#sp-category').addEventListener('change',event=>{category=event.target.value;limit=12;render();save();});

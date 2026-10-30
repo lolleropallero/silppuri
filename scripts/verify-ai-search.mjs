@@ -50,7 +50,7 @@ assert.deepEqual(calls[0][1].messages.slice(1), [{role:'user',content:'Entä el�
 assert.ok(calls[0][1].messages[0].content.endsWith('CURRENT_PACKAGE_IDS: ["corporate"]'));
 assert.ok(calls[0][1].messages[0].content.includes(catalogue.at(-1)[1]));
 assert.ok(!JSON.stringify(calls[0][1]).includes('paid-model'));
-assert.deepEqual(JSON.parse(calls[1][1].messages[1].content), {searches:['Entä eläkkeet?','Ei pienituloisilta'],candidates:catalogue.filter(row=>['income','corporate'].includes(row[0])).sort((a,b)=>['income','corporate'].indexOf(a[0])-['income','corporate'].indexOf(b[0]))});
+assert.deepEqual(JSON.parse(calls[1][1].messages[1].content), {searches:['Entä eläkkeet?','Ei pienituloisilta'],constraints:null,candidates:catalogue.filter(row=>['income','corporate'].includes(row[0])).sort((a,b)=>['income','corporate'].indexOf(a[0])-['income','corporate'].indexOf(b[0]))});
 assert.ok(calls[1][1].messages[1].content.length < 4000, 'verification sees only the small candidate set');
 for (const value of [new Error('quota exhausted: secret provider detail'), {response: 'not JSON'}, {response: '{"ids":["invented"]}'},
   {response: '{"ids":["income",42]}'}, {response: JSON.stringify({ids:Array(13).fill('income')})},
@@ -68,23 +68,32 @@ for(const response of [{ids:['invented']},'```json\n{"ids":["invented"]}\n```',n
   output={response};assert.equal((await worker.fetch(request(),env)).status,502,'alternate JSON envelopes retain ID validation');
 }
 output = new Error('AI offline');allowed=false;
-for(const [query,expected] of [['yle silppuriin','cut-1-42'],['mamut ulos','cut-5-45'],['köyhät kyykkyyn','cut-3-13']]){
-  const beforeLocal=calls.length,beforeThrottle=throttles.length;
-  const result=await worker.fetch(request({query}),env);
-  assert.equal(result.status,200);assert.ok((await result.json()).ids.includes(expected));
-  assert.equal(calls.length,beforeLocal);assert.equal(throttles.length,beforeThrottle,'short searches consume no AI quota');
+for(const query of ['yle silppuriin','mamut ulos','köyhät kyykkyyn']){
+  await blocked(request({query}),429);
 }
 allowed=true;
-for(const query of ['Ylen budjetti sileäksi','Mamuista säästöjä','Köyhiltä loputkin']){
+for(const query of ['yle silppuriin','mamut ulos','köyhät kyykkyyn','Hillot pois hyvävelikerholta',
+  'Eiköhän laiteta kaikki nuo loputtomat tukihanat viimein kokonaan kiinni ja ryhdytä toimeen']){
   let passes=0;
-  const result=await worker.fetch(request({query}),{...env,AI:{async run(){passes++;return {response:'{"ids":["cut-1-42"]}'};}}});
-  assert.equal(result.status,200);assert.equal(passes,1,'unqualified short searches need one inference');
+  const result=await worker.fetch(request({query}),{...env,AI:{async run(model,input){
+    passes++;assert.equal(input.messages.at(-1).content,query);
+    return {response:'{"ids":["corporate"],"constraints":[]}'};
+  }}});
+  assert.equal(result.status,200);assert.equal(passes,1,'semantic interpretation, independent of keywords or query length');
+  assert.deepEqual(await result.json(),{ids:['corporate']},'results come from the model, never a phrase-to-card mapping');
 }
-for(const input of [{query:'Eläkkeitä alas mutta ei pieniltä'},{query:'Vain isot eläkkeet'},
+for(const input of [{query:'Labrat jätetään rauhaan'},{query:'Vain isot eläkkeet'},
   {query:'Yle 50 prosenttia'},{query:'Leikkauksia koulutukseen',history:[{query:'Ei pienituloisilta',ids:[]}]}]){
   let passes=0;
-  const result=await worker.fetch(request(input),{...env,AI:{async run(){passes++;return {response:'{"ids":["income"]}'};}}});
+  const result=await worker.fetch(request(input),{...env,AI:{async run(){passes++;return {response:'{"ids":["income"],"constraints":["Suojattava käyttäjän rajaama ryhmä."]}'};}}});
   assert.equal(result.status,200);assert.equal(passes,2,'concrete and inherited constraints are checked');
+}
+for(const constraints of [undefined,null,'no constraints',42,[null],[''],['x'.repeat(241)],Array(7).fill('condition')]){
+  let passes=0;
+  const result=await worker.fetch(request({query:'Budjetti uusiksi'}),{...env,AI:{async run(){
+    passes++;return {response:JSON.stringify({ids:['income'],constraints})};
+  }}});
+  assert.equal(result.status,200);assert.equal(passes,2,'malformed or missing constraints cannot skip checking');
 }
 {
   const candidates=catalogue.slice(0,12).map(row=>row[0]);let passes=0;

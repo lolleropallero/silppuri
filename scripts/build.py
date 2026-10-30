@@ -337,7 +337,6 @@ presets=json.loads((ROOT/'data/package-presets.json').read_text(encoding='utf8')
 preset_script=(ROOT/'src/presets.js').read_text(encoding='utf8').replace('[]/*PRESET_DATA*/',json.dumps(presets,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
 script=script.replace('/*PRESETS*/',preset_script)
 script=script.replace('/*AI_SEARCH*/',(ROOT/'src/ai-search.js').read_text(encoding='utf8'))
-script=script.replace('/*SEARCH_INTENT*/',(ROOT/'src/search-intent.mjs').read_text(encoding='utf8').replace('export function findShortSearch(', 'function findShortSearch('))
 # The Worker uses the same reviewed cards as the page. No vector database or
 # uploaded user data; this small catalogue is bundled as code at deployment.
 ai_catalogue=[[d['id'],d['title'],d['who'],d['society']] for d in catalogue]

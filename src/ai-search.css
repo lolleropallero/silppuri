@@ -14,6 +14,8 @@
 #silppuri-demo .sp-ai-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 16px 16px}
 #silppuri-demo .sp-ai-result{display:grid;align-content:start;gap:8px;text-align:left;border:1px solid var(--sp-line);border-radius:8px;padding:14px;background:var(--sp-panel);color:var(--sp-ink);font:inherit;cursor:pointer;overflow-wrap:anywhere}
 #silppuri-demo .sp-ai-result:hover{border-color:var(--sp-ink)}
+#silppuri-demo .sp-ai-result[data-selected="true"]{background:var(--sp-lime);border-color:var(--sp-button);box-shadow:inset 4px 0 var(--sp-button)}
+#silppuri-demo .sp-ai-result[data-selected="true"] .sp-ai-picked{justify-self:start;padding:4px 8px;border-radius:20px;background:var(--sp-button);color:var(--sp-button-text);font-weight:700}
 #silppuri-demo .sp-ai-title{font-size:16px;font-weight:700;line-height:1.35}
 #silppuri-demo .sp-ai-amount{font-size:15px}
 #silppuri-demo .sp-ai-who{font-size:13px;line-height:1.5}

@@ -1,7 +1,6 @@
   // Search state stays in this tab's memory; it is not part of shared packages.
   const aiSearch={ids:[],history:[],pending:false,request:0,controller:null};
   const aiQuery=q('#sp-ai-query'),aiStatus=q('.sp-ai-status'),aiResults=q('.sp-ai-results');
-  const shortSearchCatalogue=data.map(d=>[d.id,d.title,d.who]);
   function finishAiSearch(query,ids,history){
     aiSearch.ids=[...new Set(ids)];
     aiSearch.history=[...history,{query,ids:aiSearch.ids}].slice(-3);
@@ -27,7 +26,9 @@
       button.querySelector('.sp-ai-title').textContent=d.title;
       button.querySelector('.sp-ai-amount').textContent=moneyLabel(d.amount);
       button.querySelector('.sp-ai-who').textContent=d.who;
-      button.querySelector('.sp-ai-picked').textContent=selected.has(d.id)?'Paketissa · Avaa kortti':'Avaa kortti →';
+      const picked=selected.has(d.id);
+      button.dataset.selected=String(picked);
+      button.querySelector('.sp-ai-picked').textContent=picked?'✓ Paketissa · Avaa kortti':'Avaa kortti →';
     }
   }
   function renderAiHistory(){
@@ -38,8 +39,6 @@
   q('.sp-ai-form').addEventListener('submit',async event=>{
     event.preventDefault();
     const query=aiQuery.value.trim();if(aiSearch.pending||query.length<3||query.length>600)return;
-    const local=findShortSearch(query,shortSearchCatalogue);
-    if(local){finishAiSearch(query,local,[]);return;}
     const ticket=++aiSearch.request,controller=new AbortController();
     aiSearch.controller=controller;aiSearch.pending=true;
     q('.sp-ai-submit').disabled=true;aiQuery.readOnly=true;

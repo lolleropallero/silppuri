@@ -34,21 +34,23 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.equal(await page.locator('.sp-ai-search').evaluate(e=>e.open),false);
       await page.locator('.sp-ai-search summary').click();
       const before=await page.evaluate(()=>JSON.stringify(audit.packageModel()));
-      providerFails=true;allow=false;
+      let shortQueries=0;
       for(const [query,expected] of [['mamut ulos','cut-5-45'],['yle silppuriin','cut-1-42'],['Köyhät kyykkyyn','cut-3-13']]){
+        responseIds=[expected];
         await page.locator('#sp-ai-query').fill(query);await page.locator('.sp-ai-submit').click();
         await page.locator('.sp-ai-results [data-open="'+expected+'"]').waitFor({state:'visible'});
-        assert.equal(sent.length,0,'short searches work offline, with AI disabled or its quota exhausted');
-        assert.equal(await page.locator('.sp-ai-history li').count(),1,'a new explicit subject resets earlier constraints');
+        assert.equal(sent.length,++shortQueries,'every short search reaches AI, with no hardcoded local answer');
+        assert.equal(sent.at(-1).query,query);
         assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),before);
       }
-      await page.locator('.sp-ai-reset').click();providerFails=false;allow=true;
+      await page.locator('.sp-ai-reset').click();sent.length=0;responseIds=['income','corporate','cut-3-7'];
       await page.locator('#sp-ai-query').fill('Veroja lisää yrityksille');
       await page.locator('.sp-ai-submit').click();
       await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent==='Hakuehdotukset');
       assert.equal(await page.locator('.sp-ai-result').count(),3);
       assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),before,'search does not change the package');
       const income=page.locator('.sp-ai-results [data-open="income"]');
+      const unpickedColor=await income.evaluate(e=>getComputedStyle(e).backgroundColor);
       assert.equal(await income.locator('.sp-ai-title').textContent(),await page.evaluate(()=>audit.data.find(d=>d.id==='income').title));
       await income.click();
       assert.ok(await page.locator('.sp-modal').evaluate(e=>e.open));
@@ -59,7 +61,15 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.ok(await income.evaluate(e=>e===document.activeElement),'popup restores focus');
       await income.click();await page.locator('.sp-modal-confirm').click();
       await page.waitForFunction(()=>audit.packageModel().selectedIds.includes('income'));
-      assert.ok((await income.locator('.sp-ai-picked').textContent()).startsWith('Paketissa'));
+      assert.ok((await income.locator('.sp-ai-picked').textContent()).includes('✓ Paketissa'));
+      assert.equal(await income.getAttribute('data-selected'),'true');
+      assert.notEqual(await income.evaluate(e=>getComputedStyle(e).backgroundColor),unpickedColor,'selected result is visibly colored');
+      await income.click();await page.locator('.sp-modal-confirm').click();
+      await page.waitForFunction(()=>!audit.packageModel().selectedIds.includes('income'));
+      assert.equal(await income.getAttribute('data-selected'),'false');
+      assert.equal(await income.evaluate(e=>getComputedStyle(e).backgroundColor),unpickedColor,'removal restores the unselected appearance');
+      await income.click();await page.locator('.sp-modal-confirm').click();
+      await page.waitForFunction(()=>audit.packageModel().selectedIds.includes('income'));
       await page.locator('#sp-ai-query').fill('Entä ilman ansiotuloveroja?');await page.locator('.sp-ai-submit').click();
       await page.waitForFunction(()=>document.querySelector('.sp-ai-history').children.length===2);
       assert.deepEqual(sent[1].history,[{query:'Veroja lisää yrityksille',ids:['income','corporate','cut-3-7']}]);

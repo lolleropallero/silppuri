@@ -87,18 +87,19 @@ Malli on kiinteä `@cf/google/gemma-4-26b-a4b-it`; käytössä ei ole maksullisi
 AI Gatewayta, automaattisia uusintayrityksiä, Vectorizea, KV:ta tai tietokantaa.
 Staattiset sivupyynnöt ohittavat Worker-koodin; ainoastaan `/api/*` reititetään ensin siihen.
 
-Haku tehdään vain painikkeesta. Lyhyet aiheet ja puhekieliset haut (esimerkiksi
-"Yle silppuriin", "mamut ulos" ja "köyhät kyykkyyn") tunnistetaan selaimessa
-`src/search-intent.mjs`:n avulla. Ne toimivat myös AI-palvelun ollessa poissa käytöstä
-eivätkä kuluta hakurajaa tai AI-kiintiötä. Worker käyttää samaa tunnistusta suorille
-rajapintapyynnöille. Rajaukset, kielteiset ehdot, määrät ja jatkokysymykset jätetään
-AI:n tulkittaviksi. Uusi selvä aihe aloittaa uuden haun.
+Haku tehdään vain painikkeesta. Kaikki AI-kentän haut kulkevat mallille, myös lyhyet
+puhekieliset heitot. Hakulauseita, slangisanoja tai aiheita ei yhdistetä kortteihin
+käsin laaditulla sanalistalla. Malli tulkitsee myös jatkokysymykset, aiheen vaihtumisen
+ja konkreettiset rajaukset. Valitut hakutulokset erottuvat vihreällä taustalla ja
+Paketissa-merkinnällä; kortin voi edelleen avata ja poistaa paketista.
 
 Worker rajaa pyynnön 12 000 tavuun, kysymyksen
 600 merkkiin. Haku tekee ensin yhden kutsun enintään 12 ehdokkaan löytämiseksi
-otsikoiden ja kohderyhmien perusteella (enintään 512 vastaustokenia). Lyhyestä
-aihehausta näytetään enintään kuusi osumaa. Konkreettisia ehtoja, rajauksia tai pidemmän
-kuvauksen sisältävä haku tarkistetaan vielä vaikutusteksteineen (256 tokenia).
+otsikoiden ja kohderyhmien perusteella (enintään 512 vastaustokenia). Samassa vastauksessa
+malli palauttaa konkreettiset rajaukset erillisenä listana. Tyhjä lista tarkoittaa
+aihehakua, josta näytetään enintään kuusi osumaa. Rajattu haku tarkistetaan vielä
+vaikutusteksteineen (256 tokenia). Puuttuva tai virheellinen rajauslista johtaa aina
+tarkistukseen; hakutekstin sanoihin tai pituuteen perustuvaa ohitussääntöä ei ole.
 Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
 kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee AI-kutsuja
 (3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
@@ -116,7 +117,6 @@ Paikalliset tarkistukset (eivät kutsu AI-palvelua):
 
 ```sh
 python scripts/build.py --production
-node scripts/verify-search-intent.mjs
 node scripts/verify-ai-search.mjs
 node scripts/verify-ai-search-browser.cjs
 npx wrangler@4 deploy --dry-run --outdir tmp/worker-check
@@ -126,3 +126,9 @@ Selainkoe tarvitsee Playwrightin kuten muutkin selainkokeet. HTTP-palvelimella a
 staattinen esikatselu ei sisällä AI-rajapintaa. Oikea AI-koe tarvitsee Cloudflare-kirjautumisen
 ja Free-tilillä ajettavan Worker-julkaisun tai Wrangler-esikatselun; paikallisten kokeiden
 mallivastaukset ovat tarkoituksella simuloituja. Näin ne eivät kuluta päiväkohtaista kiintiötä.
+
+Erillinen kielikoe `node scripts/verify-ai-search-live.mjs --live` kutsuu tuotannon
+mallia ja kuluttaa Free-kiintiötä. Se käyttää `scripts/fixtures/ai-search-language.json`:n
+hakuilmauksia, joita ei lisätä mallin ohjeisiin tai sovellukseen. Kokeet tehdään
+hakurajan sallimalla tahdilla; palveluvirhe pysäyttää ajon ilman uusintayrityksiä.
+Tulokset tallentuvat tiedostoon `tmp/ai-search-language-results.json`.
