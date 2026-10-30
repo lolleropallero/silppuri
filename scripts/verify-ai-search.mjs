@@ -3,10 +3,14 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import worker,{MODEL} from '../src/worker.mjs';
 import catalogue from '../tmp/ai-catalogue.mjs';
-import {createCardSearch} from '../src/card-search.mjs';
+import {createCardSearch,createTitleLookup} from '../src/card-search.mjs';
 const actions=JSON.parse(await readFile(new URL('../data/catalogue.json',import.meta.url),'utf8')).actions;
 assert.deepEqual(catalogue,actions.map(d=>[d.id,d.title,d.who,d.society]));
 const rank=createCardSearch(catalogue);
+const literal=createTitleLookup(catalogue);
+assert.deepEqual(literal('Yle silppuriin'),['yle']);
+assert.deepEqual(literal('mamut ulos'),[],'a rhetorical verb must not match a compound topic');
+assert.deepEqual(createTitleLookup([['arbitrary','Avaruuskissojen tuki','kohde','vaikutus']])('avaruuskissojen silppuriin'),['avaruuskissojen'],'literal lookup derives entirely from supplied data');
 assert.deepEqual(rank(['Yle'],{limit:6,minimumRatio:.55}),['cut-1-42']);
 assert.deepEqual(rank(['opiskelija','ateriatuki'],{limit:6,minimumRatio:.55}),['cut-2-60']);
 assert.ok(rank(['yritystuki']).includes('cut-1-11'));
@@ -67,6 +71,8 @@ for(const response of [{terms:['Yle'],constraints:[]},'```json\n{"terms":["Yle"]
   output={response};assert.deepEqual(await (await worker.fetch(request(),env)).json(),{ids:['cut-1-42']});
 }
 output=reply({terms:[],constraints:[]});assert.deepEqual(await (await worker.fetch(request(),env)).json(),{ids:[]});
+output=reply({terms:['tuntematonhakutermi'],constraints:[]});
+assert.deepEqual(await (await worker.fetch(request({query:'Yle silppuriin'}),env)).json(),{ids:['cut-1-42']},'an unmatched rewrite falls back to distinctive words from the real titles');
 for(const constraints of [undefined,null,'none',42,[null],[''],['x'.repeat(241)],Array(7).fill('condition')]){
   output=reply({terms:['Yle'],constraints});const before=calls.length;
   assert.equal((await worker.fetch(request(),env)).status,200);assert.equal(calls.length,before+2,'invalid constraints always checked');

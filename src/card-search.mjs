@@ -1,5 +1,15 @@
 // Data-derived relevance search. No topics, aliases or user phrases are listed here.
 const words=text=>text.toLocaleLowerCase('fi').normalize('NFKD').replace(/\p{M}/gu,'').match(/[a-z0-9]+/g)||[];
+function commonPrefix(a,b){let length=0;while(length<Math.min(a.length,b.length)&&a[length]===b[length])length++;return length;}
+export function createTitleLookup(catalogue){
+  const frequency=new Map();
+  for(const [,title] of catalogue)for(const word of new Set(words(title)))frequency.set(word,(frequency.get(word)||0)+1);
+  const distinctive=[...frequency].filter(([word,count])=>word.length>=3&&count<=Math.max(1,catalogue.length*.1)).map(([word])=>word);
+  return query=>words(query).filter(token=>token.length>=3&&distinctive.some(word=>{
+    const prefix=commonPrefix(token,word);
+    return prefix>=3&&Math.max(token.length,word.length)-prefix<=3&&Math.min(token.length,word.length)-prefix<=2;
+  })).slice(0,6);
+}
 function byRelevance(a,b){
   if(a.score!==b.score)return b.score-a.score;
   if(a.id===b.id)return 0;
@@ -8,7 +18,7 @@ function byRelevance(a,b){
 function similarity(a,b){
   if(a===b)return 1;
   const shorter=Math.min(a.length,b.length);
-  let prefix=0;while(prefix<shorter&&a[prefix]===b[prefix])prefix++;
+  const prefix=commonPrefix(a,b);
   if(shorter===3&&prefix===3&&Math.max(a.length,b.length)<=5)return .9;
   if(shorter>=4&&prefix===shorter)return .9;
   return (prefix>=4&&prefix/shorter>=.8)||(prefix>=8&&prefix/shorter>=.7)?.8*prefix/shorter:0;

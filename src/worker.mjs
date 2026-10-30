@@ -1,6 +1,7 @@
 import catalogue from '../tmp/ai-catalogue.mjs';
-import {createCardSearch} from './card-search.mjs';
+import {createCardSearch,createTitleLookup} from './card-search.mjs';
 const searchCards=createCardSearch(catalogue);
+const titleTerms=createTitleLookup(catalogue);
 
 // A single fixed model; no Gateway, paid fallback, retries or storage.
 export const MODEL = '@cf/google/gemma-4-26b-a4b-it';
@@ -122,7 +123,11 @@ export default {
       let terms,constraints;
       try { ({terms,constraints}=searchMeaning(result)); }
       catch (error) { return invalidModelResult(error,'search'); }
-      const candidates=searchCards(terms);
+      let candidates=searchCards(terms);
+      if(!candidates.length){
+        terms=[...new Set([...titleTerms(input.query),...terms])];
+        candidates=searchCards(terms);
+      }
       if (!candidates.length) return json({ids: []},200,{'X-Search-Stage':'search'});
       // A separate short context checks the proposed matches without the noise
       // of the full catalogue. This is validation, not a retry or another model.

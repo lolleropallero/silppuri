@@ -99,6 +99,8 @@ ja konkreettisiksi rajauksiksi (enintään 512 vastaustokenia). Se ei saa kortti
 eikä valitse korttitunnisteita. `src/card-search.mjs` hakee termien osumat todellisista
 otsikoista, kohderyhmistä ja vaikutusteksteistä. Sanamuotojen vastaavuus ja sanojen
 harvinaisuus aineistossa määräävät järjestyksen; aihekohtaisia sääntöjä ei ole.
+Jos tulkinnalla ei löydy ehdokkaita, kokeillaan alkuperäisestä hausta sanoja, jotka
+esiintyvät erottuvasti korttien otsikoissa. Tämäkin sanasto muodostuu korttiaineistosta.
 Enintään 12 ehdokkaan osuvuus ja rajaukset tarkistetaan vielä vaikutusteksteineen
 (256 tokenia). Malli valitsee enintään kuusi numeroitua riviä; sovellus muuntaa numerot
 oikeiksi korttitunnisteiksi. Tyhjä ehdokaslista ei tarvitse jälkimmäistä kutsua.
