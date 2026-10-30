@@ -55,12 +55,15 @@ output=reply({terms:['Yle'],constraints:['Suojattava käyttäjän rajaama toimin
 const before=calls.length;
 const good=await worker.fetch(request({query:'  Rajaa lisää  ',history:[{query:'Aiempi aihe',ids:['income']}],selectedIds:['corporate'],model:'paid-model',max_tokens:100000}),env);
 assert.equal(good.status,200);assert.equal(calls.length,before+2);
+assert.equal(good.headers.get('x-search-diagnostics'),null);
 assert.equal(calls.at(-2)[1].max_completion_tokens,512);assert.equal(calls.at(-1)[1].max_completion_tokens,256);
 assert.ok(!JSON.stringify(calls.at(-2)).includes('paid-model'));
 assert.deepEqual(calls.at(-2)[1].messages.slice(1),[{role:'user',content:'Aiempi aihe'},{role:'assistant',content:'{"ids":["income"]}'},{role:'user',content:'Rajaa lisää'}]);
 const check=JSON.parse(calls.at(-1)[1].messages[1].content);
 assert.deepEqual(check.terms,['Yle']);assert.deepEqual(check.searches,['Aiempi aihe','Rajaa lisää']);
 assert.deepEqual(check.candidates,[[1,...catalogue.find(row=>row[0]==='cut-1-42').slice(1)]]);
+const diagnostic=await worker.fetch(request({query:'Yle'},{headers:{'X-Search-Diagnostics':'1'}}),env);
+assert.deepEqual(JSON.parse(decodeURIComponent(diagnostic.headers.get('x-search-diagnostics'))),{terms:['Yle'],constraints:['Suojattava käyttäjän rajaama toiminta.'],candidates:['cut-1-42']});
 for(const value of [new Error('quota exhausted: secret detail'),{response:'not JSON'},reply({terms:[42]}),reply({terms:Array(7).fill('Yle')}),
   reply({terms:['x'.repeat(81)]}),reply({terms:['']}),reply({ids:['income']}),{choices:[{message:{content:'{}'},finish_reason:'length'}]}]){
   output=value;const before=calls.length,result=await worker.fetch(request(),env);

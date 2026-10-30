@@ -33,6 +33,13 @@ function json(body, status = 200, extra = {}) {
   return Response.json(body, {status, headers: {'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', ...extra}});
 }
 function failure(code, status, extra) { return json({error: code}, status, extra); }
+function searchResponse(request,ids,stage,diagnostics) {
+  const headers={'X-Search-Stage':stage};
+  // Opt-in diagnostics contain only this caller's interpretation and public IDs.
+  // Nothing is stored; ordinary browser requests do not receive this header.
+  if(request.headers.get('X-Search-Diagnostics')==='1')headers['X-Search-Diagnostics']=encodeURIComponent(JSON.stringify(diagnostics));
+  return json({ids},200,headers);
+}
 
 // Bound the stream itself, not just the caller-controlled Content-Length.
 async function readInput(request) {
@@ -128,7 +135,8 @@ export default {
         terms=[...new Set([...titleTerms(input.query),...terms])];
         candidates=searchCards(terms);
       }
-      if (!candidates.length) return json({ids: []},200,{'X-Search-Stage':'search'});
+      const diagnostics={terms,constraints,candidates};
+      if (!candidates.length) return searchResponse(request,[],'search',diagnostics);
       // A separate short context checks the proposed matches without the noise
       // of the full catalogue. This is validation, not a retry or another model.
       const verification = await env.AI.run(MODEL, modelInput([
@@ -138,7 +146,7 @@ export default {
       ]));
       try {
         const ids = verifiedIds(verification,candidates);
-        return json({ids},200,{'X-Search-Stage':'check'});
+        return searchResponse(request,ids,'check',diagnostics);
       }
       catch (error) { return invalidModelResult(error,'check'); }
     } catch (error) {
