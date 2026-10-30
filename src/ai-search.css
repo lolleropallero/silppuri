@@ -1,0 +1,23 @@
+#silppuri-demo .sp-ai-search{margin:20px 0;border:1px solid var(--sp-line);border-radius:10px;background:var(--sp-paper)}
+#silppuri-demo .sp-ai-search>summary{padding:14px 16px;font-size:15px;font-weight:700;cursor:pointer}
+#silppuri-demo .sp-ai-search[open]>summary{border-bottom:1px solid var(--sp-line)}
+#silppuri-demo .sp-ai-form{padding:16px 16px 0;display:grid;gap:8px}
+#silppuri-demo .sp-ai-form label{font-size:14px;font-weight:600}
+#silppuri-demo .sp-ai-form textarea{box-sizing:border-box;width:100%;min-height:80px;resize:vertical;padding:12px;border:1px solid var(--sp-line);border-radius:6px;background:var(--sp-panel);color:var(--sp-ink);font:inherit;font-size:16px;line-height:1.5}
+#silppuri-demo .sp-ai-buttons{display:flex;gap:8px;flex-wrap:wrap}
+#silppuri-demo .sp-ai-buttons button{min-height:44px;padding:10px 16px;border:1px solid var(--sp-line);border-radius:6px;font:inherit;font-size:14px;font-weight:600;background:var(--sp-panel);color:var(--sp-ink);cursor:pointer}
+#silppuri-demo .sp-ai-buttons .sp-ai-submit{background:var(--sp-button);color:var(--sp-button-text)}
+#silppuri-demo .sp-ai-buttons button:disabled{opacity:.6;cursor:wait}
+#silppuri-demo .sp-ai-privacy{margin:0;font-size:12px;color:var(--sp-muted)}
+#silppuri-demo .sp-ai-history{margin:12px 16px 0;padding-left:20px;color:var(--sp-muted);font-size:13px;overflow-wrap:anywhere}
+#silppuri-demo .sp-ai-status{margin:12px 16px;font-size:14px}
+#silppuri-demo .sp-ai-status:empty{display:none}
+#silppuri-demo .sp-ai-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 16px 16px}
+#silppuri-demo .sp-ai-result{display:grid;align-content:start;gap:8px;text-align:left;border:1px solid var(--sp-line);border-radius:8px;padding:14px;background:var(--sp-panel);color:var(--sp-ink);font:inherit;cursor:pointer;overflow-wrap:anywhere}
+#silppuri-demo .sp-ai-result:hover{border-color:var(--sp-ink)}
+#silppuri-demo .sp-ai-title{font-size:16px;font-weight:700;line-height:1.35}
+#silppuri-demo .sp-ai-amount{font-size:15px}
+#silppuri-demo .sp-ai-who{font-size:13px;line-height:1.5}
+#silppuri-demo .sp-ai-picked{font-size:12px;font-weight:600}
+#silppuri-demo .sp-ai-search :is(button,textarea,summary):focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
+@media(max-width:600px){#silppuri-demo .sp-ai-results{grid-template-columns:1fr}}

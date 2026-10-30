@@ -310,6 +310,18 @@
         <h3 id="sp-presets-title">Valmiit paketit</h3>
         <div class="sp-presets-list"></div>
       </section>
+      <details class="sp-ai-search">
+        <summary>Hae tekoälyllä</summary>
+        <form class="sp-ai-form">
+          <label for="sp-ai-query">Millaisia toimia etsit?</label>
+          <textarea id="sp-ai-query" rows="2" minlength="3" maxlength="600" required placeholder="Esim. Leikkaa suuria eläkkeitä, mutta jätä pienimmät rauhaan."></textarea>
+          <div class="sp-ai-buttons"><button type="submit" class="sp-ai-submit cursor-interaction">Etsi toimia</button><button type="button" class="sp-ai-reset cursor-interaction" hidden>Uusi haku</button></div>
+          <p class="sp-ai-privacy">Hakusi ja paketin toimenpiteet lähetetään Cloudflarelle.</p>
+        </form>
+        <ol class="sp-ai-history" aria-label="Aiemmat haut" hidden></ol>
+        <p class="sp-ai-status" role="status" aria-live="polite"></p>
+        <div class="sp-ai-results" aria-label="Tekoälyn hakuehdotukset"></div>
+      </details>
       <div class="sp-action-list"></div>
       <button class="sp-more cursor-interaction" type="button">Näytä loput 4 esimerkkitoimea ↓</button>
     </section>

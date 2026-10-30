@@ -308,6 +308,7 @@ logo=logo.replace('<svg ', '<svg class="sp-logo" width="30" height="30" aria-hid
 markup=markup.replace('<!--SILPPURI_LOGO-->',logo)
 markup=markup.replace('<!--INCIDENCE_METHOD-->',(ROOT/'src/incidence-method.html').read_text(encoding='utf-8'))
 markup=markup.replace('</style>',(ROOT/'src/catalogue.css').read_text(encoding='utf-8')+'\n</style>')
+markup=markup.replace('</style>',(ROOT/'src/ai-search.css').read_text(encoding='utf-8')+'\n</style>')
 markup=markup.replace('</style>',(ROOT/'src/share.css').read_text(encoding='utf-8')+'\n</style>')
 markup=markup.replace('<div class="sp-chart">','<div class="sp-horizon" role="group" aria-label="Säästöjen ajankohta"><button type="button" class="cursor-interaction" data-horizon="2031" aria-pressed="true">2031</button><button type="button" class="cursor-interaction" data-horizon="later" aria-pressed="false">Myös myöhemmät</button></div><div class="sp-chart">',1)
 markup=markup.replace('Laskuri laskee valittujen toimien arviot yhteen. Arviot ovat eri vuosilta. Lopullinen säästö riippuu myös siitä, miten toimet muuttavat kulutusta, työntekoa ja yritysten toimintaa.',
@@ -334,6 +335,12 @@ from curate_incidence import build_incidence
 incidence=build_incidence(catalogue)
 script=script.replace('{}/*INCIDENCE_DATA*/',json.dumps(incidence,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
 script=script.replace('/*PRESETS*/',(ROOT/'src/presets.js').read_text(encoding='utf8'))
+script=script.replace('/*AI_SEARCH*/',(ROOT/'src/ai-search.js').read_text(encoding='utf8'))
+# The Worker uses the same reviewed cards as the page. No vector database or
+# uploaded user data; this small catalogue is bundled as code at deployment.
+ai_catalogue=[[d['id'],d['title'],d['who'],d['society']] for d in catalogue]
+(ROOT/'tmp').mkdir(exist_ok=True)
+(ROOT/'tmp/ai-catalogue.mjs').write_text('export default '+json.dumps(ai_catalogue,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf8')
 script=script.replace('/*INCIDENCE_ENGINE*/',(ROOT/'src/incidence.js').read_text(encoding='utf8'))
 script=script.replace('/*INCIDENCE_VIEW*/',(ROOT/'src/incidence-view.js').read_text(encoding='utf8'))
 script=script.replace('/*PIE_INTERACTION*/',(ROOT/'src/pie-interaction.js').read_text(encoding='utf8'))

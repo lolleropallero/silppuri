@@ -70,3 +70,46 @@ npx wrangler@4 deploy
 ```
 
 Kirjautuminen tarvitaan ensimmäisellä kerralla. Aja build uudelleen aina ennen muutosten julkaisua.
+
+### AI-haku ja nollabudjetti
+
+AI-haku käyttää Cloudflare Workers AI:ta samassa Workerissa kuin sivusto. Omistaja vahvisti
+30.10.2026, että tilin **Workers-tilaus on Free**. Cloudflaren
+[hinnoittelun](https://developers.cloudflare.com/workers-ai/platform/pricing/) mukaan Free
+sisältää 10 000 neuronia päivässä ja hylkää kiintiön ylittävät pyynnöt. Raja on koko tilin
+yhteinen, ei 10 000 hakua. **Älä vaihda Workers Paid -tilaukseen tämän haun ollessa päällä:**
+Paid laskuttaa ylitykset. Sivuston Free/Pro-tilaus on eri asia kuin Workers-tilaus.
+
+`wrangler.jsonc`:n `AI_SEARCH_MODE: "workers-free"` sallii kutsut. Arvo `"off"`
+(tai puuttuva asetus) estää ne. Asetus ei tunnista laskutustilauksen muutoksia eikä ole
+Paid-tilin kulukatto. Vaihda arvo pois päältä ja julkaise ennen mahdollista tilausmuutosta.
+Malli on kiinteä `@cf/google/gemma-4-26b-a4b-it`; käytössä ei ole maksullisia varamalleja,
+AI Gatewayta, automaattisia uusintayrityksiä, Vectorizea, KV:ta tai tietokantaa.
+Staattiset sivupyynnöt ohittavat Worker-koodin; ainoastaan `/api/*` reititetään ensin siihen.
+
+Haku tehdään vain painikkeesta. Worker rajaa pyynnön 12 000 tavuun, kysymyksen
+600 merkkiin ja vastauksen 256 tokeniin. Rate Limiting -binding hillitsee hakuja
+(3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
+Nollakulut perustuvat Workers Free -tilauksen pakotettuun kiintiöön. Kiintiön tai palvelun
+pettäessä tavallinen paikallinen haku toimii edelleen.
+
+Build tuottaa `tmp/ai-catalogue.mjs`:ään kaikki nykyiset kortit, jotka Wrangler paketoi
+Workerin mukaan. Malli saa otsikot, kohteet ja vaikutustekstit sekä kysymyksen,
+enintään kolme aiempaa hakua ja valittujen korttien tunnisteet. Mallilta hyväksytään vain
+enintään kuusi tunnettua korttitunnistetta. Käyttäjälle näkyvät nimet, eurot ja tekstit
+luetaan aina laskurista. AI ei muuta pakettia. Hakuhistoria säilyy vain avoimen välilehden
+muistissa; sovellus ei tallenna sitä palvelimelle eikä lokita kysymyksiä.
+
+Paikalliset tarkistukset (eivät kutsu AI-palvelua):
+
+```sh
+python scripts/build.py --production
+node scripts/verify-ai-search.mjs
+node scripts/verify-ai-search-browser.cjs
+npx wrangler@4 deploy --dry-run --outdir tmp/worker-check
+```
+
+Selainkoe tarvitsee Playwrightin kuten muutkin selainkokeet. HTTP-palvelimella avattu
+staattinen esikatselu ei sisällä AI-rajapintaa. Oikea AI-koe tarvitsee Cloudflare-kirjautumisen
+ja Free-tilillä ajettavan Worker-julkaisun tai Wrangler-esikatselun; paikallisten kokeiden
+mallivastaukset ovat tarkoituksella simuloituja. Näin ne eivät kuluta päiväkohtaista kiintiötä.

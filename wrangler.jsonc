@@ -1,7 +1,23 @@
 {
   "name": "silppuri",
   "compatibility_date": "2026-10-28",
+  "main": "src/worker.mjs",
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "ai": { "binding": "AI" },
+  "vars": {
+    // Owner confirmed Workers Free on 2026-10-30. Free rejects usage over
+    // 10,000 neurons/day. This flag is NOT a billing cap on Workers Paid.
+    // Disable ("off") BEFORE changing the account to a paid Workers plan.
+    "AI_SEARCH_MODE": "workers-free"
+  },
+  "ratelimits": [{
+    "name": "AI_SEARCH_LIMITER",
+    "namespace_id": "26103001",
+    "simple": { "limit": 3, "period": 60 }
+  }],
+  "observability": { "enabled": false }
 }

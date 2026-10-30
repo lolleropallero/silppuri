@@ -1028,10 +1028,12 @@
     if(filter!=='all')restrictions.push({cut:'uudet menoleikkaukset',tax:'uudet verot ja muut tulot',selected:'valitut toimet','selected-cut':'valitut menoleikkaukset','selected-tax':'valitut verot ja maksut'}[filter]);
     q('.sp-results').textContent=matches.length+' '+(filter.startsWith('selected')?'valittua':'valitsematonta')+' toimea'+(restrictions.length?' · '+restrictions.join(' · '):'')+' · näytetään '+Math.min(limit,matches.length)+'.';
     q('.sp-more').hidden=matches.length<=limit;q('.sp-more').textContent='Näytä seuraavat '+Math.min(20,matches.length-limit)+' toimea ↓';
+    renderAiResults();
     renderIncidence(chosen);
     if(pieExpanded)renderZoom();
     if(announce)q('.sp-announcement').textContent=`${chosen.length} valittua toimea. Koko julkisen talouden vaikutus ${moneyLabel(sum)}.`;
   }
+  /*AI_SEARCH*/
   q('#sp-search').addEventListener('input',event=>{search=event.target.value;limit=12;render();save();});
   q('#sp-category').addEventListener('change',event=>{category=event.target.value;limit=12;render();save();});
   function resetCatalogueView(){
@@ -1111,7 +1113,7 @@
       // Switching keeps the card in place in the frozen browsing order.
       const i=catalogueOrder.indexOf(previous),j=catalogueOrder.indexOf(d.id);
       if(i>=0){if(j>=0)catalogueOrder[j]=previous;catalogueOrder[i]=d.id;}
-      if(activeAction===previous)activeAction=d.id;
+      if(data.find(x=>x.id===activeAction)?.variantGroup?.id===g.id)activeAction=d.id;
       render(true);if(activeAction){renderImpact(activeAction);positionDialog();}save();
       q('#'+focusId)?.focus({preventScroll:true});
     }
