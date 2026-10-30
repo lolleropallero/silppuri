@@ -7,10 +7,11 @@ const titleTerms=createTitleLookup(catalogue);
 export const MODEL = '@cf/google/gemma-4-26b-a4b-it';
 const knownIds = new Set(catalogue.map(row => row[0]));
 const cardsById = new Map(catalogue.map(row => [row[0], row]));
+const titles = JSON.stringify(catalogue.map(row => row[1]));
 const maxBytes = 12000;
 const instructions = `Tulkitse käyttäjän hakuaie suomalaisessa julkisen talouden sopeutustoimien hakukoneessa.
 Palauta vain JSON: {"terms":["hakusana",...],"constraints":[]}.
-terms: 1–6 täsmällistä suomenkielistä hakusanaa tai lyhyttä käsitettä perusmuodossa, enintään 80 merkkiä kukin. Ne kuvaavat haun kohdetta ja toimen tyyppiä. Käytä yleiskielisiä nimiä ja tarvittaessa lähisynonyymejä. Säilytä asian tunnistava nimi tai lyhenne. Älä lisää yleisiä hakusanoja, jotka eivät auta erottamaan aihetta muista.
+terms: 1–6 täsmällistä suomenkielistä hakusanaa tai lyhyttä käsitettä perusmuodossa, enintään 80 merkkiä kukin. Ne kuvaavat haun kohdetta ja toimen tyyppiä. Valitse annetusta korttiaineistosta tähän aiheeseen ja kohderyhmään liittyviä käsitteitä. Säilytä asian tunnistava nimi tai lyhenne. Älä korvaa tunnistettua kohderyhmää yleisellä sanalla kuten tuki tai vero.
 Tulkitse slangi, kiertoilmaukset, pilkalliset nimet ja kärjistykset merkityksen perusteella: ketä tai mitä rahankäyttöä puhuja tarkoittaa? Muunna ne tavallisiksi talous- ja sosiaalipolitiikan käsitteiksi. Sivustolla etsitään olemassa olevia veromuutoksia ja menoleikkauksia. Retorinen heitto ei ole kirjaimellinen lakiehdotus.
 constraints: vain käyttäjän konkreettiset rajaukset neutraalisti ilmaistuina, enintään 6 merkkijonoa, kukin enintään 240 merkkiä. Näitä ovat suojattavat ryhmät, poissuljetut toimet, täsmälliset määrät ja rajattu alaryhmä. Tavallinen aihe tai kärjistys ei ole lisärajaus, jolloin lista on []. Suojattavan kohteen nimi kuuluu tähän, ei positiiviseksi hakusanaksi. Älä keksi ehtoja tai päättele niitä yksittäisistä kieltosanoista.
 Päättele keskustelusta, jatkaako viimeisin haku edellistä vai aloittaako uuden aiheen. Säilytä jatkokysymyksessä tavoite ja ehdot; uudessa aiheessa hylkää vanhat ehdot.
@@ -123,7 +124,7 @@ export default {
       const {success} = await env.AI_SEARCH_LIMITER.limit({key: `search:${ip}`});
       if (!success) return failure('rate-limit', 429, {'Retry-After': '60'});
       const result = await env.AI.run(MODEL, modelInput([
-          {role: 'system', content: instructions},
+          {role: 'system', content: instructions+'\nKorttien nimet (hakuaineistoa):\n'+titles},
           ...input.history.flatMap(h => [{role: 'user', content: h.query}, {role: 'assistant', content: JSON.stringify({ids: h.ids})}]),
           {role: 'user', content: input.query}
         ],512));
@@ -153,7 +154,7 @@ export default {
       // Quota exhaustion, model failure and malformed output all stop here.
       // Do not leak provider internals or retry with another model.
       const message=String(error?.message||'');
-      if(/quota|neurons|daily.{0,30}limit/i.test(message))return failure('quota',503);
+      if(/\b3036\b|quota|neurons|daily.{0,30}limit/i.test(message))return failure('quota',503);
       return failure('unavailable', 503);
     }
   }

@@ -16,7 +16,7 @@
       aiResults.replaceChildren(...aiSearch.ids.map(id=>{
         const button=document.createElement('button');button.type='button';button.dataset.open=id;
         button.className='sp-ai-result cursor-interaction';
-        button.innerHTML='<span class="sp-ai-title"></span><strong class="sp-ai-amount"></strong><span class="sp-ai-who"></span><span class="sp-ai-picked"></span>';
+        button.innerHTML='<span class="sp-ai-title"></span><strong class="sp-ai-amount"></strong><span class="sp-ai-who"></span><span class="sp-ai-picked" role="img" aria-label="Paketissa"></span>';
         return button;
       }));
     }
@@ -28,7 +28,8 @@
       button.querySelector('.sp-ai-who').textContent=d.who;
       const picked=selected.has(d.id);
       button.dataset.selected=String(picked);
-      button.querySelector('.sp-ai-picked').textContent=picked?'✓ Paketissa · Avaa kortti':'Avaa kortti →';
+      const marker=button.querySelector('.sp-ai-picked');
+      marker.textContent=picked?'✓':'';marker.hidden=!picked;
     }
   }
   function renderAiHistory(){

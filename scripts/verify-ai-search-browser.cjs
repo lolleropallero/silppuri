@@ -65,7 +65,8 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.ok(await income.evaluate(e=>e===document.activeElement),'popup restores focus');
       await income.click();await page.locator('.sp-modal-confirm').click();
       await page.waitForFunction(()=>audit.packageModel().selectedIds.includes('income'));
-      assert.ok((await income.locator('.sp-ai-picked').textContent()).includes('✓ Paketissa'));
+      assert.equal(await income.locator('.sp-ai-picked').textContent(),'✓');
+      assert.ok(!(await income.textContent()).includes('Avaa kortti'));
       assert.equal(await income.getAttribute('data-selected'),'true');
       assert.notEqual(await income.evaluate(e=>getComputedStyle(e).backgroundColor),unpickedColor,'selected result is visibly colored');
       await income.click();await page.locator('.sp-modal-confirm').click();

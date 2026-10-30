@@ -91,12 +91,13 @@ Haku tehdään vain painikkeesta. Kaikki AI-kentän haut kulkevat mallille, myö
 puhekieliset heitot. Hakulauseita, slangisanoja tai aiheita ei yhdistetä kortteihin
 käsin laaditulla sanalistalla. Malli tulkitsee myös jatkokysymykset, aiheen vaihtumisen
 ja konkreettiset rajaukset. Valitut hakutulokset erottuvat vihreällä taustalla ja
-Paketissa-merkinnällä; kortin voi edelleen avata ja poistaa paketista.
+✓-merkillä; kortin voi edelleen avata ja poistaa paketista.
 
 Worker rajaa pyynnön 12 000 tavuun, kysymyksen
 600 merkkiin. Ensimmäinen kutsu tulkitsee hakuaikeen 1–6 yleiskieliseksi hakutermiksi
-ja konkreettisiksi rajauksiksi (enintään 512 vastaustokenia). Se ei saa korttiluetteloa
-eikä valitse korttitunnisteita. `src/card-search.mjs` hakee termien osumat todellisista
+ja konkreettisiksi rajauksiksi (enintään 512 vastaustokenia). Se saa kaikkien korttien
+nimet, jotta puhekielen tulkinnasta ei katoa olennaisia aiheita. Se ei valitse
+korttitunnisteita. `src/card-search.mjs` hakee termien osumat todellisista
 otsikoista, kohderyhmistä ja vaikutusteksteistä. Sanamuotojen vastaavuus ja sanojen
 harvinaisuus aineistossa määräävät järjestyksen; aihekohtaisia sääntöjä ei ole.
 Jos tulkinnalla ei löydy ehdokkaita, kokeillaan alkuperäisestä hausta sanoja, jotka
@@ -117,6 +118,9 @@ Siltä hyväksytään vain enintään kuusi ehdokaslistalla olevaa korttitunnist
 Käyttäjälle näkyvät nimet, eurot ja tekstit
 luetaan aina laskurista. AI ei muuta pakettia. Hakuhistoria säilyy vain avoimen välilehden
 muistissa; sovellus ei tallenna sitä palvelimelle eikä lokita kysymyksiä.
+Oman testipyynnön otsakkeella `X-Search-Diagnostics: 1` saa saman nimisessä
+vastausotsakkeessa URI-koodatun JSONin tulkituista termeistä, rajauksista ja
+ehdokastunnisteista. Tavallinen käyttöliittymä ei pyydä diagnostiikkaa.
 
 Paikalliset tarkistukset (eivät kutsu AI-palvelua):
 

@@ -50,7 +50,8 @@ for(const query of ['yle silppuriin','mamut ulos','köyhät kyykkyyn','Hillot po
   assert.equal(calls.length,before+2);assert.equal(calls.at(-2)[1].messages.at(-1).content,query);
 }
 assert.ok(calls.every(call=>call[0]===MODEL&&call[1].store===false));
-assert.ok(calls.every(call=>call[1].messages[0].content.length<3500),'interpretation sees no giant catalogue');
+assert.ok(calls.every(call=>call[1].messages[0].content.length<18000),'only titles accompany interpretation, full details stay in the short candidate check');
+assert.ok(calls[0][1].messages[0].content.includes(JSON.stringify(catalogue.map(row=>row[1]))),'all current card titles remain available to interpret unfamiliar wording');
 output=reply({terms:['Yle'],constraints:['Suojattava käyttäjän rajaama toiminta.']});
 const before=calls.length;
 const good=await worker.fetch(request({query:'  Rajaa lisää  ',history:[{query:'Aiempi aihe',ids:['income']}],selectedIds:['corporate'],model:'paid-model',max_tokens:100000}),env);
@@ -64,7 +65,7 @@ assert.deepEqual(check.terms,['Yle']);assert.deepEqual(check.searches,['Aiempi a
 assert.deepEqual(check.candidates,[[1,...catalogue.find(row=>row[0]==='cut-1-42').slice(1)]]);
 const diagnostic=await worker.fetch(request({query:'Yle'},{headers:{'X-Search-Diagnostics':'1'}}),env);
 assert.deepEqual(JSON.parse(decodeURIComponent(diagnostic.headers.get('x-search-diagnostics'))),{terms:['Yle'],constraints:['Suojattava käyttäjän rajaama toiminta.'],candidates:['cut-1-42']});
-for(const value of [new Error('quota exhausted: secret detail'),{response:'not JSON'},reply({terms:[42]}),reply({terms:Array(7).fill('Yle')}),
+for(const value of [new Error('quota exhausted: secret detail'),new Error('3036: Account limited'),{response:'not JSON'},reply({terms:[42]}),reply({terms:Array(7).fill('Yle')}),
   reply({terms:['x'.repeat(81)]}),reply({terms:['']}),reply({ids:['income']}),{choices:[{message:{content:'{}'},finish_reason:'length'}]}]){
   output=value;const before=calls.length,result=await worker.fetch(request(),env);
   assert.equal(result.status,value instanceof Error?503:502);assert.equal(calls.length,before+1,'no retries');
