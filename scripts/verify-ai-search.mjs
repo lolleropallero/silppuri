@@ -43,16 +43,18 @@ const good = await worker.fetch(request({query: '  Ei pienituloisilta  ', histor
 assert.equal(good.status, 200);assert.equal(good.headers.get('cache-control'), 'no-store');
 assert.deepEqual(await good.json(), {ids: ['income', 'corporate']});
 assert.equal(calls.length, 1);assert.equal(calls[0][0], MODEL);
-assert.equal(calls[0][1].max_completion_tokens, 256);assert.equal(calls[0][1].store, false);
-assert.equal(calls[0][1].messages.length, 2);
-assert.deepEqual(JSON.parse(calls[0][1].messages[1].content), {query: 'Ei pienituloisilta', history: [{query: 'Entä eläkkeet?', ids: ['income']}], selectedIds: ['corporate']});
+assert.equal(calls[0][1].max_completion_tokens, 1536);assert.equal(calls[0][1].store, false);
+assert.equal(calls[0][1].chat_template_kwargs.enable_thinking, true);
+assert.equal(calls[0][1].messages.length, 4);
+assert.deepEqual(calls[0][1].messages.slice(1), [{role:'user',content:'Entä eläkkeet?'},{role:'assistant',content:'{"ids":["income"]}'},{role:'user',content:'Ei pienituloisilta'}]);
+assert.ok(calls[0][1].messages[0].content.endsWith('CURRENT_PACKAGE_IDS: ["corporate"]'));
 assert.ok(calls[0][1].messages[0].content.includes(catalogue.at(-1)[1]));
 assert.ok(!JSON.stringify(calls[0][1]).includes('paid-model'));
 for (const value of [new Error('quota exhausted: secret provider detail'), {response: 'not JSON'}, {response: '{"ids":["invented"]}'},
   {response: '{"ids":["income",42]}'}, {response: '{"ids":["income","income","income","income","income","income","income"]}'},
   {choices: [{message: {content: '{"ids":[]}'}, finish_reason: 'length'}]}]) {
   output = value;const before = calls.length;const failed = await worker.fetch(request(), env);
-  assert.equal(failed.status, 503);assert.deepEqual(await failed.json(), {error: 'unavailable'});assert.equal(calls.length, before + 1, 'no automatic retries');
+  assert.equal(failed.status, value instanceof Error ? 503 : 502);assert.deepEqual(await failed.json(), {error: value instanceof Error ? 'unavailable' : 'model-output'});assert.equal(calls.length, before + 1, 'no automatic retries');
 }
 output = {response: '{"ids":["income","income"],"text":"<script>bad</script>"}'};
 assert.deepEqual(await (await worker.fetch(request(), env)).json(), {ids: ['income']}, 'only allowlisted IDs escape the model boundary');
