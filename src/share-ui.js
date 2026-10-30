@@ -33,7 +33,7 @@ async function refreshShareImage(){
     const img=document.createElement('img');img.src=shareObjectUrl;img.alt=shareTitle(shareName.value)+' – yhteenveto, kuvaajat ja QR-koodi paketin toimenpiteisiin';
     img.width=canvas.width;img.height=canvas.height;q('.sp-share-preview').replaceChildren(img);
     q('.sp-download').disabled=false;shareStatus.textContent='';
-    q('.sp-native-share').hidden=!(navigator.canShare?.(nativeShareData())&&shareLink);
+    q('.sp-native-share').hidden = !(navigator.canShare?.(nativeShareData())&&shareLink);
   }catch(error){if(generation===shareGeneration)shareStatus.textContent='Kuvan luonti ei onnistunut. Jakolinkin voi silti kopioida.';}
 }
 function shareFilename(){return shareTitle(shareName.value).replace(/[<>:"/\\|?*\u0000-\u001f]/g,'-').replace(/[. ]+$/,'')+'.png';}
@@ -42,11 +42,11 @@ function openShareName(){
   shareName.value=packageName||'';shareName.setCustomValidity('');nameDialog.showModal();shareName.focus();shareName.select();
 }
 q('.sp-publish').addEventListener('click',openShareName);
-q('.sp-share-name-form').addEventListener('submit',event=>{
+q('.sp-share-name-form').addEventListener('submit',async event=>{
   event.preventDefault();
   if(!shareName.value.trim()){shareName.setCustomValidity('Anna silppurille nimi.');shareName.reportValidity();return;}
   shareName.value=shareTitle(shareName.value);rememberShareName();nameDialog.close();shareDialog.showModal();
-  refreshShareImage();
+  await refreshShareImage();
 });
 shareName.addEventListener('input',()=>shareName.setCustomValidity(''));
 q('.sp-name-close').addEventListener('click',()=>nameDialog.close());

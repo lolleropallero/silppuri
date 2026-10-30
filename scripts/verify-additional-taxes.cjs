@@ -54,7 +54,7 @@ for(const n of [22,26])assert.equal(coverage.find(r=>r.number===n).action,null,'
 const ctx=vm.createContext({model,actions:additional.map(d=>get(d.id))});
 vm.runInContext(fs.readFileSync(path.join(root,'src/incidence.js'),'utf8'),ctx);
 const r=vm.runInContext('calculateIncidence(actions,model)',ctx);
-assert.equal(r.entries.length,15);assert.deepEqual(Array.from(r.missing,d=>d.id).sort(),['fw-corporate-minimum','fw-exit-tax','fw-treaty-dividends']);
+assert.equal(r.entries.length,15);assert.deepEqual(Array.from(r.missing,d=>d.id).sort((a,b)=>a.localeCompare(b,'en')),['fw-corporate-minimum','fw-exit-tax','fw-treaty-dividends']);
 for(const e of r.entries){
  assert.ok(e.spec.partial);assert.ok(e.spec.calculation.length>=4);
  for(const s of e.spec.scenarios){assert.ok(Object.keys(s.shares).every(k=>model.profiles[k]));assert.ok(Object.values(s.shares).reduce((a,b)=>a+b,0)<=1+1e-9);}

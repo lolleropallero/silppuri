@@ -28,13 +28,6 @@ const packagePresets=[
         "cut-1-55",
         "cut-1-58"
       ],
-      "name": "Rikkaat talkoisiin",
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {
         "income": 3,
         "tax-capital-low": 3,
@@ -46,11 +39,6 @@ const packagePresets=[
       },
       "cutPercents": {
         "cut-7-52": 15
-      },
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
       }
     }
   },
@@ -78,13 +66,6 @@ const packagePresets=[
         "fw-succession-abolish",
         "sorsa-million-inheritance"
       ],
-      "name": "Keskuskomitea",
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {
         "income": 3,
         "tax-capital-low": 3,
@@ -95,11 +76,6 @@ const packagePresets=[
       },
       "cutPercents": {
         "cut-7-52": 25
-      },
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
       }
     }
   },
@@ -115,20 +91,8 @@ const packagePresets=[
         "cut-3-8",
         "cut-3-10"
       ],
-      "name": "Kannustinpaketti",
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {},
-      "cutPercents": {},
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
-      }
+      "cutPercents": {}
     }
   },
   {
@@ -145,9 +109,6 @@ const packagePresets=[
         "cut-1-25",
         "tax-tobacco"
       ],
-      "name": "Kaikille paha mieli",
-      "includeLater": false,
-      "yleCutPercent": 20,
       "taxIncreasesPP": {
         "income": 2,
         "corporate": 3
@@ -158,11 +119,6 @@ const packagePresets=[
       },
       "cutPercents": {
         "cut-1-25": 100
-      },
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
       }
     }
   },
@@ -208,9 +164,6 @@ const packagePresets=[
         "tax-transfer-land",
         "tax-donation"
       ],
-      "name": "Yritykset silppuriin",
-      "includeLater": false,
-      "yleCutPercent": 20,
       "taxIncreasesPP": {
         "income": 2,
         "corporate": 3
@@ -228,11 +181,6 @@ const packagePresets=[
       },
       "cutPercents": {
         "cut-1-69": 100
-      },
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
       }
     }
   },
@@ -256,13 +204,6 @@ const packagePresets=[
         "income",
         "cut-3-51"
       ],
-      "name": "Elintaso silppuriin",
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {
         "income": 3,
         "tax-vat-standard": 3,
@@ -273,12 +214,7 @@ const packagePresets=[
         "tax-electric1": 3,
         "tax-car-all": 3
       },
-      "cutPercents": {},
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
-      }
+      "cutPercents": {}
     }
   },
   {
@@ -306,14 +242,7 @@ const packagePresets=[
         "vm-alcohol",
         "cut-5-16"
       ],
-      "name": "Yövartijavaltio",
       "year": 2031,
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {
         "tax-insurance": 3,
         "tax-vehicle": 3,
@@ -323,11 +252,6 @@ const packagePresets=[
       },
       "cutPercents": {
         "cut-7-52": 65
-      },
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
       }
     }
   },
@@ -351,23 +275,19 @@ const packagePresets=[
         "income",
         "income-index"
       ],
-      "name": "Eläkepäivät pilalla",
       "year": 2031,
-      "includeLater": false,
-      "yleCutPercent": 20,
-      "taxIncreasesPP": {
-        "income": 3,
-        "corporate": 3
-      },
       "unitSteps": {
         "income": 1
       },
-      "cutPercents": {},
-      "dividendMode": "abolish",
-      "fundingChoices": {
-        "yle": "keep-tax",
-        "farm": "save"
-      }
+      "cutPercents": {}
     }
   }
-];
+].map(preset=>({...preset,model:{
+  name:preset.name,
+  includeLater:false,
+  yleCutPercent:20,
+  taxIncreasesPP:{income:3,corporate:3},
+  dividendMode:'abolish',
+  fundingChoices:{yle:'keep-tax',farm:'save'},
+  ...preset.model
+}}));

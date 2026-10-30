@@ -49,5 +49,5 @@ ctx.units['tax-vat-standard']=0;ctx.scenario.corporate=0;calculated=calculate();
 assert.equal(calculated['tax-vat-standard'].amount,0);
 assert.equal(calculated.corporate.netUpper,0);
 // Curation must now cover the additional tax cards as well (audit F20).
-assert.deepEqual(Object.keys(read('action-research.json')).sort(),actions.map(d=>d.id).sort());
+assert.deepEqual(Object.keys(read('action-research.json')).sort((a,b)=>a.localeCompare(b,'en')),actions.map(d=>d.id).sort((a,b)=>a.localeCompare(b,'en')));
 console.log('PASS: F02/F03 source formulas, runtime sums, explanatory scope, gross household bases, scaling and repeat renders; F20 research coverage.');

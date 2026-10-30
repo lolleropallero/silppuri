@@ -72,7 +72,7 @@ function createModalShred(root, dialog) {
             { transform: `translate(${side * 5}px,${fall}px) rotate(${side * 1.4}deg)`, opacity: 0 }
           ], { duration: 460, delay: (i * 19 % 75), easing: 'cubic-bezier(.4,0,.8,.4)', fill: 'both' }));
         });
-        Promise.allSettled(animations.map(animation => animation.finished)).then(settle);
+        Promise.allSettled(animations.map(animation => animation.finished)).then(settle).catch(settle);
         // A suspended/cancelled animation must never trap the user in the popup.
         timeout = setTimeout(settle, 800);
       } catch {

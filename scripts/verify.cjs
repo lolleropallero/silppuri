@@ -29,7 +29,7 @@ assert.equal(coverage.length,399);
 assert.equal(coverage.filter(r=>r.status==='included').length,catalogue.meta.cutRows);
 assert.ok(coverage.filter(r=>r.status.startsWith('below-20m')).every(r=>(r.maxPotentialMillion??r.maxNetMillion??r.maxReportedMillion)<20));
 const excluded=JSON.parse(fs.readFileSync(path.join(root,'data/nonrecurring-exclusions.json'),'utf8'));
-assert.deepEqual(catalogue.meta.excludedNonrecurring,Object.keys(excluded).sort());
+assert.deepEqual(catalogue.meta.excludedNonrecurring,Object.keys(excluded).sort((a,b)=>a.localeCompare(b,'en')));
 assert.equal(Object.keys(excluded).length,11);
 for(const [id,reason] of Object.entries(excluded)){
   assert.ok(!ids.has(id),id);
@@ -139,7 +139,7 @@ for(const ids of [['health','cut-7-42'],['cut-7-42','health']]){
   assert.ok(pairs[0].note.includes('1 123'));
 }
 ctx.selected.clear();
-new vm.Script(source.replace('[]/*CATALOGUE*/',JSON.stringify(actions)));
+assert.doesNotThrow(()=>new vm.Script(source.replace('[]/*CATALOGUE*/',JSON.stringify(actions))));
 // A host state echo must not collapse an expanded catalogue back to 12 rows.
 Object.assign(ctx,{maxPP:20,payerGroups:[],filter:'all',category:'all',search:'',sortOrder:'desc',activeFlow:null,limit:32,catalogueOrder:[],catalogueOrderKey:'',q:()=>({value:''})});
 ctx.window={openai:{setWidgetState:snapshot=>{ctx.savedSnapshot=snapshot;return Promise.resolve();}}};

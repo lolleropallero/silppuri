@@ -207,7 +207,7 @@
   function selectedOverlaps(chosen){
     const seen=new Set(),pairs=[];
     for(const d of chosen)for(const o of possibleOverlapsFor(d)){
-      const key=[d.id,o.id].sort().join('/');
+      const key=[d.id,o.id].sort((a,b)=>a.localeCompare(b,'en')).join('/');
       if(!seen.has(key)){seen.add(key);pairs.push({action:d,other:data.find(x=>x.id===o.id),note:o.note});}
     }
     return pairs;
@@ -1042,7 +1042,7 @@
     q('#sp-search').value='';q('#sp-category').value='all';
   }
   function resetPackage(){
-    stateIn({modelContent:{name:packageName,selectedIds:[]}});
+    stateIn({modelContent:{name:'',selectedIds:[]}});
     activeDecile=null;q('.sp-selected').open=false;
     render();save();
     q('.sp-announcement').textContent='Silppuri nollattu. Ei valittuja toimia.';

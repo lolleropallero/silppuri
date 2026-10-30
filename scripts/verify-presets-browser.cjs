@@ -69,6 +69,14 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,renderGoal,package
    await page.locator('.sp-return-own').click();assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),saved);
    await page.locator('.sp-clear').click();assert.ok(await page.locator('#sp-reset-dialog').evaluate(e=>e.open));await page.locator('.sp-reset-cancel').click();
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),saved,'reset still cancels');
+   await page.locator('.sp-clear').click();await page.locator('.sp-reset-confirm').click();
+   for(const reloaded of [false,true]){
+    if(reloaded)await page.reload();
+    const cleared=await page.evaluate(()=>audit.packageModel());
+    assert.equal(cleared.name,'','reset clears the name, including after reload');
+    assert.deepEqual(cleared.selectedIds,[],'reset clears all actions');
+    assert.equal(await page.locator('.sp-panel-heading h2').textContent(),'Sinun pakettisi');
+   }
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'no horizontal overflow');
    await page.locator('.sp-presets').scrollIntoViewIfNeeded();await page.screenshot({path:'tmp/presets-'+width+'.png'});
    assert.deepEqual(errors,[]);console.log('PASS '+width+': goal boundaries, card click areas, controls, 8 presets, cancel/Escape, reset, local/share persistence and layout');

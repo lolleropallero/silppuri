@@ -37,7 +37,7 @@ function shareBurden(entries,channel,model,serviceTotal=0){
     low:scenarios.reduce((sum,ss)=>sum+Math.min(...ss.map(s=>s[i])),0),
     high:scenarios.reduce((sum,ss)=>sum+Math.max(...ss.map(s=>s[i])),0)}));
   const peak=Math.max(...deciles.map(r=>Math.abs(r.mid))),epsilon=1e-9;
-  const result={channel,entries,deciles,peak:deciles.reduce((a,b)=>b.mid>a.mid?b:a).index,
+  const result={channel,entries,deciles,peak:deciles.reduce((a,b)=>b.mid>a.mid?b:a,deciles[0]).index,
     upperSpared:deciles.slice(7).every(r=>Math.abs(r.low)<epsilon&&Math.abs(r.high)<epsilon),
     lowerSpared:deciles.slice(0,3).every(r=>Math.abs(r.low)<epsilon&&Math.abs(r.high)<epsilon),
     onlyUpper:deciles.slice(0,7).every(r=>Math.abs(r.low)<epsilon&&Math.abs(r.high)<epsilon)};
@@ -100,7 +100,7 @@ function packageProfile(weights){
   if(!ranked.length)return {id:'mixed',voice:'mixed',...packageProfiles.mixed};
   const positive=ranked.reduce((n,[,amount])=>n+amount,0),[leader,amount]=ranked[0],runner=ranked[1];
   if(!runner||amount>=positive*.65||runner[1]<positive*.2)return {id:leader,voice:leader,...packageProfiles[leader]};
-  const pair=[leader,runner[0]],id=[...pair].sort().join('+');
+  const pair=[leader,runner[0]],id=[...pair].sort((a,b)=>a.localeCompare(b,'en')).join('+');
   return {id,voice:'mixed',name:shareProfilePairs[id]||packageProfiles[leader].name,
     label:pair.map(key=>packageProfiles[key].label).join(' ja ')};
 }

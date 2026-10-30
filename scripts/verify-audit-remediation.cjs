@@ -124,6 +124,6 @@ assert.ok(research.corporate.sources.includes('corporate-wages-meta'));
 assert.ok(research['fw-digital'].sources.includes('google-dst'));
 // Production coverage must be complete without local audit reports.
 assert.equal(actions.length,261);
-assert.deepEqual(Object.keys(research).sort(),actions.map(d=>d.id).sort());
-assert.deepEqual(Object.keys(model.actions).sort(),actions.map(d=>d.id).sort());
+assert.deepEqual(Object.keys(research).sort((a,b)=>a.localeCompare(b,'en')),actions.map(d=>d.id).sort((a,b)=>a.localeCompare(b,'en')));
+assert.deepEqual(Object.keys(model.actions).sort((a,b)=>a.localeCompare(b,'en')),actions.map(d=>d.id).sort((a,b)=>a.localeCompare(b,'en')));
 console.log('PASS: payroll netting, withdrawn fiscal anchors, scale limits, compatible VAT choices, horizon separation, employer shares, target groups, source-based decile conversion and complete catalogue coverage.');

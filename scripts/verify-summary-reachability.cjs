@@ -4,12 +4,12 @@ const root=path.join(__dirname,'..');
 const fixtures=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/summary-packages.json'),'utf8'));
 run(fs.readFileSync(path.join(root,'src/presets.js'),'utf8'));
 const presets=run('packagePresets'),ids=new Set(actions.map(d=>d.id));
-assert.deepEqual(Object.keys(fixtures).sort(),Array.from(run('Object.keys(shareNarratives)')).sort(),'every narrative must have a real package');
+assert.deepEqual(Object.keys(fixtures).sort((a,b)=>a.localeCompare(b,'en')),Array.from(run('Object.keys(shareNarratives)')).sort((a,b)=>a.localeCompare(b,'en')),'every narrative must have a real package');
 function check(state,label,nightwatch=false){
  assert.equal(new Set(state.selectedIds).size,state.selectedIds.length,label+': duplicate cards');
  for(const id of state.selectedIds){assert.ok(ids.has(id),id);const d=actions.find(d=>d.id===id);assert.ok(!d.conflicts.some(c=>state.selectedIds.includes(c)),label+': conflicting '+id);}
  const r=evaluate(state);
- assert.deepEqual([...r.state.selectedIds].sort(),[...state.selectedIds].sort(),label+': normalization must not remove cards');
+ assert.deepEqual([...r.state.selectedIds].sort((a,b)=>a.localeCompare(b,'en')),[...state.selectedIds].sort((a,b)=>a.localeCompare(b,'en')),label+': normalization must not remove cards');
  assert.ok(r.chosen.every(d=>Number.isFinite(d.amount)&&d.amount>0),label+': only actually priced positive cards');
  assert.ok(nightwatch?r.summary.total>20000:r.summary.total>=8000&&r.summary.total<=12000,label+': '+r.summary.total);
  for(const [id,value] of Object.entries(state.cutPercents||{}))assert.equal(r.state.cutPercents[id],value,label+': valid cut setting '+id);
