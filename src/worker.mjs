@@ -121,7 +121,10 @@ export default {
       let terms,constraints;
       try { ({terms,constraints}=searchMeaning(result)); }
       catch (error) { return invalidModelResult(error,'search'); }
-      const candidates=searchCards(terms,constraints?.length===0?{limit:6,minimumRatio:.55}:{limit:12,minimumRatio:.3});
+      const broad=constraints?.length===0;
+      // Query expansion retains literal names as well as the inferred terms.
+      // For constrained searches, protected subjects stay out of positive terms.
+      const candidates=searchCards(broad?[...terms,input.query]:terms,broad?{limit:6,minimumRatio:.55}:{limit:12,minimumRatio:.3});
       if (!candidates.length) return json({ids: []},200,{'X-Search-Stage':'search'});
       // Broad topic searches need relevance ranking, not a second model trying
       // to turn a colloquial slogan into an exact legislative specification.
