@@ -12,7 +12,7 @@ const env = {AI_SEARCH_MODE: 'workers-free',
   AI: {async run(...args) {calls.push(args); if(output instanceof Error) throw output; return output;}},
   AI_SEARCH_LIMITER: {async limit(input) {throttles.push(input); return {success: allowed};}},
   ASSETS: {async fetch(request) {return new Response('asset: ' + new URL(request.url).pathname);}}};
-function request(input = {query: 'Yritysten veroetuja pois'}, options = {}) {
+function request(input = {query: 'Yritysten veroetuja pois, mutta tutkimusrahoitus ennallaan'}, options = {}) {
   return new Request(url, {method: 'POST', headers: {Origin: 'https://silppuri.fi', 'Content-Type': 'application/json', 'CF-Connecting-IP': '192.0.2.1', ...options.headers},
     body: typeof input === 'string' ? input : JSON.stringify(input)});
 }
@@ -75,6 +75,17 @@ for(const [query,expected] of [['yle silppuriin','cut-1-42'],['mamut ulos','cut-
   assert.equal(calls.length,beforeLocal);assert.equal(throttles.length,beforeThrottle,'short searches consume no AI quota');
 }
 allowed=true;
+for(const query of ['Ylen budjetti sileäksi','Mamuista säästöjä','Köyhiltä loputkin']){
+  let passes=0;
+  const result=await worker.fetch(request({query}),{...env,AI:{async run(){passes++;return {response:'{"ids":["cut-1-42"]}'};}}});
+  assert.equal(result.status,200);assert.equal(passes,1,'unqualified short searches need one inference');
+}
+for(const input of [{query:'Eläkkeitä alas mutta ei pieniltä'},{query:'Vain isot eläkkeet'},
+  {query:'Yle 50 prosenttia'},{query:'Leikkauksia koulutukseen',history:[{query:'Ei pienituloisilta',ids:[]}]}]){
+  let passes=0;
+  const result=await worker.fetch(request(input),{...env,AI:{async run(){passes++;return {response:'{"ids":["income"]}'};}}});
+  assert.equal(result.status,200);assert.equal(passes,2,'concrete and inherited constraints are checked');
+}
 {
   const candidates=catalogue.slice(0,12).map(row=>row[0]);let passes=0;
   const result=await worker.fetch(request(),{...env,AI:{async run(){
