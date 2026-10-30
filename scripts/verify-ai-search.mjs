@@ -43,8 +43,8 @@ const good = await worker.fetch(request({query: '  Ei pienituloisilta  ', histor
 assert.equal(good.status, 200);assert.equal(good.headers.get('cache-control'), 'no-store');
 assert.deepEqual(await good.json(), {ids: ['income', 'corporate']});
 assert.equal(calls.length, 1);assert.equal(calls[0][0], MODEL);
-assert.equal(calls[0][1].max_completion_tokens, 1536);assert.equal(calls[0][1].store, false);
-assert.equal(calls[0][1].chat_template_kwargs.enable_thinking, true);
+assert.equal(calls[0][1].max_completion_tokens, 256);assert.equal(calls[0][1].store, false);
+assert.equal(calls[0][1].chat_template_kwargs.enable_thinking, false);
 assert.equal(calls[0][1].messages.length, 4);
 assert.deepEqual(calls[0][1].messages.slice(1), [{role:'user',content:'Entä eläkkeet?'},{role:'assistant',content:'{"ids":["income"]}'},{role:'user',content:'Ei pienituloisilta'}]);
 assert.ok(calls[0][1].messages[0].content.endsWith('CURRENT_PACKAGE_IDS: ["corporate"]'));

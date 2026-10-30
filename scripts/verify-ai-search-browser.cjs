@@ -58,7 +58,7 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow');
       providerFails=true;
       await page.locator('#sp-ai-query').fill('Kiintiö täynnä');await page.locator('.sp-ai-submit').click();
-      await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent.includes('kiintiö'));
+      await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent.includes('ei ole nyt käytettävissä'));
       assert.equal(await page.locator('#sp-ai-query').inputValue(),'Kiintiö täynnä','failed query stays editable');
       assert.equal(await page.locator('.sp-ai-result').count(),3,'previous useful results survive failure');
       await page.locator('#sp-search').fill('Yle');

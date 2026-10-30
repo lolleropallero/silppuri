@@ -43,7 +43,7 @@
         let error='';try{error=(await response.json()).error;}catch{}
         throw aiSearchError(error==='rate-limit'?'Odota hetki ennen seuraavaa AI-hakua. Tavallinen haku toimii alla.':
           error==='disabled'?'AI-haku ei ole käytössä. Tavallinen haku toimii alla.':
-          'AI-haku ei ole nyt käytettävissä. Ilmainen kiintiö voi olla täynnä. Tavallinen haku toimii alla.');
+          'AI-haku ei ole nyt käytettävissä. Tavallinen haku toimii alla.');
       }
       const result=await response.json();
       if(!Array.isArray(result?.ids)||result.ids.length>6||result.ids.some(id=>!baseData.has(id)))throw aiSearchError('AI-haku ei palauttanut kelvollisia kortteja. Kokeile tavallista hakua.');

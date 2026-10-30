@@ -90,9 +90,9 @@ export default {
           ...input.history.flatMap(h => [{role: 'user', content: h.query}, {role: 'assistant', content: JSON.stringify({ids: h.ids})}]),
           {role: 'user', content: input.query}
         ],
-        max_completion_tokens: 1536,
+        max_completion_tokens: 256,
         temperature: 0.1,
-        chat_template_kwargs: {enable_thinking: true},
+        chat_template_kwargs: {enable_thinking: false},
         response_format: {type: 'json_object'},
         store: false,
         stream: false
