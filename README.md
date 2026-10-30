@@ -94,10 +94,12 @@ ja konkreettiset rajaukset. Valitut hakutulokset erottuvat vihreällä taustalla
 Paketissa-merkinnällä; kortin voi edelleen avata ja poistaa paketista.
 
 Worker rajaa pyynnön 12 000 tavuun, kysymyksen
-600 merkkiin. Haku tekee ensin yhden kutsun enintään 12 ehdokkaan löytämiseksi
-otsikoiden ja kohderyhmien perusteella (enintään 512 vastaustokenia). Samassa vastauksessa
-malli palauttaa konkreettiset rajaukset erillisenä listana. Tyhjä lista tarkoittaa
-aihehakua, josta näytetään enintään kuusi osumaa. Rajattu haku tarkistetaan vielä
+600 merkkiin. Ensimmäinen kutsu tulkitsee hakuaikeen 1–6 yleiskieliseksi hakutermiksi
+ja konkreettisiksi rajauksiksi (enintään 512 vastaustokenia). Se ei saa korttiluetteloa
+eikä valitse korttitunnisteita. `src/card-search.mjs` hakee termien osumat todellisista
+otsikoista, kohderyhmistä ja vaikutusteksteistä. Sanamuotojen vastaavuus ja sanojen
+harvinaisuus aineistossa määräävät järjestyksen; aihekohtaisia sääntöjä ei ole.
+Ilman rajauksia näytetään enintään kuusi osumaa. Rajattu haku tarkistetaan vielä
 vaikutusteksteineen (256 tokenia). Puuttuva tai virheellinen rajauslista johtaa aina
 tarkistukseen; hakutekstin sanoihin tai pituuteen perustuvaa ohitussääntöä ei ole.
 Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
@@ -107,9 +109,10 @@ Nollakulut perustuvat Workers Free -tilauksen pakotettuun kiintiöön. Kiintiön
 pettäessä tavallinen paikallinen haku toimii edelleen.
 
 Build tuottaa `tmp/ai-catalogue.mjs`:ään kaikki nykyiset kortit, jotka Wrangler paketoi
-Workerin mukaan. Malli saa otsikot, kohteet ja vaikutustekstit sekä kysymyksen,
-enintään kolme aiempaa hakua ja valittujen korttien tunnisteet. Mallilta hyväksytään vain
-enintään kuusi tunnettua korttitunnistetta. Käyttäjälle näkyvät nimet, eurot ja tekstit
+Workerin mukaan. Rajatun haun tarkistuksessa malli saa enintään 12 hakuehdokkaan
+otsikot, kohteet ja vaikutustekstit sekä nykyisen ja enintään kolme aiempaa hakua.
+Siltä hyväksytään vain enintään kuusi ehdokaslistalla olevaa korttitunnistetta.
+Käyttäjälle näkyvät nimet, eurot ja tekstit
 luetaan aina laskurista. AI ei muuta pakettia. Hakuhistoria säilyy vain avoimen välilehden
 muistissa; sovellus ei tallenna sitä palvelimelle eikä lokita kysymyksiä.
 

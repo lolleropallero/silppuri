@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 process.chdir(path.join(__dirname,'..'));
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const actionTitles=new Map(JSON.parse(fs.readFileSync('data/catalogue.json','utf8')).actions.map(d=>[d.id,d.title]));
 const original=fs.readFileSync('dist/index.html','utf8'),origin='https://silppuri.test/';
 const at=original.lastIndexOf('  loadSharedLocation();');
 const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.slice(at);
@@ -13,10 +14,12 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'}),errors=[],sent=[];
       let responseIds=['income','corporate','cut-3-7'],providerFails=false,allow=true,delay=false,release,invalidResponse=false;
       const inferenceReady=Promise.withResolvers();
-      const env={AI_SEARCH_MODE:'workers-free',AI_SEARCH_LIMITER:{limit:async()=>({success:allow})},AI:{run:async()=>{
+      const env={AI_SEARCH_MODE:'workers-free',AI_SEARCH_LIMITER:{limit:async()=>({success:allow})},AI:{run:async(model,input)=>{
         if(delay)await new Promise(resolve=>{release=resolve;inferenceReady.resolve();});
         if(providerFails)throw new Error('quota exhausted');
-        return {choices:[{message:{content:JSON.stringify({ids:responseIds})},finish_reason:'stop'}]};
+        const value=input.messages[0].content.startsWith('Tulkitse')?
+          {terms:responseIds.map(id=>actionTitles.get(id)),constraints:['Tarkista testissä ehdotetut kortit.']}:{ids:responseIds};
+        return {choices:[{message:{content:JSON.stringify(value)},finish_reason:'stop'}]};
       }}};
       page.on('pageerror',e=>errors.push(e.message));
       await page.route('**/*',async route=>{

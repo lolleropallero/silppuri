@@ -71,7 +71,7 @@
   });
   q('.sp-ai-reset').addEventListener('click',()=>{
     aiSearch.request++;aiSearch.controller?.abort();Object.assign(aiSearch,{ids:[],history:[],pending:false,controller:null});
-    aiQuery.value='';aiQuery.readOnly=false;aiQuery.placeholder='Esim. Yle silppuriin';
+    aiQuery.value='';aiQuery.readOnly=false;aiQuery.placeholder='Esim. asumisen tuet';
     aiStatus.textContent='';q('.sp-ai-submit').disabled=false;q('.sp-ai-form').removeAttribute('aria-busy');
     renderAiResults();renderAiHistory();aiQuery.focus();
   });
