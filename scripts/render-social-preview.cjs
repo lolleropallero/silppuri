@@ -11,7 +11,7 @@ const html=fs.readFileSync(path.join(assets,'social-preview.html'),'utf8').repla
 async function render(){
   const browser=await chromium.launch({headless:true,...(process.env.BROWSER_CHANNEL?{channel:process.env.BROWSER_CHANNEL}:{})});
   try{
-    const page=await browser.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});
+    const page=await browser.newPage({viewport:{width:630,height:630},deviceScaleFactor:1});
     await page.setContent(html);
     await page.evaluate(()=>document.fonts.ready);
     const output=path.join(assets,'social-preview.png');

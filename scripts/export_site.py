@@ -26,10 +26,10 @@ def export_site(fragment, destination):
 <meta property="og:locale" content="fi_FI">
 <meta property="og:image" content="{preview_url}">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
+<meta property="og:image:width" content="630">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{preview_alt}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{preview_url}">
