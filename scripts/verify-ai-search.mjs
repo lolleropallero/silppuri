@@ -15,7 +15,7 @@ assert.deepEqual(rank(['xyzzyplugh']),[]);assert.deepEqual(rank([]),[]);
 assert.ok(!rank(['Yle']).includes('tax-capital-high'),'Yle must not match ylempi');
 const url='https://silppuri.fi/api/ai-search',reply=value=>({response:JSON.stringify(value)});
 let calls=[],throttles=[],allowed=true;
-let output=reply({terms:['Yle'],constraints:[]}),verification=reply({ids:['cut-1-42']});
+let output=reply({terms:['Yle'],constraints:[]}),verification=reply({matches:[1]});
 const env={AI_SEARCH_MODE:'workers-free',AI:{async run(...args){
   calls.push(args);const value=args[1].messages[0].content.startsWith('Tulkitse')?output:verification;
   if(value instanceof Error)throw value;return value;
@@ -43,7 +43,7 @@ allowed=true;
 for(const query of ['yle silppuriin','mamut ulos','köyhät kyykkyyn','Hillot pois hyvävelikerholta']){
   const before=calls.length,result=await worker.fetch(request({query}),env);
   assert.equal(result.status,200);assert.deepEqual(await result.json(),{ids:['cut-1-42']});
-  assert.equal(calls.length,before+1);assert.equal(calls.at(-1)[1].messages.at(-1).content,query);
+  assert.equal(calls.length,before+2);assert.equal(calls.at(-2)[1].messages.at(-1).content,query);
 }
 assert.ok(calls.every(call=>call[0]===MODEL&&call[1].store===false));
 assert.ok(calls.every(call=>call[1].messages[0].content.length<3500),'interpretation sees no giant catalogue');
@@ -56,12 +56,12 @@ assert.ok(!JSON.stringify(calls.at(-2)).includes('paid-model'));
 assert.deepEqual(calls.at(-2)[1].messages.slice(1),[{role:'user',content:'Aiempi aihe'},{role:'assistant',content:'{"ids":["income"]}'},{role:'user',content:'Rajaa lisää'}]);
 const check=JSON.parse(calls.at(-1)[1].messages[1].content);
 assert.deepEqual(check.terms,['Yle']);assert.deepEqual(check.searches,['Aiempi aihe','Rajaa lisää']);
-assert.deepEqual(check.candidates,[catalogue.find(row=>row[0]==='cut-1-42')]);
+assert.deepEqual(check.candidates,[[1,...catalogue.find(row=>row[0]==='cut-1-42').slice(1)]]);
 for(const value of [new Error('quota exhausted: secret detail'),{response:'not JSON'},reply({terms:[42]}),reply({terms:Array(7).fill('Yle')}),
   reply({terms:['x'.repeat(81)]}),reply({terms:['']}),reply({ids:['income']}),{choices:[{message:{content:'{}'},finish_reason:'length'}]}]){
   output=value;const before=calls.length,result=await worker.fetch(request(),env);
   assert.equal(result.status,value instanceof Error?503:502);assert.equal(calls.length,before+1,'no retries');
-  assert.deepEqual(await result.json(),{error:value instanceof Error?'unavailable':'model-output'});
+  assert.deepEqual(await result.json(),{error:value instanceof Error?'quota':'model-output'});
 }
 for(const response of [{terms:['Yle'],constraints:[]},'```json\n{"terms":["Yle"],"constraints":[]}\n```']){
   output={response};assert.deepEqual(await (await worker.fetch(request(),env)).json(),{ids:['cut-1-42']});
@@ -72,8 +72,9 @@ for(const constraints of [undefined,null,'none',42,[null],[''],['x'.repeat(241)]
   assert.equal((await worker.fetch(request(),env)).status,200);assert.equal(calls.length,before+2,'invalid constraints always checked');
 }
 output=reply({terms:['Yle'],constraints:['Vahvista rajaus.']});
-for(const [value,status,ids] of [[reply({ids:[]}),200,[]],[reply({ids:['income']}),502],
-  [reply({ids:['invented']}),502],[reply({ids:Array(7).fill('cut-1-42')}),502],[new Error('private provider detail'),503]]){
+for(const [value,status,ids] of [[reply({matches:[]}),200,[]],[reply({matches:[2]}),502],
+  [reply({matches:['1']}),502],[reply({matches:[0]}),502],[reply({matches:[1.5]}),502],
+  [reply({matches:Array(7).fill(1)}),502],[new Error('private provider detail'),503]]){
   verification=value;const result=await worker.fetch(request(),env);assert.equal(result.status,status);
   if(ids)assert.deepEqual(await result.json(),{ids});
 }

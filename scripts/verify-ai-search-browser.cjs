@@ -18,7 +18,8 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
         if(delay)await new Promise(resolve=>{release=resolve;inferenceReady.resolve();});
         if(providerFails)throw new Error('quota exhausted');
         const value=input.messages[0].content.startsWith('Tulkitse')?
-          {terms:responseIds.map(id=>actionTitles.get(id)),constraints:['Tarkista testissä ehdotetut kortit.']}:{ids:responseIds};
+          {terms:responseIds.map(id=>actionTitles.get(id)),constraints:['Tarkista testissä ehdotetut kortit.']}:
+          {matches:responseIds.map(id=>JSON.parse(input.messages[1].content).candidates.findIndex(row=>row[1]===actionTitles.get(id))+1)};
         return {choices:[{message:{content:JSON.stringify(value)},finish_reason:'stop'}]};
       }}};
       page.on('pageerror',e=>errors.push(e.message));
@@ -81,7 +82,7 @@ const html=original.slice(0,at)+'window.audit={data,packageModel};'+original.sli
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow');
       providerFails=true;
       await page.locator('#sp-ai-query').fill('Kiintiö täynnä');await page.locator('.sp-ai-submit').click();
-      await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent.includes('ei ole nyt käytettävissä'));
+      await page.waitForFunction(()=>document.querySelector('.sp-ai-status').textContent.includes('päivän käyttöraja täyttyi'));
       assert.equal(await page.locator('#sp-ai-query').inputValue(),'Kiintiö täynnä','failed query stays editable');
       assert.equal(await page.locator('.sp-ai-result').count(),3,'previous useful results survive failure');
       await page.locator('#sp-search').fill('Yle');

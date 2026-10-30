@@ -29,6 +29,7 @@ for(const [index,test] of cases.entries()) {
   result.titles=result.ids.map(id=>cards.get(id)?.title||id);
   result.pass=response.ok&&Array.isArray(body.ids)&&body.ids.length<=6&&body.ids.every(id=>cards.has(id))&&
     (!test.any||test.any.some(id=>body.ids.includes(id)))&&
+    (!test.only||body.ids.every(id=>test.only.includes(id)))&&
     (!test.none||test.none.every(id=>!body.ids.includes(id)))&&(!test.empty||body.ids.length===0);
   results.push(result);console.log(JSON.stringify(result));
   // A provider/limit failure is not evidence about language understanding.

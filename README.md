@@ -99,11 +99,11 @@ ja konkreettisiksi rajauksiksi (enintään 512 vastaustokenia). Se ei saa kortti
 eikä valitse korttitunnisteita. `src/card-search.mjs` hakee termien osumat todellisista
 otsikoista, kohderyhmistä ja vaikutusteksteistä. Sanamuotojen vastaavuus ja sanojen
 harvinaisuus aineistossa määräävät järjestyksen; aihekohtaisia sääntöjä ei ole.
-Ilman rajauksia näytetään enintään kuusi osumaa. Rajattu haku tarkistetaan vielä
-vaikutusteksteineen (256 tokenia). Puuttuva tai virheellinen rajauslista johtaa aina
-tarkistukseen; hakutekstin sanoihin tai pituuteen perustuvaa ohitussääntöä ei ole.
-Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
-kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee AI-kutsuja
+Enintään 12 ehdokkaan osuvuus ja rajaukset tarkistetaan vielä vaikutusteksteineen
+(256 tokenia). Malli valitsee enintään kuusi numeroitua riviä; sovellus muuntaa numerot
+oikeiksi korttitunnisteiksi. Tyhjä ehdokaslista ei tarvitse jälkimmäistä kutsua.
+Tarkistus ei näe koko korttiluetteloa eikä voi lisätä uusia kortteja.
+Rate Limiting -binding hillitsee AI-kutsuja
 (3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
 Nollakulut perustuvat Workers Free -tilauksen pakotettuun kiintiöön. Kiintiön tai palvelun
 pettäessä tavallinen paikallinen haku toimii edelleen.

@@ -51,6 +51,7 @@
       if(!response.ok){
         let error='';try{error=(await response.json()).error;}catch{}
         throw aiSearchError(error==='rate-limit'?'Odota hetki ennen seuraavaa AI-hakua. Tavallinen haku toimii alla.':
+          error==='quota'?'AI-haun päivän käyttöraja täyttyi. Tavallinen haku toimii alla.':
           error==='disabled'?'AI-haku ei ole käytössä. Tavallinen haku toimii alla.':
           'AI-haku ei ole nyt käytettävissä. Tavallinen haku toimii alla.');
       }

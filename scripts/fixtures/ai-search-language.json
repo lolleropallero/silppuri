@@ -2,10 +2,10 @@
   {"query":"Oy Lapakouran tukihana kiinni","any":["cut-1-11","cut-1-25","cut-1-26"]},
   {"query":"Syntymälahjaksi saatuun miljoonapottiin verokarhun tassu","any":["tax-inheritance","sorsa-million-inheritance"]},
   {"query":"Kampuksella syödään jatkossa omasta pussista","any":["cut-2-60"]},
-  {"query":"Museoiden kassahanat pienemmälle","any":["cut-2-65","cut-2-66","cut-2-70"]},
+  {"query":"Museoiden kassahanat pienemmälle","any":["cut-2-65","cut-2-66","cut-2-70"],"only":["cut-2-65","cut-2-66","cut-2-70"]},
   {"query":"Autoilijoille vähän lisää maksettavaa","any":["tax-vehicle","tax-fuel","tax-car-all"]},
   {"query":"Firmoilta herkut pois, mutta labroihin ei kajota","any":["cut-1-11"],"none":["cut-1-5","cut-1-6","cut-1-7","cut-1-25","cut-1-26"]},
-  {"query":"yle silppuriin","any":["cut-1-42"]},
-  {"query":"mamut ulos","any":["cut-1-28","cut-5-45","cut-3-38"]},
+  {"query":"yle silppuriin","any":["cut-1-42"],"only":["cut-1-42"]},
+  {"query":"mamut ulos","any":["cut-1-28","cut-5-45","cut-3-38"],"only":["cut-1-28","cut-5-45","cut-3-38"]},
   {"query":"Pienet eläkkeet rauhaan, isoista siivu pois","empty":true}
 ]
