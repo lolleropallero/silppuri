@@ -43,7 +43,7 @@ const good = await worker.fetch(request({query: '  Ei pienituloisilta  ', histor
 assert.equal(good.status, 200);assert.equal(good.headers.get('cache-control'), 'no-store');
 assert.deepEqual(await good.json(), {ids: ['income', 'corporate']});
 assert.equal(calls.length, 2);assert.equal(calls[0][0], MODEL);assert.equal(calls[1][0], MODEL);
-assert.equal(calls[0][1].max_completion_tokens, 256);assert.equal(calls[0][1].store, false);
+assert.equal(calls[0][1].max_completion_tokens, 512);assert.equal(calls[1][1].max_completion_tokens,256);assert.equal(calls[0][1].store, false);
 assert.equal(calls[0][1].chat_template_kwargs.enable_thinking, false);
 assert.equal(calls[0][1].messages.length, 4);
 assert.deepEqual(calls[0][1].messages.slice(1), [{role:'user',content:'Entä eläkkeet?'},{role:'assistant',content:'{"ids":["income"]}'},{role:'user',content:'Ei pienituloisilta'}]);
@@ -53,7 +53,7 @@ assert.ok(!JSON.stringify(calls[0][1]).includes('paid-model'));
 assert.deepEqual(JSON.parse(calls[1][1].messages[1].content), {searches:['Entä eläkkeet?','Ei pienituloisilta'],candidates:catalogue.filter(row=>['income','corporate'].includes(row[0])).sort((a,b)=>['income','corporate'].indexOf(a[0])-['income','corporate'].indexOf(b[0]))});
 assert.ok(calls[1][1].messages[1].content.length < 4000, 'verification sees only the small candidate set');
 for (const value of [new Error('quota exhausted: secret provider detail'), {response: 'not JSON'}, {response: '{"ids":["invented"]}'},
-  {response: '{"ids":["income",42]}'}, {response: '{"ids":["income","income","income","income","income","income","income"]}'},
+  {response: '{"ids":["income",42]}'}, {response: JSON.stringify({ids:Array(13).fill('income')})},
   {choices: [{message: {content: '{"ids":[]}'}, finish_reason: 'length'}]}]) {
   output = value;const before = calls.length;const failed = await worker.fetch(request(), env);
   assert.equal(failed.status, value instanceof Error ? 503 : 502);assert.deepEqual(await failed.json(), {error: value instanceof Error ? 'unavailable' : 'model-output'});assert.equal(calls.length, before + 1, 'no automatic retries');
@@ -75,6 +75,14 @@ for(const [query,expected] of [['yle silppuriin','cut-1-42'],['mamut ulos','cut-
   assert.equal(calls.length,beforeLocal);assert.equal(throttles.length,beforeThrottle,'short searches consume no AI quota');
 }
 allowed=true;
+{
+  const candidates=catalogue.slice(0,12).map(row=>row[0]);let passes=0;
+  const result=await worker.fetch(request(),{...env,AI:{async run(){
+    passes++;return {response:JSON.stringify({ids:passes===1?candidates:candidates.slice(0,6)})};
+  }}});
+  assert.equal(result.status,200);assert.deepEqual(await result.json(),{ids:candidates.slice(0,6)});
+  assert.equal(result.headers.get('x-search-stage'),'check');assert.equal(passes,2);
+}
 for(const [verified,expectedStatus,expected] of [
   [{response:'{"ids":[]}'},200,{ids:[]}],
   [{response:'{"ids":["corporate"]}'},502,{error:'model-output'}],

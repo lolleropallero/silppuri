@@ -95,8 +95,9 @@ rajapintapyynnöille. Rajaukset, kielteiset ehdot, määrät ja jatkokysymykset 
 AI:n tulkittaviksi. Uusi selvä aihe aloittaa uuden haun.
 
 Worker rajaa pyynnön 12 000 tavuun, kysymyksen
-600 merkkiin ja kummankin mallivastauksen 256 tokeniin. Haku tekee ensin yhden kutsun
-korttien löytämiseksi ja sitten yhden ehdotusten tarkistamiseksi samoja hakuehtoja vasten.
+600 merkkiin. Haku tekee ensin yhden kutsun enintään 12 ehdokkaan löytämiseksi
+otsikoiden ja kohderyhmien perusteella (enintään 512 vastaustokenia) ja sitten yhden
+ehdotusten tarkistamiseksi vaikutusteksteineen samoja hakuehtoja vasten (256 tokenia).
 Tyhjä hakutulos ei tarvitse jälkimmäistä kutsua. Tarkistuksessa malli näkee vain ehdotetut
 kortit, ja se voi ainoastaan poistaa niitä. Rate Limiting -binding hillitsee AI-kutsuja
 (3/min/IP Cloudflaren sijaintikohtaisella likimääräisellä laskurilla); **se ei ole kulukatto**.
