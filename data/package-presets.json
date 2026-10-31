@@ -255,6 +255,125 @@
     }
   },
   {
+    "id": "growth",
+    "name": "Priorisoi kasvu",
+    "model": {
+      "selectedIds": [
+        "tax-land-values",
+        "tax-land-min",
+        "dividends",
+        "tax-inheritance",
+        "tax-succession",
+        "fw-corporate-gaps",
+        "fw-treaty-dividends",
+        "cut-4-34",
+        "cut-4-27",
+        "cut-4-36",
+        "cut-5-67",
+        "cut-5-72",
+        "vat",
+        "tax-vat-standard",
+        "tax-tobacco",
+        "tax-softdrink",
+        "vm-alcohol",
+        "tax-fuel",
+        "tax-diesel",
+        "tax-commercial-diesel",
+        "tax-tickets",
+        "tax-vehicle",
+        "tax-excise-index",
+        "tax-entrepreneur-remove",
+        "tax-capital-low",
+        "tax-capital-high",
+        "cut-3-51"
+      ],
+      "year": 2031,
+      "dividendMode": "abolish",
+      "unitSteps": {
+        "tax-land-min": 3,
+        "tax-inheritance": 3,
+        "tax-vat-standard": 3,
+        "tax-softdrink": 10,
+        "tax-fuel": 3,
+        "tax-vehicle": 3,
+        "tax-capital-low": 3,
+        "tax-capital-high": 3
+      },
+      "cutPercents": {}
+    },
+    "rationale": {
+      "intro": "Tavoitteena on noin 10 miljardin sopeutus mahdollisimman pienin kasvu- ja työllisyyshaitoin. Paketti suojaa koulutuksen, T&K:n, liikenneinvestoinnit ja perusturvan indeksit sekä välttää ansio- ja yhteisöveron yleiset korotukset. Valinta painottaa pitkän aikavälin tuotantoa ja työnteon kannustimia; myös lyhyen aikavälin kysyntähaitat huomioidaan perusteluissa.",
+      "limit": "Tämä on tutkimukseen tukeutuva toimituksellinen valinta, ei tutkimuksella todistettu vähiten haitallinen paketti. Kaikille toimille ei ole vertailukelpoista kasvu- tai työllisyysarviota, eikä puuttuva vaikutusarvio tarkoita nollavaikutusta. Verojen yleinen kasvujärjestys vaihtelee tutkimuksittain. Eurot tulevat korttien laskelmista; ne eivät mittaa BKT- tai työpaikkavaikutusta.",
+      "sections": [
+        {
+          "title": "Maapohjan verotus ensin",
+          "actions": ["tax-land-values", "tax-land-min"],
+          "text": "Tonttien verotusarvot päivitetään ja maapohjan veron alarajaa nostetaan 0,3 prosenttiyksikköä. Maan tarjonta ei vähene veron vuoksi. OECD:n vertailu tukee kiinteän omaisuuden verotuksen painottamista työn verotuksen sijaan. Omistajien varallisuusarvot ja maksuvalmius silti heikkenevät; maaveron näyttöä ei yleistetä rakentamisen verottamiseen.",
+          "sources": ["oecd-growth", "land"]
+        },
+        {
+          "title": "Huojennuksia ja veropohjan aukkoja pois",
+          "actions": ["dividends", "tax-succession", "fw-corporate-gaps", "fw-treaty-dividends"],
+          "text": "Osinkohuojennuksen poisto vähentää tulonmuunnon kannustinta. FIT:n tutkimuskatsauksessa osinkoverojen vaikutus investointeihin on yleensä pieni, mutta voitonjako reagoi. Yritysperintöjen huojennus rajataan sijoitusvarojen ulkopuolelle, ja voitonsiirron sekä osinkoverotuksen aukkoja suljetaan. Näiden aukkojen sulkemiselle ei ole osoitettu yhteistä nollavaikutusta kasvuun: tuotto, investoinnit ja valvonnan kustannukset ovat epävarmoja.",
+          "sources": ["fit-dividends", "inheritance"]
+        },
+        {
+          "title": "Säästöjä toiminnan sisällöstä",
+          "actions": ["cut-4-34", "cut-4-27", "cut-4-36", "cut-5-67", "cut-5-72"],
+          "text": "Karsitaan vähähyötyisiä hoitoja, parannetaan jatkohoitoa sekä yhdistetään hankintoja, sairaaloiden tukipalveluja ja valtion ICT-tuotantoa. Tutkimus tukee yksittäisten hoitojen karsimista ja hankintojen tehostamisen mahdollisuutta. Se ei takaa koko Suomen säästösummaa: jatkohoidon on toimittava ja kustannusten todella vähennyttävä. Yhdistämisen kulut ja henkilöstövaikutukset jäävät riskeiksi.",
+          "sources": ["lowvalue", "procurement", "discharge", "imf-spending"]
+        },
+        {
+          "title": "Kulutusverot täydentävät tavoitesumman",
+          "actions": ["vat", "tax-vat-standard"],
+          "text": "Alennetut ALV-kannat nostetaan 25,5 prosenttiin ja yleistä kantaa korotetaan 3 prosenttiyksikköä. OECD suosittelee Suomelle ALV-pohjan laajentamista; yleisen kannan lisäkorotus on tämän paketin oma kompromissi 10 miljardin tavoitteen vuoksi. Kulutusverot voivat haitata pitkän aikavälin kasvua tuloveroja vähemmän, mutta ne heikentävät ostovoimaa, kysyntää ja palvelualojen työllisyyttä. Yhdistelmän eurot ovat erillisarvioiden summa, eivät yhteinen nettolaskelma.",
+          "sources": ["oecd-growth", "oecd-finland", "vatasymmetry"]
+        },
+        {
+          "title": "Haittaverot ja liikenteen verotus",
+          "actions": ["tax-tobacco", "tax-softdrink", "vm-alcohol", "tax-fuel", "tax-diesel", "tax-commercial-diesel", "tax-tickets", "tax-vehicle", "tax-excise-index"],
+          "text": "Tupakka-, juoma- ja polttoaineverot sekä fossiilisten polttoaineiden verotukien karsinta voivat vähentää terveys- ja ympäristöhaittoja. Paketti korottaa myös lento- ja laivalippujen verotusta sekä ajoneuvon vuosiveroa 300 eurolla. Näiden valinta on osin tavoitesumman vaatima kompromissi: päästöhyöty ei todista pientä työllisyyshaittaa, ja kuljetukset, matkailu sekä työmatkat kallistuvat. Kiinteä ajoneuvovero ei ohjaa ajamista kuten polttoainevero.",
+          "sources": ["tobacco", "sin-tax-finland", "carbon", "fuel"]
+        },
+        {
+          "title": "Omistajien verotus on lisäkompromissi",
+          "actions": ["tax-inheritance", "tax-entrepreneur-remove", "tax-capital-low", "tax-capital-high"],
+          "text": "Perintö- ja lahjaveroa sekä molempia pääomatuloverokantoja korotetaan 3 prosenttiyksikköä, ja yrittäjävähennys poistetaan. Perintöverotuksen tehokkuushaitat ovat OECD:n katsauksessa usein rajallisia. Pääomatuloverot ja yrittäjävähennyksen poisto ovat epävarmempia valintoja: ne voivat haitata säästämistä, investointeja ja yrittäjyyttä. Varakkaiden pienempi kulutusreaktio ei yksin osoita näitä kasvulle vähiten haitallisiksi.",
+          "sources": ["inheritance", "incomeelastic", "mpc"]
+        },
+        {
+          "title": "Työeläkkeiden jäädytys on suuri kompromissi",
+          "actions": ["cut-3-51"],
+          "text": "Työeläkkeiden indeksijäädytys 2028–2031 tuo noin 2 miljardia vuoden 2031 laskelmaan. Valinnan peruste on, ettei se suoraan leikkaa opetusta, investointeja tai työikäisten perusturvaa. Tämä on toimituksellinen harkinta: ETK:n laskelma ei todista jäädytystä kasvulle vähähaittaiseksi. Eläkeläisten ostovoima, kulutus ja sitä kautta työllisyys heikkenevät. Hyöty kertyy pääosin eläkejärjestelmään, ei valtion budjettiin, ja säästö hiipuu myöhemmin.",
+          "sources": ["pensionprojection"]
+        }
+      ],
+      "sources": {
+        "oecd-growth": {
+          "label": "OECD (2010): Tax Policy Reform and Economic Growth",
+          "url": "https://www.oecd.org/en/publications/tax-policy-reform-and-economic-growth_9789264091085-en.html"
+        },
+        "oecd-finland": {
+          "label": "OECD (2025): Finland — kasvu ja julkinen talous",
+          "url": "https://www.oecd.org/en/publications/oecd-economic-surveys-finland-2025_985d0555-en/full-report/firming-up-growth-and-consolidating-public-finances_75d0a1c7.html"
+        },
+        "fit-dividends": {
+          "label": "Harju, Kotakorpi & Pirttilä (2025): tutkimuskatsaus osinkoverotuksesta",
+          "url": "https://verotutkimus.fi/verotutkimus/wp-content/uploads/2025/02/FIT-lausunto-verojaosto-O-2-2025_.pdf"
+        },
+        "imf-spending": {
+          "label": "IMF (2025): Spending Smarter",
+          "url": "https://www.imf.org/en/publications/fm/issues/2025/10/07/fiscal-monitor-october-2025"
+        },
+        "imf-tax-ranking": {
+          "label": "Acosta-Ormaechea & Yoo (2012): verorakenteen kasvutulosten epävarmuus",
+          "url": "https://www.imf.org/external/pubs/ft/wp/2012/wp12257.pdf"
+        }
+      },
+      "limitSources": ["imf-tax-ranking"]
+    }
+  },
+  {
     "id": "pension",
     "name": "Eläkepäivät pilalla",
     "model": {

@@ -31,6 +31,14 @@
 #silppuri-demo .sp-presets-list [data-preset=committee]{--sp-preset-color:light-dark(#a31b13,#ff9580)}
 #silppuri-demo .sp-presets-list [data-preset=nightwatch]{--sp-preset-color:light-dark(#39433c,#a2b8ab)}
 #silppuri-demo .sp-presets-list [data-preset=pension]{--sp-preset-color:light-dark(#8f4774,#eca5d0)}
+#silppuri-demo .sp-presets-list [data-preset=growth]{--sp-preset-color:light-dark(#397526,#a5db80)}
+#silppuri-demo .sp-preset-rationale{margin-top:14px;border:1px solid var(--sp-line);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.6}
+#silppuri-demo .sp-preset-rationale summary{cursor:pointer;font-weight:600}
+#silppuri-demo .sp-preset-rationale summary:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
+#silppuri-demo .sp-preset-rationale h4{margin:20px 0 6px;font-size:14px}
+#silppuri-demo .sp-preset-rationale p{margin:10px 0}
+#silppuri-demo .sp-preset-rationale .sp-preset-sources{font-size:12px;overflow-wrap:anywhere}
+#silppuri-demo .sp-preset-rationale a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 #silppuri-demo .sp-remaining[data-goal=target]{background:light-dark(#d8efcf,#29452b);color:light-dark(#245b2a,#c5efbd)}
 #silppuri-demo .sp-remaining[data-goal=under]{background:light-dark(#fff0c2,#51401b);color:light-dark(#715000,#ffe09a)}
 #silppuri-demo .sp-remaining[data-goal=over]{background:light-dark(#e1e7f4,#2b354c);color:light-dark(#314e80,#c9d9ff)}

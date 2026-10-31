@@ -12,7 +12,17 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,renderGoal,package
    page.on('pageerror',e=>errors.push(e.message));
    await page.route('**/*',r=>r.request().url().startsWith(origin)?r.fulfill({contentType:'text/html; charset=utf-8',body:html}):r.abort());
    await page.goto(origin);
-   assert.equal(await page.locator('[data-preset]').count(),8);
+   assert.equal(await page.locator('[data-preset]').count(),9);
+   assert.equal(await page.locator('[data-preset="growth"]').textContent(),'Priorisoi kasvu');
+   const rationale=page.locator('[data-preset-rationale="growth"]');
+   assert.equal(await rationale.evaluate(e=>e.open),false);
+   await rationale.locator('summary').click();
+   assert.equal(await rationale.locator('h4').count(),7);
+   assert.ok(await rationale.locator('a[href^="https://"]').count()>10,'research sources are visible links');
+   assert.ok((await rationale.textContent()).includes('ei tutkimuksella todistettu'));
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'rationale fits on mobile');
+   await page.screenshot({path:'tmp/growth-rationale-'+width+'.png',fullPage:true});
+   await rationale.locator('summary').click();
    for(const [sum,state] of [[0,'under'],[9499.99,'under'],[9500,'target'],[10000,'target'],[10500,'target'],[10500.01,'over'],[20200,'over']]){
     await page.evaluate(sum=>audit.renderGoal(sum),sum);
     assert.equal(await page.locator('.sp-remaining').getAttribute('data-goal'),state,'goal boundary '+sum);
@@ -51,17 +61,18 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,renderGoal,package
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),poor,'cancel preserves package');
    await page.locator('[data-preset="rich"]').click();await page.keyboard.press('Escape');
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),poor,'Escape preserves package');
-   for(const id of ['rich','all','companies','consumption','committee','nightwatch','pension']){
+   for(const id of ['rich','all','companies','consumption','committee','nightwatch','pension','growth']){
     await page.locator('[data-preset="'+id+'"]').click();await page.locator('.sp-preset-confirm').click();
     const r=await page.evaluate(()=>{const state=audit.packageModel(),s=audit.packageSummary(audit.data.filter(d=>state.selectedIds.includes(d.id)));return {total:s.total,name:state.name};});
     assert.ok(id==='nightwatch'?r.total>20000:r.total>=9500&&r.total<=10500,id+' real total');
     assert.equal(await page.locator('.sp-remaining').getAttribute('data-goal'),id==='nightwatch'?'over':'target');
     assert.ok(r.name.length);
+    if(id==='growth')assert.equal(r.name,'Priorisoi kasvu');
    }
    const saved=await page.evaluate(()=>JSON.stringify(audit.packageModel()));await page.reload();
    assert.equal(await page.evaluate(()=>JSON.stringify(audit.packageModel())),saved,'preset reload');
    const ownStore=await page.evaluate(()=>localStorage.getItem('silppuri:state:v1:/'));
-   const shared=await page.evaluate(()=>audit.shareUrl(audit.packagePresets[0].model,location.href));
+   const shared=await page.evaluate(()=>audit.shareUrl(audit.packagePresets.find(p=>p.id==='growth').model,location.href));
    await page.goto(shared);await page.locator('[data-preset="poor"]').click();await page.locator('.sp-preset-confirm').click();
    assert.equal(await page.evaluate(()=>localStorage.getItem('silppuri:state:v1:/')),ownStore,'preset does not overwrite owner from shared view');
    const sharedState=await page.evaluate(()=>JSON.stringify(audit.packageModel()));await page.reload();
@@ -79,7 +90,7 @@ const html=original.slice(0,at)+'window.audit={stateIn,render,renderGoal,package
    }
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'no horizontal overflow');
    await page.locator('.sp-presets').scrollIntoViewIfNeeded();await page.screenshot({path:'tmp/presets-'+width+'.png'});
-   assert.deepEqual(errors,[]);console.log('PASS '+width+': goal boundaries, card click areas, controls, 8 presets, cancel/Escape, reset, local/share persistence and layout');
+   assert.deepEqual(errors,[]);console.log('PASS '+width+': goal boundaries, card click areas, controls, 9 presets, research rationale, cancel/Escape, reset, local/share persistence and layout');
    await page.close();
   }
  }finally{await browser.close();}

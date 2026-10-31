@@ -46,8 +46,8 @@ for(const [key,state] of Object.entries(businessVariants)){
  assert.equal(f.business,variant==='business',key);
  if(f.business)assert.match(s.description,/näkymätön käsi/);
 }
-assert.equal(presets.length,8);
-const expected={rich:'upper',committee:'upper',poor:'services-consumption-benefits',all:'services-consumption-counter',companies:'business-research',consumption:'benefits-consumption-counter',nightwatch:'nightwatch',pension:'pension'};
+assert.equal(presets.length,9);
+const expected={rich:'upper',committee:'upper',poor:'services-consumption-benefits',all:'services-consumption-counter',companies:'business-research',consumption:'benefits-consumption-counter',nightwatch:'nightwatch',pension:'pension',growth:'benefits-consumption-counter'};
 for(const preset of presets){
  const r=check(preset.model,preset.id,preset.id==='nightwatch'),s=r.summary;
  assert.ok(preset.id==='nightwatch'?s.total>20000:s.total>=9500&&s.total<=10500,preset.id+': requested goal interval');
@@ -58,6 +58,24 @@ for(const preset of presets){
  if(preset.id==='companies')assert.ok((s.weights.companies+s.weights.wealth+s.weights.research)/s.total>.7);
  if(preset.id==='consumption')assert.ok(s.weights.consumption/s.total>.5);
  if(preset.id==='committee')assert.match(s.description,/lyhtypylv/);
+ if(preset.id==='growth'){
+   const protectedIds=['income','income-index','corporate','benefits','health','education','tax-rd','cut-1-5','cut-1-6','cut-1-7','cut-1-8','cut-1-25','cut-1-26','cut-1-28','cut-1-32','cut-1-33','cut-1-38','cut-6-5','cut-6-6','cut-6-7'];
+   assert.ok(protectedIds.every(id=>!r.state.selectedIds.includes(id)),'growth protects work incentives, basic benefits, skills and investment');
+   assert.ok(r.chosen.every(d=>!d.id.startsWith('cut-2-')),'growth protects education and student support');
+   assert.equal(r.state.includeLater,false,'growth reaches the target in 2031');
+   const explained=Array.from(preset.rationale.sections.flatMap(section=>section.actions));
+   assert.equal(new Set(explained).size,explained.length,'each growth action has one rationale');
+   assert.deepEqual(explained.sort(),[...preset.model.selectedIds].sort(),'every selected action has a rationale');
+   const sources={...JSON.parse(fs.readFileSync(path.join(__dirname,'../data/research-sources.json'),'utf8')),...preset.rationale.sources};
+   for(const id of [...preset.rationale.limitSources,...preset.rationale.sections.flatMap(section=>section.sources)]){
+     assert.ok(sources[id]?.label,'growth source label: '+id);
+     assert.equal(new URL(sources[id].url).protocol,'https:','growth source URL: '+id);
+   }
+   // The VAT pair has an explicit combined-base warning, not a joint net estimate.
+   const overlaps=[...new Set(r.chosen.flatMap(d=>(d.possibleOverlaps||[]).filter(o=>r.state.selectedIds.includes(o.id)).map(o=>[d.id,o.id].sort().join(':'))))];
+   assert.deepEqual(overlaps,['tax-vat-standard:vat'],'no unexplained overlaps in growth preset');
+   assert.equal(evaluate({...preset.model,name:'Oma nimi'}).summary.story.id,s.story.id,'growth narrative follows selections');
+ }
  if(['nightwatch','pension'].includes(preset.id)){
    assert.ok(r.chosen.every(d=>!(d.possibleOverlaps||[]).some(o=>r.state.selectedIds.includes(o.id))),preset.id+': no catalogue overlap warnings');
    const renamed=evaluate({...preset.model,name:'Nimellä ei saa huijata'}).summary;
@@ -78,4 +96,4 @@ for(const preset of presets){
  }
  console.log(preset.name+': '+(s.total/1000).toFixed(2)+' mrd. €');
 }
-console.log('PASS: all '+Object.keys(fixtures).length+' narratives, 9 balance endings, 6 company variants and 8 presets reachable with conflict-free real cards, legal settings and share-link round-trips.');
+console.log('PASS: all '+Object.keys(fixtures).length+' narratives, 9 balance endings, 6 company variants and 9 presets reachable with conflict-free real cards, legal settings and share-link round-trips.');

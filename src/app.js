@@ -1056,6 +1056,12 @@
     presetOpener?.focus({preventScroll:true});
     q('.sp-chart').scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
   }
+  function presetRationaleMarkup(preset){
+    const r=preset.rationale;if(!r)return '';
+    const sources={...researchSources,...r.sources};
+    const links=ids=>`<p class="sp-preset-sources">Lähteet: ${ids.map(id=>{const s=sources[id];return `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a>`;}).join(' · ')}</p>`;
+    return `<details class="sp-preset-rationale" data-preset-rationale="${esc(preset.id)}"><summary>${esc(preset.name)}: valintojen tutkimusperusta</summary><p>${esc(r.intro)}</p><p>${esc(r.limit)}</p>${links(r.limitSources)}${r.sections.map(s=>`<section><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p>${links(s.sources)}</section>`).join('')}<p>Perustelut koskevat valmispaketin alkuperäisiä valintoja. Toimikohtaiset eurolaskelmat, rajaukset ja lisälähteet löytyvät korteista.</p></details>`;
+  }
   function searchWords(text){return String(text??'').toLocaleLowerCase('fi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean);}
   function matchesType(d){
     if(filter==='selected')return selected.has(d.id);
@@ -1160,6 +1166,7 @@
   /*SHARE_QR*/
   /*SHARE_PNG*/
   /*SHARE_UI*/
+  q('.sp-preset-rationales').innerHTML=packagePresets.map(presetRationaleMarkup).join('');
   loadSharedLocation();
   // CSS handles an ordinary page. In the auto-height preview the parent frame
   // scrolls instead, so use the browser's clipped intersection rectangle.
