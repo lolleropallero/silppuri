@@ -82,11 +82,13 @@ const homecare=calculate(['cut-3-62']);
 assert.equal(homecare.entries[0].action.amount,null);assert.equal(homecare.entries[0].action.directAmount,-82);assert.ok(homecare.rows.every(r=>r.mid>=0));
 close(homecare.rows.reduce((s,r,i)=>s+r.mid*model.consumptionUnits[i],0),144e6,'homecare gross benefit, not negative government net');
 
-// VM 2026:44 p.331: first and last decile lose 1.3122% / 0.0463% for a 2% freeze.
-// VM's approximately 7% real cut by 2031 is a labelled linear 7/2 extrapolation.
+// VM 2026:44 p.331: first and last decile lose 1.3122% / 0.0463% for a 2% freeze. That
+// figure gives the decile shape; the card's saving for the chosen year gives the total.
 let benefit=calculate(['benefits']);
-close(benefit.rows[0].percentLow,4.5927,'poorest benefit freeze');
-close(benefit.rows[9].percentLow,.16205,'richest benefit freeze');
+close(benefit.entries[0].mid.reduce((n,x,i)=>n+x*model.consumptionUnits[i],0),benefit.entries[0].action.amount*1e6,'benefit freeze totals the card saving');
+close(benefit.rows[0].percentLow/benefit.rows[9].percentLow,1.3122/.0463,'SISU decile shape');
+const pensionFreeze=calculate(['cut-3-34']).entries[0];
+close(pensionFreeze.mid.reduce((n,x,i)=>n+x*model.consumptionUnits[i],0),pensionFreeze.action.amount*1e6,'pension index freeze totals the card saving');
 assert.ok(benefit.rows[0].percentLow>25*benefit.rows[9].percentLow);
 assert.ok(benefit.rows[1].mid>benefit.rows[0].mid,'largest euro loss need not mean largest proportional loss');
 assert.ok(benefit.entries[0].derived);

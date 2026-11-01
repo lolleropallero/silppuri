@@ -1,0 +1,104 @@
+{
+  "referenceYear": 2025,
+  "retrievedOn": "2026-10-31",
+  "sourceUpdated": "2026-09-18T05:00:00Z",
+  "preliminary": true,
+  "gdpMillion": 281783,
+  "consumptionMillion": 137079,
+  "investmentMillion": 35077,
+  "capitalMillion": 326193,
+  "hoursMillion": 4224,
+  "persons": 2732100,
+  "definitions": {
+    "gdpMillion": "Bruttokansantuote markkinahintaan, miljoonaa euroa vuoden 2025 käyvin hinnoin.",
+    "consumptionMillion": "Suomessa asuvien kotitalouksien (S14) yksilölliset kulutusmenot, miljoonaa euroa vuoden 2025 käyvin hinnoin. Ei sisällä kotitalouksia palvelevien voittoa tavoittelemattomien yhteisöjen S15 kulutusta.",
+    "investmentMillion": "Yritysten (S11) sekä rahoitus- ja vakuutuslaitosten (S12) kiinteän pääoman bruttomuodostus ilman asuinrakennuksia (N0 miinus N111), miljoonaa euroa vuoden 2025 käyvin hinnoin.",
+    "capitalMillion": "Yritysten (S11) sekä rahoitus- ja vakuutuslaitosten (S12) kiinteän pääoman nettokanta ilman asuinrakennuksia (N0 miinus N111), miljoonaa euroa vuoden 2025 käyvin hinnoin. Sama sektorien ja varojen rajaus kuin investoinneissa.",
+    "hoursMillion": "Koko kansantaloudessa tehdyt työtunnit vuodessa, miljoonaa tuntia, kansantalouden tilinpidon kotimainen käsite.",
+    "persons": "Koko kansantalouden työlliset kotimaassa, kansantalouden tilinpidon käsite. Lähteen 2 732,1 tuhatta henkilöä muunnettu henkilöiksi. Ei sama sarja kuin työvoimatutkimuksen ikärajattu työllisten määrä."
+  },
+  "limits": [
+    "Vuoden 2025 luvut ovat ennakkotietoja ja voivat tarkentua. Tiedosto säilyttää 18.9.2026 julkaistun tilastoversion mittakaavan.",
+    "Käypähintaiset tasot ovat suhteutuksen vertailumittakaava, eivät tulevien vuosien ennuste. Muun vuoden euroarvojen suora suhteuttaminen niihin edellyttää näkyvää hintataso-oletusta.",
+    "S11 ja S12 ovat institutionaalisia sektoreita. Rajaus ei tarkoita vain yksityisessä omistuksessa olevia yrityksiä, eikä se kata kotitaloussektorin kaikkea yritystoimintaa.",
+    "Työllisten henkilömäärää, henkilötyövuosia ja tehtyjä työtunteja ei voi käyttää toistensa nimittäjinä ilman erikseen määriteltyä muunnosta.",
+    "Nettopääomakanta on varallisuuskanta, investoinnit vuotuinen virta. Niiden suhde ei sellaisenaan ole pääoman poistumisaste."
+  ],
+  "sources": {
+    "statfin-15a9": {
+      "label": "Tilastokeskus: ANA Bruttokansantuote ja -tulo sekä tarjonta ja kysyntä, vuosittain (15a9)",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/ntp/15a9.px/",
+      "apiUrl": "https://pxdata.stat.fi/PxWeb/api/v1/fi/StatFin/ntp/15a9.px",
+      "updated": "2026-09-18T05:00:00Z",
+      "retrievedOn": "2026-10-31",
+      "seriesCodes": {
+        "taloustoimi_1_20180101": ["B1GMH", "P31KS14", "P3KS14_S15", "P51KXS13"],
+        "timeperiod_y": ["2025"],
+        "contentscode": ["ntp-cp"]
+      },
+      "snapshot": {
+        "unit": "million-eur-current-prices",
+        "B1GMH": 281783,
+        "P31KS14": 137079,
+        "P3KS14_S15": 142219,
+        "P51KXS13": 48979
+      }
+    },
+    "statfin-15ab": {
+      "label": "Tilastokeskus: ANA Työllisyys ja työtunnit, vuosittain (15ab)",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/ntp/15ab.px/",
+      "apiUrl": "https://pxdata.stat.fi/PxWeb/api/v1/fi/StatFin/ntp/15ab.px",
+      "updated": "2026-09-18T05:00:00Z",
+      "retrievedOn": "2026-10-31",
+      "seriesCodes": {
+        "taloustoimi_1_20180101": ["E1", "E2"],
+        "sektoriluokitus_7_20230101": ["S1"],
+        "toimiala_79_20180101": ["SSS"],
+        "timeperiod_y": ["2025"],
+        "contentscode": ["ntp-cp_alkup"]
+      },
+      "snapshot": {
+        "E1": {"value": 2732.1, "unit": "thousand-persons"},
+        "E2": {"value": 4224, "unit": "million-hours"}
+      }
+    },
+    "statfin-15af": {
+      "label": "Tilastokeskus: ANA Investoinnit ja kiinteä pääoma, vuosittain (15af)",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/ntp/15af.px/",
+      "apiUrl": "https://pxdata.stat.fi/PxWeb/api/v1/fi/StatFin/ntp/15af.px",
+      "updated": "2026-09-18T05:00:00Z",
+      "retrievedOn": "2026-10-31",
+      "seriesCodes": {
+        "taloustoimi_1_20180101": ["P51K", "NKANTA"],
+        "sektoriluokitus_7_20230101": ["S11", "S12"],
+        "toimiala_79_20180101": ["SSS"],
+        "varojenluokitus_5_20180101": ["N0", "N111"],
+        "timeperiod_y": ["2025"],
+        "contentscode": ["ntp-cp"]
+      },
+      "snapshot": {
+        "unit": "million-eur-current-prices",
+        "P51K": {
+          "S11": {"N0": 36048, "N111": 1659},
+          "S12": {"N0": 688, "N111": 0}
+        },
+        "NKANTA": {
+          "S11": {"N0": 384376, "N111": 60394},
+          "S12": {"N0": 2211, "N111": 0}
+        }
+      },
+      "derivations": {
+        "investmentMillion": "(36048 - 1659) + (688 - 0) = 35077",
+        "capitalMillion": "(384376 - 60394) + (2211 - 0) = 326193"
+      }
+    }
+  },
+  "sourceIdsByField": {
+    "gdpMillion": ["statfin-15a9"],
+    "consumptionMillion": ["statfin-15a9"],
+    "investmentMillion": ["statfin-15af"],
+    "capitalMillion": ["statfin-15af"],
+    "hoursMillion": ["statfin-15ab"],
+    "persons": ["statfin-15ab"]
+  }
+}

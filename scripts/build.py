@@ -307,7 +307,8 @@ logo=logo.replace('fill="#000"','fill="currentColor"')
 logo=logo.replace('<svg ', '<svg class="sp-logo" width="30" height="30" aria-hidden="true" focusable="false" ', 1)
 markup=markup.replace('<!--SILPPURI_LOGO-->',logo)
 markup=markup.replace('<!--INCIDENCE_METHOD-->',(ROOT/'src/incidence-method.html').read_text(encoding='utf-8'))
-for stylesheet in ['catalogue','ai-search','share']:
+markup=markup.replace('<!--GROWTH_VIEW-->',(ROOT/'src/growth.html').read_text(encoding='utf-8'))
+for stylesheet in ['catalogue','ai-search','share','growth']:
     markup=markup.replace('</style>',(ROOT/f'src/{stylesheet}.css').read_text(encoding='utf-8')+'\n</style>')
 markup=markup.replace('<div class="sp-chart">','<div class="sp-horizon" role="group" aria-label="Säästöjen ajankohta"><button type="button" class="cursor-interaction" data-horizon="2031" aria-pressed="true">2031</button><button type="button" class="cursor-interaction" data-horizon="later" aria-pressed="false">Myös myöhemmät</button></div><div class="sp-chart">',1)
 markup=markup.replace('Laskuri laskee valittujen toimien arviot yhteen. Arviot ovat eri vuosilta. Lopullinen säästö riippuu myös siitä, miten toimet muuttavat kulutusta, työntekoa ja yritysten toimintaa.',
@@ -344,6 +345,11 @@ ai_catalogue=[[d['id'],d['title'],d['who'],d['society']] for d in catalogue]
 (ROOT/'tmp/ai-catalogue.mjs').write_text('export default '+json.dumps(ai_catalogue,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf8')
 script=script.replace('/*INCIDENCE_ENGINE*/',(ROOT/'src/incidence.js').read_text(encoding='utf8'))
 script=script.replace('/*INCIDENCE_VIEW*/',(ROOT/'src/incidence-view.js').read_text(encoding='utf8'))
+from curate_growth import build_growth
+growth=build_growth(catalogue,research_sources)
+script=script.replace('{}/*GROWTH_DATA*/',json.dumps(growth,ensure_ascii=False,separators=(',',':')).replace('</',r'<\/'))
+script=script.replace('/*GROWTH_ENGINE*/',(ROOT/'src/growth.js').read_text(encoding='utf8'))
+script=script.replace('/*GROWTH_VIEW*/',(ROOT/'src/growth-view.js').read_text(encoding='utf8'))
 script=script.replace('/*PIE_INTERACTION*/',(ROOT/'src/pie-interaction.js').read_text(encoding='utf8'))
 script=script.replace('/*MODAL_SHRED*/',(ROOT/'src/modal-shred.js').read_text(encoding='utf8'))
 script=script.replace('/*QR_ENCODER*/',(ROOT/'src/vendor/qrcodegen.js').read_text(encoding='utf8'))

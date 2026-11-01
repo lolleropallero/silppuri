@@ -1258,8 +1258,8 @@
         331
       ],
       "referenceTotal": 992.828076,
-      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Vuodelle 2031 vaikutusta skaalataan VM:n noin 7 % reaalileikkauksella (7/2); muina vuosina suhteessa raportin vuotuiseen säästöarvioon. Tämä jatkolaskelma on oma lineaarinen arvio.",
-      "indexScale": 3.5
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Siitä käytetään tulokymmenysten jakaumaa, ja menetysten summa on kortin säästöarvio valitulle vuodelle. Vuonna 2031 se vastaa VM:n arviota noin 7 %:n reaalileikkauksesta. Jakauman oletetaan pysyvän samana, vaikka jäädytys kestää useita vuosia.",
+      "indexFigure": true
     },
     "cut-3-34": {
       "kind": "sisu",
@@ -1283,8 +1283,8 @@
         262
       ],
       "referenceTotal": 584.948544,
-      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Vuodelle 2031 vaikutusta skaalataan VM:n noin 7 % reaalileikkauksella (7/2); muina vuosina suhteessa raportin vuotuiseen säästöarvioon. Tämä jatkolaskelma on oma lineaarinen arvio.",
-      "indexScale": 3.5
+      "method": "VM:n SISU-laskelma huomioi verot ja muiden etuuksien muutokset. Kuviosta luettu prosenttimuutos on muutettu euroiksi Tilastokeskuksen vuoden 2024 tulokymmenysten keskituloilla. Toimien yhteisvaikutuksia tai työllistymistä ei simuloida uudelleen. Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Siitä käytetään tulokymmenysten jakaumaa, ja menetysten summa on kortin säästöarvio valitulle vuodelle. Vuonna 2031 se vastaa VM:n arviota noin 7 %:n reaalileikkauksesta. Jakauman oletetaan pysyvän samana, vaikka jäädytys kestää useita vuosia.",
+      "indexFigure": true
     },
     "income": {
       "kind": "proxy",

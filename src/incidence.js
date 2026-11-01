@@ -6,16 +6,18 @@ function calculateIncidence(chosen, model){
     const rawSpec=model.actions[d.id];
     const spec=rawSpec?.methodKey?{...model.methods[rawSpec.methodKey],...rawSpec}:rawSpec;
     if(!spec||spec.kind==='separate'){missing.push(d);continue;}
-    let scenarios=[],derived=spec.kind!=='sisu'||!!spec.indexScale;
+    let scenarios=[],derived=spec.kind!=='sisu'||!!spec.indexFigure;
     if((spec.kind==='sisu'||spec.amountBasis==='public-total') && !Number.isFinite(d.amount)){
       missing.push(d);continue;
     }
     if(spec.kind==='sisu'){
-      const total=d.amount;
-      const ratio=d.id==='income-index'?1:spec.referenceTotal?Math.max(0,total/spec.referenceTotal):1;
-      const scale=ratio*(spec.indexScale||1);
+      const total=d.amount,shape=spec.percent.map((p,i)=>p/100*model.income[i]);
+      // An index freeze figure covers one year's 2% freeze: it gives the decile shape,
+      // and the card's saving for the chosen year gives the total.
+      const ratio=spec.indexFigure?Math.max(0,total*1e6/shape.reduce((n,v,i)=>n+v*model.consumptionUnits[i],0)):
+        d.id==='income-index'?1:spec.referenceTotal?Math.max(0,total/spec.referenceTotal):1;
       derived=derived||Math.abs(ratio-1)>.01;
-      scenarios=[spec.percent.map((p,i)=>p/100*model.income[i]*scale)];
+      scenarios=[shape.map(v=>v*ratio)];
     }else if(spec.kind==='scenarios'){
       // Shares deliberately need not sum to one: foreign/institutional burdens
       // stay outside Finnish household income, and personal-tax offsets remain.

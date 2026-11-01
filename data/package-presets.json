@@ -302,8 +302,8 @@
       "cutPercents": {}
     },
     "rationale": {
-      "intro": "Tavoitteena on noin 10 miljardin sopeutus mahdollisimman pienin kasvu- ja työllisyyshaitoin. Paketti suojaa koulutuksen, T&K:n, liikenneinvestoinnit ja perusturvan indeksit sekä välttää ansio- ja yhteisöveron yleiset korotukset. Valinta painottaa pitkän aikavälin tuotantoa ja työnteon kannustimia; myös lyhyen aikavälin kysyntähaitat huomioidaan perusteluissa.",
-      "limit": "Tämä on tutkimukseen tukeutuva toimituksellinen valinta, ei tutkimuksella todistettu vähiten haitallinen paketti. Kaikille toimille ei ole vertailukelpoista kasvu- tai työllisyysarviota, eikä puuttuva vaikutusarvio tarkoita nollavaikutusta. Verojen yleinen kasvujärjestys vaihtelee tutkimuksittain. Eurot tulevat korttien laskelmista; ne eivät mittaa BKT- tai työpaikkavaikutusta.",
+      "intro": "Tavoitteena on noin 10 miljardin sopeutus, joka haittaa pitkän aikavälin kasvua ja työllisyyttä mahdollisimman vähän. Paketti suojaa koulutuksen, T&K:n, liikenneinvestoinnit ja perusturvan indeksit sekä välttää ansio- ja yhteisöveron yleiset korotukset. Valinta nojaa OECD:n ja valtiovarainministeriön arvioihin verojen pitkän aikavälin haitoista. Lyhyellä aikavälillä paketti ei ole kevyt: viiden vuoden BKT-kuvaajassa suurin osa sen haitasta tulee kulutusveroista, joiden tuotantovaikutus on Suomen kerrointutkimuksessa suuri.",
+      "limit": "Tämä on tutkimukseen tukeutuva toimituksellinen valinta, ei tutkimuksella todistettu vähiten haitallinen paketti. Verojen haitallisuusjärjestys riippuu aikajänteestä. Pitkän aikavälin arvioissa ansio- ja yhteisövero ovat kulutus- ja maapohjaveroja haitallisempia. Suomen viiden vuoden kerrointutkimuksessa kulutusverojen ja yhteisöveron tuotantovaikutus oli mallimäärittelyjen mediaanina suurin ja kotitalouksien tuloverojen tilastollisesti merkitsemätön; BKT-kuvaajan käyttämässä perusmallissa myös tuloverojen viiden vuoden kerroin on 0,9. Silppurin BKT-kuvaaja kattaa vain viisi vuotta, joten se ei näytä niitä pitkän aikavälin vaikutuksia, joihin tämä paketti nojaa. Kaikille toimille ei ole vertailukelpoista kasvu- tai työllisyysarviota, eikä puuttuva vaikutusarvio tarkoita nollavaikutusta. Eurot tulevat korttien laskelmista; ne eivät mittaa BKT- tai työpaikkavaikutusta.",
       "sections": [
         {
           "title": "Maapohjan verotus ensin",
@@ -314,20 +314,20 @@
         {
           "title": "Huojennuksia ja veropohjan aukkoja pois",
           "actions": ["dividends", "tax-succession", "fw-corporate-gaps", "fw-treaty-dividends"],
-          "text": "Osinkohuojennuksen poisto vähentää tulonmuunnon kannustinta. FIT:n tutkimuskatsauksessa osinkoverojen vaikutus investointeihin on yleensä pieni, mutta voitonjako reagoi. Yritysperintöjen huojennus rajataan sijoitusvarojen ulkopuolelle, ja voitonsiirron sekä osinkoverotuksen aukkoja suljetaan. Näiden aukkojen sulkemiselle ei ole osoitettu yhteistä nollavaikutusta kasvuun: tuotto, investoinnit ja valvonnan kustannukset ovat epävarmoja.",
+          "text": "Osinkohuojennuksen poisto vähentää tulonmuunnon kannustinta. FIT:n tutkimuskatsauksessa osinkoverojen vaikutus investointeihin on yleensä pieni, mutta voitonjako reagoi. Yritysperintöjen huojennus rajataan sijoitusvarojen ulkopuolelle, ja voitonsiirron sekä osinkoverotuksen aukkoja suljetaan. Näiden aukkojen sulkemiselle ei ole osoitettu yhteistä nollavaikutusta kasvuun: tuotto, investoinnit ja valvonnan kustannukset ovat epävarmoja. Kerrointutkimuksen mukaan veropohjan laajentaminen on verokannan korotusta lievempää, mutta eroa ei ole arvioitu, joten BKT-kuvaaja jättää osinko- ja yhtiöverotuksen aukkojen sulkemisen ilman arviota.",
           "sources": ["fit-dividends", "inheritance"]
         },
         {
           "title": "Säästöjä toiminnan sisällöstä",
           "actions": ["cut-4-34", "cut-4-27", "cut-4-36", "cut-5-67", "cut-5-72"],
-          "text": "Karsitaan vähähyötyisiä hoitoja, parannetaan jatkohoitoa sekä yhdistetään hankintoja, sairaaloiden tukipalveluja ja valtion ICT-tuotantoa. Tutkimus tukee yksittäisten hoitojen karsimista ja hankintojen tehostamisen mahdollisuutta. Se ei takaa koko Suomen säästösummaa: jatkohoidon on toimittava ja kustannusten todella vähennyttävä. Yhdistämisen kulut ja henkilöstövaikutukset jäävät riskeiksi.",
-          "sources": ["lowvalue", "procurement", "discharge", "imf-spending"]
+          "text": "Karsitaan vähähyötyisiä hoitoja, parannetaan jatkohoitoa sekä yhdistetään hankintoja, sairaaloiden tukipalveluja ja valtion ICT-tuotantoa. Tutkimus tukee yksittäisten hoitojen karsimista ja hankintojen tehostamisen mahdollisuutta. Kerrointutkimuksen mallimäärittelyjen mediaanina julkisen välituotekäytön leikkauksen tuotantovaikutus (viiden vuoden kumulatiivinen kerroin noin 0,5) on palkka- ja investointimenoja pienempi. Kerroin on kuitenkin epävakaa, ja BKT-kuvaajan käyttämässä perusmallissa se on 1,4 eli yhtä suuri kuin palkkamenoissa. Se ei takaa koko Suomen säästösummaa: jatkohoidon on toimittava ja kustannusten todella vähennyttävä. Yhdistämisen kulut ja henkilöstövaikutukset jäävät riskeiksi.",
+          "sources": ["lowvalue", "procurement", "discharge", "imf-spending", "finland-multipliers"]
         },
         {
           "title": "Kulutusverot täydentävät tavoitesumman",
           "actions": ["vat", "tax-vat-standard"],
-          "text": "Alennetut ALV-kannat nostetaan 25,5 prosenttiin ja yleistä kantaa korotetaan 3 prosenttiyksikköä. OECD suosittelee Suomelle ALV-pohjan laajentamista; yleisen kannan lisäkorotus on tämän paketin oma kompromissi 10 miljardin tavoitteen vuoksi. Kulutusverot voivat haitata pitkän aikavälin kasvua tuloveroja vähemmän, mutta ne heikentävät ostovoimaa, kysyntää ja palvelualojen työllisyyttä. Yhdistelmän eurot ovat erillisarvioiden summa, eivät yhteinen nettolaskelma.",
-          "sources": ["oecd-growth", "oecd-finland", "vatasymmetry"]
+          "text": "Alennetut ALV-kannat nostetaan 25,5 prosenttiin ja yleistä kantaa korotetaan 3 prosenttiyksikköä. OECD suosittelee Suomelle ALV-pohjan laajentamista; yleisen kannan lisäkorotus on tämän paketin oma kompromissi 10 miljardin tavoitteen vuoksi. Kulutusverot voivat haitata pitkän aikavälin kasvua tuloveroja vähemmän, mutta ne heikentävät ostovoimaa, kysyntää ja palvelualojen työllisyyttä. Nämä kaksi ALV-toimea ovat paketin viiden vuoden BKT-haitan suurimmat tekijät: kerrointutkimuksen perusmallissa viiden vuoden kumulatiivinen kerroin on 1,4 (kaikkien mallimäärittelyjen mediaani 1,3, vaihteluväli −0,1…2,2), ja perusmallin vasteista lasketulla polulla BKT on viidentenä vuonna noin 1,4 euroa pienempi vuosittaista verotuottoeuroa kohti. Yhdistelmän eurot ovat erillisarvioiden summa, eivät yhteinen nettolaskelma.",
+          "sources": ["oecd-growth", "oecd-finland", "vatasymmetry", "finland-multipliers"]
         },
         {
           "title": "Haittaverot ja liikenteen verotus",
@@ -344,8 +344,8 @@
         {
           "title": "Työeläkkeiden jäädytys on suuri kompromissi",
           "actions": ["cut-3-51"],
-          "text": "Työeläkkeiden indeksijäädytys 2028–2031 tuo noin 2 miljardia vuoden 2031 laskelmaan. Valinnan peruste on, ettei se suoraan leikkaa opetusta, investointeja tai työikäisten perusturvaa. Tämä on toimituksellinen harkinta: ETK:n laskelma ei todista jäädytystä kasvulle vähähaittaiseksi. Eläkeläisten ostovoima, kulutus ja sitä kautta työllisyys heikkenevät. Hyöty kertyy pääosin eläkejärjestelmään, ei valtion budjettiin, ja säästö hiipuu myöhemmin.",
-          "sources": ["pensionprojection"]
+          "text": "Työeläkkeiden indeksijäädytys 2028–2031 tuo noin 2 miljardia vuoden 2031 laskelmaan. Valinnan peruste on, ettei se suoraan leikkaa opetusta, investointeja tai työikäisten perusturvaa. Tämä on toimituksellinen harkinta: ETK:n laskelma ei todista jäädytystä kasvulle vähähaittaiseksi. Eläkeläisten ostovoima, kulutus ja sitä kautta työllisyys heikkenevät; kerrointutkimuksen perusmallissa eläkkeiden viiden vuoden kumulatiivinen kerroin on 0,4 (kaikkien mallimäärittelyjen mediaani 0,7). Perusmallin vasteissa eläkemuutoksen BKT-vaikutus on aluksi päinvastainen ja kasvaa ajan myötä, joten perusmallin polulla BKT on ensimmäisenä vuonna noin 0,4 euroa suurempi mutta viidentenä vuonna noin 0,8 euroa pienempi vuosittaista säästöeuroa kohti. Hyöty kertyy pääosin eläkejärjestelmään, ei valtion budjettiin, ja säästö hiipuu myöhemmin.",
+          "sources": ["pensionprojection", "finland-multipliers"]
         }
       ],
       "sources": {
@@ -368,9 +368,17 @@
         "imf-tax-ranking": {
           "label": "Acosta-Ormaechea & Yoo (2012): verorakenteen kasvutulosten epävarmuus",
           "url": "https://www.imf.org/external/pubs/ft/wp/2012/wp12257.pdf"
+        },
+        "vm-tax-ranking": {
+          "label": "VM 2026:48: Verokartoitus 2026, s. 64: veronkiristysten haitallisuus",
+          "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content#page=65"
+        },
+        "finland-multipliers": {
+          "label": "Lähdemäki, Puonti & Tervala (2026): Suomen finanssipolitiikan kertoimet vero- ja menolajeittain",
+          "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/f5cfd8d8-8b91-46f3-9bf3-58436584a5f3/content"
         }
       },
-      "limitSources": ["imf-tax-ranking"]
+      "limitSources": ["imf-tax-ranking", "vm-tax-ranking", "finland-multipliers"]
     }
   },
   {

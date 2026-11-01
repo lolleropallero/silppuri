@@ -1,0 +1,366 @@
+{
+  "cut-2-11": {
+    "effects": {
+      "employment": {
+        "direction": "down",
+        "mechanism": "Varhaiskasvatuksen vähimmäismaksu pienentää työstä saatavaa nettotuloa ja voi vähentää äitien työn tarjontaa. VM suhteuttaa suomalaisen maksututkimuksen tuloksen ehdotetun uudistuksen laajuuteen.",
+        "timing": "Lähde ei anna työllisyysvaikutuksen toteutumisvuotta tai vuosittaista polkua.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": -900,
+            "low": -900,
+            "high": -900,
+            "intervalType": "point",
+            "when": "32 euron vähimmäismaksun rakenteellinen vaikutus; toteutumisajankohtaa ei määritelty.",
+            "limit": "VM:n uudistuskohtainen laskelma perustuu Gruber ym. (2025) varhaiskasvatusmaksuja koskevan tuloksen lineaariseen soveltamiseen. Piste ei ole koko kansantalouden kysyntävaikutukset sisältävä arvio, eikä lähde julkaise sille epävarmuusväliä. Sama ala- ja yläraja tarkoittaa vain julkaistua pistelukua, ei varmuutta vaikutuksen koosta.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 114
+          }
+        ]
+      }
+    }
+  },
+  "cut-2-13": {
+    "effects": {
+      "employment": {
+        "direction": "down",
+        "mechanism": "Vuoden 2016 varhaiskasvatusmaksuihin palaaminen pienentää työstä saatavaa nettotuloa ja voi vähentää äitien työn tarjontaa.",
+        "timing": "Lähde ei anna työllisyysvaikutuksen toteutumisvuotta tai vuosittaista polkua.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": -6600,
+            "low": -6600,
+            "high": -6600,
+            "intervalType": "point",
+            "when": "Vuoden 2016 maksuparametreihin palaamisen rakenteellinen vaikutus; toteutumisajankohtaa ei määritelty.",
+            "limit": "VM:n uudistuskohtainen laskelma soveltaa Gruber ym. (2025) tutkimuksen maksureaktiota lineaarisesti. Suuren maksureformin vaikutus voi poiketa tutkimuksen marginaalisesta muutoksesta. Koko kansantalouden kysyntävaikutuksia ei ole yhdistetty pisteeseen. Julkaistua epävarmuusväliä ei ole.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 114
+          }
+        ]
+      }
+    }
+  },
+  "cut-2-14": {
+    "effects": {
+      "employment": {
+        "direction": "down",
+        "mechanism": "Varhaiskasvatusmaksujen tulorajojen alentaminen kasvattaa maksuja ja voi heikentää äitien työhön osallistumisen kannustimia.",
+        "timing": "Lähde ei anna työllisyysvaikutuksen toteutumisvuotta tai vuosittaista polkua.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": -2100,
+            "low": -2100,
+            "high": -2100,
+            "intervalType": "point",
+            "when": "Tulorajojen 20 prosentin alennuksen rakenteellinen vaikutus; toteutumisajankohtaa ei määritelty.",
+            "limit": "VM:n uudistuskohtainen laskelma perustuu Gruber ym. (2025) tutkimuksen maksureaktion lineaariseen soveltamiseen. Arvio ei sisällä kaikkia kansantalouden kysyntävaikutuksia. Julkaistua epävarmuusväliä ei ole, eikä pistettä pidä tulkita tarkaksi ennusteeksi.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 114
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-5": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Lapsilisän sisarkorotusten poistaminen voi lisätä äitien työn tarjontaa, kun kotitaloudet pyrkivät korvaamaan menetettyä tuloa. VM muuntaa arvioidun palkkasumman muutoksen työn määräksi.",
+        "timing": "Lähde ei määritä, milloin työn tarjonnan muutos toteutuisi.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 460,
+            "low": 460,
+            "high": 460,
+            "intervalType": "point",
+            "when": "Työn tarjonnan muutos sisarkorotusten poistamisen jälkeen; ajoitus ei tiedossa.",
+            "limit": "Henkilötyövuodet eivät ole uusien työllisten lukumäärä. VM olettaa kotitalouden käytettävissä olevien tulojen yhden prosentin aleneman kasvattavan äitien palkkasummaa 0,45 prosenttia ja käyttää muunnoksessa 2 800 euron kuukausipalkkaa. Oletuksiin liittyy huomattavaa epävarmuutta. Kulutuksen kautta syntyviä työvoiman kysyntävaikutuksia ei ole yhdistetty pisteeseen.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 194
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-6": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Alle 3-vuotiaan lapsilisäkorotuksen poistaminen voi lisätä äitien työn tarjontaa menetetyn tulon korvaamiseksi. VM arvioi palkkasumman muutoksen ja muuntaa sen henkilötyövuosiksi.",
+        "timing": "Lähde ei määritä, milloin työn tarjonnan muutos toteutuisi.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 200,
+            "low": 200,
+            "high": 200,
+            "intervalType": "point",
+            "when": "Työn tarjonnan muutos alle 3-vuotiaan korotuksen poistamisen jälkeen; ajoitus ei tiedossa.",
+            "limit": "Henkilötyövuodet mittaavat työn määrää, eivät lisätyöllisten henkilömäärää. Laskelmassa kotitalouden tulojen yhden prosentin alenema kasvattaa äitien palkkasummaa oletuksen mukaan 0,45 prosenttia; muunnospalkka on 2 800 euroa kuukaudessa. Julkaistua epävarmuusväliä ei ole. Kulutuksen kysyntävaikutuksia ei ole yhdistetty pisteeseen.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 194
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-7": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Lapsilisän yksinhuoltajakorotuksen poistaminen voi lisätä äitien työn tarjontaa tulovaikutuksen kautta. VM muuntaa palkkasumman arvioidun kasvun henkilötyövuosiksi.",
+        "timing": "Lähde ei määritä, milloin työn tarjonnan muutos toteutuisi.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 590,
+            "low": 590,
+            "high": 590,
+            "intervalType": "point",
+            "when": "Työn tarjonnan muutos yksinhuoltajakorotuksen poistamisen jälkeen; ajoitus ei tiedossa.",
+            "limit": "Henkilötyövuodet eivät ole henkilömäärä. Arvio perustuu oletukseen, että kotitalouden tulojen yhden prosentin alenema kasvattaa äitien palkkasummaa 0,45 prosenttia; muunnospalkka on 2 800 euroa kuukaudessa. Lastenhoidon järjestäminen ja työvoiman kysyntä vaikuttavat toteutumiseen. Julkaistua epävarmuusväliä ei ole.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 194
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-8": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Lapsilisän lakkauttaminen voi lisätä äitien työn tarjontaa, kun kotitaloudet pyrkivät korvaamaan menetettyä tuloa. VM:n muistio arvioi palkkasumman muutosta ja muuntaa sen henkilötyövuosiksi.",
+        "timing": "Lähde ei määritä työn tarjonnan muutoksen toteutumisvuotta.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 5800,
+            "low": 5800,
+            "high": 5800,
+            "intervalType": "point",
+            "when": "Lapsilisän lakkauttamisen työn tarjontavaikutus; ajoitus ei tiedossa.",
+            "limit": "Lähderistiriita: Excel-liitteen rivillä 8 arvio on noin 5 600 'työllistä', mutta PDF:n sivulla 194 noin 5 800 henkilötyövuotta. Tässä käytetään laskentamenetelmän erittelevän PDF:n lukua ja yksikköä. Kyse ei ole uusien työllisten henkilömäärästä. Palkkasumman laskenta perustuu 0,45:n tulovaikutusoletukseen ja 2 800 euron kuukausipalkkaan. Muutos on suuri, oletuksiin liittyy huomattavaa epävarmuutta, eikä kysyntävaikutuksia ole yhdistetty arvioon.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 194
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-11": {
+    "effects": {
+      "employment": {
+        "direction": "down",
+        "mechanism": "Asumistuen kuntaryhmien yhdistäminen pienentää VM:n laskelmassa työstä saatavaa taloudellista nettohyötyä. Tuki muuttuu sekä työssä että työn ulkopuolella, ja korvaavat etuudet vaikuttavat näiden tilanteiden väliseen eroon.",
+        "timing": "VM pitää vaikutusten toteutumista ja ajoittumista epävarmoina; toteutumisvuotta ei anneta.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": -570,
+            "low": -670,
+            "high": -330,
+            "intervalType": "sensitivity",
+            "when": "Työllistymiskannustimen rakenteellinen vaikutus kuntaryhmien yhdistämisen jälkeen; ajoitus epävarma.",
+            "limit": "Piste käyttää osallistumisjoustoa 0,17. Vaihteluväli perustuu joustoihin 0,1–0,2 eikä ole tilastollinen luottamusväli. Koko väestön jouston soveltaminen asumistuen saajiin ja SISU-mallin toimeentulotuen ylisimulointi lisäävät epävarmuutta. Arvio ei sisällä erillistä kulutuskysynnän vaikutusta.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 208
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-12": {
+    "effects": {
+      "employment": {
+        "direction": "down",
+        "mechanism": "Asumistuen korvausasteen alentaminen heikentää VM:n laskelmassa työllistymisestä saatavaa taloudellista nettohyötyä. Korvaavat etuudet muuttavat leikkauksen vaikutusta työssä ja työn ulkopuolella.",
+        "timing": "VM pitää vaikutusten toteutumista ja ajoittumista epävarmoina; toteutumisvuotta ei anneta.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": -650,
+            "low": -770,
+            "high": -380,
+            "intervalType": "sensitivity",
+            "when": "Korvausasteen 70 prosentista 60 prosenttiin alentamisen rakenteellinen vaikutus; ajoitus epävarma.",
+            "limit": "Piste käyttää osallistumisjoustoa 0,17. Vaihteluväli perustuu joustoihin 0,1–0,2 eikä ole tilastollinen luottamusväli. Koko väestön jouston soveltaminen asumistuen saajiin ja SISU-mallin toimeentulotuen ylisimulointi lisäävät epävarmuutta. Arvio ei sisällä erillistä kulutuskysynnän vaikutusta.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 208
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-13": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Nuorten toimeentulotuen perusosan alentaminen voi lisätä siirtymiä työhön tai koulutukseen. VM arvioi rakenteellista työn tarjontavaikutusta muuttamalla etuusmenojen alenemisen perusosan henkilövuosiksi ja soveltamalla käyttäytymiskerrointa.",
+        "timing": "Lähde ei anna rakenteellisen vaikutuksen toteutumisvuotta.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": 1500,
+            "low": 0,
+            "high": 3000,
+            "intervalType": "sensitivity",
+            "when": "Alle 25-vuotiaiden perusosan puolittamisen ja 25–29-vuotiaiden neljänneksen alennuksen rakenteellinen vaikutus lapsettomissa talouksissa; ajoitus ei tiedossa.",
+            "limit": "VM:n suuntaa antava arviohaarukka, ei tilastollinen luottamusväli. Suomessa ei ole suoraa tutkimusnäyttöä toimeentulotuen tason työllisyysvaikutuksesta. Piste olettaa vaikutuksen suhteutuvan lineaarisesti etuusmenon muutokseen. VM sulkee kulutuskysynnän kautta syntyvät työvoiman kysyntävaikutukset nimenomaisesti tämän arvion ulkopuolelle.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 216
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-15": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Ansiosidonnaisen enimmäiskeston lyhentäminen voi lyhentää työttömyysjaksoja. VM soveltaa Korpelan (2023) tutkimuksen tulosta 400 ja 500 päivän jaksojen lyhentämiseen sekä puolittaa käyttäytymisvaikutuksen etuuden porrastuksen vuoksi.",
+        "timing": "Arvio kuvaa työn määrän rakenteellista muutosta; toteutumisvuotta ei julkaista.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 3000,
+            "low": 3000,
+            "high": 3000,
+            "intervalType": "point",
+            "when": "Ansiosidonnaisen enimmäiskeston 300 päivään lyhentämisen pidemmän aikavälin työn määrän muutos; ajoitus ei tiedossa.",
+            "limit": "PDF:n yksikkö on henkilötyövuosi, vaikka Excel puhuu noin 3 000 työllisestä. VM olettaa työttömyyden lyhenemisen kohdistuvan pääasiassa työllisyyteen ja aiemman tutkimusvaikutuksen puolittuvan nykyisten etuussääntöjen vuoksi. Viimeaikaiset uudistukset eivät näy täysimääräisesti pohja-aineistossa. Julkaistua epävarmuusväliä ei ole, ja VM pitää epävarmuutta poikkeuksellisen suurena.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 226
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-49": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Alimman vanhuuseläkeiän asteittainen nousu voi pidentää työuria. Osa vaikutuksesta voi siirtyä työttömyyteen tai työkyvyttömyyseläkkeisiin, joten työllisyys ei kasva yhtä paljon kuin eläkkeelle siirtyminen vähenee.",
+        "timing": "Eläkeikä nousisi vuodesta 2032 alkaen ja saavuttaisi 70 vuotta vuonna 2046. Lähde ei julkaise vuosittaista työllisyyspolkua.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": 50000,
+            "low": 50000,
+            "high": 50000,
+            "intervalType": "point",
+            "when": "Vuoteen 2046 mennessä toteutuvaan eläkeiän nousuun suhteutettu pitkän aikavälin tutkimusskaalaus; ei tarkkaa havaintovuotta.",
+            "limit": "Tämä on vuoden 2017 eläkeuudistuksen tutkimustuloksista skaalattu alustava arvio. VM esittää erikseen ETK:n PTS-mallin tulokset: keskimäärin noin 100 000 lisätyöllistä 2040-luvulla ja noin 120 000 2050-luvulta. Ne ovat eri menetelmän ja eri ajanjaksojen tuloksia, eivät tämän pisteen epävarmuusväli. Niitä ei summata eikä 50 000–120 000 haarukkaa sijoiteta yhteen vuoteen. Arviota ei tule käyttää 15 vuoden kuvaajan päätepisteenä ilman erikseen perusteltua ajoitusmallia.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 299
+          }
+        ]
+      }
+    }
+  },
+  "cut-3-54": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Yksityisten alojen vähintään 60-vuotiaiden ammatillisen harkinnan poistaminen vähentäisi työkyvyttömyyseläkkeelle siirtymistä. Osa jatkaisi työssä ja osa työttömänä; VM arvioi jäljellä olevan työuran pituutta työllisen ajan odotteilla.",
+        "timing": "Pitkän aikavälin vaikutus ei toteudu välittömästi. Lähde ei anna työllisyyden vuosipolkua tai täysimääräisen vaikutuksen vuotta.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "fte",
+            "year": null,
+            "value": 1600,
+            "low": 1600,
+            "high": 1600,
+            "intervalType": "point",
+            "when": "Yksityisten alojen ammatillisesta harkinnasta luopumisen pitkän aikavälin vaikutus; toteutumisvuotta ei määritelty.",
+            "limit": "Henkilötyövuosiarvio, ei lisätyöllisten henkilömäärä. Kohderyhmän työkyky voi olla keskimääräistä heikompi, joten keskimääräinen työllisen ajan odote voi yliarvioida jäljellä olevaa työuraa. Myös eläkealkavuuksia ja työkyvyttömyyden kehitystä koskevat oletukset ovat epävarmoja. Julkaistua epävarmuusväliä ei ole.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 321
+          }
+        ]
+      }
+    }
+  },
+  "benefits": {
+    "effects": {
+      "employment": {
+        "direction": "up",
+        "mechanism": "Kansaneläkeindeksiin sidottujen etuuksien jäädytys parantaa VM:n laskelmassa työllistymisestä saatavaa taloudellista nettohyötyä. VM soveltaa kannustinmuutokseen tutkimuskirjallisuudesta saatua osallistumisjoustoa.",
+        "timing": "Etuustason ja kannustimen muutos kertyy vuoteen 2031 mennessä. Tämä ei tarkoita työllisyysvaikutuksen toteutumista vuonna 2031: VM toteaa tarkkojen ajoitusarvioiden puuttuvan.",
+        "sourceIds": ["vm-spending-2026"],
+        "estimates": [
+          {
+            "metric": "employment",
+            "scope": "national-structural",
+            "unit": "persons",
+            "year": null,
+            "value": 16000,
+            "low": 9500,
+            "high": 19000,
+            "intervalType": "sensitivity",
+            "when": "Vuosien 2028–2031 indeksijäädytyksen rakenteellinen työn tarjontavaikutus; toteutumisvuotta ei voida johtaa lähteestä.",
+            "limit": "Arvio olettaa etuustasojen alenevan reaalisesti noin 7 prosenttia ja työllistymisen taloudellisen nettohyödyn kasvavan noin 3,8 prosenttia. Toteutunut inflaatio voi muuttaa tätä. Vaihteluväli perustuu osallistumisjoustoon 0,1–0,2 eikä ole tilastollinen luottamusväli. VM sanoo, ettei tutkimuskirjallisuus anna tarkkaa vaikutusten toteutumisen aikajännettä. Kysyntävaikutuksia ei ole yhdistetty rakenteelliseen pisteeseen.",
+            "sourceIds": ["vm-spending-2026"],
+            "page": 329
+          }
+        ]
+      }
+    }
+  }
+}

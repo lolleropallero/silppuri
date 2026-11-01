@@ -7,7 +7,7 @@ function createShareImage(chosen,name,later,link){
   const qr=createShareQr(link);
   const canvas=document.createElement('canvas');canvas.width=1200;
   let ctx=canvas.getContext('2d');
-  const color={ink:'#202820',muted:'#62695f',paper:'#f5f3ed',panel:'#fffefa',track:'#e4e7dc',cut:'#ed2b36',tax:'#5068c8',small:'#9548c6',indirect:'#bf7816'};
+  const color={ink:'#202820',muted:'#62695f',paper:'#f5f3ed',panel:'#fffefa',track:'#e4e7dc',line:'#dedfd5',cut:'#ed2b36',tax:'#5068c8',small:'#9548c6',indirect:'#bf7816',gain:'#256abf',loss:'#c8323b'};
   const font=(size,bold=false)=>{ctx.font=(bold?'700 ':'400 ')+size+'px Arial, Helvetica, sans-serif';};
   const lines=(text,width,size,bold=false)=>{
     font(size,bold);const out=[];let line='';
@@ -43,8 +43,11 @@ function createShareImage(chosen,name,later,link){
   const hasMoney=chartEntries.length>0&&result.householdRows.some(r=>Math.abs(r.low)>1e-9||Math.abs(r.high)>1e-9);
   const hasServices=result.serviceEntries.length>0&&result.serviceTotal>1e-9;
   const chartSections=[...(hasMoney?[false]:[]),...(hasServices?[true]:[])];
-  const height=chartsY+(chartSections.length?chartHeight:0)+32;
-  // The image ends after the summary charts, regardless of the number of actions.
+  // The GDP curve as on the page.
+  const growthMetric=growthCalculate(chosen).metrics.gdp,growth=growthMetric.points,growthScope=growth.length?growthCoverageLine(growthMetric,chosen):'';
+  const growthY=chartsY+(chartSections.length?chartHeight+24:0),growthHeight=448+(growthScope?30:0);
+  const height=(growth.length?growthY+growthHeight:chartsY+(chartSections.length?chartHeight:0))+32;
+  // The image ends after the summary charts and the GDP curve, regardless of the number of actions.
   canvas.height=Math.ceil(height);ctx=canvas.getContext('2d');ctx.textBaseline='alphabetic';
   rect(0,0,1200,canvas.height,color.paper);
   const logo=root.querySelector('.sp-wordmark .sp-logo');
@@ -115,5 +118,32 @@ function createShareImage(chosen,name,later,link){
     if(!service){dot(x+30,chartsY+521,color.cut);text('Etuudet',x+43,chartsY+527,16);dot(x+150,chartsY+521,color.tax);text('Verot',x+163,chartsY+527,16);dot(x+253,chartsY+521,color.indirect);text('Yritysten kautta',x+266,chartsY+527,16);}
   }
   chartSections.forEach((service,i)=>drawDeciles(48+i*566,service,chartSections.length===1?1104:542));
+  function drawGrowth(){
+    panel(48,growthY,1104,growthHeight);
+    text('Paketin vaikutus BKT:hen',72,growthY+42,26,true);
+    if(growthScope)text(growthScope,72,growthY+72,18,false,color.muted);
+    // The page's geometry at 1.2 times its size, so labels and marks keep their proportions.
+    const geometry={width:880,height:310,left:58,right:120,top:30,bottom:34},c=growthChartParts(growth,geometry);
+    ctx.save();ctx.translate(72,growthY+62+(growthScope?30:0));ctx.scale(1.2,1.2);
+    for(const t of c.ticks){
+      ctx.strokeStyle=t.zero?color.muted:color.line;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(geometry.left,t.y);ctx.lineTo(geometry.width-geometry.right,t.y);ctx.stroke();
+      text(t.label,geometry.left-8,t.y+4,12,false,color.muted,'right');
+    }
+    for(const t of c.years)text(t.label,t.x,geometry.height-10,12,false,color.muted,t.anchor==='middle'?'center':'left');
+    text('Ilman pakettia',c.baseline.x,c.baseline.y,12,false,color.muted,'center');
+    for(const [name,from,to] of c.sides){
+      ctx.save();ctx.beginPath();ctx.rect(0,from,geometry.width,Math.max(0,to-from));ctx.clip();
+      ctx.globalAlpha=.12;ctx.fillStyle=color[name];ctx.fill(new Path2D(c.band));ctx.globalAlpha=1;
+      ctx.strokeStyle=color[name];ctx.lineWidth=2;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke(new Path2D(c.line));
+      ctx.restore();
+    }
+    for(const m of c.marks){
+      ctx.fillStyle=color[m.side];ctx.strokeStyle=color.panel;ctx.lineWidth=2;ctx.beginPath();ctx.arc(m.cx,m.cy,5,0,Math.PI*2);ctx.fill();ctx.stroke();
+      text(m.value,m.x,m.y,20,true);
+      let dy=0;for(const [step,note] of m.notes){dy+=step;text(note,m.x,m.y+dy,12,false,color.muted);}
+    }
+    ctx.restore();
+  }
+  if(growth.length)drawGrowth();
   return canvas;
 }

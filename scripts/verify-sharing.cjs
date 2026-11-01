@@ -21,6 +21,8 @@ run(source.slice(source.indexOf('  const moneyLabel='),source.indexOf("  q('#sp-
 run(read('src/vendor/qrcodegen.js'));
 run(read('src/share-qr.js'));
 run(read('src/share-image.js'));
+ctx.growthModel=JSON.parse(read('dist/index.html').match(/const growthModel=(\{[^\n]+\});/)[1]);
+run(read('src/growth.js'));run(read('src/growth-view.js'));
 const canonical=o=>JSON.parse(JSON.stringify(o));
 const fingerprint=()=>canonical(ctx.data.filter(d=>ctx.selected.has(d.id)).map(d=>({id:d.id,title:d.title,amount:d.amount,gross:d.gross,upper:d.netUpper,later:d.laterApplied})));
 const ids=new Set(actions.map(d=>d.id));ctx.knownIds=ids;
@@ -170,13 +172,19 @@ assert.ok(!imageText.includes('Summassa mukana')&&!imageText.includes('Nettoarvi
 assert.ok(!drawn.some(text=>ctx.data.some(d=>text===d.title)),'no individual action cards in the PNG');
 assert.ok(bitmap.height<2200,'large packages remain a compact summary image');
 for(const removed of ['Veron aikaistuminen','Staattinen arvio','Yle-veron alennus','Tukien uudelleenjako','Arvioitu raharasitus','Arvioiduissa toimissa:','Osasta valituista toimista','silppuri.fi/','example.test/'])assert.ok(!imageText.includes(removed),'card summaries contain no annotations: '+removed);
-for(const [selectedIds,money,services] of [[['vat'],true,false],[['health'],false,true],[['health','vat'],true,true],[['cut-1-42'],false,false],[['income'],false,false]]){
+for(const [selectedIds,money,services] of [[['vat'],true,false],[['health'],false,true],[['health','vat'],true,true],[['cut-1-42'],false,false],[['income'],false,false],[['tax-rd'],false,false],[['vat','dividends'],true,false]]){
   ctx.stateIn({modelContent:{...seed,selectedIds,includeLater:false,taxIncreasesPP:{income:0,corporate:1}}});
   drawn.length=0;panels.length=0;
   ctx.createShareImage(ctx.data.filter(d=>ctx.selected.has(d.id)),'Osioiden testi',false,testUrl);
   assert.equal(drawn.includes('Rahat ja ostovoima'),money,selectedIds+': household chart');
   assert.equal(drawn.includes('Julkiset palvelut'),services,selectedIds+': service chart');
-  assert.equal(panels.some(p=>p.width===1104),money!==services,selectedIds+': a single populated chart uses the whole width');
+  assert.equal(panels.some(p=>p.width===1104&&p.height===548),money!==services,selectedIds+': a single populated chart uses the whole width');
+  // The GDP curve is the page's; no estimate draws no curve.
+  const growth=ctx.growthCalculate(ctx.data.filter(d=>ctx.selected.has(d.id))).metrics.gdp.points;
+  assert.equal(drawn.includes('Paketin vaikutus BKT:hen'),growth.length>0,selectedIds+': GDP curve');
+  assert.ok(!drawn.includes('Skenaario'),selectedIds+': no badge beside the title');
+  assert.equal(drawn.some(t=>t.startsWith('Käyrässä mukana')),growth.length>0&&ctx.growthCalculate(ctx.data.filter(d=>ctx.selected.has(d.id))).metrics.gdp.uncovered.length>0,selectedIds+': coverage line only for a partial curve');
+  if(growth.length)assert.ok(drawn.includes(ctx.growthPercent(growth[5].value))&&drawn.includes('5. vuosi')&&drawn.includes('Ilman pakettia'),selectedIds+': the curve is labelled as on the page');
 }
 // File share carries the same summary as the compose/copy actions.
 ctx.File=File;ctx.shareBlob=new Blob(['test image'],{type:'image/png'});ctx.shareName={value:'Kuvan jakotesti'};

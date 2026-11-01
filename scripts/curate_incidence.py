@@ -54,10 +54,10 @@ def build_incidence(actions):
       'income-index':'income-index',
     }
     for id,key in mapping.items(): sisu(id,key)
-    sisu('benefits','benefit-index',indexScale=3.5)
-    sisu('cut-3-34','pension-index',indexScale=3.5)
+    sisu('benefits','benefit-index',indexFigure=True)
+    sisu('cut-3-34','pension-index',indexFigure=True)
     for id in ['benefits','cut-3-34']:
-        models[id]['method']+=' Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Vuodelle 2031 vaikutusta skaalataan VM:n noin 7 % reaalileikkauksella (7/2); muina vuosina suhteessa raportin vuotuiseen säästöarvioon. Tämä jatkolaskelma on oma lineaarinen arvio.'
+        models[id]['method']+=' Indeksikuvio koskee yhden vuoden 2 % jäädytystä. Siitä käytetään tulokymmenysten jakaumaa, ja menetysten summa on kortin säästöarvio valitulle vuodelle. Vuonna 2031 se vastaa VM:n arviota noin 7 %:n reaalileikkauksesta. Jakauman oletetaan pysyvän samana, vaikka jäädytys kestää useita vuosia.'
     def proxy(ids,weights,method,**extra):
         for id in ids.split():
             assert id in by_id,id

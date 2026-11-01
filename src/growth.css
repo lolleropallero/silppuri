@@ -1,0 +1,54 @@
+#silppuri-demo .sp-growth{--sp-growth-loss:light-dark(#c8323b,#e05a5a);--sp-growth-gain:light-dark(#256abf,#4a8fe0);grid-column:1/-1;border-top:1px solid var(--sp-line);padding-top:24px;margin-top:4px;min-width:0}
+#silppuri-demo .sp-growth [hidden]{display:none!important}
+#silppuri-demo .sp-growth-heading{margin-bottom:18px}
+#silppuri-demo .sp-growth-heading h2{margin:0;font-size:24px;letter-spacing:-.5px}
+#silppuri-demo .sp-growth-scope{margin:6px 0 0;color:var(--sp-muted);font-size:14px}
+#silppuri-demo .sp-growth-scope:empty{display:none}
+#silppuri-demo .sp-growth-plot-wrap{position:relative;min-width:0}
+#silppuri-demo .sp-growth-plot{width:100%;height:auto;display:block;overflow:visible}
+#silppuri-demo .sp-growth-plot text{font:12px system-ui,sans-serif;fill:var(--sp-muted);font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-growth-grid{stroke:var(--sp-line);stroke-width:1}
+#silppuri-demo .sp-growth-zero{stroke:var(--sp-muted);stroke-width:1}
+#silppuri-demo .sp-growth-gain{color:var(--sp-growth-gain)}
+#silppuri-demo .sp-growth-loss{color:var(--sp-growth-loss)}
+#silppuri-demo .sp-growth-band{fill:currentColor;fill-opacity:.12;stroke:none}
+#silppuri-demo .sp-growth-line{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#silppuri-demo .sp-growth-point{fill:currentColor;stroke:var(--sp-paper);stroke-width:2}
+#silppuri-demo .sp-growth-plot .sp-growth-value{font-size:20px;font-weight:650;fill:var(--sp-ink)}
+#silppuri-demo .sp-growth-plot .sp-growth-value tspan{font-size:12px;font-weight:400;fill:var(--sp-muted)}
+#silppuri-demo .sp-growth-hit{fill:transparent}
+#silppuri-demo .sp-growth-empty{position:absolute;left:10%;right:10%;top:24%;margin:0;text-align:center;font-size:14px;line-height:1.6;color:var(--sp-muted);pointer-events:none}
+#silppuri-demo .sp-growth-plot-wrap:has(.sp-growth-empty:not([hidden])) .sp-growth-plot{height:130px}
+#silppuri-demo .sp-growth a{color:inherit;text-underline-offset:2px;overflow-wrap:anywhere}
+#silppuri-demo .sp-growth-method{margin-top:12px;border-top:1px solid var(--sp-line);font-size:13px;color:var(--sp-muted);line-height:1.7}
+#silppuri-demo .sp-growth-method>summary{cursor:pointer;font-weight:600;padding:14px 0}
+#silppuri-demo .sp-growth-method h4{font-size:13px;color:var(--sp-ink);margin:18px 0 6px}
+#silppuri-demo .sp-growth-method p{margin:10px 0}
+#silppuri-demo .sp-growth-groups{margin:8px 0;padding-left:18px}
+#silppuri-demo .sp-growth-table-wrap{overflow-x:auto;margin:12px 0}
+#silppuri-demo .sp-growth-table{width:100%;min-width:560px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+#silppuri-demo .sp-growth-table th,#silppuri-demo .sp-growth-table td{padding:8px 10px;border-bottom:1px solid var(--sp-line);text-align:right;vertical-align:top;white-space:nowrap}
+#silppuri-demo .sp-growth-table thead th{color:var(--sp-ink);font-weight:600;border-bottom-color:var(--sp-muted)}
+#silppuri-demo .sp-growth-table th:first-child{text-align:left;white-space:normal;padding-left:0}
+#silppuri-demo .sp-growth-table tbody th{color:var(--sp-ink);font-weight:600}
+#silppuri-demo .sp-growth-table tbody th span{display:block;font-weight:400;color:var(--sp-muted);margin-top:2px}
+#silppuri-demo .sp-growth-table td{color:var(--sp-ink)}
+#silppuri-demo .sp-growth-groups li{margin:6px 0}
+#silppuri-demo .sp-growth-groups strong{color:var(--sp-ink);font-weight:600}
+#silppuri-demo .sp-growth-method-content>details{padding:10px 0;border-top:1px solid var(--sp-line)}
+#silppuri-demo .sp-growth-method-content>details>summary{cursor:pointer;color:var(--sp-ink)}
+#silppuri-demo .sp-growth summary:focus-visible{outline:2px solid var(--sp-ink);outline-offset:3px}
+@media(max-width:600px){
+  #silppuri-demo .sp-growth-heading h2{font-size:21px}
+  #silppuri-demo .sp-growth-plot text{font-size:11px}
+  #silppuri-demo .sp-growth-plot .sp-growth-value{font-size:17px}
+  #silppuri-demo .sp-growth-plot .sp-growth-value tspan{font-size:11px}
+  /* Each group stacks: its name, then the four figures labelled in two columns. */
+  #silppuri-demo .sp-growth-table{min-width:0}
+  #silppuri-demo .sp-growth-table,#silppuri-demo .sp-growth-table tbody{display:block}
+  #silppuri-demo .sp-growth-table thead{display:none}
+  #silppuri-demo .sp-growth-table tr{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:6px;padding:10px 0;border-bottom:1px solid var(--sp-line)}
+  #silppuri-demo .sp-growth-table th,#silppuri-demo .sp-growth-table td{display:block;border:0;padding:0;text-align:left;white-space:normal}
+  #silppuri-demo .sp-growth-table tbody th{grid-column:1/-1}
+  #silppuri-demo .sp-growth-table td::before{content:attr(data-label);display:block;color:var(--sp-muted);font-size:12px}
+}

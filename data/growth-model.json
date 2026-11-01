@@ -1,0 +1,254 @@
+{
+  "reviewedOn": "2026-10-31",
+  "maxYear": 5,
+  "education": {
+    "referenceYear": 2024,
+    "schoolMillion": 9783,
+    "tertiaryMillion": 4078,
+    "sourceIds": ["statfin-education"],
+    "note": "Koulutusmenot 2024: esiopetus 433 + perusopetus 6 145 + lukio 1 011 + ammatillinen 2 194 = 9 783 milj. €. AMK 1 202 + yliopistokoulutus ja tutkimus 2 876 = 4 078 milj. €. Opintotuki ei ole mukana. Yliopistojen summa sisältää tutkimuksen."
+  },
+  "parameters": {
+    "schoolEarningsElasticity": {"value": 0.7, "low": 0, "high": 1, "label": "Koulumenojen vaikutus kohortin myöhempiin ansioihin", "basis": "Jackson ym. (2016): Yhdysvalloissa 10 % suuremmat oppilaskohtaiset menot koko kouluajan liittyivät noin 7 % suurempiin aikuisiän palkkoihin. Leikkauksen oletetaan vaikuttavan samalla tavalla päinvastaiseen suuntaan.", "sourceIds": ["school-spending"]},
+    "degreeElasticity": {"value": 0.45, "low": 0, "high": 1, "label": "Korkeakoulumenojen vaikutus vuosittaiseen tutkintovirtaan", "basis": "Deming & Walters (2017), taulukko 4: yhdysvaltalaisissa nelivuotisissa oppilaitoksissa menojen jousto tutkintoihin oli noin 0,45.", "sourceIds": ["tertiary-spending"]},
+    "educationTransfer": {"value": 0.5, "low": 0, "high": 1, "label": "Koulutustuloksen siirto Suomen tuottavuuteen", "basis": "Oma oletus: puolet lähteiden vasteesta välittyy Suomen tuottavuuteen. Nolla tarkoittaa, ettei kanava toteudu."},
+    "degreePremium": {"value": 0.2, "low": 0, "high": 0.4, "label": "Lisätutkinnon oletettu tuottavuusero", "basis": "Oma oletus tutkinnon suorittaneen ja vaihtoehtoisen koulutuspolun tuottavuuserosta."},
+    "tertiaryCohortShare": {"value": 0.4, "label": "Korkeakoulutetun osuuden oletus uudessa työvoimakohortissa", "basis": "Oma pyöristetty oletus. Suomen tavoite on 50 % 25–34-vuotiaista vuonna 2030.", "sourceIds": ["education-target"]},
+    "workingYears": {"value": 40, "label": "Työvoiman uusiutumisaika, vuotta", "basis": "Oma oletus: uusi ikäluokka on 1/40 työvoimasta."},
+    "schoolLag": {"value": 6, "label": "Kouluasteen ensimmäinen työelämävaikutus, vuotta", "basis": "Oma oletus. Uusien ikäluokkien altistus kasvaa tästä 12 vuoden ajan."},
+    "tertiaryLag": {"value": 3, "label": "Korkeakoulutuksen ensimmäinen työelämävaikutus, vuotta", "basis": "Oma oletus. Altistus kasvaa tästä neljän vuoden ajan."},
+    "mpc": {"value": 0.9, "low": 0.6, "high": 1, "label": "Kulutukseen siirtyvä osuus pysyvästä tulomuutoksesta, keskimäärin", "basis": "VM käyttää verokartoituksessa rajakulutusalttiutta 0,9. Tuloryhmien erot tulevat kulutustutkimuksen kulutuksen ja tulojen suhteesta, ja ne ovat oletus: pienituloisilla alttius on enintään 1 ja suurituloisilla noin 0,75. Vaihteluvälissä kaikilla on sama alttius, ja alaraja nojaa tilapäisistä tulomuutoksista mitattuihin pienempiin alttiuksiin.", "sourceIds": ["vm-tax-labour-2026", "consumption-survey-2022", "norway-consumption-2024"]},
+    "domesticShare": {"value": 0.65, "low": 0.4, "high": 0.8, "label": "Kysyntämuutoksen kotimainen osuus", "basis": "Oma oletus tuonnin osuudesta kysynnän muutoksessa."},
+    "labourElasticity": {"value": 0.5, "low": 0.25, "high": 0.75, "label": "Työtuntien reaktio kotimaisen kysynnän prosenttimuutokseen", "basis": "Oma oletus. Ei vaikuta BKT-käyrään."},
+    "investmentResponse": {"value": 2, "low": 0, "high": 4, "label": "Investointien reaktio kotimaisen kysynnän prosenttimuutokseen", "basis": "IMF:n tutkimuksen mukaan kysyntä selittää euroalueen yritysinvestointeja. Kerroin ja vaihteluväli ovat omia oletuksia.", "sourceIds": ["imf-investment-2015"]},
+    "researchAdditionality": {"value": 1.4, "low": 0, "high": 2.8, "label": "Yritysten T&K-investoinnin muutos per tukieuro", "basis": "OECD:n microBeRD-arvio: tukieuro lisää yritysten T&K-menoja noin 1,4 euroa. Puolet laajasta T&K-rahoituksesta oletetaan yritystueksi.", "sourceIds": ["oecd-microberd"]},
+    "publicVolume": {"value": 0.8, "low": 0, "high": 1, "label": "Palvelurahoituksen leikkauksesta hankintoja ja työtä vähentävä osuus", "basis": "Oma oletus. Loput rahoituksen vähennyksestä voi kohdistua hintoihin, katteisiin tai toimintatapaan."},
+    "efficiencyVolume": {"value": 0.2, "low": 0, "high": 1, "label": "Tehostamistoimen kysyntää vähentävä osuus", "basis": "Oma oletus: keskitapauksessa 80 % säästöstä syntyy vähentämättä tuotantoa."},
+    "consumptionYears": {"value": 2, "label": "Kulutusvasteen 90 prosentin toteutuminen, vuotta", "basis": "Oma oletus."},
+    "recoveryYears": {"value": 4, "low": 2, "high": 8, "label": "Kysyntähaitan vaimenemisaika työssä ja investoinneissa, vuotta", "basis": "Oma oletus hintojen, muun kysynnän ja rahapolitiikan sopeutumisesta."},
+    "researchYears": {"value": 3, "label": "T&K-investointivasteen 90 prosentin toteutuminen, vuotta", "basis": "Oma oletus."},
+    "capitalShare": {"value": 0.3, "low": 0.2, "high": 0.4, "label": "Pääomakannan vaikutus työn tuottavuuteen", "basis": "Oma oletus pääoman tuotanto-osuudesta. Investointi kertyy pääomakantaan seuraavasta vuodesta."},
+    "depreciation": {"value": 0.1, "label": "Lisäpääoman vuotuinen poistuma", "basis": "Oma yhteinen oletus kaikille pääomalajeille."},
+    "fteHours": {"value": 1650, "label": "Tuntia / kokoaikaisen työvuoden vastine", "basis": "VM:n henkilötyövuoden muunnos tunneiksi. Ei vaikuta BKT-käyrään."},
+    "inflation": {"value": 0.02, "label": "Rahasummien vuotuinen hintatasokorjaus", "basis": "Korttien eri vuosien eurot muutetaan vuoden 2025 hintatasoon. Ei inflaatioennuste."}
+  },
+  "metrics": {
+    "consumption": {"name": "Kulutus", "question": "Miten kotitalouksien tavaroiden ja palvelujen ostaminen muuttuu? Ostovoiman menetys ei sellaisenaan ole kulutuksen muutos."},
+    "employment": {"name": "Työllisyys", "question": "Miten tehdyn työn määrä muuttuu? Käyrä näyttää työtuntien muutoksen, erittely kokoaikaisten työvuosien vastineen. Se ei ole työpaikkojen lukumäärä."},
+    "investment": {"name": "Investoinnit", "question": "Miten yritysten tuotannolliset investoinnit muuttuvat? Verotuotto ja julkisen rahoituksen vähennys eivät sellaisenaan mittaa yksityistä investointia."},
+    "productivity": {"name": "Työn tuottavuus", "question": "Miten tuotanto tehtyä työtuntia kohti muuttuu? Osaaminen, teknologia, infrastruktuuri ja työkyky vaikuttavat eri aikajänteillä."},
+    "gdp": {"name": "BKT", "question": "Kuinka paljon talouden tuotanto muuttuu verrattuna tilanteeseen ilman pakettia? Kysynnän muutos vaikuttaa heti, pääoma ja osaaminen hitaammin."}
+  },
+  "method": [
+    "Käyrä on BKT:n tasoero tilanteeseen ilman pakettia prosentteina ja euroina, ei kasvuvauhdin muutos. Se on laskennallinen skenaario, ei ennuste. Puuttuva vaikutuskanava ei tarkoita nollavaikutusta.",
+    "Valittujen toimien vuositason vaikutukset alkavat vuonna 1 ja ovat pysyviä. Eurot ovat vuoden 2025 hinnoin, eikä taustakasvua ennusteta. Tarkastelu on viisi vuotta, koska kerrointutkimus ulottuu viiteen vuoteen.",
+    "Verojen ja menoleikkausten vaikutus lasketaan Suomen kerrointutkimuksen perusmallista, kun toimi kuuluu sen vero- tai menolajeihin (ks. Kalibrointi). Muiden toimien vaikutus lasketaan kotimaisen kysynnän muutoksesta (ostovoima tuloryhmittäin, julkinen kysyntä ja yritysten T&K) sekä pääoman ja koulutuksen kautta.",
+    "Varjostus on 32 oletusyhdistelmän vaihteluväli, ei luottamusväli. Siinä vaihdellaan kerrointutkimuksen mallimäärittelyjä, leikkausten voimaantulon tahtia, kysyntä-, investointi- ja koulutusvasteita sekä tuloryhmien kulutusalttiuksia.",
+    "VM:n pitkän aikavälin työn tarjonnan arvioita ei lisätä käyrään, koska niillä ei ole ajoitusta ja kerrointutkimuksen vaikutukset sisältävät jo viiden vuoden työllisyysmuutokset.",
+    "Koulutusleikkaus vaikuttaa tuottavuuteen vasta uusien ikäluokkien tullessa työelämään, joten viidessä vuodessa vaikutus ehtii vasta alkaa. Lähteet ovat yhdysvaltalaisia, ja siirto Suomeen on oletus."
+  ],
+  "sources": {
+    "school-spending": {"label": "Jackson, Johnson & Persico (2016): The Effects of School Spending on Educational and Economic Outcomes", "url": "https://doi.org/10.1093/qje/qjv036"},
+    "tertiary-spending": {"label": "Deming & Walters (2017): The Impact of Price Caps and Spending Cuts on U.S. Postsecondary Attainment, taulukko 4", "url": "https://www.nber.org/system/files/working_papers/w23736/w23736.pdf"},
+    "statfin-education": {"label": "Tilastokeskus: Koulutuksen käyttömenot 2024, taulukko 12g6", "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/kotal/12g6.px/"},
+    "education-target": {"label": "OKM: korkeakoulutettujen 25–34-vuotiaiden osuus kohti 50 prosenttia vuoteen 2030", "url": "https://valtioneuvosto.fi/-/1410845/hallitus-kaynnistaa-toimenpideohjelman-koulutustason-nostamiseksi-ja-korkeakoulutuksen-kasautumisen-vahentamiseksi"},
+    "norway-consumption-2024": {"label": "Fagereng, Onshuus & Torstensen (2024): Consumption Expenditure Response to Unemployment", "url": "https://www.norges-bank.no/en/news-events/publications/Working-Papers/2024/wp-62024/"},
+    "imf-investment-2015": {"label": "IMF (2015): Investment in the Euro Area", "url": "https://www.elibrary.imf.org/view/journals/001/2015/032/article-A001-en.xml"},
+    "oecd-microberd": {"label": "OECD (2021): microBeRD, yritysten T&K-tukien lisäisyys", "url": "https://www.oecd.org/en/publications/oecd-science-technology-and-innovation-outlook-2021_75f79015-en/full-report/component-8.html"},
+    "finland-fiscal-2026": {"label": "Lähdemäki, Puonti & Tervala (2026): Fiscal Multipliers and the Effects of Consolidation Measures in Finland", "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/f5cfd8d8-8b91-46f3-9bf3-58436584a5f3/content"},
+    "vm-spending-2026": {"label": "VM (2026): Menokartoitus 2026, toimikohtaiset muistiot", "url": "https://urn.fi/URN:ISBN:978-952-367-603-9"},
+    "vm-tax-labour-2026": {"label": "VM 2026:48: Verokartoitus 2026, s. 67–68: ansiotuloverotuksen vaikutukset työllisyyteen ja kulutukseen", "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content#page=68"},
+    "vm-vat-macro-2026": {"label": "VM 2026:48: Verokartoitus 2026, s. 153: arvonlisäveron korotuksen kokonaistaloudelliset vaikutukset", "url": "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/a989e9ef-d6f7-494c-b684-85741551f55a/content#page=154"},
+    "fit-corporate-2024": {"label": "Harju, Koivisto & Matikka (2024): Mitä uutta tiedämme yritysverojen vaikutuksista, FIT #8/2024", "url": "https://verotutkimus.fi/fit-8-2024-yritysverojen-vaikutuksista/"},
+    "consumption-survey-2022": {"label": "Tilastokeskus: kulutustutkimus 2022, kulutusmenot ja käytettävissä olevat tulot tuloviidenneksittäin (14pg, 14qa)", "url": "https://pxdata.stat.fi/PxWeb/pxweb/fi/StatFin/StatFin__ktutk/statfin_ktutk_pxt_14pg.px/"}
+  },
+  "earnedIncomeIncentive": {
+    "actions": ["income", "income-index"],
+    "moneyYear": 2028,
+    "netShare": {"low": 0.6, "value": 0.675, "high": 0.75},
+    "mpc": 0.9,
+    "consumptionTaxRate": 0.17,
+    "costPerPerson": 25000,
+    "page": "67–68",
+    "sourceIds": ["vm-tax-labour-2026"],
+    "basis": "VM arvioi ansiotuloveron kiristyksen pitkän aikavälin nettotuotoksi 60–75 % staattisesta, kun työllisyyden ja kulutuksen muutokset huomioidaan. VM käyttää työn tarjonnan joustoa 0,10–0,25 ja kulutusveroille rajakulutusalttiutta 0,9 ja veroastetta 0,17. Työstä poistuva henkilö heikentää julkista taloutta keskimäärin noin 25 000 euroa. Silppuri vähentää menetyksestä kulutusverojen osuuden ja jakaa loput 25 000 eurolla. Näin saadaan henkilöinä mitattu työllisyysvaikutus.",
+    "limit": "Henkilömäärä on johdettu VM:n julkaistuista luvuista; VM ei julkaise sitä tälle toimelle. Arvio on keskimääräinen: huipputulojen reaktiot voivat olla suurempia ja keskitulojen pienempiä. Ajoitusta ei tiedetä, joten vaikutus näytetään pitkän aikavälin työn tarjonnan lukuna BKT-käyrän ulkopuolella."
+  },
+  "consumptionProfile": {
+    "quintiles": [1.01, 0.81, 0.74, 0.66, 0.55],
+    "average": 0.66,
+    "sourceIds": ["consumption-survey-2022"],
+    "basis": "Kulutustutkimuksen 2022 kulutusmenot ilman laskennallisia asumisvuokria suhteessa käytettävissä oleviin tuloihin kulutusyksikköä kohti: alin tuloviidennes 1,01, sitten 0,81, 0,74, 0,66 ja ylin 0,55, kaikki kotitaloudet 0,66. Suhde on kulutuksen keskimääräinen osuus tuloista, ei estimoitu rajakulutusalttius: se kertoo, kuinka suuren osan tuloistaan tuloryhmä kuluttaa, ei kuinka paljon kulutus muuttuu menetettyä euroa kohti. Silppuri olettaa rajakulutusalttiuden eroavan tuloryhmittäin samassa suhteessa. Oletusta ei ole testattu tutkimuksella, joten herkkyydessä kaikilla tuloryhmillä on myös sama alttius. Tuloryhmän alttius on keskimääräinen alttius kerrottuna tuloryhmän osuudella suhteessa kaikkien osuuteen, enintään 1. Kulutustutkimus aliarvioi kulutusta, joten tasoa ei käytetä. Tulokymmenet 1–2 käyttävät ensimmäisen viidenneksen suhdetta ja niin edelleen."
+  },
+  "fiscalMultipliers": {
+    "horizon": 5,
+    "page": "21, 32–33, 78–85, 91 (taulukko 12) ja 92 (taulukko 13); luokittelu taulukot 3–11",
+    "sourceIds": ["finland-fiscal-2026"],
+    "basis": "Kerroin on BKT:n muutosten summa jaettuna vero- tai menomuuttujan muutosten summalla. Koska tutkimuksen sokit ovat yleensä tilapäisiä, vuosipolku lasketaan perusmallin (koko aineisto, VAR(4), kuviot 9–12) impulssivasteista: niistä lasketaan BKT:n vaste toimeen, joka on voimassa ensimmäisestä vuosineljänneksestä alkaen. Vaihteluvälissä polku skaalataan muiden mallimäärittelyjen viiden vuoden kertoimien pienimpään ja suurimpaan arvoon (taulukko 13) olettaen, että vasteet ovat samanmuotoisia, ja leikkaukset seuraavat myös VM:n vuosiarvioita vuodesta 2028 alkaen. Kerroin korvaa ostovoima-, julkisen kysynnän ja pääomakanavan ja sisältää viiden vuoden työllisyysmuutokset.",
+    "limit": "Kertoimet on estimoitu vero- ja menolajien kokonaismuutoksista, joten yksittäisen toimen vaikutus voi poiketa. Verolajin kerrointa käytetään vain verokannan muutoksiin. Etuuksille, yritystuille, T&K-rahoitukselle, asiakasmaksuille sekä ajoneuvo-, perintö-, kiinteistö- ja varainsiirtoveroille tutkimuksessa ei ole kerrointa tai se on epävakaa (s. 92), joten niiden vaikutus lasketaan ostovoiman ja julkisen kysynnän kautta. Puolustushankintoja, kehitysyhteistyötä, EU-rahoitusta ja varauksia ei lasketa.",
+    "groups": {
+      "consumption": {"kind": "tax", "label": "Kulutusverot: arvonlisävero ja valmisteverot", "twoYear": {"low": -0.1, "value": 0.2, "high": 0.3}, "fiveYear": {"low": -0.1, "value": 1.3, "high": 2.2}, "irf": "consumptionTaxes", "base": "gross", "note": "Alennettujen ALV-kantojen korotus luetaan verokannan muutokseksi, kuten tutkimuksessa makeisten siirto yleiseen kantaan (taulukko 9).", "actions": ["vat", "tax-vat-standard", "tax-vat15", "tax-vat16", "tax-food18", "tax-vat-services", "tax-vat-reduced", "tax-vat-news135", "tax-vat-news255", "tax-insurance", "tax-excise-index", "tax-tobacco", "tax-softdrink", "vm-alcohol", "tax-fuel", "tax-electric1", "tax-electric2", "tax-biomass", "tax-waste-energy", "tax-tickets"]},
+      "household": {"kind": "tax", "label": "Kotitalouksien ansio- ja pääomatuloverot", "twoYear": {"low": -0.1, "value": 0.1, "high": 0.2}, "fiveYear": {"low": -0.7, "value": -0.2, "high": 0.9}, "irf": "householdTaxes", "base": "gross", "note": "Tutkimuksen mukaan vaikutus on vaimea, lyhytaikainen ja tilastollisesti merkitsemätön (s. 84). Perusmallin kerroin on mallien suurin.", "actions": ["income", "income-index", "tpan-top-rate", "tax-pension", "tax-capital-low", "tax-capital-high"]},
+      "corporate": {"kind": "tax", "label": "Yhteisövero", "twoYear": {"low": -0.1, "value": 0.1, "high": 0.3}, "fiveYear": {"low": 1, "value": 1.4, "high": 1.8}, "irf": "corporateTax", "base": "gross", "note": "Kerrointa käytetään vain verokannan muutokseen. Suomalaisessa mikroaineistossa pienten yritysten investoinnit eivät muuttuneet yhteisöveron alennuksessa.", "sourceIds": ["corporatetax"], "actions": ["corporate"]},
+      "services": {"kind": "spending", "label": "Palvelut ja henkilöstö: julkiset palkkamenot", "twoYear": {"low": -0.1, "value": 0.3, "high": 1}, "fiveYear": {"low": -0.4, "value": 1.1, "high": 1.7}, "irf": "wages", "base": "gross", "note": "Tutkimus luki vanhushoivan henkilöstömitoituksen, ammatillisen koulutuksen rahoituksen ja hoitotakuun palkkamenoihin (taulukko 4); samoin luetaan muut palvelujen rahoituksen ja henkilöstön leikkaukset. Pohjana on VM:n bruttotyövoimakustannus.", "actions": ["education", "cut-2-20", "cut-2-21", "cut-2-22", "cut-2-25", "cut-2-26", "cut-2-27", "cut-2-28", "cut-2-32", "cut-2-34", "cut-2-35", "cut-2-38", "cut-2-39", "cut-2-42", "cut-2-44", "health", "cut-4-5", "cut-4-6", "cut-4-7", "cut-4-9", "cut-4-11", "cut-4-14", "cut-4-25", "cut-4-26", "cut-4-29", "cut-7-21", "cut-4-42", "cut-7-18", "cut-7-41", "cut-7-42", "cut-5-77"]},
+      "wageLevel": {"kind": "spending", "label": "Palkkataso: julkiset palkkamenot", "twoYear": {"low": -0.1, "value": 0.3, "high": 1}, "fiveYear": {"low": -0.4, "value": 1.1, "high": 1.7}, "irf": "wages", "base": "gross", "assumption": "Palkkamenojen kertoimen käyttö palkkatason leikkaukseen on Silppurin oletus.", "note": "Tutkimuksen muuttuja on palkkamenojen kokonaismäärä, joka ei erottele palkkatasoa ja henkilöstömäärää. Pohjana on VM:n bruttotyövoimakustannus.", "actions": ["cut-7-45", "cut-7-50", "cut-7-51", "cut-7-52"]},
+      "efficiency": {"kind": "spending", "label": "Tehostaminen: välituotekäyttö", "twoYear": {"low": -0.4, "value": 1.2, "high": 1.3}, "fiveYear": {"low": -0.6, "value": 0.5, "high": 1.5}, "irf": "intermediate", "base": "gross", "note": "Tutkimus luki hallinnon ja hankintojen karsimisen tähän tai palkkamenoihin. Kerroin vaihtelee malleittain paljon.", "actions": ["cut-4-27", "cut-4-34", "cut-4-36", "cut-4-35", "cut-4-37", "cut-5-62", "cut-5-67", "cut-5-72"]},
+      "investment": {"kind": "spending", "label": "Väylät: julkiset investoinnit", "twoYear": {"low": -0.1, "value": 0.5, "high": 1.5}, "fiveYear": {"low": 0.8, "value": 1.5, "high": 2.7}, "irf": "investment", "base": "gross", "note": "Väylien ylläpito luetaan tähän, koska siihen sisältyy korjausinvestointeja. Perusmallin kerroin on mallien pienin.", "actions": ["cut-1-32", "cut-1-33"]},
+      "pensions": {"kind": "spending", "label": "Työeläkkeet", "twoYear": {"low": -0.3, "value": -0.1, "high": 0.8}, "fiveYear": {"low": 0.2, "value": 0.7, "high": 1.7}, "irf": "pensions", "base": "funds", "note": "Pohjana on työeläkerahastojen säästö eli eläkemenon muutos, ei kortin budjettirivi, joka on menetettyä veroa ja muiden etuuksien muutosta. Viiden vuoden kertoimen etumerkki on kaikissa malleissa sama.", "actions": ["cut-3-50", "cut-3-51"]},
+      "total": {"kind": "spending", "label": "Laajat leikkaukset: julkiset kokonaismenot", "twoYear": {"low": 0.3, "value": 0.6, "high": 0.9}, "fiveYear": {"low": 0.7, "value": 1, "high": 1.4}, "irf": "total", "base": "grossAndFunds", "note": "Laajat indeksijäädytykset ja avustukset, jotka kohdistuvat moniin menolajeihin. Pohjana on budjettivaikutus ja eläkerahastojen säästö.", "actions": ["cut-6-5", "cut-7-24", "cut-5-49"]}
+    },
+    "unestimated": {
+      "taxBase": {"label": "Veropohjan laajennukset", "note": "Tutkimuksen mukaan veropohjan laajentaminen haittaa tuotantoa vähemmän kuin verokannan korotus (s. 21), mutta eroa ei ole arvioitu.", "actions": ["tax-diesel", "tax-commercial-diesel", "tax-heat", "tax-peat", "vm-machine-fuel", "tax-donation", "tax-household", "tax-entrepreneur-remove", "tax-entrepreneur-step", "dividends", "tax-dividend-return", "tax-forest", "fw-wrappers", "fw-dividend-withholding", "fw-treaty-dividends", "fw-exit-tax", "fw-deemed-cost", "fw-interest", "fw-corporate-gaps", "fw-corporate-minimum", "fw-portfolio", "fw-property-funds", "tax-ifrs"]},
+      "workingTime": {"label": "Työajan pidennykset", "note": "Säästö syntyy vasta, jos henkilöstöä tai ostopalveluja vähennetään, eikä toteutustapaa tiedetä.", "actions": ["cut-7-44", "cut-7-46", "cut-7-48"]}
+    },
+    "impulseResponses": {
+      "page": "82–85, kuviot 9–12; julkaistut kertoimet taulukot 12 ja 19–21",
+      "note": "Vasteet on digitoitu tutkimuksen kuvioista 9–12. Niistä lasketut kahden ja viiden vuoden kertoimet poikkeavat julkaistuista enintään noin 0,2.",
+      "responses": {
+        "total": {"label": "Julkiset kokonaismenot (kuvio 9)", "reported": [0.3, 0.8], "gdp": [-0.01833, 0.00273, 0.02227, 0.0297, 0.03542, 0.03848, 0.0403, 0.04152, 0.04284, 0.04371, 0.04455, 0.04515, 0.04576, 0.04636, 0.04697, 0.04742, 0.04758, 0.04758, 0.04788, 0.04818], "fiscal": [0.17855, 0.11922, 0.08201, 0.0553, 0.04195, 0.03561, 0.03258, 0.03106, 0.03106, 0.03106, 0.03106, 0.03182, 0.03258, 0.03258, 0.03258, 0.03258, 0.03333, 0.03409, 0.03409, 0.03409]},
+        "intermediate": {"label": "Välituotekäyttö (kuvio 10)", "reported": [1.3, 1.4], "gdp": [0.08314, 0.06804, 0.05352, 0.048, 0.04077, 0.03514, 0.03, 0.02582, 0.02229, 0.01971, 0.01714, 0.015, 0.01371, 0.01227, 0.01157, 0.01071, 0.00986, 0.00943, 0.00943, 0.00943], "fiscal": [0.0801, 0.05447, 0.03944, 0.03173, 0.02868, 0.02499, 0.02162, 0.01878, 0.0165, 0.0141, 0.0123, 0.01068, 0.00906, 0.00775, 0.0068, 0.0055, 0.00509, 0.00421, 0.00356, 0.00324]},
+        "wages": {"label": "Julkiset palkkamenot (kuvio 10)", "reported": [0.5, 1.4], "gdp": [0.01365, 0.01007, 0.01036, 0.01022, 0.01007, 0.01007, 0.01036, 0.01052, 0.01122, 0.0118, 0.01251, 0.01327, 0.01403, 0.01494, 0.0157, 0.01646, 0.01722, 0.01798, 0.01856, 0.01928], "fiscal": [0.06388, 0.0311, 0.0269, 0.01951, 0.0147, 0.01105, 0.00806, 0.00604, 0.00452, 0.00327, 0.00252, 0.00176, 0.00101, 0.00076, 0.0005, -0.00126, -0.0005, -0.00126, -0.00126, -0.00076]},
+        "investment": {"label": "Julkiset investoinnit (kuvio 10)", "reported": [0, 0.8], "gdp": [-0.0215, -0.01293, -0.00378, 0.00054, 0.00404, 0.00688, 0.00903, 0.01053, 0.01185, 0.01286, 0.01359, 0.01413, 0.01467, 0.01467, 0.01486, 0.01504, 0.01504, 0.01504, 0.01486, 0.01467], "fiscal": [0.08782, 0.03148, 0.02194, 0.01159, 0.00787, 0.00487, 0.00399, 0.0029, 0.00326, 0.00217, 0.00217, 0.00217, 0.00181, 0.00145, 0.00178, 0.00181, 0.00132, 0.00181, 0.00181, 0.00109]},
+        "pensions": {"label": "Eläkkeet (kuvio 11)", "reported": [-0.2, 0.4], "gdp": [-0.0293, -0.02036, -0.01186, -0.00718, -0.0023, 0.00217, 0.00592, 0.0093, 0.01217, 0.01445, 0.01648, 0.01827, 0.01966, 0.02092, 0.02176, 0.02282, 0.02324, 0.02387, 0.0243, 0.0243], "fiscal": [0.06116, 0.03974, 0.03404, 0.02995, 0.02782, 0.02496, 0.02268, 0.0207, 0.01932, 0.01799, 0.01701, 0.01627, 0.01528, 0.01454, 0.01405, 0.01356, 0.01306, 0.01282, 0.01257, 0.01208]},
+        "consumptionTaxes": {"label": "Kulutusverot (kuvio 12)", "reported": [-0.3, -1.4], "gdp": [-0.00045, -0.00192, -0.00526, -0.00788, -0.01045, -0.01256, -0.01436, -0.0159, -0.01718, -0.01821, -0.0191, -0.01974, -0.02038, -0.02083, -0.02128, -0.02154, -0.02173, -0.02179, -0.02192, -0.02205], "fiscal": [0.08236, 0.04284, 0.03173, 0.02423, 0.01875, 0.01327, 0.00923, 0.00606, 0.00346, 0.00144, -0.00058, -0.00115, -0.00231, -0.00288, -0.00361, -0.00404, -0.00462, -0.00462, -0.0049, -0.0049]},
+        "householdTaxes": {"label": "Kotitalouksien tuloverot (kuvio 12)", "reported": [-0.2, -0.9], "gdp": [0.00042, 0.00429, -0.0039, -0.00578, -0.00736, -0.00933, -0.00971, -0.00999, -0.01024, -0.01018, -0.01006, -0.01006, -0.00988, -0.00988, -0.00971, -0.00962, -0.00953, -0.00935, -0.00924, -0.00918], "fiscal": [0.12134, 0.02198, 0.00713, 0.02162, 0.00108, 0.0017, 0.00167, -0.00247, -0.00288, -0.00232, -0.00247, -0.00288, -0.00255, -0.00247, -0.00288, -0.00278, -0.00247, -0.00288, -0.0026, -0.00247]},
+        "corporateTax": {"label": "Yhteisövero (kuvio 12)", "reported": [-0.2, -1.3], "gdp": [0.00073, 0.01082, 0.00123, -0.00417, -0.00866, -0.01315, -0.01614, -0.01881, -0.02089, -0.02247, -0.02383, -0.02496, -0.026, -0.02678, -0.02733, -0.02783, -0.02848, -0.02867, -0.029, -0.02917], "fiscal": [0.12951, 0.03456, 0.03267, 0.02543, 0.01028, 0.01006, 0.00526, 0.00373, 0.0056, 0.00467, 0.00233, 0.00397, 0.00347, 0.00233, 0.00327, 0.00327, 0.00233, 0.00233, 0.00233, 0.00187]}
+      }
+    },
+    "kelaPensions": {"label": "Kansan- ja takuueläkkeet", "note": "Kortin summa sisältää eläkkeen lisäksi asumistuen, toimeentulotuen ja verojen muutokset, eikä eläkemenoa ole eritelty kaikille toimille. Vaikutus lasketaan tulonjakolaskelman nettotulomuutoksesta kuten muissa etuuksissa.", "actions": ["cut-3-32", "cut-3-33", "cut-3-34", "cut-3-36", "cut-3-37", "cut-3-38", "cut-3-39"]}
+  },
+  "profiles": [
+    {
+      "id": "consumption-tax",
+      "actions": ["vat", "tax-vat-standard", "tax-vat15", "tax-vat16", "tax-food18", "tax-vat-services", "tax-vat-reduced", "tax-vat-news135", "tax-vat-news255", "tax-insurance", "tax-excise-index", "tax-tobacco", "tax-softdrink", "vm-alcohol", "tax-fuel", "tax-diesel", "tax-commercial-diesel", "tax-van", "tax-vehicle", "tax-tickets", "tax-electric1", "tax-car-all"],
+      "effects": {
+        "consumption": {"direction": "down", "mechanism": "Veronkorotus voi nostaa hintoja ja vähentää ostomääriä. Osa verosta voi jäädä yrityksen katteeseen, ja kulutus voi siirtyä muihin tuotteisiin tai ulkomaille. Verotuottoa ei tulkita samansuuruiseksi reaalikulutuksen menetykseksi.", "timing": "Hintojen ja kysynnän reaktiot alkavat lähivuosina. Tämän toimen koko kulutuksen vuosittaista vastetta ei ole arvioitu."},
+        "employment": {"direction": "uncertain", "mechanism": "Kysynnän väheneminen voi heikentää kyseisten alojen työvoiman tarvetta. Kulutuksen siirtyminen ja yritysten hinnoittelu vaikuttavat lopputulokseen; toimialan menetys ei ole sama kuin kansantalouden nettotyöllisyysvaikutus.", "timing": "Työvoiman kysyntä voi reagoida kulutusta myöhemmin. Tarkkaa vuosittaista työllisyysarviota ei ole."}
+      }
+    },
+    {
+      "id": "earnings-tax",
+      "actions": ["income", "income-index"],
+      "effects": {
+        "consumption": {"direction": "down", "mechanism": "Käytettävissä olevat tulot pienenevät. Kulutusreaktio riippuu muun muassa säästöistä ja siitä, pidetäänkö tulomuutosta pysyvänä.", "timing": "Ostovoima muuttuu veron tullessa voimaan. Reaalikulutuksen ajallista muutosta ei ole yksilöity."},
+        "employment": {"direction": "down", "mechanism": "Työstä saatavan nettotulon pieneneminen heikentää työnteon kannustinta. VM:n mukaan ansiotuloveron kiristys heikentää työllisyyttä; vaikutus arvioidaan työn tarjonnan joustolla 0,10–0,25. Tulon menetys voi lisätä joidenkin työntekoa, ja keskitulojen reaktiot ovat tutkimuksissa pieniä.", "timing": "VM ei anna vuosipolkua. Silppuri näyttää vaikutuksen pitkän aikavälin työn tarjonnan lukuna BKT-käyrän ulkopuolella. Kerrointutkimuksen viiden vuoden kerroin sisältää jo viidessä vuodessa toteutuneet vaikutukset.", "sourceIds": ["vm-tax-labour-2026", "finland-fiscal-2026"]}
+      }
+    },
+    {
+      "id": "owner-tax",
+      "actions": ["dividends", "tax-dividend-return", "tax-capital-low", "tax-capital-high", "tax-entrepreneur-remove", "tax-entrepreneur-step", "tax-forest", "fw-deemed-cost", "fw-portfolio", "fw-dividend-withholding", "fw-treaty-dividends", "fw-wealth-minimum", "fw-property-funds", "fw-wrappers", "fw-exit-tax"],
+      "effects": {
+        "consumption": {"direction": "uncertain", "mechanism": "Omistajien käytettävissä olevat tulot tai varallisuus muuttuvat. Osa sopeutuksesta voi tapahtua säästämisen, tulon ajoituksen tai tulolajin kautta. Suomen kotitalouksiin kohdistuvaa kulutusreaktiota ei ole määrällisesti arvioitu.", "timing": "Tulojen ajoitus voi muuttua jo ennen uudistusta; pysyvä kulutusvaikutus ei ole tiedossa."},
+        "investment": {"direction": "uncertain", "mechanism": "Omistajan verotus voi muuttaa rahoitusta ja voitonjakoa. Esimerkiksi osinkojen siirtäminen vuodesta toiseen ei sellaisenaan ole tuotannollisen investoinnin muutos. Tutkimuksen siirrettävyys riippuu veron rakenteesta ja yrityksen rahoitusrajoitteista.", "timing": "Voitonjako voi reagoida nopeasti, reaaliset investoinnit eri viiveellä. Tälle toimenpiteelle ei ole yhteistä investointien vuosivastetta."}
+      }
+    },
+    {
+      "id": "corporate-tax",
+      "actions": ["corporate", "fw-corporate-gaps", "fw-interest", "fw-corporate-minimum", "tax-electric2", "tax-heat", "vm-machine-fuel", "sorsa-bank", "fw-digital"],
+      "effects": {
+        "investment": {"direction": "uncertain", "mechanism": "Yritysten tuotto, kustannukset tai rahoituksen ehdot muuttuvat. Veropohjan tiivistäminen, verokannan korotus ja energiaveron muutos ovat erilaisia toimenpiteitä. Yleistä verotuottoa tai BKT-kerrointa ei käytetä investointivaikutuksena.", "timing": "Yritysten sopeutuminen voi kestää vuosia. Täsmällistä vuosittaista investointivastetta ei ole."},
+        "employment": {"direction": "uncertain", "mechanism": "Yritykset voivat sopeuttaa katetta, hintoja, palkkoja, investointeja tai työvoiman määrää. Tutkimusten vaikutukset vaihtelevat; havaittu nollatulos yhdessä uudistuksessa ei osoita tämän toimen vaikutusta nollaksi.", "timing": "Ajoitus riippuu yritysten sopeutumisesta. Kansallista työllisyyslukua ei ole."}
+      }
+    },
+    {
+      "id": "land-tax",
+      "actions": ["tax-land-values", "tax-land-min"],
+      "effects": {
+        "consumption": {"direction": "uncertain", "mechanism": "Maaveron nousu voi alentaa maan hintaa ja heikentää nykyisen omistajan maksuvalmiutta. Maan tarjonta ei vähene, mutta omistajan kulutus voi muuttua.", "timing": "Omaisuuden hinta voi reagoida nopeasti. Kulutuksen suuruutta ja kestoa ei ole arvioitu."},
+        "investment": {"direction": "uncertain", "mechanism": "Maapohjan verottaminen ei suoraan verota uutta rakennusta tai koneinvestointia. Tämä tukee vähäisemmän investointihaitan mahdollisuutta, mutta ei todista koko toimen investointivaikutusta nollaksi.", "timing": "Suomen uudistukselle ei ole investointien vuosittaista vaikutusarviota."}
+      }
+    },
+    {
+      "id": "inheritance",
+      "actions": ["tax-inheritance", "tax-succession", "fw-succession-abolish", "sorsa-million-inheritance"],
+      "effects": {
+        "employment": {"direction": "mixed", "mechanism": "Pienempi perintö voi lisätä perillisen työn tarjontaa. Toisaalta yritysperinnön verotus voi vaikuttaa yrityksen rahoitukseen. Näitä kanavia ei ole laskettu yhteen Suomen uudistuksen työllisyysarvioksi.", "timing": "Vaikutus syntyy eri kotitalouksille perinnön saamisen tai siihen varautumisen yhteydessä, ei yhtenä yhteisenä vuonna."},
+        "investment": {"direction": "uncertain", "mechanism": "Yritysten maksuvalmius ja veron maksuaikajärjestelyt vaikuttavat investointiriskiin. Huojennuksen verotukiarvo ei ole investointien muutos.", "timing": "Investointien ajoitus ja pitkäaikainen vaikutus ovat epävarmoja."}
+      }
+    },
+    {
+      "id": "benefits",
+      "actions": ["benefits", "cut-3-5", "cut-3-6", "cut-3-7", "cut-3-8", "cut-3-10", "cut-3-11", "cut-3-12", "cut-3-13", "cut-3-14", "cut-3-15", "cut-3-61", "cut-3-63", "cut-3-64"],
+      "effects": {
+        "consumption": {"direction": "down", "mechanism": "Etuuden väheneminen heikentää käytettävissä olevia tuloja, ellei muu etuus tai työ korvaa sitä. Kulutuksen sopeutus on erityisen merkityksellinen kotitalouksille, joiden säästöpuskuri on pieni.", "timing": "Kulutus voi reagoida heti tuen muuttuessa. Pysyvän suomalaisen leikkauksen vuosivastetta ei voi johtaa suoraan toisen maan etuuden päättymisestä."},
+        "employment": {"direction": "mixed", "mechanism": "Työn tarjonnan kannustin voi vahvistua samalla kun pienempi kulutus heikentää työvoiman kysyntää. Työkyky, tarjolla olevat työpaikat ja korvaavat etuudet vaikuttavat lopputulokseen.", "timing": "Rakenteellinen työn tarjonnan muutos ja lyhyen aikavälin kysyntävaikutus voivat toteutua eri aikaan."}
+      }
+    },
+    {
+      "id": "pensions",
+      "actions": ["cut-3-32", "cut-3-33", "cut-3-34", "cut-3-36", "cut-3-37", "cut-3-38", "cut-3-39", "cut-3-40", "cut-3-42", "cut-3-50", "cut-3-51", "tax-pension"],
+      "effects": {
+        "consumption": {"direction": "down", "mechanism": "Eläkkeen tai tuen ostovoima heikkenee. Kulutuksen muutos riippuu kotitalouden muista tuloista, säästöistä ja korvaavista etuuksista. Eläkejärjestelmän menosäästö ei ole sama kuin kulutuksen vähennys.", "timing": "Vaikutus alkaa etuuden tai veron muuttuessa. Indeksijäädytyksen säästö voi hiipua myöhemmin, joten sitä ei jatketa vakiona 15 vuodeksi."},
+        "employment": {"direction": "uncertain", "mechanism": "Pienempi kulutus voi heikentää työvoiman kysyntää. Jo eläkkeellä olevien etuuden leikkausta ei rinnasteta työikäisten työnteon kannustimiin.", "timing": "Koko kansantalouden työllisyysvaikutukselle ei ole julkaistu toimikohtaista vuosittaista henkilömäärää."}
+      }
+    },
+    {
+      "id": "research",
+      "researchShare": 0.5,
+      "actions": ["cut-1-5", "cut-1-6", "cut-1-25", "cut-1-26", "tax-rd"],
+      "effects": {
+        "investment": {"direction": "down", "mechanism": "T&K-rahoituksen väheneminen voi pienentää yritysten tutkimusinvestointeja. Suomalaisessa tutkimuksessa yritysten saama tuki lisäsi T&K:ta, mutta koko rahoituslain leikkausta ei voi skaalata suoraan tutkimuksen yksittäisestä tukijoukosta.", "timing": "Hankkeet ja rahoituspäätökset vaikuttavat lähivuosina; investointien vuosittaista kokonaismuutosta ei ole määritelty."},
+        "employment": {"direction": "down", "mechanism": "Tutkimushankkeiden vähentyminen voi vähentää tutkimustyötä ja myöhempää yritysten kasvua. Toimen kansallista nettotyöllisyysvaikutusta ei ole laskettu.", "timing": "Tutkimustyö voi muuttua aiemmin kuin uusien tuotteiden ja yrityskasvun työllisyysvaikutukset."},
+        "productivity": {"direction": "down", "mechanism": "Vähemmät innovaatiot ja tiedon leviäminen voivat heikentää tulevaa tuottavuutta. Rahoituseuro ei muutu automaattisesti tietyn suuruiseksi tuottavuusprosentiksi.", "timing": "Tuottavuusvaikutukset syntyvät viiveellä. Tutkimus ei anna tämän leikkauksen vuosien 1–15 kansallista tuottavuuskäyrää."}
+      }
+    },
+    {
+      "id": "education",
+      "publicDemand": true,
+      "actions": ["education", "cut-2-20", "cut-2-21", "cut-2-22", "cut-2-25", "cut-2-26", "cut-2-27", "cut-2-28", "cut-2-32", "cut-2-34", "cut-2-35", "cut-2-38", "cut-2-39", "cut-2-42", "cut-2-43", "cut-2-44", "cut-2-45", "eva-tuition"],
+      "effects": {
+        "employment": {"direction": "uncertain", "mechanism": "Koulutuksen saavutettavuus, tutkintojen suorittaminen ja osaamisen vastaavuus työmarkkinoille voivat muuttua. Vaikutus riippuu siitä, mitä opetusta tai opiskelua rahoitusmuutos vähentää.", "timing": "Opiskelijoiden vaikutukset näkyvät työuralla usein vasta vuosien kuluttua; henkilöstövaikutukset voivat alkaa aiemmin."},
+        "productivity": {"direction": "down", "mechanism": "Opetuksen tai opiskelumahdollisuuksien heikkeneminen voi vähentää osaamisen kertymistä. Koulutusrahoituksen leikkaukselle ei ole yhtä yleistä tuottavuuskerrointa.", "timing": "Osaamisvaikutukset voivat näkyä vasta yli kymmenen vuoden kuluttua. Puuttuvaa aikasarjaa ei korvata nollalla."}
+      }
+    },
+    {
+      "id": "infrastructure",
+      "publicDemand": true,
+      "actions": ["cut-1-32", "cut-1-33", "cut-1-38"],
+      "effects": {
+        "employment": {"direction": "down", "mechanism": "Hankkeiden tai ylläpidon vähentäminen voi pienentää työn kysyntää. Koko talouden vaikutukseen vaikuttavat vapautuvien resurssien muu käyttö ja työmarkkinatilanne.", "timing": "Hanketyö reagoi toteutusvaiheessa; tarkkaa kansallista työllisyysvuosisarjaa ei ole."},
+        "productivity": {"direction": "uncertain", "mechanism": "Liikenneyhteyksien laatu, ruuhkat, työssäkäyntialueet ja kuljetuskustannukset vaikuttavat tuotantoon. Haitta riippuu karsittavan hankkeen hyödyistä ja vaihtoehdoista.", "timing": "Vaikutukset voivat kertautua pitkällä aikavälillä. Julkisen investoinnin BKT-kerroin ei suoraan mittaa työn tuottavuutta."}
+      }
+    },
+    {
+      "id": "efficiency",
+      "publicDemand": true,
+      "actions": ["cut-4-27", "cut-4-34", "cut-4-36", "cut-5-62", "cut-5-67", "cut-5-72"],
+      "effects": {
+        "productivity": {"direction": "up", "mechanism": "Vaikuttamattoman hoidon välttäminen, toimiva jatkohoito tai samojen hankintojen halvempi toteutus voi vapauttaa resursseja hyödyllisempään työhön. Hyöty edellyttää toteutunutta tehokkuusparannusta; pelkkä budjetin pienennys ei riitä.", "timing": "Siirtymäkulut voivat syntyä ennen hyötyjä. Suomen koko tuottavuuden vuosittaista muutosta ei ole hinnoiteltu."},
+        "employment": {"direction": "mixed", "mechanism": "Työvoiman tarve voi vähentyä yhdessä tehtävässä ja kasvaa toisaalla. Mahdolliset terveys- ja työkykyhyödyt sekä siirtymäkustannukset vaikuttavat kokonaistulokseen.", "timing": "Työjärjestelyt, henkilöstön siirtymät ja palveluvaikutukset ajoittuvat eri tavoin."}
+      }
+    },
+    {
+      "id": "health-services",
+      "publicDemand": true,
+      "actions": ["health", "cut-4-5", "cut-4-6", "cut-4-7", "cut-4-9", "cut-4-11", "cut-4-14", "cut-4-25", "cut-4-26", "cut-4-29", "cut-4-35", "cut-4-37", "cut-3-16", "cut-3-17", "cut-3-18"],
+      "effects": {
+        "employment": {"direction": "uncertain", "mechanism": "Palvelujen rahoituksen tai saatavuuden muutos voi vaikuttaa alan henkilöstöön, potilaiden työkykyyn ja läheisten hoivavastuuseen. Rahoitusleikkauksen vaikutus riippuu toteutustavasta.", "timing": "Henkilöstövaikutukset voivat alkaa nopeasti, työkykyvaikutukset myöhemmin. Koko vaikutukselle ei ole henkilömääräistä vuosiarviota."},
+        "productivity": {"direction": "uncertain", "mechanism": "Vaikuttavien palvelujen menetys voi heikentää työkykyä. Tehostaminen voi puolestaan säilyttää palvelun pienemmillä resursseilla. Rahoituspäätös yksin ei ratkaise näiden suhdetta.", "timing": "Palvelujen laadun ja työkyvyn muutosten aikajännettä ei ole yksilöity tähän leikkaukseen."}
+      }
+    }
+  ],
+  "overrides": {
+    "education": {"educationGroup": "tertiary"},
+    "cut-2-20": {"educationGroup": "school"},
+    "cut-2-21": {"educationGroup": "school"},
+    "cut-2-22": {"educationGroup": "school"},
+    "cut-2-25": {"educationGroup": "school"},
+    "cut-2-32": {"educationGroup": "school"},
+    "cut-2-38": {"educationGroup": "school"},
+    "cut-2-39": {"educationGroup": "school"},
+    "cut-2-42": {"educationGroup": "school"},
+    "tax-rd": {"researchShare": 1},
+    "cut-1-25": {"researchShare": null},
+    "cut-1-26": {"researchShare": 0.25},
+    "cut-2-43": {"publicDemand": false},
+    "cut-2-45": {"publicDemand": false},
+    "eva-tuition": {"publicDemand": false},
+    "cut-4-35": {"profile": "efficiency"},
+    "cut-4-37": {"profile": "efficiency"},
+    "cut-3-16": {"publicDemand": false},
+    "cut-3-17": {"publicDemand": false},
+    "cut-3-18": {"publicDemand": false}
+  }
+}

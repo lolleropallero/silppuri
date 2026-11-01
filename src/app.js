@@ -5,6 +5,8 @@
   const data=[]/*CATALOGUE*/;
   const incidenceModel={}/*INCIDENCE_DATA*/;
   /*INCIDENCE_ENGINE*/
+  const growthModel={}/*GROWTH_DATA*/;
+  /*GROWTH_ENGINE*/
   const baseData=new Map(data.map(d=>[d.id,{...d}]));
   const dividendStudyUrl='https://www.sttinfo.fi/files/66784256/70136599/79254/fi';
   const urls={tax:'https://urn.fi/URN:ISBN:978-952-367-619-0',cut:'https://urn.fi/URN:ISBN:978-952-367-603-9'};
@@ -651,6 +653,7 @@
   }
 
   /*INCIDENCE_VIEW*/
+  /*GROWTH_VIEW*/
   function positionDialog(){
     const panel=dialog;
     if(!panel.open||modalShred.running)return;
@@ -1030,6 +1033,7 @@
     q('.sp-more').hidden=matches.length<=limit;q('.sp-more').textContent='Näytä seuraavat '+Math.min(20,matches.length-limit)+' toimea ↓';
     renderAiResults();
     renderIncidence(chosen);
+    renderGrowth(chosen);
     if(pieExpanded)renderZoom();
     if(announce)q('.sp-announcement').textContent=`${chosen.length} valittua toimea. Koko julkisen talouden vaikutus ${moneyLabel(sum)}.`;
   }
@@ -1167,6 +1171,7 @@
   /*SHARE_PNG*/
   /*SHARE_UI*/
   q('.sp-preset-rationales').innerHTML=packagePresets.map(presetRationaleMarkup).join('');
+  initGrowth();
   loadSharedLocation();
   // CSS handles an ordinary page. In the auto-height preview the parent frame
   // scrolls instead, so use the browser's clipped intersection rectangle.
